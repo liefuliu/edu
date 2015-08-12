@@ -20,6 +20,13 @@
 @implementation MapViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // Create a gesture recognizer for long presses (for example in viewDidLoad)
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 0.5; //user needs to press for half a second.
+    [self.myMapView addGestureRecognizer:lpgr];
+
+    
     if (IS_IOS8) {
         [UIApplication sharedApplication].idleTimerDisabled = TRUE;
         locationmanager = [[CLLocationManager alloc] init];
@@ -72,5 +79,22 @@
     }
 }
 
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer {
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan) {
+        return;
+    }
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.myMapView];
+    CLLocationCoordinate2D touchMapCoordinate = [self.myMapView convertPoint:touchPoint toCoordinateFromView:self.myMapView];
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = touchMapCoordinate;
+    
+    /*
+    for (id annotation in self.myMapView.annotations) {
+        [self.myMapView removeAnnotation:annotation];
+    }*/
+    
+    
+    [self.myMapView addAnnotation:point];
+}
 
 @end
