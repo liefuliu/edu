@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
 
 
+- (instancetype) init;
 
 @end

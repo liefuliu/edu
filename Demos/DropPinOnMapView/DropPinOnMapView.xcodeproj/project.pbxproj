@@ -12,6 +12,8 @@
 		6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EB41B78F368006D13B9 /* CCLocationManager.m */; };
 		6D013EB81B78FB73006D13B9 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */; };
 		6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EB91B79BBB8006D13B9 /* Icon@2x.png */; };
+		6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */; };
+		6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */; };
 		6D08612E1B6EE52200BC5910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D08612D1B6EE52200BC5910 /* main.m */; };
 		6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861301B6EE52200BC5910 /* AppDelegate.m */; };
 		6D0861341B6EE52200BC5910 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861331B6EE52200BC5910 /* ViewController.m */; };
@@ -44,6 +46,9 @@
 		6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
 		6D013EB91B79BBB8006D13B9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMClassItemViewController.h; sourceTree = "<group>"; };
+		6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMClassItemViewController.m; sourceTree = "<group>"; };
+		6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPMClassItemViewController.xib; sourceTree = "<group>"; };
 		6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPinOnMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08612C1B6EE52200BC5910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D08612D1B6EE52200BC5910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -94,6 +99,9 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */,
+				6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */,
+				6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */,
 				6D013EB31B78F368006D13B9 /* CCLocationManager.h */,
 				6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */,
 				6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */,
@@ -247,6 +255,7 @@
 			files = (
 				6D0861371B6EE52200BC5910 /* Main.storyboard in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
+				6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */,
 				6D08613C1B6EE52200BC5910 /* LaunchScreen.xib in Resources */,
 				6D013EB11B782431006D13B9 /* congfucius_study.jpg in Resources */,
 				6D0861391B6EE52200BC5910 /* Images.xcassets in Resources */,
@@ -272,6 +281,7 @@
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
+				6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */,
 				6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */,
 				6D0861541B6EE59C00BC5910 /* MapViewController.m in Sources */,
 				6D013EB81B78FB73006D13B9 /* CLLocation+YCLocation.m in Sources */,

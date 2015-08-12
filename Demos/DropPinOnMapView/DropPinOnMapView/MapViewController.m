@@ -11,6 +11,7 @@
 #import "MapViewController.h"
 #import "CCLocationManager.h"
 #import "LFAnnotation.h"
+#import "DPMClassItemViewController.h"
 
 @interface MapViewController () <CLLocationManagerDelegate> {
     CLLocationManager *locationmanager;
@@ -18,6 +19,26 @@
 @end
 
 @implementation MapViewController
+- (instancetype) init {
+    self = [super init];
+    if (self) {
+        UINavigationItem *navItem = self.navigationItem;
+        navItem.title = @"Homepwner";
+        
+        // Create a new bar button item that will send
+        // addNewItem: to BNRItemsViewController
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
+                                                                             target:self
+                                                                             action:@selector(addNewItem:)];
+        
+        // Set this bar button item as the right item in the navigationItem
+        navItem.rightBarButtonItem = bbi;
+        
+        navItem.leftBarButtonItem = self.editButtonItem;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -92,6 +113,20 @@
     for (id annotation in self.myMapView.annotations) {
         [self.myMapView removeAnnotation:annotation];
     }*/
+    
+    DPMClassItemViewController *detailViewController = [[DPMClassItemViewController alloc] init];
+    
+    
+    //NSArray *items = [[BNRItemStore sharedStore] allItems];
+    //BNRItem *selectedItem = items[indexPath.row];
+    
+    // Give detail view controller a pointer to the item object in row
+    //detailViewController.item = selectedItem;
+    
+    // Push it onto the top of the navigation controller's stack
+    [self.navigationController pushViewController:detailViewController
+                                         animated:YES];
+    
     
     
     [self.myMapView addAnnotation:point];
