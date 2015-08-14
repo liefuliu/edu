@@ -46,9 +46,9 @@
 		6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
 		6D013EB91B79BBB8006D13B9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMClassItemViewController.h; sourceTree = "<group>"; };
-		6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMClassItemViewController.m; sourceTree = "<group>"; };
-		6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPMClassItemViewController.xib; sourceTree = "<group>"; };
+		6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPMClassItemViewController.h; path = ../DPMClassItemViewController.h; sourceTree = "<group>"; };
+		6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPMClassItemViewController.m; path = ../DPMClassItemViewController.m; sourceTree = "<group>"; };
+		6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPMClassItemViewController.xib; path = ../DPMClassItemViewController.xib; sourceTree = "<group>"; };
 		6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPinOnMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08612C1B6EE52200BC5910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D08612D1B6EE52200BC5910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -99,9 +99,6 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
-				6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */,
-				6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */,
-				6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */,
 				6D013EB31B78F368006D13B9 /* CCLocationManager.h */,
 				6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */,
 				6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */,
@@ -127,6 +124,9 @@
 		6D08612A1B6EE52200BC5910 /* DropPinOnMapView */ = {
 			isa = PBXGroup;
 			children = (
+				6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */,
+				6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */,
+				6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */,
 				6D013EB91B79BBB8006D13B9 /* Icon@2x.png */,
 				6D013EB01B782431006D13B9 /* congfucius_study.jpg */,
 				6D08612F1B6EE52200BC5910 /* AppDelegate.h */,
