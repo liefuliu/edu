@@ -6,6 +6,7 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
+#import "ClassInfo.h"
 
 @interface LFAnnotation : NSObject <MKAnnotation>
 
@@ -16,5 +17,8 @@
 // Create a annotation at a random nearby coordinate to 'baseCoordinate', and with
 // random edu information.
 - (instancetype) initWithCoordinate: (CLLocationCoordinate2D) baseCoordinate;
+
+
+- (instancetype) initWithClassInfo: (ClassInfo*) classInfo;
 
 @end

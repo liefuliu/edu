@@ -14,6 +14,15 @@
 		6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EB91B79BBB8006D13B9 /* Icon@2x.png */; };
 		6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */; };
 		6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */; };
+		6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */; };
+		6D013EC51B80D70E006D13B9 /* switch_course_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC41B80D70E006D13B9 /* switch_course_grey.png */; };
+		6D013EC71B80D757006D13B9 /* gnome_session_switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC61B80D757006D13B9 /* gnome_session_switch.png */; };
+		6D013ECA1B80DA19006D13B9 /* right2_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC81B80DA19006D13B9 /* right2_filled-25.png */; };
+		6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC91B80DA19006D13B9 /* right2-25.png */; };
+		6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013ECF1B80E132006D13B9 /* SRXTeacherMapViewController.m */; };
+		6D013ED21B80E6F7006D13B9 /* aries_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */; };
+		6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013ED41B810FAF006D13B9 /* ClassesStore.m */; };
+		6D013ED91B811010006D13B9 /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013ED81B811010006D13B9 /* ClassInfo.m */; };
 		6D08612E1B6EE52200BC5910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D08612D1B6EE52200BC5910 /* main.m */; };
 		6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861301B6EE52200BC5910 /* AppDelegate.m */; };
 		6D0861341B6EE52200BC5910 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861331B6EE52200BC5910 /* ViewController.m */; };
@@ -38,17 +47,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D013EAD1B77E1CA006D13B9 /* LFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LFAnnotation.h; sourceTree = "<group>"; };
-		6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LFAnnotation.m; sourceTree = "<group>"; };
+		6D013EAD1B77E1CA006D13B9 /* LFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFAnnotation.h; path = DropPinOnMapView/LFAnnotation.h; sourceTree = "<group>"; };
+		6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFAnnotation.m; path = DropPinOnMapView/LFAnnotation.m; sourceTree = "<group>"; };
 		6D013EB01B782431006D13B9 /* congfucius_study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = congfucius_study.jpg; sourceTree = "<group>"; };
 		6D013EB31B78F368006D13B9 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		6D013EB41B78F368006D13B9 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
 		6D013EB91B79BBB8006D13B9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DPMClassItemViewController.h; path = ../DPMClassItemViewController.h; sourceTree = "<group>"; };
-		6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DPMClassItemViewController.m; path = ../DPMClassItemViewController.m; sourceTree = "<group>"; };
-		6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DPMClassItemViewController.xib; path = ../DPMClassItemViewController.xib; sourceTree = "<group>"; };
+		6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMClassItemViewController.h; sourceTree = "<group>"; };
+		6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMClassItemViewController.m; sourceTree = "<group>"; };
+		6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPMClassItemViewController.xib; sourceTree = "<group>"; };
+		6D013EC01B7F9C6E006D13B9 /* SRXStudentMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRXStudentMapViewController.h; path = DropPinOnMapView/SRXStudentMapViewController.h; sourceTree = "<group>"; };
+		6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXStudentMapViewController.m; path = DropPinOnMapView/SRXStudentMapViewController.m; sourceTree = "<group>"; };
+		6D013EC41B80D70E006D13B9 /* switch_course_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_course_grey.png; sourceTree = "<group>"; };
+		6D013EC61B80D757006D13B9 /* gnome_session_switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_session_switch.png; sourceTree = "<group>"; };
+		6D013EC81B80DA19006D13B9 /* right2_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right2_filled-25.png"; sourceTree = "<group>"; };
+		6D013EC91B80DA19006D13B9 /* right2-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right2-25.png"; sourceTree = "<group>"; };
+		6D013ECE1B80E132006D13B9 /* SRXTeacherMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherMapViewController.h; sourceTree = "<group>"; };
+		6D013ECF1B80E132006D13B9 /* SRXTeacherMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherMapViewController.m; sourceTree = "<group>"; };
+		6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aries_filled-25.png"; sourceTree = "<group>"; };
+		6D013ED31B810FAF006D13B9 /* ClassesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesStore.h; sourceTree = "<group>"; };
+		6D013ED41B810FAF006D13B9 /* ClassesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesStore.m; sourceTree = "<group>"; };
+		6D013ED71B811010006D13B9 /* ClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
+		6D013ED81B811010006D13B9 /* ClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
 		6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPinOnMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08612C1B6EE52200BC5910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D08612D1B6EE52200BC5910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,9 +118,59 @@
 			name = "Files Above Are From 3rd Party Libraries";
 			sourceTree = "<group>";
 		};
+		6D013EC31B80D6F8006D13B9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */,
+				6D013EC81B80DA19006D13B9 /* right2_filled-25.png */,
+				6D013EC91B80DA19006D13B9 /* right2-25.png */,
+				6D013EC61B80D757006D13B9 /* gnome_session_switch.png */,
+				6D013EC41B80D70E006D13B9 /* switch_course_grey.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		6D013ECC1B80E0DB006D13B9 /* StudentView */ = {
+			isa = PBXGroup;
+			children = (
+				6D013EC01B7F9C6E006D13B9 /* SRXStudentMapViewController.h */,
+				6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */,
+			);
+			name = StudentView;
+			sourceTree = "<group>";
+		};
+		6D013ECD1B80E0F3006D13B9 /* TeacherView */ = {
+			isa = PBXGroup;
+			children = (
+				6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */,
+				6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */,
+				6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */,
+				6D013ECE1B80E132006D13B9 /* SRXTeacherMapViewController.h */,
+				6D013ECF1B80E132006D13B9 /* SRXTeacherMapViewController.m */,
+			);
+			name = TeacherView;
+			sourceTree = "<group>";
+		};
+		6D013ED61B810FBC006D13B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D013ED31B810FAF006D13B9 /* ClassesStore.h */,
+				6D013ED41B810FAF006D13B9 /* ClassesStore.m */,
+				6D013EAD1B77E1CA006D13B9 /* LFAnnotation.h */,
+				6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */,
+				6D013ED71B811010006D13B9 /* ClassInfo.h */,
+				6D013ED81B811010006D13B9 /* ClassInfo.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6D013ED61B810FBC006D13B9 /* Model */,
+				6D013ECD1B80E0F3006D13B9 /* TeacherView */,
+				6D013ECC1B80E0DB006D13B9 /* StudentView */,
+				6D013EC31B80D6F8006D13B9 /* Resources */,
 				6D013EB31B78F368006D13B9 /* CCLocationManager.h */,
 				6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */,
 				6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */,
@@ -124,9 +196,6 @@
 		6D08612A1B6EE52200BC5910 /* DropPinOnMapView */ = {
 			isa = PBXGroup;
 			children = (
-				6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */,
-				6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */,
-				6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */,
 				6D013EB91B79BBB8006D13B9 /* Icon@2x.png */,
 				6D013EB01B782431006D13B9 /* congfucius_study.jpg */,
 				6D08612F1B6EE52200BC5910 /* AppDelegate.h */,
@@ -139,8 +208,6 @@
 				6D08612B1B6EE52200BC5910 /* Supporting Files */,
 				6D0861511B6EE59C00BC5910 /* MapViewController.h */,
 				6D0861521B6EE59C00BC5910 /* MapViewController.m */,
-				6D013EAD1B77E1CA006D13B9 /* LFAnnotation.h */,
-				6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */,
 				6D0861531B6EE59C00BC5910 /* MapViewController.xib */,
 			);
 			path = DropPinOnMapView;
@@ -254,12 +321,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D0861371B6EE52200BC5910 /* Main.storyboard in Resources */,
+				6D013ED21B80E6F7006D13B9 /* aries_filled-25.png in Resources */,
+				6D013EC51B80D70E006D13B9 /* switch_course_grey.png in Resources */,
+				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */,
 				6D08613C1B6EE52200BC5910 /* LaunchScreen.xib in Resources */,
 				6D013EB11B782431006D13B9 /* congfucius_study.jpg in Resources */,
+				6D013ECA1B80DA19006D13B9 /* right2_filled-25.png in Resources */,
 				6D0861391B6EE52200BC5910 /* Images.xcassets in Resources */,
 				6D0861551B6EE59C00BC5910 /* MapViewController.xib in Resources */,
+				6D013EC71B80D757006D13B9 /* gnome_session_switch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +349,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D013ED91B811010006D13B9 /* ClassInfo.m in Sources */,
 				6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
+				6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
+				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
+				6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */,
 				6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */,
 				6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */,
 				6D0861541B6EE59C00BC5910 /* MapViewController.m in Sources */,

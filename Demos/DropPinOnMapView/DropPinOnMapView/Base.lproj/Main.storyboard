@@ -1,26 +1,241 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cKS-WS-Gee">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--Navigation Controller-->
+        <scene sceneID="vZY-xV-BhQ">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <navigationController id="77p-Ed-LVf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" selectedImage="Icon.png" systemItem="search" id="yMa-2k-Rrc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Hua-ZQ-CPW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="8Ui-Kt-pfe" kind="relationship" relationship="rootViewController" id="fPQ-Uo-cLx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZvN-La-ojC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-694" y="-290"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="bgJ-Uc-dLp">
+            <objects>
+                <viewController id="G95-9D-ZHH" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="Qhx-l8-7Ub"/>
+                        <viewControllerLayoutGuide type="bottom" id="Gdb-Y0-xcd"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                    <view key="view" contentMode="scaleToFill" id="RyR-HK-b1G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-qG-Boe">
+                                <rect key="frame" x="258" y="120" width="60" height="30"/>
+                                <state key="normal" title="我要教学">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="VY9-93-Wsq" kind="show" id="0t7-Zm-3Bn"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aXj-qG-Boe" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="100" id="OhM-uu-paD"/>
+                            <constraint firstAttribute="centerX" secondItem="aXj-qG-Boe" secondAttribute="centerX" constant="12.5" id="Tag-eu-mKf"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="right2-25.png" id="J71-SX-bxb"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dtL-UH-zWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-21" y="400"/>
+        </scene>
+        <!--New Class-->
+        <scene sceneID="NXS-km-917">
+            <objects>
+                <navigationController id="J3T-LA-cjF" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New Class" image="aries_filled-25.png" id="ThV-ey-ozo"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dbu-s1-4oE">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="IXX-S9-ZXr" kind="relationship" relationship="rootViewController" id="6QJ-z8-9IO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lI5-Fp-D7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1634" y="1847"/>
+        </scene>
+        <!--长按地图上的点开班-->
+        <scene sceneID="It7-Te-VCV">
+            <objects>
+                <viewController id="IXX-S9-ZXr" customClass="SRXTeacherMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lcW-Xu-31g"/>
+                        <viewControllerLayoutGuide type="bottom" id="gqB-bo-kee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gub-UT-cAN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Gka-sj-0eh">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Gka-sj-0eh" firstAttribute="top" secondItem="lcW-Xu-31g" secondAttribute="bottom" id="7bK-5C-9xZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Gka-sj-0eh" secondAttribute="trailing" constant="-16" id="Cl9-r3-Cdt"/>
+                            <constraint firstItem="Gka-sj-0eh" firstAttribute="leading" secondItem="gub-UT-cAN" secondAttribute="leadingMargin" constant="-16" id="PzS-kc-cDF"/>
+                            <constraint firstItem="gqB-bo-kee" firstAttribute="top" secondItem="Gka-sj-0eh" secondAttribute="bottom" id="y9t-8m-Wey"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="2Xc-kM-fTy"/>
+                    <navigationItem key="navigationItem" title="长按地图上的点开班" id="aKc-66-O6O"/>
+                    <connections>
+                        <outlet property="myMapView" destination="Gka-sj-0eh" id="g6u-T0-HFy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t5o-Co-SZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-897" y="1847"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="pyY-O7-kYv">
+            <objects>
+                <tabBarController storyboardIdentifier="BeTeacher" id="VY9-93-Wsq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="1DO-Wq-760"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="GEt-ZY-PNj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="J3T-LA-cjF" kind="relationship" relationship="viewControllers" id="WYb-LA-yB3"/>
+                        <segue destination="8fn-1Q-kL4" kind="relationship" relationship="viewControllers" id="0aV-iP-d3o"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R2I-oH-1Hd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-584" y="1110"/>
+        </scene>
+        <!--请选择班级-->
+        <scene sceneID="zw7-Ql-oM9">
+            <objects>
+                <viewController id="8Ui-Kt-pfe" customClass="SRXStudentMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VuL-SG-o5A"/>
+                        <viewControllerLayoutGuide type="bottom" id="alf-cr-Ed9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rzR-8o-7lF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lIQ-fj-oDt">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="573"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lIQ-fj-oDt" firstAttribute="top" secondItem="rzR-8o-7lF" secondAttribute="topMargin" id="1zb-b2-eei"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lIQ-fj-oDt" secondAttribute="trailing" constant="-16" id="77D-C7-vT2"/>
+                            <constraint firstItem="lIQ-fj-oDt" firstAttribute="leading" secondItem="rzR-8o-7lF" secondAttribute="leadingMargin" constant="-16" id="Na5-St-TDW"/>
+                            <constraint firstItem="lIQ-fj-oDt" firstAttribute="top" secondItem="rzR-8o-7lF" secondAttribute="topMargin" id="e55-fI-4WD"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="lIQ-fj-oDt" secondAttribute="bottom" constant="27" id="fvJ-oC-u64"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="请选择班级" id="IrV-pu-7rc"/>
+                    <connections>
+                        <outlet property="myMapView" destination="lIQ-fj-oDt" id="3hJ-56-PbF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ee1-0y-FNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-21" y="-290"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Kc7-pk-L3C">
+            <objects>
+                <viewController id="1Eb-mH-e3e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0oU-2p-wht"/>
+                        <viewControllerLayoutGuide type="bottom" id="gyG-YX-HXX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="A43-PV-xtD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgW-W1-fBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="664" y="286"/>
+            <point key="canvasLocation" x="609" y="-298"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Y9M-av-z6Y">
+            <objects>
+                <tabBarController storyboardIdentifier="BeStudent" id="cKS-WS-Gee" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="tOv-gk-dqs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="77p-Ed-LVf" kind="relationship" relationship="viewControllers" id="cYa-It-uRq"/>
+                        <segue destination="G95-9D-ZHH" kind="relationship" relationship="viewControllers" id="snF-k6-sjC"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PF8-zW-6Tw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-689" y="400"/>
+        </scene>
+        <!--Me-->
+        <scene sceneID="KYs-LQ-j5H">
+            <objects>
+                <viewController id="8fn-1Q-kL4" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qtI-BQ-Wuc"/>
+                        <viewControllerLayoutGuide type="bottom" id="HBb-g1-MEJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H3Y-CB-3Hd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ngi-pj-XJK">
+                                <rect key="frame" x="258" y="120" width="60" height="30"/>
+                                <state key="normal" title="我要学习">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="cKS-WS-Gee" kind="show" id="7Ef-2f-B8t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Ngi-pj-XJK" secondAttribute="centerX" constant="12.5" id="POE-W8-lm6"/>
+                            <constraint firstItem="Ngi-pj-XJK" firstAttribute="top" secondItem="qtI-BQ-Wuc" secondAttribute="bottom" constant="100" id="vHx-XX-7n9"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Me" image="right2-25.png" id="WB4-C5-v4u"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asA-dD-8xt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="460" y="1110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon.png" width="60" height="60"/>
+        <image name="aries_filled-25.png" width="25" height="25"/>
+        <image name="right2-25.png" width="25" height="25"/>
+    </resources>
 </document>

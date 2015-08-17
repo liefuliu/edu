@@ -20,7 +20,7 @@
                 </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-            <point key="canvasLocation" x="224" y="186"/>
+            <point key="canvasLocation" x="229" y="171"/>
         </view>
     </objects>
 </document>

@@ -83,6 +83,7 @@
                 <constraint firstItem="Ft2-yE-SNW" firstAttribute="top" secondItem="KzK-oK-wBT" secondAttribute="bottom" constant="24" id="p8C-vA-R50"/>
                 <constraint firstAttribute="trailing" secondItem="bsF-QI-elm" secondAttribute="trailing" constant="100" id="rIR-jf-fVw"/>
             </constraints>
+            <point key="canvasLocation" x="596" y="406"/>
         </view>
     </objects>
 </document>
