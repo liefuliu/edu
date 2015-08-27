@@ -65,6 +65,22 @@
     
 }
 
+/*
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (IS_IOS8) {
+        [UIApplication sharedApplication].idleTimerDisabled = TRUE;
+        locationmanager = [[CLLocationManager alloc] init];
+        [locationmanager requestAlwaysAuthorization];        //NSLocationAlwaysUsageDescription
+        [locationmanager requestWhenInUseAuthorization];     //NSLocationWhenInUseDescription
+        locationmanager.delegate = self;
+    }
+    
+    [self performSelector:@selector(getLocation)];
+    NSLog(@"viewWillAppear finished");
+}*/
+
 - (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     NSLog(@"mapView didUpdateUserLocation");
     [self performSelector:@selector(getLocation)];
@@ -148,17 +164,24 @@
 {
     [mapView deselectAnnotation:view.annotation animated:YES];
     
-    /*
-    DetailsViewController *controller = [self.storyboard instantiateViewControllerWithIdentifier:@"DetailsPopover"];
-    controller.annotation = view.annotation;
-    self.popover = [[UIPopoverController alloc] initWithContentViewController:controller];
-    self.popover.delegate = self;
-    [self.popover presentPopoverFromRect:view.frame
-                                  inView:view.superview
-                permittedArrowDirections:UIPopoverArrowDirectionAny
-                                animated:YES];*/
     NSLog(@"didSelectAnnotationView");
 }
 
+-(void)viewDidDisappear:(BOOL)animated
+{
+    NSLog(@"StudentMapViewController viewDidDisappear");
+    [super viewDidDisappear:animated];
+    //[self purgeMapMemory];
+}
+
+// This is for a bug in MKMapView for iOS6
+// Try to purge some of the memory being allocated by the map
+- (void)purgeMapMemory
+{
+    // Switching map types causes cache purging, so switch to a different map type
+    self.myMapView.mapType = MKMapTypeStandard;
+    [self.myMapView removeFromSuperview];
+    self.myMapView = nil;
+}
 
 @end

@@ -156,4 +156,23 @@
     }
 }
 
+
+-(void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    
+    // This is for a bug in MKMapView for iOS6
+    // [self purgeMapMemory];
+}
+
+// This is for a bug in MKMapView for iOS6
+// Try to purge some of the memory being allocated by the map
+- (void)purgeMapMemory
+{
+    // Switching map types causes cache purging, so switch to a different map type
+    self.myMapView.mapType = MKMapTypeStandard;
+    [self.myMapView removeFromSuperview];
+    self.myMapView = nil;
+}
+
 @end

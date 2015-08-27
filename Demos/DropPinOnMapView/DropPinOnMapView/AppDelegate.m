@@ -5,7 +5,7 @@
 //  Created by Liefu Liu on 8/2/15.
 
 #import "AppDelegate.h"
-#import "MapViewController.h"
+#import <Parse/Parse.h>
 
 @interface AppDelegate ()
 
@@ -26,6 +26,13 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
      */
+    
+    // Add the Parse support.
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"v9dWkNcnBpIqIvramHo8CqAUts18toQJ1d9MTMNH"
+                  clientKey:@"mwV3UjHfcFfSohPbjYk9QKt567OyJm6701TRSQmf"];
     return YES;
 }
 

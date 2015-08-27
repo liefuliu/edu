@@ -30,10 +30,22 @@
 		6D0861391B6EE52200BC5910 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D0861381B6EE52200BC5910 /* Images.xcassets */; };
 		6D08613C1B6EE52200BC5910 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D08613A1B6EE52200BC5910 /* LaunchScreen.xib */; };
 		6D0861481B6EE52200BC5910 /* DropPinOnMapViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861471B6EE52200BC5910 /* DropPinOnMapViewTests.m */; };
-		6D0861541B6EE59C00BC5910 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861521B6EE59C00BC5910 /* MapViewController.m */; };
-		6D0861551B6EE59C00BC5910 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D0861531B6EE59C00BC5910 /* MapViewController.xib */; };
 		6D0861571B6EE73600BC5910 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0861561B6EE73600BC5910 /* MapKit.framework */; };
 		6D0861591B6EEF4000BC5910 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D0861581B6EEF4000BC5910 /* CoreLocation.framework */; };
+		6D2DE8011B88EA4A00889E17 /* SRXMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8001B88EA4A00889E17 /* SRXMeViewController.m */; };
+		6D2DE8041B88EDF400889E17 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8021B88EDF400889E17 /* Bolts.framework */; };
+		6D2DE8051B88EDF400889E17 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8031B88EDF400889E17 /* Parse.framework */; };
+		6D2DE80C1B88EE5600889E17 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8061B88EE5600889E17 /* AudioToolbox.framework */; };
+		6D2DE80D1B88EE5600889E17 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8071B88EE5600889E17 /* CFNetwork.framework */; };
+		6D2DE80E1B88EE5600889E17 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8081B88EE5600889E17 /* CoreGraphics.framework */; };
+		6D2DE80F1B88EE5600889E17 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8091B88EE5600889E17 /* Security.framework */; };
+		6D2DE8101B88EE5600889E17 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE80A1B88EE5600889E17 /* StoreKit.framework */; };
+		6D2DE8111B88EE5600889E17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE80B1B88EE5600889E17 /* SystemConfiguration.framework */; };
+		6D2DE8141B88EE8300889E17 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */; };
+		6D2DE8151B88EE8300889E17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8131B88EE8300889E17 /* libz.dylib */; };
+		6D2DE8181B895F0800889E17 /* SRXTeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */; };
+		6D2DE81A1B89955F00889E17 /* Teach.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE8191B89955F00889E17 /* Teach.Storyboard */; };
+		6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6274A81B884BFE00023458 /* ParseUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,11 +96,24 @@
 		6D0861411B6EE52200BC5910 /* DropPinOnMapViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DropPinOnMapViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D0861461B6EE52200BC5910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D0861471B6EE52200BC5910 /* DropPinOnMapViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DropPinOnMapViewTests.m; sourceTree = "<group>"; };
-		6D0861511B6EE59C00BC5910 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
-		6D0861521B6EE59C00BC5910 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
-		6D0861531B6EE59C00BC5910 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		6D0861561B6EE73600BC5910 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6D0861581B6EEF4000BC5910 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6D2DE7FF1B88EA4A00889E17 /* SRXMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXMeViewController.h; sourceTree = "<group>"; };
+		6D2DE8001B88EA4A00889E17 /* SRXMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXMeViewController.m; sourceTree = "<group>"; };
+		6D2DE8021B88EDF400889E17 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		6D2DE8031B88EDF400889E17 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		6D2DE8061B88EE5600889E17 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		6D2DE8071B88EE5600889E17 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6D2DE8081B88EE5600889E17 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6D2DE8091B88EE5600889E17 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6D2DE80A1B88EE5600889E17 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		6D2DE80B1B88EE5600889E17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		6D2DE8131B88EE8300889E17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		6D2DE8161B895F0800889E17 /* SRXTeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherMeViewController.h; sourceTree = "<group>"; };
+		6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherMeViewController.m; sourceTree = "<group>"; };
+		6D2DE8191B89955F00889E17 /* Teach.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Teach.Storyboard; sourceTree = "<group>"; };
+		6D6274A81B884BFE00023458 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +121,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D2DE8141B88EE8300889E17 /* libsqlite3.dylib in Frameworks */,
+				6D2DE8151B88EE8300889E17 /* libz.dylib in Frameworks */,
+				6D2DE80C1B88EE5600889E17 /* AudioToolbox.framework in Frameworks */,
+				6D2DE80D1B88EE5600889E17 /* CFNetwork.framework in Frameworks */,
+				6D2DE80E1B88EE5600889E17 /* CoreGraphics.framework in Frameworks */,
+				6D2DE80F1B88EE5600889E17 /* Security.framework in Frameworks */,
+				6D2DE8101B88EE5600889E17 /* StoreKit.framework in Frameworks */,
+				6D2DE8111B88EE5600889E17 /* SystemConfiguration.framework in Frameworks */,
+				6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */,
 				6D0861591B6EEF4000BC5910 /* CoreLocation.framework in Frameworks */,
 				6D0861571B6EE73600BC5910 /* MapKit.framework in Frameworks */,
+				6D2DE8041B88EDF400889E17 /* Bolts.framework in Frameworks */,
+				6D2DE8051B88EDF400889E17 /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +203,18 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */,
+				6D2DE8131B88EE8300889E17 /* libz.dylib */,
+				6D2DE8061B88EE5600889E17 /* AudioToolbox.framework */,
+				6D2DE8071B88EE5600889E17 /* CFNetwork.framework */,
+				6D2DE8081B88EE5600889E17 /* CoreGraphics.framework */,
+				6D2DE8091B88EE5600889E17 /* Security.framework */,
+				6D2DE80A1B88EE5600889E17 /* StoreKit.framework */,
+				6D2DE80B1B88EE5600889E17 /* SystemConfiguration.framework */,
+				6D2DE8021B88EDF400889E17 /* Bolts.framework */,
+				6D2DE8031B88EDF400889E17 /* Parse.framework */,
+				6D2DE7FE1B88EA1600889E17 /* MeView */,
+				6D6274A81B884BFE00023458 /* ParseUI.framework */,
 				6D013ED61B810FBC006D13B9 /* Model */,
 				6D013ECD1B80E0F3006D13B9 /* TeacherView */,
 				6D013ECC1B80E0DB006D13B9 /* StudentView */,
@@ -206,9 +254,7 @@
 				6D0861381B6EE52200BC5910 /* Images.xcassets */,
 				6D08613A1B6EE52200BC5910 /* LaunchScreen.xib */,
 				6D08612B1B6EE52200BC5910 /* Supporting Files */,
-				6D0861511B6EE59C00BC5910 /* MapViewController.h */,
-				6D0861521B6EE59C00BC5910 /* MapViewController.m */,
-				6D0861531B6EE59C00BC5910 /* MapViewController.xib */,
+				6D2DE8191B89955F00889E17 /* Teach.Storyboard */,
 			);
 			path = DropPinOnMapView;
 			sourceTree = "<group>";
@@ -237,6 +283,17 @@
 				6D0861461B6EE52200BC5910 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D2DE7FE1B88EA1600889E17 /* MeView */ = {
+			isa = PBXGroup;
+			children = (
+				6D2DE7FF1B88EA4A00889E17 /* SRXMeViewController.h */,
+				6D2DE8001B88EA4A00889E17 /* SRXMeViewController.m */,
+				6D2DE8161B895F0800889E17 /* SRXTeacherMeViewController.h */,
+				6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */,
+			);
+			name = MeView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +379,7 @@
 			files = (
 				6D0861371B6EE52200BC5910 /* Main.storyboard in Resources */,
 				6D013ED21B80E6F7006D13B9 /* aries_filled-25.png in Resources */,
+				6D2DE81A1B89955F00889E17 /* Teach.Storyboard in Resources */,
 				6D013EC51B80D70E006D13B9 /* switch_course_grey.png in Resources */,
 				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
@@ -330,7 +388,6 @@
 				6D013EB11B782431006D13B9 /* congfucius_study.jpg in Resources */,
 				6D013ECA1B80DA19006D13B9 /* right2_filled-25.png in Resources */,
 				6D0861391B6EE52200BC5910 /* Images.xcassets in Resources */,
-				6D0861551B6EE59C00BC5910 /* MapViewController.xib in Resources */,
 				6D013EC71B80D757006D13B9 /* gnome_session_switch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,14 +410,15 @@
 				6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
 				6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */,
+				6D2DE8011B88EA4A00889E17 /* SRXMeViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
 				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
 				6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */,
 				6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */,
 				6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */,
-				6D0861541B6EE59C00BC5910 /* MapViewController.m in Sources */,
 				6D013EB81B78FB73006D13B9 /* CLLocation+YCLocation.m in Sources */,
+				6D2DE8181B895F0800889E17 /* SRXTeacherMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +545,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DropPinOnMapView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = DropPinOnMapView;
@@ -498,6 +560,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DropPinOnMapView/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = DropPinOnMapView;

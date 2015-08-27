@@ -25,7 +25,7 @@
         <!--Me-->
         <scene sceneID="bgJ-Uc-dLp">
             <objects>
-                <viewController id="G95-9D-ZHH" sceneMemberID="viewController">
+                <viewController id="G95-9D-ZHH" customClass="SRXMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qhx-l8-7Ub"/>
                         <viewControllerLayoutGuide type="bottom" id="Gdb-Y0-xcd"/>
@@ -40,21 +40,107 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="VY9-93-Wsq" kind="show" id="0t7-Zm-3Bn"/>
+                                    <action selector="buttonToTeachClicked:" destination="G95-9D-ZHH" eventType="touchUpInside" id="rMs-1T-XEh"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pb-nu-Lul">
+                                <rect key="frame" x="23" y="28" width="460" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="aXj-qG-Boe" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="100" id="OhM-uu-paD"/>
                             <constraint firstAttribute="centerX" secondItem="aXj-qG-Boe" secondAttribute="centerX" constant="12.5" id="Tag-eu-mKf"/>
+                            <constraint firstItem="1pb-nu-Lul" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="8" id="WDx-St-w3i"/>
+                            <constraint firstItem="1pb-nu-Lul" firstAttribute="leading" secondItem="RyR-HK-b1G" secondAttribute="leadingMargin" constant="7" id="WmS-G5-kQR"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="right2-25.png" id="J71-SX-bxb"/>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="1pb-nu-Lul" id="e36-31-iHE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtL-UH-zWe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-21" y="400"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="NtT-Ev-yEm">
+            <objects>
+                <tableViewController id="opT-KS-3C9" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="rRc-Ku-Pf9">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bHa-rt-7uf">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bHa-rt-7uf" id="JEi-7r-uAu">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L2p-wM-ezm">
+                                            <rect key="frame" x="18" y="-5" width="55" height="54"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="这个Table View留着备用" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eng-Ww-tz4">
+                                            <rect key="frame" x="93" y="11" width="184" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eUT-8J-57K">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eUT-8J-57K" id="N1e-z6-A4p">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yif-tr-SB1">
+                                            <rect key="frame" x="21" y="13" width="105" height="30"/>
+                                            <state key="normal" title="切换至教学模式">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Nwd-RM-1J3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Nwd-RM-1J3" id="Eza-Ma-WY1">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tHG-Fi-5gR">
+                                            <rect key="frame" x="22" y="0.0" width="30" height="30"/>
+                                            <state key="normal" title="设置">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6OO-9d-mhE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6OO-9d-mhE" id="iEp-9c-OPh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="opT-KS-3C9" id="KWJ-qg-byr"/>
+                            <outlet property="delegate" destination="opT-KS-3C9" id="Kwc-8S-a8q"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="featured" id="JHi-U3-9H7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S5T-aI-T6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="698" y="394"/>
         </scene>
         <!--New Class-->
         <scene sceneID="NXS-km-917">
@@ -105,7 +191,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t5o-Co-SZe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-897" y="1847"/>
+            <point key="canvasLocation" x="-864" y="1831"/>
         </scene>
         <!--Item-->
         <scene sceneID="pyY-O7-kYv">
@@ -177,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgW-W1-fBJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="609" y="-298"/>
+            <point key="canvasLocation" x="630" y="-338"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y9M-av-z6Y">
@@ -201,7 +287,7 @@
         <!--Me-->
         <scene sceneID="KYs-LQ-j5H">
             <objects>
-                <viewController id="8fn-1Q-kL4" sceneMemberID="viewController">
+                <viewController id="8fn-1Q-kL4" customClass="SRXTeacherMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qtI-BQ-Wuc"/>
                         <viewControllerLayoutGuide type="bottom" id="HBb-g1-MEJ"/>
@@ -216,14 +302,14 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="cKS-WS-Gee" kind="show" id="7Ef-2f-B8t"/>
+                                    <action selector="buttonToStudyClicked:" destination="8fn-1Q-kL4" eventType="touchUpInside" id="zak-Nl-1Bf"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Ngi-pj-XJK" firstAttribute="top" secondItem="qtI-BQ-Wuc" secondAttribute="bottom" constant="100" id="JkV-LG-4af"/>
                             <constraint firstAttribute="centerX" secondItem="Ngi-pj-XJK" secondAttribute="centerX" constant="12.5" id="POE-W8-lm6"/>
-                            <constraint firstItem="Ngi-pj-XJK" firstAttribute="top" secondItem="qtI-BQ-Wuc" secondAttribute="bottom" constant="100" id="vHx-XX-7n9"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="right2-25.png" id="WB4-C5-v4u"/>
