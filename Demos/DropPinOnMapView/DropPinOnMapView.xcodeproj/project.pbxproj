@@ -46,6 +46,18 @@
 		6D2DE8181B895F0800889E17 /* SRXTeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */; };
 		6D2DE81A1B89955F00889E17 /* Teach.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE8191B89955F00889E17 /* Teach.Storyboard */; };
 		6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6274A81B884BFE00023458 /* ParseUI.framework */; };
+		6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */; };
+		6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */; };
+		6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27F01B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m */; };
+		6DDE27F31B8ED2EC00A855E5 /* SRXSignUpDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27F11B8ED2EC00A855E5 /* SRXSignUpDetailViewController.xib */; };
+		6DDE27F71B90ADED00A855E5 /* SRXLogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27F51B90ADED00A855E5 /* SRXLogInViewController.m */; };
+		6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27F61B90ADED00A855E5 /* SRXLogInViewController.xib */; };
+		6DDE27FF1B90AE3F00A855E5 /* SRXSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27FD1B90AE3F00A855E5 /* SRXSignUpViewController.m */; };
+		6DDE28001B90AE3F00A855E5 /* SRXSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27FE1B90AE3F00A855E5 /* SRXSignUpViewController.xib */; };
+		6DDE28041B90AE5D00A855E5 /* SRXLogInDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28021B90AE5D00A855E5 /* SRXLogInDetailViewController.m */; };
+		6DDE28051B90AE5D00A855E5 /* SRXLogInDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28031B90AE5D00A855E5 /* SRXLogInDetailViewController.xib */; };
+		6DDE28091B928C4800A855E5 /* SRXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28081B928C4800A855E5 /* SRXColor.m */; };
+		6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +126,25 @@
 		6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherMeViewController.m; sourceTree = "<group>"; };
 		6D2DE8191B89955F00889E17 /* Teach.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Teach.Storyboard; sourceTree = "<group>"; };
 		6D6274A81B884BFE00023458 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		6DDE27EA1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInSignUpViewController.h; sourceTree = "<group>"; };
+		6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInSignUpViewController.m; sourceTree = "<group>"; };
+		6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXLogInSignUpViewController.xib; sourceTree = "<group>"; };
+		6DDE27EF1B8ED2EC00A855E5 /* SRXSignupDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXSignupDetailViewController.h; sourceTree = "<group>"; };
+		6DDE27F01B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXSignUpDetailViewController.m; sourceTree = "<group>"; };
+		6DDE27F11B8ED2EC00A855E5 /* SRXSignUpDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXSignUpDetailViewController.xib; sourceTree = "<group>"; };
+		6DDE27F41B90ADED00A855E5 /* SRXLogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInViewController.h; sourceTree = "<group>"; };
+		6DDE27F51B90ADED00A855E5 /* SRXLogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInViewController.m; sourceTree = "<group>"; };
+		6DDE27F61B90ADED00A855E5 /* SRXLogInViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXLogInViewController.xib; sourceTree = "<group>"; };
+		6DDE27FC1B90AE3F00A855E5 /* SRXSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXSignUpViewController.h; sourceTree = "<group>"; };
+		6DDE27FD1B90AE3F00A855E5 /* SRXSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXSignUpViewController.m; sourceTree = "<group>"; };
+		6DDE27FE1B90AE3F00A855E5 /* SRXSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXSignUpViewController.xib; sourceTree = "<group>"; };
+		6DDE28011B90AE5D00A855E5 /* SRXLogInDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInDetailViewController.h; sourceTree = "<group>"; };
+		6DDE28021B90AE5D00A855E5 /* SRXLogInDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInDetailViewController.m; sourceTree = "<group>"; };
+		6DDE28031B90AE5D00A855E5 /* SRXLogInDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXLogInDetailViewController.xib; sourceTree = "<group>"; };
+		6DDE28071B928C4800A855E5 /* SRXColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXColor.h; sourceTree = "<group>"; };
+		6DDE28081B928C4800A855E5 /* SRXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXColor.m; sourceTree = "<group>"; };
+		6DDE280A1B92D35B00A855E5 /* SRXUserAccountSuperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserAccountSuperViewController.h; sourceTree = "<group>"; };
+		6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserAccountSuperViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +234,8 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6DDE28061B928C1500A855E5 /* Colors */,
+				6DDE27E91B8ED2BD00A855E5 /* LogIn */,
 				6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */,
 				6D2DE8131B88EE8300889E17 /* libz.dylib */,
 				6D2DE8061B88EE5600889E17 /* AudioToolbox.framework */,
@@ -296,6 +329,39 @@
 			name = MeView;
 			sourceTree = "<group>";
 		};
+		6DDE27E91B8ED2BD00A855E5 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				6DDE28011B90AE5D00A855E5 /* SRXLogInDetailViewController.h */,
+				6DDE28021B90AE5D00A855E5 /* SRXLogInDetailViewController.m */,
+				6DDE28031B90AE5D00A855E5 /* SRXLogInDetailViewController.xib */,
+				6DDE27F41B90ADED00A855E5 /* SRXLogInViewController.h */,
+				6DDE27F51B90ADED00A855E5 /* SRXLogInViewController.m */,
+				6DDE27F61B90ADED00A855E5 /* SRXLogInViewController.xib */,
+				6DDE27EA1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.h */,
+				6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */,
+				6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */,
+				6DDE27EF1B8ED2EC00A855E5 /* SRXSignupDetailViewController.h */,
+				6DDE27F01B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m */,
+				6DDE27F11B8ED2EC00A855E5 /* SRXSignUpDetailViewController.xib */,
+				6DDE27FC1B90AE3F00A855E5 /* SRXSignUpViewController.h */,
+				6DDE27FD1B90AE3F00A855E5 /* SRXSignUpViewController.m */,
+				6DDE27FE1B90AE3F00A855E5 /* SRXSignUpViewController.xib */,
+				6DDE280A1B92D35B00A855E5 /* SRXUserAccountSuperViewController.h */,
+				6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */,
+			);
+			name = LogIn;
+			sourceTree = "<group>";
+		};
+		6DDE28061B928C1500A855E5 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				6DDE28071B928C4800A855E5 /* SRXColor.h */,
+				6DDE28081B928C4800A855E5 /* SRXColor.m */,
+			);
+			name = Colors;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -384,10 +450,15 @@
 				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */,
+				6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */,
 				6D08613C1B6EE52200BC5910 /* LaunchScreen.xib in Resources */,
+				6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */,
+				6DDE28051B90AE5D00A855E5 /* SRXLogInDetailViewController.xib in Resources */,
 				6D013EB11B782431006D13B9 /* congfucius_study.jpg in Resources */,
 				6D013ECA1B80DA19006D13B9 /* right2_filled-25.png in Resources */,
 				6D0861391B6EE52200BC5910 /* Images.xcassets in Resources */,
+				6DDE27F31B8ED2EC00A855E5 /* SRXSignUpDetailViewController.xib in Resources */,
+				6DDE28001B90AE3F00A855E5 /* SRXSignUpViewController.xib in Resources */,
 				6D013EC71B80D757006D13B9 /* gnome_session_switch.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,19 +477,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */,
 				6D013ED91B811010006D13B9 /* ClassInfo.m in Sources */,
+				6DDE28091B928C4800A855E5 /* SRXColor.m in Sources */,
 				6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
+				6DDE27FF1B90AE3F00A855E5 /* SRXSignUpViewController.m in Sources */,
 				6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */,
 				6D2DE8011B88EA4A00889E17 /* SRXMeViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
+				6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */,
+				6DDE27F71B90ADED00A855E5 /* SRXLogInViewController.m in Sources */,
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
 				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
 				6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */,
 				6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */,
 				6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */,
 				6D013EB81B78FB73006D13B9 /* CLLocation+YCLocation.m in Sources */,
+				6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */,
 				6D2DE8181B895F0800889E17 /* SRXTeacherMeViewController.m in Sources */,
+				6DDE28041B90AE5D00A855E5 /* SRXLogInDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
 #import <ParseUI/PFLogInViewController.h>
+#import "SRXLogInSignUpViewController.h"
 
 @interface SRXMeViewController () <PFLogInViewControllerDelegate>
 
@@ -26,16 +27,21 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    /* TODO: enable following code*/
+    [self popupLogInWindowIfNotSigned];
+}
+
+- (void) popupLogInWindowIfNotSigned {
     PFUser *user = [PFUser currentUser];
     NSLog(@"PFUser: %@", user);
     if(user == nil) {
-        PFLogInViewController *logInController = [[PFLogInViewController alloc] init];
-        logInController.logInView.signUpButton.titleLabel.text = @"注册";
-        logInController.logInView.signUpButton.backgroundColor = [UIColor blackColor];
-        logInController.logInView.logInButton.backgroundColor = [UIColor redColor];
-        logInController.delegate = self;
-        [self presentViewController:logInController animated:YES completion:nil];
+        SRXLogInSignUpViewController* myLogInController = [[SRXLogInSignUpViewController alloc] init];
+        
+        UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:myLogInController];
+        [self presentViewController:navController animated:YES completion:^{
+            if ([PFUser currentUser] == nil) {
+                self.tabBarController.selectedIndex = 0;
+            }
+        }];
     }
 }
 
@@ -53,24 +59,11 @@
 }
 
 - (IBAction)buttonToTeachClicked:(id)sender {
-    /*
-     
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"BeTeacher"];
-    [self presentViewController:vc animated:YES completion:nil];*/
-    
-    
     UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"Teach" bundle:nil];
     UIViewController* secondViewController = [secondStoryboard instantiateViewControllerWithIdentifier:@"BeTeacher"];
     
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     [self.tabBarController presentViewController: secondViewController animated:YES completion: NULL];
-
-    
-    //[self dismissViewControllerAnimated:YES completion:nil];
-    
-
 }
 
 

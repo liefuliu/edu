@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SRXLogInViewController">
+            <connections>
+                <outlet property="buttonWxLogIn" destination="yQU-1p-ZS8" id="jiC-uG-ptG"/>
+                <outlet property="userNameField" destination="tQo-ZZ-PLb" id="Js4-6w-7ZD"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="通过以下方式快速登录:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXz-jj-zQd">
+                    <rect key="frame" x="40" y="85" width="175" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="电子邮件/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tQo-ZZ-PLb">
+                    <rect key="frame" x="40" y="236" width="520" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="userNameFieldEditBegan:" destination="-1" eventType="editingDidBegin" id="WAS-AO-DIY"/>
+                        <action selector="userNameFieldTouched:" destination="-1" eventType="touchUpInside" id="bsd-ar-hzl"/>
+                        <action selector="userNameTouchedDown:" destination="-1" eventType="touchDown" id="WTc-JT-IUi"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQU-1p-ZS8">
+                    <rect key="frame" x="40" y="126" width="520" height="30"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="微信 （暂不可用）">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="或用电子邮箱或手机号登录" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTK-7O-dx1">
+                    <rect key="frame" x="40" y="196" width="204" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="rXz-jj-zQd" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="0Gn-F2-Byv"/>
+                <constraint firstItem="yQU-1p-ZS8" firstAttribute="leading" secondItem="rXz-jj-zQd" secondAttribute="leading" id="4cF-n1-XgW"/>
+                <constraint firstItem="yQU-1p-ZS8" firstAttribute="leading" secondItem="BTK-7O-dx1" secondAttribute="leading" id="NIz-AY-IAi"/>
+                <constraint firstAttribute="trailing" secondItem="yQU-1p-ZS8" secondAttribute="trailing" constant="40" id="T7v-Q6-ULX"/>
+                <constraint firstItem="yQU-1p-ZS8" firstAttribute="top" secondItem="rXz-jj-zQd" secondAttribute="bottom" constant="20" id="X6V-rc-NA2"/>
+                <constraint firstItem="yQU-1p-ZS8" firstAttribute="trailing" secondItem="tQo-ZZ-PLb" secondAttribute="trailing" id="Zr7-fP-acH"/>
+                <constraint firstItem="tQo-ZZ-PLb" firstAttribute="top" secondItem="BTK-7O-dx1" secondAttribute="bottom" constant="20" id="gfI-Ex-eW9"/>
+                <constraint firstItem="BTK-7O-dx1" firstAttribute="top" secondItem="yQU-1p-ZS8" secondAttribute="bottom" constant="40" id="nh5-g6-3GO"/>
+                <constraint firstItem="yQU-1p-ZS8" firstAttribute="leading" secondItem="tQo-ZZ-PLb" secondAttribute="leading" id="rXy-6P-7AP"/>
+                <constraint firstItem="rXz-jj-zQd" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="w2j-Xy-xkJ"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

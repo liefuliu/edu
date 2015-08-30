@@ -34,13 +34,6 @@
 }
 */
 - (IBAction)buttonToStudyClicked:(id)sender {
-    /*
-    NSString * storyboardName = @"Main";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
-    UIViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"BeStudent"];
-    [self presentViewController:vc animated:YES completion:nil];
-    */
-    
     UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     UIViewController* mainViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"BeStudent"];
     [self presentViewController: mainViewController animated:YES completion: NULL];
@@ -56,7 +49,6 @@
     
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     [self.tabBarController presentViewController: mainViewController animated:YES completion: NULL];
-    //[self.tabBarController dismissModalViewControllerAnimated:YES];
 }
 
 @end
