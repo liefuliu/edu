@@ -35,31 +35,65 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXj-qG-Boe">
-                                <rect key="frame" x="258" y="120" width="60" height="30"/>
+                                <rect key="frame" x="66" y="120" width="468" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="我要教学">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonToTeachClicked:" destination="G95-9D-ZHH" eventType="touchUpInside" id="rMs-1T-XEh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pb-nu-Lul">
-                                <rect key="frame" x="23" y="28" width="460" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1pb-nu-Lul">
+                                <rect key="frame" x="46" y="50" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z5c-Mq-1C8">
+                                <rect key="frame" x="66" y="170" width="468" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="退出登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLogOutTouched:" destination="G95-9D-ZHH" eventType="touchUpInside" id="IMc-5V-Yzj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6M-dR-AlJ">
+                                <rect key="frame" x="66" y="494" width="468" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="您尚未登录，点击此处登录">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonLogInTouched:" destination="G95-9D-ZHH" eventType="touchUpInside" id="AEy-R5-zO4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aXj-qG-Boe" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="100" id="OhM-uu-paD"/>
-                            <constraint firstAttribute="centerX" secondItem="aXj-qG-Boe" secondAttribute="centerX" constant="12.5" id="Tag-eu-mKf"/>
-                            <constraint firstItem="1pb-nu-Lul" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="8" id="WDx-St-w3i"/>
-                            <constraint firstItem="1pb-nu-Lul" firstAttribute="leading" secondItem="RyR-HK-b1G" secondAttribute="leadingMargin" constant="7" id="WmS-G5-kQR"/>
+                            <constraint firstItem="aXj-qG-Boe" firstAttribute="leading" secondItem="z5c-Mq-1C8" secondAttribute="leading" id="54H-Gg-rss"/>
+                            <constraint firstItem="aXj-qG-Boe" firstAttribute="trailing" secondItem="H6M-dR-AlJ" secondAttribute="trailing" id="7UB-bw-wJ3"/>
+                            <constraint firstItem="z5c-Mq-1C8" firstAttribute="top" secondItem="aXj-qG-Boe" secondAttribute="bottom" constant="20" id="PGH-u1-8CQ"/>
+                            <constraint firstItem="aXj-qG-Boe" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="100" id="UJ5-iw-nqT"/>
+                            <constraint firstItem="aXj-qG-Boe" firstAttribute="trailing" secondItem="z5c-Mq-1C8" secondAttribute="trailing" id="csT-6R-JpR"/>
+                            <constraint firstItem="Gdb-Y0-xcd" firstAttribute="top" secondItem="H6M-dR-AlJ" secondAttribute="bottom" constant="27" id="hNy-Je-A4u"/>
+                            <constraint firstItem="1pb-nu-Lul" firstAttribute="top" secondItem="Qhx-l8-7Ub" secondAttribute="bottom" constant="30" id="iKE-ni-iAx"/>
+                            <constraint firstItem="aXj-qG-Boe" firstAttribute="leading" secondItem="H6M-dR-AlJ" secondAttribute="leading" id="lCv-hx-Dy6"/>
+                            <constraint firstItem="1pb-nu-Lul" firstAttribute="leading" secondItem="RyR-HK-b1G" secondAttribute="leadingMargin" constant="30" id="oT7-jT-UyI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="H6M-dR-AlJ" secondAttribute="trailing" constant="50" id="srz-se-ILK"/>
+                            <constraint firstItem="H6M-dR-AlJ" firstAttribute="leading" secondItem="RyR-HK-b1G" secondAttribute="leadingMargin" constant="50" id="wAH-ap-WFq"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Me" image="right2-25.png" id="J71-SX-bxb"/>
                     <connections>
+                        <outlet property="buttonIWantToTeach" destination="aXj-qG-Boe" id="Kzf-Er-SFt"/>
+                        <outlet property="buttonLogIn" destination="H6M-dR-AlJ" id="xuD-Vm-7QM"/>
+                        <outlet property="buttonLogOut" destination="z5c-Mq-1C8" id="Qy7-1V-83F"/>
                         <outlet property="welcomeLabel" destination="1pb-nu-Lul" id="e36-31-iHE"/>
                     </connections>
                 </viewController>

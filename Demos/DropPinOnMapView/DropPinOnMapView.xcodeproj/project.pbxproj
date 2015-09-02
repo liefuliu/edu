@@ -58,6 +58,8 @@
 		6DDE28051B90AE5D00A855E5 /* SRXLogInDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28031B90AE5D00A855E5 /* SRXLogInDetailViewController.xib */; };
 		6DDE28091B928C4800A855E5 /* SRXColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28081B928C4800A855E5 /* SRXColor.m */; };
 		6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */; };
+		6DDE28141B93E48300A855E5 /* SRXUserInfoKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28131B93E48300A855E5 /* SRXUserInfoKeys.m */; };
+		6DDE28171B94034900A855E5 /* SRXUserInputVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +147,12 @@
 		6DDE28081B928C4800A855E5 /* SRXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXColor.m; sourceTree = "<group>"; };
 		6DDE280A1B92D35B00A855E5 /* SRXUserAccountSuperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserAccountSuperViewController.h; sourceTree = "<group>"; };
 		6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserAccountSuperViewController.m; sourceTree = "<group>"; };
+		6DDE280D1B93D1F700A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6DDE280E1B93D1F700A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		6DDE28121B93E48300A855E5 /* SRXUserInfoKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserInfoKeys.h; sourceTree = "<group>"; };
+		6DDE28131B93E48300A855E5 /* SRXUserInfoKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserInfoKeys.m; sourceTree = "<group>"; };
+		6DDE28151B94034900A855E5 /* SRXUserInputVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserInputVerifier.h; sourceTree = "<group>"; };
+		6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserInputVerifier.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +242,7 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6DDE28111B93E43B00A855E5 /* Users */,
 				6DDE28061B928C1500A855E5 /* Colors */,
 				6DDE27E91B8ED2BD00A855E5 /* LogIn */,
 				6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */,
@@ -349,6 +358,8 @@
 				6DDE27FE1B90AE3F00A855E5 /* SRXSignUpViewController.xib */,
 				6DDE280A1B92D35B00A855E5 /* SRXUserAccountSuperViewController.h */,
 				6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */,
+				6DDE28151B94034900A855E5 /* SRXUserInputVerifier.h */,
+				6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */,
 			);
 			name = LogIn;
 			sourceTree = "<group>";
@@ -360,6 +371,15 @@
 				6DDE28081B928C4800A855E5 /* SRXColor.m */,
 			);
 			name = Colors;
+			sourceTree = "<group>";
+		};
+		6DDE28111B93E43B00A855E5 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				6DDE28121B93E48300A855E5 /* SRXUserInfoKeys.h */,
+				6DDE28131B93E48300A855E5 /* SRXUserInfoKeys.m */,
+			);
+			name = Users;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,10 +500,12 @@
 				6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */,
 				6D013ED91B811010006D13B9 /* ClassInfo.m in Sources */,
 				6DDE28091B928C4800A855E5 /* SRXColor.m in Sources */,
+				6DDE28171B94034900A855E5 /* SRXUserInputVerifier.m in Sources */,
 				6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
 				6DDE27FF1B90AE3F00A855E5 /* SRXSignUpViewController.m in Sources */,
 				6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */,
+				6DDE28141B93E48300A855E5 /* SRXUserInfoKeys.m in Sources */,
 				6D2DE8011B88EA4A00889E17 /* SRXMeViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
 				6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */,
@@ -523,6 +545,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D0861361B6EE52200BC5910 /* Base */,
+				6DDE280D1B93D1F700A855E5 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -531,6 +554,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D08613B1B6EE52200BC5910 /* Base */,
+				6DDE280E1B93D1F700A855E5 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";

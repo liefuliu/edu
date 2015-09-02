@@ -9,10 +9,11 @@
 #import "SRXMeViewController.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
-#import <ParseUI/PFLogInViewController.h>
 #import "SRXLogInSignUpViewController.h"
+#import "SRXColor.h"
+#import "SRXUserInfoKeys.h"
 
-@interface SRXMeViewController () <PFLogInViewControllerDelegate>
+@interface SRXMeViewController ()
 
 @end
 
@@ -22,40 +23,88 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [PFUser logOut];
-    
+    //[PFUser logOut];
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    [self popupLogInWindowIfNotSigned];
+    //[self popupLogInWindowIfNotSigned];
+    
+    // [self popupLogInWindowIfNotSigned];
+    // The function is entered before the window closed.
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self initializeColor];
+    [self reload];
+}
+
+- (void) initializeColor {
+    self.buttonLogIn.backgroundColor = [SRXColor colorForLogIn];
+    self.buttonLogOut.backgroundColor = [SRXColor colorForLogOut];
+    self.buttonIWantToTeach.backgroundColor = [SRXColor colorForIWantToTeach];
+}
+
+- (void) reload {
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"current user: %@", user);
+    if (user == nil) {
+        // REMOVE self.tabBarController.selectedIndex = 0;
+        self.welcomeLabel.hidden = YES;
+        self.buttonLogIn.hidden = NO;
+        self.buttonLogOut.hidden = YES;
+        self.buttonIWantToTeach.hidden = YES;
+        
+    } else {
+        // REMOVE self.tabBarController.selectedIndex = 1;
+        self.welcomeLabel.hidden = NO;
+        self.welcomeLabel.text = [NSString stringWithFormat:@"你好，%@",[self getUserDisplayName:user]];
+        self.buttonLogIn.hidden = YES;
+        self.buttonLogOut.hidden = NO;
+        self.buttonIWantToTeach.hidden = NO;
+    }
+}
+
+- (NSString*) getUserDisplayName: (PFUser*) user {
+    if (user[UserInfoKey_PersonName] != nil) {
+        return user[UserInfoKey_PersonName];
+    } else {
+        return user.username;
+    }
+}
+                                  
+
+- (IBAction)buttonLogInTouched:(id)sender {
+    SRXLogInSignUpViewController* myLogInController = [[SRXLogInSignUpViewController alloc] init];
+    
+    UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:myLogInController];
+    [self presentViewController:navController animated:YES completion:^{}];
+    [self reload];
+    //[self.view setNeedsDisplay];
+}
+
+- (IBAction)buttonLogOutTouched:(id)sender {
+   [PFUser logOut];
+    [self reload];
+   //[self.view setNeedsDisplay];
 }
 
 - (void) popupLogInWindowIfNotSigned {
-    PFUser *user = [PFUser currentUser];
-    NSLog(@"PFUser: %@", user);
-    if(user == nil) {
+    PFUser *tempUser = [PFUser currentUser];
+    NSLog(@"PFUser: %@", tempUser);
+    if(tempUser == nil) {
         SRXLogInSignUpViewController* myLogInController = [[SRXLogInSignUpViewController alloc] init];
         
         UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:myLogInController];
-        [self presentViewController:navController animated:YES completion:^{
-            if ([PFUser currentUser] == nil) {
-                self.tabBarController.selectedIndex = 0;
-            }
-        }];
+        [self presentViewController:navController animated:YES completion:^{}];
+    } else {
+        self.welcomeLabel.text = [NSString stringWithFormat:@"你好，%@", tempUser.username];
     }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-
-- (void)logInViewController:(PFLogInViewController *)controller
-               didLogInUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:nil];
-    self.tabBarController.selectedIndex = 0;
-    self.welcomeLabel.text = [NSString stringWithFormat:@"你好，%@", user.username];
 }
 
 - (IBAction)buttonToTeachClicked:(id)sender {

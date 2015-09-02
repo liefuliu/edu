@@ -10,8 +10,9 @@
 
 @interface SRXSignUpDetailViewController : SRXUserAccountSuperViewController
 @property (weak, nonatomic) IBOutlet UIButton *buttonSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *fieldEmail;
-@property (weak, nonatomic) IBOutlet UITextField *fieldPassword;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldEmail;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPassword;
+@property (weak, nonatomic) IBOutlet UITextField *textFieldPersonName;
+@property (weak, nonatomic) IBOutlet UILabel *labelErrorMsg;
 
-@property (weak, nonatomic) IBOutlet UITextField *fieldPersonName;
 @end

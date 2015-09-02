@@ -20,7 +20,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.userNameField.delegate = self;
-    self.buttonWxLogIn.backgroundColor = [SRXColor colorForWeixinLogIn];
+    
+    // Disable the wechat login for now.
+    self.buttonWxLogIn.backgroundColor = [SRXColor colorForWeixinLogInDisabled];
+    self.buttonWxLogIn.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,6 +49,9 @@
 
 - (IBAction)userNameFieldEditBegan:(id)sender {
 }
+
+
+
 
 
 @end

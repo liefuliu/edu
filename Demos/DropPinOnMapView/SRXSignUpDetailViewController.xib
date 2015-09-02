@@ -7,9 +7,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SRXSignUpDetailViewController">
             <connections>
                 <outlet property="buttonSignUp" destination="GSC-uN-1ox" id="eg7-2B-1oz"/>
-                <outlet property="fieldEmail" destination="L8t-mR-Xg7" id="BEo-Fx-HXO"/>
-                <outlet property="fieldPassword" destination="Bu6-vp-TQD" id="eQT-YO-16h"/>
-                <outlet property="fieldPersonName" destination="On7-sJ-OrH" id="3tT-AS-x6U"/>
+                <outlet property="labelErrorMsg" destination="Izs-p3-sCy" id="UfE-is-V7Q"/>
+                <outlet property="textFieldEmail" destination="L8t-mR-Xg7" id="VEQ-EA-hzB"/>
+                <outlet property="textFieldPassword" destination="Bu6-vp-TQD" id="Fo1-gT-fpg"/>
+                <outlet property="textFieldPersonName" destination="On7-sJ-OrH" id="wOe-BY-vUL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,41 +19,63 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="电子邮件/手机号" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L8t-mR-Xg7">
-                    <rect key="frame" x="37" y="94" width="526" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="电子邮件" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="L8t-mR-Xg7">
+                    <rect key="frame" x="37" y="70" width="526" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldEmailEditingChanged:" destination="-1" eventType="editingChanged" id="5fF-dK-hr9"/>
+                    </connections>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bu6-vp-TQD">
-                    <rect key="frame" x="37" y="144" width="526" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Bu6-vp-TQD">
+                    <rect key="frame" x="37" y="105" width="526" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldPasswordEditingChanged:" destination="-1" eventType="editingChanged" id="7U9-Gs-UkN"/>
+                    </connections>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Izs-p3-sCy">
+                    <rect key="frame" x="37" y="321" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSC-uN-1ox">
-                    <rect key="frame" x="37" y="264" width="526" height="30"/>
+                    <rect key="frame" x="37" y="180" width="526" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <state key="normal" title="注册">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="signupButtonClicked:" destination="-1" eventType="touchUpInside" id="7C3-xd-0eO"/>
+                    </connections>
                 </button>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="On7-sJ-OrH">
-                    <rect key="frame" x="37" y="194" width="526" height="30"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓名" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="On7-sJ-OrH">
+                    <rect key="frame" x="37" y="140" width="526" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="textFieldPersonNameEditingChanged:" destination="-1" eventType="editingChanged" id="FLZ-We-sNZ"/>
+                        <action selector="textFieldPersonNameEditingChanged:" destination="-1" eventType="editingDidEnd" id="dXw-y5-Ft9"/>
+                    </connections>
                 </textField>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="GSC-uN-1ox" firstAttribute="leading" secondItem="On7-sJ-OrH" secondAttribute="leading" id="4uz-kn-avn"/>
-                <constraint firstItem="On7-sJ-OrH" firstAttribute="top" secondItem="Bu6-vp-TQD" secondAttribute="bottom" constant="20" id="5F9-Ms-RIV"/>
-                <constraint firstItem="L8t-mR-Xg7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="94" id="6MT-5m-EQn"/>
+                <constraint firstItem="On7-sJ-OrH" firstAttribute="top" secondItem="Bu6-vp-TQD" secondAttribute="bottom" constant="5" id="5F9-Ms-RIV"/>
+                <constraint firstItem="L8t-mR-Xg7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="6MT-5m-EQn"/>
                 <constraint firstItem="GSC-uN-1ox" firstAttribute="leading" secondItem="Bu6-vp-TQD" secondAttribute="leading" id="8Aq-Er-OgC"/>
-                <constraint firstItem="Bu6-vp-TQD" firstAttribute="top" secondItem="L8t-mR-Xg7" secondAttribute="bottom" constant="20" id="CQp-P7-b8G"/>
-                <constraint firstItem="GSC-uN-1ox" firstAttribute="top" secondItem="On7-sJ-OrH" secondAttribute="bottom" constant="40" id="CRk-6U-7K9"/>
+                <constraint firstItem="Bu6-vp-TQD" firstAttribute="top" secondItem="L8t-mR-Xg7" secondAttribute="bottom" constant="5" id="CQp-P7-b8G"/>
+                <constraint firstItem="GSC-uN-1ox" firstAttribute="top" secondItem="On7-sJ-OrH" secondAttribute="bottom" constant="10" id="CRk-6U-7K9"/>
+                <constraint firstItem="Izs-p3-sCy" firstAttribute="leading" secondItem="GSC-uN-1ox" secondAttribute="leading" id="Dqp-5Y-CoT"/>
                 <constraint firstItem="GSC-uN-1ox" firstAttribute="leading" secondItem="L8t-mR-Xg7" secondAttribute="leading" id="Jma-ck-HCR"/>
                 <constraint firstItem="L8t-mR-Xg7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="37" id="cnJ-3K-pct"/>
                 <constraint firstItem="GSC-uN-1ox" firstAttribute="trailing" secondItem="L8t-mR-Xg7" secondAttribute="trailing" id="gfh-Yc-cuF"/>
+                <constraint firstItem="Izs-p3-sCy" firstAttribute="top" secondItem="GSC-uN-1ox" secondAttribute="bottom" constant="27" id="gmK-Fj-m83"/>
+                <constraint firstItem="Izs-p3-sCy" firstAttribute="trailing" secondItem="GSC-uN-1ox" secondAttribute="trailing" id="hP9-fD-RK4"/>
                 <constraint firstItem="GSC-uN-1ox" firstAttribute="trailing" secondItem="On7-sJ-OrH" secondAttribute="trailing" id="jQZ-yu-DqC"/>
                 <constraint firstAttribute="trailing" secondItem="L8t-mR-Xg7" secondAttribute="trailing" constant="37" id="riq-Pz-Rbs"/>
                 <constraint firstItem="GSC-uN-1ox" firstAttribute="trailing" secondItem="Bu6-vp-TQD" secondAttribute="trailing" id="xFH-ij-OOP"/>

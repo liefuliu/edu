@@ -18,7 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.buttonWeixinLogIn.backgroundColor = [SRXColor colorForWeixinLogIn];
+    self.buttonWeixinLogIn.backgroundColor = [SRXColor colorForWeixinLogInDisabled];
+    
+    // Disable the wechat sign up for now.
+    self.buttonWeixinLogIn.enabled = NO;
 }
 
 - (void)didReceiveMemoryWarning {

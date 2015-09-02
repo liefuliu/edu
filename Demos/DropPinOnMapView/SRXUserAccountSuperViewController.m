@@ -35,7 +35,8 @@
 
 - (void) cancelButtonTouched: (id) sender {
     NSLog(@"cancelButtonTouched called");
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+    
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
     [self.navigationController popToRootViewControllerAnimated:NO];
 }
 

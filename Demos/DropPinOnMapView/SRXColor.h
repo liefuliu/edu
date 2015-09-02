@@ -11,8 +11,14 @@
 @interface SRXColor : NSObject
 
 + (UIColor*) colorForSignUp;
++ (UIColor*) colorForSignUpLowlighted;
 + (UIColor*) colorForLogIn;
 + (UIColor*) colorForLogInLowlighted;
 + (UIColor*) colorForWeixinLogIn;
++ (UIColor*) colorForWeixinLogInDisabled;
+
+
++ (UIColor*) colorForLogOut;
++ (UIColor*) colorForIWantToTeach;
 
 @end
