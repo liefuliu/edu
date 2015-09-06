@@ -30,6 +30,8 @@
     
     self.isAbleToLogin = false;
     [self enableLogInButton:NO];
+    
+    [self.textFieldUserName becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -26,6 +26,7 @@
     
     // DO NOT SUBMIT self.isAbleToLogin = false;
     [self enableSignUpButton:NO];
+    [self.textFieldEmail becomeFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
