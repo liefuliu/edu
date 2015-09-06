@@ -9,37 +9,37 @@
 "2Xc-kM-fTy.title" = "Item 1";
 
 /* Class = "UIButton"; normalTitle = "您尚未登录，点击此处登录"; ObjectID = "H6M-dR-AlJ"; */
-"H6M-dR-AlJ.normalTitle" = "您尚未登录，点击此处登录";
+"H6M-dR-AlJ.normalTitle" = "Click below to log in"";
 
 /* Class = "UINavigationItem"; title = "请选择班级"; ObjectID = "IrV-pu-7rc"; */
-"IrV-pu-7rc.title" = "请选择班级";
+"IrV-pu-7rc.title" = "Please choose a class";
 
 /* Class = "UITabBarItem"; title = "Me"; ObjectID = "J71-SX-bxb"; */
-"J71-SX-bxb.title" = "我";
+"J71-SX-bxb.title" = "Me";
 
 /* Class = "UIButton"; normalTitle = "我要学习"; ObjectID = "Ngi-pj-XJK"; */
-"Ngi-pj-XJK.normalTitle" = "我要学习";
+"Ngi-pj-XJK.normalTitle" = "I want to study";
 
 /* Class = "UITabBarItem"; title = "New Class"; ObjectID = "ThV-ey-ozo"; */
-"ThV-ey-ozo.title" = "开课";
+"ThV-ey-ozo.title" = "New Class";
 
 /* Class = "UITabBarItem"; title = "Me"; ObjectID = "WB4-C5-v4u"; */
-"WB4-C5-v4u.title" = "我";
+"WB4-C5-v4u.title" = "Me";
 
 /* Class = "UINavigationItem"; title = "长按地图上的点开班"; ObjectID = "aKc-66-O6O"; */
-"aKc-66-O6O.title" = "长按地图上的点开班";
+"aKc-66-O6O.title" = "Long Press to Create a Class";
 
 /* Class = "UIButton"; normalTitle = "我要教学"; ObjectID = "aXj-qG-Boe"; */
-"aXj-qG-Boe.normalTitle" = "我要教学";
+"aXj-qG-Boe.normalTitle" = "I want to teach";
 
 /* Class = "UILabel"; text = "这个Table View留着备用"; ObjectID = "eng-Ww-tz4"; */
-"eng-Ww-tz4.text" = "这个Table View留着备用";
+"eng-Ww-tz4.text" = "Table View for placeholder";
 
 /* Class = "UIButton"; normalTitle = "设置"; ObjectID = "tHG-Fi-5gR"; */
-"tHG-Fi-5gR.normalTitle" = "设置";
+"tHG-Fi-5gR.normalTitle" = "Settings";
 
 /* Class = "UIButton"; normalTitle = "切换至教学模式"; ObjectID = "yif-tr-SB1"; */
-"yif-tr-SB1.normalTitle" = "切换至教学模式";
+"yif-tr-SB1.normalTitle" = "Switch to teach mode";
 
 /* Class = "UIButton"; normalTitle = "退出登录"; ObjectID = "z5c-Mq-1C8"; */
-"z5c-Mq-1C8.normalTitle" = "退出登录";
+"z5c-Mq-1C8.normalTitle" = "Log out";

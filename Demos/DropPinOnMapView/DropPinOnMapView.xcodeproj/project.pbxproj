@@ -44,7 +44,6 @@
 		6D2DE8141B88EE8300889E17 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */; };
 		6D2DE8151B88EE8300889E17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8131B88EE8300889E17 /* libz.dylib */; };
 		6D2DE8181B895F0800889E17 /* SRXTeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */; };
-		6D2DE81A1B89955F00889E17 /* Teach.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D2DE8191B89955F00889E17 /* Teach.Storyboard */; };
 		6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6274A81B884BFE00023458 /* ParseUI.framework */; };
 		6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */; };
 		6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */; };
@@ -60,6 +59,7 @@
 		6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */; };
 		6DDE28141B93E48300A855E5 /* SRXUserInfoKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28131B93E48300A855E5 /* SRXUserInfoKeys.m */; };
 		6DDE28171B94034900A855E5 /* SRXUserInputVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */; };
+		6DDE28281B9BEBD600A855E5 /* Teach.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE282A1B9BEBD600A855E5 /* Teach.Storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,7 +126,6 @@
 		6D2DE8131B88EE8300889E17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		6D2DE8161B895F0800889E17 /* SRXTeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherMeViewController.h; sourceTree = "<group>"; };
 		6D2DE8171B895F0800889E17 /* SRXTeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherMeViewController.m; sourceTree = "<group>"; };
-		6D2DE8191B89955F00889E17 /* Teach.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Teach.Storyboard; sourceTree = "<group>"; };
 		6D6274A81B884BFE00023458 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		6DDE27EA1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInSignUpViewController.h; sourceTree = "<group>"; };
 		6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInSignUpViewController.m; sourceTree = "<group>"; };
@@ -147,12 +146,15 @@
 		6DDE28081B928C4800A855E5 /* SRXColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXColor.m; sourceTree = "<group>"; };
 		6DDE280A1B92D35B00A855E5 /* SRXUserAccountSuperViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserAccountSuperViewController.h; sourceTree = "<group>"; };
 		6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserAccountSuperViewController.m; sourceTree = "<group>"; };
-		6DDE280D1B93D1F700A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		6DDE280E1B93D1F700A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		6DDE28121B93E48300A855E5 /* SRXUserInfoKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserInfoKeys.h; sourceTree = "<group>"; };
 		6DDE28131B93E48300A855E5 /* SRXUserInfoKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserInfoKeys.m; sourceTree = "<group>"; };
 		6DDE28151B94034900A855E5 /* SRXUserInputVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserInputVerifier.h; sourceTree = "<group>"; };
 		6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserInputVerifier.m; sourceTree = "<group>"; };
+		6DDE28271B9BCAAD00A855E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		6DDE282B1B9BEBE100A855E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Teach.Storyboard; sourceTree = "<group>"; };
+		6DDE282D1B9BEC2D00A855E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Teach.strings; sourceTree = "<group>"; };
+		6DDE28321B9BED9100A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6DDE28331B9BED9100A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Teach.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +298,7 @@
 				6D0861381B6EE52200BC5910 /* Images.xcassets */,
 				6D08613A1B6EE52200BC5910 /* LaunchScreen.xib */,
 				6D08612B1B6EE52200BC5910 /* Supporting Files */,
-				6D2DE8191B89955F00889E17 /* Teach.Storyboard */,
+				6DDE282A1B9BEBD600A855E5 /* Teach.Storyboard */,
 			);
 			path = DropPinOnMapView;
 			sourceTree = "<group>";
@@ -465,7 +467,7 @@
 			files = (
 				6D0861371B6EE52200BC5910 /* Main.storyboard in Resources */,
 				6D013ED21B80E6F7006D13B9 /* aries_filled-25.png in Resources */,
-				6D2DE81A1B89955F00889E17 /* Teach.Storyboard in Resources */,
+				6DDE28281B9BEBD600A855E5 /* Teach.Storyboard in Resources */,
 				6D013EC51B80D70E006D13B9 /* switch_course_grey.png in Resources */,
 				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
@@ -545,7 +547,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D0861361B6EE52200BC5910 /* Base */,
-				6DDE280D1B93D1F700A855E5 /* zh-Hans */,
+				6DDE28271B9BCAAD00A855E5 /* en */,
+				6DDE28321B9BED9100A855E5 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -554,9 +557,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				6D08613B1B6EE52200BC5910 /* Base */,
-				6DDE280E1B93D1F700A855E5 /* zh-Hans */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		6DDE282A1B9BEBD600A855E5 /* Teach.Storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6DDE282B1B9BEBE100A855E5 /* Base */,
+				6DDE282D1B9BEC2D00A855E5 /* en */,
+				6DDE28331B9BED9100A855E5 /* zh-Hans */,
+			);
+			name = Teach.Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -652,6 +664,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DropPinOnMapView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = DropPinOnMapView;
 			};
@@ -667,6 +680,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DropPinOnMapView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = DropPinOnMapView;
 			};

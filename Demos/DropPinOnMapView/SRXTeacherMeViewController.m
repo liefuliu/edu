@@ -41,14 +41,7 @@
 }
 
 - (IBAction)buttonToStudyNewClicked:(id)sender {
-    
-    UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController* mainViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"BeStudent"];
-    UITabBarController *tabBarController = (UITabBarController *)mainViewController;
-    tabBarController.selectedIndex = 0;
-    
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
-    [self.tabBarController presentViewController: mainViewController animated:YES completion: NULL];
 }
 
 @end
