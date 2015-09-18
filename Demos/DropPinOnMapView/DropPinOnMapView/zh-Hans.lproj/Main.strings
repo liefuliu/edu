@@ -12,7 +12,7 @@
 "H6M-dR-AlJ.normalTitle" = "您尚未登录，点击此处登录";
 
 /* Class = "UINavigationItem"; title = "请选择班级"; ObjectID = "IrV-pu-7rc"; */
-"IrV-pu-7rc.title" = "请选择班级";
+"IrV-pu-7rc.title" = "培训班";
 
 /* Class = "UITabBarItem"; title = "Me"; ObjectID = "J71-SX-bxb"; */
 "J71-SX-bxb.title" = "我";

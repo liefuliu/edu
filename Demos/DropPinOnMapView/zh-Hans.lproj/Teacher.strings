@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "Classes"; ObjectID = "3Nz-Dg-Rfr"; */
+"3Nz-Dg-Rfr.title" = "课表";
+
+/* Class = "UINavigationItem"; title = "Classes"; ObjectID = "cqN-cA-g50"; */
+"cqN-cA-g50.title" = "课表";
+
+/* Class = "UITabBarItem"; title = "Messages"; ObjectID = "mk4-ch-FdH"; */
+"mk4-ch-FdH.title" = "消息";
+
+/* Class = "UITabBarItem"; title = "Me"; ObjectID = "ncp-PV-YSz"; */
+"ncp-PV-YSz.title" = "我";
+
+/* Class = "UITabBarItem"; title = "Contacts"; ObjectID = "w2n-fV-4T7"; */
+"w2n-fV-4T7.title" = "通讯录";

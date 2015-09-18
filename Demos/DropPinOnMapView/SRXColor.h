@@ -21,4 +21,7 @@
 + (UIColor*) colorForLogOut;
 + (UIColor*) colorForIWantToTeach;
 
+
++ (UIColor*) colorForTextLink;
+
 @end
