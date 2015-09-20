@@ -57,6 +57,7 @@
 		6D2DE8151B88EE8300889E17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8131B88EE8300889E17 /* libz.dylib */; };
 		6D2DE8181B895F0800889E17 /* LegacySRXTeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */; };
 		6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6274A81B884BFE00023458 /* ParseUI.framework */; };
+		6D6468321BAD203200022C9C /* foo.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D6468311BAD203200022C9C /* foo.proto */; };
 		6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */; };
 		6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */; };
 		6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27F01B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m */; };
@@ -173,6 +174,7 @@
 		6D2DE8161B895F0800889E17 /* LegacySRXTeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacySRXTeacherMeViewController.h; sourceTree = "<group>"; };
 		6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacySRXTeacherMeViewController.m; sourceTree = "<group>"; };
 		6D6274A81B884BFE00023458 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
+		6D6468311BAD203200022C9C /* foo.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = foo.proto; path = proto/foo.proto; sourceTree = "<group>"; };
 		6DDE27EA1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInSignUpViewController.h; sourceTree = "<group>"; };
 		6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInSignUpViewController.m; sourceTree = "<group>"; };
 		6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXLogInSignUpViewController.xib; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6D6468311BAD203200022C9C /* foo.proto */,
 				6D18F80B1BA65256004A9F66 /* Localizable.strings */,
 				6DDE28611BA3E7E400A855E5 /* Views */,
 				6DDE28111B93E43B00A855E5 /* Users */,
@@ -636,6 +639,7 @@
 				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */,
+				6D6468321BAD203200022C9C /* foo.proto in Resources */,
 				6D18F8051BA64890004A9F66 /* Teacher.Storyboard in Resources */,
 				6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */,
 				6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */,
