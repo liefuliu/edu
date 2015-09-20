@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="-864" y="1831"/>
         </scene>
-        <!--Teacher Me View Controller-->
+        <!--LegacySRX Teacher Me View Controller-->
         <scene sceneID="pub-e4-WwY">
             <objects>
-                <viewController id="Udo-Ry-8AY" customClass="SRXTeacherMeViewController" sceneMemberID="viewController">
+                <viewController id="Udo-Ry-8AY" customClass="LegacySRXTeacherMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YQH-uj-MZS"/>
                         <viewControllerLayoutGuide type="bottom" id="FRw-AP-sSD"/>

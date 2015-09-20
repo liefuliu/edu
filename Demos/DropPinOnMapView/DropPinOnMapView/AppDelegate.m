@@ -6,6 +6,8 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+// Test only. remove and switch back to main.storyboard.
+#import "SRXTeacherOpenClassViewController.h"
 
 @interface AppDelegate ()
 
@@ -33,6 +35,27 @@
     // Initialize Parse.
     [Parse setApplicationId:@"v9dWkNcnBpIqIvramHo8CqAUts18toQJ1d9MTMNH"
                   clientKey:@"mwV3UjHfcFfSohPbjYk9QKt567OyJm6701TRSQmf"];
+    
+    BOOL testTeacherView = NO;
+    if (testTeacherView) {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    
+    // Create a BNRItemsViewController
+    SRXTeacherOpenClassViewController *itemsViewController = [[SRXTeacherOpenClassViewController alloc] init];
+    
+    // Create an instance of a UINavigationController
+    // its stack contains only itemsViewController
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:itemsViewController];
+    
+    // Place navigation controller's view in the window hierarchy
+    self.window.rootViewController = navController;
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    return YES;
+    }
+    
     return YES;
 }
 

@@ -322,7 +322,7 @@
         <!--Me-->
         <scene sceneID="KYs-LQ-j5H">
             <objects>
-                <viewController id="8fn-1Q-kL4" customClass="SRXTeacherMeViewController" sceneMemberID="viewController">
+                <viewController id="8fn-1Q-kL4" customClass="LegacySRXTeacherMeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qtI-BQ-Wuc"/>
                         <viewControllerLayoutGuide type="bottom" id="HBb-g1-MEJ"/>

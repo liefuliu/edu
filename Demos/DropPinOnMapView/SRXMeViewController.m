@@ -108,8 +108,8 @@
 }
 
 - (IBAction)buttonToTeachClicked:(id)sender {
-    UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"Teach" bundle:nil];
-    UIViewController* secondViewController = [secondStoryboard instantiateViewControllerWithIdentifier:@"BeTeacher"];
+    UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"Teacher" bundle:nil];
+    UIViewController* secondViewController = [secondStoryboard instantiateViewControllerWithIdentifier:@"TeacherMainView"];
     
     [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     [self.tabBarController presentViewController: secondViewController animated:YES completion: NULL];
