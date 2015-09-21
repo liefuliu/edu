@@ -1,0 +1,3 @@
+message ClassInfo {
+ optional string description = 1;
+}

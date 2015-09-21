@@ -57,7 +57,8 @@
 		6D2DE8151B88EE8300889E17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8131B88EE8300889E17 /* libz.dylib */; };
 		6D2DE8181B895F0800889E17 /* LegacySRXTeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */; };
 		6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6274A81B884BFE00023458 /* ParseUI.framework */; };
-		6D6468321BAD203200022C9C /* foo.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D6468311BAD203200022C9C /* foo.proto */; };
+		6D8BC5571BAF8143001F20F0 /* SRXDataClass.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */; };
+		6D8BC55A1BAF84B9001F20F0 /* SRXDataClass.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC5591BAF84B9001F20F0 /* SRXDataClass.pb.m */; };
 		6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */; };
 		6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */; };
 		6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27F01B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m */; };
@@ -82,6 +83,8 @@
 		6DDE28581BA28AFF00A855E5 /* SRXPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28571BA28AFF00A855E5 /* SRXPhotoCell.xib */; };
 		6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */; };
 		6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */; };
+		8D8141B3AA500668C9BF0C78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
+		964E3EE19B6597FB03DB9DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,7 +177,9 @@
 		6D2DE8161B895F0800889E17 /* LegacySRXTeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacySRXTeacherMeViewController.h; sourceTree = "<group>"; };
 		6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacySRXTeacherMeViewController.m; sourceTree = "<group>"; };
 		6D6274A81B884BFE00023458 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
-		6D6468311BAD203200022C9C /* foo.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = foo.proto; path = proto/foo.proto; sourceTree = "<group>"; };
+		6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXDataClass.proto; path = Proto/SRXDataClass.proto; sourceTree = "<group>"; };
+		6D8BC5581BAF84B9001F20F0 /* SRXDataClass.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRXDataClass.pb.h; path = ProtoGen/SRXDataClass.pb.h; sourceTree = "<group>"; };
+		6D8BC5591BAF84B9001F20F0 /* SRXDataClass.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXDataClass.pb.m; path = ProtoGen/SRXDataClass.pb.m; sourceTree = "<group>"; };
 		6DDE27EA1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInSignUpViewController.h; sourceTree = "<group>"; };
 		6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInSignUpViewController.m; sourceTree = "<group>"; };
 		6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXLogInSignUpViewController.xib; sourceTree = "<group>"; };
@@ -218,6 +223,9 @@
 		6DDE28631BA3E82100A855E5 /* SRXImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImageViewController.h; sourceTree = "<group>"; };
 		6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImageViewController.m; sourceTree = "<group>"; };
 		6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXImageViewController.xib; sourceTree = "<group>"; };
+		95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CE82E9796B1C4C1D52781817 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		DBAE63C5220B30CD95D2D17A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -238,6 +246,7 @@
 				6D0861571B6EE73600BC5910 /* MapKit.framework in Frameworks */,
 				6D2DE8041B88EDF400889E17 /* Bolts.framework in Frameworks */,
 				6D2DE8051B88EDF400889E17 /* Parse.framework in Frameworks */,
+				8D8141B3AA500668C9BF0C78 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +254,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				964E3EE19B6597FB03DB9DAE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +318,8 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
-				6D6468311BAD203200022C9C /* foo.proto */,
+				6DF41F0F1BAF06E800B45311 /* ProtoGen */,
+				6DF41F0E1BAF06E200B45311 /* Proto */,
 				6D18F80B1BA65256004A9F66 /* Localizable.strings */,
 				6DDE28611BA3E7E400A855E5 /* Views */,
 				6DDE28111B93E43B00A855E5 /* Users */,
@@ -337,6 +348,8 @@
 				6D08612A1B6EE52200BC5910 /* DropPinOnMapView */,
 				6D0861441B6EE52200BC5910 /* DropPinOnMapViewTests */,
 				6D0861291B6EE52200BC5910 /* Products */,
+				F51F9F062E2C9734B42DAABA /* Pods */,
+				F19C611D036DF151C55F96B1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -550,6 +563,40 @@
 			name = CommonViews;
 			sourceTree = "<group>";
 		};
+		6DF41F0E1BAF06E200B45311 /* Proto */ = {
+			isa = PBXGroup;
+			children = (
+				6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */,
+			);
+			name = Proto;
+			sourceTree = "<group>";
+		};
+		6DF41F0F1BAF06E800B45311 /* ProtoGen */ = {
+			isa = PBXGroup;
+			children = (
+				6D8BC5581BAF84B9001F20F0 /* SRXDataClass.pb.h */,
+				6D8BC5591BAF84B9001F20F0 /* SRXDataClass.pb.m */,
+			);
+			name = ProtoGen;
+			sourceTree = "<group>";
+		};
+		F19C611D036DF151C55F96B1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DBAE63C5220B30CD95D2D17A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F51F9F062E2C9734B42DAABA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CE82E9796B1C4C1D52781817 /* Pods.debug.xcconfig */,
+				95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -557,9 +604,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D08614B1B6EE52200BC5910 /* Build configuration list for PBXNativeTarget "DropPinOnMapView" */;
 			buildPhases = (
+				A5EE888571B933F1CE6E1691 /* Check Pods Manifest.lock */,
 				6D0861241B6EE52200BC5910 /* Sources */,
 				6D0861251B6EE52200BC5910 /* Frameworks */,
 				6D0861261B6EE52200BC5910 /* Resources */,
+				161902311728EF82E01E2947 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -574,9 +623,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6D08614E1B6EE52200BC5910 /* Build configuration list for PBXNativeTarget "DropPinOnMapViewTests" */;
 			buildPhases = (
+				888985327023E34A03F49EC9 /* Check Pods Manifest.lock */,
 				6D08613D1B6EE52200BC5910 /* Sources */,
 				6D08613E1B6EE52200BC5910 /* Frameworks */,
 				6D08613F1B6EE52200BC5910 /* Resources */,
+				0539A6BC8272834E19F02B7A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -639,12 +690,12 @@
 				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */,
-				6D6468321BAD203200022C9C /* foo.proto in Resources */,
 				6D18F8051BA64890004A9F66 /* Teacher.Storyboard in Resources */,
 				6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */,
 				6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */,
 				6D08613C1B6EE52200BC5910 /* LaunchScreen.xib in Resources */,
 				6DDE28581BA28AFF00A855E5 /* SRXPhotoCell.xib in Resources */,
+				6D8BC5571BAF8143001F20F0 /* SRXDataClass.proto in Resources */,
 				6D18F8041BA638C0004A9F66 /* plus_sign.png in Resources */,
 				6D18F80C1BA65256004A9F66 /* Localizable.strings in Resources */,
 				6D18F80D1BA659DE004A9F66 /* SRXTeacherOpenClassViewController.xib in Resources */,
@@ -668,6 +719,69 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0539A6BC8272834E19F02B7A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		161902311728EF82E01E2947 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		888985327023E34A03F49EC9 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A5EE888571B933F1CE6E1691 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6D0861241B6EE52200BC5910 /* Sources */ = {
@@ -702,6 +816,7 @@
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
 				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
 				6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */,
+				6D8BC55A1BAF84B9001F20F0 /* SRXDataClass.pb.m in Sources */,
 				6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */,
 				6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */,
 				6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */,
@@ -864,6 +979,7 @@
 		};
 		6D08614C1B6EE52200BC5910 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE82E9796B1C4C1D52781817 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -880,6 +996,7 @@
 		};
 		6D08614D1B6EE52200BC5910 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -896,6 +1013,7 @@
 		};
 		6D08614F1B6EE52200BC5910 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CE82E9796B1C4C1D52781817 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -915,6 +1033,7 @@
 		};
 		6D0861501B6EE52200BC5910 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

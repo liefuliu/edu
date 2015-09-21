@@ -1,0 +1,58 @@
+enum SRXDataClassTypeEnum {
+ YUWEN = 1;   // 语文
+ SHUXUE = 2;  // 数学
+ YINGYU = 3;  // 英语
+
+
+ HECHANG = 101; // 合唱
+ WUDAO = 102; // 舞蹈
+ GANGQIN = 103;  // 钢琴
+
+ WEIQI = 201;  // 围棋
+ ZHONGGUOXIANGQI = 202;  // 中国象棋
+ GUOJIXIANGQI = 203;  // 国际象棋
+
+ SHUFA = 301;  // 书法
+
+ HUIHUA = 401; // 绘画
+
+ WUSHU = 501;  // 武术
+}
+
+enum SRXDataCityEnum {
+ BEIJING = 10;
+ GUANGZHOU = 20;
+ SHANGHAI = 21;
+ TIANJIN = 22;
+ CHONGQIN = 23;
+ CHANGSHA = 731;
+}
+
+message SRXDataLocation {
+ optional SRXDataCityEnum city = 1;
+ optional string street_name = 2;
+ optional float latitude = 3;
+ optional float longtitude = 4;
+}
+
+message SRXDataClassTime {
+
+}
+
+message SRXDataClassInfo {
+ optional string teacher_name = 1;
+ optional SRXDataClassTypeEnum class_type = 2;
+ optional SRXDataLocation location = 3;
+ optional SRXDataClassTime class_time = 4;
+ optional int32 number_of_classes = 5;
+ optional int32 tuition_fee_in_yuan = 6;
+ optional string description = 7;
+}
+
+// message SRXDataClassStatus {
+// }
+
+message SRXDataClass {
+ optional int64 id = 1;
+ optional SRXDataClassInfo class_info = 2;
+}

@@ -1,0 +1,9 @@
+import "google/protobuf/objectivec-descriptor.proto";
+import "ClassInfo.proto";
+
+option (google.protobuf.objectivec_file_options).package = "DropPinOnMapView";
+option (google.protobuf.objectivec_file_options).class_prefix = "SRXData";
+
+messaage ClassInfo {
+  optional int64 class_id = 1;
+};

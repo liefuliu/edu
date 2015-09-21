@@ -11,6 +11,9 @@
 #import "SRXPhotoCell.h"
 #import "SRXImageViewController.h"
 
+
+#import "SRXDataClass.pb.h"
+
 #import <MobileCoreServices/UTCoreTypes.h>
 
 @interface SRXTeacherOpenClassViewController  ()
@@ -73,6 +76,11 @@ NSString* const kTimeRowKey = @"Time";
 
 -(void)dismissKeyboard {
     [self.classDescriptionTextField endEditing:YES];
+    
+    /*
+    MyClassInfo* person = [[[MyClassInfo builder] setDescription:@"hello world"]build];
+    SRXDataClassInfo * newClass = [[[[SRXDataClassInfo builder] setId:32] setClassInfo:person] build];
+    NSLog(@"ClassInfo: %@", newClass);*/
 }
 
 - (void) addImage:(NSString*) imageFileName {
