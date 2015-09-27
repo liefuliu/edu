@@ -1,0 +1,32 @@
+//
+//  SRXParseApi.h
+//  DropPinOnMapView
+//
+//  Created by Liefu Liu on 9/24/15.
+//  Copyright (c) 2015 Liefu Liu. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "SRXProtocols.h"
+
+@interface SRXParseApi : NSObject<SRXProtocols>
+
++ (id) sharedObject;
+
+- (id) init;
+
+- (void) createClass:(SRXProtoCreateClassRequest*) request
+        withResponse:(SRXProtoCreateClassResponse**) response
+          completion:(ApiCompletion) compblock;
+
+- (void) readClass: (SRXProtoReadClassRequest*) request
+      withResponse: (SRXProtoReadClassResponseBuilder**) response
+        completion:(ApiCompletion) compblock;
+
+- (void) searchClass: (SRXProtoSearchClassRequest*) request
+      withResponse: (SRXProtoSearchClassResponseBuilder**) responseBuilder
+        completion:(ApiCompletion) compblock;
+
+@property (nonatomic, retain) NSString *someProperty;
+
+@end

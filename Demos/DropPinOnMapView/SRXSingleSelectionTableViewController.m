@@ -1,0 +1,65 @@
+//
+//  SRXSingleSelectionTableViewController.m
+//  DropPinOnMapView
+//
+//  Created by Liefu Liu on 9/27/15.
+//  Copyright (c) 2015 Liefu Liu. All rights reserved.
+//
+
+#import "SRXSingleSelectionTableViewController.h"
+
+@implementation SRXSingleSelectionTableViewController
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+}
+
+- (instancetype) initWithItems: (NSArray*) itemsForSelection {
+    self = [super init];
+    if (self) {
+        _itemsForSelection = itemsForSelection;
+    }
+    return self;
+}
+
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return [self.itemsForSelection count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section==0) {
+        UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+        cell.textLabel.text = (NSString*)self.itemsForSelection[indexPath.row];
+        return cell;
+    }
+    return nil;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        NSLog(@"indexPath.section == 0");
+        
+        [self.delegate itemDidSelectAt: (int)indexPath.row
+                           withContent: self.itemsForSelection[indexPath.row]];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+@end

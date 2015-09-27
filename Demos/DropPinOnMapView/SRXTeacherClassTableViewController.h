@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRXTeacherOpenClassViewController.h"
 
-@interface SRXTeacherClassTableViewController : UITableViewController
+@interface SRXTeacherClassTableViewController : UITableViewController <SRXTeacherOpenClassViewControllerDelegate>
+
+- (void) newClassCreated;
 
 @end

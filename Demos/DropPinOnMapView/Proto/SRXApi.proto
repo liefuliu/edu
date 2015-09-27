@@ -1,0 +1,85 @@
+import "SRXDataClass.proto";
+
+message SRXDataUser {
+  // only 1 of below could be specified.
+  optional string id = 1;
+}
+
+// Request and Response of API CreateClass.
+
+message SRXProtoCreateClassRequest {
+  // Required.
+  optional SRXDataUser requesting_user = 1;
+  
+  // Required. 
+  optional SRXDataClassInfo class_info = 2;
+}
+
+message SRXProtoCreateClassResponse {
+  optional string class_id = 1;
+}
+
+
+// Request and Response of API ReadClass.
+message SRXDataRoleInClassTypeEnum {
+enum SRXDataRoleInClassType {
+ UNKNOWN = 0;
+ OWNER = 1;
+ STUDENT = 2;
+}
+}
+
+message SRXProtoReadClassRequest {
+  // Required.
+  optional SRXDataUser requesting_user = 1;
+
+  // Required.
+  optional SRXDataRoleInClassTypeEnum.SRXDataRoleInClassType role_in_class = 2 [default = UNKNOWN];
+}
+
+message SRXProtoReadClassResponse {
+  repeated SRXDataClassInfo class_collection = 1;
+}
+
+// Request and Response of API SearchClass.
+message SRXProtoSearchClassRequest {
+  // Required.
+  optional float latitude = 1;
+
+  // Required.
+  optional float longtitude = 2;
+
+  // Required
+  optional float radius_latitude = 3;
+
+  // Required
+  optional float radius_longtitude = 4;
+}
+
+message SRXProtoSearchClassResponse {
+  repeated SRXDataClassInfo class_collection = 1;
+}
+
+enum SRXProtoLogInMethodEnum {
+  DEFAULT = 0;
+  NATIVE = 1;
+}
+
+
+message SRXProtoNativeLogInMessage {
+  optional string user_name = 1;
+  optional string password = 2;
+}
+
+message SRXProtoLogInRequest {
+  // Required.
+  optional SRXProtoLogInMethodEnum log_in_method = 1;
+
+  // Required.
+  optional SRXProtoNativeLogInMessage native_log_in = 2;
+}
+
+message SRXProtoLogInResponse {
+  // Required.
+  optional SRXDataUser user = 1;
+}

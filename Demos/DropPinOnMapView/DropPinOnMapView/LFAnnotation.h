@@ -7,6 +7,7 @@
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
 #import "ClassInfo.h"
+#import "SRXDataClass.pb.h"
 
 @interface LFAnnotation : NSObject <MKAnnotation>
 
@@ -19,6 +20,7 @@
 - (instancetype) initWithCoordinate: (CLLocationCoordinate2D) baseCoordinate;
 
 
-- (instancetype) initWithClassInfo: (ClassInfo*) classInfo;
+- (instancetype) initWithClassInfoLegacy: (ClassInfo*) classInfo;
 
+- (instancetype) initWithClassInfo: (SRXDataClassInfo*) classInfo;
 @end

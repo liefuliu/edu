@@ -11,8 +11,12 @@
 #import "SRXTeacherClassCell.h"
 #import "SRXTeacherOpenClassViewController.h"
 #import "SRXColor.h"
+#import "SRXApiFactory.h"
 
 @interface SRXTeacherClassTableViewController ()
+
+// An array of SRXDataClassInfo which are owned by the current user.
+@property NSMutableArray* allClasses;
 
 @end
 
@@ -42,12 +46,46 @@
     
     // Use the default cell for Section 1.
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    
+    [self performSelector:@selector(initializeData)];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) newClassCreated {
+    NSLog(@"newClassCreated");
+    [self initializeData];
+}
+
+#pragma mark - initialize data
+- (void) initializeData {
+    SRXDataUser* requestingUser = [[[SRXDataUser builder] setId:@"dummy"] build];
+    
+    SRXProtoReadClassRequest* request = [[[[SRXProtoReadClassRequest builder] setRequestingUser:requestingUser] setRoleInClass:SRXDataRoleInClassTypeEnumSRXDataRoleInClassTypeOwner] build];
+    SRXProtoReadClassResponseBuilder *responseBuilder = [SRXProtoReadClassResponse builder];
+    
+    __block __weak SRXTeacherClassTableViewController *wself = self;
+    
+    [[SRXApiFactory getActualApi] readClass: request
+                               withResponse:&responseBuilder completion:^(BOOL success, NSString* errorMsg) {
+        if (success) {
+            SRXProtoReadClassResponse* response = [responseBuilder build];
+            self.allClasses = [response classCollection];
+            NSLog(@"Successfully retrieved allClasses: %@", self.allClasses);
+        } else {
+            // DO nothing
+            NSLog(@"Cannot read class");
+        }
+        
+    }];
+    
+    
+}
+
 
 #pragma mark - Table view data source
 
@@ -61,7 +99,8 @@
 #warning Incomplete method implementation.sharedClassCollectionForDemo
     // Return the number of rows in the section.
     if (section == 0) {
-        return [[[SRXTeacherClassCollection sharedClassCollectionForDemo] classCollection] count];
+        //return [[[SRXTeacherClassCollection sharedClassCollectionForDemo] classCollection] count];
+        return [_allClasses count];
     } else if (section == 1) {
         return 1;
     }
@@ -76,8 +115,9 @@
         SRXTeacherClassCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SRXTeacherClassCell" forIndexPath:indexPath];
         
         // Configure the cell...
-        NSArray *items =[[SRXTeacherClassCollection sharedClassCollectionForDemo] classCollection];
-        ClassInfo* classInfo = items[indexPath.row];
+        NSArray *items = self.allClasses;
+        SRXDataClassInfo* classInfo = items[indexPath.row];
+        /*
         // TODO(liefuliu): Currently we used hard code for demo purpose;
         classInfo.topic = @"钢琴";
         cell.topicLabel.text = [classInfo topic];
@@ -89,6 +129,11 @@
             cell.statusLabel.text = @"10月1日开学";
             cell.timeLabel.text = @"每周四晚";
         }
+        */
+        cell.topicLabel.text = [classInfo summary];
+        
+        cell.timeLabel.text = [classInfo summary];
+        cell.statusLabel.text = [classInfo summary];
         
         NSLog(@"class info: %@", classInfo);
         return cell;
@@ -123,7 +168,7 @@
         
     } else if (indexPath.section == 1){
         SRXTeacherOpenClassViewController *detailViewController = [[SRXTeacherOpenClassViewController alloc] init];
-        
+        detailViewController.delegate = self;
         // Push it onto the top of the navigation controller's stack
         [self.navigationController pushViewController:detailViewController
                                              animated:YES];

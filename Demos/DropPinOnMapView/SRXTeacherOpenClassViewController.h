@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "ELCimagePickerHeader.h"
+#import "SRXDataClass.pb.h"
+
+@protocol SRXTeacherOpenClassViewControllerDelegate <NSObject>
+- (void) newClassCreated;
+@end
+
 
 @interface SRXTeacherOpenClassViewController : UIViewController<UITableViewDelegate, UITableViewDataSource,
 UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate,ELCImagePickerControllerDelegate>
@@ -15,5 +21,10 @@ UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFl
 
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
 @property (weak, nonatomic) IBOutlet UITextField *classDescriptionTextField;
+
+// Class info from the create class panel.
+@property (strong, nonatomic) SRXDataClassInfo* classInfo;
+
+@property (nonatomic, weak) id delegate;
 
 @end

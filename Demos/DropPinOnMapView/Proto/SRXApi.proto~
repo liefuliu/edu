@@ -1,0 +1,18 @@
+import "SRXDataClass.proto";
+
+message SRXUser {
+  // only 1 of below could be specified.
+  optional string id = 1;
+}
+
+message CreateClassRequest {
+  // Required.
+  optional SRXUser requesting_user = 1;
+  
+  // Required. 
+  optional SRXClassInfo class_info = 2;
+}
+
+message CreateClassResponse {
+  optional string class_id = 1;
+}

@@ -150,7 +150,7 @@
     for (NSString* key in [[ClassesStore sharedStore] allClasses]) {
         ClassInfo *classInfo = [[[ClassesStore sharedStore] allClasses] objectForKey: key];
         
-        LFAnnotation *randomNearbyAnnotation = [[LFAnnotation alloc] initWithClassInfo:classInfo];
+        LFAnnotation *randomNearbyAnnotation = [[LFAnnotation alloc] initWithClassInfoLegacy:classInfo];
         [self.myMapView addAnnotation:randomNearbyAnnotation];
         
     }

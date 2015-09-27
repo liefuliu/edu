@@ -17,36 +17,20 @@
 #import "ClassesStore.h"
 #import "LFAnnotation.h"
 #import "DPMClassItemViewController.h"
+#import "SRXDataClass.pb.h"
+#import "SRXApiFactory.h"
 
 @interface SRXStudentMapViewController () <CLLocationManagerDelegate> {
     CLLocationManager *locationmanager;
 }
+@property NSArray* nearByClasses;
+
 @end
 
 @implementation SRXStudentMapViewController
 
-/*(instancetype) init {
-    self = [super init];
-    if (self) {
-        UINavigationItem *navItem = self.navigationItem;
-        navItem.title = @"Homepwner";
-        
-        // Create a new bar button item that will send
-        // addNewItem: to BNRItemsViewController
-        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd
-                                                                             target:self
-                                                                             action:@selector(addNewItem:)];
-        
-        // Set this bar button item as the right item in the navigationItem
-        navItem.rightBarButtonItem = bbi;
-        navItem.leftBarButtonItem = self.editButtonItem;
-    }
-    
-    return self;
-}*/
-
 - (void)viewDidLoad {
-    NSLog(@"viewDidLoad started");
+    NSLog(@"SRXStudentMapViewController viewDidLoad started");
     
     [super viewDidLoad];
     
@@ -104,25 +88,68 @@
             [self.myMapView setShowsUserLocation:YES];
             
             // Renders 15 random points nearby.
+            /*
             for (int i = 0; i < 5; i++) {
                 ClassInfo *classInfo = [[ClassInfo alloc] initWithRandom:locationCorrrdinate];
                 
                 LFAnnotation *randomNearbyAnnotation = [[LFAnnotation alloc] initWithClassInfo:classInfo];
                 [self.myMapView addAnnotation:randomNearbyAnnotation];
-            }
+            }*/
             
+            
+            SRXProtoSearchClassRequestBuilder* requestBuilder = [SRXProtoSearchClassRequest builder];
+            [requestBuilder setLatitude:locationCorrrdinate.latitude];
+            [requestBuilder setLongtitude:locationCorrrdinate.longitude];
+            
+            SRXProtoSearchClassRequest* request = [requestBuilder build];
+            SRXProtoSearchClassResponseBuilder* responseBuilder = [SRXProtoSearchClassResponse builder];
+            
+            [[SRXApiFactory getActualApi] searchClass: request
+                                       withResponse:&responseBuilder completion:^(BOOL success, NSString* errorMsg) {
+                                           if (success) {
+                                               SRXProtoSearchClassResponse* response = [responseBuilder build];
+                                               self.nearByClasses = [response classCollection];
+                                               [self updateMapWithNearByClasses];
+                                               NSLog(@"Successfully retrieved allClasses: %@", self.nearByClasses);
+                                           } else {
+                                               // DO nothing
+                                               NSLog(@"Cannot read class");
+                                           }
+                                           
+                                       }];
+
+            /*
             for (NSString* key in [[ClassesStore sharedStore] allClasses]) {
                 ClassInfo *classInfo = [[[ClassesStore sharedStore] allClasses] objectForKey: key];
                 
                 LFAnnotation *randomNearbyAnnotation = [[LFAnnotation alloc] initWithClassInfo:classInfo];
                 [self.myMapView addAnnotation:randomNearbyAnnotation];
-
-            }
+            }*/
         }];
     }
     
 }
 
+- (void) updateMapWithNearByClasses {
+    [self removeAllPinsButUserLocation];
+    for(SRXDataClassInfo* classInfo in self.nearByClasses) {
+        // LFAnnotation*
+        LFAnnotation *nearByAllocation = [[LFAnnotation alloc] initWithClassInfo:classInfo];
+        [self.myMapView addAnnotation:nearByAllocation];
+    }
+}
+
+- (void)removeAllPinsButUserLocation
+{
+    id userLocation = [self.myMapView userLocation];
+    NSMutableArray *pins = [[NSMutableArray alloc] initWithArray:[self.myMapView annotations]];
+    if ( userLocation != nil ) {
+        [pins removeObject:userLocation]; // avoid removing user location off the map
+    }
+    
+    [self.myMapView removeAnnotations:pins];
+    pins = nil;
+}
 
 - (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
     // TODO(liefuliu): Not sure how this is used.
@@ -158,6 +185,11 @@
     annotationView.canShowCallout = NO;
     
     return annotationView;
+}
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    NSLog(@"regionDidChangeAnimated");
+    [self performSelector:@selector(getLocation)];
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view

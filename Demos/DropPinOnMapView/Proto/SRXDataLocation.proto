@@ -1,0 +1,15 @@
+enum SRXDataCityEnum {
+ BEIJING = 10;
+ GUANGZHOU = 20;
+ SHANGHAI = 21;
+ TIANJIN = 22;
+ CHONGQIN = 23;
+ CHANGSHA = 731;
+}
+
+message SRXDataLocation {
+ optional SRXDataCityEnum city = 1;
+ optional string street_name = 2;
+ optional float latitude = 3;
+ optional float longtitude = 4;
+}

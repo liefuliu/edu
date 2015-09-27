@@ -11,7 +11,7 @@
 
 @synthesize coordinate, title, subtitle;
 
-- (instancetype) initWithClassInfo: (ClassInfo*) classInfo {
+- (instancetype) initWithClassInfoLegacy: (ClassInfo*) classInfo {
     self = [super init];
     if (self) {
         self.coordinate = classInfo.locationCoordinate;
@@ -20,5 +20,16 @@
     }
     return self;
 }
+
+- (instancetype) initWithClassInfo: (SRXDataClassInfo*) classInfo {
+    self = [super init];
+    if (self) {
+        self.coordinate = CLLocationCoordinate2DMake(classInfo.location.latitude, classInfo.location.longtitude);
+        self.title = classInfo.summary;
+        self.subtitle = classInfo.summary;
+    }
+    return self;
+}
+
 
 @end

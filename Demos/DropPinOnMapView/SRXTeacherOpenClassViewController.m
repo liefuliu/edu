@@ -10,18 +10,27 @@
 #import "SRXTeacherOpenClassViewController.h"
 #import "SRXPhotoCell.h"
 #import "SRXImageViewController.h"
-
+#import "SRXApiFactory.h"
+#import "SRXSingleSelectionTableViewController.h"
 
 #import "SRXDataClass.pb.h"
 
 #import <MobileCoreServices/UTCoreTypes.h>
 
-@interface SRXTeacherOpenClassViewController  ()
+
+// TODO: Remove this once we created a location view.
+#import "CCLocationManager.h"
+
+
+@interface SRXTeacherOpenClassViewController () <CLLocationManagerDelegate> {
+    CLLocationManager *locationmanager;
+}
 
 //@property (nonatomic, strong) NSArray *assets;
 @property (nonatomic, strong) NSMutableArray *patternImagesArray;
 @property (nonatomic, strong) NSMutableDictionary *imageDictionary;
 @property (nonatomic, strong) NSArray* rowKeys;
+@property (nonatomic) CLLocationCoordinate2D locationCoordinate2D;
 
 @end
 
@@ -43,6 +52,15 @@ NSString* const kTimeRowKey = @"Time";
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    UINavigationItem *navItem = self.navigationItem;
+    navItem.title = NSLocalizedString(@"New class", @"New class");
+    UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
+                                                                         target:self
+                                                                         action:@selector(addNewClass:)];
+    navItem.rightBarButtonItem = bbi;
+    // navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
+    
+    
     // Initialize the table view of class info.
     self.classInfoTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.classInfoTableView.delegate = self;
@@ -54,7 +72,7 @@ NSString* const kTimeRowKey = @"Time";
     self.photoCollectionView.dataSource = self;
     UINib *cellNib = [UINib nibWithNibName:@"SRXPhotoCell" bundle:nil];
     [self.photoCollectionView registerNib:cellNib forCellWithReuseIdentifier:@"cvCell"];
-
+    
     // Initialize the class image array.
     NSString* const plusSignFileName = @"plus_sign.png";
     self.patternImagesArray = [NSMutableArray arrayWithArray:@[plusSignFileName]];
@@ -72,15 +90,25 @@ NSString* const kTimeRowKey = @"Time";
                                    action:@selector(dismissKeyboard)];
     tap.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tap];
+    
+    if (YES) {
+        [UIApplication sharedApplication].idleTimerDisabled = TRUE;
+        locationmanager = [[CLLocationManager alloc] init];
+        [locationmanager requestAlwaysAuthorization];        //NSLocationAlwaysUsageDescription
+        [locationmanager requestWhenInUseAuthorization];     //NSLocationWhenInUseDescription
+        locationmanager.delegate = self;
+        
+        [self performSelector:@selector(getLocation)];
+    }
 }
 
 -(void)dismissKeyboard {
     [self.classDescriptionTextField endEditing:YES];
     
-    /*
-    MyClassInfo* person = [[[MyClassInfo builder] setDescription:@"hello world"]build];
-    SRXDataClassInfo * newClass = [[[[SRXDataClassInfo builder] setId:32] setClassInfo:person] build];
-    NSLog(@"ClassInfo: %@", newClass);*/
+    /* Junk: DO NOT SUBMIT
+     MyClassInfo* person = [[[MyClassInfo builder] setDescription:@"hello world"]build];
+     SRXDataClassInfo * newClass = [[[[SRXDataClassInfo builder] setId:32] setClassInfo:person] build];
+     NSLog(@"ClassInfo: %@", newClass);*/
 }
 
 - (void) addImage:(NSString*) imageFileName {
@@ -112,36 +140,51 @@ NSString* const kTimeRowKey = @"Time";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     cell.textLabel.text = NSLocalizedString(self.rowKeys[indexPath.row], self.rowKeys[indexPath.row]);
-    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
-/*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0) {
-        
-    } else if (indexPath.section == 1){
-        SRXTeacherOpenClassViewController *detailViewController = [[SRXTeacherOpenClassViewController alloc] init];
-        
-        // Push it onto the top of the navigation controller's stack
-        [self.navigationController pushViewController:detailViewController
-                                             animated:YES];
-    }
+
+ - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+     /*
+ if (indexPath.section == 0) {
+ 
+ } else if (indexPath.section == 1){
+ SRXTeacherOpenClassViewController *detailViewController = [[SRXTeacherOpenClassViewController alloc] init];
+ 
+ // Push it onto the top of the navigation controller's stack
+ [self.navigationController pushViewController:detailViewController
+ animated:YES];
+ }*/
+     if (indexPath.section == 0) {
+         if (indexPath.row == 0) {
+             SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:@[
+             @"语文", @"数学"]];
+             selectionViewController.delegate = self;
+             [self presentViewController:selectionViewController animated:YES completion:nil];
+         }
+     }
+     
+ }
+
+
+- (void) itemDidSelectAt: (int) selectedIndex
+             withContent: (NSString*) selectedItem {
+    NSLog(@"SelectedItem: %@", selectedItem);
+    
 }
-*/
 
 #pragma mark Logic related to Topic row.
 /*
-- (void) rowTopicTapped {
-    
-}
-
-- (void) (ClassTopicPickerViewController *)picker
-didFinishPickingMediaWithInfo:(NSArray *)info {
-    
-}*/
+ - (void) rowTopicTapped {
+ 
+ }
+ 
+ - (void) (ClassTopicPickerViewController *)picker
+ didFinishPickingMediaWithInfo:(NSArray *)info {
+ 
+ }*/
 
 // TODO(liefuliu): implement a generic 1-out-of-N table view.
 
@@ -250,7 +293,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                 NSLog(@"UIImagePickerControllerReferenceURL = %@", dict);
             }
         } else if ([dict objectForKey:UIImagePickerControllerMediaType] == ALAssetTypeVideo){
-           // Video Asset is not supported for now.
+            // Video Asset is not supported for now.
         } else {
             NSLog(@"Uknown asset type");
         }
@@ -261,5 +304,60 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void) elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+#pragma mark
+
+- (IBAction)addNewClass:(id)sender {
+    SRXDataClassInfoBuilder* classInfoBuilder = [SRXDataClassInfo builder];
+    [classInfoBuilder setSummary:self.classDescriptionTextField.text];
+    [classInfoBuilder setLocationBuilder:
+     [[[SRXDataLocation builder] setLatitude:_locationCoordinate2D.latitude] setLongtitude:_locationCoordinate2D.longitude]];
+    // TODO: add more info about the class
+    
+    SRXProtoCreateClassRequestBuilder* createClassRequestBuilder = [SRXProtoCreateClassRequest builder];
+    [createClassRequestBuilder setClassInfoBuilder:classInfoBuilder];
+    
+    SRXProtoCreateClassRequest* createClassRequest = [createClassRequestBuilder build];
+    
+    NSLog(@"Create class request: %@", createClassRequest);
+    // TODO: add more info about the class.
+    
+    SRXProtoCreateClassResponse* createClassResponse;
+    [[SRXApiFactory getActualApi] createClass:createClassRequest withResponse:&createClassResponse
+                                   completion:^(BOOL success, NSString* errorMsg) {
+                                       if (success) {
+                                           _classInfo = [createClassRequest classInfo];
+                                           NSLog(@"Class info: %@", _classInfo);
+                                           if([self.delegate respondsToSelector:@selector(newClassCreated:)]) {
+                                               [self.delegate newClassCreated];
+                                           }
+                                           [self.navigationController popViewControllerAnimated:YES];
+                                       }
+                                   }];
+}
+
+
+-(void)getLocation{
+    NSLog(@"mapView getlocation");
+    __block __weak SRXTeacherOpenClassViewController *wself = self;
+    
+    if (YES) {
+        [[CCLocationManager shareLocation] getLocationCoordinate:^(CLLocationCoordinate2D locationCorrrdinate) {
+            NSLog(@"getLocationCoordinate:%f %f",locationCorrrdinate.latitude,locationCorrrdinate.longitude);
+            _locationCoordinate2D = locationCorrrdinate;
+        }];
+    }
+    
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didChangeAuthorizationStatus:(CLAuthorizationStatus)status {
+    // TODO(liefuliu): Not sure how this is used.
+    if (status == kCLAuthorizationStatusAuthorizedAlways ||
+        status == kCLAuthorizationStatusAuthorizedWhenInUse) {
+        NSLog(@"location manager granted");
+    }
+}
+
 
 @end
