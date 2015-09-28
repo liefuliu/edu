@@ -14,6 +14,7 @@
 #import "SRXSingleSelectionTableViewController.h"
 
 #import "SRXDataClass.pb.h"
+#import "SRXClassUtil.h"
 
 #import <MobileCoreServices/UTCoreTypes.h>
 
@@ -22,7 +23,7 @@
 #import "CCLocationManager.h"
 
 
-@interface SRXTeacherOpenClassViewController () <CLLocationManagerDelegate> {
+@interface SRXTeacherOpenClassViewController () <CLLocationManagerDelegate, SRXSingleSelectionTableViewControllerDelegate> {
     CLLocationManager *locationmanager;
 }
 
@@ -31,6 +32,14 @@
 @property (nonatomic, strong) NSMutableDictionary *imageDictionary;
 @property (nonatomic, strong) NSArray* rowKeys;
 @property (nonatomic) CLLocationCoordinate2D locationCoordinate2D;
+
+@property (nonatomic) SRXDataClassTypeEnumSRXDataClassType classType;
+@property (nonatomic) SRXDataClassTime* classTime;
+
+//To be enabled: @property (nonatomic) SRXDataClassPrice* classPrice;
+@property (nonatomic) SRXDataLocation* classLocation;
+
+@property NSDictionary* classDescriptionDictionary;
 
 @end
 
@@ -47,6 +56,10 @@ NSString* const kTopicRowKey = @"Topic";
 NSString* const kLocationRowKey = @"Location";
 NSString* const kPriceRowKey = @"Price";
 NSString* const kTimeRowKey = @"Time";
+
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -81,6 +94,7 @@ NSString* const kTimeRowKey = @"Time";
     
     // Initialize the keys of rows.
     self.rowKeys = @[kTopicRowKey, kLocationRowKey, kPriceRowKey, kTimeRowKey];
+    self.classDescriptionDictionary = [SRXClassUtil getClassDescriptiveDictionary];
     
     [self.classDescriptionTextField becomeFirstResponder];
     
@@ -139,7 +153,21 @@ NSString* const kTimeRowKey = @"Time";
     NSLog(@"cellForRowAtIndexPath called");
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    if(!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell" ];
+    }
+    
     cell.textLabel.text = NSLocalizedString(self.rowKeys[indexPath.row], self.rowKeys[indexPath.row]);
+    
+    if (indexPath.row == kTopicRowIndex) {
+        if (self.classType != SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
+            NSString* descriptiveText = [self.classDescriptionDictionary objectForKey:[NSNumber numberWithInt:self.classType]];
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, descriptiveText];
+        }
+    } else {
+        cell.textLabel.textColor = [UIColor grayColor];
+    }
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
@@ -147,20 +175,10 @@ NSString* const kTimeRowKey = @"Time";
 
  - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
  {
-     /*
- if (indexPath.section == 0) {
- 
- } else if (indexPath.section == 1){
- SRXTeacherOpenClassViewController *detailViewController = [[SRXTeacherOpenClassViewController alloc] init];
- 
- // Push it onto the top of the navigation controller's stack
- [self.navigationController pushViewController:detailViewController
- animated:YES];
- }*/
      if (indexPath.section == 0) {
          if (indexPath.row == 0) {
              SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:@[
-             @"语文", @"数学"]];
+             @"语文", @"数学", @"钢琴", @"围棋"]];
              selectionViewController.delegate = self;
              [self presentViewController:selectionViewController animated:YES completion:nil];
          }
@@ -172,6 +190,18 @@ NSString* const kTimeRowKey = @"Time";
 - (void) itemDidSelectAt: (int) selectedIndex
              withContent: (NSString*) selectedItem {
     NSLog(@"SelectedItem: %@", selectedItem);
+    
+    // TODO: fix this hack
+    if (selectedIndex == 0) {
+        self.classType = SRXDataClassTypeEnumSRXDataClassTypeYuwen;
+    } else if (selectedIndex == 1) {
+        self.classType = SRXDataClassTypeEnumSRXDataClassTypeShuxue;
+    } else if (selectedIndex == 2) {
+        self.classType = SRXDataClassTypeEnumSRXDataClassTypeGangqin;
+    } else if (selectedIndex == 3) {
+        self.classType = SRXDataClassTypeEnumSRXDataClassTypeWeiqi;
+    }
+    [self.classInfoTableView reloadData];
     
 }
 
@@ -307,12 +337,55 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 #pragma mark
 
+// Check whether all the necessary info haven't been filed. Throw an alert and return false
+// if not.
+- (BOOL) qualifedForAddNewClass {
+    if ([self.classDescriptionTextField.text length] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
+                                                        message:NSLocalizedString(@"Class summary must be filled", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }
+    
+    if (self.classType == SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
+                                                        message:NSLocalizedString(@"Class type wasn't set", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }
+    
+    /*
+    if (self.classTime == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
+                                                        message:NSLocalizedString(@"Class time wasn't set.", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }*/
+    
+    return YES;
+}
+
 - (IBAction)addNewClass:(id)sender {
+    if (![self qualifedForAddNewClass]) {
+        return;
+    }
+    
     SRXDataClassInfoBuilder* classInfoBuilder = [SRXDataClassInfo builder];
     [classInfoBuilder setSummary:self.classDescriptionTextField.text];
     [classInfoBuilder setLocationBuilder:
      [[[SRXDataLocation builder] setLatitude:_locationCoordinate2D.latitude] setLongtitude:_locationCoordinate2D.longitude]];
+    [classInfoBuilder setClassType: self.classType];
     // TODO: add more info about the class
+    
     
     SRXProtoCreateClassRequestBuilder* createClassRequestBuilder = [SRXProtoCreateClassRequest builder];
     [createClassRequestBuilder setClassInfoBuilder:classInfoBuilder];
@@ -358,6 +431,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         NSLog(@"location manager granted");
     }
 }
+
+# pragma auxiluary functions.
 
 
 @end

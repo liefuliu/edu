@@ -67,6 +67,7 @@
 		6D8BC56E1BB51302001F20F0 /* SRXParseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC56D1BB51302001F20F0 /* SRXParseApi.m */; };
 		6D8BC5711BB59B95001F20F0 /* SRXApiFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC5701BB59B95001F20F0 /* SRXApiFactory.m */; };
 		6D9AA66F1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9AA66E1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m */; };
+		6D9AA6721BB8CE9000B66099 /* SRXClassUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9AA6711BB8CE9000B66099 /* SRXClassUtil.m */; };
 		6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */; };
 		6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */; };
 		6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE27F01B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m */; };
@@ -203,6 +204,8 @@
 		6D8BC5701BB59B95001F20F0 /* SRXApiFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXApiFactory.m; path = API/SRXApiFactory.m; sourceTree = "<group>"; };
 		6D9AA66D1BB89CB300B66099 /* SRXSingleSelectionTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXSingleSelectionTableViewController.h; sourceTree = "<group>"; };
 		6D9AA66E1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXSingleSelectionTableViewController.m; sourceTree = "<group>"; };
+		6D9AA6701BB8CE9000B66099 /* SRXClassUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXClassUtil.h; sourceTree = "<group>"; };
+		6D9AA6711BB8CE9000B66099 /* SRXClassUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXClassUtil.m; sourceTree = "<group>"; };
 		6DDE27EA1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXLogInSignUpViewController.h; sourceTree = "<group>"; };
 		6DDE27EB1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXLogInSignUpViewController.m; sourceTree = "<group>"; };
 		6DDE27EC1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXLogInSignUpViewController.xib; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6D8BC5611BB27D76001F20F0 /* Util */,
 				6D8BC5601BB27D6A001F20F0 /* API */,
 				6DF41F0F1BAF06E800B45311 /* ProtoGen */,
 				6DF41F0E1BAF06E200B45311 /* Proto */,
@@ -487,7 +491,6 @@
 		6D8BC5601BB27D6A001F20F0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				6D8BC5611BB27D76001F20F0 /* New Group */,
 				6D8BC5621BB27DC9001F20F0 /* TeacherAPI.h */,
 				6D8BC5631BB27DC9001F20F0 /* TeacherAPI.m */,
 				6D8BC5661BB3C2D8001F20F0 /* SRXProtocols.h */,
@@ -499,11 +502,13 @@
 			name = API;
 			sourceTree = "<group>";
 		};
-		6D8BC5611BB27D76001F20F0 /* New Group */ = {
+		6D8BC5611BB27D76001F20F0 /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				6D9AA6701BB8CE9000B66099 /* SRXClassUtil.h */,
+				6D9AA6711BB8CE9000B66099 /* SRXClassUtil.m */,
 			);
-			name = "New Group";
+			name = Util;
 			sourceTree = "<group>";
 		};
 		6DDE27E91B8ED2BD00A855E5 /* LogIn */ = {
@@ -854,6 +859,7 @@
 				6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */,
 				6D18F7FC1BA5DD97004A9F66 /* ELCAlbumPickerController.m in Sources */,
 				6D18F8021BA5DD97004A9F66 /* ELCOverlayImageView.m in Sources */,
+				6D9AA6721BB8CE9000B66099 /* SRXClassUtil.m in Sources */,
 				6D18F8181BA65C55004A9F66 /* SRXTeacherMeViewController.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
 				6D18F7FE1BA5DD97004A9F66 /* ELCAssetCell.m in Sources */,

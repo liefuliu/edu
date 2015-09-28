@@ -17,8 +17,6 @@
 
 // Must be an array of NSString.
 @property (nonatomic, readonly) NSArray* itemsForSelection;
-//@property (nonatomic, readonly) int selectedIndex;
-//@property (nonatomic, readonly) NSString* selectedItem;
 
 - (instancetype) initWithItems: (NSArray*) itemsForSelection;
 

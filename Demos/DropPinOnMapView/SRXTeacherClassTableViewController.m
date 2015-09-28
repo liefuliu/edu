@@ -12,11 +12,13 @@
 #import "SRXTeacherOpenClassViewController.h"
 #import "SRXColor.h"
 #import "SRXApiFactory.h"
+#import "SRXClassUtil.h"
 
 @interface SRXTeacherClassTableViewController ()
 
 // An array of SRXDataClassInfo which are owned by the current user.
 @property NSMutableArray* allClasses;
+@property NSDictionary* classTypeDescriptionDictionary;
 
 @end
 
@@ -48,6 +50,8 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     
     [self performSelector:@selector(initializeData)];
+    
+    self.classTypeDescriptionDictionary = [SRXClassUtil getClassDescriptiveDictionary];
 }
 
 
@@ -122,18 +126,20 @@
         classInfo.topic = @"钢琴";
         cell.topicLabel.text = [classInfo topic];
         cell.timeLabel.text = [classInfo time];
+        */
         
         if (indexPath.row % 3) {
             cell.statusLabel.text = @"已开学";
         } else {
             cell.statusLabel.text = @"10月1日开学";
-            cell.timeLabel.text = @"每周四晚";
         }
-        */
-        cell.topicLabel.text = [classInfo summary];
+        cell.timeLabel.text = @"每周四晚";
+        cell.topicLabel.text = (NSString*)[self.classTypeDescriptionDictionary objectForKey:[NSNumber numberWithInt:classInfo.classType]];
         
+        /*
         cell.timeLabel.text = [classInfo summary];
         cell.statusLabel.text = [classInfo summary];
+        */
         
         NSLog(@"class info: %@", classInfo);
         return cell;
