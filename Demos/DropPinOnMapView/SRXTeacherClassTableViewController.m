@@ -63,6 +63,7 @@
 - (void) newClassCreated {
     NSLog(@"newClassCreated");
     [self initializeData];
+    [self.tableView reloadData];
 }
 
 #pragma mark - initialize data
@@ -113,8 +114,6 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ;
-    
     if (indexPath.section==0) {
         SRXTeacherClassCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SRXTeacherClassCell" forIndexPath:indexPath];
         

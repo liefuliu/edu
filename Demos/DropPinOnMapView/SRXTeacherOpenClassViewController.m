@@ -33,11 +33,21 @@
 @property (nonatomic, strong) NSArray* rowKeys;
 @property (nonatomic) CLLocationCoordinate2D locationCoordinate2D;
 
-@property (nonatomic) SRXDataClassTypeEnumSRXDataClassType classType;
 @property (nonatomic) SRXDataClassTime* classTime;
 
 //To be enabled: @property (nonatomic) SRXDataClassPrice* classPrice;
 @property (nonatomic) SRXDataLocation* classLocation;
+
+
+@property (nonatomic) SRXDataClassTypeEnumSRXDataClassType selectedClassType;
+
+// All classes type which allow user to choose in SRXSingleSelectionViewController.
+// All elements are in type of SRXDataClassTypeEnumSRXDataClassType.
+@property (nonatomic) NSArray* classTypesAllowToSelect;
+
+// Strings of all classes type which allow user to choose in SRXSingleSelectionViewController.
+// All elements are in type of NSString*.
+@property (nonatomic) NSArray* classTypeStringsAllowToSelect;
 
 @property NSDictionary* classDescriptionDictionary;
 
@@ -57,13 +67,12 @@ NSString* const kLocationRowKey = @"Location";
 NSString* const kPriceRowKey = @"Price";
 NSString* const kTimeRowKey = @"Time";
 
-
-
-
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self initializeItemsForSelection];
+    
     
     UINavigationItem *navItem = self.navigationItem;
     navItem.title = NSLocalizedString(@"New class", @"New class");
@@ -116,14 +125,30 @@ NSString* const kTimeRowKey = @"Time";
     }
 }
 
+#pragma mark helper function used by viewDidLoad
+
+- (void) initializeItemsForSelection {
+    [self initializeClassTypeItemsForSeletion];
+}
+
+- (void) initializeClassTypeItemsForSeletion {
+    NSDictionary* dictionary = [SRXClassUtil getClassDescriptiveDictionary];
+    self.classTypesAllowToSelect = [dictionary allKeys];
+    self.classTypeStringsAllowToSelect = [dictionary allValues];
+}
+
+
 -(void)dismissKeyboard {
     [self.classDescriptionTextField endEditing:YES];
-    
-    /* Junk: DO NOT SUBMIT
-     MyClassInfo* person = [[[MyClassInfo builder] setDescription:@"hello world"]build];
-     SRXDataClassInfo * newClass = [[[[SRXDataClassInfo builder] setId:32] setClassInfo:person] build];
-     NSLog(@"ClassInfo: %@", newClass);*/
 }
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark functions for adding image.
 
 - (void) addImage:(NSString*) imageFileName {
     [self addImage:[UIImage imageNamed:imageFileName] forKey:imageFileName];
@@ -135,12 +160,6 @@ NSString* const kTimeRowKey = @"Time";
         [self.imageDictionary setObject:image forKey:imageKey];
     }
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark UITableViewDelegate Methods
 
@@ -160,8 +179,8 @@ NSString* const kTimeRowKey = @"Time";
     cell.textLabel.text = NSLocalizedString(self.rowKeys[indexPath.row], self.rowKeys[indexPath.row]);
     
     if (indexPath.row == kTopicRowIndex) {
-        if (self.classType != SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
-            NSString* descriptiveText = [self.classDescriptionDictionary objectForKey:[NSNumber numberWithInt:self.classType]];
+        if (self.selectedClassType != SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
+            NSString* descriptiveText = [self.classDescriptionDictionary objectForKey:[NSNumber numberWithInt:self.selectedClassType]];
             cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, descriptiveText];
         }
     } else {
@@ -177,8 +196,7 @@ NSString* const kTimeRowKey = @"Time";
  {
      if (indexPath.section == 0) {
          if (indexPath.row == 0) {
-             SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:@[
-             @"语文", @"数学", @"钢琴", @"围棋"]];
+             SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:self.classTypeStringsAllowToSelect];
              selectionViewController.delegate = self;
              [self presentViewController:selectionViewController animated:YES completion:nil];
          }
@@ -186,21 +204,11 @@ NSString* const kTimeRowKey = @"Time";
      
  }
 
-
 - (void) itemDidSelectAt: (int) selectedIndex
              withContent: (NSString*) selectedItem {
     NSLog(@"SelectedItem: %@", selectedItem);
     
-    // TODO: fix this hack
-    if (selectedIndex == 0) {
-        self.classType = SRXDataClassTypeEnumSRXDataClassTypeYuwen;
-    } else if (selectedIndex == 1) {
-        self.classType = SRXDataClassTypeEnumSRXDataClassTypeShuxue;
-    } else if (selectedIndex == 2) {
-        self.classType = SRXDataClassTypeEnumSRXDataClassTypeGangqin;
-    } else if (selectedIndex == 3) {
-        self.classType = SRXDataClassTypeEnumSRXDataClassTypeWeiqi;
-    }
+    self.selectedClassType = (SRXDataClassTypeEnumSRXDataClassType)[self.classTypesAllowToSelect[selectedIndex] intValue];
     [self.classInfoTableView reloadData];
     
 }
@@ -215,13 +223,6 @@ NSString* const kTimeRowKey = @"Time";
  didFinishPickingMediaWithInfo:(NSArray *)info {
  
  }*/
-
-// TODO(liefuliu): implement a generic 1-out-of-N table view.
-
-// TODO(liefuliu): implement a comlete button and the delegate back the info.
-
-
-
 
 #pragma mark UICollectionViewDelegate Methods
 
@@ -335,7 +336,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark
+#pragma mark functions for adding a new class.
 
 // Check whether all the necessary info haven't been filed. Throw an alert and return false
 // if not.
@@ -350,7 +351,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         return NO;
     }
     
-    if (self.classType == SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
+    if (self.selectedClassType == SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
                                                         message:NSLocalizedString(@"Class type wasn't set", nil)
                                                        delegate:nil
@@ -383,9 +384,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [classInfoBuilder setSummary:self.classDescriptionTextField.text];
     [classInfoBuilder setLocationBuilder:
      [[[SRXDataLocation builder] setLatitude:_locationCoordinate2D.latitude] setLongtitude:_locationCoordinate2D.longitude]];
-    [classInfoBuilder setClassType: self.classType];
+    [classInfoBuilder setClassType: self.selectedClassType];
     // TODO: add more info about the class
-    
     
     SRXProtoCreateClassRequestBuilder* createClassRequestBuilder = [SRXProtoCreateClassRequest builder];
     [createClassRequestBuilder setClassInfoBuilder:classInfoBuilder];
@@ -401,11 +401,11 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                                        if (success) {
                                            _classInfo = [createClassRequest classInfo];
                                            NSLog(@"Class info: %@", _classInfo);
-                                           if([self.delegate respondsToSelector:@selector(newClassCreated:)]) {
+                                           [self.navigationController popViewControllerAnimated:YES];
+                                           if([self.delegate respondsToSelector:@selector(newClassCreated)]) {
                                                [self.delegate newClassCreated];
                                            }
-                                           [self.navigationController popViewControllerAnimated:YES];
-                                       }
+                                        }
                                    }];
 }
 

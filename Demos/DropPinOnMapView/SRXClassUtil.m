@@ -13,12 +13,17 @@
 
 + (NSDictionary*) getClassDescriptiveDictionary {
     // TODO: improve this function to ensure diction is created only once.
+    // TODO: Use the key to be enum and the default value to be English translation
     NSMutableDictionary* dict = [[NSMutableDictionary alloc] init];
     if (dict) {
-        [dict setObject:NSLocalizedString(@"Chinese", nil) forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeYuwen]];
-        [dict setObject:NSLocalizedString(@"Math", nil) forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeShuxue]];
-        [dict setObject:NSLocalizedString(@"Weiqi", nil) forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeWeiqi]];
-        [dict setObject:NSLocalizedString(@"Piano", nil) forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeGangqin]];
+        [dict setObject:NSLocalizedString(@"SRXDataClassTypeEnumSRXDataClassTypeYuwen", @"Chinese")
+                 forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeYuwen]];
+        [dict setObject:NSLocalizedString(@"SRXDataClassTypeEnumSRXDataClassTypeShuxue", @"Math")
+                 forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeShuxue]];
+        [dict setObject:NSLocalizedString(@"SRXDataClassTypeEnumSRXDataClassTypeWeiqi", @"Weiqi")
+                 forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeWeiqi]];
+        [dict setObject:NSLocalizedString(@"SRXDataClassTypeEnumSRXDataClassTypeGangqin", @"Piano")
+                 forKey:[NSNumber numberWithInt:SRXDataClassTypeEnumSRXDataClassTypeGangqin]];
     }
     
     return dict;
