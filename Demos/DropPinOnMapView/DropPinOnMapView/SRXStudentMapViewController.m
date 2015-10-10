@@ -12,6 +12,7 @@
 #define IS_IOS8 YES
 
 #import "SRXStudentMapViewController.h"
+#import "SRXStudentClassViewController.h"
 #import "CCLocationManager.h"
 #import "ClassInfo.h"
 #import "ClassesStore.h"
@@ -34,8 +35,7 @@
     
     [super viewDidLoad];
     
-    //[[self navigationController] setNavigationBarHidden:YES animated:YES];
-    
+    self.myMapView.delegate = self;
     if (IS_IOS8) {
         [UIApplication sharedApplication].idleTimerDisabled = TRUE;
         locationmanager = [[CLLocationManager alloc] init];
@@ -46,7 +46,6 @@
     
     [self performSelector:@selector(getLocation)];
     NSLog(@"viewDidLoad finished");
-    
 }
 
 /*
@@ -64,12 +63,6 @@
     [self performSelector:@selector(getLocation)];
     NSLog(@"viewWillAppear finished");
 }*/
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
-    NSLog(@"mapView didUpdateUserLocation");
-    [self performSelector:@selector(getLocation)];
-}
-
 
 -(void)getLocation{
     NSLog(@"mapView getlocation");
@@ -170,26 +163,21 @@
     return annotationView;
 }
 
-
-
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
     //[self performSegueWithIdentifier:@"DetailsIphone" sender:view];
     NSLog(@"calloutAccessoryControlTapped");
 }*/
 
-
+/*
 - (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+
     MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
     annotationView.canShowCallout = NO;
-    
     return annotationView;
-}
-
-- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
-    NSLog(@"regionDidChangeAnimated");
-    [self performSelector:@selector(getLocation)];
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view
@@ -198,6 +186,79 @@
     
     NSLog(@"didSelectAnnotationView");
 }
+*/
+
+- (MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    /*
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    annotationView.canShowCallout = YES;
+    
+UIButton * disclosureButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+[disclosureButton addTarget:self
+                     action:@selector(presentMoreInfo)
+           forControlEvents:UIControlEventTouchUpInside];
+annotationView.rightCalloutAccessoryView = disclosureButton;
+    */
+
+    // If it's the user location, just return nil.
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    // If it is our ShopAnnotation, we create and return its view
+    if ([annotation isKindOfClass:[LFAnnotation class]]) {
+        // try to dequeue an existing pin view first
+        static NSString* shopAnnotationIdentifier = @"ShopAnnotationIdentifier";
+        MKPinAnnotationView* pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:shopAnnotationIdentifier ];
+        if (!pinView) {
+            // If an existing pin view was not available, create one
+            MKPinAnnotationView* customPinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:shopAnnotationIdentifier];
+            customPinView.pinColor = MKPinAnnotationColorRed;
+            customPinView.animatesDrop = YES;
+            customPinView.canShowCallout = YES;
+            
+            // add a detail disclosure button to the callout which will open a new view controller page
+            UIButton* rightButton = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+            customPinView.rightCalloutAccessoryView = rightButton;
+            
+            return customPinView;
+        } else {
+            pinView.annotation = annotation;
+        }
+    
+        return pinView;
+    }
+    return nil;
+}
+
+
+- (void)mapView:(MKMapView *)map annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    NSLog(@"Annotation clicked");
+    
+    //SRXStudentClassViewController* classViewController = [[SRXStudentClassViewController alloc] init];
+    //[self presentViewController:classViewController animated:YES completion:nil];
+    
+    UIStoryboard *tableViewStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SRXStudentClassViewController* customViewController = (SRXStudentClassViewController*)[tableViewStoryboard instantiateViewControllerWithIdentifier:@"student class view"];
+    
+    LFAnnotation *annotation = view.annotation;
+    SRXDataClassInfo* classInfo = [annotation classInfo];
+    [customViewController setClassInfo:classInfo];
+    [self.navigationController pushViewController:customViewController animated:YES];
+}
+
+
+
+- (void)presentMoreInfo {
+    NSLog(@"presentMoreInfo called");
+}
+
+
+- (void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    NSLog(@"regionDidChangeAnimated");
+    //[self performSelector:@selector(getLocation)];
+}
+
 
 -(void)viewDidDisappear:(BOOL)animated
 {
@@ -208,6 +269,7 @@
 
 // This is for a bug in MKMapView for iOS6
 // Try to purge some of the memory being allocated by the map
+/*
 - (void)purgeMapMemory
 {
     // Switching map types causes cache purging, so switch to a different map type
@@ -215,5 +277,5 @@
     [self.myMapView removeFromSuperview];
     self.myMapView = nil;
 }
-
+*/
 @end

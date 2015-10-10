@@ -14,6 +14,7 @@
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString* title;
 @property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic) SRXDataClassInfo* classInfo;
 
 // Create a annotation at a random nearby coordinate to 'baseCoordinate', and with
 // random edu information.

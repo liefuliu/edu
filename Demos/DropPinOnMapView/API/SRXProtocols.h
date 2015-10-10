@@ -28,6 +28,13 @@ typedef void(^ApiCompletion)(BOOL, NSString*);
       withResponse: (SRXProtoSearchClassResponseBuilder**) responseBuilder
         completion:(ApiCompletion) compblock;
 
+- (void) addImages: (SRXProtoAddImagesRequest*) request
+      withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
+        completion: (ApiCompletion) compblock;
+
+- (void) getImages: (SRXProtoGetImagesRequest*) request
+      withResponse: (SRXProtoGetImagesResponseBuilder**) responseBuilder
+        completion: (ApiCompletion) compblock;
 
 @end
 

@@ -18,26 +18,25 @@
 
 #import <MobileCoreServices/UTCoreTypes.h>
 
-
 // TODO: Remove this once we created a location view.
 #import "CCLocationManager.h"
-
 
 @interface SRXTeacherOpenClassViewController () <CLLocationManagerDelegate, SRXSingleSelectionTableViewControllerDelegate> {
     CLLocationManager *locationmanager;
 }
 
-//@property (nonatomic, strong) NSArray *assets;
+// Contains all the images including the '+' sign.
 @property (nonatomic, strong) NSMutableArray *patternImagesArray;
+
+// Contains the iamges from photo selection keyed by file name, doesn't include the '+' sign.
 @property (nonatomic, strong) NSMutableDictionary *imageDictionary;
 @property (nonatomic, strong) NSArray* rowKeys;
 @property (nonatomic) CLLocationCoordinate2D locationCoordinate2D;
 
 @property (nonatomic) SRXDataClassTime* classTime;
 
-//To be enabled: @property (nonatomic) SRXDataClassPrice* classPrice;
+// To be enabled: @property (nonatomic) SRXDataClassPrice* classPrice;
 @property (nonatomic) SRXDataLocation* classLocation;
-
 
 @property (nonatomic) SRXDataClassTypeEnumSRXDataClassType selectedClassType;
 
@@ -80,8 +79,6 @@ NSString* const kTimeRowKey = @"Time";
                                                                          target:self
                                                                          action:@selector(addNewClass:)];
     navItem.rightBarButtonItem = bbi;
-    // navItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:nil];
-    
     
     // Initialize the table view of class info.
     self.classInfoTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -125,6 +122,17 @@ NSString* const kTimeRowKey = @"Time";
     }
 }
 
+
+-(void)dismissKeyboard {
+    [self.classDescriptionTextField endEditing:YES];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 #pragma mark helper function used by viewDidLoad
 
 - (void) initializeItemsForSelection {
@@ -138,15 +146,6 @@ NSString* const kTimeRowKey = @"Time";
 }
 
 
--(void)dismissKeyboard {
-    [self.classDescriptionTextField endEditing:YES];
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark functions for adding image.
 
@@ -361,6 +360,16 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         return NO;
     }
     
+    if ([self.imageDictionary count] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
+                                                        message:NSLocalizedString(@"No image was selected", nil)
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        return NO;
+    }
+    
     /*
     if (self.classTime == nil) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
@@ -379,6 +388,37 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     if (![self qualifedForAddNewClass]) {
         return;
     }
+    
+    /*for (NSString* key in [self.imageDictionary keys]) {
+        
+    }*/
+    
+    
+    
+    SRXProtoAddImagesRequestBuilder* requestBuilder = [SRXProtoAddImagesRequest builder];
+    [self.imageDictionary enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
+        NSString* const plusSignFileName = @"plus_sign.png";
+        if ((NSString*) key != plusSignFileName) {
+        //
+        // - (SRXProtoAddImagesRequestBuilder *)addImage:(SRXProtoImage*)value;
+        // Update the image to server as file.
+        SRXProtoImage* protoImage = [[[SRXProtoImage builder] setData:UIImagePNGRepresentation((UIImage*)obj)] build];
+        
+        [requestBuilder addImage:protoImage];
+        }
+    }];
+    
+    SRXProtoAddImagesResponseBuilder* responseBuilder = [SRXProtoAddImagesResponse builder];
+    SRXProtoAddImagesRequest * request = [requestBuilder build];
+    
+    [[SRXApiFactory getActualApi] addImages: request
+                        withResponse: &responseBuilder
+     completion:^(BOOL success, NSString* errorMsg) {
+         if (!success) {
+             
+         }
+     }];
+
     
     SRXDataClassInfoBuilder* classInfoBuilder = [SRXDataClassInfo builder];
     [classInfoBuilder setSummary:self.classDescriptionTextField.text];

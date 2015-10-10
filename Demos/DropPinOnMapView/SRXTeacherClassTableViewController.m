@@ -103,10 +103,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.sharedClassCollectionForDemo
     // Return the number of rows in the section.
-    if (section == 0) {
+    if (section == 1) {
         //return [[[SRXTeacherClassCollection sharedClassCollectionForDemo] classCollection] count];
         return [_allClasses count];
-    } else if (section == 1) {
+    } else if (section == 0) {
         return 1;
     }
     
@@ -114,7 +114,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section==0) {
+    if (indexPath.section== 1 ) {
         SRXTeacherClassCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SRXTeacherClassCell" forIndexPath:indexPath];
         
         // Configure the cell...
@@ -142,7 +142,7 @@
         
         NSLog(@"class info: %@", classInfo);
         return cell;
-     } else if (indexPath.section == 1) {
+     } else if (indexPath.section == 0) {
          UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
          cell.textLabel.text = NSLocalizedString(@"Create a new class", @"Link of creating a new class");
          cell.textLabel.textColor = [SRXColor colorForTextLink];
@@ -169,9 +169,7 @@
                                          animated:YES];
     */
     
-    if (indexPath.section == 0) {
-        
-    } else if (indexPath.section == 1){
+    if (indexPath.section == 0){
         SRXTeacherOpenClassViewController *detailViewController = [[SRXTeacherOpenClassViewController alloc] init];
         detailViewController.delegate = self;
         // Push it onto the top of the navigation controller's stack

@@ -18,6 +18,11 @@ const NSString* __nonnull kClassTableClassInfoKey = @"ClassInfo";
 const NSString* __nonnull kClassTableUserKey = @"Owner";
 const NSString* __nonnull kClassTableLocationKey = @"Location";
 
+
+const NSString* __nonnull kImageTable = @"Photo";
+const NSString* __nonnull kImageTableKeyColumn = @"PhotoKey";
+const NSString* __nonnull kImageTableDataColumn = @"PhotoRef";
+
 @synthesize someProperty;
 
 + (id)sharedObject {
@@ -185,8 +190,56 @@ ApiCompletion _completionHandler;
     
     _completionHandler = [compblock copy];
     _completionHandler(true, nil);
-    
+}
 
+- (void) addImages: (SRXProtoAddImagesRequest*) request
+      withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
+        completion: (ApiCompletion) compblock {
+    __block bool is_everyone_succeeded = false;
+    dispatch_group_t group = dispatch_group_create();
+    for (SRXProtoImage* image in [request image]) {
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
+
+        PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
+        NSString *uuidString = [[NSUUID UUID] UUIDString];
+        
+        userPhoto[kImageTableKeyColumn] = uuidString;
+        userPhoto[kImageTableDataColumn] = imageFile;
+        //[userPhoto saveInBackground];
+        dispatch_group_enter(group);
+        [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (!succeeded) {
+                // TODO: delete all the photos which has been uploaded in this request.
+                is_everyone_succeeded = false;
+            }
+            
+            dispatch_group_leave(group);
+        }];
+    }
+
+    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
+    
+    if (is_everyone_succeeded) {
+        NSLog(@"Successfully add photo");
+        _completionHandler(true, @"success");
+    } else {
+        NSLog(@"Failed to add photo");
+        _completionHandler(false, @"failed to add photo");
+    }
+}
+
+- (void) getImages: (SRXProtoGetImagesRequest*) request
+      withResponse: (SRXProtoGetImagesResponseBuilder**) responseBuilder
+        completion: (ApiCompletion) compblock {
+    /*
+     PFFile *userImageFile = anotherPhoto[@"imageFile"];
+     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
+     if (!error) {
+     UIImage *image = [UIImage imageWithData:imageData];
+     }
+     }];
+    */
+    
     
 }
 

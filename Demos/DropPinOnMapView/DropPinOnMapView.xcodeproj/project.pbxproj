@@ -92,6 +92,7 @@
 		6DDE28581BA28AFF00A855E5 /* SRXPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28571BA28AFF00A855E5 /* SRXPhotoCell.xib */; };
 		6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */; };
 		6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */; };
+		6DE899A31BC04E1500964AD8 /* SRXStudentClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */; };
 		8D8141B3AA500668C9BF0C78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
 		964E3EE19B6597FB03DB9DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -249,6 +250,8 @@
 		6DDE28631BA3E82100A855E5 /* SRXImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImageViewController.h; sourceTree = "<group>"; };
 		6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImageViewController.m; sourceTree = "<group>"; };
 		6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXImageViewController.xib; sourceTree = "<group>"; };
+		6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentClassViewController.h; sourceTree = "<group>"; };
+		6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentClassViewController.m; sourceTree = "<group>"; };
 		95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE82E9796B1C4C1D52781817 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DBAE63C5220B30CD95D2D17A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -311,6 +314,8 @@
 			children = (
 				6D013EC01B7F9C6E006D13B9 /* SRXStudentMapViewController.h */,
 				6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */,
+				6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */,
+				6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */,
 			);
 			name = StudentView;
 			sourceTree = "<group>";
@@ -858,6 +863,7 @@
 				6D18F8001BA5DD97004A9F66 /* ELCImagePickerController.m in Sources */,
 				6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */,
 				6D18F7FC1BA5DD97004A9F66 /* ELCAlbumPickerController.m in Sources */,
+				6DE899A31BC04E1500964AD8 /* SRXStudentClassViewController.m in Sources */,
 				6D18F8021BA5DD97004A9F66 /* ELCOverlayImageView.m in Sources */,
 				6D9AA6721BB8CE9000B66099 /* SRXClassUtil.m in Sources */,
 				6D18F8181BA65C55004A9F66 /* SRXTeacherMeViewController.m in Sources */,

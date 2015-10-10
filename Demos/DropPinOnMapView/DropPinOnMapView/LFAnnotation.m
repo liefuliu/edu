@@ -26,7 +26,8 @@
     if (self) {
         self.coordinate = CLLocationCoordinate2DMake(classInfo.location.latitude, classInfo.location.longtitude);
         self.title = classInfo.summary;
-        self.subtitle = classInfo.summary;
+        //self.subtitle = NSStringFromSRXDataClassTypeEnumSRXDataClassType(classInfo.classType);
+        self.classInfo = classInfo;
     }
     return self;
 }
