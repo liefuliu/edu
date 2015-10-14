@@ -14,6 +14,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
     PBMutableExtensionRegistry* registry = [PBMutableExtensionRegistry registry];
     [self registerAllExtensions:registry];
     [SrxdataClassRoot registerAllExtensions:registry];
+    [SrxdataImageRoot registerAllExtensions:registry];
     extensionRegistry = registry;
   }
 }
@@ -2015,183 +2016,6 @@ static SRXProtoSearchClassResponse* defaultSRXProtoSearchClassResponseInstance =
 }
 @end
 
-@interface SRXProtoImageServerTypeEnum ()
-@end
-
-@implementation SRXProtoImageServerTypeEnum
-
-- (instancetype) init {
-  if ((self = [super init])) {
-  }
-  return self;
-}
-static SRXProtoImageServerTypeEnum* defaultSRXProtoImageServerTypeEnumInstance = nil;
-+ (void) initialize {
-  if (self == [SRXProtoImageServerTypeEnum class]) {
-    defaultSRXProtoImageServerTypeEnumInstance = [[SRXProtoImageServerTypeEnum alloc] init];
-  }
-}
-+ (instancetype) defaultInstance {
-  return defaultSRXProtoImageServerTypeEnumInstance;
-}
-- (instancetype) defaultInstance {
-  return defaultSRXProtoImageServerTypeEnumInstance;
-}
-- (BOOL) isInitialized {
-  return YES;
-}
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  [self.unknownFields writeToCodedOutputStream:output];
-}
-- (SInt32) serializedSize {
-  __block SInt32 size_ = memoizedSerializedSize;
-  if (size_ != -1) {
-    return size_;
-  }
-
-  size_ = 0;
-  size_ += self.unknownFields.serializedSize;
-  memoizedSerializedSize = size_;
-  return size_;
-}
-+ (SRXProtoImageServerTypeEnum*) parseFromData:(NSData*) data {
-  return (SRXProtoImageServerTypeEnum*)[[[SRXProtoImageServerTypeEnum builder] mergeFromData:data] build];
-}
-+ (SRXProtoImageServerTypeEnum*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (SRXProtoImageServerTypeEnum*)[[[SRXProtoImageServerTypeEnum builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
-}
-+ (SRXProtoImageServerTypeEnum*) parseFromInputStream:(NSInputStream*) input {
-  return (SRXProtoImageServerTypeEnum*)[[[SRXProtoImageServerTypeEnum builder] mergeFromInputStream:input] build];
-}
-+ (SRXProtoImageServerTypeEnum*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (SRXProtoImageServerTypeEnum*)[[[SRXProtoImageServerTypeEnum builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (SRXProtoImageServerTypeEnum*) parseFromCodedInputStream:(PBCodedInputStream*) input {
-  return (SRXProtoImageServerTypeEnum*)[[[SRXProtoImageServerTypeEnum builder] mergeFromCodedInputStream:input] build];
-}
-+ (SRXProtoImageServerTypeEnum*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  return (SRXProtoImageServerTypeEnum*)[[[SRXProtoImageServerTypeEnum builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
-}
-+ (SRXProtoImageServerTypeEnumBuilder*) builder {
-  return [[SRXProtoImageServerTypeEnumBuilder alloc] init];
-}
-+ (SRXProtoImageServerTypeEnumBuilder*) builderWithPrototype:(SRXProtoImageServerTypeEnum*) prototype {
-  return [[SRXProtoImageServerTypeEnum builder] mergeFrom:prototype];
-}
-- (SRXProtoImageServerTypeEnumBuilder*) builder {
-  return [SRXProtoImageServerTypeEnum builder];
-}
-- (SRXProtoImageServerTypeEnumBuilder*) toBuilder {
-  return [SRXProtoImageServerTypeEnum builderWithPrototype:self];
-}
-- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  [self.unknownFields writeDescriptionTo:output withIndent:indent];
-}
-- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
-  [self.unknownFields storeInDictionary:dictionary];
-}
-- (BOOL) isEqual:(id)other {
-  if (other == self) {
-    return YES;
-  }
-  if (![other isKindOfClass:[SRXProtoImageServerTypeEnum class]]) {
-    return NO;
-  }
-  SRXProtoImageServerTypeEnum *otherMessage = other;
-  return
-      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
-}
-- (NSUInteger) hash {
-  __block NSUInteger hashCode = 7;
-  hashCode = hashCode * 31 + [self.unknownFields hash];
-  return hashCode;
-}
-@end
-
-BOOL SRXProtoImageServerTypeEnumImageServerTypeIsValidValue(SRXProtoImageServerTypeEnumImageServerType value) {
-  switch (value) {
-    case SRXProtoImageServerTypeEnumImageServerTypeUnknown:
-    case SRXProtoImageServerTypeEnumImageServerTypeParse:
-      return YES;
-    default:
-      return NO;
-  }
-}
-NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageServerTypeEnumImageServerType value) {
-  switch (value) {
-    case SRXProtoImageServerTypeEnumImageServerTypeUnknown:
-      return @"SRXProtoImageServerTypeEnumImageServerTypeUnknown";
-    case SRXProtoImageServerTypeEnumImageServerTypeParse:
-      return @"SRXProtoImageServerTypeEnumImageServerTypeParse";
-    default:
-      return nil;
-  }
-}
-
-@interface SRXProtoImageServerTypeEnumBuilder()
-@property (strong) SRXProtoImageServerTypeEnum* resultSrxprotoImageServerTypeEnum;
-@end
-
-@implementation SRXProtoImageServerTypeEnumBuilder
-@synthesize resultSrxprotoImageServerTypeEnum;
-- (instancetype) init {
-  if ((self = [super init])) {
-    self.resultSrxprotoImageServerTypeEnum = [[SRXProtoImageServerTypeEnum alloc] init];
-  }
-  return self;
-}
-- (PBGeneratedMessage*) internalGetResult {
-  return resultSrxprotoImageServerTypeEnum;
-}
-- (SRXProtoImageServerTypeEnumBuilder*) clear {
-  self.resultSrxprotoImageServerTypeEnum = [[SRXProtoImageServerTypeEnum alloc] init];
-  return self;
-}
-- (SRXProtoImageServerTypeEnumBuilder*) clone {
-  return [SRXProtoImageServerTypeEnum builderWithPrototype:resultSrxprotoImageServerTypeEnum];
-}
-- (SRXProtoImageServerTypeEnum*) defaultInstance {
-  return [SRXProtoImageServerTypeEnum defaultInstance];
-}
-- (SRXProtoImageServerTypeEnum*) build {
-  [self checkInitialized];
-  return [self buildPartial];
-}
-- (SRXProtoImageServerTypeEnum*) buildPartial {
-  SRXProtoImageServerTypeEnum* returnMe = resultSrxprotoImageServerTypeEnum;
-  self.resultSrxprotoImageServerTypeEnum = nil;
-  return returnMe;
-}
-- (SRXProtoImageServerTypeEnumBuilder*) mergeFrom:(SRXProtoImageServerTypeEnum*) other {
-  if (other == [SRXProtoImageServerTypeEnum defaultInstance]) {
-    return self;
-  }
-  [self mergeUnknownFields:other.unknownFields];
-  return self;
-}
-- (SRXProtoImageServerTypeEnumBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
-  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
-}
-- (SRXProtoImageServerTypeEnumBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
-  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
-  while (YES) {
-    SInt32 tag = [input readTag];
-    switch (tag) {
-      case 0:
-        [self setUnknownFields:[unknownFields build]];
-        return self;
-      default: {
-        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
-          [self setUnknownFields:[unknownFields build]];
-          return self;
-        }
-        break;
-      }
-    }
-  }
-}
-@end
-
 @interface SRXProtoImage ()
 @property (strong) NSData* data;
 @end
@@ -2400,7 +2224,7 @@ static SRXProtoImage* defaultSRXProtoImageInstance = nil;
 
 @interface SRXProtoAddImagesRequest ()
 @property (strong) SRXDataUser* requestingUser;
-@property SRXProtoImageServerTypeEnumImageServerType serverType;
+@property SRXDataImageServerTypeEnumImageServerType serverType;
 @property (strong) NSMutableArray * imageArray;
 @end
 
@@ -2425,7 +2249,7 @@ static SRXProtoImage* defaultSRXProtoImageInstance = nil;
 - (instancetype) init {
   if ((self = [super init])) {
     self.requestingUser = [SRXDataUser defaultInstance];
-    self.serverType = SRXProtoImageServerTypeEnumImageServerTypeUnknown;
+    self.serverType = SRXDataImageServerTypeEnumImageServerTypeUnknown;
   }
   return self;
 }
@@ -2444,7 +2268,7 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
 - (NSArray *)image {
   return imageArray;
 }
-- (SRXProtoImage*)imageAtIndex:(NSUInteger)index {
+- (SRXDataImage*)imageAtIndex:(NSUInteger)index {
   return [imageArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
@@ -2457,7 +2281,7 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
   if (self.hasServerType) {
     [output writeEnum:2 value:self.serverType];
   }
-  [self.imageArray enumerateObjectsUsingBlock:^(SRXProtoImage *element, NSUInteger idx, BOOL *stop) {
+  [self.imageArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:3 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
@@ -2475,7 +2299,7 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
   if (self.hasServerType) {
     size_ += computeEnumSize(2, self.serverType);
   }
-  [self.imageArray enumerateObjectsUsingBlock:^(SRXProtoImage *element, NSUInteger idx, BOOL *stop) {
+  [self.imageArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(3, element);
   }];
   size_ += self.unknownFields.serializedSize;
@@ -2520,9 +2344,9 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
     [output appendFormat:@"%@}\n", indent];
   }
   if (self.hasServerType) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"serverType", NSStringFromSRXProtoImageServerTypeEnumImageServerType(self.serverType)];
+    [output appendFormat:@"%@%@: %@\n", indent, @"serverType", NSStringFromSRXDataImageServerTypeEnumImageServerType(self.serverType)];
   }
-  [self.imageArray enumerateObjectsUsingBlock:^(SRXProtoImage *element, NSUInteger idx, BOOL *stop) {
+  [self.imageArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@ {\n", indent, @"image"];
     [element writeDescriptionTo:output
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
@@ -2539,7 +2363,7 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
   if (self.hasServerType) {
     [dictionary setObject: @(self.serverType) forKey: @"serverType"];
   }
-  for (SRXProtoImage* element in self.imageArray) {
+  for (SRXDataImage* element in self.imageArray) {
     NSMutableDictionary *elementDictionary = [NSMutableDictionary dictionary];
     [element storeInDictionary:elementDictionary];
     [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary] forKey:@"image"];
@@ -2570,7 +2394,7 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
   if (self.hasServerType) {
     hashCode = hashCode * 31 + self.serverType;
   }
-  [self.imageArray enumerateObjectsUsingBlock:^(SRXProtoImage *element, NSUInteger idx, BOOL *stop) {
+  [self.imageArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
     hashCode = hashCode * 31 + [element hash];
   }];
   hashCode = hashCode * 31 + [self.unknownFields hash];
@@ -2660,8 +2484,8 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
         break;
       }
       case 16: {
-        SRXProtoImageServerTypeEnumImageServerType value = (SRXProtoImageServerTypeEnumImageServerType)[input readEnum];
-        if (SRXProtoImageServerTypeEnumImageServerTypeIsValidValue(value)) {
+        SRXDataImageServerTypeEnumImageServerType value = (SRXDataImageServerTypeEnumImageServerType)[input readEnum];
+        if (SRXDataImageServerTypeEnumImageServerTypeIsValidValue(value)) {
           [self setServerType:value];
         } else {
           [unknownFields mergeVarintField:2 value:value];
@@ -2669,7 +2493,7 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
         break;
       }
       case 26: {
-        SRXProtoImageBuilder* subBuilder = [SRXProtoImage builder];
+        SRXDataImageBuilder* subBuilder = [SRXDataImage builder];
         [input readMessage:subBuilder extensionRegistry:extensionRegistry];
         [self addImage:[subBuilder buildPartial]];
         break;
@@ -2710,26 +2534,26 @@ static SRXProtoAddImagesRequest* defaultSRXProtoAddImagesRequestInstance = nil;
 - (BOOL) hasServerType {
   return resultSrxprotoAddImagesRequest.hasServerType;
 }
-- (SRXProtoImageServerTypeEnumImageServerType) serverType {
+- (SRXDataImageServerTypeEnumImageServerType) serverType {
   return resultSrxprotoAddImagesRequest.serverType;
 }
-- (SRXProtoAddImagesRequestBuilder*) setServerType:(SRXProtoImageServerTypeEnumImageServerType) value {
+- (SRXProtoAddImagesRequestBuilder*) setServerType:(SRXDataImageServerTypeEnumImageServerType) value {
   resultSrxprotoAddImagesRequest.hasServerType = YES;
   resultSrxprotoAddImagesRequest.serverType = value;
   return self;
 }
 - (SRXProtoAddImagesRequestBuilder*) clearServerType {
   resultSrxprotoAddImagesRequest.hasServerType = NO;
-  resultSrxprotoAddImagesRequest.serverType = SRXProtoImageServerTypeEnumImageServerTypeUnknown;
+  resultSrxprotoAddImagesRequest.serverType = SRXDataImageServerTypeEnumImageServerTypeUnknown;
   return self;
 }
 - (NSMutableArray *)image {
   return resultSrxprotoAddImagesRequest.imageArray;
 }
-- (SRXProtoImage*)imageAtIndex:(NSUInteger)index {
+- (SRXDataImage*)imageAtIndex:(NSUInteger)index {
   return [resultSrxprotoAddImagesRequest imageAtIndex:index];
 }
-- (SRXProtoAddImagesRequestBuilder *)addImage:(SRXProtoImage*)value {
+- (SRXProtoAddImagesRequestBuilder *)addImage:(SRXDataImage*)value {
   if (resultSrxprotoAddImagesRequest.imageArray == nil) {
     resultSrxprotoAddImagesRequest.imageArray = [[NSMutableArray alloc]init];
   }
@@ -2965,7 +2789,7 @@ static SRXProtoAddImagesResponse* defaultSRXProtoAddImagesResponseInstance = nil
 @end
 
 @interface SRXProtoGetImagesRequest ()
-@property SRXProtoImageServerTypeEnumImageServerType serverType;
+@property SRXDataImageServerTypeEnumImageServerType serverType;
 @property (strong) NSMutableArray * imageKeyArray;
 @end
 
@@ -2982,7 +2806,7 @@ static SRXProtoAddImagesResponse* defaultSRXProtoAddImagesResponseInstance = nil
 @dynamic imageKey;
 - (instancetype) init {
   if ((self = [super init])) {
-    self.serverType = SRXProtoImageServerTypeEnumImageServerTypeUnknown;
+    self.serverType = SRXDataImageServerTypeEnumImageServerTypeUnknown;
   }
   return self;
 }
@@ -3071,7 +2895,7 @@ static SRXProtoGetImagesRequest* defaultSRXProtoGetImagesRequestInstance = nil;
 }
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
   if (self.hasServerType) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"serverType", NSStringFromSRXProtoImageServerTypeEnumImageServerType(self.serverType)];
+    [output appendFormat:@"%@%@: %@\n", indent, @"serverType", NSStringFromSRXDataImageServerTypeEnumImageServerType(self.serverType)];
   }
   [self.imageKeyArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@: %@\n", indent, @"imageKey", obj];
@@ -3182,8 +3006,8 @@ static SRXProtoGetImagesRequest* defaultSRXProtoGetImagesRequestInstance = nil;
         break;
       }
       case 8: {
-        SRXProtoImageServerTypeEnumImageServerType value = (SRXProtoImageServerTypeEnumImageServerType)[input readEnum];
-        if (SRXProtoImageServerTypeEnumImageServerTypeIsValidValue(value)) {
+        SRXDataImageServerTypeEnumImageServerType value = (SRXDataImageServerTypeEnumImageServerType)[input readEnum];
+        if (SRXDataImageServerTypeEnumImageServerTypeIsValidValue(value)) {
           [self setServerType:value];
         } else {
           [unknownFields mergeVarintField:1 value:value];
@@ -3200,17 +3024,17 @@ static SRXProtoGetImagesRequest* defaultSRXProtoGetImagesRequestInstance = nil;
 - (BOOL) hasServerType {
   return resultSrxprotoGetImagesRequest.hasServerType;
 }
-- (SRXProtoImageServerTypeEnumImageServerType) serverType {
+- (SRXDataImageServerTypeEnumImageServerType) serverType {
   return resultSrxprotoGetImagesRequest.serverType;
 }
-- (SRXProtoGetImagesRequestBuilder*) setServerType:(SRXProtoImageServerTypeEnumImageServerType) value {
+- (SRXProtoGetImagesRequestBuilder*) setServerType:(SRXDataImageServerTypeEnumImageServerType) value {
   resultSrxprotoGetImagesRequest.hasServerType = YES;
   resultSrxprotoGetImagesRequest.serverType = value;
   return self;
 }
 - (SRXProtoGetImagesRequestBuilder*) clearServerType {
   resultSrxprotoGetImagesRequest.hasServerType = NO;
-  resultSrxprotoGetImagesRequest.serverType = SRXProtoImageServerTypeEnumImageServerTypeUnknown;
+  resultSrxprotoGetImagesRequest.serverType = SRXDataImageServerTypeEnumImageServerTypeUnknown;
   return self;
 }
 - (NSMutableArray *)imageKey {
@@ -3237,13 +3061,13 @@ static SRXProtoGetImagesRequest* defaultSRXProtoGetImagesRequestInstance = nil;
 @end
 
 @interface SRXProtoGetImagesResponse ()
-@property (strong) NSMutableArray * imageFileArray;
+@property (strong) NSMutableArray * imageDataArray;
 @end
 
 @implementation SRXProtoGetImagesResponse
 
-@synthesize imageFileArray;
-@dynamic imageFile;
+@synthesize imageDataArray;
+@dynamic imageData;
 - (instancetype) init {
   if ((self = [super init])) {
   }
@@ -3261,18 +3085,18 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
 - (instancetype) defaultInstance {
   return defaultSRXProtoGetImagesResponseInstance;
 }
-- (NSArray *)imageFile {
-  return imageFileArray;
+- (NSArray *)imageData {
+  return imageDataArray;
 }
-- (NSString*)imageFileAtIndex:(NSUInteger)index {
-  return [imageFileArray objectAtIndex:index];
+- (SRXDataImage*)imageDataAtIndex:(NSUInteger)index {
+  return [imageDataArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
 }
 - (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
-  [self.imageFileArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-    [output writeString:1 value:element];
+  [self.imageDataArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:1 value:element];
   }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
@@ -3283,15 +3107,9 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
   }
 
   size_ = 0;
-  {
-    __block SInt32 dataSize = 0;
-    const NSUInteger count = self.imageFileArray.count;
-    [self.imageFileArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
-      dataSize += computeStringSizeNoTag(element);
-    }];
-    size_ += dataSize;
-    size_ += (SInt32)(1 * count);
-  }
+  [self.imageDataArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(1, element);
+  }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -3327,13 +3145,20 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
   return [SRXProtoGetImagesResponse builderWithPrototype:self];
 }
 - (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
-  [self.imageFileArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"imageFile", obj];
+  [self.imageDataArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"imageData"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
   }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (void) storeInDictionary:(NSMutableDictionary *)dictionary {
-  [dictionary setObject:self.imageFile forKey: @"imageFile"];
+  for (SRXDataImage* element in self.imageDataArray) {
+    NSMutableDictionary *elementDictionary = [NSMutableDictionary dictionary];
+    [element storeInDictionary:elementDictionary];
+    [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary] forKey:@"imageData"];
+  }
   [self.unknownFields storeInDictionary:dictionary];
 }
 - (BOOL) isEqual:(id)other {
@@ -3345,12 +3170,12 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
   }
   SRXProtoGetImagesResponse *otherMessage = other;
   return
-      [self.imageFileArray isEqualToArray:otherMessage.imageFileArray] &&
+      [self.imageDataArray isEqualToArray:otherMessage.imageDataArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
   __block NSUInteger hashCode = 7;
-  [self.imageFileArray enumerateObjectsUsingBlock:^(NSString *element, NSUInteger idx, BOOL *stop) {
+  [self.imageDataArray enumerateObjectsUsingBlock:^(SRXDataImage *element, NSUInteger idx, BOOL *stop) {
     hashCode = hashCode * 31 + [element hash];
   }];
   hashCode = hashCode * 31 + [self.unknownFields hash];
@@ -3396,11 +3221,11 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
   if (other == [SRXProtoGetImagesResponse defaultInstance]) {
     return self;
   }
-  if (other.imageFileArray.count > 0) {
-    if (resultSrxprotoGetImagesResponse.imageFileArray == nil) {
-      resultSrxprotoGetImagesResponse.imageFileArray = [[NSMutableArray alloc] initWithArray:other.imageFileArray];
+  if (other.imageDataArray.count > 0) {
+    if (resultSrxprotoGetImagesResponse.imageDataArray == nil) {
+      resultSrxprotoGetImagesResponse.imageDataArray = [[NSMutableArray alloc] initWithArray:other.imageDataArray];
     } else {
-      [resultSrxprotoGetImagesResponse.imageFileArray addObjectsFromArray:other.imageFileArray];
+      [resultSrxprotoGetImagesResponse.imageDataArray addObjectsFromArray:other.imageDataArray];
     }
   }
   [self mergeUnknownFields:other.unknownFields];
@@ -3425,31 +3250,33 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
         break;
       }
       case 10: {
-        [self addImageFile:[input readString]];
+        SRXDataImageBuilder* subBuilder = [SRXDataImage builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addImageData:[subBuilder buildPartial]];
         break;
       }
     }
   }
 }
-- (NSMutableArray *)imageFile {
-  return resultSrxprotoGetImagesResponse.imageFileArray;
+- (NSMutableArray *)imageData {
+  return resultSrxprotoGetImagesResponse.imageDataArray;
 }
-- (NSString*)imageFileAtIndex:(NSUInteger)index {
-  return [resultSrxprotoGetImagesResponse imageFileAtIndex:index];
+- (SRXDataImage*)imageDataAtIndex:(NSUInteger)index {
+  return [resultSrxprotoGetImagesResponse imageDataAtIndex:index];
 }
-- (SRXProtoGetImagesResponseBuilder *)addImageFile:(NSString*)value {
-  if (resultSrxprotoGetImagesResponse.imageFileArray == nil) {
-    resultSrxprotoGetImagesResponse.imageFileArray = [[NSMutableArray alloc]init];
+- (SRXProtoGetImagesResponseBuilder *)addImageData:(SRXDataImage*)value {
+  if (resultSrxprotoGetImagesResponse.imageDataArray == nil) {
+    resultSrxprotoGetImagesResponse.imageDataArray = [[NSMutableArray alloc]init];
   }
-  [resultSrxprotoGetImagesResponse.imageFileArray addObject:value];
+  [resultSrxprotoGetImagesResponse.imageDataArray addObject:value];
   return self;
 }
-- (SRXProtoGetImagesResponseBuilder *)setImageFileArray:(NSArray *)array {
-  resultSrxprotoGetImagesResponse.imageFileArray = [[NSMutableArray alloc] initWithArray:array];
+- (SRXProtoGetImagesResponseBuilder *)setImageDataArray:(NSArray *)array {
+  resultSrxprotoGetImagesResponse.imageDataArray = [[NSMutableArray alloc]initWithArray:array];
   return self;
 }
-- (SRXProtoGetImagesResponseBuilder *)clearImageFile {
-  resultSrxprotoGetImagesResponse.imageFileArray = nil;
+- (SRXProtoGetImagesResponseBuilder *)clearImageData {
+  resultSrxprotoGetImagesResponse.imageDataArray = nil;
   return self;
 }
 @end

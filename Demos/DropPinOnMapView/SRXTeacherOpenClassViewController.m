@@ -15,6 +15,7 @@
 
 #import "SRXDataClass.pb.h"
 #import "SRXClassUtil.h"
+#import "SRXImage.h"
 
 #import <MobileCoreServices/UTCoreTypes.h>
 
@@ -25,11 +26,14 @@
     CLLocationManager *locationmanager;
 }
 
-// Contains all the images including the '+' sign.
+
+// TODO(liefuliu): refactor below 3 property into an image container.
+// Contains all the images (of type SRXImage) including the '+' sign.
 @property (nonatomic, strong) NSMutableArray *patternImagesArray;
 
-// Contains the iamges from photo selection keyed by file name, doesn't include the '+' sign.
+// Contains the SRXImage from photo selection keyed by file name, doesn't include the '+' sign.
 @property (nonatomic, strong) NSMutableDictionary *imageDictionary;
+
 @property (nonatomic, strong) NSArray* rowKeys;
 @property (nonatomic) CLLocationCoordinate2D locationCoordinate2D;
 
@@ -50,6 +54,8 @@
 
 @property NSDictionary* classDescriptionDictionary;
 
+@property (nonatomic) bool imagesUploadedToServer;
+
 @end
 
 @implementation SRXTeacherOpenClassViewController
@@ -65,6 +71,7 @@ NSString* const kTopicRowKey = @"Topic";
 NSString* const kLocationRowKey = @"Location";
 NSString* const kPriceRowKey = @"Price";
 NSString* const kTimeRowKey = @"Time";
+NSString* const plusSignFileName = @"plus_sign.png";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -78,6 +85,7 @@ NSString* const kTimeRowKey = @"Time";
     UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone
                                                                          target:self
                                                                          action:@selector(addNewClass:)];
+    bbi.enabled = NO;
     navItem.rightBarButtonItem = bbi;
     
     // Initialize the table view of class info.
@@ -93,10 +101,12 @@ NSString* const kTimeRowKey = @"Time";
     [self.photoCollectionView registerNib:cellNib forCellWithReuseIdentifier:@"cvCell"];
     
     // Initialize the class image array.
-    NSString* const plusSignFileName = @"plus_sign.png";
     self.patternImagesArray = [NSMutableArray arrayWithArray:@[plusSignFileName]];
     self.imageDictionary = [[NSMutableDictionary alloc ]init];
-    [self.imageDictionary setObject:[UIImage imageNamed:plusSignFileName] forKey:plusSignFileName];
+    
+    SRXImage* srxImage = [[SRXImage alloc] initImage:[UIImage imageNamed:plusSignFileName] withFilename:plusSignFileName];
+    [self.imageDictionary setObject:srxImage forKey:plusSignFileName];
+    self.imagesUploadedToServer = NO;
     
     // Initialize the keys of rows.
     self.rowKeys = @[kTopicRowKey, kLocationRowKey, kPriceRowKey, kTimeRowKey];
@@ -119,6 +129,15 @@ NSString* const kTimeRowKey = @"Time";
         locationmanager.delegate = self;
         
         [self performSelector:@selector(getLocation)];
+    }
+    
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    NSLog(@"viewDidAppear: do something here");
+    if ([self.imageDictionary count] > 1) {
+        [self uploadImagesInBackground];
     }
 }
 
@@ -153,9 +172,11 @@ NSString* const kTimeRowKey = @"Time";
     [self addImage:[UIImage imageNamed:imageFileName] forKey:imageFileName];
 }
 
-- (void) addImage: (UIImage*) image forKey:(NSString*) imageKey {
+- (void) addImage: (UIImage*) imageData forKey:(NSString*) imageKey {
     if (![self.imageDictionary objectForKey:imageKey]) {
         [self.patternImagesArray insertObject:imageKey atIndex:self.patternImagesArray.count - 1];
+        
+        SRXImage* image = [[SRXImage alloc] initImage:imageData withFilename:imageKey];
         [self.imageDictionary setObject:image forKey:imageKey];
     }
 }
@@ -239,8 +260,21 @@ NSString* const kTimeRowKey = @"Time";
     SRXPhotoCell *cell = (SRXPhotoCell *)[collectionView
                                           dequeueReusableCellWithReuseIdentifier:@"cvCell"
                                           forIndexPath:indexPath];
+    SRXImage* srxImage =((SRXImage*)[self.imageDictionary objectForKey:self.patternImagesArray[indexPath.row]]);
+    cell.image = srxImage.image;
     
-    cell.image = [self.imageDictionary objectForKey:self.patternImagesArray[indexPath.row]];
+    if (self.patternImagesArray[indexPath.row] == plusSignFileName) {
+        cell.progressBar.hidden = YES;
+    } else {
+        cell.progressBar.hidden = NO;
+
+        if (srxImage.uploaded) {
+            cell.progressBar.progress = 1.0;
+        } else {
+            cell.progressBar.progress = 0.0;
+        }
+    }
+    
     return cell;
 }
 
@@ -315,6 +349,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                                            iref = nil;
                                        }
                                    }
+                                   
+                                   
                                }
                               failureBlock:nil];
                 
@@ -328,7 +364,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             NSLog(@"Uknown asset type");
         }
     }
+    
     [self.photoCollectionView reloadData];
+    
+    self.imagesUploadedToServer = NO;
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    
+   // [self uploadImagesInBackground];
+    
 }
 
 - (void) elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker {
@@ -341,32 +384,20 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 // if not.
 - (BOOL) qualifedForAddNewClass {
     if ([self.classDescriptionTextField.text length] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
-                                                        message:NSLocalizedString(@"Class summary must be filled", nil)
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [self showAlert:NSLocalizedString(@"Error creating a new class", nil)
+             withDetail:NSLocalizedString(@"Class summary must be filled", nil)];
         return NO;
     }
     
     if (self.selectedClassType == SRXDataClassTypeEnumSRXDataClassTypeUnknown) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
-                                                        message:NSLocalizedString(@"Class type wasn't set", nil)
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+        [self showAlert:NSLocalizedString(@"Error creating a new class", nil)
+             withDetail:NSLocalizedString(@"Class type wasn't set", nil)];
         return NO;
     }
     
-    if ([self.imageDictionary count] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Error creating a new class", nil)
-                                                        message:NSLocalizedString(@"No image was selected", nil)
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
+    if ([self.imageDictionary count] <= 1) {
+        [self showAlert:NSLocalizedString(@"Error creating a new class", nil)
+             withDetail:NSLocalizedString(@"No images are selected", nil)];
         return NO;
     }
     
@@ -384,47 +415,27 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     return YES;
 }
 
-- (IBAction)addNewClass:(id)sender {
-    if (![self qualifedForAddNewClass]) {
-        return;
-    }
-    
-    /*for (NSString* key in [self.imageDictionary keys]) {
-        
-    }*/
-    
-    
-    
-    SRXProtoAddImagesRequestBuilder* requestBuilder = [SRXProtoAddImagesRequest builder];
-    [self.imageDictionary enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
-        NSString* const plusSignFileName = @"plus_sign.png";
-        if ((NSString*) key != plusSignFileName) {
-        //
-        // - (SRXProtoAddImagesRequestBuilder *)addImage:(SRXProtoImage*)value;
-        // Update the image to server as file.
-        SRXProtoImage* protoImage = [[[SRXProtoImage builder] setData:UIImagePNGRepresentation((UIImage*)obj)] build];
-        
-        [requestBuilder addImage:protoImage];
-        }
-    }];
-    
-    SRXProtoAddImagesResponseBuilder* responseBuilder = [SRXProtoAddImagesResponse builder];
-    SRXProtoAddImagesRequest * request = [requestBuilder build];
-    
-    [[SRXApiFactory getActualApi] addImages: request
-                        withResponse: &responseBuilder
-     completion:^(BOOL success, NSString* errorMsg) {
-         if (!success) {
-             
-         }
-     }];
-
-    
+- (void) addNewClassWithImageKeys {
     SRXDataClassInfoBuilder* classInfoBuilder = [SRXDataClassInfo builder];
     [classInfoBuilder setSummary:self.classDescriptionTextField.text];
     [classInfoBuilder setLocationBuilder:
      [[[SRXDataLocation builder] setLatitude:_locationCoordinate2D.latitude] setLongtitude:_locationCoordinate2D.longitude]];
     [classInfoBuilder setClassType: self.selectedClassType];
+    
+    // Add new images.
+    [self.imageDictionary enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
+        if ((NSString*) key != plusSignFileName) {
+            // Update the image to server as file.
+            SRXImage* image = (SRXImage*) obj;
+            NSAssert(image.uploaded, @"Exception: image is expected to be uploaded already.");
+            
+            // Ideally the view controller shouldn't know which server the backend is using.
+            SRXDataImageRef* imageRef = [[[[SRXDataImageRef builder] setServerType:SRXDataImageServerTypeEnumImageServerTypeParse] setImageKey:image.serverKey] build];
+            [classInfoBuilder addImageRef:imageRef];
+        }
+    }];
+
+    
     // TODO: add more info about the class
     
     SRXProtoCreateClassRequestBuilder* createClassRequestBuilder = [SRXProtoCreateClassRequest builder];
@@ -445,8 +456,19 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                                            if([self.delegate respondsToSelector:@selector(newClassCreated)]) {
                                                [self.delegate newClassCreated];
                                            }
-                                        }
+                                       } else {
+                                           [self showAlert:NSLocalizedString(@"Error creating a new class", nil)
+                                                withDetail:NSLocalizedString(@"Failed to updte class info", nil)];
+                                       }
                                    }];
+}
+
+- (IBAction)addNewClass:(id)sender {
+    if (![self qualifedForAddNewClass]) {
+        return;
+    }
+    
+    [self addNewClassWithImageKeys];
 }
 
 
@@ -474,5 +496,65 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 # pragma auxiluary functions.
 
+- (void) showAlert:(NSString*) title
+        withDetail:(NSString*) detail {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:  title
+                                                    message:detail
+                                                    delegate:nil
+                                                    cancelButtonTitle:@"OK"
+                                                    otherButtonTitles:nil];
+    [alert show];
+}
+
+- (void) uploadImagesInBackground {
+    SRXProtoAddImagesRequestBuilder* requestBuilder = [SRXProtoAddImagesRequest builder];
+    
+    NSMutableArray* imagesToUpload = [[NSMutableArray alloc] init];
+    [self.imageDictionary enumerateKeysAndObjectsUsingBlock: ^(id key, id obj, BOOL *stop) {
+        if ((NSString*) key != plusSignFileName) {
+            // Update the image to server as file.
+            SRXImage* image = (SRXImage*) obj;
+            if (!image.uploaded) {
+                SRXProtoImage* protoImage = [[[SRXProtoImage builder] setData:UIImageJPEGRepresentation(image.image, 0.8)] build];
+                NSLog(@"image size: %.2f KB", [[protoImage data] length] / 1024.0);
+                [requestBuilder addImage:protoImage];
+                [imagesToUpload addObject:image];
+            }
+        }
+    }];
+    
+    __block SRXProtoAddImagesResponseBuilder* responseBuilder = [SRXProtoAddImagesResponse builder];
+    __block SRXProtoAddImagesRequest* request = [requestBuilder build];
+    
+    dispatch_queue_t queue = dispatch_get_global_queue(0,0);
+    dispatch_async(queue, ^{
+    [[SRXApiFactory getActualApi] addImages: request
+                               withResponse: &responseBuilder
+                                 completion:^(BOOL success, NSString* errorMsg) {
+                                     dispatch_async(dispatch_get_main_queue(), ^{
+                                         SRXProtoAddImagesResponse* addImagesResponse = [responseBuilder build];
+                                         if (success) {
+                                             // Upload succeeded, so update the
+                                             // server key for each uploaded image.
+                                             NSAssert([imagesToUpload count] == [[addImagesResponse imageKey] count], @"");
+                                             
+                                             for (int i = 0; i < [imagesToUpload count]; i++) {
+                                                 SRXImage* image = imagesToUpload[i];
+                                                 NSString* serverKey = addImagesResponse.imageKey[i];
+                                                 [image MarkAsUploadedWithServerKey:serverKey];
+                                             }
+                                             self.navigationItem.rightBarButtonItem.enabled = YES;
+                                             [self.view setNeedsDisplay];
+                                             [self.photoCollectionView reloadData];
+                                         } else {
+                                             [self showAlert:NSLocalizedString(@"Error creating a new class", nil)
+                                                  withDetail:NSLocalizedString(@"Failed to upload images", nil)];
+                                         }
+                                         
+                                     });
+                                 }];
+    });
+    
+}
 
 @end

@@ -1,0 +1,22 @@
+// Actual image data.
+message SRXDataImage {
+  optional bytes data = 1;
+}
+
+
+message SRXDataImageServerTypeEnum {
+enum ImageServerType {
+UNKNOWN = 0;
+PARSE = 1;
+}
+}
+
+
+// References or links to the image. Doesn't contain actual image data.
+message SRXDataImageRef {
+  // Required.
+  optional SRXDataImageServerTypeEnum.ImageServerType server_type = 1;
+
+  // Required.
+  optional string image_key = 2;
+}

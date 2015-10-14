@@ -1,4 +1,5 @@
 import "SRXDataClass.proto";
+import "SRXDataImage.proto";
 
 message SRXDataUser {
   // only 1 of below could be specified.
@@ -60,14 +61,6 @@ message SRXProtoSearchClassResponse {
   repeated SRXDataClassInfo class_collection = 1;
 }
 
-
-message SRXProtoImageServerTypeEnum {
-  enum ImageServerType {
-   UNKNOWN = 0;
-   PARSE = 1;
-  }
-}
-
 // Request and Response of API addImages
 message SRXProtoImage {
   optional bytes data = 1;
@@ -77,9 +70,9 @@ message SRXProtoAddImagesRequest {
   // Required.
   optional SRXDataUser requesting_user = 1;
 
-  optional SRXProtoImageServerTypeEnum.ImageServerType server_type = 2;
+  optional SRXDataImageServerTypeEnum.ImageServerType server_type = 2;
 
-  repeated SRXProtoImage image = 3;
+  repeated SRXDataImage image = 3;
 }
 
 message SRXProtoAddImagesResponse {
@@ -90,15 +83,35 @@ message SRXProtoAddImagesResponse {
 // Request ands Response of API getImages
 message SRXProtoGetImagesRequest {
   // Required.
-  optional SRXProtoImageServerTypeEnum.ImageServerType server_type = 1;
+  optional SRXDataImageServerTypeEnum.ImageServerType server_type = 1;
 
   // Required.
   repeated string image_key = 2;
 }
 
 message SRXProtoGetImagesResponse {
-  repeated string image_file = 1;
+  repeated SRXDataImage image_data = 1;
 }
+
+
+
+message SRXProtoReadProfileRequest {
+   // Required
+   optional SRXDataUser requesting_user = 1;
+}
+
+message SRXProtoGetProfileResponse {
+
+}
+
+message SRXProtoMutableProfileRequest {
+
+}
+
+message SRXProtoMutableProfileResponse {
+
+}
+
 
 enum SRXProtoLogInMethodEnum {
   DEFAULT = 0;

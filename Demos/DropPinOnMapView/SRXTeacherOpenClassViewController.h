@@ -27,4 +27,7 @@ UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFl
 
 @property (nonatomic, weak) id delegate;
 
+
+@property (strong, nonatomic) IBOutlet UIProgressView *threadProgressView;
+
 @end

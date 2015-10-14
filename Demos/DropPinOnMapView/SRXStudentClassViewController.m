@@ -7,9 +7,13 @@
 //
 
 #import "SRXStudentClassViewController.h"
+#import "SRXProtocols.h"
+#import "SRXApiFactory.h"
+#import "SRXDataImage.pb.h"
 
 @interface SRXStudentClassViewController ()
 
+@property NSMutableArray* imagesOfClass;
 
 @end
 
@@ -30,12 +34,53 @@
     self.imageViewAtTop.image = [UIImage imageNamed: @"congfucius_study.jpg"];
     
     NSLog(@"Class Info in student class view: %@", _classInfo);
+    
+    
+    [self loadImagesAsync];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) loadImagesAsync {
+    
+    // Get images.
+    SRXProtoGetImagesRequestBuilder* imagesRequestBuilder = [SRXProtoGetImagesRequest builder];
+    
+    for(SRXDataImageRef* imageRef in [self.classInfo imageRef]) {
+        // TODO: add the server type filter.
+        [imagesRequestBuilder addImageKey:[imageRef imageKey]];
+    }
+    
+    SRXProtoGetImagesRequest* imagesRequest = [imagesRequestBuilder build];
+    SRXProtoGetImagesResponseBuilder* responseBuilder = [SRXProtoGetImagesResponse builder];
+    
+    // DO IT NOW: download the image references.
+    [[SRXApiFactory getActualApi] getImages:imagesRequest withResponse:&responseBuilder completion:^(BOOL success, NSString* error) {
+        if (success) {
+            // Load images.
+            _imagesOfClass = [[NSMutableArray alloc] init];
+            SRXProtoGetImagesResponse* response = [responseBuilder build];
+            for (SRXDataImage* imageData in response.imageData) {
+                UIImage* image = [UIImage imageWithData: [imageData data]];
+                [_imagesOfClass addObject:image];
+            }
+            
+            if ([_imagesOfClass count] > 0) {
+                self.imageViewAtTop.image = _imagesOfClass[0];
+            }
+            
+            // Display the first image view
+            
+            
+        } else {
+            // Display the message: "cannot load image".
+        }
+    }];
+}
+
 
 #pragma mark - Table view data source
 

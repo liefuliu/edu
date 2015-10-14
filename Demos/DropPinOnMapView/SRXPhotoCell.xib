@@ -8,29 +8,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="sPh-Il-xJG" customClass="SRXPhotoCell">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="171" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="171" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rnm-IO-3HZ">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rnm-IO-3HZ">
+                        <rect key="frame" x="0.0" y="0.0" width="171" height="119"/>
                     </imageView>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="8xC-Ak-PbU">
+                        <rect key="frame" x="0.0" y="119" width="171" height="2"/>
+                    </progressView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="8xC-Ak-PbU" secondAttribute="trailing" id="Bdr-Dk-2lU"/>
                 <constraint firstItem="rnm-IO-3HZ" firstAttribute="top" secondItem="sPh-Il-xJG" secondAttribute="top" id="Ho6-90-lVA"/>
                 <constraint firstItem="rnm-IO-3HZ" firstAttribute="leading" secondItem="sPh-Il-xJG" secondAttribute="leading" id="JZy-VF-UTX"/>
+                <constraint firstAttribute="bottom" secondItem="8xC-Ak-PbU" secondAttribute="bottom" id="VCf-QF-tYl"/>
+                <constraint firstItem="8xC-Ak-PbU" firstAttribute="top" secondItem="rnm-IO-3HZ" secondAttribute="bottom" id="X3t-7n-dye"/>
                 <constraint firstAttribute="trailing" secondItem="rnm-IO-3HZ" secondAttribute="trailing" id="oIc-hN-r4Y"/>
-                <constraint firstAttribute="bottom" secondItem="rnm-IO-3HZ" secondAttribute="bottom" id="w9y-cr-bU8"/>
+                <constraint firstItem="8xC-Ak-PbU" firstAttribute="leading" secondItem="sPh-Il-xJG" secondAttribute="leading" id="qFB-Mn-Uu3"/>
             </constraints>
-            <size key="customSize" width="262" height="122"/>
+            <size key="customSize" width="383" height="200"/>
             <connections>
                 <outlet property="photoImageView" destination="rnm-IO-3HZ" id="wfP-9S-Sh7"/>
+                <outlet property="progressBar" destination="8xC-Ak-PbU" id="Fhz-oc-NSq"/>
             </connections>
-            <point key="canvasLocation" x="95" y="271"/>
+            <point key="canvasLocation" x="155.5" y="310"/>
         </collectionViewCell>
     </objects>
 </document>

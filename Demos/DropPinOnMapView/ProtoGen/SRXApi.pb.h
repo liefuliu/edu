@@ -3,6 +3,7 @@
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
 #import "SRXDataClass.pb.h"
+#import "SRXDataImage.pb.h"
 // @@protoc_insertion_point(imports)
 
 @class SRXDataClass;
@@ -13,6 +14,12 @@
 @class SRXDataClassTimeBuilder;
 @class SRXDataClassTypeEnum;
 @class SRXDataClassTypeEnumBuilder;
+@class SRXDataImage;
+@class SRXDataImageBuilder;
+@class SRXDataImageRef;
+@class SRXDataImageRefBuilder;
+@class SRXDataImageServerTypeEnum;
+@class SRXDataImageServerTypeEnumBuilder;
 @class SRXDataLocation;
 @class SRXDataLocationBuilder;
 @class SRXDataRoleInClassTypeEnum;
@@ -33,8 +40,6 @@
 @class SRXProtoGetImagesResponseBuilder;
 @class SRXProtoImage;
 @class SRXProtoImageBuilder;
-@class SRXProtoImageServerTypeEnum;
-@class SRXProtoImageServerTypeEnumBuilder;
 @class SRXProtoLogInRequest;
 @class SRXProtoLogInRequestBuilder;
 @class SRXProtoLogInResponse;
@@ -67,14 +72,6 @@ typedef NS_ENUM(SInt32, SRXDataRoleInClassTypeEnumSRXDataRoleInClassType) {
 
 BOOL SRXDataRoleInClassTypeEnumSRXDataRoleInClassTypeIsValidValue(SRXDataRoleInClassTypeEnumSRXDataRoleInClassType value);
 NSString *NSStringFromSRXDataRoleInClassTypeEnumSRXDataRoleInClassType(SRXDataRoleInClassTypeEnumSRXDataRoleInClassType value);
-
-typedef NS_ENUM(SInt32, SRXProtoImageServerTypeEnumImageServerType) {
-  SRXProtoImageServerTypeEnumImageServerTypeUnknown = 0,
-  SRXProtoImageServerTypeEnumImageServerTypeParse = 1,
-};
-
-BOOL SRXProtoImageServerTypeEnumImageServerTypeIsValidValue(SRXProtoImageServerTypeEnumImageServerType value);
-NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageServerTypeEnumImageServerType value);
 
 
 @interface SrxapiRoot : NSObject {
@@ -529,46 +526,6 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
 - (SRXProtoSearchClassResponseBuilder *)clearClassCollection;
 @end
 
-@interface SRXProtoImageServerTypeEnum : PBGeneratedMessage<GeneratedMessageProtocol> {
-@private
-}
-
-+ (instancetype) defaultInstance;
-- (instancetype) defaultInstance;
-
-- (BOOL) isInitialized;
-- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
-- (SRXProtoImageServerTypeEnumBuilder*) builder;
-+ (SRXProtoImageServerTypeEnumBuilder*) builder;
-+ (SRXProtoImageServerTypeEnumBuilder*) builderWithPrototype:(SRXProtoImageServerTypeEnum*) prototype;
-- (SRXProtoImageServerTypeEnumBuilder*) toBuilder;
-
-+ (SRXProtoImageServerTypeEnum*) parseFromData:(NSData*) data;
-+ (SRXProtoImageServerTypeEnum*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (SRXProtoImageServerTypeEnum*) parseFromInputStream:(NSInputStream*) input;
-+ (SRXProtoImageServerTypeEnum*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-+ (SRXProtoImageServerTypeEnum*) parseFromCodedInputStream:(PBCodedInputStream*) input;
-+ (SRXProtoImageServerTypeEnum*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-@end
-
-@interface SRXProtoImageServerTypeEnumBuilder : PBGeneratedMessageBuilder {
-@private
-  SRXProtoImageServerTypeEnum* resultSrxprotoImageServerTypeEnum;
-}
-
-- (SRXProtoImageServerTypeEnum*) defaultInstance;
-
-- (SRXProtoImageServerTypeEnumBuilder*) clear;
-- (SRXProtoImageServerTypeEnumBuilder*) clone;
-
-- (SRXProtoImageServerTypeEnum*) build;
-- (SRXProtoImageServerTypeEnum*) buildPartial;
-
-- (SRXProtoImageServerTypeEnumBuilder*) mergeFrom:(SRXProtoImageServerTypeEnum*) other;
-- (SRXProtoImageServerTypeEnumBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
-- (SRXProtoImageServerTypeEnumBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
-@end
-
 #define SRXProtoImage_data @"data"
 @interface SRXProtoImage : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
@@ -627,15 +584,15 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
   BOOL hasRequestingUser_:1;
   BOOL hasServerType_:1;
   SRXDataUser* requestingUser;
-  SRXProtoImageServerTypeEnumImageServerType serverType;
+  SRXDataImageServerTypeEnumImageServerType serverType;
   NSMutableArray * imageArray;
 }
 - (BOOL) hasRequestingUser;
 - (BOOL) hasServerType;
 @property (readonly, strong) SRXDataUser* requestingUser;
-@property (readonly) SRXProtoImageServerTypeEnumImageServerType serverType;
+@property (readonly) SRXDataImageServerTypeEnumImageServerType serverType;
 @property (readonly, strong) NSArray * image;
-- (SRXProtoImage*)imageAtIndex:(NSUInteger)index;
+- (SRXDataImage*)imageAtIndex:(NSUInteger)index;
 
 + (instancetype) defaultInstance;
 - (instancetype) defaultInstance;
@@ -680,13 +637,13 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
 - (SRXProtoAddImagesRequestBuilder*) clearRequestingUser;
 
 - (BOOL) hasServerType;
-- (SRXProtoImageServerTypeEnumImageServerType) serverType;
-- (SRXProtoAddImagesRequestBuilder*) setServerType:(SRXProtoImageServerTypeEnumImageServerType) value;
+- (SRXDataImageServerTypeEnumImageServerType) serverType;
+- (SRXProtoAddImagesRequestBuilder*) setServerType:(SRXDataImageServerTypeEnumImageServerType) value;
 - (SRXProtoAddImagesRequestBuilder*) clearServerType;
 
 - (NSMutableArray *)image;
-- (SRXProtoImage*)imageAtIndex:(NSUInteger)index;
-- (SRXProtoAddImagesRequestBuilder *)addImage:(SRXProtoImage*)value;
+- (SRXDataImage*)imageAtIndex:(NSUInteger)index;
+- (SRXProtoAddImagesRequestBuilder *)addImage:(SRXDataImage*)value;
 - (SRXProtoAddImagesRequestBuilder *)setImageArray:(NSArray *)array;
 - (SRXProtoAddImagesRequestBuilder *)clearImage;
 @end
@@ -746,11 +703,11 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
 @interface SRXProtoGetImagesRequest : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
   BOOL hasServerType_:1;
-  SRXProtoImageServerTypeEnumImageServerType serverType;
+  SRXDataImageServerTypeEnumImageServerType serverType;
   NSMutableArray * imageKeyArray;
 }
 - (BOOL) hasServerType;
-@property (readonly) SRXProtoImageServerTypeEnumImageServerType serverType;
+@property (readonly) SRXDataImageServerTypeEnumImageServerType serverType;
 @property (readonly, strong) NSArray * imageKey;
 - (NSString*)imageKeyAtIndex:(NSUInteger)index;
 
@@ -790,8 +747,8 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
 - (SRXProtoGetImagesRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 
 - (BOOL) hasServerType;
-- (SRXProtoImageServerTypeEnumImageServerType) serverType;
-- (SRXProtoGetImagesRequestBuilder*) setServerType:(SRXProtoImageServerTypeEnumImageServerType) value;
+- (SRXDataImageServerTypeEnumImageServerType) serverType;
+- (SRXProtoGetImagesRequestBuilder*) setServerType:(SRXDataImageServerTypeEnumImageServerType) value;
 - (SRXProtoGetImagesRequestBuilder*) clearServerType;
 
 - (NSMutableArray *)imageKey;
@@ -801,13 +758,13 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
 - (SRXProtoGetImagesRequestBuilder *)clearImageKey;
 @end
 
-#define SRXProtoGetImagesResponse_image_file @"imageFile"
+#define SRXProtoGetImagesResponse_image_data @"imageData"
 @interface SRXProtoGetImagesResponse : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
-  NSMutableArray * imageFileArray;
+  NSMutableArray * imageDataArray;
 }
-@property (readonly, strong) NSArray * imageFile;
-- (NSString*)imageFileAtIndex:(NSUInteger)index;
+@property (readonly, strong) NSArray * imageData;
+- (SRXDataImage*)imageDataAtIndex:(NSUInteger)index;
 
 + (instancetype) defaultInstance;
 - (instancetype) defaultInstance;
@@ -844,11 +801,11 @@ NSString *NSStringFromSRXProtoImageServerTypeEnumImageServerType(SRXProtoImageSe
 - (SRXProtoGetImagesResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
 - (SRXProtoGetImagesResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 
-- (NSMutableArray *)imageFile;
-- (NSString*)imageFileAtIndex:(NSUInteger)index;
-- (SRXProtoGetImagesResponseBuilder *)addImageFile:(NSString*)value;
-- (SRXProtoGetImagesResponseBuilder *)setImageFileArray:(NSArray *)array;
-- (SRXProtoGetImagesResponseBuilder *)clearImageFile;
+- (NSMutableArray *)imageData;
+- (SRXDataImage*)imageDataAtIndex:(NSUInteger)index;
+- (SRXProtoGetImagesResponseBuilder *)addImageData:(SRXDataImage*)value;
+- (SRXProtoGetImagesResponseBuilder *)setImageDataArray:(NSArray *)array;
+- (SRXProtoGetImagesResponseBuilder *)clearImageData;
 @end
 
 #define SRXProtoNativeLogInMessage_user_name @"userName"

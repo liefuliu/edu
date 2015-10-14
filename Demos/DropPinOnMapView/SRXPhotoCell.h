@@ -14,5 +14,6 @@
 
 
 @property (nonatomic, strong) UIImage* image;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
 
 @end

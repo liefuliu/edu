@@ -14,6 +14,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
     PBMutableExtensionRegistry* registry = [PBMutableExtensionRegistry registry];
     [self registerAllExtensions:registry];
     [SrxdataLocationRoot registerAllExtensions:registry];
+    [SrxdataImageRoot registerAllExtensions:registry];
     extensionRegistry = registry;
   }
 }
@@ -396,6 +397,7 @@ static SRXDataClassTime* defaultSRXDataClassTimeInstance = nil;
 @property SInt32 numberOfClasses;
 @property SInt32 tuitionFeeInYuan;
 @property (strong) NSString* summary;
+@property (strong) NSMutableArray * imageRefArray;
 @end
 
 @implementation SRXDataClassInfo
@@ -449,6 +451,8 @@ static SRXDataClassTime* defaultSRXDataClassTimeInstance = nil;
   hasSummary_ = !!_value_;
 }
 @synthesize summary;
+@synthesize imageRefArray;
+@dynamic imageRef;
 - (instancetype) init {
   if ((self = [super init])) {
     self.teacherName = @"";
@@ -472,6 +476,12 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
 }
 - (instancetype) defaultInstance {
   return defaultSRXDataClassInfoInstance;
+}
+- (NSArray *)imageRef {
+  return imageRefArray;
+}
+- (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index {
+  return [imageRefArray objectAtIndex:index];
 }
 - (BOOL) isInitialized {
   return YES;
@@ -498,6 +508,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   if (self.hasSummary) {
     [output writeString:7 value:self.summary];
   }
+  [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
+    [output writeMessage:8 value:element];
+  }];
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -528,6 +541,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   if (self.hasSummary) {
     size_ += computeStringSize(7, self.summary);
   }
+  [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
+    size_ += computeMessageSize(8, element);
+  }];
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -590,6 +606,12 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   if (self.hasSummary) {
     [output appendFormat:@"%@%@: %@\n", indent, @"summary", self.summary];
   }
+  [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
+    [output appendFormat:@"%@%@ {\n", indent, @"imageRef"];
+    [element writeDescriptionTo:output
+                     withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }];
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (void) storeInDictionary:(NSMutableDictionary *)dictionary {
@@ -618,6 +640,11 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   if (self.hasSummary) {
     [dictionary setObject: self.summary forKey: @"summary"];
   }
+  for (SRXDataImageRef* element in self.imageRefArray) {
+    NSMutableDictionary *elementDictionary = [NSMutableDictionary dictionary];
+    [element storeInDictionary:elementDictionary];
+    [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary] forKey:@"imageRef"];
+  }
   [self.unknownFields storeInDictionary:dictionary];
 }
 - (BOOL) isEqual:(id)other {
@@ -643,6 +670,7 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
       (!self.hasTuitionFeeInYuan || self.tuitionFeeInYuan == otherMessage.tuitionFeeInYuan) &&
       self.hasSummary == otherMessage.hasSummary &&
       (!self.hasSummary || [self.summary isEqual:otherMessage.summary]) &&
+      [self.imageRefArray isEqualToArray:otherMessage.imageRefArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -668,6 +696,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   if (self.hasSummary) {
     hashCode = hashCode * 31 + [self.summary hash];
   }
+  [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
+    hashCode = hashCode * 31 + [element hash];
+  }];
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
@@ -732,6 +763,13 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   if (other.hasSummary) {
     [self setSummary:other.summary];
   }
+  if (other.imageRefArray.count > 0) {
+    if (resultSrxdataClassInfo.imageRefArray == nil) {
+      resultSrxdataClassInfo.imageRefArray = [[NSMutableArray alloc] initWithArray:other.imageRefArray];
+    } else {
+      [resultSrxdataClassInfo.imageRefArray addObjectsFromArray:other.imageRefArray];
+    }
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -794,6 +832,12 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
       }
       case 58: {
         [self setSummary:[input readString]];
+        break;
+      }
+      case 66: {
+        SRXDataImageRefBuilder* subBuilder = [SRXDataImageRef builder];
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self addImageRef:[subBuilder buildPartial]];
         break;
       }
     }
@@ -937,6 +981,27 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
 - (SRXDataClassInfoBuilder*) clearSummary {
   resultSrxdataClassInfo.hasSummary = NO;
   resultSrxdataClassInfo.summary = @"";
+  return self;
+}
+- (NSMutableArray *)imageRef {
+  return resultSrxdataClassInfo.imageRefArray;
+}
+- (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index {
+  return [resultSrxdataClassInfo imageRefAtIndex:index];
+}
+- (SRXDataClassInfoBuilder *)addImageRef:(SRXDataImageRef*)value {
+  if (resultSrxdataClassInfo.imageRefArray == nil) {
+    resultSrxdataClassInfo.imageRefArray = [[NSMutableArray alloc]init];
+  }
+  [resultSrxdataClassInfo.imageRefArray addObject:value];
+  return self;
+}
+- (SRXDataClassInfoBuilder *)setImageRefArray:(NSArray *)array {
+  resultSrxdataClassInfo.imageRefArray = [[NSMutableArray alloc]initWithArray:array];
+  return self;
+}
+- (SRXDataClassInfoBuilder *)clearImageRef {
+  resultSrxdataClassInfo.imageRefArray = nil;
   return self;
 }
 @end

@@ -3,6 +3,7 @@
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
 #import "SRXDataLocation.pb.h"
+#import "SRXDataImage.pb.h"
 // @@protoc_insertion_point(imports)
 
 @class SRXDataClass;
@@ -13,6 +14,12 @@
 @class SRXDataClassTimeBuilder;
 @class SRXDataClassTypeEnum;
 @class SRXDataClassTypeEnumBuilder;
+@class SRXDataImage;
+@class SRXDataImageBuilder;
+@class SRXDataImageRef;
+@class SRXDataImageRefBuilder;
+@class SRXDataImageServerTypeEnum;
+@class SRXDataImageServerTypeEnumBuilder;
 @class SRXDataLocation;
 @class SRXDataLocationBuilder;
 
@@ -130,6 +137,7 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 #define SRXDataClassInfo_number_of_classes @"numberOfClasses"
 #define SRXDataClassInfo_tuition_fee_in_yuan @"tuitionFeeInYuan"
 #define SRXDataClassInfo_summary @"summary"
+#define SRXDataClassInfo_image_ref @"imageRef"
 @interface SRXDataClassInfo : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
   BOOL hasNumberOfClasses_:1;
@@ -146,6 +154,7 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
   SRXDataLocation* location;
   SRXDataClassTime* classTime;
   SRXDataClassTypeEnumSRXDataClassType classType;
+  NSMutableArray * imageRefArray;
 }
 - (BOOL) hasTeacherName;
 - (BOOL) hasClassType;
@@ -161,6 +170,8 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 @property (readonly) SInt32 numberOfClasses;
 @property (readonly) SInt32 tuitionFeeInYuan;
 @property (readonly, strong) NSString* summary;
+@property (readonly, strong) NSArray * imageRef;
+- (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index;
 
 + (instancetype) defaultInstance;
 - (instancetype) defaultInstance;
@@ -235,6 +246,12 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 - (NSString*) summary;
 - (SRXDataClassInfoBuilder*) setSummary:(NSString*) value;
 - (SRXDataClassInfoBuilder*) clearSummary;
+
+- (NSMutableArray *)imageRef;
+- (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index;
+- (SRXDataClassInfoBuilder *)addImageRef:(SRXDataImageRef*)value;
+- (SRXDataClassInfoBuilder *)setImageRefArray:(NSArray *)array;
+- (SRXDataClassInfoBuilder *)clearImageRef;
 @end
 
 #define SRXDataClass_id @"id"

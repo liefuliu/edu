@@ -1,5 +1,5 @@
 import "SRXDataLocation.proto";
-
+import "SRXDataImage.proto";
 
 message SRXDataClassTypeEnum {
 enum SRXDataClassType{
@@ -37,6 +37,7 @@ message SRXDataClassInfo {
  optional int32 number_of_classes = 5;
  optional int32 tuition_fee_in_yuan = 6;
  optional string summary = 7;
+ repeated SRXDataImageRef image_ref = 8;
 }
 
 // message SRXDataClassStatus {

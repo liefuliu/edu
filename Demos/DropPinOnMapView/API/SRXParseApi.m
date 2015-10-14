@@ -192,55 +192,160 @@ ApiCompletion _completionHandler;
     _completionHandler(true, nil);
 }
 
+/* This parallel implementation doesn't work
 - (void) addImages: (SRXProtoAddImagesRequest*) request
       withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
         completion: (ApiCompletion) compblock {
-    __block bool is_everyone_succeeded = false;
-    dispatch_group_t group = dispatch_group_create();
-    for (SRXProtoImage* image in [request image]) {
-        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
-
-        PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
-        NSString *uuidString = [[NSUUID UUID] UUIDString];
-        
-        userPhoto[kImageTableKeyColumn] = uuidString;
-        userPhoto[kImageTableDataColumn] = imageFile;
-        //[userPhoto saveInBackground];
-        dispatch_group_enter(group);
-        [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (!succeeded) {
-                // TODO: delete all the photos which has been uploaded in this request.
-                is_everyone_succeeded = false;
-            }
-            
-            dispatch_group_leave(group);
-        }];
-    }
-
-    dispatch_group_wait(group, DISPATCH_TIME_FOREVER);
     
-    if (is_everyone_succeeded) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        __block bool is_everyone_succeeded = true;
+        __block NSMutableArray *imageKeys = [[NSMutableArray alloc] init];
+        dispatch_group_t group = dispatch_group_create();
+        for (SRXProtoImage* image in [request image]) {
+            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
+
+            PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
+            NSString *uuidString = [[NSUUID UUID] UUIDString];
+            
+            userPhoto[kImageTableKeyColumn] = uuidString;
+            userPhoto[kImageTableDataColumn] = imageFile;
+            //[userPhoto saveInBackground];
+            dispatch_group_enter(group);
+            [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (!succeeded) {
+                    // TODO: delete all the photos which has been uploaded in this request.
+                    is_everyone_succeeded = false;
+                }
+                
+                [imageKeys addObject:uuidString];
+                dispatch_group_leave(group);
+            }];
+        }
+
+        dispatch_async(dispatch_get_main_queue(), ^{ // 6
+            if (is_everyone_succeeded) {
+                NSLog(@"Successfully add photo");
+                for (NSString* imageKey in imageKeys) {
+                    [*responseBuilder addImageKey:imageKey];
+                }
+                
+                _completionHandler(true, @"success");
+            } else {
+                NSLog(@"Failed to add photo");
+                _completionHandler(false, @"failed to add photo");
+            }
+        });
+    });
+}*/
+
+- (void) addImages: (SRXProtoAddImagesRequest*) request
+      withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
+        completion: (ApiCompletion) compblock {
+    _completionHandler = [compblock copy];
+    NSMutableArray* imageKeys = [[NSMutableArray alloc] init];
+    
+        for (SRXProtoImage* image in [request image]) {
+            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
+            
+            PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
+            NSString *uuidString = [[NSUUID UUID] UUIDString];
+            
+            userPhoto[kImageTableKeyColumn] = uuidString;
+            userPhoto[kImageTableDataColumn] = imageFile;
+            
+            /*
+             __block BOOL successful;
+             __block NSString* imageKey;
+             
+            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
+             
+            [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    imageKey = uuidString;
+                }
+                successful = succeeded;
+                dispatch_semaphore_signal(semaphore);
+            }];
+            
+            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
+            */
+            
+            bool successful = [userPhoto save];
+            
+            if (!successful) {
+                NSLog(@"Failed to add photo");
+                _completionHandler(false, @"failed to add photo");
+            } else {
+                NSLog(@"Saved image key: %@", uuidString);
+                [imageKeys addObject:uuidString];
+            }
+        }
+
+    
         NSLog(@"Successfully add photo");
-        _completionHandler(true, @"success");
-    } else {
-        NSLog(@"Failed to add photo");
-        _completionHandler(false, @"failed to add photo");
-    }
+                for (NSString* imageKey in imageKeys) {
+                    [*responseBuilder addImageKey:imageKey];
+                }
+                
+                _completionHandler(true, @"success");
 }
+
+
 
 - (void) getImages: (SRXProtoGetImagesRequest*) request
       withResponse: (SRXProtoGetImagesResponseBuilder**) responseBuilder
         completion: (ApiCompletion) compblock {
-    /*
-     PFFile *userImageFile = anotherPhoto[@"imageFile"];
-     [userImageFile getDataInBackgroundWithBlock:^(NSData *imageData, NSError *error) {
-     if (!error) {
-     UIImage *image = [UIImage imageWithData:imageData];
-     }
-     }];
-    */
+    _completionHandler = [compblock copy];
+
     
+    //NSMutableArray *imageKeys = [[NSMutableArray alloc] init];
+    if ([[request imageKey] count] == 0) {
+        _completionHandler(true, @"");
+        return;
+    }
     
+    NSMutableString* imageKeyGroupWithCurlyBrace = [NSMutableString stringWithFormat:@"{'%@'", [request imageKey][0]];
+    for (int i = 1; i < [[request imageKey] count]; i++) {
+        [imageKeyGroupWithCurlyBrace appendFormat:@",'%@'",[request imageKey][i]];
+    }
+    [imageKeyGroupWithCurlyBrace appendString:@"}"];
+    
+    NSPredicate *pred = [NSPredicate predicateWithFormat: @"%@ IN %@", kImageTableKeyColumn, imageKeyGroupWithCurlyBrace];
+    
+    //PFQuery *query = [PFQuery queryWithClassName:kImageTable predicate:pred];
+    PFQuery *query = [[PFQuery queryWithClassName:kImageTable] whereKey:kImageTableKeyColumn containedIn:[request imageKey]];
+    
+    __block SRXProtoGetImagesResponseBuilder* reponseBuilderRef = *responseBuilder;
+
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *imageKeyObjects, NSError *error){
+        if (error) {
+            _completionHandler(false, @"failed to fetch image reference");
+        } else {
+            NSLog(@"Successfully fetched image reference. ");
+            for (PFObject *imageKeyObject in imageKeyObjects) {
+                //PFObject *post = comment[@"post"];
+                PFFile *imageFile = imageKeyObject[kImageTableDataColumn];
+                /*[imageFile getData:^(NSData *imageData, NSError *error) {
+                    if (!error) {
+                        [*responseBuilder addImageData:imageData];
+                    } else {
+                        _completionHandler(false, @"failed to fetch image");
+                    }
+                }];*/
+                
+                NSData* imageData = [imageFile getData];
+                if (imageData == nil) {
+                    _completionHandler(false, @"failed to fetch image");
+                    return;
+                } else {
+                    SRXDataImage* srxDataImage = [[[SRXDataImage builder] setData:imageData] build];
+                    [reponseBuilderRef addImageData:srxDataImage];
+                }
+            }
+            _completionHandler(true, @"");
+        }
+    }];
 }
 
 @end

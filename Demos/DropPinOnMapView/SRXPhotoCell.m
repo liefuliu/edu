@@ -19,4 +19,5 @@
 - (void) setImage: (UIImage*) image {
     self.photoImageView.image = image;
 }
+
 @end
