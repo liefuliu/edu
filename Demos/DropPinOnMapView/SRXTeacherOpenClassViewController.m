@@ -219,6 +219,10 @@ NSString* const plusSignFileName = @"plus_sign.png";
              SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:self.classTypeStringsAllowToSelect];
              selectionViewController.delegate = self;
              [self presentViewController:selectionViewController animated:YES completion:nil];
+         } else {
+             // TODO(fengyi): Handle the touch event on "学费" and "时间"
+             // Currently we only allow the teacher to select "科目"， we need to eanble
+             // the similar logic to allow teacher to select "学费" and "时间".
          }
      }
      
@@ -234,15 +238,6 @@ NSString* const plusSignFileName = @"plus_sign.png";
 }
 
 #pragma mark Logic related to Topic row.
-/*
- - (void) rowTopicTapped {
- 
- }
- 
- - (void) (ClassTopicPickerViewController *)picker
- didFinishPickingMediaWithInfo:(NSArray *)info {
- 
- }*/
 
 #pragma mark UICollectionViewDelegate Methods
 
@@ -298,8 +293,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         NSLog(@"Pick additional photos");
         [self buttonAddPhotoTapped];
     } else {
-        SRXImageViewController* imageViewController = [[SRXImageViewController alloc] init];
-        imageViewController.image = [self.imageDictionary objectForKey:self.patternImagesArray[indexPath.row]];;
+        SRXImage* srxImage = [self.imageDictionary objectForKey:self.patternImagesArray[indexPath.row]];
+        SRXImageViewController* imageViewController = [[SRXImageViewController alloc] initWithImage:[srxImage image]];
         [self.navigationController pushViewController:imageViewController animated:YES];
     }
 }

@@ -10,6 +10,10 @@
 
 @interface SRXImageViewController : UIViewController <UIScrollViewDelegate>
 
-@property (strong, nonatomic) UIImage* image;
+// TODO: support multiple UIImages in the view controller.
+
+- (instancetype) initWithImageArray: (NSArray*) imageArray;
+
+- (instancetype) initWithImage: (UIImage*) image;
 
 @end

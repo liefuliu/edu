@@ -10,6 +10,7 @@
 #import "SRXProtocols.h"
 #import "SRXApiFactory.h"
 #import "SRXDataImage.pb.h"
+#import "SRXImageViewController.h"
 
 @interface SRXStudentClassViewController ()
 
@@ -19,8 +20,7 @@
 
 @implementation SRXStudentClassViewController
 
-
-// 'classInfo' must be set before loading the view.
+// 'classInfo' must be set (in initialization function) before loading the view.
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -30,11 +30,18 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(20.0f, 0.0f, 0.0f, 0.0f);
-    self.imageViewAtTop.image = [UIImage imageNamed: @"congfucius_study.jpg"];
+    self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
     
     NSLog(@"Class Info in student class view: %@", _classInfo);
     
+    
+    UITapGestureRecognizer *tapRecognizer = [[UITapGestureRecognizer alloc]
+                                             initWithTarget:self action:@selector(clickEventOnImage:)];
+    [tapRecognizer setNumberOfTouchesRequired:1];
+    [tapRecognizer setDelegate:self];
+    
+    self.imageViewAtTop.userInteractionEnabled = YES;
+    [self.imageViewAtTop addGestureRecognizer:tapRecognizer];
     
     [self loadImagesAsync];
 }
@@ -45,7 +52,6 @@
 }
 
 - (void) loadImagesAsync {
-    
     // Get images.
     SRXProtoGetImagesRequestBuilder* imagesRequestBuilder = [SRXProtoGetImagesRequest builder];
     
@@ -57,7 +63,6 @@
     SRXProtoGetImagesRequest* imagesRequest = [imagesRequestBuilder build];
     SRXProtoGetImagesResponseBuilder* responseBuilder = [SRXProtoGetImagesResponse builder];
     
-    // DO IT NOW: download the image references.
     [[SRXApiFactory getActualApi] getImages:imagesRequest withResponse:&responseBuilder completion:^(BOOL success, NSString* error) {
         if (success) {
             // Load images.
@@ -68,19 +73,23 @@
                 [_imagesOfClass addObject:image];
             }
             
+            // Display the first image view
             if ([_imagesOfClass count] > 0) {
                 self.imageViewAtTop.image = _imagesOfClass[0];
             }
-            
-            // Display the first image view
-            
-            
         } else {
-            // Display the message: "cannot load image".
+            // TODO(liefuliu) display the alert: "cannot load image".
         }
     }];
 }
 
+
+-(void) clickEventOnImage:(UITapGestureRecognizer*) recognizer {
+    SRXImageViewController* imageViewController = [[SRXImageViewController alloc] initWithImageArray: _imagesOfClass];
+    
+    [self.navigationController pushViewController:imageViewController animated:YES];
+    
+}
 
 #pragma mark - Table view data source
 
@@ -152,5 +161,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 1.0;
+}
+
+- (NSString*) tableView:(UITableView *) tableView titleForHeaderInSection:(NSInteger)section
+{
+    return nil;
+}
+
 
 @end

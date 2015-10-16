@@ -7,7 +7,6 @@
 //
 
 #import "SRXTeacherClassTableViewController.h"
-#import "SRXTeacherClassCollection.h"
 #import "SRXTeacherClassCell.h"
 #import "SRXTeacherOpenClassViewController.h"
 #import "SRXColor.h"
@@ -120,25 +119,17 @@
         // Configure the cell...
         NSArray *items = self.allClasses;
         SRXDataClassInfo* classInfo = items[indexPath.row];
-        /*
-        // TODO(liefuliu): Currently we used hard code for demo purpose;
-        classInfo.topic = @"钢琴";
-        cell.topicLabel.text = [classInfo topic];
-        cell.timeLabel.text = [classInfo time];
-        */
         
+        // TODO(liefuliu): Currently we hard coded time label and status label for demo
+        // purpose. Set it properly when these info are essentially stored in 'classInfo'.
         if (indexPath.row % 3) {
             cell.statusLabel.text = @"已开学";
         } else {
             cell.statusLabel.text = @"10月1日开学";
         }
         cell.timeLabel.text = @"每周四晚";
-        cell.topicLabel.text = (NSString*)[self.classTypeDescriptionDictionary objectForKey:[NSNumber numberWithInt:classInfo.classType]];
         
-        /*
-        cell.timeLabel.text = [classInfo summary];
-        cell.statusLabel.text = [classInfo summary];
-        */
+        cell.topicLabel.text = (NSString*)[self.classTypeDescriptionDictionary objectForKey:[NSNumber numberWithInt:classInfo.classType]];
         
         NSLog(@"class info: %@", classInfo);
         return cell;
@@ -175,6 +166,15 @@
         // Push it onto the top of the navigation controller's stack
         [self.navigationController pushViewController:detailViewController
                                              animated:YES];
+    } else if (indexPath.section == 1) {
+        // TODO (fengyi): Response to the event the class item was selected.
+        // If a teacher (or school admin) selected the class item, a view with class
+        // preview should be popped up.
+        // We probably could push a view similar to SRXStudentClassViewController.
+        //
+        // Note: reuse it might be a bad idea, since we try our effort to make student
+        // views and teacher viewers loosely coupled.
+    
     }
 }
 

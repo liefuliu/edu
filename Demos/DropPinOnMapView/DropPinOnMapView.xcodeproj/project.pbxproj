@@ -7,22 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */; };
+		6D013EAF1B77E1CA006D13B9 /* SchoolMapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EAE1B77E1CA006D13B9 /* SchoolMapAnnotation.m */; };
 		6D013EB11B782431006D13B9 /* congfucius_study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EB01B782431006D13B9 /* congfucius_study.jpg */; };
 		6D013EB51B78F368006D13B9 /* CCLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EB41B78F368006D13B9 /* CCLocationManager.m */; };
 		6D013EB81B78FB73006D13B9 /* CLLocation+YCLocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */; };
 		6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EB91B79BBB8006D13B9 /* Icon@2x.png */; };
-		6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */; };
-		6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */; };
 		6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */; };
 		6D013EC51B80D70E006D13B9 /* switch_course_grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC41B80D70E006D13B9 /* switch_course_grey.png */; };
 		6D013EC71B80D757006D13B9 /* gnome_session_switch.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC61B80D757006D13B9 /* gnome_session_switch.png */; };
 		6D013ECA1B80DA19006D13B9 /* right2_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC81B80DA19006D13B9 /* right2_filled-25.png */; };
 		6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013EC91B80DA19006D13B9 /* right2-25.png */; };
-		6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013ECF1B80E132006D13B9 /* SRXTeacherMapViewController.m */; };
 		6D013ED21B80E6F7006D13B9 /* aries_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */; };
-		6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013ED41B810FAF006D13B9 /* ClassesStore.m */; };
-		6D013ED91B811010006D13B9 /* ClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D013ED81B811010006D13B9 /* ClassInfo.m */; };
 		6D08612E1B6EE52200BC5910 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D08612D1B6EE52200BC5910 /* main.m */; };
 		6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861301B6EE52200BC5910 /* AppDelegate.m */; };
 		6D0861341B6EE52200BC5910 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D0861331B6EE52200BC5910 /* ViewController.m */; };
@@ -55,18 +50,15 @@
 		6D2DE8111B88EE5600889E17 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE80B1B88EE5600889E17 /* SystemConfiguration.framework */; };
 		6D2DE8141B88EE8300889E17 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */; };
 		6D2DE8151B88EE8300889E17 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D2DE8131B88EE8300889E17 /* libz.dylib */; };
-		6D2DE8181B895F0800889E17 /* LegacySRXTeacherMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */; };
 		6D6274A91B884BFE00023458 /* ParseUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D6274A81B884BFE00023458 /* ParseUI.framework */; };
 		6D650A6D1BC97C9F008B5FA1 /* SRXDataImage.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D650A6C1BC97C9F008B5FA1 /* SRXDataImage.proto */; };
 		6D650A761BC97D00008B5FA1 /* SRXApi.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650A6F1BC97D00008B5FA1 /* SRXApi.pb.m */; };
 		6D650A771BC97D00008B5FA1 /* SRXDataClass.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650A711BC97D00008B5FA1 /* SRXDataClass.pb.m */; };
 		6D650A781BC97D00008B5FA1 /* SRXDataImage.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650A731BC97D00008B5FA1 /* SRXDataImage.pb.m */; };
 		6D650A791BC97D00008B5FA1 /* SRXDataLocation.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650A751BC97D00008B5FA1 /* SRXDataLocation.pb.m */; };
-		6D650AAE1BCAD1FA008B5FA1 /* SRXImageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650AAD1BCAD1FA008B5FA1 /* SRXImageContainer.m */; };
 		6D650AB11BCAD2A8008B5FA1 /* SRXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650AB01BCAD2A8008B5FA1 /* SRXImage.m */; };
 		6D8BC5571BAF8143001F20F0 /* SRXDataClass.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */; };
 		6D8BC55C1BB241B3001F20F0 /* SRXDataLocation.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC55B1BB241B3001F20F0 /* SRXDataLocation.proto */; };
-		6D8BC5641BB27DC9001F20F0 /* TeacherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC5631BB27DC9001F20F0 /* TeacherAPI.m */; };
 		6D8BC5681BB3C5EC001F20F0 /* SRXApi.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC5671BB3C5EC001F20F0 /* SRXApi.proto */; };
 		6D8BC56E1BB51302001F20F0 /* SRXParseApi.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC56D1BB51302001F20F0 /* SRXParseApi.m */; };
 		6D8BC5711BB59B95001F20F0 /* SRXApiFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D8BC5701BB59B95001F20F0 /* SRXApiFactory.m */; };
@@ -86,9 +78,7 @@
 		6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE280B1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m */; };
 		6DDE28141B93E48300A855E5 /* SRXUserInfoKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28131B93E48300A855E5 /* SRXUserInfoKeys.m */; };
 		6DDE28171B94034900A855E5 /* SRXUserInputVerifier.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */; };
-		6DDE28281B9BEBD600A855E5 /* Teach.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE282A1B9BEBD600A855E5 /* Teach.Storyboard */; };
 		6DDE28391B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28381B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.m */; };
-		6DDE283E1B9CBE9800A855E5 /* SRXTeacherClassCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE283D1B9CBE9800A855E5 /* SRXTeacherClassCollection.m */; };
 		6DDE28471B9E499600A855E5 /* SRXTeacherClassCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28451B9E499600A855E5 /* SRXTeacherClassCell.m */; };
 		6DDE28481B9E499600A855E5 /* SRXTeacherClassCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28461B9E499600A855E5 /* SRXTeacherClassCell.xib */; };
 		6DDE28521B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28501B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.m */; };
@@ -112,30 +102,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D013EAD1B77E1CA006D13B9 /* LFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LFAnnotation.h; path = DropPinOnMapView/LFAnnotation.h; sourceTree = "<group>"; };
-		6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LFAnnotation.m; path = DropPinOnMapView/LFAnnotation.m; sourceTree = "<group>"; };
+		6D013EAD1B77E1CA006D13B9 /* SchoolMapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SchoolMapAnnotation.h; path = DropPinOnMapView/SchoolMapAnnotation.h; sourceTree = "<group>"; };
+		6D013EAE1B77E1CA006D13B9 /* SchoolMapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SchoolMapAnnotation.m; path = DropPinOnMapView/SchoolMapAnnotation.m; sourceTree = "<group>"; };
 		6D013EB01B782431006D13B9 /* congfucius_study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = congfucius_study.jpg; sourceTree = "<group>"; };
 		6D013EB31B78F368006D13B9 /* CCLocationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLocationManager.h; sourceTree = "<group>"; };
 		6D013EB41B78F368006D13B9 /* CCLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLocationManager.m; sourceTree = "<group>"; };
 		6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CLLocation+YCLocation.h"; sourceTree = "<group>"; };
 		6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CLLocation+YCLocation.m"; sourceTree = "<group>"; };
 		6D013EB91B79BBB8006D13B9 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
-		6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMClassItemViewController.h; sourceTree = "<group>"; };
-		6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMClassItemViewController.m; sourceTree = "<group>"; };
-		6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DPMClassItemViewController.xib; sourceTree = "<group>"; };
 		6D013EC01B7F9C6E006D13B9 /* SRXStudentMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRXStudentMapViewController.h; path = DropPinOnMapView/SRXStudentMapViewController.h; sourceTree = "<group>"; };
 		6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXStudentMapViewController.m; path = DropPinOnMapView/SRXStudentMapViewController.m; sourceTree = "<group>"; };
 		6D013EC41B80D70E006D13B9 /* switch_course_grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switch_course_grey.png; sourceTree = "<group>"; };
 		6D013EC61B80D757006D13B9 /* gnome_session_switch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gnome_session_switch.png; sourceTree = "<group>"; };
 		6D013EC81B80DA19006D13B9 /* right2_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right2_filled-25.png"; sourceTree = "<group>"; };
 		6D013EC91B80DA19006D13B9 /* right2-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right2-25.png"; sourceTree = "<group>"; };
-		6D013ECE1B80E132006D13B9 /* SRXTeacherMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherMapViewController.h; sourceTree = "<group>"; };
-		6D013ECF1B80E132006D13B9 /* SRXTeacherMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherMapViewController.m; sourceTree = "<group>"; };
 		6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aries_filled-25.png"; sourceTree = "<group>"; };
-		6D013ED31B810FAF006D13B9 /* ClassesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassesStore.h; sourceTree = "<group>"; };
-		6D013ED41B810FAF006D13B9 /* ClassesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassesStore.m; sourceTree = "<group>"; };
-		6D013ED71B811010006D13B9 /* ClassInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassInfo.h; sourceTree = "<group>"; };
-		6D013ED81B811010006D13B9 /* ClassInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassInfo.m; sourceTree = "<group>"; };
 		6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPinOnMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08612C1B6EE52200BC5910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D08612D1B6EE52200BC5910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -188,8 +169,6 @@
 		6D2DE80B1B88EE5600889E17 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6D2DE8121B88EE8300889E17 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6D2DE8131B88EE8300889E17 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		6D2DE8161B895F0800889E17 /* LegacySRXTeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LegacySRXTeacherMeViewController.h; sourceTree = "<group>"; };
-		6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LegacySRXTeacherMeViewController.m; sourceTree = "<group>"; };
 		6D6274A81B884BFE00023458 /* ParseUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseUI.framework; sourceTree = "<group>"; };
 		6D650A6C1BC97C9F008B5FA1 /* SRXDataImage.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXDataImage.proto; path = Proto/SRXDataImage.proto; sourceTree = "<group>"; };
 		6D650A6E1BC97D00008B5FA1 /* SRXApi.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRXApi.pb.h; path = ProtoGen/SRXApi.pb.h; sourceTree = "<group>"; };
@@ -200,14 +179,10 @@
 		6D650A731BC97D00008B5FA1 /* SRXDataImage.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXDataImage.pb.m; path = ProtoGen/SRXDataImage.pb.m; sourceTree = "<group>"; };
 		6D650A741BC97D00008B5FA1 /* SRXDataLocation.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRXDataLocation.pb.h; path = ProtoGen/SRXDataLocation.pb.h; sourceTree = "<group>"; };
 		6D650A751BC97D00008B5FA1 /* SRXDataLocation.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXDataLocation.pb.m; path = ProtoGen/SRXDataLocation.pb.m; sourceTree = "<group>"; };
-		6D650AAC1BCAD1FA008B5FA1 /* SRXImageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImageContainer.h; sourceTree = "<group>"; };
-		6D650AAD1BCAD1FA008B5FA1 /* SRXImageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImageContainer.m; sourceTree = "<group>"; };
 		6D650AAF1BCAD2A8008B5FA1 /* SRXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImage.h; sourceTree = "<group>"; };
 		6D650AB01BCAD2A8008B5FA1 /* SRXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImage.m; sourceTree = "<group>"; };
 		6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXDataClass.proto; path = Proto/SRXDataClass.proto; sourceTree = "<group>"; };
 		6D8BC55B1BB241B3001F20F0 /* SRXDataLocation.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXDataLocation.proto; path = Proto/SRXDataLocation.proto; sourceTree = "<group>"; };
-		6D8BC5621BB27DC9001F20F0 /* TeacherAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TeacherAPI.h; path = API/TeacherAPI.h; sourceTree = "<group>"; };
-		6D8BC5631BB27DC9001F20F0 /* TeacherAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TeacherAPI.m; path = API/TeacherAPI.m; sourceTree = "<group>"; };
 		6D8BC5661BB3C2D8001F20F0 /* SRXProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRXProtocols.h; path = API/SRXProtocols.h; sourceTree = "<group>"; };
 		6D8BC5671BB3C5EC001F20F0 /* SRXApi.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXApi.proto; path = Proto/SRXApi.proto; sourceTree = "<group>"; };
 		6D8BC56C1BB51302001F20F0 /* SRXParseApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SRXParseApi.h; path = API/SRXParseApi.h; sourceTree = "<group>"; };
@@ -242,14 +217,9 @@
 		6DDE28151B94034900A855E5 /* SRXUserInputVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserInputVerifier.h; sourceTree = "<group>"; };
 		6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserInputVerifier.m; sourceTree = "<group>"; };
 		6DDE28271B9BCAAD00A855E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		6DDE282B1B9BEBE100A855E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Teach.Storyboard; sourceTree = "<group>"; };
-		6DDE282D1B9BEC2D00A855E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Teach.strings; sourceTree = "<group>"; };
 		6DDE28321B9BED9100A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		6DDE28331B9BED9100A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Teach.strings"; sourceTree = "<group>"; };
 		6DDE28371B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherClassTableViewController.h; sourceTree = "<group>"; };
 		6DDE28381B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherClassTableViewController.m; sourceTree = "<group>"; };
-		6DDE283C1B9CBE9800A855E5 /* SRXTeacherClassCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherClassCollection.h; sourceTree = "<group>"; };
-		6DDE283D1B9CBE9800A855E5 /* SRXTeacherClassCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherClassCollection.m; sourceTree = "<group>"; };
 		6DDE28441B9E499600A855E5 /* SRXTeacherClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherClassCell.h; sourceTree = "<group>"; };
 		6DDE28451B9E499600A855E5 /* SRXTeacherClassCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherClassCell.m; sourceTree = "<group>"; };
 		6DDE28461B9E499600A855E5 /* SRXTeacherClassCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXTeacherClassCell.xib; sourceTree = "<group>"; };
@@ -323,36 +293,17 @@
 		6D013ECC1B80E0DB006D13B9 /* StudentView */ = {
 			isa = PBXGroup;
 			children = (
-				6D013EC01B7F9C6E006D13B9 /* SRXStudentMapViewController.h */,
-				6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */,
-				6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */,
-				6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */,
+				6D650AB31BCFE783008B5FA1 /* MapTab */,
+				6D650AB21BCFE75D008B5FA1 /* MeTab */,
 			);
 			name = StudentView;
-			sourceTree = "<group>";
-		};
-		6D013ECD1B80E0F3006D13B9 /* LegacyTeacherView */ = {
-			isa = PBXGroup;
-			children = (
-				6D013EBB1B7B0A67006D13B9 /* DPMClassItemViewController.h */,
-				6D013EBC1B7B0A67006D13B9 /* DPMClassItemViewController.m */,
-				6D013EBD1B7B0A67006D13B9 /* DPMClassItemViewController.xib */,
-				6D013ECE1B80E132006D13B9 /* SRXTeacherMapViewController.h */,
-				6D013ECF1B80E132006D13B9 /* SRXTeacherMapViewController.m */,
-			);
-			name = LegacyTeacherView;
 			sourceTree = "<group>";
 		};
 		6D013ED61B810FBC006D13B9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6DDE283B1B9CBE4700A855E5 /* Teacher */,
-				6D013ED31B810FAF006D13B9 /* ClassesStore.h */,
-				6D013ED41B810FAF006D13B9 /* ClassesStore.m */,
-				6D013EAD1B77E1CA006D13B9 /* LFAnnotation.h */,
-				6D013EAE1B77E1CA006D13B9 /* LFAnnotation.m */,
-				6D013ED71B811010006D13B9 /* ClassInfo.h */,
-				6D013ED81B811010006D13B9 /* ClassInfo.m */,
+				6D013EAD1B77E1CA006D13B9 /* SchoolMapAnnotation.h */,
+				6D013EAE1B77E1CA006D13B9 /* SchoolMapAnnotation.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -383,9 +334,9 @@
 				6D013ED61B810FBC006D13B9 /* Model */,
 				6D013EC31B80D6F8006D13B9 /* Resources */,
 				6D013EB31B78F368006D13B9 /* CCLocationManager.h */,
+				6D013EB41B78F368006D13B9 /* CCLocationManager.m */,
 				6D013EB61B78FB73006D13B9 /* CLLocation+YCLocation.h */,
 				6D013EB71B78FB73006D13B9 /* CLLocation+YCLocation.m */,
-				6D013EB41B78F368006D13B9 /* CCLocationManager.m */,
 				6D013EB21B78F290006D13B9 /* Files Above Are From 3rd Party Libraries */,
 				6D0861581B6EEF4000BC5910 /* CoreLocation.framework */,
 				6D0861561B6EE73600BC5910 /* MapKit.framework */,
@@ -421,7 +372,6 @@
 				6D0861381B6EE52200BC5910 /* Images.xcassets */,
 				6D08613A1B6EE52200BC5910 /* LaunchScreen.xib */,
 				6D08612B1B6EE52200BC5910 /* Supporting Files */,
-				6DDE282A1B9BEBD600A855E5 /* Teach.Storyboard */,
 			);
 			path = DropPinOnMapView;
 			sourceTree = "<group>";
@@ -493,22 +443,29 @@
 			name = MeTab;
 			sourceTree = "<group>";
 		};
-		6D2DE7FE1B88EA1600889E17 /* MeView */ = {
+		6D650AB21BCFE75D008B5FA1 /* MeTab */ = {
 			isa = PBXGroup;
 			children = (
 				6D2DE7FF1B88EA4A00889E17 /* SRXMeViewController.h */,
 				6D2DE8001B88EA4A00889E17 /* SRXMeViewController.m */,
-				6D2DE8161B895F0800889E17 /* LegacySRXTeacherMeViewController.h */,
-				6D2DE8171B895F0800889E17 /* LegacySRXTeacherMeViewController.m */,
 			);
-			name = MeView;
+			name = MeTab;
+			sourceTree = "<group>";
+		};
+		6D650AB31BCFE783008B5FA1 /* MapTab */ = {
+			isa = PBXGroup;
+			children = (
+				6D013EC01B7F9C6E006D13B9 /* SRXStudentMapViewController.h */,
+				6D013EC11B7F9C6E006D13B9 /* SRXStudentMapViewController.m */,
+				6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */,
+				6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */,
+			);
+			name = MapTab;
 			sourceTree = "<group>";
 		};
 		6D8BC5601BB27D6A001F20F0 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				6D8BC5621BB27DC9001F20F0 /* TeacherAPI.h */,
-				6D8BC5631BB27DC9001F20F0 /* TeacherAPI.m */,
 				6D8BC5661BB3C2D8001F20F0 /* SRXProtocols.h */,
 				6D8BC56C1BB51302001F20F0 /* SRXParseApi.h */,
 				6D8BC56D1BB51302001F20F0 /* SRXParseApi.m */,
@@ -580,15 +537,6 @@
 			name = TeacherViews;
 			sourceTree = "<group>";
 		};
-		6DDE283B1B9CBE4700A855E5 /* Teacher */ = {
-			isa = PBXGroup;
-			children = (
-				6DDE283C1B9CBE9800A855E5 /* SRXTeacherClassCollection.h */,
-				6DDE283D1B9CBE9800A855E5 /* SRXTeacherClassCollection.m */,
-			);
-			name = Teacher;
-			sourceTree = "<group>";
-		};
 		6DDE284E1B9E6AEC00A855E5 /* ClassesTab */ = {
 			isa = PBXGroup;
 			children = (
@@ -603,8 +551,6 @@
 				6DDE284F1B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.h */,
 				6DDE28501B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.m */,
 				6D18F80F1BA659DE004A9F66 /* SRXTeacherOpenClassViewController.xib */,
-				6D650AAC1BCAD1FA008B5FA1 /* SRXImageContainer.h */,
-				6D650AAD1BCAD1FA008B5FA1 /* SRXImageContainer.m */,
 				6D650AAF1BCAD2A8008B5FA1 /* SRXImage.h */,
 				6D650AB01BCAD2A8008B5FA1 /* SRXImage.m */,
 			);
@@ -616,8 +562,6 @@
 			children = (
 				6D18F7E31BA55C9E004A9F66 /* 3rdPartyViews */,
 				6DDE28621BA3E80100A855E5 /* CommonViews */,
-				6D013ECD1B80E0F3006D13B9 /* LegacyTeacherView */,
-				6D2DE7FE1B88EA1600889E17 /* MeView */,
 				6D013ECC1B80E0DB006D13B9 /* StudentView */,
 				6DDE28361B9CA8BB00A855E5 /* TeacherViews */,
 			);
@@ -767,13 +711,11 @@
 			files = (
 				6D0861371B6EE52200BC5910 /* Main.storyboard in Resources */,
 				6D013ED21B80E6F7006D13B9 /* aries_filled-25.png in Resources */,
-				6DDE28281B9BEBD600A855E5 /* Teach.Storyboard in Resources */,
 				6D013EC51B80D70E006D13B9 /* switch_course_grey.png in Resources */,
 				6D013ECB1B80DA19006D13B9 /* right2-25.png in Resources */,
 				6D8BC55C1BB241B3001F20F0 /* SRXDataLocation.proto in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D650A6D1BC97C9F008B5FA1 /* SRXDataImage.proto in Resources */,
-				6D013EBF1B7B0A67006D13B9 /* DPMClassItemViewController.xib in Resources */,
 				6D18F8051BA64890004A9F66 /* Teacher.Storyboard in Resources */,
 				6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */,
 				6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */,
@@ -874,8 +816,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DDE27ED1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.m in Sources */,
-				6DDE283E1B9CBE9800A855E5 /* SRXTeacherClassCollection.m in Sources */,
-				6D013ED91B811010006D13B9 /* ClassInfo.m in Sources */,
 				6D8BC5711BB59B95001F20F0 /* SRXApiFactory.m in Sources */,
 				6DDE28091B928C4800A855E5 /* SRXColor.m in Sources */,
 				6DDE28171B94034900A855E5 /* SRXUserInputVerifier.m in Sources */,
@@ -892,7 +832,6 @@
 				6D650A761BC97D00008B5FA1 /* SRXApi.pb.m in Sources */,
 				6D18F7FF1BA5DD97004A9F66 /* ELCAssetTablePicker.m in Sources */,
 				6D18F8011BA5DD97004A9F66 /* ELCConsole.m in Sources */,
-				6D013ED01B80E132006D13B9 /* SRXTeacherMapViewController.m in Sources */,
 				6DDE28471B9E499600A855E5 /* SRXTeacherClassCell.m in Sources */,
 				6DDE28561BA2742500A855E5 /* SRXPhotoCell.m in Sources */,
 				6DDE28521B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.m in Sources */,
@@ -908,19 +847,14 @@
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
 				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
 				6D8BC56E1BB51302001F20F0 /* SRXParseApi.m in Sources */,
-				6D013ED51B810FAF006D13B9 /* ClassesStore.m in Sources */,
 				6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */,
 				6D650AB11BCAD2A8008B5FA1 /* SRXImage.m in Sources */,
-				6D013EBE1B7B0A67006D13B9 /* DPMClassItemViewController.m in Sources */,
-				6D013EAF1B77E1CA006D13B9 /* LFAnnotation.m in Sources */,
+				6D013EAF1B77E1CA006D13B9 /* SchoolMapAnnotation.m in Sources */,
 				6D650A771BC97D00008B5FA1 /* SRXDataClass.pb.m in Sources */,
 				6D013EB81B78FB73006D13B9 /* CLLocation+YCLocation.m in Sources */,
 				6DDE28391B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.m in Sources */,
-				6D650AAE1BCAD1FA008B5FA1 /* SRXImageContainer.m in Sources */,
 				6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */,
-				6D2DE8181B895F0800889E17 /* LegacySRXTeacherMeViewController.m in Sources */,
 				6DDE28041B90AE5D00A855E5 /* SRXLogInDetailViewController.m in Sources */,
-				6D8BC5641BB27DC9001F20F0 /* TeacherAPI.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -978,16 +912,6 @@
 				6D18F8111BA659E3004A9F66 /* zh-Hans */,
 			);
 			name = SRXTeacherOpenClassViewController.xib;
-			sourceTree = "<group>";
-		};
-		6DDE282A1B9BEBD600A855E5 /* Teach.Storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6DDE282B1B9BEBE100A855E5 /* Base */,
-				6DDE282D1B9BEC2D00A855E5 /* en */,
-				6DDE28331B9BED9100A855E5 /* zh-Hans */,
-			);
-			name = Teach.Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

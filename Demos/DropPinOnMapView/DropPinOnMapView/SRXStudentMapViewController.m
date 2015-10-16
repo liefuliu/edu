@@ -14,10 +14,7 @@
 #import "SRXStudentMapViewController.h"
 #import "SRXStudentClassViewController.h"
 #import "CCLocationManager.h"
-#import "ClassInfo.h"
-#import "ClassesStore.h"
-#import "LFAnnotation.h"
-#import "DPMClassItemViewController.h"
+#import "SchoolMapAnnotation.h"
 #import "SRXDataClass.pb.h"
 #import "SRXApiFactory.h"
 
@@ -127,7 +124,7 @@
     [self removeAllPinsButUserLocation];
     for(SRXDataClassInfo* classInfo in self.nearByClasses) {
         // LFAnnotation*
-        LFAnnotation *nearByAllocation = [[LFAnnotation alloc] initWithClassInfo:classInfo];
+        SchoolMapAnnotation *nearByAllocation = [[SchoolMapAnnotation alloc] initWithClassInfo:classInfo];
         [self.myMapView addAnnotation:nearByAllocation];
     }
 }
@@ -206,7 +203,7 @@ annotationView.rightCalloutAccessoryView = disclosureButton;
     if ([annotation isKindOfClass:[MKUserLocation class]])
         return nil;
     // If it is our ShopAnnotation, we create and return its view
-    if ([annotation isKindOfClass:[LFAnnotation class]]) {
+    if ([annotation isKindOfClass:[SchoolMapAnnotation class]]) {
         // try to dequeue an existing pin view first
         static NSString* shopAnnotationIdentifier = @"ShopAnnotationIdentifier";
         MKPinAnnotationView* pinView = (MKPinAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:shopAnnotationIdentifier ];
@@ -241,7 +238,7 @@ annotationView.rightCalloutAccessoryView = disclosureButton;
     UIStoryboard *tableViewStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SRXStudentClassViewController* customViewController = (SRXStudentClassViewController*)[tableViewStoryboard instantiateViewControllerWithIdentifier:@"student class view"];
     
-    LFAnnotation *annotation = view.annotation;
+    SchoolMapAnnotation *annotation = view.annotation;
     SRXDataClassInfo* classInfo = [annotation classInfo];
     [customViewController setClassInfo:classInfo];
     [self.navigationController pushViewController:customViewController animated:YES];

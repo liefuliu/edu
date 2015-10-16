@@ -6,10 +6,10 @@
 
 #import <Foundation/Foundation.h>
 #import <MapKit/MapKit.h>
-#import "ClassInfo.h"
+
 #import "SRXDataClass.pb.h"
 
-@interface LFAnnotation : NSObject <MKAnnotation>
+@interface SchoolMapAnnotation : NSObject <MKAnnotation>
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
 @property (nonatomic, copy) NSString* title;
@@ -19,9 +19,6 @@
 // Create a annotation at a random nearby coordinate to 'baseCoordinate', and with
 // random edu information.
 - (instancetype) initWithCoordinate: (CLLocationCoordinate2D) baseCoordinate;
-
-
-- (instancetype) initWithClassInfoLegacy: (ClassInfo*) classInfo;
 
 - (instancetype) initWithClassInfo: (SRXDataClassInfo*) classInfo;
 @end
