@@ -40,7 +40,7 @@ PFUI_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) UILabel *textLabel;
 
 /*!
- @abstract The lazy-loaded imageView of the collection view cell.
+ @abstract The lazy-876 imageView of the collection view cell.
 
  @see PFImageView
  */

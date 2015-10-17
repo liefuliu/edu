@@ -14,6 +14,7 @@
 		6DD198401B5C77FC00F220BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD1983F1B5C77FC00F220BC /* Images.xcassets */; };
 		6DD198431B5C77FC00F220BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DD198411B5C77FC00F220BC /* LaunchScreen.xib */; };
 		6DD1984F1B5C77FC00F220BC /* FindTeacherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD1984E1B5C77FC00F220BC /* FindTeacherTests.m */; };
+		6DD60DDE1B6681A000B1A81A /* TeacherStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DD60DDD1B6681A000B1A81A /* TeacherStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		6DD198481B5C77FC00F220BC /* FindTeacherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FindTeacherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD1984D1B5C77FC00F220BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DD1984E1B5C77FC00F220BC /* FindTeacherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FindTeacherTests.m; sourceTree = "<group>"; };
+		6DD60DDC1B6681A000B1A81A /* TeacherStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherStore.h; sourceTree = "<group>"; };
+		6DD60DDD1B6681A000B1A81A /* TeacherStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				6DD1983F1B5C77FC00F220BC /* Images.xcassets */,
 				6DD198411B5C77FC00F220BC /* LaunchScreen.xib */,
 				6DD198321B5C77FC00F220BC /* Supporting Files */,
+				6DD60DDC1B6681A000B1A81A /* TeacherStore.h */,
+				6DD60DDD1B6681A000B1A81A /* TeacherStore.m */,
 			);
 			path = FindTeacher;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				TargetAttributes = {
 					6DD1982E1B5C77FC00F220BC = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = Q24ZT864X7;
 					};
 					6DD198471B5C77FC00F220BC = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -221,6 +227,7 @@
 			files = (
 				6DD1983B1B5C77FC00F220BC /* ViewController.m in Sources */,
 				6DD198381B5C77FC00F220BC /* AppDelegate.m in Sources */,
+				6DD60DDE1B6681A000B1A81A /* TeacherStore.m in Sources */,
 				6DD198351B5C77FC00F220BC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,9 +354,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FindTeacher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -357,9 +369,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = FindTeacher/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -416,6 +433,7 @@
 				6DD198541B5C77FC00F220BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DD198551B5C77FC00F220BC /* Build configuration list for PBXNativeTarget "FindTeacherTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +442,7 @@
 				6DD198571B5C77FC00F220BC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

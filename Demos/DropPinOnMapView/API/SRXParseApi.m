@@ -282,12 +282,12 @@ ApiCompletion _completionHandler;
         }
 
     
-        NSLog(@"Successfully add photo");
-                for (NSString* imageKey in imageKeys) {
-                    [*responseBuilder addImageKey:imageKey];
-                }
+   NSLog(@"Successfully add photo");
+   for (NSString* imageKey in imageKeys) {
+       [*responseBuilder addImageKey:imageKey];
+   }
                 
-                _completionHandler(true, @"success");
+   _completionHandler(true, @"success");
 }
 
 

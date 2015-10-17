@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import <Parse/Parse.h>
+#import <ParseUI/PFLogInViewController.h>
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // [Optional] Power your app with Local Datastore. For more info, go to
+    // https://parse.com/docs/ios_guide#localdatastore/iOS
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"v9dWkNcnBpIqIvramHo8CqAUts18toQJ1d9MTMNH"
+                  clientKey:@"mwV3UjHfcFfSohPbjYk9QKt567OyJm6701TRSQmf"];
+    
+    // [Optional] Track statistics around application opens.
+    /*
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+    
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    logInViewController.delegate = self;
+    [self presentViewController:logInViewController animated:YES completion:nil];
+    */
+    
     return YES;
 }
 

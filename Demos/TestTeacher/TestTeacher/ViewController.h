@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *boyQuestionText;
+@property (weak, nonatomic) IBOutlet UITextField *girlQuestionText;
+@property (weak, nonatomic) IBOutlet UITextField *boyAnswerText;
+@property (weak, nonatomic) IBOutlet UITextField *girlAnswerText;
+
+@property (strong) NSString* objectId;
 
 @end
 
