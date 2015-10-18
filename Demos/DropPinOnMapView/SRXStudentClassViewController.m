@@ -12,6 +12,9 @@
 #import "SRXDataImage.pb.h"
 #import "SRXImageViewController.h"
 
+#import "SRXImageScrollViewController.h"
+#import "MyCusViewController.h"
+
 @interface SRXStudentClassViewController ()
 
 @property NSMutableArray* imagesOfClass;
@@ -85,10 +88,9 @@
 
 
 -(void) clickEventOnImage:(UITapGestureRecognizer*) recognizer {
-    SRXImageViewController* imageViewController = [[SRXImageViewController alloc] initWithImageArray: _imagesOfClass];
-    
-    [self.navigationController pushViewController:imageViewController animated:YES];
-    
+    if ([_imagesOfClass count] > 0) {
+        [self.navigationController pushViewController:[[MyCusViewController alloc] initWithImageArray:_imagesOfClass andCurImage:_imagesOfClass[0]] animated:YES];
+    }
 }
 
 #pragma mark - Table view data source

@@ -1,14 +1,15 @@
 //
-//  SRXImageViewerController.h
+//  SRXImageScrollViewController.h
 //  DropPinOnMapView
 //
-//  Created by Liefu Liu on 9/11/15.
+//  Created by Liefu Liu on 10/17/15.
 //  Copyright (c) 2015 Liefu Liu. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface SRXImageViewController : UIViewController
+@interface SRXImageScrollViewController : UIViewController
+
 
 // TODO: support multiple UIImages in the view controller.
 

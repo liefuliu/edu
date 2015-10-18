@@ -57,6 +57,10 @@
 		6D650A781BC97D00008B5FA1 /* SRXDataImage.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650A731BC97D00008B5FA1 /* SRXDataImage.pb.m */; };
 		6D650A791BC97D00008B5FA1 /* SRXDataLocation.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650A751BC97D00008B5FA1 /* SRXDataLocation.pb.m */; };
 		6D650AB11BCAD2A8008B5FA1 /* SRXImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650AB01BCAD2A8008B5FA1 /* SRXImage.m */; };
+		6D650AB61BD2C120008B5FA1 /* SRXImageScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650AB51BD2C120008B5FA1 /* SRXImageScrollViewController.m */; };
+		6D650B061BD427DC008B5FA1 /* MyCusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650B011BD427DC008B5FA1 /* MyCusViewController.m */; };
+		6D650B071BD427DC008B5FA1 /* SQScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650B031BD427DC008B5FA1 /* SQScrollViewController.m */; };
+		6D650B081BD427DC008B5FA1 /* ScaleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D650B051BD427DC008B5FA1 /* ScaleImageView.m */; };
 		6D8BC5571BAF8143001F20F0 /* SRXDataClass.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */; };
 		6D8BC55C1BB241B3001F20F0 /* SRXDataLocation.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC55B1BB241B3001F20F0 /* SRXDataLocation.proto */; };
 		6D8BC5681BB3C5EC001F20F0 /* SRXApi.proto in Resources */ = {isa = PBXBuildFile; fileRef = 6D8BC5671BB3C5EC001F20F0 /* SRXApi.proto */; };
@@ -181,6 +185,14 @@
 		6D650A751BC97D00008B5FA1 /* SRXDataLocation.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRXDataLocation.pb.m; path = ProtoGen/SRXDataLocation.pb.m; sourceTree = "<group>"; };
 		6D650AAF1BCAD2A8008B5FA1 /* SRXImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImage.h; sourceTree = "<group>"; };
 		6D650AB01BCAD2A8008B5FA1 /* SRXImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImage.m; sourceTree = "<group>"; };
+		6D650AB41BD2C120008B5FA1 /* SRXImageScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImageScrollViewController.h; sourceTree = "<group>"; };
+		6D650AB51BD2C120008B5FA1 /* SRXImageScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImageScrollViewController.m; sourceTree = "<group>"; };
+		6D650B001BD427DC008B5FA1 /* MyCusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCusViewController.h; sourceTree = "<group>"; };
+		6D650B011BD427DC008B5FA1 /* MyCusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCusViewController.m; sourceTree = "<group>"; };
+		6D650B021BD427DC008B5FA1 /* SQScrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQScrollViewController.h; sourceTree = "<group>"; };
+		6D650B031BD427DC008B5FA1 /* SQScrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQScrollViewController.m; sourceTree = "<group>"; };
+		6D650B041BD427DC008B5FA1 /* ScaleImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleImageView.h; sourceTree = "<group>"; };
+		6D650B051BD427DC008B5FA1 /* ScaleImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleImageView.m; sourceTree = "<group>"; };
 		6D8BC5551BAF8143001F20F0 /* SRXDataClass.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXDataClass.proto; path = Proto/SRXDataClass.proto; sourceTree = "<group>"; };
 		6D8BC55B1BB241B3001F20F0 /* SRXDataLocation.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = SRXDataLocation.proto; path = Proto/SRXDataLocation.proto; sourceTree = "<group>"; };
 		6D8BC5661BB3C2D8001F20F0 /* SRXProtocols.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRXProtocols.h; path = API/SRXProtocols.h; sourceTree = "<group>"; };
@@ -405,6 +417,7 @@
 		6D18F7E31BA55C9E004A9F66 /* 3rdPartyViews */ = {
 			isa = PBXGroup;
 			children = (
+				6D650AFF1BD427C6008B5FA1 /* SQScrollView */,
 				6D18F7EA1BA5DD86004A9F66 /* ELCImagePicker */,
 			);
 			name = 3rdPartyViews;
@@ -461,6 +474,19 @@
 				6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */,
 			);
 			name = MapTab;
+			sourceTree = "<group>";
+		};
+		6D650AFF1BD427C6008B5FA1 /* SQScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				6D650B001BD427DC008B5FA1 /* MyCusViewController.h */,
+				6D650B011BD427DC008B5FA1 /* MyCusViewController.m */,
+				6D650B021BD427DC008B5FA1 /* SQScrollViewController.h */,
+				6D650B031BD427DC008B5FA1 /* SQScrollViewController.m */,
+				6D650B041BD427DC008B5FA1 /* ScaleImageView.h */,
+				6D650B051BD427DC008B5FA1 /* ScaleImageView.m */,
+			);
+			name = SQScrollView;
 			sourceTree = "<group>";
 		};
 		6D8BC5601BB27D6A001F20F0 /* API */ = {
@@ -576,6 +602,8 @@
 				6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */,
 				6D9AA66D1BB89CB300B66099 /* SRXSingleSelectionTableViewController.h */,
 				6D9AA66E1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m */,
+				6D650AB41BD2C120008B5FA1 /* SRXImageScrollViewController.h */,
+				6D650AB51BD2C120008B5FA1 /* SRXImageScrollViewController.m */,
 			);
 			name = CommonViews;
 			sourceTree = "<group>";
@@ -828,6 +856,7 @@
 				6D18F8181BA65C55004A9F66 /* SRXTeacherMeViewController.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
 				6D18F7FE1BA5DD97004A9F66 /* ELCAssetCell.m in Sources */,
+				6D650B081BD427DC008B5FA1 /* ScaleImageView.m in Sources */,
 				6DDE27FF1B90AE3F00A855E5 /* SRXSignUpViewController.m in Sources */,
 				6D650A761BC97D00008B5FA1 /* SRXApi.pb.m in Sources */,
 				6D18F7FF1BA5DD97004A9F66 /* ELCAssetTablePicker.m in Sources */,
@@ -837,13 +866,16 @@
 				6DDE28521B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.m in Sources */,
 				6D18F7FD1BA5DD97004A9F66 /* ELCAsset.m in Sources */,
 				6D650A781BC97D00008B5FA1 /* SRXDataImage.pb.m in Sources */,
+				6D650AB61BD2C120008B5FA1 /* SRXImageScrollViewController.m in Sources */,
 				6D650A791BC97D00008B5FA1 /* SRXDataLocation.pb.m in Sources */,
 				6DDE28141B93E48300A855E5 /* SRXUserInfoKeys.m in Sources */,
 				6D2DE8011B88EA4A00889E17 /* SRXMeViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
+				6D650B071BD427DC008B5FA1 /* SQScrollViewController.m in Sources */,
 				6D9AA66F1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m in Sources */,
 				6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */,
 				6DDE27F71B90ADED00A855E5 /* SRXLogInViewController.m in Sources */,
+				6D650B061BD427DC008B5FA1 /* MyCusViewController.m in Sources */,
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
 				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
 				6D8BC56E1BB51302001F20F0 /* SRXParseApi.m in Sources */,

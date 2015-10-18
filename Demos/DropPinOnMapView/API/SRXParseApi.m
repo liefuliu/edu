@@ -93,9 +93,6 @@ ApiCompletion _completionHandler;
     }];
     
     // TODO: Append the object Id to the user info (as an index).
-    
-    //_completionHandler(true, @"success");
-
 }
 
 - (void) readClass: (SRXProtoReadClassRequest*) request
@@ -139,21 +136,16 @@ ApiCompletion _completionHandler;
             }
         }];
          */
-        NSArray* objects = [query findObjects];
-        NSLog(@"Successfully retrieved %d scores.", objects.count);
-        //SRXProtoReadClassResponseBuilder* responseBuilder = [SRXProtoReadClassResponse builder];
         
-        // Do something with the found objects.
+        // TODO: move the findObjects on background thread.
+        NSArray* objects = [query findObjects];
+        NSLog(@"Successfully retrieved %d classes.", objects.count);
+        
         for (PFObject *object in objects) {
             SRXDataClassInfo* classInfo;
             classInfo = [SRXDataClassInfo parseFromData: object[kClassTableClassInfoKey]];
-            NSLog(@"%@", classInfo);
-            
             [*responseBuilder addClassCollection:classInfo];
         }
-        //*response = [responseBuilder build];
-
-        
     } else {
         _completionHandler(false, @"Unsupported role type");
         return;
@@ -175,6 +167,7 @@ ApiCompletion _completionHandler;
     // Interested in locations near user.
     [query whereKey:kClassTableLocationKey nearGeoPoint:point];
     // Limit what could be a lot of points.
+    // TODO(liefuliu): specify the query.limit in the request.
     query.limit = 10;
     // Final list of objects
     NSArray* placesObjects = [query findObjects];
@@ -270,6 +263,8 @@ ApiCompletion _completionHandler;
             dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
             */
             
+            
+            // TODO(liefuliu): change the save function into background.
             bool successful = [userPhoto save];
             
             if (!successful) {
