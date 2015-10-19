@@ -531,6 +531,16 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                                          if (success) {
                                              // Upload succeeded, so update the
                                              // server key for each uploaded image.
+                                             if ([imagesToUpload count] != [[addImagesResponse imageKey] count]) {
+                                                NSLog(@"Images to upload in the request doesn't match with the response. Requested: %d, Responded: %d",
+                                                      [imagesToUpload count],
+                                                      [[addImagesResponse imageKey] count]);
+                                                 [self showAlert:NSLocalizedString(@"Error creating a new class", nil)
+                                                    withDetail:NSLocalizedString(@"Failed to upload images", nil)];
+                                                 return;
+                                                 
+                                             }
+                                             
                                              NSAssert([imagesToUpload count] == [[addImagesResponse imageKey] count], @"");
                                              
                                              for (int i = 0; i < [imagesToUpload count]; i++) {

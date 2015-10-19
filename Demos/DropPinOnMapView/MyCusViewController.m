@@ -16,7 +16,8 @@
 
 - (void)imageViewScale:(ScaleImageView *)imageScale clickCurImage:(UIImageView *)imageview
 {
-    
+    NSLog(@"clickCurImage hit");
+    [super dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)setImageViewthumbImage:(ScaleImageView *)scaleView withImage:(id)image
 {

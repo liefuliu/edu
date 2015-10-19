@@ -2,10 +2,9 @@
 //  SQScrollViewController.m
 //  SQScrollView
 //
-//  Created by Lingjunhou on 14-2-26.
-//  Copyright (c) 2014年 LinjunHou. All rights reserved.
+//  Created by Liefu Liu on 9/27/15.
+//  Copyright (c) 2015 Liefu Liu. All rights reserved.
 //
-
 #import "SQScrollViewController.h"
 #import "AppDelegate.h"
 
@@ -288,9 +287,8 @@ static  UIDeviceOrientation preOrientation = UIDeviceOrientationPortrait;
 {
     [self setImageViewImage:_fontScaleImage withImage:[_imageArray objectAtIndex:0]];
     if (_imageArray.count == 2) {
-        
         [self setImageViewImage:_curScaleImage withImage:[_imageArray objectAtIndex:1]];
-        
+        _rearScaleImage.imageView.image = nil;
     }else if(_imageArray.count == 3){
         [self setImageViewImage:_curScaleImage withImage:[_imageArray objectAtIndex:1]];
         [self setImageViewImage:_rearScaleImage withImage:[_imageArray objectAtIndex:2]];
@@ -469,7 +467,7 @@ static  UIDeviceOrientation preOrientation = UIDeviceOrientationPortrait;
     if (imageView.image) {
         imageView.frame = (CGRect){0,0,size};
     }else{
-        imageView.frame = CGRectMake(0, 0, size.width,size.height);
+        //imageView.frame = CGRectMake(0, 0, size.width,size.height);
     }
     imageView.center = CGPointMake(ratationSize.width / 2.f, ratationSize.height /2.f);
 }
