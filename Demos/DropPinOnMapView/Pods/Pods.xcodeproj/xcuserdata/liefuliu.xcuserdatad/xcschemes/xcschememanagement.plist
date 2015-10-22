@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Charleene.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,7 +22,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>59AB5D58E3B00C25FA03764A6A232C2B</key>
+		<key>03BDB71FE8C836A9EB30F4147A64BA31</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B55E70DF0060E9BA042247388FEBC48</key>
 		<dict>
 			<key>primary</key>
 			<true/>

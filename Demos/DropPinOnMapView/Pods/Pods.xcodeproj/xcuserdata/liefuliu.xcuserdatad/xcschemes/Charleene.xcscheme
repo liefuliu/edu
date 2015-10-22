@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "873E8A4628F539F55C85DA4A"
-               BuildableName = "libProtocolBuffers.a"
-               BlueprintName = "ProtocolBuffers"
+               BlueprintIdentifier = "600BCF041A5D801DFB95652E"
+               BuildableName = "libCharleene.a"
+               BlueprintName = "Charleene"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

@@ -181,35 +181,31 @@
         <scene sceneID="zw7-Ql-oM9">
             <objects>
                 <viewController id="8Ui-Kt-pfe" customClass="SRXStudentMapViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VuL-SG-o5A"/>
-                        <viewControllerLayoutGuide type="bottom" id="alf-cr-Ed9"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="rzR-8o-7lF">
+                    <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" id="mQA-XL-dQS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="lIQ-fj-oDt">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="573"/>
-                            </mapView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="lIQ-fj-oDt" firstAttribute="top" secondItem="rzR-8o-7lF" secondAttribute="topMargin" id="1zb-b2-eei"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lIQ-fj-oDt" secondAttribute="trailing" constant="-16" id="77D-C7-vT2"/>
-                            <constraint firstItem="lIQ-fj-oDt" firstAttribute="leading" secondItem="rzR-8o-7lF" secondAttribute="leadingMargin" constant="-16" id="Na5-St-TDW"/>
-                            <constraint firstItem="lIQ-fj-oDt" firstAttribute="top" secondItem="rzR-8o-7lF" secondAttribute="topMargin" id="e55-fI-4WD"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="lIQ-fj-oDt" secondAttribute="bottom" constant="27" id="fvJ-oC-u64"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="请选择班级" id="IrV-pu-7rc"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    </mapView>
+                    <navigationItem key="navigationItem" title="请选择班级" id="I2n-lY-VVH"/>
                     <connections>
-                        <outlet property="myMapView" destination="lIQ-fj-oDt" id="3hJ-56-PbF"/>
+                        <outlet property="filterTopRight" destination="uRD-6Z-5jD" id="JgI-N7-BMl"/>
+                        <outlet property="myMapView" destination="mQA-XL-dQS" id="hUV-MY-qKl"/>
+                        <outlet property="searchBarTop" destination="PL3-hY-YFH" id="cXv-F9-ou5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ee1-0y-FNs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="uRD-6Z-5jD">
+                    <rect key="frame" x="0.0" y="0.0" width="97" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <searchBar contentMode="redraw" id="PL3-hY-YFH">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </objects>
-            <point key="canvasLocation" x="-31" y="-302"/>
+            <point key="canvasLocation" x="-26" y="-302"/>
         </scene>
         <!--Student Class View Controller-->
         <scene sceneID="2Qy-kB-9Cz">
@@ -275,7 +271,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nkB-hE-KPF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="627" y="-302"/>
+            <point key="canvasLocation" x="623" y="-302"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Y9M-av-z6Y">

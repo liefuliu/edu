@@ -1,10 +1,13 @@
 PODS:
+  - Charleene (0.0.5)
   - ProtocolBuffers (1.9.9)
 
 DEPENDENCIES:
+  - Charleene
   - ProtocolBuffers
 
 SPEC CHECKSUMS:
+  Charleene: a9aa90c947180d8cf901ae1ee22a616cbfbf33d9
   ProtocolBuffers: 18c1d7d0c651d3c878e6fcc8ab8ab1c679b457b1
 
 COCOAPODS: 0.38.2

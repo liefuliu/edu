@@ -13,7 +13,10 @@
 }
 
 
+@property (strong, nonatomic) IBOutlet UISearchBar *searchBarTop;
+
 @property (weak, nonatomic) IBOutlet MKMapView *myMapView;
+@property (strong, nonatomic) IBOutlet UITextField *filterTopRight;
 
 
 @end

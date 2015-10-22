@@ -17,6 +17,8 @@
 #import "SRXClassUtil.h"
 #import "SRXImage.h"
 
+#import "UIViewController+Charleene.h"
+
 #import <MobileCoreServices/UTCoreTypes.h>
 
 // TODO: Remove this once we created a location view.
@@ -218,7 +220,7 @@ NSString* const plusSignFileName = @"plus_sign.png";
          if (indexPath.row == 0) {
              SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:self.classTypeStringsAllowToSelect];
              selectionViewController.delegate = self;
-             [self presentViewController:selectionViewController animated:YES completion:nil];
+             [self presentCharleeneModally:selectionViewController transitionMode:KSModalTransitionModeFromBottom];
          } else {
              // TODO(fengyi): Handle the touch event on "学费" and "时间"
              // Currently we only allow the teacher to select "科目"， we need to eanble

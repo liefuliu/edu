@@ -7,6 +7,7 @@
 //
 
 #import "SRXSingleSelectionTableViewController.h"
+#import "UIViewController+Charleene.h"
 
 @implementation SRXSingleSelectionTableViewController
 
@@ -58,11 +59,13 @@
 {
     if (indexPath.section == 0) {
         NSLog(@"indexPath.section == 0");
-        
-        [self.delegate itemDidSelectAt: (int)indexPath.row
+        if ([self.delegate respondsToSelector:@selector(itemDidSelectAt:withContent:)]) {
+            [self.delegate itemDidSelectAt: (int)indexPath.row
                            withContent: self.itemsForSelection[indexPath.row]];
+        }
     }
-    [self dismissViewControllerAnimated:YES completion:nil];
+    // [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismissCharleeneAnimated:YES completion:nil];
 }
 
 
