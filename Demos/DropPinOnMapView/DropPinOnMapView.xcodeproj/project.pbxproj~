@@ -91,7 +91,13 @@
 		6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */; };
 		6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */; };
 		6DE899A31BC04E1500964AD8 /* SRXStudentClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */; };
-		6DFF41541BDCAA36003DACF5 /* SRXStudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF41531BDCAA36003DACF5 /* SRXStudentListViewController.m */; };
+		6DEBAFCE1BDC618800662966 /* baby_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEBAFC81BDC618800662966 /* baby_filled-25.png */; };
+		6DEBAFCF1BDC618800662966 /* baby-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEBAFC91BDC618800662966 /* baby-25.png */; };
+		6DEBAFD01BDC618800662966 /* location_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEBAFCA1BDC618800662966 /* location_filled-25.png */; };
+		6DEBAFD11BDC618800662966 /* location-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEBAFCB1BDC618800662966 /* location-25.png */; };
+		6DEBAFD21BDC618800662966 /* view_details_filled-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEBAFCC1BDC618800662966 /* view_details_filled-25.png */; };
+		6DEBAFD31BDC618800662966 /* view_details-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DEBAFCD1BDC618800662966 /* view_details-25.png */; };
+		6DEBAFE11BDC7C5D00662966 /* SRXStudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DEBAFE01BDC7C5D00662966 /* SRXStudentListViewController.m */; };
 		8D8141B3AA500668C9BF0C78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
 		964E3EE19B6597FB03DB9DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -122,7 +128,7 @@
 		6D013EC81B80DA19006D13B9 /* right2_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right2_filled-25.png"; sourceTree = "<group>"; };
 		6D013EC91B80DA19006D13B9 /* right2-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "right2-25.png"; sourceTree = "<group>"; };
 		6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aries_filled-25.png"; sourceTree = "<group>"; };
-		6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DropPinOnMapView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D0861281B6EE52200BC5910 /* SanRenXing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SanRenXing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D08612C1B6EE52200BC5910 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D08612D1B6EE52200BC5910 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6D08612F1B6EE52200BC5910 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -230,7 +236,6 @@
 		6DDE28151B94034900A855E5 /* SRXUserInputVerifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXUserInputVerifier.h; sourceTree = "<group>"; };
 		6DDE28161B94034900A855E5 /* SRXUserInputVerifier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXUserInputVerifier.m; sourceTree = "<group>"; };
 		6DDE28271B9BCAAD00A855E5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
-		6DDE28321B9BED9100A855E5 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		6DDE28371B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherClassTableViewController.h; sourceTree = "<group>"; };
 		6DDE28381B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXTeacherClassTableViewController.m; sourceTree = "<group>"; };
 		6DDE28441B9E499600A855E5 /* SRXTeacherClassCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherClassCell.h; sourceTree = "<group>"; };
@@ -246,8 +251,15 @@
 		6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXImageViewController.xib; sourceTree = "<group>"; };
 		6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentClassViewController.h; sourceTree = "<group>"; };
 		6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentClassViewController.m; sourceTree = "<group>"; };
-		6DFF41521BDCAA36003DACF5 /* SRXStudentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentListViewController.h; sourceTree = "<group>"; };
-		6DFF41531BDCAA36003DACF5 /* SRXStudentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentListViewController.m; sourceTree = "<group>"; };
+		6DEBAFC81BDC618800662966 /* baby_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baby_filled-25.png"; path = "Icons/baby_filled-25.png"; sourceTree = "<group>"; };
+		6DEBAFC91BDC618800662966 /* baby-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "baby-25.png"; path = "Icons/baby-25.png"; sourceTree = "<group>"; };
+		6DEBAFCA1BDC618800662966 /* location_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location_filled-25.png"; path = "Icons/location_filled-25.png"; sourceTree = "<group>"; };
+		6DEBAFCB1BDC618800662966 /* location-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "location-25.png"; path = "Icons/location-25.png"; sourceTree = "<group>"; };
+		6DEBAFCC1BDC618800662966 /* view_details_filled-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "view_details_filled-25.png"; path = "Icons/view_details_filled-25.png"; sourceTree = "<group>"; };
+		6DEBAFCD1BDC618800662966 /* view_details-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "view_details-25.png"; path = "Icons/view_details-25.png"; sourceTree = "<group>"; };
+		6DEBAFDB1BDC7A6000662966 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		6DEBAFDF1BDC7C5D00662966 /* SRXStudentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentListViewController.h; sourceTree = "<group>"; };
+		6DEBAFE01BDC7C5D00662966 /* SRXStudentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentListViewController.m; sourceTree = "<group>"; };
 		95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CE82E9796B1C4C1D52781817 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		DBAE63C5220B30CD95D2D17A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +308,12 @@
 		6D013EC31B80D6F8006D13B9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DEBAFC81BDC618800662966 /* baby_filled-25.png */,
+				6DEBAFC91BDC618800662966 /* baby-25.png */,
+				6DEBAFCA1BDC618800662966 /* location_filled-25.png */,
+				6DEBAFCB1BDC618800662966 /* location-25.png */,
+				6DEBAFCC1BDC618800662966 /* view_details_filled-25.png */,
+				6DEBAFCD1BDC618800662966 /* view_details-25.png */,
 				6D013ED11B80E6F7006D13B9 /* aries_filled-25.png */,
 				6D013EC81B80DA19006D13B9 /* right2_filled-25.png */,
 				6D013EC91B80DA19006D13B9 /* right2-25.png */,
@@ -308,7 +326,7 @@
 		6D013ECC1B80E0DB006D13B9 /* StudentView */ = {
 			isa = PBXGroup;
 			children = (
-				6DFF41511BDCAA0E003DACF5 /* ListTab */,
+				6DEBAFDC1BDC7BA000662966 /* ListTab */,
 				6D650AB31BCFE783008B5FA1 /* MapTab */,
 				6D650AB21BCFE75D008B5FA1 /* MeTab */,
 			);
@@ -367,7 +385,7 @@
 		6D0861291B6EE52200BC5910 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */,
+				6D0861281B6EE52200BC5910 /* SanRenXing.app */,
 				6D0861411B6EE52200BC5910 /* DropPinOnMapViewTests.xctest */,
 			);
 			name = Products;
@@ -612,6 +630,15 @@
 			name = CommonViews;
 			sourceTree = "<group>";
 		};
+		6DEBAFDC1BDC7BA000662966 /* ListTab */ = {
+			isa = PBXGroup;
+			children = (
+				6DEBAFDF1BDC7C5D00662966 /* SRXStudentListViewController.h */,
+				6DEBAFE01BDC7C5D00662966 /* SRXStudentListViewController.m */,
+			);
+			name = ListTab;
+			sourceTree = "<group>";
+		};
 		6DF41F0E1BAF06E200B45311 /* Proto */ = {
 			isa = PBXGroup;
 			children = (
@@ -636,15 +663,6 @@
 				6D650A751BC97D00008B5FA1 /* SRXDataLocation.pb.m */,
 			);
 			name = ProtoGen;
-			sourceTree = "<group>";
-		};
-		6DFF41511BDCAA0E003DACF5 /* ListTab */ = {
-			isa = PBXGroup;
-			children = (
-				6DFF41521BDCAA36003DACF5 /* SRXStudentListViewController.h */,
-				6DFF41531BDCAA36003DACF5 /* SRXStudentListViewController.m */,
-			);
-			name = ListTab;
 			sourceTree = "<group>";
 		};
 		F19C611D036DF151C55F96B1 /* Frameworks */ = {
@@ -683,7 +701,7 @@
 			);
 			name = DropPinOnMapView;
 			productName = DropPinOnMapView;
-			productReference = 6D0861281B6EE52200BC5910 /* DropPinOnMapView.app */;
+			productReference = 6D0861281B6EE52200BC5910 /* SanRenXing.app */;
 			productType = "com.apple.product-type.application";
 		};
 		6D0861401B6EE52200BC5910 /* DropPinOnMapViewTests */ = {
@@ -758,6 +776,7 @@
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D650A6D1BC97C9F008B5FA1 /* SRXDataImage.proto in Resources */,
 				6D18F8051BA64890004A9F66 /* Teacher.Storyboard in Resources */,
+				6DEBAFD21BDC618800662966 /* view_details_filled-25.png in Resources */,
 				6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */,
 				6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */,
 				6D08613C1B6EE52200BC5910 /* LaunchScreen.xib in Resources */,
@@ -767,11 +786,16 @@
 				6D18F80C1BA65256004A9F66 /* Localizable.strings in Resources */,
 				6D18F80D1BA659DE004A9F66 /* SRXTeacherOpenClassViewController.xib in Resources */,
 				6DDE28481B9E499600A855E5 /* SRXTeacherClassCell.xib in Resources */,
+				6DEBAFD01BDC618800662966 /* location_filled-25.png in Resources */,
 				6DDE27EE1B8ED2DB00A855E5 /* SRXLogInSignUpViewController.xib in Resources */,
+				6DEBAFCE1BDC618800662966 /* baby_filled-25.png in Resources */,
 				6DDE28051B90AE5D00A855E5 /* SRXLogInDetailViewController.xib in Resources */,
+				6DEBAFCF1BDC618800662966 /* baby-25.png in Resources */,
 				6D013EB11B782431006D13B9 /* congfucius_study.jpg in Resources */,
 				6D013ECA1B80DA19006D13B9 /* right2_filled-25.png in Resources */,
 				6D0861391B6EE52200BC5910 /* Images.xcassets in Resources */,
+				6DEBAFD31BDC618800662966 /* view_details-25.png in Resources */,
+				6DEBAFD11BDC618800662966 /* location-25.png in Resources */,
 				6DDE27F31B8ED2EC00A855E5 /* SRXSignUpDetailViewController.xib in Resources */,
 				6DDE28001B90AE3F00A855E5 /* SRXSignUpViewController.xib in Resources */,
 				6D8BC5681BB3C5EC001F20F0 /* SRXApi.proto in Resources */,
@@ -892,7 +916,7 @@
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,
 				6D013EC21B7F9C6E006D13B9 /* SRXStudentMapViewController.m in Sources */,
 				6D8BC56E1BB51302001F20F0 /* SRXParseApi.m in Sources */,
-				6DFF41541BDCAA36003DACF5 /* SRXStudentListViewController.m in Sources */,
+				6DEBAFE11BDC7C5D00662966 /* SRXStudentListViewController.m in Sources */,
 				6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */,
 				6D650AB11BCAD2A8008B5FA1 /* SRXImage.m in Sources */,
 				6D013EAF1B77E1CA006D13B9 /* SchoolMapAnnotation.m in Sources */,
@@ -928,7 +952,7 @@
 			children = (
 				6D0861361B6EE52200BC5910 /* Base */,
 				6DDE28271B9BCAAD00A855E5 /* en */,
-				6DDE28321B9BED9100A855E5 /* zh-Hans */,
+				6DEBAFDB1BDC7A6000662966 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1054,7 +1078,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DropPinOnMapView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = DropPinOnMapView;
 			};
@@ -1071,7 +1095,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = DropPinOnMapView/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = DropPinOnMapView;
 			};
