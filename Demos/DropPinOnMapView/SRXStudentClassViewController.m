@@ -18,6 +18,7 @@
 @interface SRXStudentClassViewController ()
 
 @property NSMutableArray* imagesOfClass;
+@property NSArray* theData;
 
 @end
 
@@ -34,6 +35,8 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     self.tableView.contentInset = UIEdgeInsetsMake(0.0f, 0.0f, 0.0f, 0.0f);
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     NSLog(@"Class Info in student class view: %@", _classInfo);
     
@@ -46,7 +49,13 @@
     self.imageViewAtTop.userInteractionEnabled = YES;
     [self.imageViewAtTop addGestureRecognizer:tapRecognizer];
     
-    [self loadImagesAsync];
+    [self performSelector:@selector(loadImagesAsync) ];
+    
+    // self.theData = @[@"One",@"Two",@"Three",@"Four",@"Five"];
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TitleCell"];
+    //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"DataCell"];
+    // [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"BottomCell"];
+    //[self loadImagesAsync];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -94,27 +103,36 @@
 }
 
 #pragma mark - Table view data source
-
-
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 3;
-}*/
+}
 
-/*
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
-}*/
+    if (section == 0) {
+        return 1;
+    } else if (section == 1) {
+        return self.theData.count;
+    } else {
+        return 0;
+    }
+}
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"reuseIdentifier" forIndexPath:indexPath];
+    if (indexPath.section == 0) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
+        
+    }else if (indexPath.section == 1) {
+        //cell = [tableView dequeueReusableCellWithIdentifier:@"DataCell" forIndexPath:indexPath];
+        //cell.textLabel.text = self.theData[indexPath.row];
+    }else if (indexPath.section == 2) {
+        cell = [tableView dequeueReusableCellWithIdentifier:@"BottomCell" forIndexPath:indexPath];
+    }
     
     return cell;
 }

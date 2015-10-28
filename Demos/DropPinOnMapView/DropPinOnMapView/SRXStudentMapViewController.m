@@ -46,6 +46,7 @@
     [super viewDidLoad];
     
     self.navigationItem.titleView = self.searchBarTop;
+    self.searchBarTop.delegate = self;
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Course" , nil) style:UIBarButtonItemStyleBordered target:self action:@selector(courseBarButtonPressed:)];
 
@@ -329,4 +330,19 @@ annotationView.rightCalloutAccessoryView = disclosureButton;
     // Reload the map
     
 }
+
+#pragma search bar events
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Search is not supported.", nil)
+                                                    message:@""
+                                                   delegate:nil
+                                          cancelButtonTitle:@"OK"
+                                          otherButtonTitles:nil];
+    [alert show];
+
+    
+    [self.searchBarTop resignFirstResponder];
+}
+
+
 @end

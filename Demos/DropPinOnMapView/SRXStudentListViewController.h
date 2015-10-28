@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SRXStudentListViewController : UITableViewController
+@interface SRXStudentListViewController : UITableViewController<UISearchBarDelegate>
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITextField *filterTopRight;
 

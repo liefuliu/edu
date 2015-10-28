@@ -69,7 +69,8 @@
 - (void) initializeData {
     SRXDataUser* requestingUser = [[[SRXDataUser builder] setId:@"dummy"] build];
     
-    SRXProtoReadClassRequest* request = [[[[SRXProtoReadClassRequest builder] setRequestingUser:requestingUser] setRoleInClass:SRXDataRoleInClassTypeEnumSRXDataRoleInClassTypeOwner] build];
+    SRXProtoReadClassRequest* request = [[[[SRXProtoReadClassRequest builder] setRequestingUser:requestingUser]
+                                          setRoleInClass:SRXDataRoleInClassTypeEnumSRXDataRoleInClassTypeOwner] build];
     SRXProtoReadClassResponseBuilder *responseBuilder = [SRXProtoReadClassResponse builder];
     
     __block __weak SRXTeacherClassTableViewController *wself = self;
@@ -81,7 +82,8 @@
             self.allClasses = [response classCollection];
             NSLog(@"Successfully retrieved allClasses: %@", self.allClasses);
         } else {
-            // DO nothing
+            // Do nothing for now.
+            // TODO(liefuliu): throw an alert.
             NSLog(@"Cannot read class");
         }
         
@@ -114,7 +116,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section== 1 ) {
-        SRXTeacherClassCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SRXTeacherClassCell" forIndexPath:indexPath];
+        SRXTeacherClassCell* cell = [tableView dequeueReusableCellWithIdentifier:@"SRXTeacherClassCell"
+                                                                    forIndexPath:indexPath];
         
         // Configure the cell...
         NSArray *items = self.allClasses;

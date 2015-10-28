@@ -8,7 +8,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@interface SRXStudentMapViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate,MKAnnotation> {
+@interface SRXStudentMapViewController : UIViewController<MKMapViewDelegate, CLLocationManagerDelegate,MKAnnotation, UISearchBarDelegate> {
     CLLocationManager *locationManager;
 }
 
