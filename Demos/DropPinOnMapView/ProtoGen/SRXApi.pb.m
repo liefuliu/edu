@@ -14,6 +14,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
     PBMutableExtensionRegistry* registry = [PBMutableExtensionRegistry registry];
     [self registerAllExtensions:registry];
     [SrxdataClassRoot registerAllExtensions:registry];
+    [SrxdataSchoolRoot registerAllExtensions:registry];
     [SrxdataImageRoot registerAllExtensions:registry];
     extensionRegistry = registry;
   }
@@ -244,6 +245,515 @@ static SRXDataUser* defaultSRXDataUserInstance = nil;
 - (SRXDataUserBuilder*) clearId {
   resultSrxdataUser.hasId = NO;
   resultSrxdataUser.id = @"";
+  return self;
+}
+@end
+
+@interface SRXPrtoCreateSchoolRequest ()
+@property (strong) SRXDataUser* requestingUser;
+@property (strong) SRXDataSchoolInfo* school;
+@end
+
+@implementation SRXPrtoCreateSchoolRequest
+
+- (BOOL) hasRequestingUser {
+  return !!hasRequestingUser_;
+}
+- (void) setHasRequestingUser:(BOOL) _value_ {
+  hasRequestingUser_ = !!_value_;
+}
+@synthesize requestingUser;
+- (BOOL) hasSchool {
+  return !!hasSchool_;
+}
+- (void) setHasSchool:(BOOL) _value_ {
+  hasSchool_ = !!_value_;
+}
+@synthesize school;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.requestingUser = [SRXDataUser defaultInstance];
+    self.school = [SRXDataSchoolInfo defaultInstance];
+  }
+  return self;
+}
+static SRXPrtoCreateSchoolRequest* defaultSRXPrtoCreateSchoolRequestInstance = nil;
++ (void) initialize {
+  if (self == [SRXPrtoCreateSchoolRequest class]) {
+    defaultSRXPrtoCreateSchoolRequestInstance = [[SRXPrtoCreateSchoolRequest alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXPrtoCreateSchoolRequestInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXPrtoCreateSchoolRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasRequestingUser) {
+    [output writeMessage:1 value:self.requestingUser];
+  }
+  if (self.hasSchool) {
+    [output writeMessage:2 value:self.school];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasRequestingUser) {
+    size_ += computeMessageSize(1, self.requestingUser);
+  }
+  if (self.hasSchool) {
+    size_ += computeMessageSize(2, self.school);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXPrtoCreateSchoolRequest*) parseFromData:(NSData*) data {
+  return (SRXPrtoCreateSchoolRequest*)[[[SRXPrtoCreateSchoolRequest builder] mergeFromData:data] build];
+}
++ (SRXPrtoCreateSchoolRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXPrtoCreateSchoolRequest*)[[[SRXPrtoCreateSchoolRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXPrtoCreateSchoolRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXPrtoCreateSchoolRequest*)[[[SRXPrtoCreateSchoolRequest builder] mergeFromInputStream:input] build];
+}
++ (SRXPrtoCreateSchoolRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXPrtoCreateSchoolRequest*)[[[SRXPrtoCreateSchoolRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXPrtoCreateSchoolRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXPrtoCreateSchoolRequest*)[[[SRXPrtoCreateSchoolRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXPrtoCreateSchoolRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXPrtoCreateSchoolRequest*)[[[SRXPrtoCreateSchoolRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXPrtoCreateSchoolRequestBuilder*) builder {
+  return [[SRXPrtoCreateSchoolRequestBuilder alloc] init];
+}
++ (SRXPrtoCreateSchoolRequestBuilder*) builderWithPrototype:(SRXPrtoCreateSchoolRequest*) prototype {
+  return [[SRXPrtoCreateSchoolRequest builder] mergeFrom:prototype];
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) builder {
+  return [SRXPrtoCreateSchoolRequest builder];
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) toBuilder {
+  return [SRXPrtoCreateSchoolRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasRequestingUser) {
+    [output appendFormat:@"%@%@ {\n", indent, @"requestingUser"];
+    [self.requestingUser writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  if (self.hasSchool) {
+    [output appendFormat:@"%@%@ {\n", indent, @"school"];
+    [self.school writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  if (self.hasRequestingUser) {
+   NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary]; 
+   [self.requestingUser storeInDictionary:messageDictionary];
+   [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@"requestingUser"];
+  }
+  if (self.hasSchool) {
+   NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary]; 
+   [self.school storeInDictionary:messageDictionary];
+   [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@"school"];
+  }
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXPrtoCreateSchoolRequest class]]) {
+    return NO;
+  }
+  SRXPrtoCreateSchoolRequest *otherMessage = other;
+  return
+      self.hasRequestingUser == otherMessage.hasRequestingUser &&
+      (!self.hasRequestingUser || [self.requestingUser isEqual:otherMessage.requestingUser]) &&
+      self.hasSchool == otherMessage.hasSchool &&
+      (!self.hasSchool || [self.school isEqual:otherMessage.school]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  if (self.hasRequestingUser) {
+    hashCode = hashCode * 31 + [self.requestingUser hash];
+  }
+  if (self.hasSchool) {
+    hashCode = hashCode * 31 + [self.school hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXPrtoCreateSchoolRequestBuilder()
+@property (strong) SRXPrtoCreateSchoolRequest* resultSrxprtoCreateSchoolRequest;
+@end
+
+@implementation SRXPrtoCreateSchoolRequestBuilder
+@synthesize resultSrxprtoCreateSchoolRequest;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprtoCreateSchoolRequest = [[SRXPrtoCreateSchoolRequest alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprtoCreateSchoolRequest;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) clear {
+  self.resultSrxprtoCreateSchoolRequest = [[SRXPrtoCreateSchoolRequest alloc] init];
+  return self;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) clone {
+  return [SRXPrtoCreateSchoolRequest builderWithPrototype:resultSrxprtoCreateSchoolRequest];
+}
+- (SRXPrtoCreateSchoolRequest*) defaultInstance {
+  return [SRXPrtoCreateSchoolRequest defaultInstance];
+}
+- (SRXPrtoCreateSchoolRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXPrtoCreateSchoolRequest*) buildPartial {
+  SRXPrtoCreateSchoolRequest* returnMe = resultSrxprtoCreateSchoolRequest;
+  self.resultSrxprtoCreateSchoolRequest = nil;
+  return returnMe;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeFrom:(SRXPrtoCreateSchoolRequest*) other {
+  if (other == [SRXPrtoCreateSchoolRequest defaultInstance]) {
+    return self;
+  }
+  if (other.hasRequestingUser) {
+    [self mergeRequestingUser:other.requestingUser];
+  }
+  if (other.hasSchool) {
+    [self mergeSchool:other.school];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        SRXDataUserBuilder* subBuilder = [SRXDataUser builder];
+        if (self.hasRequestingUser) {
+          [subBuilder mergeFrom:self.requestingUser];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setRequestingUser:[subBuilder buildPartial]];
+        break;
+      }
+      case 18: {
+        SRXDataSchoolInfoBuilder* subBuilder = [SRXDataSchoolInfo builder];
+        if (self.hasSchool) {
+          [subBuilder mergeFrom:self.school];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setSchool:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasRequestingUser {
+  return resultSrxprtoCreateSchoolRequest.hasRequestingUser;
+}
+- (SRXDataUser*) requestingUser {
+  return resultSrxprtoCreateSchoolRequest.requestingUser;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) setRequestingUser:(SRXDataUser*) value {
+  resultSrxprtoCreateSchoolRequest.hasRequestingUser = YES;
+  resultSrxprtoCreateSchoolRequest.requestingUser = value;
+  return self;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) setRequestingUserBuilder:(SRXDataUserBuilder*) builderForValue {
+  return [self setRequestingUser:[builderForValue build]];
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeRequestingUser:(SRXDataUser*) value {
+  if (resultSrxprtoCreateSchoolRequest.hasRequestingUser &&
+      resultSrxprtoCreateSchoolRequest.requestingUser != [SRXDataUser defaultInstance]) {
+    resultSrxprtoCreateSchoolRequest.requestingUser =
+      [[[SRXDataUser builderWithPrototype:resultSrxprtoCreateSchoolRequest.requestingUser] mergeFrom:value] buildPartial];
+  } else {
+    resultSrxprtoCreateSchoolRequest.requestingUser = value;
+  }
+  resultSrxprtoCreateSchoolRequest.hasRequestingUser = YES;
+  return self;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) clearRequestingUser {
+  resultSrxprtoCreateSchoolRequest.hasRequestingUser = NO;
+  resultSrxprtoCreateSchoolRequest.requestingUser = [SRXDataUser defaultInstance];
+  return self;
+}
+- (BOOL) hasSchool {
+  return resultSrxprtoCreateSchoolRequest.hasSchool;
+}
+- (SRXDataSchoolInfo*) school {
+  return resultSrxprtoCreateSchoolRequest.school;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) setSchool:(SRXDataSchoolInfo*) value {
+  resultSrxprtoCreateSchoolRequest.hasSchool = YES;
+  resultSrxprtoCreateSchoolRequest.school = value;
+  return self;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) setSchoolBuilder:(SRXDataSchoolInfoBuilder*) builderForValue {
+  return [self setSchool:[builderForValue build]];
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeSchool:(SRXDataSchoolInfo*) value {
+  if (resultSrxprtoCreateSchoolRequest.hasSchool &&
+      resultSrxprtoCreateSchoolRequest.school != [SRXDataSchoolInfo defaultInstance]) {
+    resultSrxprtoCreateSchoolRequest.school =
+      [[[SRXDataSchoolInfo builderWithPrototype:resultSrxprtoCreateSchoolRequest.school] mergeFrom:value] buildPartial];
+  } else {
+    resultSrxprtoCreateSchoolRequest.school = value;
+  }
+  resultSrxprtoCreateSchoolRequest.hasSchool = YES;
+  return self;
+}
+- (SRXPrtoCreateSchoolRequestBuilder*) clearSchool {
+  resultSrxprtoCreateSchoolRequest.hasSchool = NO;
+  resultSrxprtoCreateSchoolRequest.school = [SRXDataSchoolInfo defaultInstance];
+  return self;
+}
+@end
+
+@interface SRXProtoCreateSchoolResponse ()
+@property (strong) NSString* schoolId;
+@end
+
+@implementation SRXProtoCreateSchoolResponse
+
+- (BOOL) hasSchoolId {
+  return !!hasSchoolId_;
+}
+- (void) setHasSchoolId:(BOOL) _value_ {
+  hasSchoolId_ = !!_value_;
+}
+@synthesize schoolId;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.schoolId = @"";
+  }
+  return self;
+}
+static SRXProtoCreateSchoolResponse* defaultSRXProtoCreateSchoolResponseInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoCreateSchoolResponse class]) {
+    defaultSRXProtoCreateSchoolResponseInstance = [[SRXProtoCreateSchoolResponse alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoCreateSchoolResponseInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoCreateSchoolResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasSchoolId) {
+    [output writeString:1 value:self.schoolId];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasSchoolId) {
+    size_ += computeStringSize(1, self.schoolId);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoCreateSchoolResponse*) parseFromData:(NSData*) data {
+  return (SRXProtoCreateSchoolResponse*)[[[SRXProtoCreateSchoolResponse builder] mergeFromData:data] build];
+}
++ (SRXProtoCreateSchoolResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoCreateSchoolResponse*)[[[SRXProtoCreateSchoolResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoCreateSchoolResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoCreateSchoolResponse*)[[[SRXProtoCreateSchoolResponse builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoCreateSchoolResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoCreateSchoolResponse*)[[[SRXProtoCreateSchoolResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoCreateSchoolResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoCreateSchoolResponse*)[[[SRXProtoCreateSchoolResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoCreateSchoolResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoCreateSchoolResponse*)[[[SRXProtoCreateSchoolResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoCreateSchoolResponseBuilder*) builder {
+  return [[SRXProtoCreateSchoolResponseBuilder alloc] init];
+}
++ (SRXProtoCreateSchoolResponseBuilder*) builderWithPrototype:(SRXProtoCreateSchoolResponse*) prototype {
+  return [[SRXProtoCreateSchoolResponse builder] mergeFrom:prototype];
+}
+- (SRXProtoCreateSchoolResponseBuilder*) builder {
+  return [SRXProtoCreateSchoolResponse builder];
+}
+- (SRXProtoCreateSchoolResponseBuilder*) toBuilder {
+  return [SRXProtoCreateSchoolResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasSchoolId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"schoolId", self.schoolId];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  if (self.hasSchoolId) {
+    [dictionary setObject: self.schoolId forKey: @"schoolId"];
+  }
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoCreateSchoolResponse class]]) {
+    return NO;
+  }
+  SRXProtoCreateSchoolResponse *otherMessage = other;
+  return
+      self.hasSchoolId == otherMessage.hasSchoolId &&
+      (!self.hasSchoolId || [self.schoolId isEqual:otherMessage.schoolId]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  if (self.hasSchoolId) {
+    hashCode = hashCode * 31 + [self.schoolId hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoCreateSchoolResponseBuilder()
+@property (strong) SRXProtoCreateSchoolResponse* resultSrxprotoCreateSchoolResponse;
+@end
+
+@implementation SRXProtoCreateSchoolResponseBuilder
+@synthesize resultSrxprotoCreateSchoolResponse;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoCreateSchoolResponse = [[SRXProtoCreateSchoolResponse alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoCreateSchoolResponse;
+}
+- (SRXProtoCreateSchoolResponseBuilder*) clear {
+  self.resultSrxprotoCreateSchoolResponse = [[SRXProtoCreateSchoolResponse alloc] init];
+  return self;
+}
+- (SRXProtoCreateSchoolResponseBuilder*) clone {
+  return [SRXProtoCreateSchoolResponse builderWithPrototype:resultSrxprotoCreateSchoolResponse];
+}
+- (SRXProtoCreateSchoolResponse*) defaultInstance {
+  return [SRXProtoCreateSchoolResponse defaultInstance];
+}
+- (SRXProtoCreateSchoolResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoCreateSchoolResponse*) buildPartial {
+  SRXProtoCreateSchoolResponse* returnMe = resultSrxprotoCreateSchoolResponse;
+  self.resultSrxprotoCreateSchoolResponse = nil;
+  return returnMe;
+}
+- (SRXProtoCreateSchoolResponseBuilder*) mergeFrom:(SRXProtoCreateSchoolResponse*) other {
+  if (other == [SRXProtoCreateSchoolResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasSchoolId) {
+    [self setSchoolId:other.schoolId];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoCreateSchoolResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoCreateSchoolResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        [self setSchoolId:[input readString]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasSchoolId {
+  return resultSrxprotoCreateSchoolResponse.hasSchoolId;
+}
+- (NSString*) schoolId {
+  return resultSrxprotoCreateSchoolResponse.schoolId;
+}
+- (SRXProtoCreateSchoolResponseBuilder*) setSchoolId:(NSString*) value {
+  resultSrxprotoCreateSchoolResponse.hasSchoolId = YES;
+  resultSrxprotoCreateSchoolResponse.schoolId = value;
+  return self;
+}
+- (SRXProtoCreateSchoolResponseBuilder*) clearSchoolId {
+  resultSrxprotoCreateSchoolResponse.hasSchoolId = NO;
+  resultSrxprotoCreateSchoolResponse.schoolId = @"";
   return self;
 }
 @end
@@ -3278,6 +3788,707 @@ static SRXProtoGetImagesResponse* defaultSRXProtoGetImagesResponseInstance = nil
 - (SRXProtoGetImagesResponseBuilder *)clearImageData {
   resultSrxprotoGetImagesResponse.imageDataArray = nil;
   return self;
+}
+@end
+
+@interface SRXProtoReadProfileRequest ()
+@property (strong) SRXDataUser* requestingUser;
+@end
+
+@implementation SRXProtoReadProfileRequest
+
+- (BOOL) hasRequestingUser {
+  return !!hasRequestingUser_;
+}
+- (void) setHasRequestingUser:(BOOL) _value_ {
+  hasRequestingUser_ = !!_value_;
+}
+@synthesize requestingUser;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.requestingUser = [SRXDataUser defaultInstance];
+  }
+  return self;
+}
+static SRXProtoReadProfileRequest* defaultSRXProtoReadProfileRequestInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoReadProfileRequest class]) {
+    defaultSRXProtoReadProfileRequestInstance = [[SRXProtoReadProfileRequest alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoReadProfileRequestInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoReadProfileRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasRequestingUser) {
+    [output writeMessage:1 value:self.requestingUser];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasRequestingUser) {
+    size_ += computeMessageSize(1, self.requestingUser);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoReadProfileRequest*) parseFromData:(NSData*) data {
+  return (SRXProtoReadProfileRequest*)[[[SRXProtoReadProfileRequest builder] mergeFromData:data] build];
+}
++ (SRXProtoReadProfileRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoReadProfileRequest*)[[[SRXProtoReadProfileRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoReadProfileRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoReadProfileRequest*)[[[SRXProtoReadProfileRequest builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoReadProfileRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoReadProfileRequest*)[[[SRXProtoReadProfileRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoReadProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoReadProfileRequest*)[[[SRXProtoReadProfileRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoReadProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoReadProfileRequest*)[[[SRXProtoReadProfileRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoReadProfileRequestBuilder*) builder {
+  return [[SRXProtoReadProfileRequestBuilder alloc] init];
+}
++ (SRXProtoReadProfileRequestBuilder*) builderWithPrototype:(SRXProtoReadProfileRequest*) prototype {
+  return [[SRXProtoReadProfileRequest builder] mergeFrom:prototype];
+}
+- (SRXProtoReadProfileRequestBuilder*) builder {
+  return [SRXProtoReadProfileRequest builder];
+}
+- (SRXProtoReadProfileRequestBuilder*) toBuilder {
+  return [SRXProtoReadProfileRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasRequestingUser) {
+    [output appendFormat:@"%@%@ {\n", indent, @"requestingUser"];
+    [self.requestingUser writeDescriptionTo:output
+                         withIndent:[NSString stringWithFormat:@"%@  ", indent]];
+    [output appendFormat:@"%@}\n", indent];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  if (self.hasRequestingUser) {
+   NSMutableDictionary *messageDictionary = [NSMutableDictionary dictionary]; 
+   [self.requestingUser storeInDictionary:messageDictionary];
+   [dictionary setObject:[NSDictionary dictionaryWithDictionary:messageDictionary] forKey:@"requestingUser"];
+  }
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoReadProfileRequest class]]) {
+    return NO;
+  }
+  SRXProtoReadProfileRequest *otherMessage = other;
+  return
+      self.hasRequestingUser == otherMessage.hasRequestingUser &&
+      (!self.hasRequestingUser || [self.requestingUser isEqual:otherMessage.requestingUser]) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  if (self.hasRequestingUser) {
+    hashCode = hashCode * 31 + [self.requestingUser hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoReadProfileRequestBuilder()
+@property (strong) SRXProtoReadProfileRequest* resultSrxprotoReadProfileRequest;
+@end
+
+@implementation SRXProtoReadProfileRequestBuilder
+@synthesize resultSrxprotoReadProfileRequest;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoReadProfileRequest = [[SRXProtoReadProfileRequest alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoReadProfileRequest;
+}
+- (SRXProtoReadProfileRequestBuilder*) clear {
+  self.resultSrxprotoReadProfileRequest = [[SRXProtoReadProfileRequest alloc] init];
+  return self;
+}
+- (SRXProtoReadProfileRequestBuilder*) clone {
+  return [SRXProtoReadProfileRequest builderWithPrototype:resultSrxprotoReadProfileRequest];
+}
+- (SRXProtoReadProfileRequest*) defaultInstance {
+  return [SRXProtoReadProfileRequest defaultInstance];
+}
+- (SRXProtoReadProfileRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoReadProfileRequest*) buildPartial {
+  SRXProtoReadProfileRequest* returnMe = resultSrxprotoReadProfileRequest;
+  self.resultSrxprotoReadProfileRequest = nil;
+  return returnMe;
+}
+- (SRXProtoReadProfileRequestBuilder*) mergeFrom:(SRXProtoReadProfileRequest*) other {
+  if (other == [SRXProtoReadProfileRequest defaultInstance]) {
+    return self;
+  }
+  if (other.hasRequestingUser) {
+    [self mergeRequestingUser:other.requestingUser];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoReadProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoReadProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 10: {
+        SRXDataUserBuilder* subBuilder = [SRXDataUser builder];
+        if (self.hasRequestingUser) {
+          [subBuilder mergeFrom:self.requestingUser];
+        }
+        [input readMessage:subBuilder extensionRegistry:extensionRegistry];
+        [self setRequestingUser:[subBuilder buildPartial]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasRequestingUser {
+  return resultSrxprotoReadProfileRequest.hasRequestingUser;
+}
+- (SRXDataUser*) requestingUser {
+  return resultSrxprotoReadProfileRequest.requestingUser;
+}
+- (SRXProtoReadProfileRequestBuilder*) setRequestingUser:(SRXDataUser*) value {
+  resultSrxprotoReadProfileRequest.hasRequestingUser = YES;
+  resultSrxprotoReadProfileRequest.requestingUser = value;
+  return self;
+}
+- (SRXProtoReadProfileRequestBuilder*) setRequestingUserBuilder:(SRXDataUserBuilder*) builderForValue {
+  return [self setRequestingUser:[builderForValue build]];
+}
+- (SRXProtoReadProfileRequestBuilder*) mergeRequestingUser:(SRXDataUser*) value {
+  if (resultSrxprotoReadProfileRequest.hasRequestingUser &&
+      resultSrxprotoReadProfileRequest.requestingUser != [SRXDataUser defaultInstance]) {
+    resultSrxprotoReadProfileRequest.requestingUser =
+      [[[SRXDataUser builderWithPrototype:resultSrxprotoReadProfileRequest.requestingUser] mergeFrom:value] buildPartial];
+  } else {
+    resultSrxprotoReadProfileRequest.requestingUser = value;
+  }
+  resultSrxprotoReadProfileRequest.hasRequestingUser = YES;
+  return self;
+}
+- (SRXProtoReadProfileRequestBuilder*) clearRequestingUser {
+  resultSrxprotoReadProfileRequest.hasRequestingUser = NO;
+  resultSrxprotoReadProfileRequest.requestingUser = [SRXDataUser defaultInstance];
+  return self;
+}
+@end
+
+@interface SRXProtoGetProfileResponse ()
+@end
+
+@implementation SRXProtoGetProfileResponse
+
+- (instancetype) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static SRXProtoGetProfileResponse* defaultSRXProtoGetProfileResponseInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoGetProfileResponse class]) {
+    defaultSRXProtoGetProfileResponseInstance = [[SRXProtoGetProfileResponse alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoGetProfileResponseInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoGetProfileResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoGetProfileResponse*) parseFromData:(NSData*) data {
+  return (SRXProtoGetProfileResponse*)[[[SRXProtoGetProfileResponse builder] mergeFromData:data] build];
+}
++ (SRXProtoGetProfileResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetProfileResponse*)[[[SRXProtoGetProfileResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetProfileResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoGetProfileResponse*)[[[SRXProtoGetProfileResponse builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoGetProfileResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetProfileResponse*)[[[SRXProtoGetProfileResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoGetProfileResponse*)[[[SRXProtoGetProfileResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoGetProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetProfileResponse*)[[[SRXProtoGetProfileResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetProfileResponseBuilder*) builder {
+  return [[SRXProtoGetProfileResponseBuilder alloc] init];
+}
++ (SRXProtoGetProfileResponseBuilder*) builderWithPrototype:(SRXProtoGetProfileResponse*) prototype {
+  return [[SRXProtoGetProfileResponse builder] mergeFrom:prototype];
+}
+- (SRXProtoGetProfileResponseBuilder*) builder {
+  return [SRXProtoGetProfileResponse builder];
+}
+- (SRXProtoGetProfileResponseBuilder*) toBuilder {
+  return [SRXProtoGetProfileResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoGetProfileResponse class]]) {
+    return NO;
+  }
+  SRXProtoGetProfileResponse *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoGetProfileResponseBuilder()
+@property (strong) SRXProtoGetProfileResponse* resultSrxprotoGetProfileResponse;
+@end
+
+@implementation SRXProtoGetProfileResponseBuilder
+@synthesize resultSrxprotoGetProfileResponse;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoGetProfileResponse = [[SRXProtoGetProfileResponse alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoGetProfileResponse;
+}
+- (SRXProtoGetProfileResponseBuilder*) clear {
+  self.resultSrxprotoGetProfileResponse = [[SRXProtoGetProfileResponse alloc] init];
+  return self;
+}
+- (SRXProtoGetProfileResponseBuilder*) clone {
+  return [SRXProtoGetProfileResponse builderWithPrototype:resultSrxprotoGetProfileResponse];
+}
+- (SRXProtoGetProfileResponse*) defaultInstance {
+  return [SRXProtoGetProfileResponse defaultInstance];
+}
+- (SRXProtoGetProfileResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoGetProfileResponse*) buildPartial {
+  SRXProtoGetProfileResponse* returnMe = resultSrxprotoGetProfileResponse;
+  self.resultSrxprotoGetProfileResponse = nil;
+  return returnMe;
+}
+- (SRXProtoGetProfileResponseBuilder*) mergeFrom:(SRXProtoGetProfileResponse*) other {
+  if (other == [SRXProtoGetProfileResponse defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoGetProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoGetProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
+}
+@end
+
+@interface SRXProtoMutableProfileRequest ()
+@end
+
+@implementation SRXProtoMutableProfileRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static SRXProtoMutableProfileRequest* defaultSRXProtoMutableProfileRequestInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoMutableProfileRequest class]) {
+    defaultSRXProtoMutableProfileRequestInstance = [[SRXProtoMutableProfileRequest alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoMutableProfileRequestInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoMutableProfileRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoMutableProfileRequest*) parseFromData:(NSData*) data {
+  return (SRXProtoMutableProfileRequest*)[[[SRXProtoMutableProfileRequest builder] mergeFromData:data] build];
+}
++ (SRXProtoMutableProfileRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoMutableProfileRequest*)[[[SRXProtoMutableProfileRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoMutableProfileRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoMutableProfileRequest*)[[[SRXProtoMutableProfileRequest builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoMutableProfileRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoMutableProfileRequest*)[[[SRXProtoMutableProfileRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoMutableProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoMutableProfileRequest*)[[[SRXProtoMutableProfileRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoMutableProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoMutableProfileRequest*)[[[SRXProtoMutableProfileRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoMutableProfileRequestBuilder*) builder {
+  return [[SRXProtoMutableProfileRequestBuilder alloc] init];
+}
++ (SRXProtoMutableProfileRequestBuilder*) builderWithPrototype:(SRXProtoMutableProfileRequest*) prototype {
+  return [[SRXProtoMutableProfileRequest builder] mergeFrom:prototype];
+}
+- (SRXProtoMutableProfileRequestBuilder*) builder {
+  return [SRXProtoMutableProfileRequest builder];
+}
+- (SRXProtoMutableProfileRequestBuilder*) toBuilder {
+  return [SRXProtoMutableProfileRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoMutableProfileRequest class]]) {
+    return NO;
+  }
+  SRXProtoMutableProfileRequest *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoMutableProfileRequestBuilder()
+@property (strong) SRXProtoMutableProfileRequest* resultSrxprotoMutableProfileRequest;
+@end
+
+@implementation SRXProtoMutableProfileRequestBuilder
+@synthesize resultSrxprotoMutableProfileRequest;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoMutableProfileRequest = [[SRXProtoMutableProfileRequest alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoMutableProfileRequest;
+}
+- (SRXProtoMutableProfileRequestBuilder*) clear {
+  self.resultSrxprotoMutableProfileRequest = [[SRXProtoMutableProfileRequest alloc] init];
+  return self;
+}
+- (SRXProtoMutableProfileRequestBuilder*) clone {
+  return [SRXProtoMutableProfileRequest builderWithPrototype:resultSrxprotoMutableProfileRequest];
+}
+- (SRXProtoMutableProfileRequest*) defaultInstance {
+  return [SRXProtoMutableProfileRequest defaultInstance];
+}
+- (SRXProtoMutableProfileRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoMutableProfileRequest*) buildPartial {
+  SRXProtoMutableProfileRequest* returnMe = resultSrxprotoMutableProfileRequest;
+  self.resultSrxprotoMutableProfileRequest = nil;
+  return returnMe;
+}
+- (SRXProtoMutableProfileRequestBuilder*) mergeFrom:(SRXProtoMutableProfileRequest*) other {
+  if (other == [SRXProtoMutableProfileRequest defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoMutableProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoMutableProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
+}
+@end
+
+@interface SRXProtoMutableProfileResponse ()
+@end
+
+@implementation SRXProtoMutableProfileResponse
+
+- (instancetype) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static SRXProtoMutableProfileResponse* defaultSRXProtoMutableProfileResponseInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoMutableProfileResponse class]) {
+    defaultSRXProtoMutableProfileResponseInstance = [[SRXProtoMutableProfileResponse alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoMutableProfileResponseInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoMutableProfileResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoMutableProfileResponse*) parseFromData:(NSData*) data {
+  return (SRXProtoMutableProfileResponse*)[[[SRXProtoMutableProfileResponse builder] mergeFromData:data] build];
+}
++ (SRXProtoMutableProfileResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoMutableProfileResponse*)[[[SRXProtoMutableProfileResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoMutableProfileResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoMutableProfileResponse*)[[[SRXProtoMutableProfileResponse builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoMutableProfileResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoMutableProfileResponse*)[[[SRXProtoMutableProfileResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoMutableProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoMutableProfileResponse*)[[[SRXProtoMutableProfileResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoMutableProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoMutableProfileResponse*)[[[SRXProtoMutableProfileResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoMutableProfileResponseBuilder*) builder {
+  return [[SRXProtoMutableProfileResponseBuilder alloc] init];
+}
++ (SRXProtoMutableProfileResponseBuilder*) builderWithPrototype:(SRXProtoMutableProfileResponse*) prototype {
+  return [[SRXProtoMutableProfileResponse builder] mergeFrom:prototype];
+}
+- (SRXProtoMutableProfileResponseBuilder*) builder {
+  return [SRXProtoMutableProfileResponse builder];
+}
+- (SRXProtoMutableProfileResponseBuilder*) toBuilder {
+  return [SRXProtoMutableProfileResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoMutableProfileResponse class]]) {
+    return NO;
+  }
+  SRXProtoMutableProfileResponse *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoMutableProfileResponseBuilder()
+@property (strong) SRXProtoMutableProfileResponse* resultSrxprotoMutableProfileResponse;
+@end
+
+@implementation SRXProtoMutableProfileResponseBuilder
+@synthesize resultSrxprotoMutableProfileResponse;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoMutableProfileResponse = [[SRXProtoMutableProfileResponse alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoMutableProfileResponse;
+}
+- (SRXProtoMutableProfileResponseBuilder*) clear {
+  self.resultSrxprotoMutableProfileResponse = [[SRXProtoMutableProfileResponse alloc] init];
+  return self;
+}
+- (SRXProtoMutableProfileResponseBuilder*) clone {
+  return [SRXProtoMutableProfileResponse builderWithPrototype:resultSrxprotoMutableProfileResponse];
+}
+- (SRXProtoMutableProfileResponse*) defaultInstance {
+  return [SRXProtoMutableProfileResponse defaultInstance];
+}
+- (SRXProtoMutableProfileResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoMutableProfileResponse*) buildPartial {
+  SRXProtoMutableProfileResponse* returnMe = resultSrxprotoMutableProfileResponse;
+  self.resultSrxprotoMutableProfileResponse = nil;
+  return returnMe;
+}
+- (SRXProtoMutableProfileResponseBuilder*) mergeFrom:(SRXProtoMutableProfileResponse*) other {
+  if (other == [SRXProtoMutableProfileResponse defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoMutableProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoMutableProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
 }
 @end
 

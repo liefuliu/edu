@@ -3,6 +3,7 @@
 #import <ProtocolBuffers/ProtocolBuffers.h>
 
 #import "SRXDataClass.pb.h"
+#import "SRXDataSchool.pb.h"
 #import "SRXDataImage.pb.h"
 // @@protoc_insertion_point(imports)
 
@@ -22,8 +23,16 @@
 @class SRXDataImageServerTypeEnumBuilder;
 @class SRXDataLocation;
 @class SRXDataLocationBuilder;
+@class SRXDataPersonName;
+@class SRXDataPersonNameBuilder;
 @class SRXDataRoleInClassTypeEnum;
 @class SRXDataRoleInClassTypeEnumBuilder;
+@class SRXDataSchool;
+@class SRXDataSchoolBuilder;
+@class SRXDataSchoolInfo;
+@class SRXDataSchoolInfoBuilder;
+@class SRXDataTeacher;
+@class SRXDataTeacherBuilder;
 @class SRXDataUser;
 @class SRXDataUserBuilder;
 @class SRXProtoAddImagesRequest;
@@ -34,26 +43,38 @@
 @class SRXProtoCreateClassRequestBuilder;
 @class SRXProtoCreateClassResponse;
 @class SRXProtoCreateClassResponseBuilder;
+@class SRXProtoCreateSchoolResponse;
+@class SRXProtoCreateSchoolResponseBuilder;
 @class SRXProtoGetImagesRequest;
 @class SRXProtoGetImagesRequestBuilder;
 @class SRXProtoGetImagesResponse;
 @class SRXProtoGetImagesResponseBuilder;
+@class SRXProtoGetProfileResponse;
+@class SRXProtoGetProfileResponseBuilder;
 @class SRXProtoImage;
 @class SRXProtoImageBuilder;
 @class SRXProtoLogInRequest;
 @class SRXProtoLogInRequestBuilder;
 @class SRXProtoLogInResponse;
 @class SRXProtoLogInResponseBuilder;
+@class SRXProtoMutableProfileRequest;
+@class SRXProtoMutableProfileRequestBuilder;
+@class SRXProtoMutableProfileResponse;
+@class SRXProtoMutableProfileResponseBuilder;
 @class SRXProtoNativeLogInMessage;
 @class SRXProtoNativeLogInMessageBuilder;
 @class SRXProtoReadClassRequest;
 @class SRXProtoReadClassRequestBuilder;
 @class SRXProtoReadClassResponse;
 @class SRXProtoReadClassResponseBuilder;
+@class SRXProtoReadProfileRequest;
+@class SRXProtoReadProfileRequestBuilder;
 @class SRXProtoSearchClassRequest;
 @class SRXProtoSearchClassRequestBuilder;
 @class SRXProtoSearchClassResponse;
 @class SRXProtoSearchClassResponseBuilder;
+@class SRXPrtoCreateSchoolRequest;
+@class SRXPrtoCreateSchoolRequestBuilder;
 
 
 typedef NS_ENUM(SInt32, SRXProtoLogInMethodEnum) {
@@ -128,6 +149,120 @@ NSString *NSStringFromSRXDataRoleInClassTypeEnumSRXDataRoleInClassType(SRXDataRo
 - (NSString*) id;
 - (SRXDataUserBuilder*) setId:(NSString*) value;
 - (SRXDataUserBuilder*) clearId;
+@end
+
+#define SRXPrtoCreateSchoolRequest_requesting_user @"requestingUser"
+#define SRXPrtoCreateSchoolRequest_school @"school"
+@interface SRXPrtoCreateSchoolRequest : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+  BOOL hasRequestingUser_:1;
+  BOOL hasSchool_:1;
+  SRXDataUser* requestingUser;
+  SRXDataSchoolInfo* school;
+}
+- (BOOL) hasRequestingUser;
+- (BOOL) hasSchool;
+@property (readonly, strong) SRXDataUser* requestingUser;
+@property (readonly, strong) SRXDataSchoolInfo* school;
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (SRXPrtoCreateSchoolRequestBuilder*) builder;
++ (SRXPrtoCreateSchoolRequestBuilder*) builder;
++ (SRXPrtoCreateSchoolRequestBuilder*) builderWithPrototype:(SRXPrtoCreateSchoolRequest*) prototype;
+- (SRXPrtoCreateSchoolRequestBuilder*) toBuilder;
+
++ (SRXPrtoCreateSchoolRequest*) parseFromData:(NSData*) data;
++ (SRXPrtoCreateSchoolRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXPrtoCreateSchoolRequest*) parseFromInputStream:(NSInputStream*) input;
++ (SRXPrtoCreateSchoolRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXPrtoCreateSchoolRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (SRXPrtoCreateSchoolRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXPrtoCreateSchoolRequestBuilder : PBGeneratedMessageBuilder {
+@private
+  SRXPrtoCreateSchoolRequest* resultSrxprtoCreateSchoolRequest;
+}
+
+- (SRXPrtoCreateSchoolRequest*) defaultInstance;
+
+- (SRXPrtoCreateSchoolRequestBuilder*) clear;
+- (SRXPrtoCreateSchoolRequestBuilder*) clone;
+
+- (SRXPrtoCreateSchoolRequest*) build;
+- (SRXPrtoCreateSchoolRequest*) buildPartial;
+
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeFrom:(SRXPrtoCreateSchoolRequest*) other;
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasRequestingUser;
+- (SRXDataUser*) requestingUser;
+- (SRXPrtoCreateSchoolRequestBuilder*) setRequestingUser:(SRXDataUser*) value;
+- (SRXPrtoCreateSchoolRequestBuilder*) setRequestingUserBuilder:(SRXDataUserBuilder*) builderForValue;
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeRequestingUser:(SRXDataUser*) value;
+- (SRXPrtoCreateSchoolRequestBuilder*) clearRequestingUser;
+
+- (BOOL) hasSchool;
+- (SRXDataSchoolInfo*) school;
+- (SRXPrtoCreateSchoolRequestBuilder*) setSchool:(SRXDataSchoolInfo*) value;
+- (SRXPrtoCreateSchoolRequestBuilder*) setSchoolBuilder:(SRXDataSchoolInfoBuilder*) builderForValue;
+- (SRXPrtoCreateSchoolRequestBuilder*) mergeSchool:(SRXDataSchoolInfo*) value;
+- (SRXPrtoCreateSchoolRequestBuilder*) clearSchool;
+@end
+
+#define SRXProtoCreateSchoolResponse_school_id @"schoolId"
+@interface SRXProtoCreateSchoolResponse : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+  BOOL hasSchoolId_:1;
+  NSString* schoolId;
+}
+- (BOOL) hasSchoolId;
+@property (readonly, strong) NSString* schoolId;
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (SRXProtoCreateSchoolResponseBuilder*) builder;
++ (SRXProtoCreateSchoolResponseBuilder*) builder;
++ (SRXProtoCreateSchoolResponseBuilder*) builderWithPrototype:(SRXProtoCreateSchoolResponse*) prototype;
+- (SRXProtoCreateSchoolResponseBuilder*) toBuilder;
+
++ (SRXProtoCreateSchoolResponse*) parseFromData:(NSData*) data;
++ (SRXProtoCreateSchoolResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoCreateSchoolResponse*) parseFromInputStream:(NSInputStream*) input;
++ (SRXProtoCreateSchoolResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoCreateSchoolResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (SRXProtoCreateSchoolResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoCreateSchoolResponseBuilder : PBGeneratedMessageBuilder {
+@private
+  SRXProtoCreateSchoolResponse* resultSrxprotoCreateSchoolResponse;
+}
+
+- (SRXProtoCreateSchoolResponse*) defaultInstance;
+
+- (SRXProtoCreateSchoolResponseBuilder*) clear;
+- (SRXProtoCreateSchoolResponseBuilder*) clone;
+
+- (SRXProtoCreateSchoolResponse*) build;
+- (SRXProtoCreateSchoolResponse*) buildPartial;
+
+- (SRXProtoCreateSchoolResponseBuilder*) mergeFrom:(SRXProtoCreateSchoolResponse*) other;
+- (SRXProtoCreateSchoolResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (SRXProtoCreateSchoolResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasSchoolId;
+- (NSString*) schoolId;
+- (SRXProtoCreateSchoolResponseBuilder*) setSchoolId:(NSString*) value;
+- (SRXProtoCreateSchoolResponseBuilder*) clearSchoolId;
 @end
 
 #define SRXProtoCreateClassRequest_requesting_user @"requestingUser"
@@ -806,6 +941,178 @@ NSString *NSStringFromSRXDataRoleInClassTypeEnumSRXDataRoleInClassType(SRXDataRo
 - (SRXProtoGetImagesResponseBuilder *)addImageData:(SRXDataImage*)value;
 - (SRXProtoGetImagesResponseBuilder *)setImageDataArray:(NSArray *)array;
 - (SRXProtoGetImagesResponseBuilder *)clearImageData;
+@end
+
+#define SRXProtoReadProfileRequest_requesting_user @"requestingUser"
+@interface SRXProtoReadProfileRequest : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+  BOOL hasRequestingUser_:1;
+  SRXDataUser* requestingUser;
+}
+- (BOOL) hasRequestingUser;
+@property (readonly, strong) SRXDataUser* requestingUser;
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (SRXProtoReadProfileRequestBuilder*) builder;
++ (SRXProtoReadProfileRequestBuilder*) builder;
++ (SRXProtoReadProfileRequestBuilder*) builderWithPrototype:(SRXProtoReadProfileRequest*) prototype;
+- (SRXProtoReadProfileRequestBuilder*) toBuilder;
+
++ (SRXProtoReadProfileRequest*) parseFromData:(NSData*) data;
++ (SRXProtoReadProfileRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoReadProfileRequest*) parseFromInputStream:(NSInputStream*) input;
++ (SRXProtoReadProfileRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoReadProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (SRXProtoReadProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoReadProfileRequestBuilder : PBGeneratedMessageBuilder {
+@private
+  SRXProtoReadProfileRequest* resultSrxprotoReadProfileRequest;
+}
+
+- (SRXProtoReadProfileRequest*) defaultInstance;
+
+- (SRXProtoReadProfileRequestBuilder*) clear;
+- (SRXProtoReadProfileRequestBuilder*) clone;
+
+- (SRXProtoReadProfileRequest*) build;
+- (SRXProtoReadProfileRequest*) buildPartial;
+
+- (SRXProtoReadProfileRequestBuilder*) mergeFrom:(SRXProtoReadProfileRequest*) other;
+- (SRXProtoReadProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (SRXProtoReadProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+
+- (BOOL) hasRequestingUser;
+- (SRXDataUser*) requestingUser;
+- (SRXProtoReadProfileRequestBuilder*) setRequestingUser:(SRXDataUser*) value;
+- (SRXProtoReadProfileRequestBuilder*) setRequestingUserBuilder:(SRXDataUserBuilder*) builderForValue;
+- (SRXProtoReadProfileRequestBuilder*) mergeRequestingUser:(SRXDataUser*) value;
+- (SRXProtoReadProfileRequestBuilder*) clearRequestingUser;
+@end
+
+@interface SRXProtoGetProfileResponse : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+}
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (SRXProtoGetProfileResponseBuilder*) builder;
++ (SRXProtoGetProfileResponseBuilder*) builder;
++ (SRXProtoGetProfileResponseBuilder*) builderWithPrototype:(SRXProtoGetProfileResponse*) prototype;
+- (SRXProtoGetProfileResponseBuilder*) toBuilder;
+
++ (SRXProtoGetProfileResponse*) parseFromData:(NSData*) data;
++ (SRXProtoGetProfileResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoGetProfileResponse*) parseFromInputStream:(NSInputStream*) input;
++ (SRXProtoGetProfileResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoGetProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (SRXProtoGetProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoGetProfileResponseBuilder : PBGeneratedMessageBuilder {
+@private
+  SRXProtoGetProfileResponse* resultSrxprotoGetProfileResponse;
+}
+
+- (SRXProtoGetProfileResponse*) defaultInstance;
+
+- (SRXProtoGetProfileResponseBuilder*) clear;
+- (SRXProtoGetProfileResponseBuilder*) clone;
+
+- (SRXProtoGetProfileResponse*) build;
+- (SRXProtoGetProfileResponse*) buildPartial;
+
+- (SRXProtoGetProfileResponseBuilder*) mergeFrom:(SRXProtoGetProfileResponse*) other;
+- (SRXProtoGetProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (SRXProtoGetProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoMutableProfileRequest : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+}
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (SRXProtoMutableProfileRequestBuilder*) builder;
++ (SRXProtoMutableProfileRequestBuilder*) builder;
++ (SRXProtoMutableProfileRequestBuilder*) builderWithPrototype:(SRXProtoMutableProfileRequest*) prototype;
+- (SRXProtoMutableProfileRequestBuilder*) toBuilder;
+
++ (SRXProtoMutableProfileRequest*) parseFromData:(NSData*) data;
++ (SRXProtoMutableProfileRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoMutableProfileRequest*) parseFromInputStream:(NSInputStream*) input;
++ (SRXProtoMutableProfileRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoMutableProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (SRXProtoMutableProfileRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoMutableProfileRequestBuilder : PBGeneratedMessageBuilder {
+@private
+  SRXProtoMutableProfileRequest* resultSrxprotoMutableProfileRequest;
+}
+
+- (SRXProtoMutableProfileRequest*) defaultInstance;
+
+- (SRXProtoMutableProfileRequestBuilder*) clear;
+- (SRXProtoMutableProfileRequestBuilder*) clone;
+
+- (SRXProtoMutableProfileRequest*) build;
+- (SRXProtoMutableProfileRequest*) buildPartial;
+
+- (SRXProtoMutableProfileRequestBuilder*) mergeFrom:(SRXProtoMutableProfileRequest*) other;
+- (SRXProtoMutableProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (SRXProtoMutableProfileRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoMutableProfileResponse : PBGeneratedMessage<GeneratedMessageProtocol> {
+@private
+}
+
++ (instancetype) defaultInstance;
+- (instancetype) defaultInstance;
+
+- (BOOL) isInitialized;
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output;
+- (SRXProtoMutableProfileResponseBuilder*) builder;
++ (SRXProtoMutableProfileResponseBuilder*) builder;
++ (SRXProtoMutableProfileResponseBuilder*) builderWithPrototype:(SRXProtoMutableProfileResponse*) prototype;
+- (SRXProtoMutableProfileResponseBuilder*) toBuilder;
+
++ (SRXProtoMutableProfileResponse*) parseFromData:(NSData*) data;
++ (SRXProtoMutableProfileResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoMutableProfileResponse*) parseFromInputStream:(NSInputStream*) input;
++ (SRXProtoMutableProfileResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
++ (SRXProtoMutableProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input;
++ (SRXProtoMutableProfileResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
+@end
+
+@interface SRXProtoMutableProfileResponseBuilder : PBGeneratedMessageBuilder {
+@private
+  SRXProtoMutableProfileResponse* resultSrxprotoMutableProfileResponse;
+}
+
+- (SRXProtoMutableProfileResponse*) defaultInstance;
+
+- (SRXProtoMutableProfileResponseBuilder*) clear;
+- (SRXProtoMutableProfileResponseBuilder*) clone;
+
+- (SRXProtoMutableProfileResponse*) build;
+- (SRXProtoMutableProfileResponse*) buildPartial;
+
+- (SRXProtoMutableProfileResponseBuilder*) mergeFrom:(SRXProtoMutableProfileResponse*) other;
+- (SRXProtoMutableProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input;
+- (SRXProtoMutableProfileResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry;
 @end
 
 #define SRXProtoNativeLogInMessage_user_name @"userName"

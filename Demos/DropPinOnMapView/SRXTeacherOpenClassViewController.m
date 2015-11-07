@@ -225,6 +225,17 @@ NSString* const plusSignFileName = @"plus_sign.png";
              // TODO(fengyi): Handle the touch event on "学费" and "时间"
              // Currently we only allow the teacher to select "科目"， we need to eanble
              // the similar logic to allow teacher to select "学费" and "时间".
+             
+             if (indexPath.row == 2 || indexPath.row == 3) {
+                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"易哥，你从这里做起", nil)
+                                                             message:@"创建两个view controlller, 一个设置时间，一个设置价格"
+                                                            delegate:nil
+                                                   cancelButtonTitle:@"OK"
+                                                   otherButtonTitles:nil];
+                 
+                 [alert show];
+             }
+
          }
      }
      

@@ -1,4 +1,5 @@
 import "SRXDataClass.proto";
+import "SRXDataSchool.proto";
 import "SRXDataImage.proto";
 
 message SRXDataUser {
@@ -8,11 +9,23 @@ message SRXDataUser {
 
 // Request and Response of API CreateClass.
 
+message SRXPrtoCreateSchoolRequest {
+  // Required.
+  optional SRXDataUser requesting_user = 1;
+
+  // Required.
+  optional SRXDataSchoolInfo school = 2;
+}
+
+message SRXProtoCreateSchoolResponse {
+  optional string school_id = 1;
+}
+
 message SRXProtoCreateClassRequest {
   // Required.
   optional SRXDataUser requesting_user = 1;
-  
-  // Required. 
+
+  // Required.
   optional SRXDataClassInfo class_info = 2;
 }
 

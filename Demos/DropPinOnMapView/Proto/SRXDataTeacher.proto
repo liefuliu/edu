@@ -1,0 +1,15 @@
+import "SRXDataImage.proto";
+import "SRXDataPersonName.proto";
+import "SRXDataClass.proto";
+
+message SRXDataTeacher {
+ optional SRXDataPersonName name = 1;
+
+ optional string resume = 2;
+
+ // size should be 1.
+ repeated SRXDataImageRef image_ref = 3;
+
+ // First teaching course will be the primary one.
+ repeated SRXDataClassTypeEnum.SRXDataClassType course_to_teach = 4;
+}
