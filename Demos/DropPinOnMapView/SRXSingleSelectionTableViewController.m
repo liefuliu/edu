@@ -9,8 +9,11 @@
 #import "SRXSingleSelectionTableViewController.h"
 #import "UIViewController+Charleene.h"
 
-@implementation SRXSingleSelectionTableViewController
+@interface SRXSingleSelectionTableViewController()
+@property  NSString* tableTitle;
+@end
 
+@implementation SRXSingleSelectionTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -19,10 +22,24 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
 
+
+
+- (instancetype) initWithTitle:(NSString*) title
+                         Items: (NSArray*) itemsForSelection {
+    self = [super init];
+    if (self) {
+        _itemsForSelection = itemsForSelection;
+        _tableTitle = title;
+    }
+    return self;
+}
+
+
 - (instancetype) initWithItems: (NSArray*) itemsForSelection {
     self = [super init];
     if (self) {
         _itemsForSelection = itemsForSelection;
+        _tableTitle = NSLocalizedString(@"Please select", nil);
     }
     return self;
 }
@@ -32,7 +49,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    return NSLocalizedString(@"Please select", nil);
+    return self.tableTitle;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

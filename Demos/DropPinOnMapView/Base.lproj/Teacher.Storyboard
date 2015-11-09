@@ -58,10 +58,10 @@
             </objects>
             <point key="canvasLocation" x="-979" y="160"/>
         </scene>
-        <!--Table View Controller-->
+        <!--School OverviewVC-->
         <scene sceneID="wl8-57-dYa">
             <objects>
-                <tableViewController id="Ivs-ff-5tS" sceneMemberID="viewController">
+                <tableViewController id="Ivs-ff-5tS" customClass="T1SchoolOverviewVC" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4XL-6b-hk9">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

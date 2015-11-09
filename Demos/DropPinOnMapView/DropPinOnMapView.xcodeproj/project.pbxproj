@@ -96,6 +96,15 @@
 		6DDE28581BA28AFF00A855E5 /* SRXPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28571BA28AFF00A855E5 /* SRXPhotoCell.xib */; };
 		6DDE28651BA3E82100A855E5 /* SRXImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */; };
 		6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */; };
+		6DE4B5D01BEDCA680056C998 /* T1SchoolOverViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5CF1BEDCA680056C998 /* T1SchoolOverViewVC.m */; };
+		6DE4B5DC1BEDD0DB0056C998 /* T11SchoolInfoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5D21BEDD0DB0056C998 /* T11SchoolInfoVC.m */; };
+		6DE4B5DF1BEDD0DB0056C998 /* T111SchoolEditorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5D81BEDD0DB0056C998 /* T111SchoolEditorVC.m */; };
+		6DE4B5E81BEEC6140056C998 /* ImageTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5E31BEEC6140056C998 /* ImageTableCell.m */; };
+		6DE4B5E91BEEC6140056C998 /* ImageTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE4B5E41BEEC6140056C998 /* ImageTableCell.xib */; };
+		6DE4B5EA1BEEC6140056C998 /* MapTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5E61BEEC6140056C998 /* MapTableCell.m */; };
+		6DE4B5EB1BEEC6140056C998 /* MapTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DE4B5E71BEEC6140056C998 /* MapTableCell.xib */; };
+		6DE4B5EE1BEFD7DF0056C998 /* SRXEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5ED1BEFD7DF0056C998 /* SRXEnvironment.m */; };
+		6DE4B5F11BF00C0C0056C998 /* SRXStartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5F01BF00C0C0056C998 /* SRXStartVC.m */; };
 		6DE899A31BC04E1500964AD8 /* SRXStudentClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */; };
 		6DFF41541BDCAA36003DACF5 /* SRXStudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF41531BDCAA36003DACF5 /* SRXStudentListViewController.m */; };
 		8D8141B3AA500668C9BF0C78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
@@ -163,7 +172,7 @@
 		6D18F8031BA638C0004A9F66 /* plus_sign.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus_sign.png; sourceTree = "<group>"; };
 		6D18F8081BA64897004A9F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Teacher.Storyboard; sourceTree = "<group>"; };
 		6D18F80A1BA648B3004A9F66 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Teacher.strings"; sourceTree = "<group>"; };
-		6D18F80B1BA65256004A9F66 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6D18F80B1BA65256004A9F66 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = Localizable.strings; path = ../Localizable.strings; sourceTree = "<group>"; };
 		6D18F80E1BA659DE004A9F66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SRXTeacherOpenClassViewController.xib; sourceTree = "<group>"; };
 		6D18F8111BA659E3004A9F66 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SRXTeacherOpenClassViewController.strings"; sourceTree = "<group>"; };
 		6D18F8161BA65C55004A9F66 /* SRXTeacherMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXTeacherMeViewController.h; sourceTree = "<group>"; };
@@ -259,6 +268,22 @@
 		6DDE28631BA3E82100A855E5 /* SRXImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXImageViewController.h; sourceTree = "<group>"; };
 		6DDE28641BA3E82100A855E5 /* SRXImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXImageViewController.m; sourceTree = "<group>"; };
 		6DDE28661BA4A2FC00A855E5 /* SRXImageViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXImageViewController.xib; sourceTree = "<group>"; };
+		6DE4B5CE1BEDCA680056C998 /* T1SchoolOverViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T1SchoolOverViewVC.h; sourceTree = "<group>"; };
+		6DE4B5CF1BEDCA680056C998 /* T1SchoolOverViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T1SchoolOverViewVC.m; sourceTree = "<group>"; };
+		6DE4B5D11BEDD0DB0056C998 /* T11SchoolInfoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T11SchoolInfoVC.h; sourceTree = "<group>"; };
+		6DE4B5D21BEDD0DB0056C998 /* T11SchoolInfoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T11SchoolInfoVC.m; sourceTree = "<group>"; };
+		6DE4B5D71BEDD0DB0056C998 /* T111SchoolEditorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = T111SchoolEditorVC.h; sourceTree = "<group>"; };
+		6DE4B5D81BEDD0DB0056C998 /* T111SchoolEditorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = T111SchoolEditorVC.m; sourceTree = "<group>"; };
+		6DE4B5E21BEEC6140056C998 /* ImageTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableCell.h; sourceTree = "<group>"; };
+		6DE4B5E31BEEC6140056C998 /* ImageTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableCell.m; sourceTree = "<group>"; };
+		6DE4B5E41BEEC6140056C998 /* ImageTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageTableCell.xib; sourceTree = "<group>"; };
+		6DE4B5E51BEEC6140056C998 /* MapTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapTableCell.h; sourceTree = "<group>"; };
+		6DE4B5E61BEEC6140056C998 /* MapTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapTableCell.m; sourceTree = "<group>"; };
+		6DE4B5E71BEEC6140056C998 /* MapTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapTableCell.xib; sourceTree = "<group>"; };
+		6DE4B5EC1BEFD7DF0056C998 /* SRXEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXEnvironment.h; sourceTree = "<group>"; };
+		6DE4B5ED1BEFD7DF0056C998 /* SRXEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXEnvironment.m; sourceTree = "<group>"; };
+		6DE4B5EF1BF00C0C0056C998 /* SRXStartVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStartVC.h; sourceTree = "<group>"; };
+		6DE4B5F01BF00C0C0056C998 /* SRXStartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStartVC.m; sourceTree = "<group>"; };
 		6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentClassViewController.h; sourceTree = "<group>"; };
 		6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentClassViewController.m; sourceTree = "<group>"; };
 		6DFF41521BDCAA36003DACF5 /* SRXStudentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentListViewController.h; sourceTree = "<group>"; };
@@ -342,11 +367,12 @@
 		6D08611F1B6EE52200BC5910 = {
 			isa = PBXGroup;
 			children = (
+				6DE4B5EC1BEFD7DF0056C998 /* SRXEnvironment.h */,
+				6DE4B5ED1BEFD7DF0056C998 /* SRXEnvironment.m */,
 				6D8BC5611BB27D76001F20F0 /* Util */,
 				6D8BC5601BB27D6A001F20F0 /* API */,
 				6DF41F0F1BAF06E800B45311 /* ProtoGen */,
 				6DF41F0E1BAF06E200B45311 /* Proto */,
-				6D18F80B1BA65256004A9F66 /* Localizable.strings */,
 				6DDE28611BA3E7E400A855E5 /* Views */,
 				6DDE28111B93E43B00A855E5 /* Users */,
 				6DDE28061B928C1500A855E5 /* Colors */,
@@ -391,6 +417,7 @@
 		6D08612A1B6EE52200BC5910 /* DropPinOnMapView */ = {
 			isa = PBXGroup;
 			children = (
+				6D18F80B1BA65256004A9F66 /* Localizable.strings */,
 				6D18F8071BA64890004A9F66 /* Teacher.Storyboard */,
 				6D18F8031BA638C0004A9F66 /* plus_sign.png */,
 				6D013EB91B79BBB8006D13B9 /* Icon@2x.png */,
@@ -473,13 +500,6 @@
 				6D18F8171BA65C55004A9F66 /* SRXTeacherMeViewController.m */,
 			);
 			name = MeTab;
-			sourceTree = "<group>";
-		};
-		6D197EB91BE442D0005A9C09 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "New Group";
 			sourceTree = "<group>";
 		};
 		6D650AB21BCFE75D008B5FA1 /* MeTab */ = {
@@ -592,7 +612,16 @@
 		6DDE284E1B9E6AEC00A855E5 /* ClassesTab */ = {
 			isa = PBXGroup;
 			children = (
-				6D197EB91BE442D0005A9C09 /* New Group */,
+				6DE4B5E21BEEC6140056C998 /* ImageTableCell.h */,
+				6DE4B5E31BEEC6140056C998 /* ImageTableCell.m */,
+				6DE4B5E41BEEC6140056C998 /* ImageTableCell.xib */,
+				6DE4B5E51BEEC6140056C998 /* MapTableCell.h */,
+				6DE4B5E61BEEC6140056C998 /* MapTableCell.m */,
+				6DE4B5E71BEEC6140056C998 /* MapTableCell.xib */,
+				6DE4B5D11BEDD0DB0056C998 /* T11SchoolInfoVC.h */,
+				6DE4B5D21BEDD0DB0056C998 /* T11SchoolInfoVC.m */,
+				6DE4B5D71BEDD0DB0056C998 /* T111SchoolEditorVC.h */,
+				6DE4B5D81BEDD0DB0056C998 /* T111SchoolEditorVC.m */,
 				6DDE28571BA28AFF00A855E5 /* SRXPhotoCell.xib */,
 				6DDE28541BA2742500A855E5 /* SRXPhotoCell.h */,
 				6DDE28551BA2742500A855E5 /* SRXPhotoCell.m */,
@@ -606,6 +635,8 @@
 				6D18F80F1BA659DE004A9F66 /* SRXTeacherOpenClassViewController.xib */,
 				6D650AAF1BCAD2A8008B5FA1 /* SRXImage.h */,
 				6D650AB01BCAD2A8008B5FA1 /* SRXImage.m */,
+				6DE4B5CE1BEDCA680056C998 /* T1SchoolOverViewVC.h */,
+				6DE4B5CF1BEDCA680056C998 /* T1SchoolOverViewVC.m */,
 			);
 			name = ClassesTab;
 			sourceTree = "<group>";
@@ -631,6 +662,8 @@
 				6D9AA66E1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m */,
 				6D650AB41BD2C120008B5FA1 /* SRXImageScrollViewController.h */,
 				6D650AB51BD2C120008B5FA1 /* SRXImageScrollViewController.m */,
+				6DE4B5EF1BF00C0C0056C998 /* SRXStartVC.h */,
+				6DE4B5F01BF00C0C0056C998 /* SRXStartVC.m */,
 			);
 			name = CommonViews;
 			sourceTree = "<group>";
@@ -789,6 +822,7 @@
 				6D8BC55C1BB241B3001F20F0 /* SRXDataLocation.proto in Resources */,
 				6D013EBA1B79BBB8006D13B9 /* Icon@2x.png in Resources */,
 				6D650A6D1BC97C9F008B5FA1 /* SRXDataImage.proto in Resources */,
+				6DE4B5EB1BEEC6140056C998 /* MapTableCell.xib in Resources */,
 				6D18F8051BA64890004A9F66 /* Teacher.Storyboard in Resources */,
 				6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */,
 				6DDE27F81B90ADED00A855E5 /* SRXLogInViewController.xib in Resources */,
@@ -811,6 +845,7 @@
 				6D8BC5681BB3C5EC001F20F0 /* SRXApi.proto in Resources */,
 				6D197EAF1BE2F801005A9C09 /* SRXDataTeacher.proto in Resources */,
 				6D013EC71B80D757006D13B9 /* gnome_session_switch.png in Resources */,
+				6DE4B5E91BEEC6140056C998 /* ImageTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -902,6 +937,7 @@
 				6D18F8021BA5DD97004A9F66 /* ELCOverlayImageView.m in Sources */,
 				6D9AA6721BB8CE9000B66099 /* SRXClassUtil.m in Sources */,
 				6D18F8181BA65C55004A9F66 /* SRXTeacherMeViewController.m in Sources */,
+				6DE4B5EE1BEFD7DF0056C998 /* SRXEnvironment.m in Sources */,
 				6D0861341B6EE52200BC5910 /* ViewController.m in Sources */,
 				6D18F7FE1BA5DD97004A9F66 /* ELCAssetCell.m in Sources */,
 				6D650B081BD427DC008B5FA1 /* ScaleImageView.m in Sources */,
@@ -912,15 +948,20 @@
 				6D18F8011BA5DD97004A9F66 /* ELCConsole.m in Sources */,
 				6DDE28471B9E499600A855E5 /* SRXTeacherClassCell.m in Sources */,
 				6DDE28561BA2742500A855E5 /* SRXPhotoCell.m in Sources */,
+				6DE4B5DC1BEDD0DB0056C998 /* T11SchoolInfoVC.m in Sources */,
+				6DE4B5F11BF00C0C0056C998 /* SRXStartVC.m in Sources */,
 				6D197EB61BE2FAA2005A9C09 /* SRXDataPersonName.pb.m in Sources */,
 				6DDE28521B9E6B1F00A855E5 /* SRXTeacherOpenClassViewController.m in Sources */,
+				6DE4B5E81BEEC6140056C998 /* ImageTableCell.m in Sources */,
 				6D18F7FD1BA5DD97004A9F66 /* ELCAsset.m in Sources */,
 				6D650A781BC97D00008B5FA1 /* SRXDataImage.pb.m in Sources */,
 				6D650AB61BD2C120008B5FA1 /* SRXImageScrollViewController.m in Sources */,
 				6D650A791BC97D00008B5FA1 /* SRXDataLocation.pb.m in Sources */,
+				6DE4B5D01BEDCA680056C998 /* T1SchoolOverViewVC.m in Sources */,
 				6DDE28141B93E48300A855E5 /* SRXUserInfoKeys.m in Sources */,
 				6D2DE8011B88EA4A00889E17 /* SRXMeViewController.m in Sources */,
 				6D0861311B6EE52200BC5910 /* AppDelegate.m in Sources */,
+				6DE4B5DF1BEDD0DB0056C998 /* T111SchoolEditorVC.m in Sources */,
 				6D650B071BD427DC008B5FA1 /* SQScrollViewController.m in Sources */,
 				6D9AA66F1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m in Sources */,
 				6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */,
@@ -939,6 +980,7 @@
 				6DDE28391B9CA8FF00A855E5 /* SRXTeacherClassTableViewController.m in Sources */,
 				6DDE280C1B92D35B00A855E5 /* SRXUserAccountSuperViewController.m in Sources */,
 				6DDE28041B90AE5D00A855E5 /* SRXLogInDetailViewController.m in Sources */,
+				6DE4B5EA1BEEC6140056C998 /* MapTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

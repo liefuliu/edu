@@ -1,40 +1,47 @@
 //
-//  SRXTeacherMeViewController.m
-//  DropPinOnMapView
+//  T111SchoolEditorVC.m
+//  SchoolDemo
 //
-//  Created by Liefu Liu on 9/13/15.
-//  Copyright (c) 2015 Liefu Liu. All rights reserved.
+//  Created by Liefu Liu on 10/31/15.
+//  Copyright (c) 2015 SanRenXing. All rights reserved.
 //
 
-#import "SRXTeacherMeViewController.h"
-#import "SRXEnvironment.h"
-#import <UIKit/UIKit.h>
+#import "T111SchoolEditorVC.h"
 
-@interface SRXTeacherMeViewController ()
+@interface T111SchoolEditorVC ()
 
-@property NSArray* tableItems;
+@property NSArray* optionsToEdit;
 
 @end
 
-@implementation SRXTeacherMeViewController
+@implementation T111SchoolEditorVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.navigationItem.title = @"修改学校信息";
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIBarButtonItem *editButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneAction:)];
     
-    // Use the default cell for Section 1.
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    [editButtonItem setTitle: @"完成"];
+    self.navigationItem.rightBarButtonItem = editButtonItem;
+    
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.contentInset = UIEdgeInsetsMake(44,0.0,0,0.0);
+
+    _optionsToEdit = @[
+                @"学校名称", @"学校简介", @"校园地点", @"学校图片"];
     
-    self.tableItems = @[NSLocalizedString(@"To study", @"I want to study")];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
 }
+
+
+
+- (void)doneAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -50,42 +57,27 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    NSLog(@"numberOfRowsInSection called");
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.tableItems.count;
+    return [_optionsToEdit count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cellForRowAtIndexPath called");
+    NSString* cellIdentifier = @"UITableViewCell" ;
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.tableItems[indexPath.row];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                      reuseIdentifier:cellIdentifier];
+    }
+
     // Configure the cell...
-    
+    cell.textLabel.text = _optionsToEdit[indexPath.row];
+    cell.textLabel.textColor = [UIColor grayColor];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        if ([[SRXEnvironment sharedObject] startingMode] == SRXStartingModeStudent)  {
-            [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController* mainViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"BeStudent"];
-            
-            [self.tabBarController presentViewController: mainViewController animated:YES completion: NULL];
-        }
-        
-        /*
-        
-         */
-    }
-}
-
 
 /*
 // Override to support conditional editing of the table view.

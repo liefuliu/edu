@@ -1,22 +1,23 @@
 //
-//  SRXTeacherMeViewController.m
-//  DropPinOnMapView
+//  T1SchoolOverviewVC.m
+//  SchoolDemo
 //
-//  Created by Liefu Liu on 9/13/15.
-//  Copyright (c) 2015 Liefu Liu. All rights reserved.
+//  Created by Liefu Liu on 10/30/15.
+//  Copyright (c) 2015 SanRenXing. All rights reserved.
 //
 
-#import "SRXTeacherMeViewController.h"
-#import "SRXEnvironment.h"
-#import <UIKit/UIKit.h>
+#import "T1SchoolOverviewVC.h"
 
-@interface SRXTeacherMeViewController ()
+#import "T11SchoolInfoVC.h"
+#import "SRXTeacherClassTableViewController.h"
 
-@property NSArray* tableItems;
+@interface T1SchoolOverviewVC ()
+
+@property NSArray* options;
 
 @end
 
-@implementation SRXTeacherMeViewController
+@implementation T1SchoolOverviewVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,13 +28,21 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    // Use the default cell for Section 1.
-    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    self.navigationItem.title = NSLocalizedString(@"School", nil);
+
+    _options = [[NSMutableArray alloc] initWithArray:@[
+                                                       NSLocalizedString(@"School Profile", @"Profile"),  //
+                                                       NSLocalizedString(@"Classes Management", @"Classes"),  //
+                                                       NSLocalizedString(@"Teacher Info", "Teachers"),  //
+                                                       NSLocalizedString(@"Student Info", "Students")  // 学生资料
+                                                      /*
+                                                      NSLocalizedString(@"Updates", nil)
+                                                      NSLocalizedString(@"Switch to another school", nil),
+                                                       */
+                                                ]];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.contentInset = UIEdgeInsetsMake(44,0.0,0,0.0);
-    
-    self.tableItems = @[NSLocalizedString(@"To study", @"I want to study")];
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TitleCell"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,42 +59,43 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    
-    NSLog(@"numberOfRowsInSection called");
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return self.tableItems.count;
+    return [self.options count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"cellForRowAtIndexPath called");
+    if (indexPath.section == 0) {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TitleCell" forIndexPath:indexPath];
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    cell.textLabel.text = self.tableItems[indexPath.row];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     // Configure the cell...
+    cell.textLabel.text = (NSString*) [_options objectAtIndex:indexPath.row];
+        if (indexPath.row >= 2) {
+            cell.textLabel.textColor = [UIColor grayColor];
+        }
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
+    }
+    
+    
+    
+    return nil;
 }
+
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0 && indexPath.row == 0) {
-        if ([[SRXEnvironment sharedObject] startingMode] == SRXStartingModeStudent)  {
-            [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
-        } else {
-            UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            UIViewController* mainViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"BeStudent"];
-            
-            [self.tabBarController presentViewController: mainViewController animated:YES completion: NULL];
+    if(indexPath.section == 0) {
+        if(indexPath.row == 0) {
+            T11SchoolInfoVC* vc = [[T11SchoolInfoVC alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
+        } else if (indexPath.row == 1){
+            SRXTeacherClassTableViewController* vc = [[SRXTeacherClassTableViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
-        
-        /*
-        
-         */
     }
 }
-
 
 /*
 // Override to support conditional editing of the table view.

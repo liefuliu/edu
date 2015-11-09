@@ -20,6 +20,10 @@
 
 - (instancetype) initWithItems: (NSArray*) itemsForSelection;
 
+- (instancetype) initWithTitle: (NSString*) title
+                         Items: (NSArray*) itemsForSelection;
+
+
 @property (nonatomic, weak) id delegate;
 
 @end

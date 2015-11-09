@@ -138,12 +138,14 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 #define SRXDataClassInfo_tuition_fee_in_yuan @"tuitionFeeInYuan"
 #define SRXDataClassInfo_summary @"summary"
 #define SRXDataClassInfo_image_ref @"imageRef"
+#define SRXDataClassInfo_school_id @"schoolId"
 @interface SRXDataClassInfo : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
   BOOL hasNumberOfClasses_:1;
   BOOL hasTuitionFeeInYuan_:1;
   BOOL hasTeacherName_:1;
   BOOL hasSummary_:1;
+  BOOL hasSchoolId_:1;
   BOOL hasLocation_:1;
   BOOL hasClassTime_:1;
   BOOL hasClassType_:1;
@@ -151,6 +153,7 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
   SInt32 tuitionFeeInYuan;
   NSString* teacherName;
   NSString* summary;
+  NSString* schoolId;
   SRXDataLocation* location;
   SRXDataClassTime* classTime;
   SRXDataClassTypeEnumSRXDataClassType classType;
@@ -163,6 +166,7 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 - (BOOL) hasNumberOfClasses;
 - (BOOL) hasTuitionFeeInYuan;
 - (BOOL) hasSummary;
+- (BOOL) hasSchoolId;
 @property (readonly, strong) NSString* teacherName;
 @property (readonly) SRXDataClassTypeEnumSRXDataClassType classType;
 @property (readonly, strong) SRXDataLocation* location;
@@ -171,6 +175,7 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 @property (readonly) SInt32 tuitionFeeInYuan;
 @property (readonly, strong) NSString* summary;
 @property (readonly, strong) NSArray * imageRef;
+@property (readonly, strong) NSString* schoolId;
 - (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index;
 
 + (instancetype) defaultInstance;
@@ -252,6 +257,11 @@ NSString *NSStringFromSRXDataClassTypeEnumSRXDataClassType(SRXDataClassTypeEnumS
 - (SRXDataClassInfoBuilder *)addImageRef:(SRXDataImageRef*)value;
 - (SRXDataClassInfoBuilder *)setImageRefArray:(NSArray *)array;
 - (SRXDataClassInfoBuilder *)clearImageRef;
+
+- (BOOL) hasSchoolId;
+- (NSString*) schoolId;
+- (SRXDataClassInfoBuilder*) setSchoolId:(NSString*) value;
+- (SRXDataClassInfoBuilder*) clearSchoolId;
 @end
 
 #define SRXDataClass_id @"id"

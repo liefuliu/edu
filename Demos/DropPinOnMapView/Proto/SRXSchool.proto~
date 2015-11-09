@@ -1,0 +1,13 @@
+import "SRXDataLocation.proto";
+
+message SRXDataSchoolInfo {
+ optional SRXDataLocation location = 1;
+ 
+ optional string name = 2;
+
+ optional string description = 3;
+
+ repeated SRXDataImageRef image_ref = 4;
+
+ repeated SRXDataTeacherInfo teacher = 5;
+}
