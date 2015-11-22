@@ -116,6 +116,15 @@ message SRXProtoCreateSchoolResponse {
    optional string school_id = 1;
 }
 
+message SRXProtoGetCurrentUserRequest {
+
+}
+
+message SRXProtoGetCurrentUserResponse {
+  optional bool signed_in = 1;
+}
+
+
 message SRXProtoReadProfileRequest {
 
 }

@@ -14,6 +14,8 @@
 
 @interface T11SchoolInfoVC ()
 
+@property (nonatomic) SRXDataSchool* school;
+
 @end
 
 @implementation T11SchoolInfoVC
@@ -101,7 +103,7 @@
         }
         
         cell.textLabel.text = @"学校名称";
-        cell.detailTextLabel.text = @"湖南师大附中";
+        cell.detailTextLabel.text = [_school.info name];
         return cell;
 
     } else if (indexPath.section == 2) {
@@ -118,7 +120,8 @@
         cell.detailTextLabel.lineBreakMode = NSLineBreakByWordWrapping;
         cell.detailTextLabel.numberOfLines = 5;
 
-        cell.detailTextLabel.text = @"湖南师范大学附属中学（The High School Attached To Hunan Normal University）是湖南省教育厅直属公办高级中学（保留完全中学建制）、湖南省首批八所重点中学，也是湖南省示范性普通高级中学。";
+        cell.detailTextLabel.text = [_school.info summary];
+        //@"湖南师范大学附属中学（The High School Attached To Hunan Normal University）是湖南省教育厅直属公办高级中学（保留完全中学建制）、湖南省首批八所重点中学，也是湖南省示范性普通高级中学。";
         return cell;
     } else if (indexPath.section == 3) {
         /*
@@ -148,10 +151,17 @@
         MKMapView *mapView = cell.mapView; //(MKMapView*)[cell viewWithTag:2];
         
         //Takes a center point and a span in miles (converted from meters using above method)
-        CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(37.766997, -122.422032);
+        CLLocationCoordinate2D startCoord = CLLocationCoordinate2DMake(_school.info.location.latitude, _school.info.location.longtitude);
         MKCoordinateRegion adjustedRegion = [mapView regionThatFits:MKCoordinateRegionMakeWithDistance(startCoord, 1000, 1000)];
         [mapView setRegion:adjustedRegion animated:YES];
-        //[mapView addAnnotation:]
+        
+        MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+        point.coordinate = startCoord;
+        for (id annotation in mapView.annotations) {
+            [mapView removeAnnotation:annotation];
+        }
+        [mapView addAnnotation:point];
+
         return cell;
     }
     
@@ -171,6 +181,14 @@
     }
     
     return 50;
+}
+
+- (instancetype) initWithSchool: (SRXDataSchool*) school {
+    self = [super init];
+    if (self) {
+        _school = school;
+    }
+    return self;
 }
 
 /*

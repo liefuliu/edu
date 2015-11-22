@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SRXDataSchool.pb.h"
 
 @interface T11SchoolInfoVC : UITableViewController
+
+- (instancetype) initWithSchool: (SRXDataSchool*) school;
 
 @end

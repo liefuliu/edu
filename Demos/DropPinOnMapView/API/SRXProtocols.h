@@ -46,6 +46,19 @@ typedef void(^ApiCompletion)(BOOL, NSString*);
       withResponse: (SRXProtoGetImagesResponseBuilder**) responseBuilder
         completion: (ApiCompletion) compblock;
 
+
+- (void) getOwnedSchool: (SRXProtoGetOwnedSchoolRequest*) request
+           withResponse: (SRXProtoGetOwnedSchoolResponseBuilder**) responseBuilder
+             completion: (ApiCompletion) compblock;
+
+- (void) createSchool: (SRXProtoCreateSchoolRequest*) request
+         withResponse: (SRXProtoCreateSchoolResponseBuilder**) responseBuilder
+           completion: (ApiCompletion) compblock;
+
+- (void) getCurrentUser: (SRXProtoGetCurrentUserRequest*) request
+          withResponse : (SRXProtoGetCurrentUserResponseBuilder**) responseBuilder
+             completion: (ApiCompletion) compblock;
+
 @end
 
 #endif

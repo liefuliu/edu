@@ -26,7 +26,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
 @interface SRXDataSchoolInfo ()
 @property (strong) SRXDataLocation* location;
 @property (strong) NSString* name;
-@property (strong) NSString* pb_description;
+@property (strong) NSString* summary;
 @property (strong) NSMutableArray * imageRefArray;
 @property (strong) NSMutableArray * teacherArray;
 @end
@@ -47,13 +47,13 @@ static PBExtensionRegistry* extensionRegistry = nil;
   hasName_ = !!_value_;
 }
 @synthesize name;
-- (BOOL) hasDescription {
-  return !!hasDescription_;
+- (BOOL) hasSummary {
+  return !!hasSummary_;
 }
-- (void) setHasDescription:(BOOL) _value_ {
-  hasDescription_ = !!_value_;
+- (void) setHasSummary:(BOOL) _value_ {
+  hasSummary_ = !!_value_;
 }
-@synthesize pb_description;
+@synthesize summary;
 @synthesize imageRefArray;
 @dynamic imageRef;
 @synthesize teacherArray;
@@ -62,7 +62,7 @@ static PBExtensionRegistry* extensionRegistry = nil;
   if ((self = [super init])) {
     self.location = [SRXDataLocation defaultInstance];
     self.name = @"";
-    self.pb_description = @"";
+    self.summary = @"";
   }
   return self;
 }
@@ -100,8 +100,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   if (self.hasName) {
     [output writeString:2 value:self.name];
   }
-  if (self.hasDescription) {
-    [output writeString:3 value:self.pb_description];
+  if (self.hasSummary) {
+    [output writeString:3 value:self.summary];
   }
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:4 value:element];
@@ -124,8 +124,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   if (self.hasName) {
     size_ += computeStringSize(2, self.name);
   }
-  if (self.hasDescription) {
-    size_ += computeStringSize(3, self.pb_description);
+  if (self.hasSummary) {
+    size_ += computeStringSize(3, self.summary);
   }
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(4, element);
@@ -177,8 +177,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   if (self.hasName) {
     [output appendFormat:@"%@%@: %@\n", indent, @"name", self.name];
   }
-  if (self.hasDescription) {
-    [output appendFormat:@"%@%@: %@\n", indent, @"pb_description", self.pb_description];
+  if (self.hasSummary) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"summary", self.summary];
   }
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     [output appendFormat:@"%@%@ {\n", indent, @"imageRef"];
@@ -203,8 +203,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   if (self.hasName) {
     [dictionary setObject: self.name forKey: @"name"];
   }
-  if (self.hasDescription) {
-    [dictionary setObject: self.pb_description forKey: @"pb_description"];
+  if (self.hasSummary) {
+    [dictionary setObject: self.summary forKey: @"summary"];
   }
   for (SRXDataImageRef* element in self.imageRefArray) {
     NSMutableDictionary *elementDictionary = [NSMutableDictionary dictionary];
@@ -231,8 +231,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
       (!self.hasLocation || [self.location isEqual:otherMessage.location]) &&
       self.hasName == otherMessage.hasName &&
       (!self.hasName || [self.name isEqual:otherMessage.name]) &&
-      self.hasDescription == otherMessage.hasDescription &&
-      (!self.hasDescription || [self.pb_description isEqual:otherMessage.pb_description]) &&
+      self.hasSummary == otherMessage.hasSummary &&
+      (!self.hasSummary || [self.summary isEqual:otherMessage.summary]) &&
       [self.imageRefArray isEqualToArray:otherMessage.imageRefArray] &&
       [self.teacherArray isEqualToArray:otherMessage.teacherArray] &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
@@ -245,8 +245,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   if (self.hasName) {
     hashCode = hashCode * 31 + [self.name hash];
   }
-  if (self.hasDescription) {
-    hashCode = hashCode * 31 + [self.pb_description hash];
+  if (self.hasSummary) {
+    hashCode = hashCode * 31 + [self.summary hash];
   }
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     hashCode = hashCode * 31 + [element hash];
@@ -303,8 +303,8 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   if (other.hasName) {
     [self setName:other.name];
   }
-  if (other.hasDescription) {
-    [self setDescription:other.pb_description];
+  if (other.hasSummary) {
+    [self setSummary:other.summary];
   }
   if (other.imageRefArray.count > 0) {
     if (resultSrxdataSchoolInfo.imageRefArray == nil) {
@@ -355,7 +355,7 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
         break;
       }
       case 26: {
-        [self setDescription:[input readString]];
+        [self setSummary:[input readString]];
         break;
       }
       case 34: {
@@ -419,20 +419,20 @@ static SRXDataSchoolInfo* defaultSRXDataSchoolInfoInstance = nil;
   resultSrxdataSchoolInfo.name = @"";
   return self;
 }
-- (BOOL) hasDescription {
-  return resultSrxdataSchoolInfo.hasDescription;
+- (BOOL) hasSummary {
+  return resultSrxdataSchoolInfo.hasSummary;
 }
-- (NSString*) pb_description {
-  return resultSrxdataSchoolInfo.pb_description;
+- (NSString*) summary {
+  return resultSrxdataSchoolInfo.summary;
 }
-- (SRXDataSchoolInfoBuilder*) setDescription:(NSString*) value {
-  resultSrxdataSchoolInfo.hasDescription = YES;
-  resultSrxdataSchoolInfo.pb_description = value;
+- (SRXDataSchoolInfoBuilder*) setSummary:(NSString*) value {
+  resultSrxdataSchoolInfo.hasSummary = YES;
+  resultSrxdataSchoolInfo.summary = value;
   return self;
 }
-- (SRXDataSchoolInfoBuilder*) clearDescription {
-  resultSrxdataSchoolInfo.hasDescription = NO;
-  resultSrxdataSchoolInfo.pb_description = @"";
+- (SRXDataSchoolInfoBuilder*) clearSummary {
+  resultSrxdataSchoolInfo.hasSummary = NO;
+  resultSrxdataSchoolInfo.summary = @"";
   return self;
 }
 - (NSMutableArray *)imageRef {

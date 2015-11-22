@@ -7,11 +7,12 @@ message SRXDataSchoolInfo {
  
  optional string name = 2;
 
- optional string description = 3;
+ optional string summary = 3;
 
  repeated SRXDataImageRef image_ref = 4;
 
  repeated SRXDataTeacher teacher = 5;
+
 }
 
 message SRXDataSchool {

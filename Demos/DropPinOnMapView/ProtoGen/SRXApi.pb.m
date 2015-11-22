@@ -4242,6 +4242,374 @@ static SRXProtoCreateSchoolResponse* defaultSRXProtoCreateSchoolResponseInstance
 }
 @end
 
+@interface SRXProtoGetCurrentUserRequest ()
+@end
+
+@implementation SRXProtoGetCurrentUserRequest
+
+- (instancetype) init {
+  if ((self = [super init])) {
+  }
+  return self;
+}
+static SRXProtoGetCurrentUserRequest* defaultSRXProtoGetCurrentUserRequestInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoGetCurrentUserRequest class]) {
+    defaultSRXProtoGetCurrentUserRequestInstance = [[SRXProtoGetCurrentUserRequest alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoGetCurrentUserRequestInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoGetCurrentUserRequestInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoGetCurrentUserRequest*) parseFromData:(NSData*) data {
+  return (SRXProtoGetCurrentUserRequest*)[[[SRXProtoGetCurrentUserRequest builder] mergeFromData:data] build];
+}
++ (SRXProtoGetCurrentUserRequest*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetCurrentUserRequest*)[[[SRXProtoGetCurrentUserRequest builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetCurrentUserRequest*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoGetCurrentUserRequest*)[[[SRXProtoGetCurrentUserRequest builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoGetCurrentUserRequest*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetCurrentUserRequest*)[[[SRXProtoGetCurrentUserRequest builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetCurrentUserRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoGetCurrentUserRequest*)[[[SRXProtoGetCurrentUserRequest builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoGetCurrentUserRequest*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetCurrentUserRequest*)[[[SRXProtoGetCurrentUserRequest builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetCurrentUserRequestBuilder*) builder {
+  return [[SRXProtoGetCurrentUserRequestBuilder alloc] init];
+}
++ (SRXProtoGetCurrentUserRequestBuilder*) builderWithPrototype:(SRXProtoGetCurrentUserRequest*) prototype {
+  return [[SRXProtoGetCurrentUserRequest builder] mergeFrom:prototype];
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) builder {
+  return [SRXProtoGetCurrentUserRequest builder];
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) toBuilder {
+  return [SRXProtoGetCurrentUserRequest builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoGetCurrentUserRequest class]]) {
+    return NO;
+  }
+  SRXProtoGetCurrentUserRequest *otherMessage = other;
+  return
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoGetCurrentUserRequestBuilder()
+@property (strong) SRXProtoGetCurrentUserRequest* resultSrxprotoGetCurrentUserRequest;
+@end
+
+@implementation SRXProtoGetCurrentUserRequestBuilder
+@synthesize resultSrxprotoGetCurrentUserRequest;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoGetCurrentUserRequest = [[SRXProtoGetCurrentUserRequest alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoGetCurrentUserRequest;
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) clear {
+  self.resultSrxprotoGetCurrentUserRequest = [[SRXProtoGetCurrentUserRequest alloc] init];
+  return self;
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) clone {
+  return [SRXProtoGetCurrentUserRequest builderWithPrototype:resultSrxprotoGetCurrentUserRequest];
+}
+- (SRXProtoGetCurrentUserRequest*) defaultInstance {
+  return [SRXProtoGetCurrentUserRequest defaultInstance];
+}
+- (SRXProtoGetCurrentUserRequest*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoGetCurrentUserRequest*) buildPartial {
+  SRXProtoGetCurrentUserRequest* returnMe = resultSrxprotoGetCurrentUserRequest;
+  self.resultSrxprotoGetCurrentUserRequest = nil;
+  return returnMe;
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) mergeFrom:(SRXProtoGetCurrentUserRequest*) other {
+  if (other == [SRXProtoGetCurrentUserRequest defaultInstance]) {
+    return self;
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoGetCurrentUserRequestBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+    }
+  }
+}
+@end
+
+@interface SRXProtoGetCurrentUserResponse ()
+@property BOOL signedIn;
+@end
+
+@implementation SRXProtoGetCurrentUserResponse
+
+- (BOOL) hasSignedIn {
+  return !!hasSignedIn_;
+}
+- (void) setHasSignedIn:(BOOL) _value_ {
+  hasSignedIn_ = !!_value_;
+}
+- (BOOL) signedIn {
+  return !!signedIn_;
+}
+- (void) setSignedIn:(BOOL) _value_ {
+  signedIn_ = !!_value_;
+}
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.signedIn = NO;
+  }
+  return self;
+}
+static SRXProtoGetCurrentUserResponse* defaultSRXProtoGetCurrentUserResponseInstance = nil;
++ (void) initialize {
+  if (self == [SRXProtoGetCurrentUserResponse class]) {
+    defaultSRXProtoGetCurrentUserResponseInstance = [[SRXProtoGetCurrentUserResponse alloc] init];
+  }
+}
++ (instancetype) defaultInstance {
+  return defaultSRXProtoGetCurrentUserResponseInstance;
+}
+- (instancetype) defaultInstance {
+  return defaultSRXProtoGetCurrentUserResponseInstance;
+}
+- (BOOL) isInitialized {
+  return YES;
+}
+- (void) writeToCodedOutputStream:(PBCodedOutputStream*) output {
+  if (self.hasSignedIn) {
+    [output writeBool:1 value:self.signedIn];
+  }
+  [self.unknownFields writeToCodedOutputStream:output];
+}
+- (SInt32) serializedSize {
+  __block SInt32 size_ = memoizedSerializedSize;
+  if (size_ != -1) {
+    return size_;
+  }
+
+  size_ = 0;
+  if (self.hasSignedIn) {
+    size_ += computeBoolSize(1, self.signedIn);
+  }
+  size_ += self.unknownFields.serializedSize;
+  memoizedSerializedSize = size_;
+  return size_;
+}
++ (SRXProtoGetCurrentUserResponse*) parseFromData:(NSData*) data {
+  return (SRXProtoGetCurrentUserResponse*)[[[SRXProtoGetCurrentUserResponse builder] mergeFromData:data] build];
+}
++ (SRXProtoGetCurrentUserResponse*) parseFromData:(NSData*) data extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetCurrentUserResponse*)[[[SRXProtoGetCurrentUserResponse builder] mergeFromData:data extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetCurrentUserResponse*) parseFromInputStream:(NSInputStream*) input {
+  return (SRXProtoGetCurrentUserResponse*)[[[SRXProtoGetCurrentUserResponse builder] mergeFromInputStream:input] build];
+}
++ (SRXProtoGetCurrentUserResponse*) parseFromInputStream:(NSInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetCurrentUserResponse*)[[[SRXProtoGetCurrentUserResponse builder] mergeFromInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetCurrentUserResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input {
+  return (SRXProtoGetCurrentUserResponse*)[[[SRXProtoGetCurrentUserResponse builder] mergeFromCodedInputStream:input] build];
+}
++ (SRXProtoGetCurrentUserResponse*) parseFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  return (SRXProtoGetCurrentUserResponse*)[[[SRXProtoGetCurrentUserResponse builder] mergeFromCodedInputStream:input extensionRegistry:extensionRegistry] build];
+}
++ (SRXProtoGetCurrentUserResponseBuilder*) builder {
+  return [[SRXProtoGetCurrentUserResponseBuilder alloc] init];
+}
++ (SRXProtoGetCurrentUserResponseBuilder*) builderWithPrototype:(SRXProtoGetCurrentUserResponse*) prototype {
+  return [[SRXProtoGetCurrentUserResponse builder] mergeFrom:prototype];
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) builder {
+  return [SRXProtoGetCurrentUserResponse builder];
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) toBuilder {
+  return [SRXProtoGetCurrentUserResponse builderWithPrototype:self];
+}
+- (void) writeDescriptionTo:(NSMutableString*) output withIndent:(NSString*) indent {
+  if (self.hasSignedIn) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"signedIn", [NSNumber numberWithBool:self.signedIn]];
+  }
+  [self.unknownFields writeDescriptionTo:output withIndent:indent];
+}
+- (void) storeInDictionary:(NSMutableDictionary *)dictionary {
+  if (self.hasSignedIn) {
+    [dictionary setObject: [NSNumber numberWithBool:self.signedIn] forKey: @"signedIn"];
+  }
+  [self.unknownFields storeInDictionary:dictionary];
+}
+- (BOOL) isEqual:(id)other {
+  if (other == self) {
+    return YES;
+  }
+  if (![other isKindOfClass:[SRXProtoGetCurrentUserResponse class]]) {
+    return NO;
+  }
+  SRXProtoGetCurrentUserResponse *otherMessage = other;
+  return
+      self.hasSignedIn == otherMessage.hasSignedIn &&
+      (!self.hasSignedIn || self.signedIn == otherMessage.signedIn) &&
+      (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
+}
+- (NSUInteger) hash {
+  __block NSUInteger hashCode = 7;
+  if (self.hasSignedIn) {
+    hashCode = hashCode * 31 + [[NSNumber numberWithBool:self.signedIn] hash];
+  }
+  hashCode = hashCode * 31 + [self.unknownFields hash];
+  return hashCode;
+}
+@end
+
+@interface SRXProtoGetCurrentUserResponseBuilder()
+@property (strong) SRXProtoGetCurrentUserResponse* resultSrxprotoGetCurrentUserResponse;
+@end
+
+@implementation SRXProtoGetCurrentUserResponseBuilder
+@synthesize resultSrxprotoGetCurrentUserResponse;
+- (instancetype) init {
+  if ((self = [super init])) {
+    self.resultSrxprotoGetCurrentUserResponse = [[SRXProtoGetCurrentUserResponse alloc] init];
+  }
+  return self;
+}
+- (PBGeneratedMessage*) internalGetResult {
+  return resultSrxprotoGetCurrentUserResponse;
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) clear {
+  self.resultSrxprotoGetCurrentUserResponse = [[SRXProtoGetCurrentUserResponse alloc] init];
+  return self;
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) clone {
+  return [SRXProtoGetCurrentUserResponse builderWithPrototype:resultSrxprotoGetCurrentUserResponse];
+}
+- (SRXProtoGetCurrentUserResponse*) defaultInstance {
+  return [SRXProtoGetCurrentUserResponse defaultInstance];
+}
+- (SRXProtoGetCurrentUserResponse*) build {
+  [self checkInitialized];
+  return [self buildPartial];
+}
+- (SRXProtoGetCurrentUserResponse*) buildPartial {
+  SRXProtoGetCurrentUserResponse* returnMe = resultSrxprotoGetCurrentUserResponse;
+  self.resultSrxprotoGetCurrentUserResponse = nil;
+  return returnMe;
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) mergeFrom:(SRXProtoGetCurrentUserResponse*) other {
+  if (other == [SRXProtoGetCurrentUserResponse defaultInstance]) {
+    return self;
+  }
+  if (other.hasSignedIn) {
+    [self setSignedIn:other.signedIn];
+  }
+  [self mergeUnknownFields:other.unknownFields];
+  return self;
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input {
+  return [self mergeFromCodedInputStream:input extensionRegistry:[PBExtensionRegistry emptyRegistry]];
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) mergeFromCodedInputStream:(PBCodedInputStream*) input extensionRegistry:(PBExtensionRegistry*) extensionRegistry {
+  PBUnknownFieldSetBuilder* unknownFields = [PBUnknownFieldSet builderWithUnknownFields:self.unknownFields];
+  while (YES) {
+    SInt32 tag = [input readTag];
+    switch (tag) {
+      case 0:
+        [self setUnknownFields:[unknownFields build]];
+        return self;
+      default: {
+        if (![self parseUnknownField:input unknownFields:unknownFields extensionRegistry:extensionRegistry tag:tag]) {
+          [self setUnknownFields:[unknownFields build]];
+          return self;
+        }
+        break;
+      }
+      case 8: {
+        [self setSignedIn:[input readBool]];
+        break;
+      }
+    }
+  }
+}
+- (BOOL) hasSignedIn {
+  return resultSrxprotoGetCurrentUserResponse.hasSignedIn;
+}
+- (BOOL) signedIn {
+  return resultSrxprotoGetCurrentUserResponse.signedIn;
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) setSignedIn:(BOOL) value {
+  resultSrxprotoGetCurrentUserResponse.hasSignedIn = YES;
+  resultSrxprotoGetCurrentUserResponse.signedIn = value;
+  return self;
+}
+- (SRXProtoGetCurrentUserResponseBuilder*) clearSignedIn {
+  resultSrxprotoGetCurrentUserResponse.hasSignedIn = NO;
+  resultSrxprotoGetCurrentUserResponse.signedIn = NO;
+  return self;
+}
+@end
+
 @interface SRXProtoReadProfileRequest ()
 @end
 

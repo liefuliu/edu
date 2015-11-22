@@ -45,6 +45,10 @@
          withResponse: (SRXProtoCreateSchoolResponseBuilder**) responseBuilder
            completion: (ApiCompletion) compblock;
 
+- (void) getCurrentUser: (SRXProtoGetCurrentUserRequest*) request
+          withResponse : (SRXProtoGetCurrentUserResponseBuilder**) responseBuilder
+             completion: (ApiCompletion) compblock;
+
 
 @property (nonatomic, retain) NSString *someProperty;
 

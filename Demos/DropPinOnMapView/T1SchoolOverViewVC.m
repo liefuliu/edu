@@ -9,11 +9,16 @@
 #import "T1SchoolOverviewVC.h"
 
 #import "T11SchoolInfoVC.h"
+#import "SRXDataSchool.pb.h"
 #import "SRXTeacherClassTableViewController.h"
+#import "SRXApiFactory.h"
+#import "SRXLogInSignUpViewController.h"
+#import "T0CreateSchoolVC.h"
 
-@interface T1SchoolOverviewVC ()
+@interface T1SchoolOverviewVC () <T0CreateSchoolVCDelegate>
 
 @property NSArray* options;
+@property SRXDataSchool* school;
 
 @end
 
@@ -27,6 +32,9 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    
+    
     
     self.navigationItem.title = NSLocalizedString(@"School", nil);
 
@@ -43,6 +51,66 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"TitleCell"];
+}
+
+- (void) viewDidAppear:(BOOL)animated  {
+    SRXProtoGetCurrentUserResponseBuilder* responseBuilder =  [SRXProtoGetCurrentUserResponse builder];
+    [[SRXApiFactory getActualApi]
+        getCurrentUser:[SRXProtoGetCurrentUserRequest defaultInstance]
+        withResponse:&responseBuilder
+        completion:nil];
+    
+    SRXProtoGetCurrentUserResponse* response = [responseBuilder build];
+    if (response.signedIn) {
+        // Check if there is an owned school. If not, ask user to create one.
+        [self getOwnedSchool];
+    } else {
+        // Pop up signed in view controller.
+        SRXLogInSignUpViewController* myLogInController = [[SRXLogInSignUpViewController alloc] init];
+        
+        UINavigationController* navController = [[UINavigationController alloc] initWithRootViewController:myLogInController];
+        [self presentViewController:navController animated:YES completion:^{}];
+    }
+}
+
+- (void) getOwnedSchool {
+    if (_school != nil) {
+        return;
+    }
+    
+    SRXDataUser* requestingUser = [[[SRXDataUser builder] setId:@"dummy"] build];
+    
+    SRXProtoGetOwnedSchoolRequest* request = [[[SRXProtoGetOwnedSchoolRequest builder] setRequestingUser:requestingUser] build];
+    
+    SRXProtoGetOwnedSchoolResponseBuilder* responseBuilder = [SRXProtoGetOwnedSchoolResponse builder];
+   
+    
+    [[SRXApiFactory getActualApi] getOwnedSchool: request
+                               withResponse:&responseBuilder completion:^(BOOL success, NSString* errorMsg) {
+                                   if (success) {
+                                       SRXProtoGetOwnedSchoolResponse* response = [responseBuilder build];
+                                       NSArray* allClasses = [response school];
+                                       
+                                       NSLog(@"Successfully retrieved allClasses: %@", allClasses);
+                                       
+                                       if ([allClasses count] > 0) {
+                                           _school = (SRXDataSchool*)allClasses[0];
+                                       } else {
+                                           T0CreateSchoolVC* vc = [[T0CreateSchoolVC alloc] init];
+                                           vc.delegate = self;
+                                           [self.navigationController pushViewController:vc animated:YES];
+                                       }
+                                   } else {
+                                       // Do nothing for now.
+                                       // TODO(liefuliu): throw an alert.
+                                       NSLog(@"Cannot read class");
+                                   }
+                                   
+                               }];
+}
+
+- (void) schoolCreated: (SRXDataSchool*) school {
+    _school = school;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -88,7 +156,7 @@
 {
     if(indexPath.section == 0) {
         if(indexPath.row == 0) {
-            T11SchoolInfoVC* vc = [[T11SchoolInfoVC alloc] init];
+            T11SchoolInfoVC* vc = [[T11SchoolInfoVC alloc] initWithSchool:_school];
             [self.navigationController pushViewController:vc animated:YES];
         } else if (indexPath.row == 1){
             SRXTeacherClassTableViewController* vc = [[SRXTeacherClassTableViewController alloc] init];

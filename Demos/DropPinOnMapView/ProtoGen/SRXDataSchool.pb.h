@@ -42,26 +42,26 @@
 
 #define SRXDataSchoolInfo_location @"location"
 #define SRXDataSchoolInfo_name @"name"
-#define SRXDataSchoolInfo_description @"pb_description"
+#define SRXDataSchoolInfo_summary @"summary"
 #define SRXDataSchoolInfo_image_ref @"imageRef"
 #define SRXDataSchoolInfo_teacher @"teacher"
 @interface SRXDataSchoolInfo : PBGeneratedMessage<GeneratedMessageProtocol> {
 @private
   BOOL hasName_:1;
-  BOOL hasDescription_:1;
+  BOOL hasSummary_:1;
   BOOL hasLocation_:1;
   NSString* name;
-  NSString* pb_description;
+  NSString* summary;
   SRXDataLocation* location;
   NSMutableArray * imageRefArray;
   NSMutableArray * teacherArray;
 }
 - (BOOL) hasLocation;
 - (BOOL) hasName;
-- (BOOL) hasDescription;
+- (BOOL) hasSummary;
 @property (readonly, strong) SRXDataLocation* location;
 @property (readonly, strong) NSString* name;
-@property (readonly, strong) NSString* pb_description;
+@property (readonly, strong) NSString* summary;
 @property (readonly, strong) NSArray * imageRef;
 @property (readonly, strong) NSArray * teacher;
 - (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index;
@@ -114,10 +114,10 @@
 - (SRXDataSchoolInfoBuilder*) setName:(NSString*) value;
 - (SRXDataSchoolInfoBuilder*) clearName;
 
-- (BOOL) hasDescription;
-- (NSString*) pb_description;
-- (SRXDataSchoolInfoBuilder*) setDescription:(NSString*) value;
-- (SRXDataSchoolInfoBuilder*) clearDescription;
+- (BOOL) hasSummary;
+- (NSString*) summary;
+- (SRXDataSchoolInfoBuilder*) setSummary:(NSString*) value;
+- (SRXDataSchoolInfoBuilder*) clearSummary;
 
 - (NSMutableArray *)imageRef;
 - (SRXDataImageRef*)imageRefAtIndex:(NSUInteger)index;

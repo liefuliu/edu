@@ -192,6 +192,22 @@ ApiCompletion _completionHandler;
     _completionHandler(true, nil);
 }
 
+
+- (void) getCurrentUser: (SRXProtoGetCurrentUserRequest*) request
+          withResponse : (SRXProtoGetCurrentUserResponseBuilder**) responseBuilder
+             completion: (ApiCompletion) compblock {
+    if ([PFUser currentUser]) {
+        [*responseBuilder setSignedIn:YES];
+    } else {
+        [*responseBuilder setSignedIn:NO];
+    }
+    
+    if (compblock != nil) {
+    _completionHandler = [compblock copy];
+    _completionHandler(true, nil);
+    }
+}
+
 /* This parallel implementation doesn't work
  - (void) addImages: (SRXProtoAddImagesRequest*) request
  withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
@@ -345,13 +361,20 @@ ApiCompletion _completionHandler;
     PFQuery *query = [PFQuery queryWithClassName:kSchoolTable];
     [query whereKey:kSchoolTableUserKey equalTo:[user username]];
     
+    __block SRXProtoGetOwnedSchoolResponseBuilder* reponseBuilderRef = *responseBuilder;
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
-            NSLog(@"Successfully retrieved %d classes.", objects.count);
+            NSLog(@"Successfully retrieved %d schools.", objects.count);
             
             for (PFObject *object in objects) {
-                SRXDataSchool* school = [SRXDataClassInfo parseFromData: object[kSchoolTableSchoolInfoKey]];
-                [*responseBuilder addSchool:school];
+                SRXDataSchoolInfo* schoolInfo = [SRXDataSchoolInfo parseFromData: object[kSchoolTableSchoolInfoKey]];
+                NSString* schoolId = (NSString*) object[@"objectId"];
+                
+                SRXDataSchool* school = [[[[SRXDataSchool builder] setId:schoolId] setInfo:schoolInfo] build];
+                                                        
+                                                        
+                [reponseBuilderRef addSchool:school];
             }
             _completionHandler(true, nil);
         } else {
