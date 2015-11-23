@@ -7,6 +7,7 @@
 //
 
 #import "SRXTeacherMeViewController.h"
+#import "SRXEnvironment.h"
 #import <UIKit/UIKit.h>
 
 @interface SRXTeacherMeViewController ()
@@ -70,7 +71,18 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0 && indexPath.row == 0) {
-        [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+        if ([[SRXEnvironment sharedObject] startingMode] == SRXStartingModeStudent)  {
+            [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+        } else {
+            UIStoryboard* mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController* mainViewController = [mainStoryboard instantiateViewControllerWithIdentifier:@"BeStudent"];
+            
+            [self.tabBarController presentViewController: mainViewController animated:YES completion: NULL];
+        }
+        
+        /*
+        
+         */
     }
 }
 

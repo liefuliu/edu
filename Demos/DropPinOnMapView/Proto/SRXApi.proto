@@ -1,4 +1,5 @@
 import "SRXDataClass.proto";
+import "SRXDataSchool.proto";
 import "SRXDataImage.proto";
 
 message SRXDataUser {
@@ -7,12 +8,11 @@ message SRXDataUser {
 }
 
 // Request and Response of API CreateClass.
-
 message SRXProtoCreateClassRequest {
   // Required.
   optional SRXDataUser requesting_user = 1;
-  
-  // Required. 
+
+  // Required.
   optional SRXDataClassInfo class_info = 2;
 }
 
@@ -94,10 +94,39 @@ message SRXProtoGetImagesResponse {
 }
 
 
+message SRXProtoGetOwnedSchoolRequest {
+  // Required.
+  optional SRXDataUser requesting_user = 1;
+}
 
-message SRXProtoReadProfileRequest {
+message SRXProtoGetOwnedSchoolResponse {
+  // Only 1 school is supported now.
+  repeated SRXDataSchool school = 2;
+}
+
+message SRXProtoCreateSchoolRequest {
    // Required
    optional SRXDataUser requesting_user = 1;
+
+   optional SRXDataSchoolInfo school_info = 2;
+}
+
+message SRXProtoCreateSchoolResponse {
+   // Required
+   optional string school_id = 1;
+}
+
+message SRXProtoGetCurrentUserRequest {
+
+}
+
+message SRXProtoGetCurrentUserResponse {
+  optional bool signed_in = 1;
+}
+
+
+message SRXProtoReadProfileRequest {
+
 }
 
 message SRXProtoGetProfileResponse {
@@ -111,6 +140,7 @@ message SRXProtoMutableProfileRequest {
 message SRXProtoMutableProfileResponse {
 
 }
+
 
 
 enum SRXProtoLogInMethodEnum {

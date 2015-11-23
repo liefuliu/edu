@@ -12,6 +12,7 @@
 #import "SRXLogInSignUpViewController.h"
 #import "SRXColor.h"
 #import "SRXUserInfoKeys.h"
+#import "SRXEnvironment.h"
 
 @interface SRXMeViewController ()
 
@@ -108,11 +109,15 @@
 }
 
 - (IBAction)buttonToTeachClicked:(id)sender {
+    if ([[SRXEnvironment sharedObject] startingMode] == SRXStartingModeStudent) {
     UIStoryboard* secondStoryboard = [UIStoryboard storyboardWithName:@"Teacher" bundle:nil];
     UIViewController* secondViewController = [secondStoryboard instantiateViewControllerWithIdentifier:@"TeacherMainView"];
     
-    [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+    //[self.tabBarController dismissViewControllerAnimated:YES completion:nil];
     [self.tabBarController presentViewController: secondViewController animated:YES completion: NULL];
+    } else {
+        [self.tabBarController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 

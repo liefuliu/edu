@@ -23,6 +23,13 @@ const NSString* __nonnull kImageTable = @"Photo";
 const NSString* __nonnull kImageTableKeyColumn = @"PhotoKey";
 const NSString* __nonnull kImageTableDataColumn = @"PhotoRef";
 
+
+const NSString* __nonnull kSchoolTableSchoolInfoKey = @"SchoolInfo";
+const NSString* __nonnull kSchoolTableLocation = @"Location";
+const NSString* __nonnull kSchoolTable = @"School";
+const NSString* __nonnull kSchoolTableUserKey = @"Owner";
+const NSString* __nonnull kSchoolTableLocationKey = @"Location";
+
 @synthesize someProperty;
 
 + (id)sharedObject {
@@ -110,31 +117,31 @@ ApiCompletion _completionHandler;
         PFQuery *query = [PFQuery queryWithClassName:kClassTable];
         [query whereKey:kClassTableUserKey equalTo:[user username]];
         
-
+        
         /*__block __weak SRXParseApi *wself = self;
-
-        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            if (!error) {
-                // The find succeeded.
-                NSLog(@"Successfully retrieved %d scores.", objects.count);
-                SRXProtoReadClassResponseBuilder* responseBuilder = [SRXProtoReadClassResponse builder];
-                
-                // Do something with the found objects.
-                for (PFObject *object in objects) {
-                    SRXDataClassInfo* classInfo;
-                    classInfo = [SRXDataClassInfo parseFromData: object[kClassTableClassInfoKey]];
-                    NSLog(@"%@", classInfo);
-                    
-                    [responseBuilder addClasses:classInfo];
-                }
-                *response = [responseBuilder build];
-            } else {
-                // Log details of the failure.
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
-                _completionHandler(false, @"Failed to read class info.");
-                return;
-            }
-        }];
+         
+         [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+         if (!error) {
+         // The find succeeded.
+         NSLog(@"Successfully retrieved %d scores.", objects.count);
+         SRXProtoReadClassResponseBuilder* responseBuilder = [SRXProtoReadClassResponse builder];
+         
+         // Do something with the found objects.
+         for (PFObject *object in objects) {
+         SRXDataClassInfo* classInfo;
+         classInfo = [SRXDataClassInfo parseFromData: object[kClassTableClassInfoKey]];
+         NSLog(@"%@", classInfo);
+         
+         [responseBuilder addClasses:classInfo];
+         }
+         *response = [responseBuilder build];
+         } else {
+         // Log details of the failure.
+         NSLog(@"Error: %@ %@", error, [error userInfo]);
+         _completionHandler(false, @"Failed to read class info.");
+         return;
+         }
+         }];
          */
         
         // TODO: move the findObjects on background thread.
@@ -185,51 +192,67 @@ ApiCompletion _completionHandler;
     _completionHandler(true, nil);
 }
 
-/* This parallel implementation doesn't work
-- (void) addImages: (SRXProtoAddImagesRequest*) request
-      withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
-        completion: (ApiCompletion) compblock {
+
+- (void) getCurrentUser: (SRXProtoGetCurrentUserRequest*) request
+          withResponse : (SRXProtoGetCurrentUserResponseBuilder**) responseBuilder
+             completion: (ApiCompletion) compblock {
+    if ([PFUser currentUser]) {
+        [*responseBuilder setSignedIn:YES];
+    } else {
+        [*responseBuilder setSignedIn:NO];
+    }
     
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        __block bool is_everyone_succeeded = true;
-        __block NSMutableArray *imageKeys = [[NSMutableArray alloc] init];
-        dispatch_group_t group = dispatch_group_create();
-        for (SRXProtoImage* image in [request image]) {
-            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
+    if (compblock != nil) {
+    _completionHandler = [compblock copy];
+    _completionHandler(true, nil);
+    }
+}
 
-            PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
-            NSString *uuidString = [[NSUUID UUID] UUIDString];
-            
-            userPhoto[kImageTableKeyColumn] = uuidString;
-            userPhoto[kImageTableDataColumn] = imageFile;
-            //[userPhoto saveInBackground];
-            dispatch_group_enter(group);
-            [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (!succeeded) {
-                    // TODO: delete all the photos which has been uploaded in this request.
-                    is_everyone_succeeded = false;
-                }
-                
-                [imageKeys addObject:uuidString];
-                dispatch_group_leave(group);
-            }];
-        }
-
-        dispatch_async(dispatch_get_main_queue(), ^{ // 6
-            if (is_everyone_succeeded) {
-                NSLog(@"Successfully add photo");
-                for (NSString* imageKey in imageKeys) {
-                    [*responseBuilder addImageKey:imageKey];
-                }
-                
-                _completionHandler(true, @"success");
-            } else {
-                NSLog(@"Failed to add photo");
-                _completionHandler(false, @"failed to add photo");
-            }
-        });
-    });
-}*/
+/* This parallel implementation doesn't work
+ - (void) addImages: (SRXProtoAddImagesRequest*) request
+ withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
+ completion: (ApiCompletion) compblock {
+ 
+ dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+ __block bool is_everyone_succeeded = true;
+ __block NSMutableArray *imageKeys = [[NSMutableArray alloc] init];
+ dispatch_group_t group = dispatch_group_create();
+ for (SRXProtoImage* image in [request image]) {
+ PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
+ 
+ PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
+ NSString *uuidString = [[NSUUID UUID] UUIDString];
+ 
+ userPhoto[kImageTableKeyColumn] = uuidString;
+ userPhoto[kImageTableDataColumn] = imageFile;
+ //[userPhoto saveInBackground];
+ dispatch_group_enter(group);
+ [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+ if (!succeeded) {
+ // TODO: delete all the photos which has been uploaded in this request.
+ is_everyone_succeeded = false;
+ }
+ 
+ [imageKeys addObject:uuidString];
+ dispatch_group_leave(group);
+ }];
+ }
+ 
+ dispatch_async(dispatch_get_main_queue(), ^{ // 6
+ if (is_everyone_succeeded) {
+ NSLog(@"Successfully add photo");
+ for (NSString* imageKey in imageKeys) {
+ [*responseBuilder addImageKey:imageKey];
+ }
+ 
+ _completionHandler(true, @"success");
+ } else {
+ NSLog(@"Failed to add photo");
+ _completionHandler(false, @"failed to add photo");
+ }
+ });
+ });
+ }*/
 
 - (void) addImages: (SRXProtoAddImagesRequest*) request
       withResponse: (SRXProtoAddImagesResponseBuilder**) responseBuilder
@@ -237,52 +260,34 @@ ApiCompletion _completionHandler;
     _completionHandler = [compblock copy];
     NSMutableArray* imageKeys = [[NSMutableArray alloc] init];
     
-        for (SRXProtoImage* image in [request image]) {
-            PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
-            
-            PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
-            NSString *uuidString = [[NSUUID UUID] UUIDString];
-            
-            userPhoto[kImageTableKeyColumn] = uuidString;
-            userPhoto[kImageTableDataColumn] = imageFile;
-            
-            /*
-             __block BOOL successful;
-             __block NSString* imageKey;
-             
-            dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-             
-            [userPhoto saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    imageKey = uuidString;
-                }
-                successful = succeeded;
-                dispatch_semaphore_signal(semaphore);
-            }];
-            
-            dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
-            */
-            
-            
-            // TODO(liefuliu): change the save function into background.
-            bool successful = [userPhoto save];
-            
-            if (!successful) {
-                NSLog(@"Failed to add photo");
-                _completionHandler(false, @"failed to add photo");
-            } else {
-                NSLog(@"Saved image key: %@", uuidString);
-                [imageKeys addObject:uuidString];
-            }
+    for (SRXProtoImage* image in [request image]) {
+        PFFile *imageFile = [PFFile fileWithName:@"image.png" data:[image data]];
+        
+        PFObject *userPhoto = [PFObject objectWithClassName:kImageTable];
+        NSString *uuidString = [[NSUUID UUID] UUIDString];
+        
+        userPhoto[kImageTableKeyColumn] = uuidString;
+        userPhoto[kImageTableDataColumn] = imageFile;
+        
+        // TODO(liefuliu): change the save function into background.
+        bool successful = [userPhoto save];
+        
+        if (!successful) {
+            NSLog(@"Failed to add photo");
+            _completionHandler(false, @"failed to add photo");
+        } else {
+            NSLog(@"Saved image key: %@", uuidString);
+            [imageKeys addObject:uuidString];
         }
-
+    }
     
-   NSLog(@"Successfully add photo");
-   for (NSString* imageKey in imageKeys) {
-       [*responseBuilder addImageKey:imageKey];
-   }
-                
-   _completionHandler(true, @"success");
+    
+    NSLog(@"Successfully add photo");
+    for (NSString* imageKey in imageKeys) {
+        [*responseBuilder addImageKey:imageKey];
+    }
+    
+    _completionHandler(true, @"success");
 }
 
 
@@ -291,9 +296,7 @@ ApiCompletion _completionHandler;
       withResponse: (SRXProtoGetImagesResponseBuilder**) responseBuilder
         completion: (ApiCompletion) compblock {
     _completionHandler = [compblock copy];
-
     
-    //NSMutableArray *imageKeys = [[NSMutableArray alloc] init];
     if ([[request imageKey] count] == 0) {
         _completionHandler(true, @"");
         return;
@@ -307,11 +310,10 @@ ApiCompletion _completionHandler;
     
     NSPredicate *pred = [NSPredicate predicateWithFormat: @"%@ IN %@", kImageTableKeyColumn, imageKeyGroupWithCurlyBrace];
     
-    //PFQuery *query = [PFQuery queryWithClassName:kImageTable predicate:pred];
     PFQuery *query = [[PFQuery queryWithClassName:kImageTable] whereKey:kImageTableKeyColumn containedIn:[request imageKey]];
     
     __block SRXProtoGetImagesResponseBuilder* reponseBuilderRef = *responseBuilder;
-
+    
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *imageKeyObjects, NSError *error){
         if (error) {
@@ -319,15 +321,14 @@ ApiCompletion _completionHandler;
         } else {
             NSLog(@"Successfully fetched image reference. ");
             for (PFObject *imageKeyObject in imageKeyObjects) {
-                //PFObject *post = comment[@"post"];
                 PFFile *imageFile = imageKeyObject[kImageTableDataColumn];
                 /*[imageFile getData:^(NSData *imageData, NSError *error) {
-                    if (!error) {
-                        [*responseBuilder addImageData:imageData];
-                    } else {
-                        _completionHandler(false, @"failed to fetch image");
-                    }
-                }];*/
+                 if (!error) {
+                 [*responseBuilder addImageData:imageData];
+                 } else {
+                 _completionHandler(false, @"failed to fetch image");
+                 }
+                 }];*/
                 
                 NSData* imageData = [imageFile getData];
                 if (imageData == nil) {
@@ -341,6 +342,97 @@ ApiCompletion _completionHandler;
             _completionHandler(true, @"");
         }
     }];
+}
+
+- (void) getOwnedSchool: (SRXProtoGetOwnedSchoolRequest*) request
+           withResponse: (SRXProtoGetOwnedSchoolResponseBuilder**) responseBuilder
+             completion: (ApiCompletion) compblock {
+    
+    
+    _completionHandler = [compblock copy];
+    
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"current user: %@", user);
+    if (user == nil) {
+        _completionHandler(false, @"Fail: requesting user is different from the school owner.");
+        return;
+    }
+    
+    PFQuery *query = [PFQuery queryWithClassName:kSchoolTable];
+    [query whereKey:kSchoolTableUserKey equalTo:[user username]];
+    
+    __block SRXProtoGetOwnedSchoolResponseBuilder* reponseBuilderRef = *responseBuilder;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            NSLog(@"Successfully retrieved %d schools.", objects.count);
+            
+            for (PFObject *object in objects) {
+                SRXDataSchoolInfo* schoolInfo = [SRXDataSchoolInfo parseFromData: object[kSchoolTableSchoolInfoKey]];
+                NSString* schoolId = (NSString*) object[@"objectId"];
+                
+                SRXDataSchool* school = [[[[SRXDataSchool builder] setId:schoolId] setInfo:schoolInfo] build];
+                                                        
+                                                        
+                [reponseBuilderRef addSchool:school];
+            }
+            _completionHandler(true, nil);
+        } else {
+            // Log details of the failure
+            _completionHandler(false, [error userInfo]);
+        }
+    }];
+}
+
+- (void) createSchool: (SRXProtoCreateSchoolRequest*) request
+         withResponse: (SRXProtoCreateSchoolResponseBuilder**) responseBuilder
+           completion: (ApiCompletion) compblock {
+    _completionHandler = [compblock copy];
+    
+    PFUser *user = [PFUser currentUser];
+    NSLog(@"current user: %@", user);
+    if (user == nil) {
+        _completionHandler(false, @"Fail: requesting user is different from the school owner.");
+        return;
+    }
+    if (request.schoolInfo == nil) {
+        _completionHandler(false, @"school_info field cannot be nil");
+        return;
+    }
+    
+    if (request.schoolInfo.description.length == 0) {
+        _completionHandler(false, @"School description cannot be empty");
+        return;
+    }
+    if (request.schoolInfo.name.length == 0) {
+        _completionHandler(false, @"School name cannot be empty");
+        return;
+    }
+    
+    // If the data is valid, we will need to
+    // Store the school info in school table, and retrieve an object Id.
+    // Save the PFUser Id and location.
+    PFObject *gameScore = [PFObject objectWithClassName:kSchoolTable];
+    gameScore[kSchoolTableSchoolInfoKey] = [request.schoolInfo data];
+    
+    // TODO: We might need support multi-modal user name.
+    gameScore[kClassTableUserKey] = [user username];
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:request.schoolInfo.location.latitude
+                                               longitude:request.schoolInfo.location.longtitude];
+    gameScore[kClassTableLocationKey] = point;
+    
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // The object has been saved.
+            _completionHandler(true, @"success");
+            // Parse doesn't support transaction and thus we will not implement roll back here.
+        } else {
+            // There was a problem, check error.description
+            _completionHandler(true, @"Failed to upload data to Parse");
+        }
+    }];
+    
+  
 }
 
 @end

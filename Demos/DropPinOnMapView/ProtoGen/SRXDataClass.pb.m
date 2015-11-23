@@ -398,6 +398,7 @@ static SRXDataClassTime* defaultSRXDataClassTimeInstance = nil;
 @property SInt32 tuitionFeeInYuan;
 @property (strong) NSString* summary;
 @property (strong) NSMutableArray * imageRefArray;
+@property (strong) NSString* schoolId;
 @end
 
 @implementation SRXDataClassInfo
@@ -453,6 +454,13 @@ static SRXDataClassTime* defaultSRXDataClassTimeInstance = nil;
 @synthesize summary;
 @synthesize imageRefArray;
 @dynamic imageRef;
+- (BOOL) hasSchoolId {
+  return !!hasSchoolId_;
+}
+- (void) setHasSchoolId:(BOOL) _value_ {
+  hasSchoolId_ = !!_value_;
+}
+@synthesize schoolId;
 - (instancetype) init {
   if ((self = [super init])) {
     self.teacherName = @"";
@@ -462,6 +470,7 @@ static SRXDataClassTime* defaultSRXDataClassTimeInstance = nil;
     self.numberOfClasses = 0;
     self.tuitionFeeInYuan = 0;
     self.summary = @"";
+    self.schoolId = @"";
   }
   return self;
 }
@@ -511,6 +520,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     [output writeMessage:8 value:element];
   }];
+  if (self.hasSchoolId) {
+    [output writeString:9 value:self.schoolId];
+  }
   [self.unknownFields writeToCodedOutputStream:output];
 }
 - (SInt32) serializedSize {
@@ -544,6 +556,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     size_ += computeMessageSize(8, element);
   }];
+  if (self.hasSchoolId) {
+    size_ += computeStringSize(9, self.schoolId);
+  }
   size_ += self.unknownFields.serializedSize;
   memoizedSerializedSize = size_;
   return size_;
@@ -612,6 +627,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
                      withIndent:[NSString stringWithFormat:@"%@  ", indent]];
     [output appendFormat:@"%@}\n", indent];
   }];
+  if (self.hasSchoolId) {
+    [output appendFormat:@"%@%@: %@\n", indent, @"schoolId", self.schoolId];
+  }
   [self.unknownFields writeDescriptionTo:output withIndent:indent];
 }
 - (void) storeInDictionary:(NSMutableDictionary *)dictionary {
@@ -645,6 +663,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
     [element storeInDictionary:elementDictionary];
     [dictionary setObject:[NSDictionary dictionaryWithDictionary:elementDictionary] forKey:@"imageRef"];
   }
+  if (self.hasSchoolId) {
+    [dictionary setObject: self.schoolId forKey: @"schoolId"];
+  }
   [self.unknownFields storeInDictionary:dictionary];
 }
 - (BOOL) isEqual:(id)other {
@@ -671,6 +692,8 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
       self.hasSummary == otherMessage.hasSummary &&
       (!self.hasSummary || [self.summary isEqual:otherMessage.summary]) &&
       [self.imageRefArray isEqualToArray:otherMessage.imageRefArray] &&
+      self.hasSchoolId == otherMessage.hasSchoolId &&
+      (!self.hasSchoolId || [self.schoolId isEqual:otherMessage.schoolId]) &&
       (self.unknownFields == otherMessage.unknownFields || (self.unknownFields != nil && [self.unknownFields isEqual:otherMessage.unknownFields]));
 }
 - (NSUInteger) hash {
@@ -699,6 +722,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
   [self.imageRefArray enumerateObjectsUsingBlock:^(SRXDataImageRef *element, NSUInteger idx, BOOL *stop) {
     hashCode = hashCode * 31 + [element hash];
   }];
+  if (self.hasSchoolId) {
+    hashCode = hashCode * 31 + [self.schoolId hash];
+  }
   hashCode = hashCode * 31 + [self.unknownFields hash];
   return hashCode;
 }
@@ -770,6 +796,9 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
       [resultSrxdataClassInfo.imageRefArray addObjectsFromArray:other.imageRefArray];
     }
   }
+  if (other.hasSchoolId) {
+    [self setSchoolId:other.schoolId];
+  }
   [self mergeUnknownFields:other.unknownFields];
   return self;
 }
@@ -838,6 +867,10 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
         SRXDataImageRefBuilder* subBuilder = [SRXDataImageRef builder];
         [input readMessage:subBuilder extensionRegistry:extensionRegistry];
         [self addImageRef:[subBuilder buildPartial]];
+        break;
+      }
+      case 74: {
+        [self setSchoolId:[input readString]];
         break;
       }
     }
@@ -1002,6 +1035,22 @@ static SRXDataClassInfo* defaultSRXDataClassInfoInstance = nil;
 }
 - (SRXDataClassInfoBuilder *)clearImageRef {
   resultSrxdataClassInfo.imageRefArray = nil;
+  return self;
+}
+- (BOOL) hasSchoolId {
+  return resultSrxdataClassInfo.hasSchoolId;
+}
+- (NSString*) schoolId {
+  return resultSrxdataClassInfo.schoolId;
+}
+- (SRXDataClassInfoBuilder*) setSchoolId:(NSString*) value {
+  resultSrxdataClassInfo.hasSchoolId = YES;
+  resultSrxdataClassInfo.schoolId = value;
+  return self;
+}
+- (SRXDataClassInfoBuilder*) clearSchoolId {
+  resultSrxdataClassInfo.hasSchoolId = NO;
+  resultSrxdataClassInfo.schoolId = @"";
   return self;
 }
 @end

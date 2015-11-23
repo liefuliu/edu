@@ -1,0 +1,9 @@
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "Dyv-Re-Dd7"; */
+"Dyv-Re-Dd7.normalTitle" = "确定";
+
+/* Class = "UILabel"; text = "Input school description"; ObjectID = "bny-Mn-osj"; */
+"bny-Mn-osj.text" = "请输入学校简介";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "fis-sE-sUo"; */
+"fis-sE-sUo.normalTitle" = "取消";
