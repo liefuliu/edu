@@ -120,11 +120,11 @@
     }
     
     // start recording
-    [recorder recordForDuration:(NSTimeInterval) 2];
+    [recorder recordForDuration:(NSTimeInterval) 20];
     
     lblStatusMsg.text = @"Recording...";
     progressView.progress = 0.0;
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.2 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
+    timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handleTimer) userInfo:nil repeats:YES];
 }
 
 - (IBAction) stopRecording
@@ -166,6 +166,7 @@
     {
         AudioServicesDisposeSystemSoundID(soundID);
     }
+    
     
     //Get a URL for the sound file
     NSURL *filePath = [NSURL fileURLWithPath:recorderFilePath isDirectory:NO];

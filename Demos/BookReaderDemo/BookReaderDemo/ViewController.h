@@ -8,12 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
+@interface ViewController : UIViewController<AVAudioRecorderDelegate> {
+    
+    SystemSoundID soundID;
+
+}
 
 @property (weak, nonatomic) IBOutlet UIButton *btnPlay;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnNext;
 
 @property (weak, nonatomic) IBOutlet UIButton *btnRecord;
+
 @end
 

@@ -17,6 +17,23 @@
 		6DF9F1DB1C0AAEF000359200 /* VoiceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DA1C0AAEF000359200 /* VoiceRecordViewController.m */; };
 		6DF9F1DD1C0AAF0100359200 /* VoiceRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DC1C0AAF0100359200 /* VoiceRecordViewController.xib */; };
 		6DF9F1E01C0AB3E600359200 /* RecordPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DF1C0AB3E600359200 /* RecordPlayVC.m */; };
+		6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E21C0B82B200359200 /* RecordVC.m */; };
+		6DF9F1F11C0B975900359200 /* MySound.0.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E41C0B975900359200 /* MySound.0.caf */; };
+		6DF9F1F21C0B975900359200 /* MySound.1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E51C0B975900359200 /* MySound.1.caf */; };
+		6DF9F1F31C0B975900359200 /* MySound.2.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E61C0B975900359200 /* MySound.2.caf */; };
+		6DF9F1F41C0B975900359200 /* MySound.3.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E71C0B975900359200 /* MySound.3.caf */; };
+		6DF9F1F51C0B975900359200 /* MySound.4.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E81C0B975900359200 /* MySound.4.caf */; };
+		6DF9F1F61C0B975900359200 /* MySound.5.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E91C0B975900359200 /* MySound.5.caf */; };
+		6DF9F1F71C0B975900359200 /* MySound.6.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1EA1C0B975900359200 /* MySound.6.caf */; };
+		6DF9F1F81C0B975900359200 /* MySound.7.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1EB1C0B975900359200 /* MySound.7.caf */; };
+		6DF9F1F91C0B975900359200 /* MySound.8.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1EC1C0B975900359200 /* MySound.8.caf */; };
+		6DF9F1FA1C0B975900359200 /* MySound.9.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1ED1C0B975900359200 /* MySound.9.caf */; };
+		6DF9F1FB1C0B975900359200 /* MySound.10.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1EE1C0B975900359200 /* MySound.10.caf */; };
+		6DF9F1FC1C0B975900359200 /* MySound.11.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1EF1C0B975900359200 /* MySound.11.caf */; };
+		6DF9F1FD1C0B975900359200 /* MySound.12.caf in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1F01C0B975900359200 /* MySound.12.caf */; };
+		6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */; };
+		6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1FF1C0BE63700359200 /* icon-3-120x120.png */; };
+		6DF9F2031C0BE7AD00359200 /* hqdqz.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2021C0BE7AD00359200 /* hqdqz.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +65,24 @@
 		6DF9F1DC1C0AAF0100359200 /* VoiceRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoiceRecordViewController.xib; sourceTree = "<group>"; };
 		6DF9F1DE1C0AB3E600359200 /* RecordPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordPlayVC.h; path = ../RecordPlayVC.h; sourceTree = "<group>"; };
 		6DF9F1DF1C0AB3E600359200 /* RecordPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordPlayVC.m; path = ../RecordPlayVC.m; sourceTree = "<group>"; };
+		6DF9F1E11C0B82B200359200 /* RecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordVC.h; sourceTree = "<group>"; };
+		6DF9F1E21C0B82B200359200 /* RecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordVC.m; sourceTree = "<group>"; };
+		6DF9F1E41C0B975900359200 /* MySound.0.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.0.caf; sourceTree = "<group>"; };
+		6DF9F1E51C0B975900359200 /* MySound.1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.1.caf; sourceTree = "<group>"; };
+		6DF9F1E61C0B975900359200 /* MySound.2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.2.caf; sourceTree = "<group>"; };
+		6DF9F1E71C0B975900359200 /* MySound.3.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.3.caf; sourceTree = "<group>"; };
+		6DF9F1E81C0B975900359200 /* MySound.4.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.4.caf; sourceTree = "<group>"; };
+		6DF9F1E91C0B975900359200 /* MySound.5.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.5.caf; sourceTree = "<group>"; };
+		6DF9F1EA1C0B975900359200 /* MySound.6.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.6.caf; sourceTree = "<group>"; };
+		6DF9F1EB1C0B975900359200 /* MySound.7.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.7.caf; sourceTree = "<group>"; };
+		6DF9F1EC1C0B975900359200 /* MySound.8.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.8.caf; sourceTree = "<group>"; };
+		6DF9F1ED1C0B975900359200 /* MySound.9.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.9.caf; sourceTree = "<group>"; };
+		6DF9F1EE1C0B975900359200 /* MySound.10.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.10.caf; sourceTree = "<group>"; };
+		6DF9F1EF1C0B975900359200 /* MySound.11.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.11.caf; sourceTree = "<group>"; };
+		6DF9F1F01C0B975900359200 /* MySound.12.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MySound.12.caf; sourceTree = "<group>"; };
+		6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = congfucius_study.jpg; sourceTree = "<group>"; };
+		6DF9F1FF1C0BE63700359200 /* icon-3-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-3-120x120.png"; sourceTree = "<group>"; };
+		6DF9F2021C0BE7AD00359200 /* hqdqz.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hqdqz.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +106,9 @@
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
+				6DF9F2021C0BE7AD00359200 /* hqdqz.jpeg */,
+				6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */,
+				6DF9F1FF1C0BE63700359200 /* icon-3-120x120.png */,
 				6DF9F1B21C0A390400359200 /* BookReaderDemo */,
 				6DF9F1CC1C0A390400359200 /* BookReaderDemoTests */,
 				6DF9F1B11C0A390400359200 /* Products */,
@@ -100,6 +138,8 @@
 				6DF9F1BD1C0A390400359200 /* Main.storyboard */,
 				6DF9F1C01C0A390400359200 /* Images.xcassets */,
 				6DF9F1DC1C0AAF0100359200 /* VoiceRecordViewController.xib */,
+				6DF9F1E11C0B82B200359200 /* RecordVC.h */,
+				6DF9F1E21C0B82B200359200 /* RecordVC.m */,
 				6DF9F1C21C0A390400359200 /* LaunchScreen.xib */,
 				6DF9F1B31C0A390400359200 /* Supporting Files */,
 			);
@@ -109,6 +149,19 @@
 		6DF9F1B31C0A390400359200 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6DF9F1E41C0B975900359200 /* MySound.0.caf */,
+				6DF9F1E51C0B975900359200 /* MySound.1.caf */,
+				6DF9F1E61C0B975900359200 /* MySound.2.caf */,
+				6DF9F1E71C0B975900359200 /* MySound.3.caf */,
+				6DF9F1E81C0B975900359200 /* MySound.4.caf */,
+				6DF9F1E91C0B975900359200 /* MySound.5.caf */,
+				6DF9F1EA1C0B975900359200 /* MySound.6.caf */,
+				6DF9F1EB1C0B975900359200 /* MySound.7.caf */,
+				6DF9F1EC1C0B975900359200 /* MySound.8.caf */,
+				6DF9F1ED1C0B975900359200 /* MySound.9.caf */,
+				6DF9F1EE1C0B975900359200 /* MySound.10.caf */,
+				6DF9F1EF1C0B975900359200 /* MySound.11.caf */,
+				6DF9F1F01C0B975900359200 /* MySound.12.caf */,
 				6DF9F1B41C0A390400359200 /* Info.plist */,
 				6DF9F1B51C0A390400359200 /* main.m */,
 			);
@@ -212,10 +265,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DF9F1F31C0B975900359200 /* MySound.2.caf in Resources */,
+				6DF9F1F61C0B975900359200 /* MySound.5.caf in Resources */,
 				6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */,
+				6DF9F1F11C0B975900359200 /* MySound.0.caf in Resources */,
+				6DF9F1FB1C0B975900359200 /* MySound.10.caf in Resources */,
+				6DF9F1FC1C0B975900359200 /* MySound.11.caf in Resources */,
+				6DF9F2031C0BE7AD00359200 /* hqdqz.jpeg in Resources */,
+				6DF9F1F71C0B975900359200 /* MySound.6.caf in Resources */,
+				6DF9F1F91C0B975900359200 /* MySound.8.caf in Resources */,
+				6DF9F1F81C0B975900359200 /* MySound.7.caf in Resources */,
+				6DF9F1FA1C0B975900359200 /* MySound.9.caf in Resources */,
 				6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */,
+				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
 				6DF9F1DD1C0AAF0100359200 /* VoiceRecordViewController.xib in Resources */,
+				6DF9F1F51C0B975900359200 /* MySound.4.caf in Resources */,
+				6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */,
+				6DF9F1F41C0B975900359200 /* MySound.3.caf in Resources */,
 				6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */,
+				6DF9F1FD1C0B975900359200 /* MySound.12.caf in Resources */,
+				6DF9F1F21C0B975900359200 /* MySound.1.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DF9F1BC1C0A390400359200 /* ViewController.m in Sources */,
+				6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */,
 				6DF9F1E01C0AB3E600359200 /* RecordPlayVC.m in Sources */,
 				6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */,
 				6DF9F1DB1C0AAEF000359200 /* VoiceRecordViewController.m in Sources */,
@@ -364,6 +434,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookReaderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -374,6 +445,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = BookReaderDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
