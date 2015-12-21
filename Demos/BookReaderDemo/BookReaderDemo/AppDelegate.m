@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 
+#import <Parse/Parse.h>
+
 @interface AppDelegate ()
 
 @end
@@ -18,6 +20,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     // Add the view controller's view to the window and display.
+    [Parse enableLocalDatastore];
+    
+    // Initialize Parse.
+    [Parse setApplicationId:@"28Nxhuytj9iQaejhfR6oMkESwJ6OBksofut1Claa"
+                  clientKey:@"t6AN1ShCy7Um2uJQnb7Ds1ZwIHnUyJ1cw1BmhzW8"];
+    
+    
     [window addSubview:viewController.view];
     [window makeKeyAndVisible];
     

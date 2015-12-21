@@ -12,6 +12,7 @@
 #import "SRXImageViewController.h"
 #import "SRXApiFactory.h"
 #import "SRXSingleSelectionTableViewController.h"
+#import "SRXSingleTextInputVC.h"
 
 #import "SRXDataClass.pb.h"
 #import "SRXClassUtil.h"
@@ -27,6 +28,25 @@
 @interface SRXTeacherOpenClassViewController () <CLLocationManagerDelegate, SRXSingleSelectionTableViewControllerDelegate> {
     CLLocationManager *locationmanager;
 }
+
+// 下面的成员为课程的各项信息
+// 科目
+@property (nonatomic) SRXDataClassTypeEnumSRXDataClassType selectedClassType;
+
+// 教师姓名
+// 初始值: nil
+@property (nonatomic) NSString* teacherName;
+
+// 课程容量
+// 初始值: -1
+@property (nonatomic) int capacity;
+
+// 授课时间
+// @property (nonatomic) SRXDataTimeSeries* classTime;
+
+// 用费
+// @property (nonatomic) SRXDataClassFee* classFee;
+
 
 
 // TODO(liefuliu): refactor below 3 property into an image container.
@@ -44,7 +64,7 @@
 // To be enabled: @property (nonatomic) SRXDataClassPrice* classPrice;
 @property (nonatomic) SRXDataLocation* classLocation;
 
-@property (nonatomic) SRXDataClassTypeEnumSRXDataClassType selectedClassType;
+
 
 // All classes type which allow user to choose in SRXSingleSelectionViewController.
 // All elements are in type of SRXDataClassTypeEnumSRXDataClassType.
@@ -65,14 +85,19 @@
 #pragma constants
 
 const int kTopicRowIndex = 0;
-const int kLocationRowIndex = 1;
-const int kPriceRowIndex = 2;
+const int kTeacherRowIndex = 1;
+const int kCapacityRowIndex = 2;
 const int kTimeRowIndex = 3;
+const int kPriceRowIndex = 4;
+
+const int kTotalRows = 5;
+
 
 NSString* const kTopicRowKey = @"Topic";
-NSString* const kLocationRowKey = @"Location";
-NSString* const kPriceRowKey = @"Price";
+NSString* const kTeacherRowKey = @"Teacher";
+NSString* const kCapacityRowKey = @"Capacity";
 NSString* const kTimeRowKey = @"Time";
+NSString* const kPriceRowKey = @"Price";
 NSString* const plusSignFileName = @"plus_sign.png";
 
 - (void)viewDidLoad {
@@ -111,7 +136,7 @@ NSString* const plusSignFileName = @"plus_sign.png";
     self.imagesUploadedToServer = NO;
     
     // Initialize the keys of rows.
-    self.rowKeys = @[kTopicRowKey, kLocationRowKey, kPriceRowKey, kTimeRowKey];
+    self.rowKeys = @[kTopicRowKey, kTeacherRowKey, kCapacityRowKey, kTimeRowKey, kPriceRowKey];
     self.classDescriptionDictionary = [SRXClassUtil getClassDescriptiveDictionary];
     
     [self.classDescriptionTextField becomeFirstResponder];
@@ -205,6 +230,16 @@ NSString* const plusSignFileName = @"plus_sign.png";
             NSString* descriptiveText = [self.classDescriptionDictionary objectForKey:[NSNumber numberWithInt:self.selectedClassType]];
             cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, descriptiveText];
         }
+    } else if (indexPath.row == kTeacherRowIndex) {
+        if (self.teacherName != nil) {
+            NSString* descriptiveText = self.teacherName;
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, descriptiveText];
+        }
+    } else if (indexPath.row == kCapacityRowIndex) {
+        // 缺省值为 -1 .
+        if (self.capacity > 0) {
+            cell.textLabel.text = [NSString stringWithFormat:@"%@ %@", cell.textLabel.text, self.capacity];
+        }
     } else {
         cell.textLabel.textColor = [UIColor grayColor];
     }
@@ -221,12 +256,21 @@ NSString* const plusSignFileName = @"plus_sign.png";
              SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:self.classTypeStringsAllowToSelect];
              selectionViewController.delegate = self;
              [self presentCharleeneModally:selectionViewController transitionMode:KSModalTransitionModeFromBottom];
+         } else if (indexPath.row == kTeacherRowIndex) {
+             SRXSingleTextInputVC* textInputVC = [[SRXSingleTextInputVC alloc] initWithTitle: NSLocalizedString(@"Please input teacher's name", nil)];
+             textInputVC.delegate = self;
+             [self presentCharleeneModally:textInputVC transitionMode:KSModalTransitionModeFromBottom];
+             
+         } else if (indexPath.row == kCapacityRowIndex) {
+             SRXSingleSelectionTableViewController* selectionViewController = [[SRXSingleSelectionTableViewController alloc] initWithItems:
+                                                                               self.capacityOptionsToSelect];
+             selectionViewController.delegate = self;
+             [self presentCharleeneModally:selectionViewController transitionMode:KSModalTransitionModeFromBottom];
          } else {
              // TODO(fengyi): Handle the touch event on "学费" and "时间"
              // Currently we only allow the teacher to select "科目"， we need to eanble
              // the similar logic to allow teacher to select "学费" and "时间".
-             
-             if (indexPath.row == 2 || indexPath.row == 3) {
+             if (indexPath.row == kTimeRowIndex || indexPath.row == kPriceRowIndex) {
                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"易哥，你从这里做起", nil)
                                                              message:@"创建两个view controlller, 一个设置时间，一个设置价格"
                                                             delegate:nil

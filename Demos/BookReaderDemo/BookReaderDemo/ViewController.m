@@ -7,6 +7,8 @@
 
 #import "ViewController.h"
 
+#import <Parse/Parse.h>
+
 @import AVFoundation;
 
 
@@ -32,6 +34,10 @@ NSMutableDictionary* recordSetting;
     [self.btnRecord setHidden:YES];
     [self.btnNext setHidden:YES];
     _totalPage = 13;
+    
+    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+    testObject[@"foo"] = @"bar";
+    [testObject saveInBackground];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -64,8 +70,8 @@ NSMutableDictionary* recordSetting;
         [self.btnNext setTitle:@"Last Page" forState:UIControlStateDisabled];
     }
     
-    NSString *soundFilePath = [NSString stringWithFormat:@"%@/MySound.%d.caf",
-                              //DOCUMENTS_FOLDER,
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@/000%d.mp3",
+                              //[NSString stringWithFormat:@"%@/MySound.%d.caf",
                               [[NSBundle mainBundle] resourcePath],
                                pageIndex];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
@@ -81,7 +87,7 @@ NSMutableDictionary* recordSetting;
 
 - (void) legacyplayPageAtIndex:(int) pageIndex {
     NSString*
-        recorderFilePath = [NSString stringWithFormat:@"%@/MySound.%d.caf",
+        recorderFilePath = [NSString stringWithFormat:@"%@/000%d.mp3",
                             DOCUMENTS_FOLDER,
                             pageIndex];
     

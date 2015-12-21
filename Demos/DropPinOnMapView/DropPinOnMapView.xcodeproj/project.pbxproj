@@ -113,6 +113,8 @@
 		6DE4B5EE1BEFD7DF0056C998 /* SRXEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5ED1BEFD7DF0056C998 /* SRXEnvironment.m */; };
 		6DE4B5F11BF00C0C0056C998 /* SRXStartVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE4B5F01BF00C0C0056C998 /* SRXStartVC.m */; };
 		6DE899A31BC04E1500964AD8 /* SRXStudentClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */; };
+		6DF9F21D1C1E528700359200 /* SRXSingleTextInputVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F21B1C1E528700359200 /* SRXSingleTextInputVC.m */; };
+		6DF9F21E1C1E528700359200 /* SRXSingleTextInputVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F21C1C1E528700359200 /* SRXSingleTextInputVC.xib */; };
 		6DFF41541BDCAA36003DACF5 /* SRXStudentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF41531BDCAA36003DACF5 /* SRXStudentListViewController.m */; };
 		8D8141B3AA500668C9BF0C78 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
 		964E3EE19B6597FB03DB9DAE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBAE63C5220B30CD95D2D17A /* libPods.a */; };
@@ -305,6 +307,9 @@
 		6DE4B5F01BF00C0C0056C998 /* SRXStartVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStartVC.m; sourceTree = "<group>"; };
 		6DE899A11BC04E1500964AD8 /* SRXStudentClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentClassViewController.h; sourceTree = "<group>"; };
 		6DE899A21BC04E1500964AD8 /* SRXStudentClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentClassViewController.m; sourceTree = "<group>"; };
+		6DF9F21A1C1E528700359200 /* SRXSingleTextInputVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXSingleTextInputVC.h; sourceTree = "<group>"; };
+		6DF9F21B1C1E528700359200 /* SRXSingleTextInputVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXSingleTextInputVC.m; sourceTree = "<group>"; };
+		6DF9F21C1C1E528700359200 /* SRXSingleTextInputVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SRXSingleTextInputVC.xib; sourceTree = "<group>"; };
 		6DFF41521BDCAA36003DACF5 /* SRXStudentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SRXStudentListViewController.h; sourceTree = "<group>"; };
 		6DFF41531BDCAA36003DACF5 /* SRXStudentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SRXStudentListViewController.m; sourceTree = "<group>"; };
 		95809A27132292AAFBC7B6C0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -693,6 +698,9 @@
 				6D650AB51BD2C120008B5FA1 /* SRXImageScrollViewController.m */,
 				6DE4B5EF1BF00C0C0056C998 /* SRXStartVC.h */,
 				6DE4B5F01BF00C0C0056C998 /* SRXStartVC.m */,
+				6DF9F21A1C1E528700359200 /* SRXSingleTextInputVC.h */,
+				6DF9F21B1C1E528700359200 /* SRXSingleTextInputVC.m */,
+				6DF9F21C1C1E528700359200 /* SRXSingleTextInputVC.xib */,
 			);
 			name = CommonViews;
 			sourceTree = "<group>";
@@ -854,6 +862,7 @@
 				6DDDEFE71BF8002E00D50CE2 /* T02SchoolLocationPicker.xib in Resources */,
 				6DE4B5EB1BEEC6140056C998 /* MapTableCell.xib in Resources */,
 				6D18F8051BA64890004A9F66 /* Teacher.Storyboard in Resources */,
+				6DF9F21E1C1E528700359200 /* SRXSingleTextInputVC.xib in Resources */,
 				6DDE28671BA4A2FC00A855E5 /* SRXImageViewController.xib in Resources */,
 				6DDDEFCE1BF060C300D50CE2 /* start.png in Resources */,
 				6DDDEFD41BF7BA3E00D50CE2 /* T0CreateSchoolVC.xib in Resources */,
@@ -1001,6 +1010,7 @@
 				6D650B071BD427DC008B5FA1 /* SQScrollViewController.m in Sources */,
 				6D9AA66F1BB89CB300B66099 /* SRXSingleSelectionTableViewController.m in Sources */,
 				6DDE27F21B8ED2EC00A855E5 /* SRXSignUpDetailViewController.m in Sources */,
+				6DF9F21D1C1E528700359200 /* SRXSingleTextInputVC.m in Sources */,
 				6DDE27F71B90ADED00A855E5 /* SRXLogInViewController.m in Sources */,
 				6D650B061BD427DC008B5FA1 /* MyCusViewController.m in Sources */,
 				6D08612E1B6EE52200BC5910 /* main.m in Sources */,

@@ -1,0 +1,22 @@
+2 kind of users:
+
+- Anonymous 
+- Contributor
+  -- Create audio
+  -- Add a new book
+- Administrator
+  -- Delete an audio
+  -- Delete a book
+
+User Table:
+
+<User ID>, <Security Level>, <User Attribute>
+
+Book Table;
+
+<Book ID>, <Book Attributes>, <Created by>
+
+
+
+
+ 

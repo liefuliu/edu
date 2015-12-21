@@ -170,12 +170,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "-itemDidSelectAt:withContent:"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
+            landmarkName = "-tableView:didSelectRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -244,12 +244,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "479"
-            endingLineNumber = "479"
-            landmarkName = "-addNewClass:"
+            startingLineNumber = "513"
+            endingLineNumber = "513"
+            landmarkName = "-addNewClassWithImageKeys"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "562"
-            endingLineNumber = "562"
+            startingLineNumber = "596"
+            endingLineNumber = "596"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "569"
-            endingLineNumber = "569"
+            startingLineNumber = "603"
+            endingLineNumber = "603"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "568"
-            endingLineNumber = "568"
+            startingLineNumber = "602"
+            endingLineNumber = "602"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -324,12 +324,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "519"
-            endingLineNumber = "519"
-            landmarkName = "-uploadImagesInBackground"
+            startingLineNumber = "553"
+            endingLineNumber = "553"
+            landmarkName = "-showAlert:withDetail:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -340,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "542"
-            endingLineNumber = "542"
+            startingLineNumber = "576"
+            endingLineNumber = "576"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
             <Locations>
@@ -388,11 +388,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "539"
-            endingLineNumber = "539"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,12 +420,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "521"
-            endingLineNumber = "521"
-            landmarkName = "-uploadImagesInBackground"
+            startingLineNumber = "555"
+            endingLineNumber = "555"
+            landmarkName = "-showAlert:withDetail:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -468,11 +468,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "-collectionView:numberOfItemsInSection:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SRXTeacherOpenClassViewController.m"
+            timestampString = "471748190.286415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "-collectionView:cellForItemAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,28 +500,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "274"
-            endingLineNumber = "274"
-            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "-collectionView:numberOfItemsInSection:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -532,11 +532,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "557"
-            endingLineNumber = "557"
+            startingLineNumber = "591"
+            endingLineNumber = "591"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -548,11 +548,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "566"
-            endingLineNumber = "566"
+            startingLineNumber = "600"
+            endingLineNumber = "600"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -564,11 +564,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SRXTeacherOpenClassViewController.m"
-            timestampString = "467699518.64457"
+            timestampString = "471748190.286415"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "559"
-            endingLineNumber = "559"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
             landmarkName = "-uploadImagesInBackground"
             landmarkType = "5">
          </BreakpointContent>
@@ -1114,6 +1114,149 @@
             startingLineNumber = "160"
             endingLineNumber = "160"
             landmarkName = "-tableView:didSelectRowAtIndexPath:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DropPinOnMapView/SRXStudentMapViewController.m"
+            timestampString = "471744824.27199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DropPinOnMapView/SRXStudentMapViewController.m"
+            timestampString = "471744847.898012"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "-getLocation"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SRXStudentMapViewController getLocation]"
+                  moduleName = "DropPinOnMapView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liefuliu/src/edu/Demos/DropPinOnMapView/DropPinOnMapView/SRXStudentMapViewController.m"
+                  timestampString = "471744847.899882"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "115">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__Block_byref_object_copy_"
+                  moduleName = "DropPinOnMapView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liefuliu/src/edu/Demos/DropPinOnMapView/DropPinOnMapView/SRXStudentMapViewController.m"
+                  timestampString = "471744847.900103"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__Block_byref_object_dispose_"
+                  moduleName = "DropPinOnMapView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liefuliu/src/edu/Demos/DropPinOnMapView/DropPinOnMapView/SRXStudentMapViewController.m"
+                  timestampString = "471744847.900319"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "12">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DropPinOnMapView/SRXStudentMapViewController.m"
+            timestampString = "471744866.05082"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-getLocation"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SRXStudentMapViewController getLocation]"
+                  moduleName = "DropPinOnMapView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liefuliu/src/edu/Demos/DropPinOnMapView/DropPinOnMapView/SRXStudentMapViewController.m"
+                  timestampString = "471744870.756283"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__42-[SRXStudentMapViewController getLocation]_block_invoke"
+                  moduleName = "DropPinOnMapView"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liefuliu/src/edu/Demos/DropPinOnMapView/DropPinOnMapView/SRXStudentMapViewController.m"
+                  timestampString = "471744870.756564"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "125"
+                  endingLineNumber = "125"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DropPinOnMapView/SRXStudentMapViewController.m"
+            timestampString = "471744902.97066"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
+            landmarkName = "-getLocation"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
