@@ -10,5 +10,11 @@
 
 @interface BookPlayerVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *pageImageView;
+@property (weak, nonatomic) IBOutlet UITextView *translatedTextView;
+
+
+- (id) initWithBookKey:(NSString*) localBookKey;
+
+- (void) showPageAtIndex:(int) pageIndex;
 
 @end

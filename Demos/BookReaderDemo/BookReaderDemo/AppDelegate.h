@@ -7,15 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VoiceRecordViewController.h"
+#import "UnusedVoiceRecordViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate> {
     UIWindow *window;
-    VoiceRecordViewController *viewController;
+    UnusedVoiceRecordViewController *viewController;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, retain) IBOutlet VoiceRecordViewController *viewController;
+@property (nonatomic, retain) IBOutlet UnusedVoiceRecordViewController *viewController;
 
 
 @end

@@ -7,6 +7,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookPlayerVC">
             <connections>
                 <outlet property="pageImageView" destination="rqb-rL-2KN" id="TWZ-6E-3Ts"/>
+                <outlet property="translatedTextView" destination="7J4-J0-Yse" id="4vG-hz-SO6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,15 +17,28 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img-Z14160447-0001.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rqb-rL-2KN">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="500"/>
                 </imageView>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7J4-J0-Yse">
+                    <rect key="frame" x="20" y="500" width="560" height="100"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="s8X-qe-Rzw"/>
+                    </constraints>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstItem="7J4-J0-Yse" firstAttribute="top" secondItem="rqb-rL-2KN" secondAttribute="bottom" id="0uf-xR-6sC"/>
+                <constraint firstAttribute="trailing" secondItem="7J4-J0-Yse" secondAttribute="trailing" constant="50" id="8pD-At-WhT"/>
+                <constraint firstAttribute="bottom" secondItem="7J4-J0-Yse" secondAttribute="bottom" id="F8Z-PM-Ehh"/>
                 <constraint firstItem="rqb-rL-2KN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bcK-7v-lSI"/>
                 <constraint firstItem="rqb-rL-2KN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="fFI-g9-l0M"/>
+                <constraint firstItem="7J4-J0-Yse" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="50" id="qg1-MG-1LO"/>
                 <constraint firstAttribute="trailing" secondItem="rqb-rL-2KN" secondAttribute="trailing" id="uhL-qX-Egg"/>
-                <constraint firstAttribute="bottom" secondItem="rqb-rL-2KN" secondAttribute="bottom" id="yFz-Ky-6O1"/>
             </constraints>
         </view>
     </objects>

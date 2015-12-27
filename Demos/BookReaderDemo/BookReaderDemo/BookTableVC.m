@@ -8,7 +8,9 @@
 
 #import "BookTableVC.h"
 #import "BookItemCell.h"
-#import "BookPlayerVC.h"
+#import "RootViewController.h"
+
+#import "LocalBookStore.h"
 
 @interface BookTableVC ()
 
@@ -51,7 +53,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    int numRows =[[[LocalBookStore sharedObject] allBookKeys] count];
+    return numRows;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,12 +70,16 @@
         BookItemCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BookItemCell"
                                                                     forIndexPath:indexPath];
         
-        cell.statusLabel.text = @"Synd Hoff";
+        NSString* bookKey = (NSString*)[[LocalBookStore sharedObject] allBookKeys][indexPath.row];
         
-        cell.topicLabel.text = @"Stanley";
+        LocalBook* bookInfo = [[LocalBookStore sharedObject] getBookWithKey:bookKey];
         
-        NSString* imageFilePath = [NSString stringWithFormat:@"%@/img-Z14160447-0001.jpg",
-                                   [[NSBundle mainBundle] resourcePath]];
+        cell.statusLabel.text = bookInfo.author;
+        cell.topicLabel.text = bookInfo.bookName;
+        
+        NSString* imageFilePath = [NSString stringWithFormat:@"%@/%@-picture-0001.jpg",
+                                   [[NSBundle mainBundle] resourcePath],
+                                   bookInfo.filePrefix];
         cell.bookImage.image = [UIImage imageWithContentsOfFile:imageFilePath];
 
         
@@ -100,7 +107,9 @@
      */
     
     if (indexPath.section == 0){
-        BookPlayerVC *detailViewController = [[BookPlayerVC alloc] init];
+        NSString* bookKey = (NSString*)[[LocalBookStore sharedObject] allBookKeys][indexPath.row];
+
+        RootViewController *detailViewController = [[RootViewController alloc] initWithBookKey:bookKey];
         [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
     } else if (indexPath.section == 1) {
         // TODO (fengyi): Response to the event the class item was selected.

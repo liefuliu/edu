@@ -7,16 +7,291 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DBB16EA1C2E6C3B0095813F /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16E91C2E6C3B0095813F /* RootViewController.xib */; };
+		6DBB17551C2F93120095813F /* oliver-picture-0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16EB1C2F93120095813F /* oliver-picture-0001.jpg */; };
+		6DBB17561C2F93120095813F /* oliver-picture-0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16EC1C2F93120095813F /* oliver-picture-0002.jpg */; };
+		6DBB17571C2F93120095813F /* oliver-picture-0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16ED1C2F93120095813F /* oliver-picture-0003.jpg */; };
+		6DBB17581C2F93120095813F /* oliver-picture-0004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16EE1C2F93120095813F /* oliver-picture-0004.jpg */; };
+		6DBB17591C2F93120095813F /* oliver-picture-0005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16EF1C2F93120095813F /* oliver-picture-0005.jpg */; };
+		6DBB175A1C2F93120095813F /* oliver-picture-0006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F01C2F93120095813F /* oliver-picture-0006.jpg */; };
+		6DBB175B1C2F93120095813F /* oliver-picture-0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F11C2F93120095813F /* oliver-picture-0007.jpg */; };
+		6DBB175C1C2F93120095813F /* oliver-picture-0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F21C2F93120095813F /* oliver-picture-0008.jpg */; };
+		6DBB175D1C2F93120095813F /* oliver-picture-0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F31C2F93120095813F /* oliver-picture-0009.jpg */; };
+		6DBB175E1C2F93120095813F /* oliver-picture-0010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F41C2F93120095813F /* oliver-picture-0010.jpg */; };
+		6DBB175F1C2F93120095813F /* oliver-picture-0011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F51C2F93120095813F /* oliver-picture-0011.jpg */; };
+		6DBB17601C2F93120095813F /* oliver-picture-0012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F61C2F93120095813F /* oliver-picture-0012.jpg */; };
+		6DBB17611C2F93120095813F /* oliver-picture-0013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F71C2F93120095813F /* oliver-picture-0013.jpg */; };
+		6DBB17621C2F93120095813F /* oliver-picture-0014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F81C2F93120095813F /* oliver-picture-0014.jpg */; };
+		6DBB17631C2F93120095813F /* oliver-picture-0015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16F91C2F93120095813F /* oliver-picture-0015.jpg */; };
+		6DBB17641C2F93120095813F /* oliver-picture-0016.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16FA1C2F93120095813F /* oliver-picture-0016.jpg */; };
+		6DBB17651C2F93120095813F /* oliver-picture-0017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16FB1C2F93120095813F /* oliver-picture-0017.jpg */; };
+		6DBB17661C2F93120095813F /* oliver-picture-0018.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16FC1C2F93120095813F /* oliver-picture-0018.jpg */; };
+		6DBB17671C2F93120095813F /* oliver-picture-0019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16FD1C2F93120095813F /* oliver-picture-0019.jpg */; };
+		6DBB17681C2F93120095813F /* oliver-picture-0020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16FE1C2F93120095813F /* oliver-picture-0020.jpg */; };
+		6DBB17691C2F93120095813F /* oliver-picture-0021.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16FF1C2F93120095813F /* oliver-picture-0021.jpg */; };
+		6DBB176A1C2F93120095813F /* oliver-picture-0022.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17001C2F93120095813F /* oliver-picture-0022.jpg */; };
+		6DBB176B1C2F93120095813F /* oliver-picture-0023.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17011C2F93120095813F /* oliver-picture-0023.jpg */; };
+		6DBB176C1C2F93120095813F /* oliver-picture-0024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17021C2F93120095813F /* oliver-picture-0024.jpg */; };
+		6DBB176D1C2F93120095813F /* oliver-picture-0025.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17031C2F93120095813F /* oliver-picture-0025.jpg */; };
+		6DBB176E1C2F93120095813F /* oliver-picture-0026.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17041C2F93120095813F /* oliver-picture-0026.jpg */; };
+		6DBB176F1C2F93120095813F /* oliver-picture-0027.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17051C2F93120095813F /* oliver-picture-0027.jpg */; };
+		6DBB17701C2F93120095813F /* oliver-picture-0028.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17061C2F93120095813F /* oliver-picture-0028.jpg */; };
+		6DBB17711C2F93120095813F /* oliver-picture-0029.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17071C2F93120095813F /* oliver-picture-0029.jpg */; };
+		6DBB17721C2F93120095813F /* oliver-picture-0030.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17081C2F93120095813F /* oliver-picture-0030.jpg */; };
+		6DBB17731C2F93120095813F /* oliver-picture-0031.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17091C2F93120095813F /* oliver-picture-0031.jpg */; };
+		6DBB17741C2F93120095813F /* oliver-picture-0032.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB170A1C2F93120095813F /* oliver-picture-0032.jpg */; };
+		6DBB17751C2F93120095813F /* oliver-picture-0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB170B1C2F93120095813F /* oliver-picture-0033.jpg */; };
+		6DBB17761C2F93120095813F /* oliver-picture-0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB170C1C2F93120095813F /* oliver-picture-0034.jpg */; };
+		6DBB17771C2F93120095813F /* oliver-picture-0035.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB170D1C2F93120095813F /* oliver-picture-0035.jpg */; };
+		6DBB17781C2F93120095813F /* oliver-picture-0036.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB170E1C2F93120095813F /* oliver-picture-0036.jpg */; };
+		6DBB17791C2F93120095813F /* oliver-picture-0037.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB170F1C2F93120095813F /* oliver-picture-0037.jpg */; };
+		6DBB177A1C2F93120095813F /* oliver-picture-0038.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17101C2F93120095813F /* oliver-picture-0038.jpg */; };
+		6DBB177B1C2F93120095813F /* oliver-picture-0039.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17111C2F93120095813F /* oliver-picture-0039.jpg */; };
+		6DBB177C1C2F93120095813F /* oliver-picture-0040.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17121C2F93120095813F /* oliver-picture-0040.jpg */; };
+		6DBB177D1C2F93120095813F /* oliver-picture-0041.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17131C2F93120095813F /* oliver-picture-0041.jpg */; };
+		6DBB177E1C2F93120095813F /* oliver-picture-0042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17141C2F93120095813F /* oliver-picture-0042.jpg */; };
+		6DBB177F1C2F93120095813F /* oliver-picture-0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17151C2F93120095813F /* oliver-picture-0043.jpg */; };
+		6DBB17801C2F93120095813F /* oliver-picture-0044.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17161C2F93120095813F /* oliver-picture-0044.jpg */; };
+		6DBB17811C2F93120095813F /* oliver-picture-0045.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17171C2F93120095813F /* oliver-picture-0045.jpg */; };
+		6DBB17821C2F93120095813F /* oliver-picture-0046.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17181C2F93120095813F /* oliver-picture-0046.jpg */; };
+		6DBB17831C2F93120095813F /* oliver-picture-0047.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17191C2F93120095813F /* oliver-picture-0047.jpg */; };
+		6DBB17841C2F93120095813F /* oliver-picture-0048.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB171A1C2F93120095813F /* oliver-picture-0048.jpg */; };
+		6DBB17851C2F93120095813F /* oliver-picture-0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB171B1C2F93120095813F /* oliver-picture-0049.jpg */; };
+		6DBB17861C2F93120095813F /* oliver-picture-0050.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB171C1C2F93120095813F /* oliver-picture-0050.jpg */; };
+		6DBB17871C2F93120095813F /* oliver-picture-0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB171D1C2F93120095813F /* oliver-picture-0051.jpg */; };
+		6DBB17881C2F93120095813F /* oliver-picture-0052.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB171E1C2F93120095813F /* oliver-picture-0052.jpg */; };
+		6DBB17891C2F93120095813F /* oliver-picture-0053.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB171F1C2F93120095813F /* oliver-picture-0053.jpg */; };
+		6DBB178A1C2F93120095813F /* oliver-picture-0054.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17201C2F93120095813F /* oliver-picture-0054.jpg */; };
+		6DBB178B1C2F93120095813F /* oliver-picture-0055.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17211C2F93120095813F /* oliver-picture-0055.jpg */; };
+		6DBB178C1C2F93120095813F /* oliver-picture-0056.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17221C2F93120095813F /* oliver-picture-0056.jpg */; };
+		6DBB178D1C2F93120095813F /* oliver-picture-0057.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17231C2F93120095813F /* oliver-picture-0057.jpg */; };
+		6DBB178E1C2F93120095813F /* oliver-picture-0058.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17241C2F93120095813F /* oliver-picture-0058.jpg */; };
+		6DBB178F1C2F93120095813F /* oliver-picture-0059.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17251C2F93120095813F /* oliver-picture-0059.jpg */; };
+		6DBB17901C2F93120095813F /* oliver-picture-0060.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17261C2F93120095813F /* oliver-picture-0060.jpg */; };
+		6DBB17911C2F93120095813F /* stanley-picture-0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17271C2F93120095813F /* stanley-picture-0001.jpg */; };
+		6DBB17921C2F93120095813F /* stanley-picture-0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17281C2F93120095813F /* stanley-picture-0002.jpg */; };
+		6DBB17931C2F93120095813F /* stanley-picture-0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17291C2F93120095813F /* stanley-picture-0003.jpg */; };
+		6DBB17941C2F93120095813F /* stanley-picture-0004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB172A1C2F93120095813F /* stanley-picture-0004.jpg */; };
+		6DBB17951C2F93120095813F /* stanley-picture-0005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB172B1C2F93120095813F /* stanley-picture-0005.jpg */; };
+		6DBB17961C2F93120095813F /* stanley-picture-0006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB172C1C2F93120095813F /* stanley-picture-0006.jpg */; };
+		6DBB17971C2F93120095813F /* stanley-picture-0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB172D1C2F93120095813F /* stanley-picture-0007.jpg */; };
+		6DBB17981C2F93120095813F /* stanley-picture-0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB172E1C2F93120095813F /* stanley-picture-0008.jpg */; };
+		6DBB17991C2F93120095813F /* stanley-picture-0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB172F1C2F93120095813F /* stanley-picture-0009.jpg */; };
+		6DBB179A1C2F93120095813F /* stanley-picture-0010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17301C2F93120095813F /* stanley-picture-0010.jpg */; };
+		6DBB179B1C2F93120095813F /* stanley-picture-0011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17311C2F93120095813F /* stanley-picture-0011.jpg */; };
+		6DBB179C1C2F93120095813F /* stanley-picture-0012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17321C2F93120095813F /* stanley-picture-0012.jpg */; };
+		6DBB179D1C2F93120095813F /* stanley-picture-0013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17331C2F93120095813F /* stanley-picture-0013.jpg */; };
+		6DBB179E1C2F93120095813F /* stanley-picture-0014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17341C2F93120095813F /* stanley-picture-0014.jpg */; };
+		6DBB179F1C2F93120095813F /* stanley-picture-0015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17351C2F93120095813F /* stanley-picture-0015.jpg */; };
+		6DBB17A01C2F93120095813F /* stanley-picture-0016.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17361C2F93120095813F /* stanley-picture-0016.jpg */; };
+		6DBB17A11C2F93120095813F /* stanley-picture-0017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17371C2F93120095813F /* stanley-picture-0017.jpg */; };
+		6DBB17A21C2F93120095813F /* stanley-picture-0018.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17381C2F93120095813F /* stanley-picture-0018.jpg */; };
+		6DBB17A31C2F93120095813F /* stanley-picture-0019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17391C2F93120095813F /* stanley-picture-0019.jpg */; };
+		6DBB17A41C2F93120095813F /* stanley-picture-0020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB173A1C2F93120095813F /* stanley-picture-0020.jpg */; };
+		6DBB17A51C2F93120095813F /* theletters-picture-0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB173B1C2F93120095813F /* theletters-picture-0001.jpg */; };
+		6DBB17A61C2F93120095813F /* theletters-picture-0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB173C1C2F93120095813F /* theletters-picture-0002.jpg */; };
+		6DBB17A71C2F93120095813F /* theletters-picture-0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB173D1C2F93120095813F /* theletters-picture-0003.jpg */; };
+		6DBB17A81C2F93120095813F /* theletters-picture-0004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB173E1C2F93120095813F /* theletters-picture-0004.jpg */; };
+		6DBB17A91C2F93120095813F /* theletters-picture-0005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB173F1C2F93120095813F /* theletters-picture-0005.jpg */; };
+		6DBB17AA1C2F93120095813F /* theletters-picture-0006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17401C2F93120095813F /* theletters-picture-0006.jpg */; };
+		6DBB17AB1C2F93120095813F /* theletters-picture-0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17411C2F93120095813F /* theletters-picture-0007.jpg */; };
+		6DBB17AC1C2F93120095813F /* theletters-picture-0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17421C2F93120095813F /* theletters-picture-0008.jpg */; };
+		6DBB17AD1C2F93120095813F /* theletters-picture-0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17431C2F93120095813F /* theletters-picture-0009.jpg */; };
+		6DBB17AE1C2F93120095813F /* theletters-picture-0010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17441C2F93120095813F /* theletters-picture-0010.jpg */; };
+		6DBB17AF1C2F93120095813F /* theletters-picture-0011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17451C2F93120095813F /* theletters-picture-0011.jpg */; };
+		6DBB17B01C2F93120095813F /* theletters-picture-0012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17461C2F93120095813F /* theletters-picture-0012.jpg */; };
+		6DBB17B11C2F93120095813F /* theletters-picture-0013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17471C2F93120095813F /* theletters-picture-0013.jpg */; };
+		6DBB17B21C2F93120095813F /* theletters-picture-0014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17481C2F93120095813F /* theletters-picture-0014.jpg */; };
+		6DBB17B31C2F93120095813F /* theletters-picture-0015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17491C2F93120095813F /* theletters-picture-0015.jpg */; };
+		6DBB17B41C2F93120095813F /* theletters-picture-0016.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB174A1C2F93120095813F /* theletters-picture-0016.jpg */; };
+		6DBB17B51C2F93120095813F /* theletters-picture-0017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB174B1C2F93120095813F /* theletters-picture-0017.jpg */; };
+		6DBB17B61C2F93120095813F /* theletters-picture-0018.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB174C1C2F93120095813F /* theletters-picture-0018.jpg */; };
+		6DBB17B71C2F93120095813F /* theletters-picture-0019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB174D1C2F93120095813F /* theletters-picture-0019.jpg */; };
+		6DBB17B81C2F93120095813F /* theletters-picture-0020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB174E1C2F93120095813F /* theletters-picture-0020.jpg */; };
+		6DBB17B91C2F93120095813F /* theletters-picture-0021.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB174F1C2F93120095813F /* theletters-picture-0021.jpg */; };
+		6DBB17BA1C2F93120095813F /* theletters-picture-0022.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17501C2F93120095813F /* theletters-picture-0022.jpg */; };
+		6DBB17BB1C2F93120095813F /* theletters-picture-0023.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17511C2F93120095813F /* theletters-picture-0023.jpg */; };
+		6DBB17BC1C2F93120095813F /* theletters-picture-0024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17521C2F93120095813F /* theletters-picture-0024.jpg */; };
+		6DBB17BD1C2F93120095813F /* theletters-picture-0025.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17531C2F93120095813F /* theletters-picture-0025.jpg */; };
+		6DBB17BE1C2F93120095813F /* theletters-picture-0026.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17541C2F93120095813F /* theletters-picture-0026.jpg */; };
+		6DBB181B1C2F93280095813F /* oliver-audio-0001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17BF1C2F93280095813F /* oliver-audio-0001.mp3 */; };
+		6DBB181C1C2F93280095813F /* oliver-audio-0002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C01C2F93280095813F /* oliver-audio-0002.mp3 */; };
+		6DBB181D1C2F93280095813F /* oliver-audio-0003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C11C2F93280095813F /* oliver-audio-0003.mp3 */; };
+		6DBB181E1C2F93280095813F /* oliver-audio-0004.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C21C2F93280095813F /* oliver-audio-0004.mp3 */; };
+		6DBB181F1C2F93280095813F /* oliver-audio-0005.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C31C2F93280095813F /* oliver-audio-0005.mp3 */; };
+		6DBB18201C2F93280095813F /* oliver-audio-0006.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C41C2F93280095813F /* oliver-audio-0006.mp3 */; };
+		6DBB18211C2F93280095813F /* oliver-audio-0007.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C51C2F93280095813F /* oliver-audio-0007.mp3 */; };
+		6DBB18221C2F93280095813F /* oliver-audio-0008.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C61C2F93280095813F /* oliver-audio-0008.mp3 */; };
+		6DBB18231C2F93280095813F /* oliver-audio-0009.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C71C2F93280095813F /* oliver-audio-0009.mp3 */; };
+		6DBB18241C2F93280095813F /* oliver-audio-0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C81C2F93280095813F /* oliver-audio-0010.mp3 */; };
+		6DBB18251C2F93280095813F /* oliver-audio-0011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17C91C2F93280095813F /* oliver-audio-0011.mp3 */; };
+		6DBB18261C2F93280095813F /* oliver-audio-0012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17CA1C2F93280095813F /* oliver-audio-0012.mp3 */; };
+		6DBB18271C2F93280095813F /* oliver-audio-0013.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17CB1C2F93280095813F /* oliver-audio-0013.mp3 */; };
+		6DBB18281C2F93280095813F /* oliver-audio-0014.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17CC1C2F93280095813F /* oliver-audio-0014.mp3 */; };
+		6DBB18291C2F93280095813F /* oliver-audio-0015.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17CD1C2F93280095813F /* oliver-audio-0015.mp3 */; };
+		6DBB182A1C2F93280095813F /* oliver-audio-0016.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17CE1C2F93280095813F /* oliver-audio-0016.mp3 */; };
+		6DBB182B1C2F93280095813F /* oliver-audio-0017.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17CF1C2F93280095813F /* oliver-audio-0017.mp3 */; };
+		6DBB182C1C2F93280095813F /* oliver-audio-0018.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D01C2F93280095813F /* oliver-audio-0018.mp3 */; };
+		6DBB182D1C2F93280095813F /* oliver-audio-0019.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D11C2F93280095813F /* oliver-audio-0019.mp3 */; };
+		6DBB182E1C2F93280095813F /* oliver-audio-0020.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D21C2F93280095813F /* oliver-audio-0020.mp3 */; };
+		6DBB182F1C2F93280095813F /* oliver-audio-0021.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D31C2F93280095813F /* oliver-audio-0021.mp3 */; };
+		6DBB18301C2F93280095813F /* oliver-audio-0022.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D41C2F93280095813F /* oliver-audio-0022.mp3 */; };
+		6DBB18311C2F93280095813F /* oliver-audio-0023.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D51C2F93280095813F /* oliver-audio-0023.mp3 */; };
+		6DBB18321C2F93280095813F /* oliver-audio-0024.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D61C2F93280095813F /* oliver-audio-0024.mp3 */; };
+		6DBB18331C2F93280095813F /* oliver-audio-0025.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D71C2F93280095813F /* oliver-audio-0025.mp3 */; };
+		6DBB18341C2F93280095813F /* oliver-audio-0026.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D81C2F93280095813F /* oliver-audio-0026.mp3 */; };
+		6DBB18351C2F93280095813F /* oliver-audio-0027.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17D91C2F93280095813F /* oliver-audio-0027.mp3 */; };
+		6DBB18361C2F93280095813F /* oliver-audio-0028.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17DA1C2F93280095813F /* oliver-audio-0028.mp3 */; };
+		6DBB18371C2F93280095813F /* oliver-audio-0029.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17DB1C2F93280095813F /* oliver-audio-0029.mp3 */; };
+		6DBB18381C2F93280095813F /* oliver-audio-0030.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17DC1C2F93280095813F /* oliver-audio-0030.mp3 */; };
+		6DBB18391C2F93280095813F /* oliver-audio-0031.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17DD1C2F93280095813F /* oliver-audio-0031.mp3 */; };
+		6DBB183A1C2F93280095813F /* oliver-audio-0032.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17DE1C2F93280095813F /* oliver-audio-0032.mp3 */; };
+		6DBB183B1C2F93280095813F /* oliver-audio-0033.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17DF1C2F93280095813F /* oliver-audio-0033.mp3 */; };
+		6DBB183C1C2F93280095813F /* oliver-audio-0034.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E01C2F93280095813F /* oliver-audio-0034.mp3 */; };
+		6DBB183D1C2F93280095813F /* oliver-audio-0035.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E11C2F93280095813F /* oliver-audio-0035.mp3 */; };
+		6DBB183E1C2F93280095813F /* oliver-audio-0036.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E21C2F93280095813F /* oliver-audio-0036.mp3 */; };
+		6DBB183F1C2F93280095813F /* oliver-audio-0037.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E31C2F93280095813F /* oliver-audio-0037.mp3 */; };
+		6DBB18401C2F93280095813F /* oliver-audio-0038.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E41C2F93280095813F /* oliver-audio-0038.mp3 */; };
+		6DBB18411C2F93280095813F /* oliver-audio-0039.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E51C2F93280095813F /* oliver-audio-0039.mp3 */; };
+		6DBB18421C2F93280095813F /* oliver-audio-0040.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E61C2F93280095813F /* oliver-audio-0040.mp3 */; };
+		6DBB18431C2F93280095813F /* oliver-audio-0041.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E71C2F93280095813F /* oliver-audio-0041.mp3 */; };
+		6DBB18441C2F93280095813F /* oliver-audio-0042.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E81C2F93280095813F /* oliver-audio-0042.mp3 */; };
+		6DBB18451C2F93280095813F /* oliver-audio-0043.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17E91C2F93280095813F /* oliver-audio-0043.mp3 */; };
+		6DBB18461C2F93280095813F /* oliver-audio-0044.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17EA1C2F93280095813F /* oliver-audio-0044.mp3 */; };
+		6DBB18471C2F93280095813F /* oliver-audio-0045.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17EB1C2F93280095813F /* oliver-audio-0045.mp3 */; };
+		6DBB18481C2F93280095813F /* oliver-audio-0046.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17EC1C2F93280095813F /* oliver-audio-0046.mp3 */; };
+		6DBB18491C2F93280095813F /* oliver-audio-0047.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17ED1C2F93280095813F /* oliver-audio-0047.mp3 */; };
+		6DBB184A1C2F93280095813F /* oliver-audio-0048.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17EE1C2F93280095813F /* oliver-audio-0048.mp3 */; };
+		6DBB184B1C2F93280095813F /* oliver-audio-0049.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17EF1C2F93280095813F /* oliver-audio-0049.mp3 */; };
+		6DBB184C1C2F93280095813F /* oliver-audio-0050.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F01C2F93280095813F /* oliver-audio-0050.mp3 */; };
+		6DBB184D1C2F93280095813F /* oliver-audio-0051.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F11C2F93280095813F /* oliver-audio-0051.mp3 */; };
+		6DBB184E1C2F93280095813F /* oliver-audio-0052.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F21C2F93280095813F /* oliver-audio-0052.mp3 */; };
+		6DBB184F1C2F93280095813F /* oliver-audio-0053.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F31C2F93280095813F /* oliver-audio-0053.mp3 */; };
+		6DBB18501C2F93280095813F /* oliver-audio-0054.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F41C2F93280095813F /* oliver-audio-0054.mp3 */; };
+		6DBB18511C2F93280095813F /* oliver-audio-0055.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F51C2F93280095813F /* oliver-audio-0055.mp3 */; };
+		6DBB18521C2F93280095813F /* oliver-audio-0056.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F61C2F93280095813F /* oliver-audio-0056.mp3 */; };
+		6DBB18531C2F93280095813F /* oliver-audio-0057.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F71C2F93280095813F /* oliver-audio-0057.mp3 */; };
+		6DBB18541C2F93280095813F /* oliver-audio-0058.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F81C2F93280095813F /* oliver-audio-0058.mp3 */; };
+		6DBB18551C2F93280095813F /* oliver-audio-0059.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17F91C2F93280095813F /* oliver-audio-0059.mp3 */; };
+		6DBB18561C2F93280095813F /* oliver-audio-0060.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17FA1C2F93280095813F /* oliver-audio-0060.mp3 */; };
+		6DBB18571C2F93280095813F /* stanley-audio-0001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17FB1C2F93280095813F /* stanley-audio-0001.mp3 */; };
+		6DBB18581C2F93280095813F /* stanley-audio-0002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17FC1C2F93280095813F /* stanley-audio-0002.mp3 */; };
+		6DBB18591C2F93280095813F /* stanley-audio-0003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17FD1C2F93280095813F /* stanley-audio-0003.mp3 */; };
+		6DBB185A1C2F93280095813F /* stanley-audio-0004.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17FE1C2F93280095813F /* stanley-audio-0004.mp3 */; };
+		6DBB185B1C2F93280095813F /* stanley-audio-0005.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB17FF1C2F93280095813F /* stanley-audio-0005.mp3 */; };
+		6DBB185C1C2F93280095813F /* stanley-audio-0006.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18001C2F93280095813F /* stanley-audio-0006.mp3 */; };
+		6DBB185D1C2F93280095813F /* stanley-audio-0007.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18011C2F93280095813F /* stanley-audio-0007.mp3 */; };
+		6DBB185E1C2F93280095813F /* stanley-audio-0008.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18021C2F93280095813F /* stanley-audio-0008.mp3 */; };
+		6DBB185F1C2F93280095813F /* stanley-audio-0009.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18031C2F93280095813F /* stanley-audio-0009.mp3 */; };
+		6DBB18601C2F93280095813F /* stanley-audio-0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18041C2F93280095813F /* stanley-audio-0010.mp3 */; };
+		6DBB18611C2F93280095813F /* stanley-audio-0011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18051C2F93280095813F /* stanley-audio-0011.mp3 */; };
+		6DBB18621C2F93280095813F /* stanley-audio-0012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18061C2F93280095813F /* stanley-audio-0012.mp3 */; };
+		6DBB18631C2F93280095813F /* stanley-audio-0013.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18071C2F93280095813F /* stanley-audio-0013.mp3 */; };
+		6DBB18641C2F93280095813F /* stanley-audio-0014.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18081C2F93280095813F /* stanley-audio-0014.mp3 */; };
+		6DBB18651C2F93280095813F /* stanley-audio-0015.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18091C2F93280095813F /* stanley-audio-0015.mp3 */; };
+		6DBB18661C2F93280095813F /* stanley-audio-0016.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB180A1C2F93280095813F /* stanley-audio-0016.mp3 */; };
+		6DBB18671C2F93280095813F /* stanley-audio-0017.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB180B1C2F93280095813F /* stanley-audio-0017.mp3 */; };
+		6DBB18681C2F93280095813F /* stanley-audio-0018.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB180C1C2F93280095813F /* stanley-audio-0018.mp3 */; };
+		6DBB18691C2F93280095813F /* stanley-audio-0019.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB180D1C2F93280095813F /* stanley-audio-0019.mp3 */; };
+		6DBB186A1C2F93280095813F /* stanley-audio-0020.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB180E1C2F93280095813F /* stanley-audio-0020.mp3 */; };
+		6DBB186B1C2F93280095813F /* theletters-audio-0001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB180F1C2F93280095813F /* theletters-audio-0001.mp3 */; };
+		6DBB186C1C2F93280095813F /* theletters-audio-0002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18101C2F93280095813F /* theletters-audio-0002.mp3 */; };
+		6DBB186D1C2F93280095813F /* theletters-audio-0003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18111C2F93280095813F /* theletters-audio-0003.mp3 */; };
+		6DBB186E1C2F93280095813F /* theletters-audio-0004.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18121C2F93280095813F /* theletters-audio-0004.mp3 */; };
+		6DBB186F1C2F93280095813F /* theletters-audio-0005.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18131C2F93280095813F /* theletters-audio-0005.mp3 */; };
+		6DBB18701C2F93280095813F /* theletters-audio-0006.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18141C2F93280095813F /* theletters-audio-0006.mp3 */; };
+		6DBB18711C2F93280095813F /* theletters-audio-0007.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18151C2F93280095813F /* theletters-audio-0007.mp3 */; };
+		6DBB18721C2F93280095813F /* theletters-audio-0008.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18161C2F93280095813F /* theletters-audio-0008.mp3 */; };
+		6DBB18731C2F93280095813F /* theletters-audio-0009.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18171C2F93280095813F /* theletters-audio-0009.mp3 */; };
+		6DBB18741C2F93280095813F /* theletters-audio-0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18181C2F93280095813F /* theletters-audio-0010.mp3 */; };
+		6DBB18751C2F93280095813F /* theletters-audio-0011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18191C2F93280095813F /* theletters-audio-0011.mp3 */; };
+		6DBB18761C2F93280095813F /* theletters-audio-0012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB181A1C2F93280095813F /* theletters-audio-0012.mp3 */; };
+		6DBB189D1C2F95810095813F /* stanley-picture-0054.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18771C2F95810095813F /* stanley-picture-0054.jpg */; };
+		6DBB189E1C2F95810095813F /* stanley-picture-0055.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18781C2F95810095813F /* stanley-picture-0055.jpg */; };
+		6DBB189F1C2F95810095813F /* stanley-picture-0056.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18791C2F95810095813F /* stanley-picture-0056.jpg */; };
+		6DBB18A01C2F95810095813F /* stanley-picture-0057.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB187A1C2F95810095813F /* stanley-picture-0057.jpg */; };
+		6DBB18A11C2F95810095813F /* stanley-picture-0058.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB187B1C2F95810095813F /* stanley-picture-0058.jpg */; };
+		6DBB18A21C2F95810095813F /* stanley-picture-0051.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB187C1C2F95810095813F /* stanley-picture-0051.jpg */; };
+		6DBB18A31C2F95810095813F /* stanley-picture-0052.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB187D1C2F95810095813F /* stanley-picture-0052.jpg */; };
+		6DBB18A41C2F95810095813F /* stanley-picture-0053.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB187E1C2F95810095813F /* stanley-picture-0053.jpg */; };
+		6DBB18A51C2F95810095813F /* stanley-picture-0049.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB187F1C2F95810095813F /* stanley-picture-0049.jpg */; };
+		6DBB18A61C2F95810095813F /* stanley-picture-0050.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18801C2F95810095813F /* stanley-picture-0050.jpg */; };
+		6DBB18A71C2F95810095813F /* stanley-picture-0045.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18811C2F95810095813F /* stanley-picture-0045.jpg */; };
+		6DBB18A81C2F95810095813F /* stanley-picture-0046.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18821C2F95810095813F /* stanley-picture-0046.jpg */; };
+		6DBB18A91C2F95810095813F /* stanley-picture-0047.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18831C2F95810095813F /* stanley-picture-0047.jpg */; };
+		6DBB18AA1C2F95810095813F /* stanley-picture-0048.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18841C2F95810095813F /* stanley-picture-0048.jpg */; };
+		6DBB18AB1C2F95810095813F /* stanley-picture-0042.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18851C2F95810095813F /* stanley-picture-0042.jpg */; };
+		6DBB18AC1C2F95810095813F /* stanley-picture-0043.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18861C2F95810095813F /* stanley-picture-0043.jpg */; };
+		6DBB18AD1C2F95810095813F /* stanley-picture-0044.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18871C2F95810095813F /* stanley-picture-0044.jpg */; };
+		6DBB18AE1C2F95810095813F /* stanley-picture-0040.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18881C2F95810095813F /* stanley-picture-0040.jpg */; };
+		6DBB18AF1C2F95810095813F /* stanley-picture-0041.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18891C2F95810095813F /* stanley-picture-0041.jpg */; };
+		6DBB18B01C2F95810095813F /* stanley-picture-0037.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB188A1C2F95810095813F /* stanley-picture-0037.jpg */; };
+		6DBB18B11C2F95810095813F /* stanley-picture-0038.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB188B1C2F95810095813F /* stanley-picture-0038.jpg */; };
+		6DBB18B21C2F95810095813F /* stanley-picture-0039.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB188C1C2F95810095813F /* stanley-picture-0039.jpg */; };
+		6DBB18B31C2F95810095813F /* stanley-picture-0033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB188D1C2F95810095813F /* stanley-picture-0033.jpg */; };
+		6DBB18B41C2F95810095813F /* stanley-picture-0034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB188E1C2F95810095813F /* stanley-picture-0034.jpg */; };
+		6DBB18B51C2F95810095813F /* stanley-picture-0035.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB188F1C2F95810095813F /* stanley-picture-0035.jpg */; };
+		6DBB18B61C2F95810095813F /* stanley-picture-0036.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18901C2F95810095813F /* stanley-picture-0036.jpg */; };
+		6DBB18B71C2F95810095813F /* stanley-picture-0030.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18911C2F95810095813F /* stanley-picture-0030.jpg */; };
+		6DBB18B81C2F95810095813F /* stanley-picture-0031.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18921C2F95810095813F /* stanley-picture-0031.jpg */; };
+		6DBB18B91C2F95810095813F /* stanley-picture-0032.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18931C2F95810095813F /* stanley-picture-0032.jpg */; };
+		6DBB18BA1C2F95810095813F /* stanley-picture-0027.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18941C2F95810095813F /* stanley-picture-0027.jpg */; };
+		6DBB18BB1C2F95810095813F /* stanley-picture-0028.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18951C2F95810095813F /* stanley-picture-0028.jpg */; };
+		6DBB18BC1C2F95810095813F /* stanley-picture-0029.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18961C2F95810095813F /* stanley-picture-0029.jpg */; };
+		6DBB18BD1C2F95810095813F /* stanley-picture-0025.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18971C2F95810095813F /* stanley-picture-0025.jpg */; };
+		6DBB18BE1C2F95810095813F /* stanley-picture-0026.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18981C2F95810095813F /* stanley-picture-0026.jpg */; };
+		6DBB18BF1C2F95810095813F /* stanley-picture-0021.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18991C2F95810095813F /* stanley-picture-0021.jpg */; };
+		6DBB18C01C2F95810095813F /* stanley-picture-0022.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB189A1C2F95810095813F /* stanley-picture-0022.jpg */; };
+		6DBB18C11C2F95810095813F /* stanley-picture-0023.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB189B1C2F95810095813F /* stanley-picture-0023.jpg */; };
+		6DBB18C21C2F95810095813F /* stanley-picture-0024.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB189C1C2F95810095813F /* stanley-picture-0024.jpg */; };
+		6DBB18E91C2F95FC0095813F /* stanley-audio-0021.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C31C2F95FC0095813F /* stanley-audio-0021.mp3 */; };
+		6DBB18EA1C2F95FC0095813F /* stanley-audio-0024.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C41C2F95FC0095813F /* stanley-audio-0024.mp3 */; };
+		6DBB18EB1C2F95FC0095813F /* stanley-audio-0022.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C51C2F95FC0095813F /* stanley-audio-0022.mp3 */; };
+		6DBB18EC1C2F95FC0095813F /* stanley-audio-0023.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C61C2F95FC0095813F /* stanley-audio-0023.mp3 */; };
+		6DBB18ED1C2F95FC0095813F /* stanley-audio-0027.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C71C2F95FC0095813F /* stanley-audio-0027.mp3 */; };
+		6DBB18EE1C2F95FC0095813F /* stanley-audio-0025.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C81C2F95FC0095813F /* stanley-audio-0025.mp3 */; };
+		6DBB18EF1C2F95FC0095813F /* stanley-audio-0026.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18C91C2F95FC0095813F /* stanley-audio-0026.mp3 */; };
+		6DBB18F01C2F95FC0095813F /* stanley-audio-0028.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18CA1C2F95FC0095813F /* stanley-audio-0028.mp3 */; };
+		6DBB18F11C2F95FC0095813F /* stanley-audio-0029.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18CB1C2F95FC0095813F /* stanley-audio-0029.mp3 */; };
+		6DBB18F21C2F95FC0095813F /* stanley-audio-0030.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18CC1C2F95FC0095813F /* stanley-audio-0030.mp3 */; };
+		6DBB18F31C2F95FC0095813F /* stanley-audio-0032.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18CD1C2F95FC0095813F /* stanley-audio-0032.mp3 */; };
+		6DBB18F41C2F95FC0095813F /* stanley-audio-0031.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18CE1C2F95FC0095813F /* stanley-audio-0031.mp3 */; };
+		6DBB18F51C2F95FC0095813F /* stanley-audio-0037.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18CF1C2F95FC0095813F /* stanley-audio-0037.mp3 */; };
+		6DBB18F61C2F95FC0095813F /* stanley-audio-0034.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D01C2F95FC0095813F /* stanley-audio-0034.mp3 */; };
+		6DBB18F71C2F95FC0095813F /* stanley-audio-0035.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D11C2F95FC0095813F /* stanley-audio-0035.mp3 */; };
+		6DBB18F81C2F95FC0095813F /* stanley-audio-0038.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D21C2F95FC0095813F /* stanley-audio-0038.mp3 */; };
+		6DBB18F91C2F95FC0095813F /* stanley-audio-0033.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D31C2F95FC0095813F /* stanley-audio-0033.mp3 */; };
+		6DBB18FA1C2F95FC0095813F /* stanley-audio-0039.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D41C2F95FC0095813F /* stanley-audio-0039.mp3 */; };
+		6DBB18FB1C2F95FC0095813F /* stanley-audio-0040.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D51C2F95FC0095813F /* stanley-audio-0040.mp3 */; };
+		6DBB18FC1C2F95FC0095813F /* stanley-audio-0042.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D61C2F95FC0095813F /* stanley-audio-0042.mp3 */; };
+		6DBB18FD1C2F95FC0095813F /* stanley-audio-0043.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D71C2F95FC0095813F /* stanley-audio-0043.mp3 */; };
+		6DBB18FE1C2F95FC0095813F /* stanley-audio-0044.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D81C2F95FC0095813F /* stanley-audio-0044.mp3 */; };
+		6DBB18FF1C2F95FC0095813F /* stanley-audio-0036.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18D91C2F95FC0095813F /* stanley-audio-0036.mp3 */; };
+		6DBB19001C2F95FC0095813F /* stanley-audio-0041.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18DA1C2F95FC0095813F /* stanley-audio-0041.mp3 */; };
+		6DBB19011C2F95FC0095813F /* stanley-audio-0045.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18DB1C2F95FC0095813F /* stanley-audio-0045.mp3 */; };
+		6DBB19021C2F95FC0095813F /* stanley-audio-0046.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18DC1C2F95FC0095813F /* stanley-audio-0046.mp3 */; };
+		6DBB19031C2F95FC0095813F /* stanley-audio-0047.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18DD1C2F95FC0095813F /* stanley-audio-0047.mp3 */; };
+		6DBB19041C2F95FC0095813F /* stanley-audio-0048.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18DE1C2F95FC0095813F /* stanley-audio-0048.mp3 */; };
+		6DBB19051C2F95FC0095813F /* stanley-audio-0049.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18DF1C2F95FC0095813F /* stanley-audio-0049.mp3 */; };
+		6DBB19061C2F95FC0095813F /* stanley-audio-0050.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E01C2F95FC0095813F /* stanley-audio-0050.mp3 */; };
+		6DBB19071C2F95FC0095813F /* stanley-audio-0053.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E11C2F95FC0095813F /* stanley-audio-0053.mp3 */; };
+		6DBB19081C2F95FC0095813F /* stanley-audio-0051.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E21C2F95FC0095813F /* stanley-audio-0051.mp3 */; };
+		6DBB19091C2F95FC0095813F /* stanley-audio-0055.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E31C2F95FC0095813F /* stanley-audio-0055.mp3 */; };
+		6DBB190A1C2F95FC0095813F /* stanley-audio-0057.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E41C2F95FC0095813F /* stanley-audio-0057.mp3 */; };
+		6DBB190B1C2F95FC0095813F /* stanley-audio-0052.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E51C2F95FC0095813F /* stanley-audio-0052.mp3 */; };
+		6DBB190C1C2F95FC0095813F /* stanley-audio-0054.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E61C2F95FC0095813F /* stanley-audio-0054.mp3 */; };
+		6DBB190D1C2F95FC0095813F /* stanley-audio-0056.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E71C2F95FC0095813F /* stanley-audio-0056.mp3 */; };
+		6DBB190E1C2F95FC0095813F /* stanley-audio-0058.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB18E81C2F95FC0095813F /* stanley-audio-0058.mp3 */; };
 		6DF9F1B61C0A390400359200 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B51C0A390400359200 /* main.m */; };
 		6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B81C0A390400359200 /* AppDelegate.m */; };
-		6DF9F1BC1C0A390400359200 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BB1C0A390400359200 /* ViewController.m */; };
+		6DF9F1BC1C0A390400359200 /* UnusedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BB1C0A390400359200 /* UnusedViewController.m */; };
 		6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BD1C0A390400359200 /* Main.storyboard */; };
 		6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1C01C0A390400359200 /* Images.xcassets */; };
 		6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1C21C0A390400359200 /* LaunchScreen.xib */; };
 		6DF9F1D01C0A390400359200 /* BookReaderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1CF1C0A390400359200 /* BookReaderDemoTests.m */; };
-		6DF9F1DB1C0AAEF000359200 /* VoiceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DA1C0AAEF000359200 /* VoiceRecordViewController.m */; };
-		6DF9F1DD1C0AAF0100359200 /* VoiceRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DC1C0AAF0100359200 /* VoiceRecordViewController.xib */; };
-		6DF9F1E01C0AB3E600359200 /* RecordPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DF1C0AB3E600359200 /* RecordPlayVC.m */; };
+		6DF9F1DB1C0AAEF000359200 /* UnusedVoiceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */; };
+		6DF9F1DD1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */; };
+		6DF9F1E01C0AB3E600359200 /* UnusedRecordPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */; };
 		6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E21C0B82B200359200 /* RecordVC.m */; };
 		6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */; };
 		6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1FF1C0BE63700359200 /* icon-3-120x120.png */; };
@@ -32,46 +307,6 @@
 		6DF9F2151C0CACD300359200 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9F2141C0CACD300359200 /* libz.1.1.3.dylib */; };
 		6DF9F2171C0CACE700359200 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9F2161C0CACE700359200 /* libsqlite3.dylib */; };
 		6DF9F2191C0CAF5A00359200 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9F2181C0CAF5A00359200 /* Bolts.framework */; };
-		6DF9F23D1C27385E00359200 /* 0001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2291C27385E00359200 /* 0001.mp3 */; };
-		6DF9F23E1C27385E00359200 /* 0002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F22A1C27385E00359200 /* 0002.mp3 */; };
-		6DF9F23F1C27385E00359200 /* 0003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F22B1C27385E00359200 /* 0003.mp3 */; };
-		6DF9F2401C27385E00359200 /* 0004.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F22C1C27385E00359200 /* 0004.mp3 */; };
-		6DF9F2411C27385E00359200 /* 0005.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F22D1C27385E00359200 /* 0005.mp3 */; };
-		6DF9F2421C27385E00359200 /* 0006.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F22E1C27385E00359200 /* 0006.mp3 */; };
-		6DF9F2431C27385E00359200 /* 0007.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F22F1C27385E00359200 /* 0007.mp3 */; };
-		6DF9F2441C27385E00359200 /* 0008.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2301C27385E00359200 /* 0008.mp3 */; };
-		6DF9F2451C27385E00359200 /* 0009.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2311C27385E00359200 /* 0009.mp3 */; };
-		6DF9F2461C27385E00359200 /* 0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2321C27385E00359200 /* 0010.mp3 */; };
-		6DF9F2471C27385E00359200 /* 0011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2331C27385E00359200 /* 0011.mp3 */; };
-		6DF9F2481C27385E00359200 /* 0012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2341C27385E00359200 /* 0012.mp3 */; };
-		6DF9F2491C27385E00359200 /* 0013.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2351C27385E00359200 /* 0013.mp3 */; };
-		6DF9F24A1C27385E00359200 /* 0014.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2361C27385E00359200 /* 0014.mp3 */; };
-		6DF9F24B1C27385E00359200 /* 0015.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2371C27385E00359200 /* 0015.mp3 */; };
-		6DF9F24C1C27385E00359200 /* 0016.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2381C27385E00359200 /* 0016.mp3 */; };
-		6DF9F24D1C27385E00359200 /* 0017.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2391C27385E00359200 /* 0017.mp3 */; };
-		6DF9F24E1C27385E00359200 /* 0018.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F23A1C27385E00359200 /* 0018.mp3 */; };
-		6DF9F24F1C27385E00359200 /* 0019.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F23B1C27385E00359200 /* 0019.mp3 */; };
-		6DF9F2501C27385E00359200 /* 0020.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F23C1C27385E00359200 /* 0020.mp3 */; };
-		6DF9F28D1C273B9500359200 /* img-Z14160447-0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2791C273B9500359200 /* img-Z14160447-0001.jpg */; };
-		6DF9F28E1C273B9500359200 /* img-Z14160447-0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F27A1C273B9500359200 /* img-Z14160447-0002.jpg */; };
-		6DF9F28F1C273B9500359200 /* img-Z14160447-0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F27B1C273B9500359200 /* img-Z14160447-0003.jpg */; };
-		6DF9F2901C273B9500359200 /* img-Z14160447-0004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F27C1C273B9500359200 /* img-Z14160447-0004.jpg */; };
-		6DF9F2911C273B9500359200 /* img-Z14160447-0005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F27D1C273B9500359200 /* img-Z14160447-0005.jpg */; };
-		6DF9F2921C273B9500359200 /* img-Z14160447-0006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F27E1C273B9500359200 /* img-Z14160447-0006.jpg */; };
-		6DF9F2931C273B9500359200 /* img-Z14160447-0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F27F1C273B9500359200 /* img-Z14160447-0007.jpg */; };
-		6DF9F2941C273B9500359200 /* img-Z14160447-0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2801C273B9500359200 /* img-Z14160447-0008.jpg */; };
-		6DF9F2951C273B9500359200 /* img-Z14160447-0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2811C273B9500359200 /* img-Z14160447-0009.jpg */; };
-		6DF9F2961C273B9500359200 /* img-Z14160447-0010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2821C273B9500359200 /* img-Z14160447-0010.jpg */; };
-		6DF9F2971C273B9500359200 /* img-Z14160447-0011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2831C273B9500359200 /* img-Z14160447-0011.jpg */; };
-		6DF9F2981C273B9500359200 /* img-Z14160447-0012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2841C273B9500359200 /* img-Z14160447-0012.jpg */; };
-		6DF9F2991C273B9500359200 /* img-Z14160447-0013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2851C273B9500359200 /* img-Z14160447-0013.jpg */; };
-		6DF9F29A1C273B9500359200 /* img-Z14160447-0014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2861C273B9500359200 /* img-Z14160447-0014.jpg */; };
-		6DF9F29B1C273B9500359200 /* img-Z14160447-0015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2871C273B9500359200 /* img-Z14160447-0015.jpg */; };
-		6DF9F29C1C273B9500359200 /* img-Z14160447-0016.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2881C273B9500359200 /* img-Z14160447-0016.jpg */; };
-		6DF9F29D1C273B9500359200 /* img-Z14160447-0017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2891C273B9500359200 /* img-Z14160447-0017.jpg */; };
-		6DF9F29E1C273B9500359200 /* img-Z14160447-0018.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F28A1C273B9500359200 /* img-Z14160447-0018.jpg */; };
-		6DF9F29F1C273B9500359200 /* img-Z14160447-0019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F28B1C273B9500359200 /* img-Z14160447-0019.jpg */; };
-		6DF9F2A01C273B9500359200 /* img-Z14160447-0020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F28C1C273B9500359200 /* img-Z14160447-0020.jpg */; };
 		6DF9F2A41C27443D00359200 /* BookPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A21C27443D00359200 /* BookPlayerVC.m */; };
 		6DF9F2A51C27443D00359200 /* BookPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A31C27443D00359200 /* BookPlayerVC.xib */; };
 		6DF9F2AA1C27821900359200 /* BookTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A81C27821900359200 /* BookTableCell.m */; };
@@ -79,6 +314,50 @@
 		6DF9F2B11C27839800359200 /* BookTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B01C27839800359200 /* BookTableVC.m */; };
 		6DF9F2B51C27998000359200 /* BookItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B31C27998000359200 /* BookItemCell.m */; };
 		6DF9F2B61C27998000359200 /* BookItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B41C27998000359200 /* BookItemCell.xib */; };
+		6DF9F2B91C28550700359200 /* BRDConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B81C28550700359200 /* BRDConfig.m */; };
+		6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2BF1C2E238100359200 /* LocalBook.m */; };
+		6DF9F2C31C2E25D500359200 /* LocalBookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C21C2E25D500359200 /* LocalBookStore.m */; };
+		6DF9F2D81C2E4D0900359200 /* stanley-audio-0001.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C41C2E4D0900359200 /* stanley-audio-0001.mp3 */; };
+		6DF9F2D91C2E4D0900359200 /* stanley-audio-0002.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C51C2E4D0900359200 /* stanley-audio-0002.mp3 */; };
+		6DF9F2DA1C2E4D0900359200 /* stanley-audio-0003.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C61C2E4D0900359200 /* stanley-audio-0003.mp3 */; };
+		6DF9F2DB1C2E4D0900359200 /* stanley-audio-0004.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C71C2E4D0900359200 /* stanley-audio-0004.mp3 */; };
+		6DF9F2DC1C2E4D0900359200 /* stanley-audio-0005.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C81C2E4D0900359200 /* stanley-audio-0005.mp3 */; };
+		6DF9F2DD1C2E4D0900359200 /* stanley-audio-0006.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2C91C2E4D0900359200 /* stanley-audio-0006.mp3 */; };
+		6DF9F2DE1C2E4D0900359200 /* stanley-audio-0007.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2CA1C2E4D0900359200 /* stanley-audio-0007.mp3 */; };
+		6DF9F2DF1C2E4D0900359200 /* stanley-audio-0008.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2CB1C2E4D0900359200 /* stanley-audio-0008.mp3 */; };
+		6DF9F2E01C2E4D0900359200 /* stanley-audio-0009.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2CC1C2E4D0900359200 /* stanley-audio-0009.mp3 */; };
+		6DF9F2E11C2E4D0900359200 /* stanley-audio-0010.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2CD1C2E4D0900359200 /* stanley-audio-0010.mp3 */; };
+		6DF9F2E21C2E4D0900359200 /* stanley-audio-0011.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2CE1C2E4D0900359200 /* stanley-audio-0011.mp3 */; };
+		6DF9F2E31C2E4D0900359200 /* stanley-audio-0012.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2CF1C2E4D0900359200 /* stanley-audio-0012.mp3 */; };
+		6DF9F2E41C2E4D0900359200 /* stanley-audio-0013.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D01C2E4D0900359200 /* stanley-audio-0013.mp3 */; };
+		6DF9F2E51C2E4D0900359200 /* stanley-audio-0014.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D11C2E4D0900359200 /* stanley-audio-0014.mp3 */; };
+		6DF9F2E61C2E4D0900359200 /* stanley-audio-0015.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D21C2E4D0900359200 /* stanley-audio-0015.mp3 */; };
+		6DF9F2E71C2E4D0900359200 /* stanley-audio-0016.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D31C2E4D0900359200 /* stanley-audio-0016.mp3 */; };
+		6DF9F2E81C2E4D0900359200 /* stanley-audio-0017.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D41C2E4D0900359200 /* stanley-audio-0017.mp3 */; };
+		6DF9F2E91C2E4D0900359200 /* stanley-audio-0018.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D51C2E4D0900359200 /* stanley-audio-0018.mp3 */; };
+		6DF9F2EA1C2E4D0900359200 /* stanley-audio-0019.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D61C2E4D0900359200 /* stanley-audio-0019.mp3 */; };
+		6DF9F2EB1C2E4D0900359200 /* stanley-audio-0020.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2D71C2E4D0900359200 /* stanley-audio-0020.mp3 */; };
+		6DF9F3001C2E4D1200359200 /* stanley-picture-0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2EC1C2E4D1200359200 /* stanley-picture-0001.jpg */; };
+		6DF9F3011C2E4D1200359200 /* stanley-picture-0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2ED1C2E4D1200359200 /* stanley-picture-0002.jpg */; };
+		6DF9F3021C2E4D1200359200 /* stanley-picture-0003.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2EE1C2E4D1200359200 /* stanley-picture-0003.jpg */; };
+		6DF9F3031C2E4D1200359200 /* stanley-picture-0004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2EF1C2E4D1200359200 /* stanley-picture-0004.jpg */; };
+		6DF9F3041C2E4D1200359200 /* stanley-picture-0005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F01C2E4D1200359200 /* stanley-picture-0005.jpg */; };
+		6DF9F3051C2E4D1200359200 /* stanley-picture-0006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F11C2E4D1200359200 /* stanley-picture-0006.jpg */; };
+		6DF9F3061C2E4D1200359200 /* stanley-picture-0007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F21C2E4D1200359200 /* stanley-picture-0007.jpg */; };
+		6DF9F3071C2E4D1200359200 /* stanley-picture-0008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F31C2E4D1200359200 /* stanley-picture-0008.jpg */; };
+		6DF9F3081C2E4D1200359200 /* stanley-picture-0009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F41C2E4D1200359200 /* stanley-picture-0009.jpg */; };
+		6DF9F3091C2E4D1200359200 /* stanley-picture-0010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F51C2E4D1200359200 /* stanley-picture-0010.jpg */; };
+		6DF9F30A1C2E4D1200359200 /* stanley-picture-0011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F61C2E4D1200359200 /* stanley-picture-0011.jpg */; };
+		6DF9F30B1C2E4D1200359200 /* stanley-picture-0012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F71C2E4D1200359200 /* stanley-picture-0012.jpg */; };
+		6DF9F30C1C2E4D1200359200 /* stanley-picture-0013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F81C2E4D1200359200 /* stanley-picture-0013.jpg */; };
+		6DF9F30D1C2E4D1200359200 /* stanley-picture-0014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2F91C2E4D1200359200 /* stanley-picture-0014.jpg */; };
+		6DF9F30E1C2E4D1200359200 /* stanley-picture-0015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2FA1C2E4D1200359200 /* stanley-picture-0015.jpg */; };
+		6DF9F30F1C2E4D1200359200 /* stanley-picture-0016.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2FB1C2E4D1200359200 /* stanley-picture-0016.jpg */; };
+		6DF9F3101C2E4D1200359200 /* stanley-picture-0017.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2FC1C2E4D1200359200 /* stanley-picture-0017.jpg */; };
+		6DF9F3111C2E4D1200359200 /* stanley-picture-0018.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2FD1C2E4D1200359200 /* stanley-picture-0018.jpg */; };
+		6DF9F3121C2E4D1200359200 /* stanley-picture-0019.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2FE1C2E4D1200359200 /* stanley-picture-0019.jpg */; };
+		6DF9F3131C2E4D1200359200 /* stanley-picture-0020.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2FF1C2E4D1200359200 /* stanley-picture-0020.jpg */; };
+		6DF9F3161C2E5C2B00359200 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F3151C2E5C2B00359200 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,24 +371,299 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6DBB16E91C2E6C3B0095813F /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		6DBB16EB1C2F93120095813F /* oliver-picture-0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0001.jpg"; path = "Books/oliver-picture-0001.jpg"; sourceTree = "<group>"; };
+		6DBB16EC1C2F93120095813F /* oliver-picture-0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0002.jpg"; path = "Books/oliver-picture-0002.jpg"; sourceTree = "<group>"; };
+		6DBB16ED1C2F93120095813F /* oliver-picture-0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0003.jpg"; path = "Books/oliver-picture-0003.jpg"; sourceTree = "<group>"; };
+		6DBB16EE1C2F93120095813F /* oliver-picture-0004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0004.jpg"; path = "Books/oliver-picture-0004.jpg"; sourceTree = "<group>"; };
+		6DBB16EF1C2F93120095813F /* oliver-picture-0005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0005.jpg"; path = "Books/oliver-picture-0005.jpg"; sourceTree = "<group>"; };
+		6DBB16F01C2F93120095813F /* oliver-picture-0006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0006.jpg"; path = "Books/oliver-picture-0006.jpg"; sourceTree = "<group>"; };
+		6DBB16F11C2F93120095813F /* oliver-picture-0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0007.jpg"; path = "Books/oliver-picture-0007.jpg"; sourceTree = "<group>"; };
+		6DBB16F21C2F93120095813F /* oliver-picture-0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0008.jpg"; path = "Books/oliver-picture-0008.jpg"; sourceTree = "<group>"; };
+		6DBB16F31C2F93120095813F /* oliver-picture-0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0009.jpg"; path = "Books/oliver-picture-0009.jpg"; sourceTree = "<group>"; };
+		6DBB16F41C2F93120095813F /* oliver-picture-0010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0010.jpg"; path = "Books/oliver-picture-0010.jpg"; sourceTree = "<group>"; };
+		6DBB16F51C2F93120095813F /* oliver-picture-0011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0011.jpg"; path = "Books/oliver-picture-0011.jpg"; sourceTree = "<group>"; };
+		6DBB16F61C2F93120095813F /* oliver-picture-0012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0012.jpg"; path = "Books/oliver-picture-0012.jpg"; sourceTree = "<group>"; };
+		6DBB16F71C2F93120095813F /* oliver-picture-0013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0013.jpg"; path = "Books/oliver-picture-0013.jpg"; sourceTree = "<group>"; };
+		6DBB16F81C2F93120095813F /* oliver-picture-0014.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0014.jpg"; path = "Books/oliver-picture-0014.jpg"; sourceTree = "<group>"; };
+		6DBB16F91C2F93120095813F /* oliver-picture-0015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0015.jpg"; path = "Books/oliver-picture-0015.jpg"; sourceTree = "<group>"; };
+		6DBB16FA1C2F93120095813F /* oliver-picture-0016.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0016.jpg"; path = "Books/oliver-picture-0016.jpg"; sourceTree = "<group>"; };
+		6DBB16FB1C2F93120095813F /* oliver-picture-0017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0017.jpg"; path = "Books/oliver-picture-0017.jpg"; sourceTree = "<group>"; };
+		6DBB16FC1C2F93120095813F /* oliver-picture-0018.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0018.jpg"; path = "Books/oliver-picture-0018.jpg"; sourceTree = "<group>"; };
+		6DBB16FD1C2F93120095813F /* oliver-picture-0019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0019.jpg"; path = "Books/oliver-picture-0019.jpg"; sourceTree = "<group>"; };
+		6DBB16FE1C2F93120095813F /* oliver-picture-0020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0020.jpg"; path = "Books/oliver-picture-0020.jpg"; sourceTree = "<group>"; };
+		6DBB16FF1C2F93120095813F /* oliver-picture-0021.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0021.jpg"; path = "Books/oliver-picture-0021.jpg"; sourceTree = "<group>"; };
+		6DBB17001C2F93120095813F /* oliver-picture-0022.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0022.jpg"; path = "Books/oliver-picture-0022.jpg"; sourceTree = "<group>"; };
+		6DBB17011C2F93120095813F /* oliver-picture-0023.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0023.jpg"; path = "Books/oliver-picture-0023.jpg"; sourceTree = "<group>"; };
+		6DBB17021C2F93120095813F /* oliver-picture-0024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0024.jpg"; path = "Books/oliver-picture-0024.jpg"; sourceTree = "<group>"; };
+		6DBB17031C2F93120095813F /* oliver-picture-0025.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0025.jpg"; path = "Books/oliver-picture-0025.jpg"; sourceTree = "<group>"; };
+		6DBB17041C2F93120095813F /* oliver-picture-0026.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0026.jpg"; path = "Books/oliver-picture-0026.jpg"; sourceTree = "<group>"; };
+		6DBB17051C2F93120095813F /* oliver-picture-0027.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0027.jpg"; path = "Books/oliver-picture-0027.jpg"; sourceTree = "<group>"; };
+		6DBB17061C2F93120095813F /* oliver-picture-0028.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0028.jpg"; path = "Books/oliver-picture-0028.jpg"; sourceTree = "<group>"; };
+		6DBB17071C2F93120095813F /* oliver-picture-0029.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0029.jpg"; path = "Books/oliver-picture-0029.jpg"; sourceTree = "<group>"; };
+		6DBB17081C2F93120095813F /* oliver-picture-0030.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0030.jpg"; path = "Books/oliver-picture-0030.jpg"; sourceTree = "<group>"; };
+		6DBB17091C2F93120095813F /* oliver-picture-0031.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0031.jpg"; path = "Books/oliver-picture-0031.jpg"; sourceTree = "<group>"; };
+		6DBB170A1C2F93120095813F /* oliver-picture-0032.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0032.jpg"; path = "Books/oliver-picture-0032.jpg"; sourceTree = "<group>"; };
+		6DBB170B1C2F93120095813F /* oliver-picture-0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0033.jpg"; path = "Books/oliver-picture-0033.jpg"; sourceTree = "<group>"; };
+		6DBB170C1C2F93120095813F /* oliver-picture-0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0034.jpg"; path = "Books/oliver-picture-0034.jpg"; sourceTree = "<group>"; };
+		6DBB170D1C2F93120095813F /* oliver-picture-0035.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0035.jpg"; path = "Books/oliver-picture-0035.jpg"; sourceTree = "<group>"; };
+		6DBB170E1C2F93120095813F /* oliver-picture-0036.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0036.jpg"; path = "Books/oliver-picture-0036.jpg"; sourceTree = "<group>"; };
+		6DBB170F1C2F93120095813F /* oliver-picture-0037.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0037.jpg"; path = "Books/oliver-picture-0037.jpg"; sourceTree = "<group>"; };
+		6DBB17101C2F93120095813F /* oliver-picture-0038.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0038.jpg"; path = "Books/oliver-picture-0038.jpg"; sourceTree = "<group>"; };
+		6DBB17111C2F93120095813F /* oliver-picture-0039.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0039.jpg"; path = "Books/oliver-picture-0039.jpg"; sourceTree = "<group>"; };
+		6DBB17121C2F93120095813F /* oliver-picture-0040.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0040.jpg"; path = "Books/oliver-picture-0040.jpg"; sourceTree = "<group>"; };
+		6DBB17131C2F93120095813F /* oliver-picture-0041.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0041.jpg"; path = "Books/oliver-picture-0041.jpg"; sourceTree = "<group>"; };
+		6DBB17141C2F93120095813F /* oliver-picture-0042.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0042.jpg"; path = "Books/oliver-picture-0042.jpg"; sourceTree = "<group>"; };
+		6DBB17151C2F93120095813F /* oliver-picture-0043.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0043.jpg"; path = "Books/oliver-picture-0043.jpg"; sourceTree = "<group>"; };
+		6DBB17161C2F93120095813F /* oliver-picture-0044.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0044.jpg"; path = "Books/oliver-picture-0044.jpg"; sourceTree = "<group>"; };
+		6DBB17171C2F93120095813F /* oliver-picture-0045.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0045.jpg"; path = "Books/oliver-picture-0045.jpg"; sourceTree = "<group>"; };
+		6DBB17181C2F93120095813F /* oliver-picture-0046.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0046.jpg"; path = "Books/oliver-picture-0046.jpg"; sourceTree = "<group>"; };
+		6DBB17191C2F93120095813F /* oliver-picture-0047.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0047.jpg"; path = "Books/oliver-picture-0047.jpg"; sourceTree = "<group>"; };
+		6DBB171A1C2F93120095813F /* oliver-picture-0048.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0048.jpg"; path = "Books/oliver-picture-0048.jpg"; sourceTree = "<group>"; };
+		6DBB171B1C2F93120095813F /* oliver-picture-0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0049.jpg"; path = "Books/oliver-picture-0049.jpg"; sourceTree = "<group>"; };
+		6DBB171C1C2F93120095813F /* oliver-picture-0050.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0050.jpg"; path = "Books/oliver-picture-0050.jpg"; sourceTree = "<group>"; };
+		6DBB171D1C2F93120095813F /* oliver-picture-0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0051.jpg"; path = "Books/oliver-picture-0051.jpg"; sourceTree = "<group>"; };
+		6DBB171E1C2F93120095813F /* oliver-picture-0052.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0052.jpg"; path = "Books/oliver-picture-0052.jpg"; sourceTree = "<group>"; };
+		6DBB171F1C2F93120095813F /* oliver-picture-0053.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0053.jpg"; path = "Books/oliver-picture-0053.jpg"; sourceTree = "<group>"; };
+		6DBB17201C2F93120095813F /* oliver-picture-0054.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0054.jpg"; path = "Books/oliver-picture-0054.jpg"; sourceTree = "<group>"; };
+		6DBB17211C2F93120095813F /* oliver-picture-0055.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0055.jpg"; path = "Books/oliver-picture-0055.jpg"; sourceTree = "<group>"; };
+		6DBB17221C2F93120095813F /* oliver-picture-0056.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0056.jpg"; path = "Books/oliver-picture-0056.jpg"; sourceTree = "<group>"; };
+		6DBB17231C2F93120095813F /* oliver-picture-0057.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0057.jpg"; path = "Books/oliver-picture-0057.jpg"; sourceTree = "<group>"; };
+		6DBB17241C2F93120095813F /* oliver-picture-0058.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0058.jpg"; path = "Books/oliver-picture-0058.jpg"; sourceTree = "<group>"; };
+		6DBB17251C2F93120095813F /* oliver-picture-0059.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0059.jpg"; path = "Books/oliver-picture-0059.jpg"; sourceTree = "<group>"; };
+		6DBB17261C2F93120095813F /* oliver-picture-0060.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0060.jpg"; path = "Books/oliver-picture-0060.jpg"; sourceTree = "<group>"; };
+		6DBB17271C2F93120095813F /* stanley-picture-0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0001.jpg"; path = "Books/stanley-picture-0001.jpg"; sourceTree = "<group>"; };
+		6DBB17281C2F93120095813F /* stanley-picture-0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0002.jpg"; path = "Books/stanley-picture-0002.jpg"; sourceTree = "<group>"; };
+		6DBB17291C2F93120095813F /* stanley-picture-0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0003.jpg"; path = "Books/stanley-picture-0003.jpg"; sourceTree = "<group>"; };
+		6DBB172A1C2F93120095813F /* stanley-picture-0004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0004.jpg"; path = "Books/stanley-picture-0004.jpg"; sourceTree = "<group>"; };
+		6DBB172B1C2F93120095813F /* stanley-picture-0005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0005.jpg"; path = "Books/stanley-picture-0005.jpg"; sourceTree = "<group>"; };
+		6DBB172C1C2F93120095813F /* stanley-picture-0006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0006.jpg"; path = "Books/stanley-picture-0006.jpg"; sourceTree = "<group>"; };
+		6DBB172D1C2F93120095813F /* stanley-picture-0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0007.jpg"; path = "Books/stanley-picture-0007.jpg"; sourceTree = "<group>"; };
+		6DBB172E1C2F93120095813F /* stanley-picture-0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0008.jpg"; path = "Books/stanley-picture-0008.jpg"; sourceTree = "<group>"; };
+		6DBB172F1C2F93120095813F /* stanley-picture-0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0009.jpg"; path = "Books/stanley-picture-0009.jpg"; sourceTree = "<group>"; };
+		6DBB17301C2F93120095813F /* stanley-picture-0010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0010.jpg"; path = "Books/stanley-picture-0010.jpg"; sourceTree = "<group>"; };
+		6DBB17311C2F93120095813F /* stanley-picture-0011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0011.jpg"; path = "Books/stanley-picture-0011.jpg"; sourceTree = "<group>"; };
+		6DBB17321C2F93120095813F /* stanley-picture-0012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0012.jpg"; path = "Books/stanley-picture-0012.jpg"; sourceTree = "<group>"; };
+		6DBB17331C2F93120095813F /* stanley-picture-0013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0013.jpg"; path = "Books/stanley-picture-0013.jpg"; sourceTree = "<group>"; };
+		6DBB17341C2F93120095813F /* stanley-picture-0014.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0014.jpg"; path = "Books/stanley-picture-0014.jpg"; sourceTree = "<group>"; };
+		6DBB17351C2F93120095813F /* stanley-picture-0015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0015.jpg"; path = "Books/stanley-picture-0015.jpg"; sourceTree = "<group>"; };
+		6DBB17361C2F93120095813F /* stanley-picture-0016.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0016.jpg"; path = "Books/stanley-picture-0016.jpg"; sourceTree = "<group>"; };
+		6DBB17371C2F93120095813F /* stanley-picture-0017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0017.jpg"; path = "Books/stanley-picture-0017.jpg"; sourceTree = "<group>"; };
+		6DBB17381C2F93120095813F /* stanley-picture-0018.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0018.jpg"; path = "Books/stanley-picture-0018.jpg"; sourceTree = "<group>"; };
+		6DBB17391C2F93120095813F /* stanley-picture-0019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0019.jpg"; path = "Books/stanley-picture-0019.jpg"; sourceTree = "<group>"; };
+		6DBB173A1C2F93120095813F /* stanley-picture-0020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0020.jpg"; path = "Books/stanley-picture-0020.jpg"; sourceTree = "<group>"; };
+		6DBB173B1C2F93120095813F /* theletters-picture-0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0001.jpg"; path = "Books/theletters-picture-0001.jpg"; sourceTree = "<group>"; };
+		6DBB173C1C2F93120095813F /* theletters-picture-0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0002.jpg"; path = "Books/theletters-picture-0002.jpg"; sourceTree = "<group>"; };
+		6DBB173D1C2F93120095813F /* theletters-picture-0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0003.jpg"; path = "Books/theletters-picture-0003.jpg"; sourceTree = "<group>"; };
+		6DBB173E1C2F93120095813F /* theletters-picture-0004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0004.jpg"; path = "Books/theletters-picture-0004.jpg"; sourceTree = "<group>"; };
+		6DBB173F1C2F93120095813F /* theletters-picture-0005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0005.jpg"; path = "Books/theletters-picture-0005.jpg"; sourceTree = "<group>"; };
+		6DBB17401C2F93120095813F /* theletters-picture-0006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0006.jpg"; path = "Books/theletters-picture-0006.jpg"; sourceTree = "<group>"; };
+		6DBB17411C2F93120095813F /* theletters-picture-0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0007.jpg"; path = "Books/theletters-picture-0007.jpg"; sourceTree = "<group>"; };
+		6DBB17421C2F93120095813F /* theletters-picture-0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0008.jpg"; path = "Books/theletters-picture-0008.jpg"; sourceTree = "<group>"; };
+		6DBB17431C2F93120095813F /* theletters-picture-0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0009.jpg"; path = "Books/theletters-picture-0009.jpg"; sourceTree = "<group>"; };
+		6DBB17441C2F93120095813F /* theletters-picture-0010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0010.jpg"; path = "Books/theletters-picture-0010.jpg"; sourceTree = "<group>"; };
+		6DBB17451C2F93120095813F /* theletters-picture-0011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0011.jpg"; path = "Books/theletters-picture-0011.jpg"; sourceTree = "<group>"; };
+		6DBB17461C2F93120095813F /* theletters-picture-0012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0012.jpg"; path = "Books/theletters-picture-0012.jpg"; sourceTree = "<group>"; };
+		6DBB17471C2F93120095813F /* theletters-picture-0013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0013.jpg"; path = "Books/theletters-picture-0013.jpg"; sourceTree = "<group>"; };
+		6DBB17481C2F93120095813F /* theletters-picture-0014.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0014.jpg"; path = "Books/theletters-picture-0014.jpg"; sourceTree = "<group>"; };
+		6DBB17491C2F93120095813F /* theletters-picture-0015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0015.jpg"; path = "Books/theletters-picture-0015.jpg"; sourceTree = "<group>"; };
+		6DBB174A1C2F93120095813F /* theletters-picture-0016.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0016.jpg"; path = "Books/theletters-picture-0016.jpg"; sourceTree = "<group>"; };
+		6DBB174B1C2F93120095813F /* theletters-picture-0017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0017.jpg"; path = "Books/theletters-picture-0017.jpg"; sourceTree = "<group>"; };
+		6DBB174C1C2F93120095813F /* theletters-picture-0018.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0018.jpg"; path = "Books/theletters-picture-0018.jpg"; sourceTree = "<group>"; };
+		6DBB174D1C2F93120095813F /* theletters-picture-0019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0019.jpg"; path = "Books/theletters-picture-0019.jpg"; sourceTree = "<group>"; };
+		6DBB174E1C2F93120095813F /* theletters-picture-0020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0020.jpg"; path = "Books/theletters-picture-0020.jpg"; sourceTree = "<group>"; };
+		6DBB174F1C2F93120095813F /* theletters-picture-0021.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0021.jpg"; path = "Books/theletters-picture-0021.jpg"; sourceTree = "<group>"; };
+		6DBB17501C2F93120095813F /* theletters-picture-0022.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0022.jpg"; path = "Books/theletters-picture-0022.jpg"; sourceTree = "<group>"; };
+		6DBB17511C2F93120095813F /* theletters-picture-0023.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0023.jpg"; path = "Books/theletters-picture-0023.jpg"; sourceTree = "<group>"; };
+		6DBB17521C2F93120095813F /* theletters-picture-0024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0024.jpg"; path = "Books/theletters-picture-0024.jpg"; sourceTree = "<group>"; };
+		6DBB17531C2F93120095813F /* theletters-picture-0025.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0025.jpg"; path = "Books/theletters-picture-0025.jpg"; sourceTree = "<group>"; };
+		6DBB17541C2F93120095813F /* theletters-picture-0026.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "theletters-picture-0026.jpg"; path = "Books/theletters-picture-0026.jpg"; sourceTree = "<group>"; };
+		6DBB17BF1C2F93280095813F /* oliver-audio-0001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0001.mp3"; path = "Books/oliver-audio-0001.mp3"; sourceTree = "<group>"; };
+		6DBB17C01C2F93280095813F /* oliver-audio-0002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0002.mp3"; path = "Books/oliver-audio-0002.mp3"; sourceTree = "<group>"; };
+		6DBB17C11C2F93280095813F /* oliver-audio-0003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0003.mp3"; path = "Books/oliver-audio-0003.mp3"; sourceTree = "<group>"; };
+		6DBB17C21C2F93280095813F /* oliver-audio-0004.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0004.mp3"; path = "Books/oliver-audio-0004.mp3"; sourceTree = "<group>"; };
+		6DBB17C31C2F93280095813F /* oliver-audio-0005.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0005.mp3"; path = "Books/oliver-audio-0005.mp3"; sourceTree = "<group>"; };
+		6DBB17C41C2F93280095813F /* oliver-audio-0006.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0006.mp3"; path = "Books/oliver-audio-0006.mp3"; sourceTree = "<group>"; };
+		6DBB17C51C2F93280095813F /* oliver-audio-0007.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0007.mp3"; path = "Books/oliver-audio-0007.mp3"; sourceTree = "<group>"; };
+		6DBB17C61C2F93280095813F /* oliver-audio-0008.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0008.mp3"; path = "Books/oliver-audio-0008.mp3"; sourceTree = "<group>"; };
+		6DBB17C71C2F93280095813F /* oliver-audio-0009.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0009.mp3"; path = "Books/oliver-audio-0009.mp3"; sourceTree = "<group>"; };
+		6DBB17C81C2F93280095813F /* oliver-audio-0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0010.mp3"; path = "Books/oliver-audio-0010.mp3"; sourceTree = "<group>"; };
+		6DBB17C91C2F93280095813F /* oliver-audio-0011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0011.mp3"; path = "Books/oliver-audio-0011.mp3"; sourceTree = "<group>"; };
+		6DBB17CA1C2F93280095813F /* oliver-audio-0012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0012.mp3"; path = "Books/oliver-audio-0012.mp3"; sourceTree = "<group>"; };
+		6DBB17CB1C2F93280095813F /* oliver-audio-0013.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0013.mp3"; path = "Books/oliver-audio-0013.mp3"; sourceTree = "<group>"; };
+		6DBB17CC1C2F93280095813F /* oliver-audio-0014.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0014.mp3"; path = "Books/oliver-audio-0014.mp3"; sourceTree = "<group>"; };
+		6DBB17CD1C2F93280095813F /* oliver-audio-0015.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0015.mp3"; path = "Books/oliver-audio-0015.mp3"; sourceTree = "<group>"; };
+		6DBB17CE1C2F93280095813F /* oliver-audio-0016.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0016.mp3"; path = "Books/oliver-audio-0016.mp3"; sourceTree = "<group>"; };
+		6DBB17CF1C2F93280095813F /* oliver-audio-0017.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0017.mp3"; path = "Books/oliver-audio-0017.mp3"; sourceTree = "<group>"; };
+		6DBB17D01C2F93280095813F /* oliver-audio-0018.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0018.mp3"; path = "Books/oliver-audio-0018.mp3"; sourceTree = "<group>"; };
+		6DBB17D11C2F93280095813F /* oliver-audio-0019.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0019.mp3"; path = "Books/oliver-audio-0019.mp3"; sourceTree = "<group>"; };
+		6DBB17D21C2F93280095813F /* oliver-audio-0020.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0020.mp3"; path = "Books/oliver-audio-0020.mp3"; sourceTree = "<group>"; };
+		6DBB17D31C2F93280095813F /* oliver-audio-0021.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0021.mp3"; path = "Books/oliver-audio-0021.mp3"; sourceTree = "<group>"; };
+		6DBB17D41C2F93280095813F /* oliver-audio-0022.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0022.mp3"; path = "Books/oliver-audio-0022.mp3"; sourceTree = "<group>"; };
+		6DBB17D51C2F93280095813F /* oliver-audio-0023.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0023.mp3"; path = "Books/oliver-audio-0023.mp3"; sourceTree = "<group>"; };
+		6DBB17D61C2F93280095813F /* oliver-audio-0024.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0024.mp3"; path = "Books/oliver-audio-0024.mp3"; sourceTree = "<group>"; };
+		6DBB17D71C2F93280095813F /* oliver-audio-0025.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0025.mp3"; path = "Books/oliver-audio-0025.mp3"; sourceTree = "<group>"; };
+		6DBB17D81C2F93280095813F /* oliver-audio-0026.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0026.mp3"; path = "Books/oliver-audio-0026.mp3"; sourceTree = "<group>"; };
+		6DBB17D91C2F93280095813F /* oliver-audio-0027.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0027.mp3"; path = "Books/oliver-audio-0027.mp3"; sourceTree = "<group>"; };
+		6DBB17DA1C2F93280095813F /* oliver-audio-0028.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0028.mp3"; path = "Books/oliver-audio-0028.mp3"; sourceTree = "<group>"; };
+		6DBB17DB1C2F93280095813F /* oliver-audio-0029.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0029.mp3"; path = "Books/oliver-audio-0029.mp3"; sourceTree = "<group>"; };
+		6DBB17DC1C2F93280095813F /* oliver-audio-0030.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0030.mp3"; path = "Books/oliver-audio-0030.mp3"; sourceTree = "<group>"; };
+		6DBB17DD1C2F93280095813F /* oliver-audio-0031.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0031.mp3"; path = "Books/oliver-audio-0031.mp3"; sourceTree = "<group>"; };
+		6DBB17DE1C2F93280095813F /* oliver-audio-0032.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0032.mp3"; path = "Books/oliver-audio-0032.mp3"; sourceTree = "<group>"; };
+		6DBB17DF1C2F93280095813F /* oliver-audio-0033.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0033.mp3"; path = "Books/oliver-audio-0033.mp3"; sourceTree = "<group>"; };
+		6DBB17E01C2F93280095813F /* oliver-audio-0034.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0034.mp3"; path = "Books/oliver-audio-0034.mp3"; sourceTree = "<group>"; };
+		6DBB17E11C2F93280095813F /* oliver-audio-0035.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0035.mp3"; path = "Books/oliver-audio-0035.mp3"; sourceTree = "<group>"; };
+		6DBB17E21C2F93280095813F /* oliver-audio-0036.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0036.mp3"; path = "Books/oliver-audio-0036.mp3"; sourceTree = "<group>"; };
+		6DBB17E31C2F93280095813F /* oliver-audio-0037.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0037.mp3"; path = "Books/oliver-audio-0037.mp3"; sourceTree = "<group>"; };
+		6DBB17E41C2F93280095813F /* oliver-audio-0038.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0038.mp3"; path = "Books/oliver-audio-0038.mp3"; sourceTree = "<group>"; };
+		6DBB17E51C2F93280095813F /* oliver-audio-0039.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0039.mp3"; path = "Books/oliver-audio-0039.mp3"; sourceTree = "<group>"; };
+		6DBB17E61C2F93280095813F /* oliver-audio-0040.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0040.mp3"; path = "Books/oliver-audio-0040.mp3"; sourceTree = "<group>"; };
+		6DBB17E71C2F93280095813F /* oliver-audio-0041.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0041.mp3"; path = "Books/oliver-audio-0041.mp3"; sourceTree = "<group>"; };
+		6DBB17E81C2F93280095813F /* oliver-audio-0042.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0042.mp3"; path = "Books/oliver-audio-0042.mp3"; sourceTree = "<group>"; };
+		6DBB17E91C2F93280095813F /* oliver-audio-0043.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0043.mp3"; path = "Books/oliver-audio-0043.mp3"; sourceTree = "<group>"; };
+		6DBB17EA1C2F93280095813F /* oliver-audio-0044.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0044.mp3"; path = "Books/oliver-audio-0044.mp3"; sourceTree = "<group>"; };
+		6DBB17EB1C2F93280095813F /* oliver-audio-0045.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0045.mp3"; path = "Books/oliver-audio-0045.mp3"; sourceTree = "<group>"; };
+		6DBB17EC1C2F93280095813F /* oliver-audio-0046.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0046.mp3"; path = "Books/oliver-audio-0046.mp3"; sourceTree = "<group>"; };
+		6DBB17ED1C2F93280095813F /* oliver-audio-0047.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0047.mp3"; path = "Books/oliver-audio-0047.mp3"; sourceTree = "<group>"; };
+		6DBB17EE1C2F93280095813F /* oliver-audio-0048.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0048.mp3"; path = "Books/oliver-audio-0048.mp3"; sourceTree = "<group>"; };
+		6DBB17EF1C2F93280095813F /* oliver-audio-0049.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0049.mp3"; path = "Books/oliver-audio-0049.mp3"; sourceTree = "<group>"; };
+		6DBB17F01C2F93280095813F /* oliver-audio-0050.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0050.mp3"; path = "Books/oliver-audio-0050.mp3"; sourceTree = "<group>"; };
+		6DBB17F11C2F93280095813F /* oliver-audio-0051.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0051.mp3"; path = "Books/oliver-audio-0051.mp3"; sourceTree = "<group>"; };
+		6DBB17F21C2F93280095813F /* oliver-audio-0052.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0052.mp3"; path = "Books/oliver-audio-0052.mp3"; sourceTree = "<group>"; };
+		6DBB17F31C2F93280095813F /* oliver-audio-0053.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0053.mp3"; path = "Books/oliver-audio-0053.mp3"; sourceTree = "<group>"; };
+		6DBB17F41C2F93280095813F /* oliver-audio-0054.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0054.mp3"; path = "Books/oliver-audio-0054.mp3"; sourceTree = "<group>"; };
+		6DBB17F51C2F93280095813F /* oliver-audio-0055.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0055.mp3"; path = "Books/oliver-audio-0055.mp3"; sourceTree = "<group>"; };
+		6DBB17F61C2F93280095813F /* oliver-audio-0056.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0056.mp3"; path = "Books/oliver-audio-0056.mp3"; sourceTree = "<group>"; };
+		6DBB17F71C2F93280095813F /* oliver-audio-0057.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0057.mp3"; path = "Books/oliver-audio-0057.mp3"; sourceTree = "<group>"; };
+		6DBB17F81C2F93280095813F /* oliver-audio-0058.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0058.mp3"; path = "Books/oliver-audio-0058.mp3"; sourceTree = "<group>"; };
+		6DBB17F91C2F93280095813F /* oliver-audio-0059.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0059.mp3"; path = "Books/oliver-audio-0059.mp3"; sourceTree = "<group>"; };
+		6DBB17FA1C2F93280095813F /* oliver-audio-0060.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "oliver-audio-0060.mp3"; path = "Books/oliver-audio-0060.mp3"; sourceTree = "<group>"; };
+		6DBB17FB1C2F93280095813F /* stanley-audio-0001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0001.mp3"; path = "Books/stanley-audio-0001.mp3"; sourceTree = "<group>"; };
+		6DBB17FC1C2F93280095813F /* stanley-audio-0002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0002.mp3"; path = "Books/stanley-audio-0002.mp3"; sourceTree = "<group>"; };
+		6DBB17FD1C2F93280095813F /* stanley-audio-0003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0003.mp3"; path = "Books/stanley-audio-0003.mp3"; sourceTree = "<group>"; };
+		6DBB17FE1C2F93280095813F /* stanley-audio-0004.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0004.mp3"; path = "Books/stanley-audio-0004.mp3"; sourceTree = "<group>"; };
+		6DBB17FF1C2F93280095813F /* stanley-audio-0005.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0005.mp3"; path = "Books/stanley-audio-0005.mp3"; sourceTree = "<group>"; };
+		6DBB18001C2F93280095813F /* stanley-audio-0006.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0006.mp3"; path = "Books/stanley-audio-0006.mp3"; sourceTree = "<group>"; };
+		6DBB18011C2F93280095813F /* stanley-audio-0007.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0007.mp3"; path = "Books/stanley-audio-0007.mp3"; sourceTree = "<group>"; };
+		6DBB18021C2F93280095813F /* stanley-audio-0008.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0008.mp3"; path = "Books/stanley-audio-0008.mp3"; sourceTree = "<group>"; };
+		6DBB18031C2F93280095813F /* stanley-audio-0009.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0009.mp3"; path = "Books/stanley-audio-0009.mp3"; sourceTree = "<group>"; };
+		6DBB18041C2F93280095813F /* stanley-audio-0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0010.mp3"; path = "Books/stanley-audio-0010.mp3"; sourceTree = "<group>"; };
+		6DBB18051C2F93280095813F /* stanley-audio-0011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0011.mp3"; path = "Books/stanley-audio-0011.mp3"; sourceTree = "<group>"; };
+		6DBB18061C2F93280095813F /* stanley-audio-0012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0012.mp3"; path = "Books/stanley-audio-0012.mp3"; sourceTree = "<group>"; };
+		6DBB18071C2F93280095813F /* stanley-audio-0013.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0013.mp3"; path = "Books/stanley-audio-0013.mp3"; sourceTree = "<group>"; };
+		6DBB18081C2F93280095813F /* stanley-audio-0014.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0014.mp3"; path = "Books/stanley-audio-0014.mp3"; sourceTree = "<group>"; };
+		6DBB18091C2F93280095813F /* stanley-audio-0015.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0015.mp3"; path = "Books/stanley-audio-0015.mp3"; sourceTree = "<group>"; };
+		6DBB180A1C2F93280095813F /* stanley-audio-0016.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0016.mp3"; path = "Books/stanley-audio-0016.mp3"; sourceTree = "<group>"; };
+		6DBB180B1C2F93280095813F /* stanley-audio-0017.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0017.mp3"; path = "Books/stanley-audio-0017.mp3"; sourceTree = "<group>"; };
+		6DBB180C1C2F93280095813F /* stanley-audio-0018.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0018.mp3"; path = "Books/stanley-audio-0018.mp3"; sourceTree = "<group>"; };
+		6DBB180D1C2F93280095813F /* stanley-audio-0019.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0019.mp3"; path = "Books/stanley-audio-0019.mp3"; sourceTree = "<group>"; };
+		6DBB180E1C2F93280095813F /* stanley-audio-0020.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0020.mp3"; path = "Books/stanley-audio-0020.mp3"; sourceTree = "<group>"; };
+		6DBB180F1C2F93280095813F /* theletters-audio-0001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0001.mp3"; path = "Books/theletters-audio-0001.mp3"; sourceTree = "<group>"; };
+		6DBB18101C2F93280095813F /* theletters-audio-0002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0002.mp3"; path = "Books/theletters-audio-0002.mp3"; sourceTree = "<group>"; };
+		6DBB18111C2F93280095813F /* theletters-audio-0003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0003.mp3"; path = "Books/theletters-audio-0003.mp3"; sourceTree = "<group>"; };
+		6DBB18121C2F93280095813F /* theletters-audio-0004.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0004.mp3"; path = "Books/theletters-audio-0004.mp3"; sourceTree = "<group>"; };
+		6DBB18131C2F93280095813F /* theletters-audio-0005.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0005.mp3"; path = "Books/theletters-audio-0005.mp3"; sourceTree = "<group>"; };
+		6DBB18141C2F93280095813F /* theletters-audio-0006.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0006.mp3"; path = "Books/theletters-audio-0006.mp3"; sourceTree = "<group>"; };
+		6DBB18151C2F93280095813F /* theletters-audio-0007.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0007.mp3"; path = "Books/theletters-audio-0007.mp3"; sourceTree = "<group>"; };
+		6DBB18161C2F93280095813F /* theletters-audio-0008.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0008.mp3"; path = "Books/theletters-audio-0008.mp3"; sourceTree = "<group>"; };
+		6DBB18171C2F93280095813F /* theletters-audio-0009.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0009.mp3"; path = "Books/theletters-audio-0009.mp3"; sourceTree = "<group>"; };
+		6DBB18181C2F93280095813F /* theletters-audio-0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0010.mp3"; path = "Books/theletters-audio-0010.mp3"; sourceTree = "<group>"; };
+		6DBB18191C2F93280095813F /* theletters-audio-0011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0011.mp3"; path = "Books/theletters-audio-0011.mp3"; sourceTree = "<group>"; };
+		6DBB181A1C2F93280095813F /* theletters-audio-0012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "theletters-audio-0012.mp3"; path = "Books/theletters-audio-0012.mp3"; sourceTree = "<group>"; };
+		6DBB18771C2F95810095813F /* stanley-picture-0054.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0054.jpg"; path = "Books/stanley-picture-0054.jpg"; sourceTree = "<group>"; };
+		6DBB18781C2F95810095813F /* stanley-picture-0055.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0055.jpg"; path = "Books/stanley-picture-0055.jpg"; sourceTree = "<group>"; };
+		6DBB18791C2F95810095813F /* stanley-picture-0056.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0056.jpg"; path = "Books/stanley-picture-0056.jpg"; sourceTree = "<group>"; };
+		6DBB187A1C2F95810095813F /* stanley-picture-0057.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0057.jpg"; path = "Books/stanley-picture-0057.jpg"; sourceTree = "<group>"; };
+		6DBB187B1C2F95810095813F /* stanley-picture-0058.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0058.jpg"; path = "Books/stanley-picture-0058.jpg"; sourceTree = "<group>"; };
+		6DBB187C1C2F95810095813F /* stanley-picture-0051.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0051.jpg"; path = "Books/stanley-picture-0051.jpg"; sourceTree = "<group>"; };
+		6DBB187D1C2F95810095813F /* stanley-picture-0052.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0052.jpg"; path = "Books/stanley-picture-0052.jpg"; sourceTree = "<group>"; };
+		6DBB187E1C2F95810095813F /* stanley-picture-0053.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0053.jpg"; path = "Books/stanley-picture-0053.jpg"; sourceTree = "<group>"; };
+		6DBB187F1C2F95810095813F /* stanley-picture-0049.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0049.jpg"; path = "Books/stanley-picture-0049.jpg"; sourceTree = "<group>"; };
+		6DBB18801C2F95810095813F /* stanley-picture-0050.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0050.jpg"; path = "Books/stanley-picture-0050.jpg"; sourceTree = "<group>"; };
+		6DBB18811C2F95810095813F /* stanley-picture-0045.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0045.jpg"; path = "Books/stanley-picture-0045.jpg"; sourceTree = "<group>"; };
+		6DBB18821C2F95810095813F /* stanley-picture-0046.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0046.jpg"; path = "Books/stanley-picture-0046.jpg"; sourceTree = "<group>"; };
+		6DBB18831C2F95810095813F /* stanley-picture-0047.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0047.jpg"; path = "Books/stanley-picture-0047.jpg"; sourceTree = "<group>"; };
+		6DBB18841C2F95810095813F /* stanley-picture-0048.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0048.jpg"; path = "Books/stanley-picture-0048.jpg"; sourceTree = "<group>"; };
+		6DBB18851C2F95810095813F /* stanley-picture-0042.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0042.jpg"; path = "Books/stanley-picture-0042.jpg"; sourceTree = "<group>"; };
+		6DBB18861C2F95810095813F /* stanley-picture-0043.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0043.jpg"; path = "Books/stanley-picture-0043.jpg"; sourceTree = "<group>"; };
+		6DBB18871C2F95810095813F /* stanley-picture-0044.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0044.jpg"; path = "Books/stanley-picture-0044.jpg"; sourceTree = "<group>"; };
+		6DBB18881C2F95810095813F /* stanley-picture-0040.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0040.jpg"; path = "Books/stanley-picture-0040.jpg"; sourceTree = "<group>"; };
+		6DBB18891C2F95810095813F /* stanley-picture-0041.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0041.jpg"; path = "Books/stanley-picture-0041.jpg"; sourceTree = "<group>"; };
+		6DBB188A1C2F95810095813F /* stanley-picture-0037.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0037.jpg"; path = "Books/stanley-picture-0037.jpg"; sourceTree = "<group>"; };
+		6DBB188B1C2F95810095813F /* stanley-picture-0038.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0038.jpg"; path = "Books/stanley-picture-0038.jpg"; sourceTree = "<group>"; };
+		6DBB188C1C2F95810095813F /* stanley-picture-0039.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0039.jpg"; path = "Books/stanley-picture-0039.jpg"; sourceTree = "<group>"; };
+		6DBB188D1C2F95810095813F /* stanley-picture-0033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0033.jpg"; path = "Books/stanley-picture-0033.jpg"; sourceTree = "<group>"; };
+		6DBB188E1C2F95810095813F /* stanley-picture-0034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0034.jpg"; path = "Books/stanley-picture-0034.jpg"; sourceTree = "<group>"; };
+		6DBB188F1C2F95810095813F /* stanley-picture-0035.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0035.jpg"; path = "Books/stanley-picture-0035.jpg"; sourceTree = "<group>"; };
+		6DBB18901C2F95810095813F /* stanley-picture-0036.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0036.jpg"; path = "Books/stanley-picture-0036.jpg"; sourceTree = "<group>"; };
+		6DBB18911C2F95810095813F /* stanley-picture-0030.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0030.jpg"; path = "Books/stanley-picture-0030.jpg"; sourceTree = "<group>"; };
+		6DBB18921C2F95810095813F /* stanley-picture-0031.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0031.jpg"; path = "Books/stanley-picture-0031.jpg"; sourceTree = "<group>"; };
+		6DBB18931C2F95810095813F /* stanley-picture-0032.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0032.jpg"; path = "Books/stanley-picture-0032.jpg"; sourceTree = "<group>"; };
+		6DBB18941C2F95810095813F /* stanley-picture-0027.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0027.jpg"; path = "Books/stanley-picture-0027.jpg"; sourceTree = "<group>"; };
+		6DBB18951C2F95810095813F /* stanley-picture-0028.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0028.jpg"; path = "Books/stanley-picture-0028.jpg"; sourceTree = "<group>"; };
+		6DBB18961C2F95810095813F /* stanley-picture-0029.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0029.jpg"; path = "Books/stanley-picture-0029.jpg"; sourceTree = "<group>"; };
+		6DBB18971C2F95810095813F /* stanley-picture-0025.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0025.jpg"; path = "Books/stanley-picture-0025.jpg"; sourceTree = "<group>"; };
+		6DBB18981C2F95810095813F /* stanley-picture-0026.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0026.jpg"; path = "Books/stanley-picture-0026.jpg"; sourceTree = "<group>"; };
+		6DBB18991C2F95810095813F /* stanley-picture-0021.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0021.jpg"; path = "Books/stanley-picture-0021.jpg"; sourceTree = "<group>"; };
+		6DBB189A1C2F95810095813F /* stanley-picture-0022.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0022.jpg"; path = "Books/stanley-picture-0022.jpg"; sourceTree = "<group>"; };
+		6DBB189B1C2F95810095813F /* stanley-picture-0023.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0023.jpg"; path = "Books/stanley-picture-0023.jpg"; sourceTree = "<group>"; };
+		6DBB189C1C2F95810095813F /* stanley-picture-0024.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0024.jpg"; path = "Books/stanley-picture-0024.jpg"; sourceTree = "<group>"; };
+		6DBB18C31C2F95FC0095813F /* stanley-audio-0021.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0021.mp3"; path = "Books/stanley-audio-0021.mp3"; sourceTree = "<group>"; };
+		6DBB18C41C2F95FC0095813F /* stanley-audio-0024.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0024.mp3"; path = "Books/stanley-audio-0024.mp3"; sourceTree = "<group>"; };
+		6DBB18C51C2F95FC0095813F /* stanley-audio-0022.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0022.mp3"; path = "Books/stanley-audio-0022.mp3"; sourceTree = "<group>"; };
+		6DBB18C61C2F95FC0095813F /* stanley-audio-0023.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0023.mp3"; path = "Books/stanley-audio-0023.mp3"; sourceTree = "<group>"; };
+		6DBB18C71C2F95FC0095813F /* stanley-audio-0027.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0027.mp3"; path = "Books/stanley-audio-0027.mp3"; sourceTree = "<group>"; };
+		6DBB18C81C2F95FC0095813F /* stanley-audio-0025.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0025.mp3"; path = "Books/stanley-audio-0025.mp3"; sourceTree = "<group>"; };
+		6DBB18C91C2F95FC0095813F /* stanley-audio-0026.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0026.mp3"; path = "Books/stanley-audio-0026.mp3"; sourceTree = "<group>"; };
+		6DBB18CA1C2F95FC0095813F /* stanley-audio-0028.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0028.mp3"; path = "Books/stanley-audio-0028.mp3"; sourceTree = "<group>"; };
+		6DBB18CB1C2F95FC0095813F /* stanley-audio-0029.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0029.mp3"; path = "Books/stanley-audio-0029.mp3"; sourceTree = "<group>"; };
+		6DBB18CC1C2F95FC0095813F /* stanley-audio-0030.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0030.mp3"; path = "Books/stanley-audio-0030.mp3"; sourceTree = "<group>"; };
+		6DBB18CD1C2F95FC0095813F /* stanley-audio-0032.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0032.mp3"; path = "Books/stanley-audio-0032.mp3"; sourceTree = "<group>"; };
+		6DBB18CE1C2F95FC0095813F /* stanley-audio-0031.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0031.mp3"; path = "Books/stanley-audio-0031.mp3"; sourceTree = "<group>"; };
+		6DBB18CF1C2F95FC0095813F /* stanley-audio-0037.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0037.mp3"; path = "Books/stanley-audio-0037.mp3"; sourceTree = "<group>"; };
+		6DBB18D01C2F95FC0095813F /* stanley-audio-0034.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0034.mp3"; path = "Books/stanley-audio-0034.mp3"; sourceTree = "<group>"; };
+		6DBB18D11C2F95FC0095813F /* stanley-audio-0035.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0035.mp3"; path = "Books/stanley-audio-0035.mp3"; sourceTree = "<group>"; };
+		6DBB18D21C2F95FC0095813F /* stanley-audio-0038.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0038.mp3"; path = "Books/stanley-audio-0038.mp3"; sourceTree = "<group>"; };
+		6DBB18D31C2F95FC0095813F /* stanley-audio-0033.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0033.mp3"; path = "Books/stanley-audio-0033.mp3"; sourceTree = "<group>"; };
+		6DBB18D41C2F95FC0095813F /* stanley-audio-0039.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0039.mp3"; path = "Books/stanley-audio-0039.mp3"; sourceTree = "<group>"; };
+		6DBB18D51C2F95FC0095813F /* stanley-audio-0040.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0040.mp3"; path = "Books/stanley-audio-0040.mp3"; sourceTree = "<group>"; };
+		6DBB18D61C2F95FC0095813F /* stanley-audio-0042.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0042.mp3"; path = "Books/stanley-audio-0042.mp3"; sourceTree = "<group>"; };
+		6DBB18D71C2F95FC0095813F /* stanley-audio-0043.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0043.mp3"; path = "Books/stanley-audio-0043.mp3"; sourceTree = "<group>"; };
+		6DBB18D81C2F95FC0095813F /* stanley-audio-0044.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0044.mp3"; path = "Books/stanley-audio-0044.mp3"; sourceTree = "<group>"; };
+		6DBB18D91C2F95FC0095813F /* stanley-audio-0036.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0036.mp3"; path = "Books/stanley-audio-0036.mp3"; sourceTree = "<group>"; };
+		6DBB18DA1C2F95FC0095813F /* stanley-audio-0041.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0041.mp3"; path = "Books/stanley-audio-0041.mp3"; sourceTree = "<group>"; };
+		6DBB18DB1C2F95FC0095813F /* stanley-audio-0045.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0045.mp3"; path = "Books/stanley-audio-0045.mp3"; sourceTree = "<group>"; };
+		6DBB18DC1C2F95FC0095813F /* stanley-audio-0046.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0046.mp3"; path = "Books/stanley-audio-0046.mp3"; sourceTree = "<group>"; };
+		6DBB18DD1C2F95FC0095813F /* stanley-audio-0047.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0047.mp3"; path = "Books/stanley-audio-0047.mp3"; sourceTree = "<group>"; };
+		6DBB18DE1C2F95FC0095813F /* stanley-audio-0048.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0048.mp3"; path = "Books/stanley-audio-0048.mp3"; sourceTree = "<group>"; };
+		6DBB18DF1C2F95FC0095813F /* stanley-audio-0049.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0049.mp3"; path = "Books/stanley-audio-0049.mp3"; sourceTree = "<group>"; };
+		6DBB18E01C2F95FC0095813F /* stanley-audio-0050.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0050.mp3"; path = "Books/stanley-audio-0050.mp3"; sourceTree = "<group>"; };
+		6DBB18E11C2F95FC0095813F /* stanley-audio-0053.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0053.mp3"; path = "Books/stanley-audio-0053.mp3"; sourceTree = "<group>"; };
+		6DBB18E21C2F95FC0095813F /* stanley-audio-0051.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0051.mp3"; path = "Books/stanley-audio-0051.mp3"; sourceTree = "<group>"; };
+		6DBB18E31C2F95FC0095813F /* stanley-audio-0055.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0055.mp3"; path = "Books/stanley-audio-0055.mp3"; sourceTree = "<group>"; };
+		6DBB18E41C2F95FC0095813F /* stanley-audio-0057.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0057.mp3"; path = "Books/stanley-audio-0057.mp3"; sourceTree = "<group>"; };
+		6DBB18E51C2F95FC0095813F /* stanley-audio-0052.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0052.mp3"; path = "Books/stanley-audio-0052.mp3"; sourceTree = "<group>"; };
+		6DBB18E61C2F95FC0095813F /* stanley-audio-0054.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0054.mp3"; path = "Books/stanley-audio-0054.mp3"; sourceTree = "<group>"; };
+		6DBB18E71C2F95FC0095813F /* stanley-audio-0056.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0056.mp3"; path = "Books/stanley-audio-0056.mp3"; sourceTree = "<group>"; };
+		6DBB18E81C2F95FC0095813F /* stanley-audio-0058.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0058.mp3"; path = "Books/stanley-audio-0058.mp3"; sourceTree = "<group>"; };
 		6DF9F1B01C0A390400359200 /* BookReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF9F1B41C0A390400359200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF9F1B51C0A390400359200 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DF9F1B71C0A390400359200 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6DF9F1B81C0A390400359200 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6DF9F1BA1C0A390400359200 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		6DF9F1BB1C0A390400359200 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6DF9F1BA1C0A390400359200 /* UnusedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnusedViewController.h; sourceTree = "<group>"; };
+		6DF9F1BB1C0A390400359200 /* UnusedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnusedViewController.m; sourceTree = "<group>"; };
 		6DF9F1BE1C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DF9F1C01C0A390400359200 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DF9F1C31C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6DF9F1C91C0A390400359200 /* BookReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF9F1CE1C0A390400359200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF9F1CF1C0A390400359200 /* BookReaderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookReaderDemoTests.m; sourceTree = "<group>"; };
-		6DF9F1D91C0AAEF000359200 /* VoiceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VoiceRecordViewController.h; sourceTree = "<group>"; };
-		6DF9F1DA1C0AAEF000359200 /* VoiceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VoiceRecordViewController.m; sourceTree = "<group>"; };
-		6DF9F1DC1C0AAF0100359200 /* VoiceRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VoiceRecordViewController.xib; sourceTree = "<group>"; };
-		6DF9F1DE1C0AB3E600359200 /* RecordPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecordPlayVC.h; path = ../RecordPlayVC.h; sourceTree = "<group>"; };
-		6DF9F1DF1C0AB3E600359200 /* RecordPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RecordPlayVC.m; path = ../RecordPlayVC.m; sourceTree = "<group>"; };
+		6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnusedVoiceRecordViewController.h; sourceTree = "<group>"; };
+		6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnusedVoiceRecordViewController.m; sourceTree = "<group>"; };
+		6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnusedVoiceRecordViewController.xib; sourceTree = "<group>"; };
+		6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnusedRecordPlayVC.h; path = ../UnusedRecordPlayVC.h; sourceTree = "<group>"; };
+		6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnusedRecordPlayVC.m; path = ../UnusedRecordPlayVC.m; sourceTree = "<group>"; };
 		6DF9F1E11C0B82B200359200 /* RecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordVC.h; sourceTree = "<group>"; };
 		6DF9F1E21C0B82B200359200 /* RecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordVC.m; sourceTree = "<group>"; };
 		6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = congfucius_study.jpg; sourceTree = "<group>"; };
@@ -126,46 +680,6 @@
 		6DF9F2141C0CACD300359200 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		6DF9F2161C0CACE700359200 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6DF9F2181C0CAF5A00359200 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		6DF9F2291C27385E00359200 /* 0001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0001.mp3; path = BookReaderDemo/0001.mp3; sourceTree = "<group>"; };
-		6DF9F22A1C27385E00359200 /* 0002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0002.mp3; path = BookReaderDemo/0002.mp3; sourceTree = "<group>"; };
-		6DF9F22B1C27385E00359200 /* 0003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0003.mp3; path = BookReaderDemo/0003.mp3; sourceTree = "<group>"; };
-		6DF9F22C1C27385E00359200 /* 0004.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0004.mp3; path = BookReaderDemo/0004.mp3; sourceTree = "<group>"; };
-		6DF9F22D1C27385E00359200 /* 0005.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0005.mp3; path = BookReaderDemo/0005.mp3; sourceTree = "<group>"; };
-		6DF9F22E1C27385E00359200 /* 0006.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0006.mp3; path = BookReaderDemo/0006.mp3; sourceTree = "<group>"; };
-		6DF9F22F1C27385E00359200 /* 0007.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0007.mp3; path = BookReaderDemo/0007.mp3; sourceTree = "<group>"; };
-		6DF9F2301C27385E00359200 /* 0008.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0008.mp3; path = BookReaderDemo/0008.mp3; sourceTree = "<group>"; };
-		6DF9F2311C27385E00359200 /* 0009.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0009.mp3; path = BookReaderDemo/0009.mp3; sourceTree = "<group>"; };
-		6DF9F2321C27385E00359200 /* 0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0010.mp3; path = BookReaderDemo/0010.mp3; sourceTree = "<group>"; };
-		6DF9F2331C27385E00359200 /* 0011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0011.mp3; path = BookReaderDemo/0011.mp3; sourceTree = "<group>"; };
-		6DF9F2341C27385E00359200 /* 0012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0012.mp3; path = BookReaderDemo/0012.mp3; sourceTree = "<group>"; };
-		6DF9F2351C27385E00359200 /* 0013.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0013.mp3; path = BookReaderDemo/0013.mp3; sourceTree = "<group>"; };
-		6DF9F2361C27385E00359200 /* 0014.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0014.mp3; path = BookReaderDemo/0014.mp3; sourceTree = "<group>"; };
-		6DF9F2371C27385E00359200 /* 0015.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0015.mp3; path = BookReaderDemo/0015.mp3; sourceTree = "<group>"; };
-		6DF9F2381C27385E00359200 /* 0016.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0016.mp3; path = BookReaderDemo/0016.mp3; sourceTree = "<group>"; };
-		6DF9F2391C27385E00359200 /* 0017.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0017.mp3; path = BookReaderDemo/0017.mp3; sourceTree = "<group>"; };
-		6DF9F23A1C27385E00359200 /* 0018.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0018.mp3; path = BookReaderDemo/0018.mp3; sourceTree = "<group>"; };
-		6DF9F23B1C27385E00359200 /* 0019.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0019.mp3; path = BookReaderDemo/0019.mp3; sourceTree = "<group>"; };
-		6DF9F23C1C27385E00359200 /* 0020.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = 0020.mp3; path = BookReaderDemo/0020.mp3; sourceTree = "<group>"; };
-		6DF9F2791C273B9500359200 /* img-Z14160447-0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0001.jpg"; sourceTree = "<group>"; };
-		6DF9F27A1C273B9500359200 /* img-Z14160447-0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0002.jpg"; sourceTree = "<group>"; };
-		6DF9F27B1C273B9500359200 /* img-Z14160447-0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0003.jpg"; sourceTree = "<group>"; };
-		6DF9F27C1C273B9500359200 /* img-Z14160447-0004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0004.jpg"; sourceTree = "<group>"; };
-		6DF9F27D1C273B9500359200 /* img-Z14160447-0005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0005.jpg"; sourceTree = "<group>"; };
-		6DF9F27E1C273B9500359200 /* img-Z14160447-0006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0006.jpg"; sourceTree = "<group>"; };
-		6DF9F27F1C273B9500359200 /* img-Z14160447-0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0007.jpg"; sourceTree = "<group>"; };
-		6DF9F2801C273B9500359200 /* img-Z14160447-0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0008.jpg"; sourceTree = "<group>"; };
-		6DF9F2811C273B9500359200 /* img-Z14160447-0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0009.jpg"; sourceTree = "<group>"; };
-		6DF9F2821C273B9500359200 /* img-Z14160447-0010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0010.jpg"; sourceTree = "<group>"; };
-		6DF9F2831C273B9500359200 /* img-Z14160447-0011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0011.jpg"; sourceTree = "<group>"; };
-		6DF9F2841C273B9500359200 /* img-Z14160447-0012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0012.jpg"; sourceTree = "<group>"; };
-		6DF9F2851C273B9500359200 /* img-Z14160447-0013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0013.jpg"; sourceTree = "<group>"; };
-		6DF9F2861C273B9500359200 /* img-Z14160447-0014.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0014.jpg"; sourceTree = "<group>"; };
-		6DF9F2871C273B9500359200 /* img-Z14160447-0015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0015.jpg"; sourceTree = "<group>"; };
-		6DF9F2881C273B9500359200 /* img-Z14160447-0016.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0016.jpg"; sourceTree = "<group>"; };
-		6DF9F2891C273B9500359200 /* img-Z14160447-0017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0017.jpg"; sourceTree = "<group>"; };
-		6DF9F28A1C273B9500359200 /* img-Z14160447-0018.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0018.jpg"; sourceTree = "<group>"; };
-		6DF9F28B1C273B9500359200 /* img-Z14160447-0019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0019.jpg"; sourceTree = "<group>"; };
-		6DF9F28C1C273B9500359200 /* img-Z14160447-0020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "img-Z14160447-0020.jpg"; sourceTree = "<group>"; };
 		6DF9F2A11C27443D00359200 /* BookPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPlayerVC.h; sourceTree = "<group>"; };
 		6DF9F2A21C27443D00359200 /* BookPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPlayerVC.m; sourceTree = "<group>"; };
 		6DF9F2A31C27443D00359200 /* BookPlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookPlayerVC.xib; sourceTree = "<group>"; };
@@ -177,6 +691,54 @@
 		6DF9F2B21C27998000359200 /* BookItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemCell.h; sourceTree = "<group>"; };
 		6DF9F2B31C27998000359200 /* BookItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemCell.m; sourceTree = "<group>"; };
 		6DF9F2B41C27998000359200 /* BookItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookItemCell.xib; sourceTree = "<group>"; };
+		6DF9F2B71C28550700359200 /* BRDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDConfig.h; sourceTree = "<group>"; };
+		6DF9F2B81C28550700359200 /* BRDConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDConfig.m; sourceTree = "<group>"; };
+		6DF9F2BE1C2E238100359200 /* LocalBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalBook.h; path = Models/LocalBook.h; sourceTree = "<group>"; };
+		6DF9F2BF1C2E238100359200 /* LocalBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalBook.m; path = Models/LocalBook.m; sourceTree = "<group>"; };
+		6DF9F2C11C2E25D500359200 /* LocalBookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalBookStore.h; path = Models/LocalBookStore.h; sourceTree = "<group>"; };
+		6DF9F2C21C2E25D500359200 /* LocalBookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalBookStore.m; path = Models/LocalBookStore.m; sourceTree = "<group>"; };
+		6DF9F2C41C2E4D0900359200 /* stanley-audio-0001.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0001.mp3"; path = "Books/stanley-audio-0001.mp3"; sourceTree = "<group>"; };
+		6DF9F2C51C2E4D0900359200 /* stanley-audio-0002.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0002.mp3"; path = "Books/stanley-audio-0002.mp3"; sourceTree = "<group>"; };
+		6DF9F2C61C2E4D0900359200 /* stanley-audio-0003.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0003.mp3"; path = "Books/stanley-audio-0003.mp3"; sourceTree = "<group>"; };
+		6DF9F2C71C2E4D0900359200 /* stanley-audio-0004.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0004.mp3"; path = "Books/stanley-audio-0004.mp3"; sourceTree = "<group>"; };
+		6DF9F2C81C2E4D0900359200 /* stanley-audio-0005.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0005.mp3"; path = "Books/stanley-audio-0005.mp3"; sourceTree = "<group>"; };
+		6DF9F2C91C2E4D0900359200 /* stanley-audio-0006.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0006.mp3"; path = "Books/stanley-audio-0006.mp3"; sourceTree = "<group>"; };
+		6DF9F2CA1C2E4D0900359200 /* stanley-audio-0007.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0007.mp3"; path = "Books/stanley-audio-0007.mp3"; sourceTree = "<group>"; };
+		6DF9F2CB1C2E4D0900359200 /* stanley-audio-0008.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0008.mp3"; path = "Books/stanley-audio-0008.mp3"; sourceTree = "<group>"; };
+		6DF9F2CC1C2E4D0900359200 /* stanley-audio-0009.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0009.mp3"; path = "Books/stanley-audio-0009.mp3"; sourceTree = "<group>"; };
+		6DF9F2CD1C2E4D0900359200 /* stanley-audio-0010.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0010.mp3"; path = "Books/stanley-audio-0010.mp3"; sourceTree = "<group>"; };
+		6DF9F2CE1C2E4D0900359200 /* stanley-audio-0011.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0011.mp3"; path = "Books/stanley-audio-0011.mp3"; sourceTree = "<group>"; };
+		6DF9F2CF1C2E4D0900359200 /* stanley-audio-0012.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0012.mp3"; path = "Books/stanley-audio-0012.mp3"; sourceTree = "<group>"; };
+		6DF9F2D01C2E4D0900359200 /* stanley-audio-0013.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0013.mp3"; path = "Books/stanley-audio-0013.mp3"; sourceTree = "<group>"; };
+		6DF9F2D11C2E4D0900359200 /* stanley-audio-0014.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0014.mp3"; path = "Books/stanley-audio-0014.mp3"; sourceTree = "<group>"; };
+		6DF9F2D21C2E4D0900359200 /* stanley-audio-0015.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0015.mp3"; path = "Books/stanley-audio-0015.mp3"; sourceTree = "<group>"; };
+		6DF9F2D31C2E4D0900359200 /* stanley-audio-0016.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0016.mp3"; path = "Books/stanley-audio-0016.mp3"; sourceTree = "<group>"; };
+		6DF9F2D41C2E4D0900359200 /* stanley-audio-0017.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0017.mp3"; path = "Books/stanley-audio-0017.mp3"; sourceTree = "<group>"; };
+		6DF9F2D51C2E4D0900359200 /* stanley-audio-0018.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0018.mp3"; path = "Books/stanley-audio-0018.mp3"; sourceTree = "<group>"; };
+		6DF9F2D61C2E4D0900359200 /* stanley-audio-0019.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0019.mp3"; path = "Books/stanley-audio-0019.mp3"; sourceTree = "<group>"; };
+		6DF9F2D71C2E4D0900359200 /* stanley-audio-0020.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = "stanley-audio-0020.mp3"; path = "Books/stanley-audio-0020.mp3"; sourceTree = "<group>"; };
+		6DF9F2EC1C2E4D1200359200 /* stanley-picture-0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0001.jpg"; path = "Books/stanley-picture-0001.jpg"; sourceTree = "<group>"; };
+		6DF9F2ED1C2E4D1200359200 /* stanley-picture-0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0002.jpg"; path = "Books/stanley-picture-0002.jpg"; sourceTree = "<group>"; };
+		6DF9F2EE1C2E4D1200359200 /* stanley-picture-0003.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0003.jpg"; path = "Books/stanley-picture-0003.jpg"; sourceTree = "<group>"; };
+		6DF9F2EF1C2E4D1200359200 /* stanley-picture-0004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0004.jpg"; path = "Books/stanley-picture-0004.jpg"; sourceTree = "<group>"; };
+		6DF9F2F01C2E4D1200359200 /* stanley-picture-0005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0005.jpg"; path = "Books/stanley-picture-0005.jpg"; sourceTree = "<group>"; };
+		6DF9F2F11C2E4D1200359200 /* stanley-picture-0006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0006.jpg"; path = "Books/stanley-picture-0006.jpg"; sourceTree = "<group>"; };
+		6DF9F2F21C2E4D1200359200 /* stanley-picture-0007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0007.jpg"; path = "Books/stanley-picture-0007.jpg"; sourceTree = "<group>"; };
+		6DF9F2F31C2E4D1200359200 /* stanley-picture-0008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0008.jpg"; path = "Books/stanley-picture-0008.jpg"; sourceTree = "<group>"; };
+		6DF9F2F41C2E4D1200359200 /* stanley-picture-0009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0009.jpg"; path = "Books/stanley-picture-0009.jpg"; sourceTree = "<group>"; };
+		6DF9F2F51C2E4D1200359200 /* stanley-picture-0010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0010.jpg"; path = "Books/stanley-picture-0010.jpg"; sourceTree = "<group>"; };
+		6DF9F2F61C2E4D1200359200 /* stanley-picture-0011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0011.jpg"; path = "Books/stanley-picture-0011.jpg"; sourceTree = "<group>"; };
+		6DF9F2F71C2E4D1200359200 /* stanley-picture-0012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0012.jpg"; path = "Books/stanley-picture-0012.jpg"; sourceTree = "<group>"; };
+		6DF9F2F81C2E4D1200359200 /* stanley-picture-0013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0013.jpg"; path = "Books/stanley-picture-0013.jpg"; sourceTree = "<group>"; };
+		6DF9F2F91C2E4D1200359200 /* stanley-picture-0014.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0014.jpg"; path = "Books/stanley-picture-0014.jpg"; sourceTree = "<group>"; };
+		6DF9F2FA1C2E4D1200359200 /* stanley-picture-0015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0015.jpg"; path = "Books/stanley-picture-0015.jpg"; sourceTree = "<group>"; };
+		6DF9F2FB1C2E4D1200359200 /* stanley-picture-0016.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0016.jpg"; path = "Books/stanley-picture-0016.jpg"; sourceTree = "<group>"; };
+		6DF9F2FC1C2E4D1200359200 /* stanley-picture-0017.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0017.jpg"; path = "Books/stanley-picture-0017.jpg"; sourceTree = "<group>"; };
+		6DF9F2FD1C2E4D1200359200 /* stanley-picture-0018.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0018.jpg"; path = "Books/stanley-picture-0018.jpg"; sourceTree = "<group>"; };
+		6DF9F2FE1C2E4D1200359200 /* stanley-picture-0019.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0019.jpg"; path = "Books/stanley-picture-0019.jpg"; sourceTree = "<group>"; };
+		6DF9F2FF1C2E4D1200359200 /* stanley-picture-0020.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "stanley-picture-0020.jpg"; path = "Books/stanley-picture-0020.jpg"; sourceTree = "<group>"; };
+		6DF9F3141C2E5C2B00359200 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = BookReaderDemo/RootViewController.h; sourceTree = "<group>"; };
+		6DF9F3151C2E5C2B00359200 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = BookReaderDemo/RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,10 +773,16 @@
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
+				6DF9F2BA1C2E22F500359200 /* Models */,
+				6DF9F2B71C28550700359200 /* BRDConfig.h */,
+				6DF9F2B81C28550700359200 /* BRDConfig.m */,
 				6DF9F2A61C27820C00359200 /* Controls */,
 				6DF9F2A11C27443D00359200 /* BookPlayerVC.h */,
 				6DF9F2A21C27443D00359200 /* BookPlayerVC.m */,
 				6DF9F2A31C27443D00359200 /* BookPlayerVC.xib */,
+				6DF9F3141C2E5C2B00359200 /* RootViewController.h */,
+				6DF9F3151C2E5C2B00359200 /* RootViewController.m */,
+				6DBB16E91C2E6C3B0095813F /* RootViewController.xib */,
 				6DF9F2281C27385000359200 /* Image */,
 				6DF9F2271C27383C00359200 /* Audio */,
 				6DF9F1B21C0A390400359200 /* BookReaderDemo */,
@@ -249,17 +817,17 @@
 		6DF9F1B21C0A390400359200 /* BookReaderDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6DF9F1DE1C0AB3E600359200 /* RecordPlayVC.h */,
-				6DF9F1DF1C0AB3E600359200 /* RecordPlayVC.m */,
-				6DF9F1D91C0AAEF000359200 /* VoiceRecordViewController.h */,
-				6DF9F1DA1C0AAEF000359200 /* VoiceRecordViewController.m */,
+				6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */,
+				6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */,
+				6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */,
+				6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */,
 				6DF9F1B71C0A390400359200 /* AppDelegate.h */,
 				6DF9F1B81C0A390400359200 /* AppDelegate.m */,
-				6DF9F1BA1C0A390400359200 /* ViewController.h */,
-				6DF9F1BB1C0A390400359200 /* ViewController.m */,
+				6DF9F1BA1C0A390400359200 /* UnusedViewController.h */,
+				6DF9F1BB1C0A390400359200 /* UnusedViewController.m */,
 				6DF9F1BD1C0A390400359200 /* Main.storyboard */,
 				6DF9F1C01C0A390400359200 /* Images.xcassets */,
-				6DF9F1DC1C0AAF0100359200 /* VoiceRecordViewController.xib */,
+				6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */,
 				6DF9F1E11C0B82B200359200 /* RecordVC.h */,
 				6DF9F1E21C0B82B200359200 /* RecordVC.m */,
 				6DF9F1C21C0A390400359200 /* LaunchScreen.xib */,
@@ -299,26 +867,156 @@
 		6DF9F2271C27383C00359200 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
-				6DF9F2291C27385E00359200 /* 0001.mp3 */,
-				6DF9F22A1C27385E00359200 /* 0002.mp3 */,
-				6DF9F22B1C27385E00359200 /* 0003.mp3 */,
-				6DF9F22C1C27385E00359200 /* 0004.mp3 */,
-				6DF9F22D1C27385E00359200 /* 0005.mp3 */,
-				6DF9F22E1C27385E00359200 /* 0006.mp3 */,
-				6DF9F22F1C27385E00359200 /* 0007.mp3 */,
-				6DF9F2301C27385E00359200 /* 0008.mp3 */,
-				6DF9F2311C27385E00359200 /* 0009.mp3 */,
-				6DF9F2321C27385E00359200 /* 0010.mp3 */,
-				6DF9F2331C27385E00359200 /* 0011.mp3 */,
-				6DF9F2341C27385E00359200 /* 0012.mp3 */,
-				6DF9F2351C27385E00359200 /* 0013.mp3 */,
-				6DF9F2361C27385E00359200 /* 0014.mp3 */,
-				6DF9F2371C27385E00359200 /* 0015.mp3 */,
-				6DF9F2381C27385E00359200 /* 0016.mp3 */,
-				6DF9F2391C27385E00359200 /* 0017.mp3 */,
-				6DF9F23A1C27385E00359200 /* 0018.mp3 */,
-				6DF9F23B1C27385E00359200 /* 0019.mp3 */,
-				6DF9F23C1C27385E00359200 /* 0020.mp3 */,
+				6DBB18C31C2F95FC0095813F /* stanley-audio-0021.mp3 */,
+				6DBB18C41C2F95FC0095813F /* stanley-audio-0024.mp3 */,
+				6DBB18C51C2F95FC0095813F /* stanley-audio-0022.mp3 */,
+				6DBB18C61C2F95FC0095813F /* stanley-audio-0023.mp3 */,
+				6DBB18C71C2F95FC0095813F /* stanley-audio-0027.mp3 */,
+				6DBB18C81C2F95FC0095813F /* stanley-audio-0025.mp3 */,
+				6DBB18C91C2F95FC0095813F /* stanley-audio-0026.mp3 */,
+				6DBB18CA1C2F95FC0095813F /* stanley-audio-0028.mp3 */,
+				6DBB18CB1C2F95FC0095813F /* stanley-audio-0029.mp3 */,
+				6DBB18CC1C2F95FC0095813F /* stanley-audio-0030.mp3 */,
+				6DBB18CD1C2F95FC0095813F /* stanley-audio-0032.mp3 */,
+				6DBB18CE1C2F95FC0095813F /* stanley-audio-0031.mp3 */,
+				6DBB18CF1C2F95FC0095813F /* stanley-audio-0037.mp3 */,
+				6DBB18D01C2F95FC0095813F /* stanley-audio-0034.mp3 */,
+				6DBB18D11C2F95FC0095813F /* stanley-audio-0035.mp3 */,
+				6DBB18D21C2F95FC0095813F /* stanley-audio-0038.mp3 */,
+				6DBB18D31C2F95FC0095813F /* stanley-audio-0033.mp3 */,
+				6DBB18D41C2F95FC0095813F /* stanley-audio-0039.mp3 */,
+				6DBB18D51C2F95FC0095813F /* stanley-audio-0040.mp3 */,
+				6DBB18D61C2F95FC0095813F /* stanley-audio-0042.mp3 */,
+				6DBB18D71C2F95FC0095813F /* stanley-audio-0043.mp3 */,
+				6DBB18D81C2F95FC0095813F /* stanley-audio-0044.mp3 */,
+				6DBB18D91C2F95FC0095813F /* stanley-audio-0036.mp3 */,
+				6DBB18DA1C2F95FC0095813F /* stanley-audio-0041.mp3 */,
+				6DBB18DB1C2F95FC0095813F /* stanley-audio-0045.mp3 */,
+				6DBB18DC1C2F95FC0095813F /* stanley-audio-0046.mp3 */,
+				6DBB18DD1C2F95FC0095813F /* stanley-audio-0047.mp3 */,
+				6DBB18DE1C2F95FC0095813F /* stanley-audio-0048.mp3 */,
+				6DBB18DF1C2F95FC0095813F /* stanley-audio-0049.mp3 */,
+				6DBB18E01C2F95FC0095813F /* stanley-audio-0050.mp3 */,
+				6DBB18E11C2F95FC0095813F /* stanley-audio-0053.mp3 */,
+				6DBB18E21C2F95FC0095813F /* stanley-audio-0051.mp3 */,
+				6DBB18E31C2F95FC0095813F /* stanley-audio-0055.mp3 */,
+				6DBB18E41C2F95FC0095813F /* stanley-audio-0057.mp3 */,
+				6DBB18E51C2F95FC0095813F /* stanley-audio-0052.mp3 */,
+				6DBB18E61C2F95FC0095813F /* stanley-audio-0054.mp3 */,
+				6DBB18E71C2F95FC0095813F /* stanley-audio-0056.mp3 */,
+				6DBB18E81C2F95FC0095813F /* stanley-audio-0058.mp3 */,
+				6DBB17BF1C2F93280095813F /* oliver-audio-0001.mp3 */,
+				6DBB17C01C2F93280095813F /* oliver-audio-0002.mp3 */,
+				6DBB17C11C2F93280095813F /* oliver-audio-0003.mp3 */,
+				6DBB17C21C2F93280095813F /* oliver-audio-0004.mp3 */,
+				6DBB17C31C2F93280095813F /* oliver-audio-0005.mp3 */,
+				6DBB17C41C2F93280095813F /* oliver-audio-0006.mp3 */,
+				6DBB17C51C2F93280095813F /* oliver-audio-0007.mp3 */,
+				6DBB17C61C2F93280095813F /* oliver-audio-0008.mp3 */,
+				6DBB17C71C2F93280095813F /* oliver-audio-0009.mp3 */,
+				6DBB17C81C2F93280095813F /* oliver-audio-0010.mp3 */,
+				6DBB17C91C2F93280095813F /* oliver-audio-0011.mp3 */,
+				6DBB17CA1C2F93280095813F /* oliver-audio-0012.mp3 */,
+				6DBB17CB1C2F93280095813F /* oliver-audio-0013.mp3 */,
+				6DBB17CC1C2F93280095813F /* oliver-audio-0014.mp3 */,
+				6DBB17CD1C2F93280095813F /* oliver-audio-0015.mp3 */,
+				6DBB17CE1C2F93280095813F /* oliver-audio-0016.mp3 */,
+				6DBB17CF1C2F93280095813F /* oliver-audio-0017.mp3 */,
+				6DBB17D01C2F93280095813F /* oliver-audio-0018.mp3 */,
+				6DBB17D11C2F93280095813F /* oliver-audio-0019.mp3 */,
+				6DBB17D21C2F93280095813F /* oliver-audio-0020.mp3 */,
+				6DBB17D31C2F93280095813F /* oliver-audio-0021.mp3 */,
+				6DBB17D41C2F93280095813F /* oliver-audio-0022.mp3 */,
+				6DBB17D51C2F93280095813F /* oliver-audio-0023.mp3 */,
+				6DBB17D61C2F93280095813F /* oliver-audio-0024.mp3 */,
+				6DBB17D71C2F93280095813F /* oliver-audio-0025.mp3 */,
+				6DBB17D81C2F93280095813F /* oliver-audio-0026.mp3 */,
+				6DBB17D91C2F93280095813F /* oliver-audio-0027.mp3 */,
+				6DBB17DA1C2F93280095813F /* oliver-audio-0028.mp3 */,
+				6DBB17DB1C2F93280095813F /* oliver-audio-0029.mp3 */,
+				6DBB17DC1C2F93280095813F /* oliver-audio-0030.mp3 */,
+				6DBB17DD1C2F93280095813F /* oliver-audio-0031.mp3 */,
+				6DBB17DE1C2F93280095813F /* oliver-audio-0032.mp3 */,
+				6DBB17DF1C2F93280095813F /* oliver-audio-0033.mp3 */,
+				6DBB17E01C2F93280095813F /* oliver-audio-0034.mp3 */,
+				6DBB17E11C2F93280095813F /* oliver-audio-0035.mp3 */,
+				6DBB17E21C2F93280095813F /* oliver-audio-0036.mp3 */,
+				6DBB17E31C2F93280095813F /* oliver-audio-0037.mp3 */,
+				6DBB17E41C2F93280095813F /* oliver-audio-0038.mp3 */,
+				6DBB17E51C2F93280095813F /* oliver-audio-0039.mp3 */,
+				6DBB17E61C2F93280095813F /* oliver-audio-0040.mp3 */,
+				6DBB17E71C2F93280095813F /* oliver-audio-0041.mp3 */,
+				6DBB17E81C2F93280095813F /* oliver-audio-0042.mp3 */,
+				6DBB17E91C2F93280095813F /* oliver-audio-0043.mp3 */,
+				6DBB17EA1C2F93280095813F /* oliver-audio-0044.mp3 */,
+				6DBB17EB1C2F93280095813F /* oliver-audio-0045.mp3 */,
+				6DBB17EC1C2F93280095813F /* oliver-audio-0046.mp3 */,
+				6DBB17ED1C2F93280095813F /* oliver-audio-0047.mp3 */,
+				6DBB17EE1C2F93280095813F /* oliver-audio-0048.mp3 */,
+				6DBB17EF1C2F93280095813F /* oliver-audio-0049.mp3 */,
+				6DBB17F01C2F93280095813F /* oliver-audio-0050.mp3 */,
+				6DBB17F11C2F93280095813F /* oliver-audio-0051.mp3 */,
+				6DBB17F21C2F93280095813F /* oliver-audio-0052.mp3 */,
+				6DBB17F31C2F93280095813F /* oliver-audio-0053.mp3 */,
+				6DBB17F41C2F93280095813F /* oliver-audio-0054.mp3 */,
+				6DBB17F51C2F93280095813F /* oliver-audio-0055.mp3 */,
+				6DBB17F61C2F93280095813F /* oliver-audio-0056.mp3 */,
+				6DBB17F71C2F93280095813F /* oliver-audio-0057.mp3 */,
+				6DBB17F81C2F93280095813F /* oliver-audio-0058.mp3 */,
+				6DBB17F91C2F93280095813F /* oliver-audio-0059.mp3 */,
+				6DBB17FA1C2F93280095813F /* oliver-audio-0060.mp3 */,
+				6DBB17FB1C2F93280095813F /* stanley-audio-0001.mp3 */,
+				6DBB17FC1C2F93280095813F /* stanley-audio-0002.mp3 */,
+				6DBB17FD1C2F93280095813F /* stanley-audio-0003.mp3 */,
+				6DBB17FE1C2F93280095813F /* stanley-audio-0004.mp3 */,
+				6DBB17FF1C2F93280095813F /* stanley-audio-0005.mp3 */,
+				6DBB18001C2F93280095813F /* stanley-audio-0006.mp3 */,
+				6DBB18011C2F93280095813F /* stanley-audio-0007.mp3 */,
+				6DBB18021C2F93280095813F /* stanley-audio-0008.mp3 */,
+				6DBB18031C2F93280095813F /* stanley-audio-0009.mp3 */,
+				6DBB18041C2F93280095813F /* stanley-audio-0010.mp3 */,
+				6DBB18051C2F93280095813F /* stanley-audio-0011.mp3 */,
+				6DBB18061C2F93280095813F /* stanley-audio-0012.mp3 */,
+				6DBB18071C2F93280095813F /* stanley-audio-0013.mp3 */,
+				6DBB18081C2F93280095813F /* stanley-audio-0014.mp3 */,
+				6DBB18091C2F93280095813F /* stanley-audio-0015.mp3 */,
+				6DBB180A1C2F93280095813F /* stanley-audio-0016.mp3 */,
+				6DBB180B1C2F93280095813F /* stanley-audio-0017.mp3 */,
+				6DBB180C1C2F93280095813F /* stanley-audio-0018.mp3 */,
+				6DBB180D1C2F93280095813F /* stanley-audio-0019.mp3 */,
+				6DBB180E1C2F93280095813F /* stanley-audio-0020.mp3 */,
+				6DBB180F1C2F93280095813F /* theletters-audio-0001.mp3 */,
+				6DBB18101C2F93280095813F /* theletters-audio-0002.mp3 */,
+				6DBB18111C2F93280095813F /* theletters-audio-0003.mp3 */,
+				6DBB18121C2F93280095813F /* theletters-audio-0004.mp3 */,
+				6DBB18131C2F93280095813F /* theletters-audio-0005.mp3 */,
+				6DBB18141C2F93280095813F /* theletters-audio-0006.mp3 */,
+				6DBB18151C2F93280095813F /* theletters-audio-0007.mp3 */,
+				6DBB18161C2F93280095813F /* theletters-audio-0008.mp3 */,
+				6DBB18171C2F93280095813F /* theletters-audio-0009.mp3 */,
+				6DBB18181C2F93280095813F /* theletters-audio-0010.mp3 */,
+				6DBB18191C2F93280095813F /* theletters-audio-0011.mp3 */,
+				6DBB181A1C2F93280095813F /* theletters-audio-0012.mp3 */,
+				6DF9F2C41C2E4D0900359200 /* stanley-audio-0001.mp3 */,
+				6DF9F2C51C2E4D0900359200 /* stanley-audio-0002.mp3 */,
+				6DF9F2C61C2E4D0900359200 /* stanley-audio-0003.mp3 */,
+				6DF9F2C71C2E4D0900359200 /* stanley-audio-0004.mp3 */,
+				6DF9F2C81C2E4D0900359200 /* stanley-audio-0005.mp3 */,
+				6DF9F2C91C2E4D0900359200 /* stanley-audio-0006.mp3 */,
+				6DF9F2CA1C2E4D0900359200 /* stanley-audio-0007.mp3 */,
+				6DF9F2CB1C2E4D0900359200 /* stanley-audio-0008.mp3 */,
+				6DF9F2CC1C2E4D0900359200 /* stanley-audio-0009.mp3 */,
+				6DF9F2CD1C2E4D0900359200 /* stanley-audio-0010.mp3 */,
+				6DF9F2CE1C2E4D0900359200 /* stanley-audio-0011.mp3 */,
+				6DF9F2CF1C2E4D0900359200 /* stanley-audio-0012.mp3 */,
+				6DF9F2D01C2E4D0900359200 /* stanley-audio-0013.mp3 */,
+				6DF9F2D11C2E4D0900359200 /* stanley-audio-0014.mp3 */,
+				6DF9F2D21C2E4D0900359200 /* stanley-audio-0015.mp3 */,
+				6DF9F2D31C2E4D0900359200 /* stanley-audio-0016.mp3 */,
+				6DF9F2D41C2E4D0900359200 /* stanley-audio-0017.mp3 */,
+				6DF9F2D51C2E4D0900359200 /* stanley-audio-0018.mp3 */,
+				6DF9F2D61C2E4D0900359200 /* stanley-audio-0019.mp3 */,
+				6DF9F2D71C2E4D0900359200 /* stanley-audio-0020.mp3 */,
 			);
 			name = Audio;
 			sourceTree = "<group>";
@@ -326,26 +1024,170 @@
 		6DF9F2281C27385000359200 /* Image */ = {
 			isa = PBXGroup;
 			children = (
-				6DF9F2791C273B9500359200 /* img-Z14160447-0001.jpg */,
-				6DF9F27A1C273B9500359200 /* img-Z14160447-0002.jpg */,
-				6DF9F27B1C273B9500359200 /* img-Z14160447-0003.jpg */,
-				6DF9F27C1C273B9500359200 /* img-Z14160447-0004.jpg */,
-				6DF9F27D1C273B9500359200 /* img-Z14160447-0005.jpg */,
-				6DF9F27E1C273B9500359200 /* img-Z14160447-0006.jpg */,
-				6DF9F27F1C273B9500359200 /* img-Z14160447-0007.jpg */,
-				6DF9F2801C273B9500359200 /* img-Z14160447-0008.jpg */,
-				6DF9F2811C273B9500359200 /* img-Z14160447-0009.jpg */,
-				6DF9F2821C273B9500359200 /* img-Z14160447-0010.jpg */,
-				6DF9F2831C273B9500359200 /* img-Z14160447-0011.jpg */,
-				6DF9F2841C273B9500359200 /* img-Z14160447-0012.jpg */,
-				6DF9F2851C273B9500359200 /* img-Z14160447-0013.jpg */,
-				6DF9F2861C273B9500359200 /* img-Z14160447-0014.jpg */,
-				6DF9F2871C273B9500359200 /* img-Z14160447-0015.jpg */,
-				6DF9F2881C273B9500359200 /* img-Z14160447-0016.jpg */,
-				6DF9F2891C273B9500359200 /* img-Z14160447-0017.jpg */,
-				6DF9F28A1C273B9500359200 /* img-Z14160447-0018.jpg */,
-				6DF9F28B1C273B9500359200 /* img-Z14160447-0019.jpg */,
-				6DF9F28C1C273B9500359200 /* img-Z14160447-0020.jpg */,
+				6DBB18771C2F95810095813F /* stanley-picture-0054.jpg */,
+				6DBB18781C2F95810095813F /* stanley-picture-0055.jpg */,
+				6DBB18791C2F95810095813F /* stanley-picture-0056.jpg */,
+				6DBB187A1C2F95810095813F /* stanley-picture-0057.jpg */,
+				6DBB187B1C2F95810095813F /* stanley-picture-0058.jpg */,
+				6DBB187C1C2F95810095813F /* stanley-picture-0051.jpg */,
+				6DBB187D1C2F95810095813F /* stanley-picture-0052.jpg */,
+				6DBB187E1C2F95810095813F /* stanley-picture-0053.jpg */,
+				6DBB187F1C2F95810095813F /* stanley-picture-0049.jpg */,
+				6DBB18801C2F95810095813F /* stanley-picture-0050.jpg */,
+				6DBB18811C2F95810095813F /* stanley-picture-0045.jpg */,
+				6DBB18821C2F95810095813F /* stanley-picture-0046.jpg */,
+				6DBB18831C2F95810095813F /* stanley-picture-0047.jpg */,
+				6DBB18841C2F95810095813F /* stanley-picture-0048.jpg */,
+				6DBB18851C2F95810095813F /* stanley-picture-0042.jpg */,
+				6DBB18861C2F95810095813F /* stanley-picture-0043.jpg */,
+				6DBB18871C2F95810095813F /* stanley-picture-0044.jpg */,
+				6DBB18881C2F95810095813F /* stanley-picture-0040.jpg */,
+				6DBB18891C2F95810095813F /* stanley-picture-0041.jpg */,
+				6DBB188A1C2F95810095813F /* stanley-picture-0037.jpg */,
+				6DBB188B1C2F95810095813F /* stanley-picture-0038.jpg */,
+				6DBB188C1C2F95810095813F /* stanley-picture-0039.jpg */,
+				6DBB188D1C2F95810095813F /* stanley-picture-0033.jpg */,
+				6DBB188E1C2F95810095813F /* stanley-picture-0034.jpg */,
+				6DBB188F1C2F95810095813F /* stanley-picture-0035.jpg */,
+				6DBB18901C2F95810095813F /* stanley-picture-0036.jpg */,
+				6DBB18911C2F95810095813F /* stanley-picture-0030.jpg */,
+				6DBB18921C2F95810095813F /* stanley-picture-0031.jpg */,
+				6DBB18931C2F95810095813F /* stanley-picture-0032.jpg */,
+				6DBB18941C2F95810095813F /* stanley-picture-0027.jpg */,
+				6DBB18951C2F95810095813F /* stanley-picture-0028.jpg */,
+				6DBB18961C2F95810095813F /* stanley-picture-0029.jpg */,
+				6DBB18971C2F95810095813F /* stanley-picture-0025.jpg */,
+				6DBB18981C2F95810095813F /* stanley-picture-0026.jpg */,
+				6DBB18991C2F95810095813F /* stanley-picture-0021.jpg */,
+				6DBB189A1C2F95810095813F /* stanley-picture-0022.jpg */,
+				6DBB189B1C2F95810095813F /* stanley-picture-0023.jpg */,
+				6DBB189C1C2F95810095813F /* stanley-picture-0024.jpg */,
+				6DBB16EB1C2F93120095813F /* oliver-picture-0001.jpg */,
+				6DBB16EC1C2F93120095813F /* oliver-picture-0002.jpg */,
+				6DBB16ED1C2F93120095813F /* oliver-picture-0003.jpg */,
+				6DBB16EE1C2F93120095813F /* oliver-picture-0004.jpg */,
+				6DBB16EF1C2F93120095813F /* oliver-picture-0005.jpg */,
+				6DBB16F01C2F93120095813F /* oliver-picture-0006.jpg */,
+				6DBB16F11C2F93120095813F /* oliver-picture-0007.jpg */,
+				6DBB16F21C2F93120095813F /* oliver-picture-0008.jpg */,
+				6DBB16F31C2F93120095813F /* oliver-picture-0009.jpg */,
+				6DBB16F41C2F93120095813F /* oliver-picture-0010.jpg */,
+				6DBB16F51C2F93120095813F /* oliver-picture-0011.jpg */,
+				6DBB16F61C2F93120095813F /* oliver-picture-0012.jpg */,
+				6DBB16F71C2F93120095813F /* oliver-picture-0013.jpg */,
+				6DBB16F81C2F93120095813F /* oliver-picture-0014.jpg */,
+				6DBB16F91C2F93120095813F /* oliver-picture-0015.jpg */,
+				6DBB16FA1C2F93120095813F /* oliver-picture-0016.jpg */,
+				6DBB16FB1C2F93120095813F /* oliver-picture-0017.jpg */,
+				6DBB16FC1C2F93120095813F /* oliver-picture-0018.jpg */,
+				6DBB16FD1C2F93120095813F /* oliver-picture-0019.jpg */,
+				6DBB16FE1C2F93120095813F /* oliver-picture-0020.jpg */,
+				6DBB16FF1C2F93120095813F /* oliver-picture-0021.jpg */,
+				6DBB17001C2F93120095813F /* oliver-picture-0022.jpg */,
+				6DBB17011C2F93120095813F /* oliver-picture-0023.jpg */,
+				6DBB17021C2F93120095813F /* oliver-picture-0024.jpg */,
+				6DBB17031C2F93120095813F /* oliver-picture-0025.jpg */,
+				6DBB17041C2F93120095813F /* oliver-picture-0026.jpg */,
+				6DBB17051C2F93120095813F /* oliver-picture-0027.jpg */,
+				6DBB17061C2F93120095813F /* oliver-picture-0028.jpg */,
+				6DBB17071C2F93120095813F /* oliver-picture-0029.jpg */,
+				6DBB17081C2F93120095813F /* oliver-picture-0030.jpg */,
+				6DBB17091C2F93120095813F /* oliver-picture-0031.jpg */,
+				6DBB170A1C2F93120095813F /* oliver-picture-0032.jpg */,
+				6DBB170B1C2F93120095813F /* oliver-picture-0033.jpg */,
+				6DBB170C1C2F93120095813F /* oliver-picture-0034.jpg */,
+				6DBB170D1C2F93120095813F /* oliver-picture-0035.jpg */,
+				6DBB170E1C2F93120095813F /* oliver-picture-0036.jpg */,
+				6DBB170F1C2F93120095813F /* oliver-picture-0037.jpg */,
+				6DBB17101C2F93120095813F /* oliver-picture-0038.jpg */,
+				6DBB17111C2F93120095813F /* oliver-picture-0039.jpg */,
+				6DBB17121C2F93120095813F /* oliver-picture-0040.jpg */,
+				6DBB17131C2F93120095813F /* oliver-picture-0041.jpg */,
+				6DBB17141C2F93120095813F /* oliver-picture-0042.jpg */,
+				6DBB17151C2F93120095813F /* oliver-picture-0043.jpg */,
+				6DBB17161C2F93120095813F /* oliver-picture-0044.jpg */,
+				6DBB17171C2F93120095813F /* oliver-picture-0045.jpg */,
+				6DBB17181C2F93120095813F /* oliver-picture-0046.jpg */,
+				6DBB17191C2F93120095813F /* oliver-picture-0047.jpg */,
+				6DBB171A1C2F93120095813F /* oliver-picture-0048.jpg */,
+				6DBB171B1C2F93120095813F /* oliver-picture-0049.jpg */,
+				6DBB171C1C2F93120095813F /* oliver-picture-0050.jpg */,
+				6DBB171D1C2F93120095813F /* oliver-picture-0051.jpg */,
+				6DBB171E1C2F93120095813F /* oliver-picture-0052.jpg */,
+				6DBB171F1C2F93120095813F /* oliver-picture-0053.jpg */,
+				6DBB17201C2F93120095813F /* oliver-picture-0054.jpg */,
+				6DBB17211C2F93120095813F /* oliver-picture-0055.jpg */,
+				6DBB17221C2F93120095813F /* oliver-picture-0056.jpg */,
+				6DBB17231C2F93120095813F /* oliver-picture-0057.jpg */,
+				6DBB17241C2F93120095813F /* oliver-picture-0058.jpg */,
+				6DBB17251C2F93120095813F /* oliver-picture-0059.jpg */,
+				6DBB17261C2F93120095813F /* oliver-picture-0060.jpg */,
+				6DBB17271C2F93120095813F /* stanley-picture-0001.jpg */,
+				6DBB17281C2F93120095813F /* stanley-picture-0002.jpg */,
+				6DBB17291C2F93120095813F /* stanley-picture-0003.jpg */,
+				6DBB172A1C2F93120095813F /* stanley-picture-0004.jpg */,
+				6DBB172B1C2F93120095813F /* stanley-picture-0005.jpg */,
+				6DBB172C1C2F93120095813F /* stanley-picture-0006.jpg */,
+				6DBB172D1C2F93120095813F /* stanley-picture-0007.jpg */,
+				6DBB172E1C2F93120095813F /* stanley-picture-0008.jpg */,
+				6DBB172F1C2F93120095813F /* stanley-picture-0009.jpg */,
+				6DBB17301C2F93120095813F /* stanley-picture-0010.jpg */,
+				6DBB17311C2F93120095813F /* stanley-picture-0011.jpg */,
+				6DBB17321C2F93120095813F /* stanley-picture-0012.jpg */,
+				6DBB17331C2F93120095813F /* stanley-picture-0013.jpg */,
+				6DBB17341C2F93120095813F /* stanley-picture-0014.jpg */,
+				6DBB17351C2F93120095813F /* stanley-picture-0015.jpg */,
+				6DBB17361C2F93120095813F /* stanley-picture-0016.jpg */,
+				6DBB17371C2F93120095813F /* stanley-picture-0017.jpg */,
+				6DBB17381C2F93120095813F /* stanley-picture-0018.jpg */,
+				6DBB17391C2F93120095813F /* stanley-picture-0019.jpg */,
+				6DBB173A1C2F93120095813F /* stanley-picture-0020.jpg */,
+				6DBB173B1C2F93120095813F /* theletters-picture-0001.jpg */,
+				6DBB173C1C2F93120095813F /* theletters-picture-0002.jpg */,
+				6DBB173D1C2F93120095813F /* theletters-picture-0003.jpg */,
+				6DBB173E1C2F93120095813F /* theletters-picture-0004.jpg */,
+				6DBB173F1C2F93120095813F /* theletters-picture-0005.jpg */,
+				6DBB17401C2F93120095813F /* theletters-picture-0006.jpg */,
+				6DBB17411C2F93120095813F /* theletters-picture-0007.jpg */,
+				6DBB17421C2F93120095813F /* theletters-picture-0008.jpg */,
+				6DBB17431C2F93120095813F /* theletters-picture-0009.jpg */,
+				6DBB17441C2F93120095813F /* theletters-picture-0010.jpg */,
+				6DBB17451C2F93120095813F /* theletters-picture-0011.jpg */,
+				6DBB17461C2F93120095813F /* theletters-picture-0012.jpg */,
+				6DBB17471C2F93120095813F /* theletters-picture-0013.jpg */,
+				6DBB17481C2F93120095813F /* theletters-picture-0014.jpg */,
+				6DBB17491C2F93120095813F /* theletters-picture-0015.jpg */,
+				6DBB174A1C2F93120095813F /* theletters-picture-0016.jpg */,
+				6DBB174B1C2F93120095813F /* theletters-picture-0017.jpg */,
+				6DBB174C1C2F93120095813F /* theletters-picture-0018.jpg */,
+				6DBB174D1C2F93120095813F /* theletters-picture-0019.jpg */,
+				6DBB174E1C2F93120095813F /* theletters-picture-0020.jpg */,
+				6DBB174F1C2F93120095813F /* theletters-picture-0021.jpg */,
+				6DBB17501C2F93120095813F /* theletters-picture-0022.jpg */,
+				6DBB17511C2F93120095813F /* theletters-picture-0023.jpg */,
+				6DBB17521C2F93120095813F /* theletters-picture-0024.jpg */,
+				6DBB17531C2F93120095813F /* theletters-picture-0025.jpg */,
+				6DBB17541C2F93120095813F /* theletters-picture-0026.jpg */,
+				6DF9F2EC1C2E4D1200359200 /* stanley-picture-0001.jpg */,
+				6DF9F2ED1C2E4D1200359200 /* stanley-picture-0002.jpg */,
+				6DF9F2EE1C2E4D1200359200 /* stanley-picture-0003.jpg */,
+				6DF9F2EF1C2E4D1200359200 /* stanley-picture-0004.jpg */,
+				6DF9F2F01C2E4D1200359200 /* stanley-picture-0005.jpg */,
+				6DF9F2F11C2E4D1200359200 /* stanley-picture-0006.jpg */,
+				6DF9F2F21C2E4D1200359200 /* stanley-picture-0007.jpg */,
+				6DF9F2F31C2E4D1200359200 /* stanley-picture-0008.jpg */,
+				6DF9F2F41C2E4D1200359200 /* stanley-picture-0009.jpg */,
+				6DF9F2F51C2E4D1200359200 /* stanley-picture-0010.jpg */,
+				6DF9F2F61C2E4D1200359200 /* stanley-picture-0011.jpg */,
+				6DF9F2F71C2E4D1200359200 /* stanley-picture-0012.jpg */,
+				6DF9F2F81C2E4D1200359200 /* stanley-picture-0013.jpg */,
+				6DF9F2F91C2E4D1200359200 /* stanley-picture-0014.jpg */,
+				6DF9F2FA1C2E4D1200359200 /* stanley-picture-0015.jpg */,
+				6DF9F2FB1C2E4D1200359200 /* stanley-picture-0016.jpg */,
+				6DF9F2FC1C2E4D1200359200 /* stanley-picture-0017.jpg */,
+				6DF9F2FD1C2E4D1200359200 /* stanley-picture-0018.jpg */,
+				6DF9F2FE1C2E4D1200359200 /* stanley-picture-0019.jpg */,
+				6DF9F2FF1C2E4D1200359200 /* stanley-picture-0020.jpg */,
 			);
 			name = Image;
 			sourceTree = "<group>";
@@ -361,6 +1203,17 @@
 				6DF9F2A91C27821900359200 /* BookTableCell.xib */,
 			);
 			name = Controls;
+			sourceTree = "<group>";
+		};
+		6DF9F2BA1C2E22F500359200 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6DF9F2BE1C2E238100359200 /* LocalBook.h */,
+				6DF9F2BF1C2E238100359200 /* LocalBook.m */,
+				6DF9F2C11C2E25D500359200 /* LocalBookStore.h */,
+				6DF9F2C21C2E25D500359200 /* LocalBookStore.m */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -443,56 +1296,331 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF9F2471C27385E00359200 /* 0011.mp3 in Resources */,
-				6DF9F23E1C27385E00359200 /* 0002.mp3 in Resources */,
+				6DBB19001C2F95FC0095813F /* stanley-audio-0041.mp3 in Resources */,
+				6DBB18391C2F93280095813F /* oliver-audio-0031.mp3 in Resources */,
+				6DF9F30F1C2E4D1200359200 /* stanley-picture-0016.jpg in Resources */,
+				6DBB17A91C2F93120095813F /* theletters-picture-0005.jpg in Resources */,
 				6DF9F2A51C27443D00359200 /* BookPlayerVC.xib in Resources */,
-				6DF9F2901C273B9500359200 /* img-Z14160447-0004.jpg in Resources */,
-				6DF9F29A1C273B9500359200 /* img-Z14160447-0014.jpg in Resources */,
-				6DF9F2491C27385E00359200 /* 0013.mp3 in Resources */,
+				6DBB189F1C2F95810095813F /* stanley-picture-0056.jpg in Resources */,
+				6DBB18B41C2F95810095813F /* stanley-picture-0034.jpg in Resources */,
+				6DBB17921C2F93120095813F /* stanley-picture-0002.jpg in Resources */,
+				6DBB17781C2F93120095813F /* oliver-picture-0036.jpg in Resources */,
+				6DBB17BE1C2F93120095813F /* theletters-picture-0026.jpg in Resources */,
+				6DBB17861C2F93120095813F /* oliver-picture-0050.jpg in Resources */,
+				6DBB18231C2F93280095813F /* oliver-audio-0009.mp3 in Resources */,
+				6DBB182B1C2F93280095813F /* oliver-audio-0017.mp3 in Resources */,
+				6DBB18641C2F93280095813F /* stanley-audio-0014.mp3 in Resources */,
 				6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */,
+				6DBB17B21C2F93120095813F /* theletters-picture-0014.jpg in Resources */,
+				6DF9F2D91C2E4D0900359200 /* stanley-audio-0002.mp3 in Resources */,
+				6DBB18B81C2F95810095813F /* stanley-picture-0031.jpg in Resources */,
+				6DF9F2E71C2E4D0900359200 /* stanley-audio-0016.mp3 in Resources */,
+				6DBB185E1C2F93280095813F /* stanley-audio-0008.mp3 in Resources */,
+				6DBB18211C2F93280095813F /* oliver-audio-0007.mp3 in Resources */,
+				6DBB16EA1C2E6C3B0095813F /* RootViewController.xib in Resources */,
+				6DBB175D1C2F93120095813F /* oliver-picture-0009.jpg in Resources */,
+				6DBB18FB1C2F95FC0095813F /* stanley-audio-0040.mp3 in Resources */,
+				6DBB185B1C2F93280095813F /* stanley-audio-0005.mp3 in Resources */,
+				6DBB17581C2F93120095813F /* oliver-picture-0004.jpg in Resources */,
+				6DBB184E1C2F93280095813F /* oliver-audio-0052.mp3 in Resources */,
+				6DBB18561C2F93280095813F /* oliver-audio-0060.mp3 in Resources */,
+				6DBB17571C2F93120095813F /* oliver-picture-0003.jpg in Resources */,
+				6DBB17651C2F93120095813F /* oliver-picture-0017.jpg in Resources */,
+				6DBB17BB1C2F93120095813F /* theletters-picture-0023.jpg in Resources */,
+				6DBB17631C2F93120095813F /* oliver-picture-0015.jpg in Resources */,
+				6DBB17971C2F93120095813F /* stanley-picture-0007.jpg in Resources */,
+				6DBB181D1C2F93280095813F /* oliver-audio-0003.mp3 in Resources */,
+				6DBB17891C2F93120095813F /* oliver-picture-0053.jpg in Resources */,
+				6DBB17AD1C2F93120095813F /* theletters-picture-0009.jpg in Resources */,
+				6DBB18351C2F93280095813F /* oliver-audio-0027.mp3 in Resources */,
+				6DBB17911C2F93120095813F /* stanley-picture-0001.jpg in Resources */,
+				6DBB17551C2F93120095813F /* oliver-picture-0001.jpg in Resources */,
+				6DBB177C1C2F93120095813F /* oliver-picture-0040.jpg in Resources */,
+				6DBB17B71C2F93120095813F /* theletters-picture-0019.jpg in Resources */,
+				6DBB18311C2F93280095813F /* oliver-audio-0023.mp3 in Resources */,
+				6DBB18BE1C2F95810095813F /* stanley-picture-0026.jpg in Resources */,
+				6DF9F2DE1C2E4D0900359200 /* stanley-audio-0007.mp3 in Resources */,
+				6DBB17AB1C2F93120095813F /* theletters-picture-0007.jpg in Resources */,
+				6DBB183B1C2F93280095813F /* oliver-audio-0033.mp3 in Resources */,
+				6DBB18341C2F93280095813F /* oliver-audio-0026.mp3 in Resources */,
+				6DBB18A61C2F95810095813F /* stanley-picture-0050.jpg in Resources */,
+				6DBB18AA1C2F95810095813F /* stanley-picture-0048.jpg in Resources */,
+				6DBB176A1C2F93120095813F /* oliver-picture-0022.jpg in Resources */,
+				6DF9F3041C2E4D1200359200 /* stanley-picture-0005.jpg in Resources */,
+				6DBB178A1C2F93120095813F /* oliver-picture-0054.jpg in Resources */,
+				6DBB18451C2F93280095813F /* oliver-audio-0043.mp3 in Resources */,
+				6DF9F30D1C2E4D1200359200 /* stanley-picture-0014.jpg in Resources */,
+				6DBB18421C2F93280095813F /* oliver-audio-0040.mp3 in Resources */,
+				6DBB18271C2F93280095813F /* oliver-audio-0013.mp3 in Resources */,
+				6DBB18A91C2F95810095813F /* stanley-picture-0047.jpg in Resources */,
+				6DBB184F1C2F93280095813F /* oliver-audio-0053.mp3 in Resources */,
+				6DBB18AD1C2F95810095813F /* stanley-picture-0044.jpg in Resources */,
+				6DBB190D1C2F95FC0095813F /* stanley-audio-0056.mp3 in Resources */,
+				6DBB18B91C2F95810095813F /* stanley-picture-0032.jpg in Resources */,
+				6DBB175E1C2F93120095813F /* oliver-picture-0010.jpg in Resources */,
+				6DBB17A51C2F93120095813F /* theletters-picture-0001.jpg in Resources */,
+				6DF9F2DA1C2E4D0900359200 /* stanley-audio-0003.mp3 in Resources */,
+				6DBB18401C2F93280095813F /* oliver-audio-0038.mp3 in Resources */,
+				6DBB18A41C2F95810095813F /* stanley-picture-0053.jpg in Resources */,
+				6DBB182C1C2F93280095813F /* oliver-audio-0018.mp3 in Resources */,
+				6DF9F2E01C2E4D0900359200 /* stanley-audio-0009.mp3 in Resources */,
+				6DBB17561C2F93120095813F /* oliver-picture-0002.jpg in Resources */,
+				6DBB17811C2F93120095813F /* oliver-picture-0045.jpg in Resources */,
+				6DBB17B81C2F93120095813F /* theletters-picture-0020.jpg in Resources */,
+				6DBB179C1C2F93120095813F /* stanley-picture-0012.jpg in Resources */,
+				6DBB182F1C2F93280095813F /* oliver-audio-0021.mp3 in Resources */,
+				6DBB190E1C2F95FC0095813F /* stanley-audio-0058.mp3 in Resources */,
+				6DBB18FD1C2F95FC0095813F /* stanley-audio-0043.mp3 in Resources */,
+				6DBB184A1C2F93280095813F /* oliver-audio-0048.mp3 in Resources */,
+				6DBB176D1C2F93120095813F /* oliver-picture-0025.jpg in Resources */,
+				6DBB17B31C2F93120095813F /* theletters-picture-0015.jpg in Resources */,
+				6DBB18501C2F93280095813F /* oliver-audio-0054.mp3 in Resources */,
+				6DBB17B41C2F93120095813F /* theletters-picture-0016.jpg in Resources */,
+				6DBB18631C2F93280095813F /* stanley-audio-0013.mp3 in Resources */,
+				6DBB185A1C2F93280095813F /* stanley-audio-0004.mp3 in Resources */,
+				6DBB18221C2F93280095813F /* oliver-audio-0008.mp3 in Resources */,
+				6DBB17961C2F93120095813F /* stanley-picture-0006.jpg in Resources */,
+				6DBB17AF1C2F93120095813F /* theletters-picture-0011.jpg in Resources */,
+				6DBB18B51C2F95810095813F /* stanley-picture-0035.jpg in Resources */,
+				6DBB176B1C2F93120095813F /* oliver-picture-0023.jpg in Resources */,
+				6DBB18471C2F93280095813F /* oliver-audio-0045.mp3 in Resources */,
+				6DF9F2E81C2E4D0900359200 /* stanley-audio-0017.mp3 in Resources */,
+				6DBB18FC1C2F95FC0095813F /* stanley-audio-0042.mp3 in Resources */,
+				6DBB18751C2F93280095813F /* theletters-audio-0011.mp3 in Resources */,
+				6DBB18461C2F93280095813F /* oliver-audio-0044.mp3 in Resources */,
+				6DBB17751C2F93120095813F /* oliver-picture-0033.jpg in Resources */,
+				6DBB18F21C2F95FC0095813F /* stanley-audio-0030.mp3 in Resources */,
+				6DBB18301C2F93280095813F /* oliver-audio-0022.mp3 in Resources */,
+				6DBB18581C2F93280095813F /* stanley-audio-0002.mp3 in Resources */,
+				6DBB17B61C2F93120095813F /* theletters-picture-0018.jpg in Resources */,
+				6DBB17931C2F93120095813F /* stanley-picture-0003.jpg in Resources */,
+				6DBB18F11C2F95FC0095813F /* stanley-audio-0029.mp3 in Resources */,
+				6DBB18431C2F93280095813F /* oliver-audio-0041.mp3 in Resources */,
+				6DBB17AC1C2F93120095813F /* theletters-picture-0008.jpg in Resources */,
+				6DBB18241C2F93280095813F /* oliver-audio-0010.mp3 in Resources */,
+				6DBB18EB1C2F95FC0095813F /* stanley-audio-0022.mp3 in Resources */,
+				6DBB185C1C2F93280095813F /* stanley-audio-0006.mp3 in Resources */,
+				6DBB18F51C2F95FC0095813F /* stanley-audio-0037.mp3 in Resources */,
 				6DF9F2B61C27998000359200 /* BookItemCell.xib in Resources */,
+				6DBB17A11C2F93120095813F /* stanley-picture-0017.jpg in Resources */,
+				6DBB17771C2F93120095813F /* oliver-picture-0035.jpg in Resources */,
+				6DBB18F71C2F95FC0095813F /* stanley-audio-0035.mp3 in Resources */,
+				6DBB18C11C2F95810095813F /* stanley-picture-0023.jpg in Resources */,
+				6DBB189E1C2F95810095813F /* stanley-picture-0055.jpg in Resources */,
+				6DBB17621C2F93120095813F /* oliver-picture-0014.jpg in Resources */,
+				6DBB178B1C2F93120095813F /* oliver-picture-0055.jpg in Resources */,
+				6DBB18671C2F93280095813F /* stanley-audio-0017.mp3 in Resources */,
+				6DBB19081C2F95FC0095813F /* stanley-audio-0051.mp3 in Resources */,
+				6DBB19061C2F95FC0095813F /* stanley-audio-0050.mp3 in Resources */,
+				6DBB175F1C2F93120095813F /* oliver-picture-0011.jpg in Resources */,
+				6DBB18B61C2F95810095813F /* stanley-picture-0036.jpg in Resources */,
+				6DBB17A81C2F93120095813F /* theletters-picture-0004.jpg in Resources */,
 				6DF9F2031C0BE7AD00359200 /* hqdqz.jpeg in Resources */,
-				6DF9F29E1C273B9500359200 /* img-Z14160447-0018.jpg in Resources */,
-				6DF9F2931C273B9500359200 /* img-Z14160447-0007.jpg in Resources */,
-				6DF9F2431C27385E00359200 /* 0007.mp3 in Resources */,
-				6DF9F28E1C273B9500359200 /* img-Z14160447-0002.jpg in Resources */,
-				6DF9F28D1C273B9500359200 /* img-Z14160447-0001.jpg in Resources */,
-				6DF9F24D1C27385E00359200 /* 0017.mp3 in Resources */,
-				6DF9F2411C27385E00359200 /* 0005.mp3 in Resources */,
-				6DF9F2961C273B9500359200 /* img-Z14160447-0010.jpg in Resources */,
+				6DBB18371C2F93280095813F /* oliver-audio-0029.mp3 in Resources */,
+				6DBB17681C2F93120095813F /* oliver-picture-0020.jpg in Resources */,
+				6DBB17941C2F93120095813F /* stanley-picture-0004.jpg in Resources */,
+				6DBB18F31C2F95FC0095813F /* stanley-audio-0032.mp3 in Resources */,
+				6DBB177F1C2F93120095813F /* oliver-picture-0043.jpg in Resources */,
+				6DBB175A1C2F93120095813F /* oliver-picture-0006.jpg in Resources */,
+				6DBB18F91C2F95FC0095813F /* stanley-audio-0033.mp3 in Resources */,
+				6DF9F3051C2E4D1200359200 /* stanley-picture-0006.jpg in Resources */,
+				6DF9F2DD1C2E4D0900359200 /* stanley-audio-0006.mp3 in Resources */,
+				6DBB18681C2F93280095813F /* stanley-audio-0018.mp3 in Resources */,
+				6DBB18571C2F93280095813F /* stanley-audio-0001.mp3 in Resources */,
+				6DBB18C21C2F95810095813F /* stanley-picture-0024.jpg in Resources */,
+				6DBB18441C2F93280095813F /* oliver-audio-0042.mp3 in Resources */,
+				6DBB18B11C2F95810095813F /* stanley-picture-0038.jpg in Resources */,
+				6DF9F3071C2E4D1200359200 /* stanley-picture-0008.jpg in Resources */,
+				6DF9F2E61C2E4D0900359200 /* stanley-audio-0015.mp3 in Resources */,
+				6DBB18331C2F93280095813F /* oliver-audio-0025.mp3 in Resources */,
+				6DBB184B1C2F93280095813F /* oliver-audio-0049.mp3 in Resources */,
+				6DBB186D1C2F93280095813F /* theletters-audio-0003.mp3 in Resources */,
+				6DBB182D1C2F93280095813F /* oliver-audio-0019.mp3 in Resources */,
+				6DBB19091C2F95FC0095813F /* stanley-audio-0055.mp3 in Resources */,
+				6DBB18661C2F93280095813F /* stanley-audio-0016.mp3 in Resources */,
+				6DF9F2E11C2E4D0900359200 /* stanley-audio-0010.mp3 in Resources */,
+				6DBB185D1C2F93280095813F /* stanley-audio-0007.mp3 in Resources */,
+				6DF9F30A1C2E4D1200359200 /* stanley-picture-0011.jpg in Resources */,
+				6DBB17641C2F93120095813F /* oliver-picture-0016.jpg in Resources */,
+				6DBB18541C2F93280095813F /* oliver-audio-0058.mp3 in Resources */,
+				6DBB18251C2F93280095813F /* oliver-audio-0011.mp3 in Resources */,
+				6DBB19041C2F95FC0095813F /* stanley-audio-0048.mp3 in Resources */,
+				6DBB17801C2F93120095813F /* oliver-picture-0044.jpg in Resources */,
+				6DBB17A31C2F93120095813F /* stanley-picture-0019.jpg in Resources */,
+				6DF9F2E91C2E4D0900359200 /* stanley-audio-0018.mp3 in Resources */,
+				6DBB17661C2F93120095813F /* oliver-picture-0018.jpg in Resources */,
+				6DBB18381C2F93280095813F /* oliver-audio-0030.mp3 in Resources */,
+				6DBB18741C2F93280095813F /* theletters-audio-0010.mp3 in Resources */,
+				6DBB18BB1C2F95810095813F /* stanley-picture-0028.jpg in Resources */,
+				6DF9F3021C2E4D1200359200 /* stanley-picture-0003.jpg in Resources */,
+				6DBB18B31C2F95810095813F /* stanley-picture-0033.jpg in Resources */,
+				6DBB17731C2F93120095813F /* oliver-picture-0031.jpg in Resources */,
+				6DF9F30E1C2E4D1200359200 /* stanley-picture-0015.jpg in Resources */,
+				6DF9F3031C2E4D1200359200 /* stanley-picture-0004.jpg in Resources */,
+				6DBB18551C2F93280095813F /* oliver-audio-0059.mp3 in Resources */,
+				6DBB17B51C2F93120095813F /* theletters-picture-0017.jpg in Resources */,
+				6DBB18B71C2F95810095813F /* stanley-picture-0030.jpg in Resources */,
+				6DF9F2D81C2E4D0900359200 /* stanley-audio-0001.mp3 in Resources */,
 				6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */,
-				6DF9F2941C273B9500359200 /* img-Z14160447-0008.jpg in Resources */,
-				6DF9F24B1C27385E00359200 /* 0015.mp3 in Resources */,
-				6DF9F29C1C273B9500359200 /* img-Z14160447-0016.jpg in Resources */,
+				6DBB18531C2F93280095813F /* oliver-audio-0057.mp3 in Resources */,
+				6DF9F2DB1C2E4D0900359200 /* stanley-audio-0004.mp3 in Resources */,
+				6DBB18701C2F93280095813F /* theletters-audio-0006.mp3 in Resources */,
+				6DBB18AB1C2F95810095813F /* stanley-picture-0042.jpg in Resources */,
+				6DBB17841C2F93120095813F /* oliver-picture-0048.jpg in Resources */,
+				6DBB183A1C2F93280095813F /* oliver-audio-0032.mp3 in Resources */,
+				6DF9F2E51C2E4D0900359200 /* stanley-audio-0014.mp3 in Resources */,
+				6DBB18B21C2F95810095813F /* stanley-picture-0039.jpg in Resources */,
+				6DBB19051C2F95FC0095813F /* stanley-audio-0049.mp3 in Resources */,
+				6DBB17871C2F93120095813F /* oliver-picture-0051.jpg in Resources */,
+				6DBB18AC1C2F95810095813F /* stanley-picture-0043.jpg in Resources */,
+				6DBB18B01C2F95810095813F /* stanley-picture-0037.jpg in Resources */,
+				6DBB18A21C2F95810095813F /* stanley-picture-0051.jpg in Resources */,
+				6DBB181E1C2F93280095813F /* oliver-audio-0004.mp3 in Resources */,
+				6DBB175C1C2F93120095813F /* oliver-picture-0008.jpg in Resources */,
+				6DBB178C1C2F93120095813F /* oliver-picture-0056.jpg in Resources */,
+				6DF9F2E31C2E4D0900359200 /* stanley-audio-0012.mp3 in Resources */,
+				6DBB17B01C2F93120095813F /* theletters-picture-0012.jpg in Resources */,
+				6DBB184C1C2F93280095813F /* oliver-audio-0050.mp3 in Resources */,
+				6DBB18A81C2F95810095813F /* stanley-picture-0046.jpg in Resources */,
+				6DBB19071C2F95FC0095813F /* stanley-audio-0053.mp3 in Resources */,
+				6DBB17761C2F93120095813F /* oliver-picture-0034.jpg in Resources */,
+				6DF9F2E21C2E4D0900359200 /* stanley-audio-0011.mp3 in Resources */,
 				6DF9F2AB1C27821900359200 /* BookTableCell.xib in Resources */,
-				6DF9F2421C27385E00359200 /* 0006.mp3 in Resources */,
+				6DBB175B1C2F93120095813F /* oliver-picture-0007.jpg in Resources */,
+				6DBB18AF1C2F95810095813F /* stanley-picture-0041.jpg in Resources */,
+				6DBB18361C2F93280095813F /* oliver-audio-0028.mp3 in Resources */,
+				6DBB182A1C2F93280095813F /* oliver-audio-0016.mp3 in Resources */,
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
-				6DF9F2921C273B9500359200 /* img-Z14160447-0006.jpg in Resources */,
-				6DF9F24E1C27385E00359200 /* 0018.mp3 in Resources */,
-				6DF9F2A01C273B9500359200 /* img-Z14160447-0020.jpg in Resources */,
-				6DF9F29F1C273B9500359200 /* img-Z14160447-0019.jpg in Resources */,
-				6DF9F1DD1C0AAF0100359200 /* VoiceRecordViewController.xib in Resources */,
-				6DF9F2401C27385E00359200 /* 0004.mp3 in Resources */,
+				6DF9F1DD1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib in Resources */,
+				6DF9F2E41C2E4D0900359200 /* stanley-audio-0013.mp3 in Resources */,
+				6DBB181C1C2F93280095813F /* oliver-audio-0002.mp3 in Resources */,
+				6DF9F2EB1C2E4D0900359200 /* stanley-audio-0020.mp3 in Resources */,
+				6DBB18A11C2F95810095813F /* stanley-picture-0058.jpg in Resources */,
+				6DF9F3091C2E4D1200359200 /* stanley-picture-0010.jpg in Resources */,
+				6DBB17BA1C2F93120095813F /* theletters-picture-0022.jpg in Resources */,
+				6DBB17B11C2F93120095813F /* theletters-picture-0013.jpg in Resources */,
+				6DBB184D1C2F93280095813F /* oliver-audio-0051.mp3 in Resources */,
+				6DF9F30B1C2E4D1200359200 /* stanley-picture-0012.jpg in Resources */,
+				6DBB17711C2F93120095813F /* oliver-picture-0029.jpg in Resources */,
+				6DBB18A31C2F95810095813F /* stanley-picture-0052.jpg in Resources */,
+				6DBB183E1C2F93280095813F /* oliver-audio-0036.mp3 in Resources */,
+				6DF9F30C1C2E4D1200359200 /* stanley-picture-0013.jpg in Resources */,
+				6DBB17821C2F93120095813F /* oliver-picture-0046.jpg in Resources */,
+				6DBB18EF1C2F95FC0095813F /* stanley-audio-0026.mp3 in Resources */,
+				6DBB176C1C2F93120095813F /* oliver-picture-0024.jpg in Resources */,
+				6DBB183F1C2F93280095813F /* oliver-audio-0037.mp3 in Resources */,
+				6DBB179F1C2F93120095813F /* stanley-picture-0015.jpg in Resources */,
+				6DBB18761C2F93280095813F /* theletters-audio-0012.mp3 in Resources */,
+				6DBB186A1C2F93280095813F /* stanley-audio-0020.mp3 in Resources */,
+				6DBB190A1C2F95FC0095813F /* stanley-audio-0057.mp3 in Resources */,
+				6DBB18481C2F93280095813F /* oliver-audio-0046.mp3 in Resources */,
+				6DBB18711C2F93280095813F /* theletters-audio-0007.mp3 in Resources */,
+				6DBB17A41C2F93120095813F /* stanley-picture-0020.jpg in Resources */,
+				6DBB18FE1C2F95FC0095813F /* stanley-audio-0044.mp3 in Resources */,
+				6DBB183C1C2F93280095813F /* oliver-audio-0034.mp3 in Resources */,
+				6DBB18A51C2F95810095813F /* stanley-picture-0049.jpg in Resources */,
+				6DBB18FF1C2F95FC0095813F /* stanley-audio-0036.mp3 in Resources */,
+				6DBB18621C2F93280095813F /* stanley-audio-0012.mp3 in Resources */,
+				6DBB17601C2F93120095813F /* oliver-picture-0012.jpg in Resources */,
+				6DBB177D1C2F93120095813F /* oliver-picture-0041.jpg in Resources */,
+				6DBB18F41C2F95FC0095813F /* stanley-audio-0031.mp3 in Resources */,
+				6DBB18BA1C2F95810095813F /* stanley-picture-0027.jpg in Resources */,
+				6DBB190C1C2F95FC0095813F /* stanley-audio-0054.mp3 in Resources */,
+				6DBB17981C2F93120095813F /* stanley-picture-0008.jpg in Resources */,
+				6DBB186B1C2F93280095813F /* theletters-audio-0001.mp3 in Resources */,
+				6DBB181B1C2F93280095813F /* oliver-audio-0001.mp3 in Resources */,
+				6DBB179A1C2F93120095813F /* stanley-picture-0010.jpg in Resources */,
+				6DBB17AE1C2F93120095813F /* theletters-picture-0010.jpg in Resources */,
+				6DBB17951C2F93120095813F /* stanley-picture-0005.jpg in Resources */,
+				6DBB18731C2F93280095813F /* theletters-audio-0009.mp3 in Resources */,
+				6DBB177E1C2F93120095813F /* oliver-picture-0042.jpg in Resources */,
+				6DBB186C1C2F93280095813F /* theletters-audio-0002.mp3 in Resources */,
+				6DBB17611C2F93120095813F /* oliver-picture-0013.jpg in Resources */,
+				6DBB18AE1C2F95810095813F /* stanley-picture-0040.jpg in Resources */,
+				6DBB179E1C2F93120095813F /* stanley-picture-0014.jpg in Resources */,
+				6DBB186F1C2F93280095813F /* theletters-audio-0005.mp3 in Resources */,
+				6DBB17741C2F93120095813F /* oliver-picture-0032.jpg in Resources */,
+				6DBB18651C2F93280095813F /* stanley-audio-0015.mp3 in Resources */,
+				6DBB17691C2F93120095813F /* oliver-picture-0021.jpg in Resources */,
+				6DBB182E1C2F93280095813F /* oliver-audio-0020.mp3 in Resources */,
+				6DBB17591C2F93120095813F /* oliver-picture-0005.jpg in Resources */,
+				6DF9F2DF1C2E4D0900359200 /* stanley-audio-0008.mp3 in Resources */,
+				6DBB18A01C2F95810095813F /* stanley-picture-0057.jpg in Resources */,
+				6DBB18EE1C2F95FC0095813F /* stanley-audio-0025.mp3 in Resources */,
+				6DBB17A01C2F93120095813F /* stanley-picture-0016.jpg in Resources */,
+				6DBB17BD1C2F93120095813F /* theletters-picture-0025.jpg in Resources */,
+				6DBB18E91C2F95FC0095813F /* stanley-audio-0021.mp3 in Resources */,
+				6DBB18F61C2F95FC0095813F /* stanley-audio-0034.mp3 in Resources */,
+				6DBB18601C2F93280095813F /* stanley-audio-0010.mp3 in Resources */,
+				6DBB18BC1C2F95810095813F /* stanley-picture-0029.jpg in Resources */,
+				6DF9F3111C2E4D1200359200 /* stanley-picture-0018.jpg in Resources */,
+				6DBB18F81C2F95FC0095813F /* stanley-audio-0038.mp3 in Resources */,
+				6DBB178D1C2F93120095813F /* oliver-picture-0057.jpg in Resources */,
+				6DF9F3121C2E4D1200359200 /* stanley-picture-0019.jpg in Resources */,
+				6DBB183D1C2F93280095813F /* oliver-audio-0035.mp3 in Resources */,
+				6DBB17901C2F93120095813F /* oliver-picture-0060.jpg in Resources */,
+				6DBB177A1C2F93120095813F /* oliver-picture-0038.jpg in Resources */,
+				6DBB18FA1C2F95FC0095813F /* stanley-audio-0039.mp3 in Resources */,
+				6DF9F2EA1C2E4D0900359200 /* stanley-audio-0019.mp3 in Resources */,
+				6DBB190B1C2F95FC0095813F /* stanley-audio-0052.mp3 in Resources */,
+				6DF9F3081C2E4D1200359200 /* stanley-picture-0009.jpg in Resources */,
+				6DBB189D1C2F95810095813F /* stanley-picture-0054.jpg in Resources */,
+				6DF9F3001C2E4D1200359200 /* stanley-picture-0001.jpg in Resources */,
+				6DBB176F1C2F93120095813F /* oliver-picture-0027.jpg in Resources */,
 				6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */,
-				6DF9F2971C273B9500359200 /* img-Z14160447-0011.jpg in Resources */,
-				6DF9F28F1C273B9500359200 /* img-Z14160447-0003.jpg in Resources */,
-				6DF9F2981C273B9500359200 /* img-Z14160447-0012.jpg in Resources */,
-				6DF9F23F1C27385E00359200 /* 0003.mp3 in Resources */,
-				6DF9F2441C27385E00359200 /* 0008.mp3 in Resources */,
-				6DF9F2911C273B9500359200 /* img-Z14160447-0005.jpg in Resources */,
-				6DF9F2501C27385E00359200 /* 0020.mp3 in Resources */,
-				6DF9F24F1C27385E00359200 /* 0019.mp3 in Resources */,
-				6DF9F2461C27385E00359200 /* 0010.mp3 in Resources */,
-				6DF9F2481C27385E00359200 /* 0012.mp3 in Resources */,
-				6DF9F2951C273B9500359200 /* img-Z14160447-0009.jpg in Resources */,
-				6DF9F24C1C27385E00359200 /* 0016.mp3 in Resources */,
+				6DBB17B91C2F93120095813F /* theletters-picture-0021.jpg in Resources */,
+				6DBB18611C2F93280095813F /* stanley-audio-0011.mp3 in Resources */,
+				6DBB19021C2F95FC0095813F /* stanley-audio-0046.mp3 in Resources */,
+				6DBB18EA1C2F95FC0095813F /* stanley-audio-0024.mp3 in Resources */,
+				6DBB19031C2F95FC0095813F /* stanley-audio-0047.mp3 in Resources */,
+				6DBB18291C2F93280095813F /* oliver-audio-0015.mp3 in Resources */,
+				6DBB17851C2F93120095813F /* oliver-picture-0049.jpg in Resources */,
+				6DBB179D1C2F93120095813F /* stanley-picture-0013.jpg in Resources */,
 				6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */,
-				6DF9F29B1C273B9500359200 /* img-Z14160447-0015.jpg in Resources */,
-				6DF9F24A1C27385E00359200 /* 0014.mp3 in Resources */,
-				6DF9F2991C273B9500359200 /* img-Z14160447-0013.jpg in Resources */,
-				6DF9F29D1C273B9500359200 /* img-Z14160447-0017.jpg in Resources */,
-				6DF9F23D1C27385E00359200 /* 0001.mp3 in Resources */,
-				6DF9F2451C27385E00359200 /* 0009.mp3 in Resources */,
+				6DF9F3131C2E4D1200359200 /* stanley-picture-0020.jpg in Resources */,
+				6DBB17701C2F93120095813F /* oliver-picture-0028.jpg in Resources */,
+				6DBB17AA1C2F93120095813F /* theletters-picture-0006.jpg in Resources */,
+				6DF9F2DC1C2E4D0900359200 /* stanley-audio-0005.mp3 in Resources */,
+				6DF9F3101C2E4D1200359200 /* stanley-picture-0017.jpg in Resources */,
+				6DBB18261C2F93280095813F /* oliver-audio-0012.mp3 in Resources */,
+				6DBB178F1C2F93120095813F /* oliver-picture-0059.jpg in Resources */,
+				6DBB17831C2F93120095813F /* oliver-picture-0047.jpg in Resources */,
+				6DBB17991C2F93120095813F /* stanley-picture-0009.jpg in Resources */,
+				6DBB186E1C2F93280095813F /* theletters-audio-0004.mp3 in Resources */,
+				6DBB17881C2F93120095813F /* oliver-picture-0052.jpg in Resources */,
+				6DBB18BF1C2F95810095813F /* stanley-picture-0021.jpg in Resources */,
+				6DBB18A71C2F95810095813F /* stanley-picture-0045.jpg in Resources */,
+				6DBB19011C2F95FC0095813F /* stanley-audio-0045.mp3 in Resources */,
+				6DBB179B1C2F93120095813F /* stanley-picture-0011.jpg in Resources */,
+				6DBB18591C2F93280095813F /* stanley-audio-0003.mp3 in Resources */,
+				6DBB18C01C2F95810095813F /* stanley-picture-0022.jpg in Resources */,
+				6DBB18691C2F93280095813F /* stanley-audio-0019.mp3 in Resources */,
+				6DBB176E1C2F93120095813F /* oliver-picture-0026.jpg in Resources */,
+				6DBB18BD1C2F95810095813F /* stanley-picture-0025.jpg in Resources */,
+				6DF9F3061C2E4D1200359200 /* stanley-picture-0007.jpg in Resources */,
+				6DF9F3011C2E4D1200359200 /* stanley-picture-0002.jpg in Resources */,
+				6DBB18721C2F93280095813F /* theletters-audio-0008.mp3 in Resources */,
+				6DBB17671C2F93120095813F /* oliver-picture-0019.jpg in Resources */,
+				6DBB18521C2F93280095813F /* oliver-audio-0056.mp3 in Resources */,
+				6DBB17BC1C2F93120095813F /* theletters-picture-0024.jpg in Resources */,
+				6DBB17721C2F93120095813F /* oliver-picture-0030.jpg in Resources */,
+				6DBB181F1C2F93280095813F /* oliver-audio-0005.mp3 in Resources */,
+				6DBB185F1C2F93280095813F /* stanley-audio-0009.mp3 in Resources */,
+				6DBB178E1C2F93120095813F /* oliver-picture-0058.jpg in Resources */,
+				6DBB18281C2F93280095813F /* oliver-audio-0014.mp3 in Resources */,
+				6DBB17791C2F93120095813F /* oliver-picture-0037.jpg in Resources */,
+				6DBB177B1C2F93120095813F /* oliver-picture-0039.jpg in Resources */,
+				6DBB18F01C2F95FC0095813F /* stanley-audio-0028.mp3 in Resources */,
+				6DBB18EC1C2F95FC0095813F /* stanley-audio-0023.mp3 in Resources */,
+				6DBB17A71C2F93120095813F /* theletters-picture-0003.jpg in Resources */,
+				6DBB17A61C2F93120095813F /* theletters-picture-0002.jpg in Resources */,
+				6DBB18ED1C2F95FC0095813F /* stanley-audio-0027.mp3 in Resources */,
+				6DBB18511C2F93280095813F /* oliver-audio-0055.mp3 in Resources */,
+				6DBB18411C2F93280095813F /* oliver-audio-0039.mp3 in Resources */,
+				6DBB18321C2F93280095813F /* oliver-audio-0024.mp3 in Resources */,
+				6DBB17A21C2F93120095813F /* stanley-picture-0018.jpg in Resources */,
+				6DBB18201C2F93280095813F /* oliver-audio-0006.mp3 in Resources */,
+				6DBB18491C2F93280095813F /* oliver-audio-0047.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,16 +1638,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF9F1BC1C0A390400359200 /* ViewController.m in Sources */,
+				6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */,
+				6DF9F1BC1C0A390400359200 /* UnusedViewController.m in Sources */,
 				6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */,
-				6DF9F1E01C0AB3E600359200 /* RecordPlayVC.m in Sources */,
+				6DF9F1E01C0AB3E600359200 /* UnusedRecordPlayVC.m in Sources */,
 				6DF9F2B11C27839800359200 /* BookTableVC.m in Sources */,
 				6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */,
-				6DF9F1DB1C0AAEF000359200 /* VoiceRecordViewController.m in Sources */,
+				6DF9F1DB1C0AAEF000359200 /* UnusedVoiceRecordViewController.m in Sources */,
+				6DF9F2B91C28550700359200 /* BRDConfig.m in Sources */,
+				6DF9F3161C2E5C2B00359200 /* RootViewController.m in Sources */,
 				6DF9F1B61C0A390400359200 /* main.m in Sources */,
 				6DF9F2B51C27998000359200 /* BookItemCell.m in Sources */,
 				6DF9F2A41C27443D00359200 /* BookPlayerVC.m in Sources */,
 				6DF9F2AA1C27821900359200 /* BookTableCell.m in Sources */,
+				6DF9F2C31C2E25D500359200 /* LocalBookStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,6 +1856,7 @@
 				6DF9F1D51C0A390400359200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		6DF9F1D61C0A390400359200 /* Build configuration list for PBXNativeTarget "BookReaderDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -732,6 +1865,7 @@
 				6DF9F1D81C0A390400359200 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
