@@ -72,11 +72,24 @@ typedef enum ScrollDirection {
 
 @property LocalBook* localBookInfo;
 @property NSString* localBookKey;
+@property int currentPage;
 
 @property (nonatomic, retain) AVAudioPlayer *player;
 
 @property CGFloat xDragStart;
 @property CGFloat yDragStart;
+
+@property
+CGFloat lastContentOffset;
+
+// 最近一次滑动是否向右。
+@property BOOL scrollToRight;
+
+// 最近一次滑动是否向左。
+@property BOOL scrollToLeft;
+
+
+@property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
 @end
 
@@ -84,7 +97,13 @@ typedef enum ScrollDirection {
 
 @implementation RootViewController
 
-static const float kVerticalScale = 1.1;
+static const float kVerticalScale = 1.0;
+
+// 有几个问题待解决
+// - 第0页没有声音，第1也没有动画效果
+// - 已经翻到最后一页的提示。
+// - 动画不要上下浮动
+// - 第一次进入，加操作提示。
 
 - (id) initWithBookKey:(NSString*) localBookKey {
     if (self = [super init]) {
@@ -98,48 +117,37 @@ static const float kVerticalScale = 1.1;
 {
     [super viewDidLoad];
     
-    NSUInteger numberPages = self.localBookInfo.totalPages;
-    
-    // view controllers are created lazily
-    // in the meantime, load the array with placeholders which will be replaced on demand
-    NSMutableArray *controllers = [[NSMutableArray alloc] init];
-    for (NSUInteger i = 0; i < numberPages; i++)
-    {
-		[controllers addObject:[NSNull null]];
-    }
-    self.viewControllers = controllers;
-    
     // a page is the width of the scroll view
     self.scrollView1.pagingEnabled = YES;
-    self.scrollView1.contentSize =
-        CGSizeMake(CGRectGetWidth(self.scrollView1.frame) * numberPages, CGRectGetHeight(self.scrollView1.frame) * kVerticalScale);
     
     self.scrollView1.showsHorizontalScrollIndicator = NO;
     self.scrollView1.showsVerticalScrollIndicator = NO;
     self.scrollView1.scrollsToTop = NO;
     self.scrollView1.delegate = self;
     
-    self.pageControl1.numberOfPages = numberPages;
-    self.pageControl1.currentPage = 0;
+    _currentPage = 0;
     
-    // pages are created on demand
-    // load the visible page
-    // load the page on either side to avoid flashes when the user starts scrolling
-    //
+    self.lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
+    self.lpgr.minimumPressDuration = 1.0f;
+    self.lpgr.allowableMovement = 50.0f;
     
-    // [self loadScrollViewWithPage:-1];
-    /*
-    [self loadScrollViewWithPage:0];
-    [self loadScrollViewWithPage:1];
-     */
-     [self gotoPage:NO]; // remain at the same page (don't animate)
+    [self.view addGestureRecognizer:self.lpgr];
     
+    [self InitializeFromCurrentPage:YES];
 }
 
-- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+- (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
 {
-    // remove all the subviews from our scrollview
-    
+    if ([sender isEqual:self.lpgr]) {
+        if (sender.state == UIGestureRecognizerStateBegan)
+        {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            return;
+        }
+    }
+}
+
+- (void) InitializeFromCurrentPage:(BOOL) pageHasChanged {
     for (UIView *view in self.scrollView1.subviews)
     {
         [view removeFromSuperview];
@@ -147,24 +155,33 @@ static const float kVerticalScale = 1.1;
     
     NSUInteger numPages = self.localBookInfo.totalPages;
     
-    // adjust the contentSize (larger or smaller) depending on the orientation
+    // 将ScrollView的高宽设置为与屏幕一致。
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect scrollFrame;
+    scrollFrame.origin = self.scrollView1.frame.origin;
+    scrollFrame.size = screenRect.size;
+    self.scrollView1.frame = scrollFrame;
+    
+    // ScrollView的总宽为（宽度x页数）。
     self.scrollView1.contentSize =
-        CGSizeMake(CGRectGetWidth(self.scrollView1.frame) * numPages, CGRectGetHeight(self.scrollView1.frame) * kVerticalScale);
+    CGSizeMake(CGRectGetWidth(self.scrollView1.frame) * numPages, CGRectGetHeight(self.scrollView1.frame));
     
     // clear out and reload our pages
     self.viewControllers = nil;
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < numPages; i++)
     {
-		[controllers addObject:[NSNull null]];
+        [controllers addObject:[NSNull null]];
     }
     self.viewControllers = controllers;
     
-    /*
-    [self loadScrollViewWithPage:self.pageControl1.currentPage - 1];
-    [self loadScrollViewWithPage:self.pageControl1.currentPage];
-    [self loadScrollViewWithPage:self.pageControl1.currentPage + 1];*/
-    [self gotoPage:NO]; // remain at the same page (don't animate)
+    [self gotoPage:pageHasChanged]; // remain at the same page (don't animate)
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    // remove all the subviews from our scrollview
+    [self InitializeFromCurrentPage:NO];
 }
 
 - (void)loadScrollViewWithPage:(NSUInteger)page
@@ -173,7 +190,6 @@ static const float kVerticalScale = 1.1;
         return;
     
     if (page == 1) {
-        
         NSLog(@"page == 1");
     }
     
@@ -192,6 +208,8 @@ static const float kVerticalScale = 1.1;
         frame.origin.x = CGRectGetWidth(frame) * page;
         frame.origin.y = 0;
         controller.view.frame = frame;
+        
+        NSLog(@"Page = %d, frame.x = %f", page, frame.origin.x);
 
         [self addChildViewController:controller];
         [self.scrollView1 addSubview:controller.view];
@@ -202,6 +220,19 @@ static const float kVerticalScale = 1.1;
     }
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    ScrollDirection scrollDirection;
+    if (self.lastContentOffset > scrollView.contentOffset.x) {
+        self.scrollToLeft = true;
+        self.scrollToRight = false;
+    } else if (self.lastContentOffset < scrollView.contentOffset.x) {
+        self.scrollToLeft = false;
+        self.scrollToRight = true;
+    }
+    self.lastContentOffset = scrollView.contentOffset.x;
+}
+
 // at the end of scroll animation, reset the boolean used when scrolls originate from the UIPageControl
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
@@ -210,27 +241,30 @@ static const float kVerticalScale = 1.1;
     
     NSUInteger page = floor((self.scrollView1.contentOffset.x - pageWidth / 2) / pageWidth) + 1;
     
-    if (self.pageControl1.currentPage == page) {
+    NSLog(@"self.scrollView1.contentOffset.x = %f", self.scrollView1.contentOffset.x);
+    NSLog(@"page = %d, pageWidth = %f", page, pageWidth);
+    
+    if (self.currentPage == page) {
+        // 如果在首页向右滑动，则显示首页提示。
+        if (page == 0 && self.scrollToRight) {
+            [self alertForFirstPage];
+            return;
+        }
+        
+        // 如果在末页向左滑动，则显示末页提示。
+        if (page == self.localBookInfo.totalPages -1 && self.scrollToLeft) {
+            [self alertForLastPage];
+            return;
+        }
+        
+        /* 向上滑动的操作已经失效。
         if (scrollView.contentOffset.y > 0) {
             [self dismissViewControllerAnimated:YES completion:nil];
             return;
-        }
+          }*/
     } else {
-        self.pageControl1.currentPage = page;
-    
-        /*
-        // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
-        if (page > 0) {
-            [self loadScrollViewWithPage:page - 1];
-        }
-        
-        [self loadScrollViewWithPage:page];
-        
-        if (page < self.localBookInfo.totalPages) {
-            [self loadScrollViewWithPage:page + 1];
-        }
-          */
-        
+        self.currentPage = page;
+        NSLog(@"current page: %d", page);
         [self gotoPage:YES];
     }
     // a possible optimization would be to unload the views+controllers which are no longer visible
@@ -238,27 +272,20 @@ static const float kVerticalScale = 1.1;
 
 - (void)gotoPage:(BOOL) pageHasChanged
 {
-    NSInteger page = self.pageControl1.currentPage;
+    NSInteger page = self.currentPage;
 
-    // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
-    /*
-    [self loadScrollViewWithPage:page - 1];
-    [self loadScrollViewWithPage:page];
-    [self loadScrollViewWithPage:page + 1];
-     */
-    
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 0) {
         [self loadScrollViewWithPage:page - 1];
+        
     }
-    
     [self loadScrollViewWithPage:page];
-    
-    if (page < self.localBookInfo.totalPages) {
-        [self loadScrollViewWithPage:page + 1];
+
+    if (page + 1 < self.localBookInfo.totalPages) {
+       [self loadScrollViewWithPage:page + 1];
     }
-    
-	// update the scroll view to the appropriate page
+
+    // update the scroll view to the appropriate page
     CGRect bounds = self.scrollView1.bounds;
     bounds.origin.x = CGRectGetWidth(bounds) * page;
     bounds.origin.y = 0;
@@ -280,8 +307,6 @@ static const float kVerticalScale = 1.1;
     [[AVAudioPlayer alloc] initWithContentsOfURL: fileURL
                                            error: nil];
     self.player = newPlayer;
-    //[self.player prepareToPlay];
-    
     [self.player play];
 }
 
@@ -298,7 +323,25 @@ static const float kVerticalScale = 1.1;
     }
 }
 
+- (void) alertForLastPage {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"友情提示", nil)
+                                                    message:@"已经翻到最后一页。向左滑动往后翻页, 向右滑动往前翻页, 长按屏幕返回。"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"好的，知道了"
+                                          otherButtonTitles:nil];
+    [alert show];
+}
 
+- (void) alertForFirstPage {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"友情提示", nil)
+                                                    message:@"已经翻到第一页。 向左滑动往后翻页, 向右滑动往前翻页, 长按屏幕返回。"
+                                                   delegate:nil
+                                          cancelButtonTitle:@"好的，知道了"
+                                          otherButtonTitles:nil];
+    
+    [alert show];
+
+}
 
 - (IBAction)changePage:(id)sender
 {

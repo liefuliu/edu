@@ -6,7 +6,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
             <connections>
-                <outlet property="pageControl1" destination="HDb-To-tob" id="mf8-Zo-f6C"/>
                 <outlet property="scrollView1" destination="Wjy-Yw-ck1" id="deB-by-6cA"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ojr-8O-aPW"/>
             </connections>
@@ -16,29 +15,18 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <pageControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="HDb-To-tob">
-                    <rect key="frame" x="257" y="534" width="39" height="10"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="10" id="NzU-kW-Od8"/>
-                    </constraints>
-                    <connections>
-                        <action selector="changePage:" destination="-1" eventType="valueChanged" id="5Pq-mf-L4Q"/>
-                    </connections>
-                </pageControl>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Yw-ck1">
-                    <rect key="frame" x="8" y="13" width="600" height="469"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Yw-ck1">
+                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="HDb-To-tob" secondAttribute="bottom" id="4oS-By-MeV"/>
                 <constraint firstAttribute="bottom" secondItem="Wjy-Yw-ck1" secondAttribute="bottom" id="4uk-bJ-i25"/>
                 <constraint firstItem="Wjy-Yw-ck1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Kpi-Y7-2JA"/>
-                <constraint firstItem="HDb-To-tob" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="V46-bK-1Ca"/>
                 <constraint firstItem="Wjy-Yw-ck1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bUf-8p-fke"/>
                 <constraint firstAttribute="trailing" secondItem="Wjy-Yw-ck1" secondAttribute="trailing" id="sZc-bq-hyY"/>
-                <constraint firstAttribute="trailing" secondItem="HDb-To-tob" secondAttribute="trailing" constant="304" id="wOd-ei-Ema"/>
             </constraints>
+            <point key="canvasLocation" x="411" y="226"/>
         </view>
     </objects>
 </document>

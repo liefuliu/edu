@@ -52,7 +52,6 @@
 // @property (nonatomic, strong) NSArray *contentList;
 
 - (id) initWithBookKey:(NSString*) localBookKey;
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl1;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView1;
 
