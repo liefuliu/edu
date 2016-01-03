@@ -191,7 +191,7 @@
                                     
                                     
                                     ];
-        return [[LocalBook alloc] initBook:@"Oliver" author:@"Syn Doff" totalPages: 3
+        return [[LocalBook alloc] initBook:@"Oliver" author:@"Syn Doff" totalPages: 60
                                 filePrefix:@"oliver" translatedText:translatedText];
     }
     return nil;
