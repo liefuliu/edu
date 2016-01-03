@@ -55,7 +55,6 @@
 + (LocalBook*) createBook: (NSString*) bookKey {
     if (bookKey == @"stanley") {
         NSArray* translatedText = @[
-                                //@"空白项，显示就是bug。", // 空白项。由于currentPage从1开始技术，所以数组的第0项不会被使用。
                                 @"",
                                 @"",
                                 @"在很久很久以前，这没有屋，人住在山洞中。",
@@ -192,7 +191,7 @@
                                     
                                     
                                     ];
-        return [[LocalBook alloc] initBook:@"Oliver" author:@"Syn Doff" totalPages: 60
+        return [[LocalBook alloc] initBook:@"Oliver" author:@"Syn Doff" totalPages: 3
                                 filePrefix:@"oliver" translatedText:translatedText];
     }
     return nil;

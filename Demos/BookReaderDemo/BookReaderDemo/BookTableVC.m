@@ -50,7 +50,8 @@
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
     int numRows =[[[LocalBookStore sharedObject] allBookKeys] count];
@@ -92,37 +93,17 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-     BNRDetailViewController *detailViewController = [[BNRDetailViewController alloc] initForNewItem:NO];
-     
-     NSArray *items = [[BNRItemStore sharedStore] allItems];
-     BNRItem *selectedItem = items[indexPath.row];
-     
-     // Give detail view controller a pointer to the item object in row
-     detailViewController.item = selectedItem;
-     
-     // Push it onto the top of the navigation controller's stack
-     [self.navigationController pushViewController:detailViewController
-     animated:YES];
-     */
-    
     if (indexPath.section == 0){
         NSString* bookKey = (NSString*)[[LocalBookStore sharedObject] allBookKeys][indexPath.row];
 
         RootViewController *detailViewController = [[RootViewController alloc] initWithBookKey:bookKey];
         [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
-    } else if (indexPath.section == 1) {
-        // TODO (fengyi): Response to the event the class item was selected.
-        // If a teacher (or school admin) selected the class item, a view with class
-        // preview should be popped up.
-        // We probably could push a view similar to SRXStudentClassViewController.
-        //
-        // Note: reuse it might be a bad idea, since we try our effort to make student
-        // views and teacher viewers loosely coupled.
-        
     }
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    NSLog(@"didDismissWithButtonIndex called here");
+}
 
 
 /*

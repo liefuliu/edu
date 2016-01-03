@@ -103,7 +103,8 @@ static const float kVerticalScale = 1.0;
 // - 第0页没有声音，第1也没有动画效果
 // - 已经翻到最后一页的提示。
 // - 动画不要上下浮动
-// - 第一次进入，加操作提示。
+// - 第一次进入，加操作提示。 (找Default storing)'
+// - 修理内存溢出的bug。
 
 - (id) initWithBookKey:(NSString*) localBookKey {
     if (self = [super init]) {
@@ -111,6 +112,10 @@ static const float kVerticalScale = 1.0;
         self.localBookInfo = [[LocalBookStore sharedObject] getBookWithKey:self.localBookKey];
     }
     return self;
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    
 }
 
 - (void)viewDidLoad
@@ -133,6 +138,26 @@ static const float kVerticalScale = 1.0;
     
     [self.view addGestureRecognizer:self.lpgr];
     
+    // 如果App是首次运行，则在初始化页面之前，显示操作提示。否则，直接显示初始化页面。
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"操作提示", nil)
+                                                        message:@"向左滑动往后翻页, 向右滑动往前翻页, 长按屏幕返回主书单。"
+                                                       delegate:self
+                                              cancelButtonTitle:@"好的，知道了"
+                                              otherButtonTitles:nil];
+        [alert show];
+    } else {
+        [self InitializeFromCurrentPage:YES];
+    }
+}
+
+
+// 在点击"好的，知道了“以后，初始化页面。
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     [self InitializeFromCurrentPage:YES];
 }
 
@@ -197,7 +222,7 @@ static const float kVerticalScale = 1.0;
     BookPlayerVC *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        controller = [[BookPlayerVC alloc] initWithBookKey:self.localBookKey];
+        controller = [[BookPlayerVC alloc] initWithBookKey:self.localBookKey withPage:(int)page];
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
     }
     
@@ -219,6 +244,25 @@ static const float kVerticalScale = 1.0;
         [controller showPageAtIndex:(int)page];
     }
 }
+
+- (void) detatchPage:(NSUInteger) page {
+    BookPlayerVC *controller = [self.viewControllers objectAtIndex:page];
+    if ((NSNull *)controller != [NSNull null]) {
+        [controller willMoveToParentViewController:nil];  // containment call before removing child
+        [controller.view removeFromSuperview];
+        [controller removeFromParentViewController];      // containment call to remove child
+    }
+    controller = nil;
+}
+
+
+- (void)removeChildController:(UIViewController *)controller
+{
+    [controller willMoveToParentViewController:nil];  // containment call before removing child
+    [controller.view removeFromSuperview];
+    [controller removeFromParentViewController];      // containment call to remove child
+}
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -277,14 +321,29 @@ static const float kVerticalScale = 1.0;
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 0) {
         [self loadScrollViewWithPage:page - 1];
-        
     }
+    
     [self loadScrollViewWithPage:page];
 
     if (page + 1 < self.localBookInfo.totalPages) {
-       [self loadScrollViewWithPage:page + 1];
+        [self loadScrollViewWithPage:page + 1];
     }
-
+    
+    // 将第(page - 2)页和(page + 2) 页从Scroll View移除。这样可以内存溢出。
+    for (int p = MAX(0, page - 2);
+         p <= MIN(page + 2, self.viewControllers.count - 1); ++p)
+    {
+        BookPlayerVC *controller = [self.viewControllers objectAtIndex:p];
+        if ((NSNull *)controller != [NSNull null]) {
+            if (controller.page < (page - 1) ||
+                controller.page > (page + 1))
+            {
+                [self removeChildController:controller];
+                self.viewControllers[p] = [NSNull null];
+            }
+        }
+    }
+    
     // update the scroll view to the appropriate page
     CGRect bounds = self.scrollView1.bounds;
     bounds.origin.x = CGRectGetWidth(bounds) * page;

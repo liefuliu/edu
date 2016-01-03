@@ -30,10 +30,12 @@
 
 @implementation BookPlayerVC
 
-- (id) initWithBookKey:(NSString*) localBookKey {
+- (id) initWithBookKey:(NSString*) localBookKey
+              withPage:(int) pageIndex {
     if (self = [super init]) {
         self.localBookKey = localBookKey;
         self.localBookInfo = [[LocalBookStore sharedObject] getBookWithKey:self.localBookKey];
+        self.page = pageIndex;
     }
     return self;
 }

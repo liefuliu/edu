@@ -12,8 +12,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *pageImageView;
 @property (weak, nonatomic) IBOutlet UITextView *translatedTextView;
 
+@property int page;
 
-- (id) initWithBookKey:(NSString*) localBookKey;
+- (id) initWithBookKey:(NSString*) localBookKey withPage:(int) pageIndex;
 
 - (void) showPageAtIndex:(int) pageIndex;
 
