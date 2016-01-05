@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookPlayerVC : UIViewController
+@interface BookPagePlayerVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIImageView *pageImageView;
 @property (weak, nonatomic) IBOutlet UITextView *translatedTextView;
 

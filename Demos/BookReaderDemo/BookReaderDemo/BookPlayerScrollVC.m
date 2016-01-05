@@ -45,8 +45,8 @@
  
  */
 
-#import "RootViewController.h"
-#import "BookPlayerVC.h"
+#import "BookPlayerScrollVC.h"
+#import "BookPagePlayerVC.h"
 
 #import "LocalBookStore.h"
 
@@ -66,7 +66,7 @@ typedef enum ScrollDirection {
     ScrollDirectionCrazy,
 } ScrollDirection;
 
-@interface RootViewController ()
+@interface BookPlayerScrollVC ()
 
 @property (nonatomic, strong) NSMutableArray *viewControllers;
 
@@ -95,7 +95,7 @@ CGFloat lastContentOffset;
 
 #pragma mark -
 
-@implementation RootViewController
+@implementation BookPlayerScrollVC
 
 static const float kVerticalScale = 1.0;
 
@@ -219,10 +219,10 @@ static const float kVerticalScale = 1.0;
     }
     
     // replace the placeholder if necessary
-    BookPlayerVC *controller = [self.viewControllers objectAtIndex:page];
+    BookPagePlayerVC *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        controller = [[BookPlayerVC alloc] initWithBookKey:self.localBookKey withPage:(int)page];
+        controller = [[BookPagePlayerVC alloc] initWithBookKey:self.localBookKey withPage:(int)page];
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
     }
     
@@ -246,7 +246,7 @@ static const float kVerticalScale = 1.0;
 }
 
 - (void) detatchPage:(NSUInteger) page {
-    BookPlayerVC *controller = [self.viewControllers objectAtIndex:page];
+    BookPagePlayerVC *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller != [NSNull null]) {
         [controller willMoveToParentViewController:nil];  // containment call before removing child
         [controller.view removeFromSuperview];
@@ -333,7 +333,7 @@ static const float kVerticalScale = 1.0;
     for (int p = MAX(0, page - 2);
          p <= MIN(page + 2, self.viewControllers.count - 1); ++p)
     {
-        BookPlayerVC *controller = [self.viewControllers objectAtIndex:p];
+        BookPagePlayerVC *controller = [self.viewControllers objectAtIndex:p];
         if ((NSNull *)controller != [NSNull null]) {
             if (controller.page < (page - 1) ||
                 controller.page > (page + 1))

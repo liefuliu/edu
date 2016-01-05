@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RootViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookPlayerScrollVC">
             <connections>
                 <outlet property="scrollView1" destination="Wjy-Yw-ck1" id="deB-by-6cA"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ojr-8O-aPW"/>

@@ -8,7 +8,7 @@
 
 #import "BookTableVC.h"
 #import "BookItemCell.h"
-#import "RootViewController.h"
+#import "BookPlayerScrollVC.h"
 
 #import "LocalBookStore.h"
 
@@ -96,7 +96,7 @@
     if (indexPath.section == 0){
         NSString* bookKey = (NSString*)[[LocalBookStore sharedObject] allBookKeys][indexPath.row];
 
-        RootViewController *detailViewController = [[RootViewController alloc] initWithBookKey:bookKey];
+        BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
         [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
     }
 }

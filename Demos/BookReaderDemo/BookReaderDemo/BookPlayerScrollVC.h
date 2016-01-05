@@ -47,7 +47,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UIViewController <UIScrollViewDelegate>
+@interface BookPlayerScrollVC : UIViewController <UIScrollViewDelegate>
 
 // @property (nonatomic, strong) NSArray *contentList;
 
