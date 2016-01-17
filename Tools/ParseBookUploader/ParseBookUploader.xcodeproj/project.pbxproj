@@ -1,0 +1,585 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6D3AB0511C4C0E4000FE1B5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB0501C4C0E4000FE1B5C /* AppDelegate.m */; };
+		6D3AB0541C4C0E4000FE1B5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB0531C4C0E4000FE1B5C /* main.m */; };
+		6D3AB0571C4C0E4000FE1B5C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB0561C4C0E4000FE1B5C /* ViewController.m */; };
+		6D3AB0591C4C0E4000FE1B5C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D3AB0581C4C0E4000FE1B5C /* Assets.xcassets */; };
+		6D3AB05C1C4C0E4000FE1B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D3AB05A1C4C0E4000FE1B5C /* Main.storyboard */; };
+		6D3AB0671C4C0E4000FE1B5C /* ParseBookUploaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB0661C4C0E4000FE1B5C /* ParseBookUploaderTests.m */; };
+		6D3AB0721C4C0E4000FE1B5C /* ParseBookUploaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB0711C4C0E4000FE1B5C /* ParseBookUploaderUITests.m */; };
+		6D3AB0811C4C0EEA00FE1B5C /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB07F1C4C0EEA00FE1B5C /* Bolts.framework */; };
+		6D3AB0821C4C0EEA00FE1B5C /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0801C4C0EEA00FE1B5C /* Parse.framework */; };
+		6D3AB0841C4C0F0200FE1B5C /* Bolts.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D3AB07F1C4C0EEA00FE1B5C /* Bolts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D3AB0851C4C0F0200FE1B5C /* Parse.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6D3AB0801C4C0EEA00FE1B5C /* Parse.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6D3AB0871C4C0F3200FE1B5C /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0861C4C0F3200FE1B5C /* ApplicationServices.framework */; };
+		6D3AB0891C4C0F3700FE1B5C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0881C4C0F3700FE1B5C /* CFNetwork.framework */; };
+		6D3AB08B1C4C0F3D00FE1B5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB08A1C4C0F3D00FE1B5C /* CoreGraphics.framework */; };
+		6D3AB08D1C4C0F4300FE1B5C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB08C1C4C0F4300FE1B5C /* CoreLocation.framework */; };
+		6D3AB08F1C4C0F6400FE1B5C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB08E1C4C0F6400FE1B5C /* libsqlite3.tbd */; };
+		6D3AB0911C4C0F7100FE1B5C /* libz.1.1.3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0901C4C0F7100FE1B5C /* libz.1.1.3.tbd */; };
+		6D3AB0931C4C0F8100FE1B5C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0921C4C0F8100FE1B5C /* QuartzCore.framework */; };
+		6D3AB0951C4C0F8A00FE1B5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0941C4C0F8A00FE1B5C /* Security.framework */; };
+		6D3AB0971C4C0F9100FE1B5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0961C4C0F9100FE1B5C /* SystemConfiguration.framework */; };
+		6D3AB0991C4C0F9800FE1B5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6D3AB0631C4C0E4000FE1B5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D3AB0441C4C0E4000FE1B5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D3AB04B1C4C0E4000FE1B5C;
+			remoteInfo = ParseBookUploader;
+		};
+		6D3AB06E1C4C0E4000FE1B5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6D3AB0441C4C0E4000FE1B5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6D3AB04B1C4C0E4000FE1B5C;
+			remoteInfo = ParseBookUploader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6D3AB0831C4C0EFB00FE1B5C /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6D3AB0841C4C0F0200FE1B5C /* Bolts.framework in CopyFiles */,
+				6D3AB0851C4C0F0200FE1B5C /* Parse.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6D3AB04C1C4C0E4000FE1B5C /* ParseBookUploader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParseBookUploader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3AB04F1C4C0E4000FE1B5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6D3AB0501C4C0E4000FE1B5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6D3AB0531C4C0E4000FE1B5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6D3AB0551C4C0E4000FE1B5C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6D3AB0561C4C0E4000FE1B5C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6D3AB0581C4C0E4000FE1B5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6D3AB05B1C4C0E4000FE1B5C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6D3AB05D1C4C0E4000FE1B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3AB0621C4C0E4000FE1B5C /* ParseBookUploaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParseBookUploaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3AB0661C4C0E4000FE1B5C /* ParseBookUploaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseBookUploaderTests.m; sourceTree = "<group>"; };
+		6D3AB0681C4C0E4000FE1B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3AB06D1C4C0E4000FE1B5C /* ParseBookUploaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParseBookUploaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D3AB0711C4C0E4000FE1B5C /* ParseBookUploaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ParseBookUploaderUITests.m; sourceTree = "<group>"; };
+		6D3AB0731C4C0E4000FE1B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6D3AB07F1C4C0EEA00FE1B5C /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		6D3AB0801C4C0EEA00FE1B5C /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		6D3AB0861C4C0F3200FE1B5C /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		6D3AB0881C4C0F3700FE1B5C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		6D3AB08A1C4C0F3D00FE1B5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6D3AB08C1C4C0F4300FE1B5C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		6D3AB08E1C4C0F6400FE1B5C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6D3AB0901C4C0F7100FE1B5C /* libz.1.1.3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.1.1.3.tbd; path = usr/lib/libz.1.1.3.tbd; sourceTree = SDKROOT; };
+		6D3AB0921C4C0F8100FE1B5C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		6D3AB0941C4C0F8A00FE1B5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6D3AB0961C4C0F9100FE1B5C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6D3AB0491C4C0E4000FE1B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3AB0991C4C0F9800FE1B5C /* Cocoa.framework in Frameworks */,
+				6D3AB0971C4C0F9100FE1B5C /* SystemConfiguration.framework in Frameworks */,
+				6D3AB0951C4C0F8A00FE1B5C /* Security.framework in Frameworks */,
+				6D3AB0931C4C0F8100FE1B5C /* QuartzCore.framework in Frameworks */,
+				6D3AB0911C4C0F7100FE1B5C /* libz.1.1.3.tbd in Frameworks */,
+				6D3AB08F1C4C0F6400FE1B5C /* libsqlite3.tbd in Frameworks */,
+				6D3AB08D1C4C0F4300FE1B5C /* CoreLocation.framework in Frameworks */,
+				6D3AB08B1C4C0F3D00FE1B5C /* CoreGraphics.framework in Frameworks */,
+				6D3AB0891C4C0F3700FE1B5C /* CFNetwork.framework in Frameworks */,
+				6D3AB0871C4C0F3200FE1B5C /* ApplicationServices.framework in Frameworks */,
+				6D3AB0821C4C0EEA00FE1B5C /* Parse.framework in Frameworks */,
+				6D3AB0811C4C0EEA00FE1B5C /* Bolts.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3AB05F1C4C0E4000FE1B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3AB06A1C4C0E4000FE1B5C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6D3AB0431C4C0E4000FE1B5C = {
+			isa = PBXGroup;
+			children = (
+				6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */,
+				6D3AB0961C4C0F9100FE1B5C /* SystemConfiguration.framework */,
+				6D3AB0941C4C0F8A00FE1B5C /* Security.framework */,
+				6D3AB0921C4C0F8100FE1B5C /* QuartzCore.framework */,
+				6D3AB0901C4C0F7100FE1B5C /* libz.1.1.3.tbd */,
+				6D3AB08E1C4C0F6400FE1B5C /* libsqlite3.tbd */,
+				6D3AB08C1C4C0F4300FE1B5C /* CoreLocation.framework */,
+				6D3AB08A1C4C0F3D00FE1B5C /* CoreGraphics.framework */,
+				6D3AB0881C4C0F3700FE1B5C /* CFNetwork.framework */,
+				6D3AB0861C4C0F3200FE1B5C /* ApplicationServices.framework */,
+				6D3AB04E1C4C0E4000FE1B5C /* ParseBookUploader */,
+				6D3AB0651C4C0E4000FE1B5C /* ParseBookUploaderTests */,
+				6D3AB0701C4C0E4000FE1B5C /* ParseBookUploaderUITests */,
+				6D3AB04D1C4C0E4000FE1B5C /* Products */,
+				6D3AB07F1C4C0EEA00FE1B5C /* Bolts.framework */,
+				6D3AB0801C4C0EEA00FE1B5C /* Parse.framework */,
+			);
+			sourceTree = "<group>";
+		};
+		6D3AB04D1C4C0E4000FE1B5C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6D3AB04C1C4C0E4000FE1B5C /* ParseBookUploader.app */,
+				6D3AB0621C4C0E4000FE1B5C /* ParseBookUploaderTests.xctest */,
+				6D3AB06D1C4C0E4000FE1B5C /* ParseBookUploaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6D3AB04E1C4C0E4000FE1B5C /* ParseBookUploader */ = {
+			isa = PBXGroup;
+			children = (
+				6D3AB04F1C4C0E4000FE1B5C /* AppDelegate.h */,
+				6D3AB0501C4C0E4000FE1B5C /* AppDelegate.m */,
+				6D3AB0551C4C0E4000FE1B5C /* ViewController.h */,
+				6D3AB0561C4C0E4000FE1B5C /* ViewController.m */,
+				6D3AB0581C4C0E4000FE1B5C /* Assets.xcassets */,
+				6D3AB05A1C4C0E4000FE1B5C /* Main.storyboard */,
+				6D3AB05D1C4C0E4000FE1B5C /* Info.plist */,
+				6D3AB0521C4C0E4000FE1B5C /* Supporting Files */,
+			);
+			path = ParseBookUploader;
+			sourceTree = "<group>";
+		};
+		6D3AB0521C4C0E4000FE1B5C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D3AB0531C4C0E4000FE1B5C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D3AB0651C4C0E4000FE1B5C /* ParseBookUploaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				6D3AB0661C4C0E4000FE1B5C /* ParseBookUploaderTests.m */,
+				6D3AB0681C4C0E4000FE1B5C /* Info.plist */,
+			);
+			path = ParseBookUploaderTests;
+			sourceTree = "<group>";
+		};
+		6D3AB0701C4C0E4000FE1B5C /* ParseBookUploaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6D3AB0711C4C0E4000FE1B5C /* ParseBookUploaderUITests.m */,
+				6D3AB0731C4C0E4000FE1B5C /* Info.plist */,
+			);
+			path = ParseBookUploaderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6D3AB04B1C4C0E4000FE1B5C /* ParseBookUploader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3AB0761C4C0E4000FE1B5C /* Build configuration list for PBXNativeTarget "ParseBookUploader" */;
+			buildPhases = (
+				6D3AB0481C4C0E4000FE1B5C /* Sources */,
+				6D3AB0491C4C0E4000FE1B5C /* Frameworks */,
+				6D3AB04A1C4C0E4000FE1B5C /* Resources */,
+				6D3AB0831C4C0EFB00FE1B5C /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ParseBookUploader;
+			productName = ParseBookUploader;
+			productReference = 6D3AB04C1C4C0E4000FE1B5C /* ParseBookUploader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6D3AB0611C4C0E4000FE1B5C /* ParseBookUploaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3AB0791C4C0E4000FE1B5C /* Build configuration list for PBXNativeTarget "ParseBookUploaderTests" */;
+			buildPhases = (
+				6D3AB05E1C4C0E4000FE1B5C /* Sources */,
+				6D3AB05F1C4C0E4000FE1B5C /* Frameworks */,
+				6D3AB0601C4C0E4000FE1B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D3AB0641C4C0E4000FE1B5C /* PBXTargetDependency */,
+			);
+			name = ParseBookUploaderTests;
+			productName = ParseBookUploaderTests;
+			productReference = 6D3AB0621C4C0E4000FE1B5C /* ParseBookUploaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6D3AB06C1C4C0E4000FE1B5C /* ParseBookUploaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6D3AB07C1C4C0E4000FE1B5C /* Build configuration list for PBXNativeTarget "ParseBookUploaderUITests" */;
+			buildPhases = (
+				6D3AB0691C4C0E4000FE1B5C /* Sources */,
+				6D3AB06A1C4C0E4000FE1B5C /* Frameworks */,
+				6D3AB06B1C4C0E4000FE1B5C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6D3AB06F1C4C0E4000FE1B5C /* PBXTargetDependency */,
+			);
+			name = ParseBookUploaderUITests;
+			productName = ParseBookUploaderUITests;
+			productReference = 6D3AB06D1C4C0E4000FE1B5C /* ParseBookUploaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6D3AB0441C4C0E4000FE1B5C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = SanRenXing;
+				TargetAttributes = {
+					6D3AB04B1C4C0E4000FE1B5C = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					6D3AB0611C4C0E4000FE1B5C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6D3AB04B1C4C0E4000FE1B5C;
+					};
+					6D3AB06C1C4C0E4000FE1B5C = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 6D3AB04B1C4C0E4000FE1B5C;
+					};
+				};
+			};
+			buildConfigurationList = 6D3AB0471C4C0E4000FE1B5C /* Build configuration list for PBXProject "ParseBookUploader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6D3AB0431C4C0E4000FE1B5C;
+			productRefGroup = 6D3AB04D1C4C0E4000FE1B5C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6D3AB04B1C4C0E4000FE1B5C /* ParseBookUploader */,
+				6D3AB0611C4C0E4000FE1B5C /* ParseBookUploaderTests */,
+				6D3AB06C1C4C0E4000FE1B5C /* ParseBookUploaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6D3AB04A1C4C0E4000FE1B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3AB0591C4C0E4000FE1B5C /* Assets.xcassets in Resources */,
+				6D3AB05C1C4C0E4000FE1B5C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3AB0601C4C0E4000FE1B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3AB06B1C4C0E4000FE1B5C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6D3AB0481C4C0E4000FE1B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3AB0571C4C0E4000FE1B5C /* ViewController.m in Sources */,
+				6D3AB0541C4C0E4000FE1B5C /* main.m in Sources */,
+				6D3AB0511C4C0E4000FE1B5C /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3AB05E1C4C0E4000FE1B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3AB0671C4C0E4000FE1B5C /* ParseBookUploaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6D3AB0691C4C0E4000FE1B5C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6D3AB0721C4C0E4000FE1B5C /* ParseBookUploaderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6D3AB0641C4C0E4000FE1B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D3AB04B1C4C0E4000FE1B5C /* ParseBookUploader */;
+			targetProxy = 6D3AB0631C4C0E4000FE1B5C /* PBXContainerItemProxy */;
+		};
+		6D3AB06F1C4C0E4000FE1B5C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6D3AB04B1C4C0E4000FE1B5C /* ParseBookUploader */;
+			targetProxy = 6D3AB06E1C4C0E4000FE1B5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6D3AB05A1C4C0E4000FE1B5C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6D3AB05B1C4C0E4000FE1B5C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6D3AB0741C4C0E4000FE1B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		6D3AB0751C4C0E4000FE1B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		6D3AB0771C4C0E4000FE1B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ParseBookUploader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.SanRenXing.ParseBookUploader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6D3AB0781C4C0E4000FE1B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = ParseBookUploader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.SanRenXing.ParseBookUploader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6D3AB07A1C4C0E4000FE1B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ParseBookUploaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.SanRenXing.ParseBookUploaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParseBookUploader.app/Contents/MacOS/ParseBookUploader";
+			};
+			name = Debug;
+		};
+		6D3AB07B1C4C0E4000FE1B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ParseBookUploaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.SanRenXing.ParseBookUploaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ParseBookUploader.app/Contents/MacOS/ParseBookUploader";
+			};
+			name = Release;
+		};
+		6D3AB07D1C4C0E4000FE1B5C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ParseBookUploaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.SanRenXing.ParseBookUploaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ParseBookUploader;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		6D3AB07E1C4C0E4000FE1B5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = ParseBookUploaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = app.SanRenXing.ParseBookUploaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ParseBookUploader;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6D3AB0471C4C0E4000FE1B5C /* Build configuration list for PBXProject "ParseBookUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3AB0741C4C0E4000FE1B5C /* Debug */,
+				6D3AB0751C4C0E4000FE1B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6D3AB0761C4C0E4000FE1B5C /* Build configuration list for PBXNativeTarget "ParseBookUploader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3AB0771C4C0E4000FE1B5C /* Debug */,
+				6D3AB0781C4C0E4000FE1B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D3AB0791C4C0E4000FE1B5C /* Build configuration list for PBXNativeTarget "ParseBookUploaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3AB07A1C4C0E4000FE1B5C /* Debug */,
+				6D3AB07B1C4C0E4000FE1B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6D3AB07C1C4C0E4000FE1B5C /* Build configuration list for PBXNativeTarget "ParseBookUploaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6D3AB07D1C4C0E4000FE1B5C /* Debug */,
+				6D3AB07E1C4C0E4000FE1B5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6D3AB0441C4C0E4000FE1B5C /* Project object */;
+}
