@@ -28,6 +28,7 @@
 		6D3AB0951C4C0F8A00FE1B5C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0941C4C0F8A00FE1B5C /* Security.framework */; };
 		6D3AB0971C4C0F9100FE1B5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0961C4C0F9100FE1B5C /* SystemConfiguration.framework */; };
 		6D3AB0991C4C0F9800FE1B5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */; };
+		6D3AB09D1C4CA6F100FE1B5C /* FilePathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +90,8 @@
 		6D3AB0941C4C0F8A00FE1B5C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		6D3AB0961C4C0F9100FE1B5C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		6D3AB09B1C4CA6F100FE1B5C /* FilePathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePathUtil.h; sourceTree = "<group>"; };
+		6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePathUtil.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +163,8 @@
 				6D3AB05A1C4C0E4000FE1B5C /* Main.storyboard */,
 				6D3AB05D1C4C0E4000FE1B5C /* Info.plist */,
 				6D3AB0521C4C0E4000FE1B5C /* Supporting Files */,
+				6D3AB09B1C4CA6F100FE1B5C /* FilePathUtil.h */,
+				6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */,
 			);
 			path = ParseBookUploader;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D3AB09D1C4CA6F100FE1B5C /* FilePathUtil.m in Sources */,
 				6D3AB0571C4C0E4000FE1B5C /* ViewController.m in Sources */,
 				6D3AB0541C4C0E4000FE1B5C /* main.m in Sources */,
 				6D3AB0511C4C0E4000FE1B5C /* AppDelegate.m in Sources */,
