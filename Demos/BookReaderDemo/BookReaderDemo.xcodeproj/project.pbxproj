@@ -651,19 +651,19 @@
 		6DF9F1B51C0A390400359200 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DF9F1B71C0A390400359200 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6DF9F1B81C0A390400359200 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6DF9F1BA1C0A390400359200 /* UnusedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnusedViewController.h; sourceTree = "<group>"; };
-		6DF9F1BB1C0A390400359200 /* UnusedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UnusedViewController.m; sourceTree = "<group>"; };
+		6DF9F1BA1C0A390400359200 /* UnusedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UnusedViewController.h; path = BookReaderDemo/UnusedViewController.h; sourceTree = "<group>"; };
+		6DF9F1BB1C0A390400359200 /* UnusedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UnusedViewController.m; path = BookReaderDemo/UnusedViewController.m; sourceTree = "<group>"; };
 		6DF9F1BE1C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DF9F1C01C0A390400359200 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DF9F1C31C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6DF9F1C91C0A390400359200 /* BookReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF9F1CE1C0A390400359200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF9F1CF1C0A390400359200 /* BookReaderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookReaderDemoTests.m; sourceTree = "<group>"; };
-		6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnusedVoiceRecordViewController.h; sourceTree = "<group>"; };
-		6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnusedVoiceRecordViewController.m; sourceTree = "<group>"; };
-		6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UnusedVoiceRecordViewController.xib; sourceTree = "<group>"; };
-		6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnusedRecordPlayVC.h; path = ../UnusedRecordPlayVC.h; sourceTree = "<group>"; };
-		6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnusedRecordPlayVC.m; path = ../UnusedRecordPlayVC.m; sourceTree = "<group>"; };
+		6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnusedVoiceRecordViewController.h; path = BookReaderDemo/UnusedVoiceRecordViewController.h; sourceTree = "<group>"; };
+		6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnusedVoiceRecordViewController.m; path = BookReaderDemo/UnusedVoiceRecordViewController.m; sourceTree = "<group>"; };
+		6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UnusedVoiceRecordViewController.xib; path = BookReaderDemo/UnusedVoiceRecordViewController.xib; sourceTree = "<group>"; };
+		6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnusedRecordPlayVC.h; sourceTree = "<group>"; };
+		6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnusedRecordPlayVC.m; sourceTree = "<group>"; };
 		6DF9F1E11C0B82B200359200 /* RecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordVC.h; sourceTree = "<group>"; };
 		6DF9F1E21C0B82B200359200 /* RecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordVC.m; sourceTree = "<group>"; };
 		6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = congfucius_study.jpg; sourceTree = "<group>"; };
@@ -770,9 +770,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6DBA955C1C4D779100B7DFB1 /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */,
+				6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */,
+				6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */,
+				6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */,
+				6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */,
+				6DF9F1BA1C0A390400359200 /* UnusedViewController.h */,
+				6DF9F1BB1C0A390400359200 /* UnusedViewController.m */,
+			);
+			name = Unused;
+			sourceTree = "<group>";
+		};
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
+				6DBA955C1C4D779100B7DFB1 /* Unused */,
 				6DF9F2BA1C2E22F500359200 /* Models */,
 				6DF9F2B71C28550700359200 /* BRDConfig.h */,
 				6DF9F2B81C28550700359200 /* BRDConfig.m */,
@@ -817,17 +832,10 @@
 		6DF9F1B21C0A390400359200 /* BookReaderDemo */ = {
 			isa = PBXGroup;
 			children = (
-				6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */,
-				6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */,
-				6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */,
-				6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */,
 				6DF9F1B71C0A390400359200 /* AppDelegate.h */,
 				6DF9F1B81C0A390400359200 /* AppDelegate.m */,
-				6DF9F1BA1C0A390400359200 /* UnusedViewController.h */,
-				6DF9F1BB1C0A390400359200 /* UnusedViewController.m */,
 				6DF9F1BD1C0A390400359200 /* Main.storyboard */,
 				6DF9F1C01C0A390400359200 /* Images.xcassets */,
-				6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */,
 				6DF9F1E11C0B82B200359200 /* RecordVC.h */,
 				6DF9F1E21C0B82B200359200 /* RecordVC.m */,
 				6DF9F1C21C0A390400359200 /* LaunchScreen.xib */,

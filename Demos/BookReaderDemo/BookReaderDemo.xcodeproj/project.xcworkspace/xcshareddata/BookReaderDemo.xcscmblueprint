@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0B7422648AF105188EF03186FC5E23B5FB25C766",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0B7422648AF105188EF03186FC5E23B5FB25C766" : 0,
+    "8610FA09636918C5458CC8667FA3B082DB2F9276" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "FE0E0904-9246-4759-B4BD-14BFC7CE69C3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0B7422648AF105188EF03186FC5E23B5FB25C766" : "edu\/",
+    "8610FA09636918C5458CC8667FA3B082DB2F9276" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BookReaderDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Demos\/BookReaderDemo\/BookReaderDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/liefuliu\/edu",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0B7422648AF105188EF03186FC5E23B5FB25C766"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/liefuliu\/edu",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8610FA09636918C5458CC8667FA3B082DB2F9276"
+    }
+  ]
+}
