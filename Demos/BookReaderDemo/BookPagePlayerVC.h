@@ -14,7 +14,9 @@
 
 @property int page;
 
-- (id) initWithBookKey:(NSString*) localBookKey withPage:(int) pageIndex;
+- (id) initWithBookKey:(NSString*) localBookKey
+              withPage:(int) pageIndex
+    withTranslatedText:(NSArray*) translatedText;
 
 - (void) showPageAtIndex:(int) pageIndex;
 

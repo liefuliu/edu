@@ -14,12 +14,15 @@
 @property NSString* author;
 @property int totalPages;
 @property NSString* filePrefix;
-@property NSArray* translatedText;
+@property BOOL hasTranslatedText;
 
 - (id) initBook:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
      filePrefix:(NSString*) filePrefix
- translatedText:(NSString*) translatedText;
+hasTranslatedText:(BOOL) hasTranslatedText;
+
+
++ (NSArray*) extractTranslatedText: (NSString*) bookKey;
 
 @end

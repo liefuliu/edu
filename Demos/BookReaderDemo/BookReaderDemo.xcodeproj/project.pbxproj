@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6DBA955F1C4DBC0C00B7DFB1 /* stanley-trans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DBA955E1C4DBC0C00B7DFB1 /* stanley-trans.txt */; };
+		6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DBA95601C4DBEE600B7DFB1 /* oliver-trans.txt */; };
 		6DBB16EA1C2E6C3B0095813F /* BookPlayerScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */; };
 		6DBB17551C2F93120095813F /* oliver-picture-0001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16EB1C2F93120095813F /* oliver-picture-0001.jpg */; };
 		6DBB17561C2F93120095813F /* oliver-picture-0002.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16EC1C2F93120095813F /* oliver-picture-0002.jpg */; };
@@ -371,6 +373,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6DBA955E1C4DBC0C00B7DFB1 /* stanley-trans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "stanley-trans.txt"; path = "Translations/stanley-trans.txt"; sourceTree = "<group>"; };
+		6DBA95601C4DBEE600B7DFB1 /* oliver-trans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "oliver-trans.txt"; path = "Translations/oliver-trans.txt"; sourceTree = "<group>"; };
 		6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookPlayerScrollVC.xib; sourceTree = "<group>"; };
 		6DBB16EB1C2F93120095813F /* oliver-picture-0001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0001.jpg"; path = "Books/oliver-picture-0001.jpg"; sourceTree = "<group>"; };
 		6DBB16EC1C2F93120095813F /* oliver-picture-0002.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "oliver-picture-0002.jpg"; path = "Books/oliver-picture-0002.jpg"; sourceTree = "<group>"; };
@@ -784,6 +788,15 @@
 			name = Unused;
 			sourceTree = "<group>";
 		};
+		6DBA955D1C4DBBF000B7DFB1 /* Translation */ = {
+			isa = PBXGroup;
+			children = (
+				6DBA95601C4DBEE600B7DFB1 /* oliver-trans.txt */,
+				6DBA955E1C4DBC0C00B7DFB1 /* stanley-trans.txt */,
+			);
+			name = Translation;
+			sourceTree = "<group>";
+		};
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +811,7 @@
 				6DF9F3141C2E5C2B00359200 /* BookPlayerScrollVC.h */,
 				6DF9F3151C2E5C2B00359200 /* BookPlayerScrollVC.m */,
 				6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */,
+				6DBA955D1C4DBBF000B7DFB1 /* Translation */,
 				6DF9F2281C27385000359200 /* Image */,
 				6DF9F2271C27383C00359200 /* Audio */,
 				6DF9F1B21C0A390400359200 /* BookReaderDemo */,
@@ -1494,6 +1508,7 @@
 				6DBB17761C2F93120095813F /* oliver-picture-0034.jpg in Resources */,
 				6DF9F2E21C2E4D0900359200 /* stanley-audio-0011.mp3 in Resources */,
 				6DF9F2AB1C27821900359200 /* BookTableCell.xib in Resources */,
+				6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */,
 				6DBB175B1C2F93120095813F /* oliver-picture-0007.jpg in Resources */,
 				6DBB18AF1C2F95810095813F /* stanley-picture-0041.jpg in Resources */,
 				6DBB18361C2F93280095813F /* oliver-audio-0028.mp3 in Resources */,
@@ -1614,6 +1629,7 @@
 				6DBB17721C2F93120095813F /* oliver-picture-0030.jpg in Resources */,
 				6DBB181F1C2F93280095813F /* oliver-audio-0005.mp3 in Resources */,
 				6DBB185F1C2F93280095813F /* stanley-audio-0009.mp3 in Resources */,
+				6DBA955F1C4DBC0C00B7DFB1 /* stanley-trans.txt in Resources */,
 				6DBB178E1C2F93120095813F /* oliver-picture-0058.jpg in Resources */,
 				6DBB18281C2F93280095813F /* oliver-audio-0014.mp3 in Resources */,
 				6DBB17791C2F93120095813F /* oliver-picture-0037.jpg in Resources */,

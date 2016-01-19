@@ -23,6 +23,7 @@
 @property int currentPage;
 @property LocalBook* localBookInfo;
 @property NSString* localBookKey;
+@property NSArray* translatedText;
 
 @property (nonatomic, retain) AVAudioPlayer *player;
 
@@ -31,11 +32,13 @@
 @implementation BookPagePlayerVC
 
 - (id) initWithBookKey:(NSString*) localBookKey
-              withPage:(int) pageIndex {
+              withPage:(int) pageIndex
+    withTranslatedText: (NSArray*) translatedText {
     if (self = [super init]) {
         self.localBookKey = localBookKey;
         self.localBookInfo = [[LocalBookStore sharedObject] getBookWithKey:self.localBookKey];
         self.page = pageIndex;
+        self.translatedText = translatedText;
     }
     return self;
 }
@@ -58,9 +61,9 @@
                                self.localBookInfo.filePrefix,
                                [self intToString:pageIndex+1]]; // 绘本页从1开始计数。
     self.pageImageView.image = [UIImage imageWithContentsOfFile:imageFilePath];
-    if (pageIndex < self.localBookInfo.translatedText.count &&
-        ((NSString*)self.localBookInfo.translatedText[pageIndex]).length > 0) {
-        self.translatedTextView.text = (NSString*)self.localBookInfo.translatedText[pageIndex];
+    if (pageIndex < self.translatedText.count &&
+        ((NSString*) self.translatedText[pageIndex]).length > 0) {
+        self.translatedTextView.text = (NSString*)self.translatedText[pageIndex];
         self.translatedTextView.hidden = NO;
     } else {
         self.translatedTextView.hidden = YES;

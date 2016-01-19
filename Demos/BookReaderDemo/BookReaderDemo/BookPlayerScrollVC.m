@@ -72,6 +72,7 @@ typedef enum ScrollDirection {
 
 @property LocalBook* localBookInfo;
 @property NSString* localBookKey;
+@property NSArray* translatedText;
 @property int currentPage;
 
 @property (nonatomic, retain) AVAudioPlayer *player;
@@ -110,6 +111,11 @@ static const float kVerticalScale = 1.0;
     if (self = [super init]) {
         self.localBookKey = localBookKey;
         self.localBookInfo = [[LocalBookStore sharedObject] getBookWithKey:self.localBookKey];
+        if ([self.localBookInfo hasTranslatedText]) {
+            self.translatedText = [LocalBook extractTranslatedText:self.localBookKey];
+        } else {
+            self.translatedText = @[];
+        }
     }
     return self;
 }
@@ -222,7 +228,7 @@ static const float kVerticalScale = 1.0;
     BookPagePlayerVC *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        controller = [[BookPagePlayerVC alloc] initWithBookKey:self.localBookKey withPage:(int)page];
+        controller = [[BookPagePlayerVC alloc] initWithBookKey:self.localBookKey withPage:(int)page withTranslatedText:self.translatedText];
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
     }
     

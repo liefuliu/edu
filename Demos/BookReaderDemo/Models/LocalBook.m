@@ -15,16 +15,36 @@
          author:(NSString*) author
      totalPages:(int) totalPages
      filePrefix:(NSString*) filePrefix
- translatedText:(NSArray*) translatedText {
+hasTranslatedText:(BOOL) hasTranslatedText {
     self = [super init];
     if (self) {
         _bookName = bookName;
         _author = author;
         _totalPages = totalPages;
         _filePrefix = filePrefix;
-        _translatedText = translatedText;
+        _hasTranslatedText = hasTranslatedText;
     }
     return self;
+}
+
++ (NSArray*) extractTranslatedText: (NSString*) bookKey {
+    NSString* filePath = [NSString stringWithFormat:@"%@/%@-trans.txt",
+                          [[NSBundle mainBundle] resourcePath],
+                          bookKey];
+    NSString* fileContents = [NSString stringWithContentsOfFile:filePath
+                                                       encoding:NSUTF8StringEncoding error:nil];
+    
+    
+    NSArray* allLinedStrings =
+    [fileContents componentsSeparatedByCharactersInSet:
+     [NSCharacterSet newlineCharacterSet]];
+    
+    NSMutableArray* translatedText = [[NSMutableArray alloc] init];
+    for (NSString* encodedLine in allLinedStrings) {
+        [translatedText addObject:[encodedLine stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"]];
+    }
+
+    return translatedText;
 }
 
 @end
