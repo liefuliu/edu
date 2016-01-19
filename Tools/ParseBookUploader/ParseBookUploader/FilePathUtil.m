@@ -27,6 +27,8 @@
     
     if ([fileExt isEqualToString:@"mp3"]) {
         return kAudio;
+    } else if ([fileExt isEqualToString:@"txt"]){
+        return kTranslation;
     } else {
         return kImage;
     }

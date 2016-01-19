@@ -25,6 +25,16 @@
 }
 
 - (IBAction)buttonClicked:(id)sender {
+    if ([self.textFieldFileName stringValue].length == 0) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"输入错误"
+                                         defaultButton:@"OK" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          @"文件名不能为空"];
+
+        [alert runModal];
+        return;
+    }
+    
     NSLog(@"button clicked");
     [self EnumerateDir];
 }
@@ -34,18 +44,21 @@
     NSString* sessionId = @"20160117_211559_";
     NSLog(@"session id = %@", sessionId);
     
-    NSURL *url = [NSURL URLWithString:@"file:///Users/liefuliu/src/edu/Demos/BookReaderDemo/Books/"];
-    NSError *error = nil;
-    NSArray *properties = [NSArray arrayWithObjects: NSURLLocalizedNameKey,
-                           NSURLCreationDateKey, NSURLLocalizedTypeDescriptionKey, nil];
+    NSArray* array = [self getListOfFilePathsMatched:[self.textFieldFileName stringValue]];
     
-    NSArray *array = [[NSFileManager defaultManager]
-                      contentsOfDirectoryAtURL:url
-                      includingPropertiesForKeys:properties
-                      options:(NSDirectoryEnumerationSkipsHiddenFiles)
-                      error:&error];
-    if (array != nil) {
-        // Handle the error
+    if ([array count] > 0) {
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"确定"];
+        [alert addButtonWithTitle:@"取消"];
+        [alert setMessageText:[NSString stringWithFormat:@"是否要上传列表中%d个文件?", [array count]]];
+        [alert setInformativeText:@"上传将覆盖现有文件"];
+        [alert setAlertStyle:NSWarningAlertStyle];
+
+        if ([alert runModal] != NSAlertFirstButtonReturn) {
+            return;
+        }
+
+        
         int i = 0;
         int start = 0;
         for (NSString* file in array) {
@@ -72,12 +85,26 @@
             }
             
             ++i;
-            /*
-             + (nullable instancetype)fileWithName:(nullable NSString *)name
-             contentsAtPath:(nonnull NSString *)path;
-             */
         }
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
+                                         defaultButton:@"OK" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          @"没有找到可上传的文件。"];
+        
+        [alert runModal];
+        return;
     }
+}
+
+- (void)controlTextDidChange:(NSNotification *)notification {
+    NSTextField *textField = [notification object];
+    NSLog(@"controlTextDidChange: stringValue == %@", [textField stringValue]);
+    
+    NSArray* filePaths = [self getListOfFilePathsMatched:[textField stringValue]];
+    NSString* displayingFileNames = [filePaths componentsJoinedByString:@"\n"];
+    
+    [self.textViewFileToUpload setString:displayingFileNames];
 }
 
 - (BOOL) uploadFileToParse: (NSString*) filePath
@@ -112,5 +139,40 @@
     NSString *dateString = [dateFormatter stringFromDate:currentDate];
     return dateString;
 }
+
+- (NSArray*) getListOfFilePathsMatched : (NSString*) filePattern {
+    NSURL *url = [NSURL URLWithString:@"file:///Users/liefuliu/src/edu/Demos/BookReaderDemo/Books/"];
+    
+    NSError *error = nil;
+    NSArray *properties = [NSArray arrayWithObjects: NSURLLocalizedNameKey,
+                           NSURLCreationDateKey, NSURLLocalizedTypeDescriptionKey, nil];
+    
+    NSArray *array = [[NSFileManager defaultManager]
+                      contentsOfDirectoryAtURL:url
+                      includingPropertiesForKeys:properties
+                      options:(NSDirectoryEnumerationSkipsHiddenFiles)
+                      error:&error];
+    
+    // 检查文件名是否匹配正则表达式。
+    NSString* fileRegex = [self.textFieldFileName stringValue];
+    NSMutableArray* arrayFilePath = [[NSMutableArray alloc] init];
+    
+    for (NSString* item in array) {
+        NSError *error = NULL;
+        
+        NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:fileRegex options:NSRegularExpressionCaseInsensitive error:&error];
+        
+        NSString* theFileName = [item lastPathComponent];
+        NSTextCheckingResult *match = [regex firstMatchInString:theFileName options:0 range:NSMakeRange(0, [theFileName length])];
+        
+        if (match) {
+            [arrayFilePath addObject:item];
+        }
+    }
+    
+    return arrayFilePath;
+}
+
+
 
 @end

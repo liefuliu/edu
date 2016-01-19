@@ -9,7 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ViewController : NSViewController
+@property (weak) IBOutlet NSTextField *textFieldFileName;
 
+@property (unsafe_unretained) IBOutlet NSTextView *textViewFileToUpload;
 
 @end
 
