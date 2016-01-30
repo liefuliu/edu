@@ -8,6 +8,7 @@
 
 #import "BookPagePlayerVC.h"
 #import "LocalBook.h"
+#import "BRDPathUtil.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
@@ -56,11 +57,15 @@
 }
 
 - (void) showPageAtIndex:(int) pageIndex {
-    NSString* imageFilePath = [NSString stringWithFormat:@"%@/%@-picture-%@.jpg",
-                               [[NSBundle mainBundle] resourcePath],
-                               self.localBookInfo.filePrefix,
-                               [self intToString:pageIndex+1]]; // 绘本页从1开始计数。
-    self.pageImageView.image = [UIImage imageWithContentsOfFile:imageFilePath];
+    NSString* documentsDirectory = [BRDPathUtil applicationDocumentsDirectoryPath];
+    NSString* fileName = [NSString stringWithFormat:@"%@-picture-%@.jpg",
+                          self.localBookInfo.filePrefix,
+                          [self intToString:pageIndex+1]]; // 绘本页从1开始计数。
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    NSData *imgData = [NSData dataWithContentsOfFile:filePath];
+    self.pageImageView.image = [UIImage imageWithData:imgData];
+    
     if (pageIndex < self.translatedText.count &&
         ((NSString*) self.translatedText[pageIndex]).length > 0) {
         self.translatedTextView.text = (NSString*)self.translatedText[pageIndex];

@@ -34,7 +34,7 @@
          forCellReuseIdentifier:@"BookItemCell"];
     
     // bar.topItem.title = @"title text";
-    self.title = @"请选择绘本";
+    self.title = @"绘本馆";
 }
 
 - (void)didReceiveMemoryWarning {

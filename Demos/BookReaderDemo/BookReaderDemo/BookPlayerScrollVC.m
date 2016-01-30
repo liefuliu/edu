@@ -47,7 +47,7 @@
 
 #import "BookPlayerScrollVC.h"
 #import "BookPagePlayerVC.h"
-
+#import "BRDPathUtil.h"
 #import "LocalBookStore.h"
 
 #import <AVFoundation/AVFoundation.h>
@@ -362,8 +362,8 @@ static const float kVerticalScale = 1.0;
 }
 
 - (void) playPageAtIndex:(int) pageIndex {
-    NSString *soundFilePath = [NSString stringWithFormat:@"%@/%@-audio-%@.mp3",
-                               [[NSBundle mainBundle] resourcePath],
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@%@-audio-%@.mp3",
+                               [BRDPathUtil applicationDocumentsDirectory],
                                self.localBookInfo.filePrefix,
                                [self intToString:pageIndex+1]];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];

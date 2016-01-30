@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -11,14 +12,13 @@
             <rect key="frame" x="0.0" y="0.0" width="331" height="90"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="331" height="89"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K1Q-wd-Q1A">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1Q-wd-Q1A">
                         <rect key="frame" x="8" y="8" width="80" height="80"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="80" id="AKk-6r-Gh5"/>
-                            <constraint firstAttribute="height" constant="80" id="isr-fK-lCl"/>
+                            <constraint firstAttribute="width" constant="80" id="4Zs-2x-iSI"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZq-XR-XWb">
@@ -27,19 +27,23 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMV-wi-gVR">
-                        <rect key="frame" x="56" y="27" width="42" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMV-wi-gVR">
+                        <rect key="frame" x="96" y="34" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ugN-fI-3Pj">
+                        <rect key="frame" x="252" y="63" width="71" height="2"/>
+                    </progressView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="K1Q-wd-Q1A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="F5m-O0-TlO"/>
                     <constraint firstItem="K1Q-wd-Q1A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WEa-hg-h1U"/>
                     <constraint firstAttribute="bottomMargin" secondItem="K1Q-wd-Q1A" secondAttribute="bottom" id="WY2-52-Yd7"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ugN-fI-3Pj" secondAttribute="bottom" constant="15" id="XxA-0T-5fm"/>
                     <constraint firstItem="ZZq-XR-XWb" firstAttribute="top" secondItem="K1Q-wd-Q1A" secondAttribute="top" id="Y3s-bb-GdJ"/>
-                    <constraint firstItem="ZZq-XR-XWb" firstAttribute="leading" secondItem="aMV-wi-gVR" secondAttribute="leading" id="em2-NV-NLP"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="ugN-fI-3Pj" secondAttribute="trailing" constant="15" id="YHy-z7-RQ1"/>
                     <constraint firstItem="ZZq-XR-XWb" firstAttribute="leading" secondItem="K1Q-wd-Q1A" secondAttribute="trailing" constant="8" id="nqZ-26-gov"/>
                 </constraints>
             </tableViewCellContentView>
