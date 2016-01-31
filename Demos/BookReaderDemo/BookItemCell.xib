@@ -33,17 +33,12 @@
                         <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ugN-fI-3Pj">
-                        <rect key="frame" x="252" y="63" width="71" height="2"/>
-                    </progressView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="K1Q-wd-Q1A" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="F5m-O0-TlO"/>
                     <constraint firstItem="K1Q-wd-Q1A" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="WEa-hg-h1U"/>
                     <constraint firstAttribute="bottomMargin" secondItem="K1Q-wd-Q1A" secondAttribute="bottom" id="WY2-52-Yd7"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="ugN-fI-3Pj" secondAttribute="bottom" constant="15" id="XxA-0T-5fm"/>
                     <constraint firstItem="ZZq-XR-XWb" firstAttribute="top" secondItem="K1Q-wd-Q1A" secondAttribute="top" id="Y3s-bb-GdJ"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="ugN-fI-3Pj" secondAttribute="trailing" constant="15" id="YHy-z7-RQ1"/>
                     <constraint firstItem="ZZq-XR-XWb" firstAttribute="leading" secondItem="K1Q-wd-Q1A" secondAttribute="trailing" constant="8" id="nqZ-26-gov"/>
                 </constraints>
             </tableViewCellContentView>

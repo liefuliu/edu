@@ -304,58 +304,11 @@
                     </tabBar>
                     <connections>
                         <segue destination="eZ8-jX-LGA" kind="relationship" relationship="viewControllers" id="NtP-Sw-sVW"/>
-                        <segue destination="ASb-ZP-01K" kind="relationship" relationship="viewControllers" id="Sdn-SE-8cY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIF-V3-hzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-453" y="1716"/>
-        </scene>
-        <!--Root View Controller-->
-        <scene sceneID="rFT-tl-RPU">
-            <objects>
-                <tableViewController id="slU-fc-ERK" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="hl9-7P-Tpc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aqd-h9-TY5">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aqd-h9-TY5" id="ca7-So-HN9">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="slU-fc-ERK" id="Y8W-gN-IoJ"/>
-                            <outlet property="delegate" destination="slU-fc-ERK" id="Z3Z-FQ-suc"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="Y25-NI-fCj"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vf5-XU-AuO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="410" y="3251"/>
-        </scene>
-        <!--书架-->
-        <scene sceneID="XJ3-24-LKu">
-            <objects>
-                <navigationController id="ASb-ZP-01K" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="书架" id="Ogf-yv-qAx"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sdI-Dm-AKj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="slU-fc-ERK" kind="relationship" relationship="rootViewController" id="9Yq-jE-yt9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zJH-kx-QDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-401" y="3264"/>
         </scene>
         <!--Book RepositoryTVC-->
         <scene sceneID="MAo-Mf-OQc">

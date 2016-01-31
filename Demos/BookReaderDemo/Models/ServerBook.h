@@ -10,12 +10,14 @@
 
 @interface ServerBook : NSObject
 
+@property NSString* bookId;
 @property NSString* bookName;
 @property NSString* author;
 @property NSData* cover;
 @property int totalPages;
 
-- (id) initBook:(NSString*) bookName
+- (id) initBook:(NSString*) bookId
+           name:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
           cover:(NSData*) cover;

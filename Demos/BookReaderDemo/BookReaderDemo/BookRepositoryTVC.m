@@ -8,10 +8,12 @@
 
 #import "BookRepositoryTVC.h"
 #import "BRDBookLister.h"
+#import "BRDBookSummary.h"
 #import "ServerBook.h"
 #import "BookItemCell.h"
 #import "BookDownloadWaitVC.h"
 #import "BookPlayerScrollVC.h"
+#import "BRDLocalStore.h"
 
 @interface BookRepositoryTVC ()
 @end
@@ -23,6 +25,7 @@ UIProgressView* myProgressView;
 UIActivityIndicatorView *indicatorView;
 
 NSArray* bookList;
+NSDictionary* bookCoverImages;
 
 
 - (void)viewDidLoad {
@@ -130,13 +133,12 @@ NSArray* bookList;
         
         cell.statusLabel.text = bookInfo.author;
         cell.topicLabel.text = bookInfo.bookName;
+        BRDBookSummary* bookSummary = (BRDBookSummary*)[bookCoverImages objectForKey:bookInfo.bookId];
         
-        /*
-        NSString* imageFilePath = [NSString stringWithFormat:@"%@/%@-picture-0001.jpg",
-                                   [[NSBundle mainBundle] resourcePath],
-                                   bookInfo.filePrefix];
-        cell.bookImage.image = [UIImage imageWithContentsOfFile:imageFilePath];
-        */
+        if (bookSummary) {
+            cell.imageView.image = [[UIImage alloc] initWithData: bookSummary.imageData];
+        }
+        
         
         return cell;
     } else {
@@ -150,28 +152,38 @@ NSArray* bookList;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0){
-        /*
-        NSString* bookKey = (NSString*)[[LocalBookStore sharedObject] allBookKeys][indexPath.row];
-        
-        BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
-        [self.navigationController presentViewController:detailViewController animated:YES completion:nil];*/
-        
         ServerBook* bookInfo = [bookList objectAtIndex:indexPath.row];
-        BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookName]];
-        waitingVC.delegate = self;
         
-        [self.navigationController presentViewController:waitingVC animated:nil completion:^{
-            // After download is finished. Present the book image view.
-           
-        }];
+        if ([[BRDLocalStore sharedObject] isBookDownloaded:[bookInfo bookId]]) {
+            BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookInfo.bookId];
+            [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
+
+        } else {
+            BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookId]];
+            waitingVC.delegate = self;
+            [self.navigationController presentViewController:waitingVC animated:nil completion:nil];
+        }
     }
 }
 
 
 - (void) downloadComplete: (NSString*) bookKey {
-    BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
-    [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
+   [[BRDLocalStore sharedObject] markBookAsDownloaded:bookKey];
+   BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
+   [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 }
+
+/* http://stackoverflow.com/questions/5404856/how-to-disable-touch-input-to-all-views-except-the-top-most-view
+ Hope this help...
+ 
+ [[yourSuperView subviews]
+ makeObjectsPerformSelector:@selector(setUserInteractionEnabled:)
+ withObject:[NSNumber numberWithBool:FALSE]];
+ which will disable userInteraction of a view's immediate subviews..Then give userInteraction to the only view you wanted
+ 
+ yourTouchableView.setUserInteraction = TRUE;
+ 
+ */
 
 
 /*
@@ -242,6 +254,34 @@ NSArray* bookList;
             // [cell.imageView setImage:cellImage];
             bookList = arrayOfBooks;
             [indicatorView stopAnimating];
+            
+            [self.tableView reloadData];
+            [self tryLoadBookImages];
+        } );
+        
+    });
+}
+
+- (void) tryLoadBookImages {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        BRDBookLister* bookLister = [[BRDBookLister alloc] init];
+        __block NSDictionary* bookSummaryInfo;
+        
+        NSMutableArray* arrayOfBookId = [[NSMutableArray alloc] init];
+        for (ServerBook* book in bookList) {
+            [arrayOfBookId addObject:book.bookId];
+        }
+        
+        [bookLister getSummaryInfoForBooks:arrayOfBookId to:&bookSummaryInfo];
+        /*
+        for (NSString* bookName in arrayOfBooks) {
+            NSLog(@"book name:%@", bookName);
+          }*/
+        
+        //we get the main thread because drawing must be done in the main thread always
+        dispatch_async(dispatch_get_main_queue(),^ {
+            // [cell.imageView setImage:cellImage];
+            bookCoverImages = bookSummaryInfo;
             
             [self.tableView reloadData];
         } );

@@ -7,6 +7,7 @@
 //
 
 #import "BRDBookLister.h"
+#import "BRDBookSummary.h"
 
 #import "ServerBook.h"
 #import <Parse/Parse.h>
@@ -18,6 +19,9 @@
 @end
 
 static const int MAX_BOOK_LIST = 1000;
+static const int kTypeImage = 1;
+static const int kTypeAudio = 2;
+static const int kTypeTranslation = 3;
 
 @implementation BRDBookLister
 
@@ -48,6 +52,33 @@ static const int MAX_BOOK_LIST = 1000;
     
 }
 
+- (BOOL) getSummaryInfoForBooks: (NSArray*) arrayOfBooks
+                             to: (NSDictionary**) summaryInfo {
+        PFQuery *query = [PFQuery queryWithClassName:@"BookImage"];
+        
+    [[[query whereKey:@"bookName" containedIn:arrayOfBooks]
+         whereKey:@"pageNumber" equalTo:@"1"]
+     whereKey:@"type" equalTo:@(kTypeImage).stringValue];
+    
+        NSArray* objects = [query findObjects];
+    
+    *summaryInfo = [[NSMutableDictionary alloc] init];
+    
+        if (objects != nil) {
+            for (PFObject *object in objects) {
+                PFFile* pageContent = (PFFile*) object[@"pageContent"];
+                NSData* imgData = [pageContent getData];
+                
+                BRDBookSummary* summary = [[BRDBookSummary alloc] init];
+                summary.imageData = imgData;
+                [*summaryInfo setValue:summary forKey:(NSString*)object[@"bookName"]];
+            }
+        }
+    
+    return YES;
+}
+
+
 - (BOOL) fetchBookList:(int) numOfBooks  {
     PFQuery *query = [PFQuery queryWithClassName:@"Book"];
     [query whereKey:@"isActive" equalTo:[NSNumber numberWithBool:YES]];
@@ -75,18 +106,22 @@ static const int MAX_BOOK_LIST = 1000;
     if (objects != nil) {
         NSMutableArray* bookList = [[NSMutableArray alloc] init];
         for (PFObject *object in objects) {
-            NSString* bookName = (NSString*) object[@"bookName"];
-            NSString* author = (NSString*) object[@"author"];
-            int totalPages = -1;
-            NSData* coverImageData;
+            NSString* bookId = (NSString*) object[@"bookId"];
+            if (bookId != nil) {
+                NSString* bookName = (NSString*) object[@"bookName"];
+                NSString* author = (NSString*) object[@"author"];
+                int totalPages = -1;
+                NSData* coverImageData;
             
-            ServerBook* serverBook = [[ServerBook alloc]
-                                      initBook: bookName
+                ServerBook* serverBook = [[ServerBook alloc]
+                                      initBook: bookId
+                                          name: bookName
                                       author:author
                                       totalPages:totalPages
                                       cover:coverImageData];
             
-            [bookList addObject:serverBook];
+                [bookList addObject:serverBook];
+            }
         }
         self.currentBookList = bookList;
         return YES;

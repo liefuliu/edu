@@ -9,6 +9,7 @@
 #import "BookDownloadWaitVC.h"
 #import "CircularProgressView.h"
 #import "BRDPathUtil.h"
+#import "BookPlayerScrollVC.h"
 #import <Parse/Parse.h>
 
 @interface BookDownloadWaitVC ()
@@ -33,9 +34,18 @@ NSString* _bookKey;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CGRect subViewFrame;
+    subViewFrame.size.height = [[UIScreen mainScreen] bounds].size.height * 0.8;
+    subViewFrame.size.width = [[UIScreen mainScreen] bounds].size.width * 0.8;
+    
     // Do any additional setup after loading the view, typically from a nib.
-    m_testView = [[CircularProgressView alloc] initWithFrame:self.view.bounds];
+    m_testView = [[CircularProgressView alloc] initWithFrame:subViewFrame];
     m_testView.percent = 100;
+    
+    m_testView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width  / 2,
+                                     [[UIScreen mainScreen] bounds].size.height / 2);
+    NSLog(@"half width = %f, height = %f", [[UIScreen mainScreen] bounds].size.width  / 2, [[UIScreen mainScreen] bounds].size.height / 2);
+
     [self.view addSubview:m_testView];
 }
 
@@ -75,6 +85,8 @@ NSString* _bookKey;
        for (PFObject *object in objects) {
           PFFile* pageContent = (PFFile*) object[@"pageContent"];
           NSLog(@"bookName: %@", [pageContent name]);
+           
+          // TODO: 校验文件名是否符合格式。
           NSString* documentPath = [BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
            
           [BookDownloadWaitVC downloadParseFile:pageContent to:documentPath];

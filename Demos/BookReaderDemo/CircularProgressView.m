@@ -29,7 +29,6 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
         self.backgroundColor = [UIColor whiteColor];
         
         // Determine our start and stop angles for the arc (in radians)
@@ -42,28 +41,45 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    // Display our percentage as a string
-    NSString* textContent = [NSString stringWithFormat:@"%d%%", 100 - self.percent];
+    const float kRadius = MIN(rect.size.width, rect.size.height) * 0.45;
+    const int kLineWidth = 10;
     
-    UIBezierPath* bezierPath = [UIBezierPath bezierPath];
+    // 画出没有完成的部分
+    UIBezierPath* bezierPathUnfinished = [UIBezierPath bezierPath];
     
-    // Create our arc, with the correct angles
-    [bezierPath addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
-                          radius:30
+    // 创建圆弧对象，逆时针方向。
+    [bezierPathUnfinished addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
+                          radius:kRadius
                       startAngle:startAngle
                         endAngle:(endAngle - startAngle) * (_percent / 100.0) + startAngle
                        clockwise:NO];
     
-    // Set the display for the path, and stroke it
-    bezierPath.lineWidth = 10;
-    [[UIColor colorWithRed:0 green:0.5 blue:0.75 alpha:1.0] setStroke];
-    //[[UIColor blueColor] setStroke];
-    [bezierPath stroke];
+    // 设定圆弧颜色。
+    bezierPathUnfinished.lineWidth = kLineWidth;
+    [[UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0] setStroke];
+    [bezierPathUnfinished stroke];
     
-    // Text Drawing
+    // 画出已完成的部分
+    UIBezierPath* bezierPathComplete = [UIBezierPath bezierPath];
+    
+    // 创建圆弧对象，顺时针方向。
+    [bezierPathComplete addArcWithCenter:CGPointMake(rect.size.width / 2, rect.size.height / 2)
+                                    radius:kRadius
+                                startAngle:startAngle
+                                  endAngle:(endAngle - startAngle) * (_percent / 100.0) + startAngle
+                                 clockwise:YES];
+    
+    // 设定圆弧颜色。
+    bezierPathComplete.lineWidth = kLineWidth;
+    [[UIColor colorWithRed:0 green:0.5 blue:0.75 alpha:1.0] setStroke];
+    [bezierPathComplete stroke];
+    
+    // 用文字显示进度百分比。
+    NSString* textContent = [NSString stringWithFormat:@"%d%%", 100 - self.percent];
+
     CGRect textRect = CGRectMake((rect.size.width / 2.0) - 71/2.0, (rect.size.height / 2.0) - 30/2.0, 71, 30);
     [[UIColor blackColor] setFill];
-    [textContent drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 18] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
+    [textContent drawInRect: textRect withFont: [UIFont fontWithName: @"Helvetica-Bold" size: 30] lineBreakMode: NSLineBreakByWordWrapping alignment: NSTextAlignmentCenter];
 }
 
 @end

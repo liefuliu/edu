@@ -10,12 +10,14 @@
 
 @implementation ServerBook
 
-- (id) initBook:(NSString*) bookName
+- (id) initBook:(NSString*) bookId
+           name:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
           cover:(NSData*) cover {
     self = [super init];
     if (self) {
+        _bookId = bookId;
         _bookName = bookName;
         _author = author;
         _totalPages = totalPages;

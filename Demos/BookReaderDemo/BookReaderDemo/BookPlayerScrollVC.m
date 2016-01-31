@@ -362,8 +362,8 @@ static const float kVerticalScale = 1.0;
 }
 
 - (void) playPageAtIndex:(int) pageIndex {
-    NSString *soundFilePath = [NSString stringWithFormat:@"%@%@-audio-%@.mp3",
-                               [BRDPathUtil applicationDocumentsDirectory],
+    NSString *soundFilePath = [NSString stringWithFormat:@"%@/%@-audio-%@.mp3",
+                               [BRDPathUtil applicationDocumentsDirectoryPath],
                                self.localBookInfo.filePrefix,
                                [self intToString:pageIndex+1]];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath: soundFilePath];
