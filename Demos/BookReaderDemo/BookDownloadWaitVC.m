@@ -71,6 +71,7 @@ NSString* _bookKey;
 - (void) downloadBooks {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         PFQuery *query = [PFQuery queryWithClassName:@"BookImage"];
+        query.limit = 500;
         
         // 可以考虑在此查看该书是否已经下载，根据_boo
         [query whereKey:@"bookName" equalTo:_bookKey];
