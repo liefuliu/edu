@@ -75,7 +75,7 @@
     [bezierPathComplete stroke];
     
     // 用文字显示进度百分比。
-    NSString* textContent = [NSString stringWithFormat:@"%d%%", 100 - self.percent];
+    NSString* textContent = [NSString stringWithFormat:@"%d%%", self.percent];
 
     CGRect textRect = CGRectMake((rect.size.width / 2.0) - 71/2.0, (rect.size.height / 2.0) - 30/2.0, 71, 30);
     [[UIColor blackColor] setFill];

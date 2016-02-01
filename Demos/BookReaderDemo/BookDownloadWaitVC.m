@@ -23,6 +23,8 @@ CircularProgressView* m_testView;
 NSTimer* m_timer;
 NSString* _bookKey;
 
+const float progressSubViewRatio = 0.6;
+
 - (id) initWithBookKey: (NSString*) bookKey {
     self = [super init];
     if (self) {
@@ -35,12 +37,12 @@ NSString* _bookKey;
     [super viewDidLoad];
     
     CGRect subViewFrame;
-    subViewFrame.size.height = [[UIScreen mainScreen] bounds].size.height * 0.8;
-    subViewFrame.size.width = [[UIScreen mainScreen] bounds].size.width * 0.8;
+    subViewFrame.size.height = [[UIScreen mainScreen] bounds].size.height * progressSubViewRatio;
+    subViewFrame.size.width = [[UIScreen mainScreen] bounds].size.width * progressSubViewRatio;
     
     // Do any additional setup after loading the view, typically from a nib.
     m_testView = [[CircularProgressView alloc] initWithFrame:subViewFrame];
-    m_testView.percent = 100;
+    m_testView.percent = 1;
     
     m_testView.center = CGPointMake([[UIScreen mainScreen] bounds].size.width  / 2,
                                      [[UIScreen mainScreen] bounds].size.height / 2);

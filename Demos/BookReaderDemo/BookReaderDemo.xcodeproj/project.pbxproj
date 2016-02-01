@@ -56,6 +56,9 @@
 		6DFF96D01C5D363B00D589E7 /* BRDLocalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96CF1C5D363A00D589E7 /* BRDLocalStore.m */; };
 		6DFF96D21C5DC3E600D589E7 /* BRDLocalStoreTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96D11C5DC3E600D589E7 /* BRDLocalStoreTests.m */; };
 		6DFF96D51C5DE7B800D589E7 /* BRDBookSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96D41C5DE7B800D589E7 /* BRDBookSummary.m */; };
+		6DFF96D91C5ED3F100D589E7 /* ServerBookListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96D71C5ED3F100D589E7 /* ServerBookListCVC.m */; };
+		6DFF96DA1C5ED3F100D589E7 /* ServerBookListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFF96D81C5ED3F100D589E7 /* ServerBookListCVC.xib */; };
+		6DFF972E1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF972D1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,6 +146,11 @@
 		6DFF96D11C5DC3E600D589E7 /* BRDLocalStoreTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDLocalStoreTests.m; sourceTree = "<group>"; };
 		6DFF96D31C5DE7B800D589E7 /* BRDBookSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDBookSummary.h; sourceTree = "<group>"; };
 		6DFF96D41C5DE7B800D589E7 /* BRDBookSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookSummary.m; sourceTree = "<group>"; };
+		6DFF96D61C5ED3F100D589E7 /* ServerBookListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerBookListCVC.h; sourceTree = "<group>"; };
+		6DFF96D71C5ED3F100D589E7 /* ServerBookListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerBookListCVC.m; sourceTree = "<group>"; };
+		6DFF96D81C5ED3F100D589E7 /* ServerBookListCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServerBookListCVC.xib; sourceTree = "<group>"; };
+		6DFF972C1C5EF70C00D589E7 /* BRDServerBookCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDServerBookCollectionVC.h; sourceTree = "<group>"; };
+		6DFF972D1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDServerBookCollectionVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +347,11 @@
 				6D6A98C81C5554B2005EB914 /* BookDownloadWaitVC.h */,
 				6D6A98C91C5554B2005EB914 /* BookDownloadWaitVC.m */,
 				6D6A98CA1C5554B2005EB914 /* BookDownloadWaitVC.xib */,
+				6DFF96D61C5ED3F100D589E7 /* ServerBookListCVC.h */,
+				6DFF96D71C5ED3F100D589E7 /* ServerBookListCVC.m */,
+				6DFF96D81C5ED3F100D589E7 /* ServerBookListCVC.xib */,
+				6DFF972C1C5EF70C00D589E7 /* BRDServerBookCollectionVC.h */,
+				6DFF972D1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -449,6 +462,7 @@
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
 				6DF9F1DD1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib in Resources */,
 				6D6A98CC1C5554B2005EB914 /* BookDownloadWaitVC.xib in Resources */,
+				6DFF96DA1C5ED3F100D589E7 /* ServerBookListCVC.xib in Resources */,
 				6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */,
 				6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */,
 				6DBA955F1C4DBC0C00B7DFB1 /* stanley-trans.txt in Resources */,
@@ -482,9 +496,11 @@
 				6DF9F2B91C28550700359200 /* BRDConfig.m in Sources */,
 				6DF9F3161C2E5C2B00359200 /* BookPlayerScrollVC.m in Sources */,
 				6D6A98C71C55545C005EB914 /* CircularProgressView.m in Sources */,
+				6DFF972E1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m in Sources */,
 				6DBA95641C530BBD00B7DFB1 /* BookRepositoryTVC.m in Sources */,
 				6DF9F1B61C0A390400359200 /* main.m in Sources */,
 				6D6A98CB1C5554B2005EB914 /* BookDownloadWaitVC.m in Sources */,
+				6DFF96D91C5ED3F100D589E7 /* ServerBookListCVC.m in Sources */,
 				6DF9F2B51C27998000359200 /* BookItemCell.m in Sources */,
 				6DF9F2A41C27443D00359200 /* BookPagePlayerVC.m in Sources */,
 				6D6A987F1C5536B5005EB914 /* ServerBook.m in Sources */,
