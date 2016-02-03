@@ -43,7 +43,6 @@ const NSString* kDownloadedBookKeyString = @"downloaded_book_key";
 }
 
 - (BOOL) isBookDownloaded: (NSString*) bookKey {
-    return NO;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary* bookDictionary = [defaults objectForKey:kDownloadedBookKeyString];
     

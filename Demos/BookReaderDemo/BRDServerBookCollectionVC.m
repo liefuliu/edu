@@ -16,6 +16,8 @@
 
 @interface BRDServerBookCollectionVC ()
 
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
+
 @end
 
 @implementation BRDServerBookCollectionVC
@@ -49,9 +51,22 @@ NSTimer* _myTimer;
     /*_myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];*/
     _indicatorView = [self showSimpleActivityIndicatorOnView:self.view];
     
+    
+    _refreshControl = [[UIRefreshControl alloc] init];
+    [_refreshControl addTarget:self action:@selector(startRefresh)
+             forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:_refreshControl];
+    self.collectionView.alwaysBounceVertical = YES;
+
     [self tryLoadBookList];
 }
 
+
+- (void) startRefresh  {
+    NSLog(@"north star");
+    [self tryLoadBookList];
+    [self.refreshControl endRefreshing];
+}
 
 - (UIActivityIndicatorView *)showSimpleActivityIndicatorOnView:(UIView*)aView
 {
@@ -171,6 +186,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 -(void) tryLoadBookList {
+    NSLog(@"tryLoadBookList");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         
         BRDBookLister* bookLister = [[BRDBookLister alloc] init];
