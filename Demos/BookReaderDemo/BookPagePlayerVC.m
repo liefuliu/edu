@@ -12,14 +12,9 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
-#import "LocalBookStore.h"
+#import "BRDBookShuff.h"
 
 @interface BookPagePlayerVC ()
-
-/*
-@property int totalPages;
-@property NSArray* translatedText;
-*/
 
 @property int currentPage;
 @property LocalBook* localBookInfo;
@@ -37,7 +32,7 @@
     withTranslatedText: (NSArray*) translatedText {
     if (self = [super init]) {
         self.localBookKey = localBookKey;
-        self.localBookInfo = [[LocalBookStore sharedObject] getBookWithKey:self.localBookKey];
+        self.localBookInfo = [[BRDBookShuff sharedObject] getBook:self.localBookKey];
         self.page = pageIndex;
         self.translatedText = translatedText;
     }

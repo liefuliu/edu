@@ -9,7 +9,7 @@
 #import "BRDBookLister.h"
 #import "BRDBookSummary.h"
 
-#import "ServerBook.h"
+#import "BRDListedBook.h"
 #import <Parse/Parse.h>
 
 @interface BRDBookLister()
@@ -113,7 +113,7 @@ static const int kTypeTranslation = 3;
                 int totalPages = -1;
                 NSData* coverImageData;
             
-                ServerBook* serverBook = [[ServerBook alloc]
+                BRDListedBook* serverBook = [[BRDListedBook alloc]
                                       initBook: bookId
                                           name: bookName
                                       author:author

@@ -44,11 +44,11 @@
  Copyright (C) 2014 Apple Inc. All Rights Reserved.
  
  */
-
+#import "BRDConstants.h"
 #import "BookPlayerScrollVC.h"
 #import "BookPagePlayerVC.h"
 #import "BRDPathUtil.h"
-#import "LocalBookStore.h"
+#import "BRDBookShuff.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
@@ -110,7 +110,7 @@ static const float kVerticalScale = 1.0;
 - (id) initWithBookKey:(NSString*) localBookKey {
     if (self = [super init]) {
         self.localBookKey = localBookKey;
-        self.localBookInfo = [[LocalBookStore sharedObject] getBookWithKey:self.localBookKey];
+        self.localBookInfo = [[BRDBookShuff sharedObject] getBook:self.localBookKey];
         if ([self.localBookInfo hasTranslatedText]) {
             self.translatedText = [LocalBook extractTranslatedText:self.localBookKey];
         } else {
@@ -145,9 +145,9 @@ static const float kVerticalScale = 1.0;
     [self.view addGestureRecognizer:self.lpgr];
     
     // 如果App是首次运行，则在初始化页面之前，显示操作提示。否则，直接显示初始化页面。
-    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kNSDefaultsFirstPageLoad])
     {
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNSDefaultsFirstPageLoad];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"操作提示", nil)

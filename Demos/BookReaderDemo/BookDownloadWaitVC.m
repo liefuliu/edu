@@ -5,7 +5,7 @@
 //  Created by Liefu Liu on 1/24/16.
 //  Copyright © 2016 SanRenXing. All rights reserved.
 //
-
+#import "BRDConstants.h"
 #import "BookDownloadWaitVC.h"
 #import "CircularProgressView.h"
 #import "BRDPathUtil.h"
@@ -79,6 +79,15 @@ const float progressSubViewRatio = 0.6;
         [query whereKey:@"bookName" equalTo:_bookKey];
      
         NSArray* objects = [query findObjects];
+        if (objects.count == 0) {
+            dispatch_async(dispatch_get_main_queue(),^ {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
+                [alert show];
+                [self dismissViewControllerAnimated:YES completion:nil];
+            });
+            return;
+        }
+        
         NSLog(@"Successfully retrieved %d scores.", objects.count);
      
         if (objects != nil) {

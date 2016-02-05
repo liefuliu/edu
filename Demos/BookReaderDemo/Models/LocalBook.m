@@ -5,7 +5,7 @@
 //  Created by Liefu Liu on 12/25/15.
 //  Copyright (c) 2015 SanRenXing. All rights reserved.
 //
-
+#import "BRDPathUtil.h"
 #import "LocalBook.h"
 
 @implementation LocalBook
@@ -29,7 +29,7 @@ hasTranslatedText:(BOOL) hasTranslatedText {
 
 + (NSArray*) extractTranslatedText: (NSString*) bookKey {
     NSString* filePath = [NSString stringWithFormat:@"%@/%@-trans.txt",
-                          [[NSBundle mainBundle] resourcePath],
+                          [BRDPathUtil applicationDocumentsDirectoryPath],
                           bookKey];
     NSString* fileContents = [NSString stringWithContentsOfFile:filePath
                                                        encoding:NSUTF8StringEncoding error:nil];

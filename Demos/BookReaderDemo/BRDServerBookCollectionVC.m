@@ -9,20 +9,23 @@
 #import "BRDServerBookCollectionVC.h"
 #import "ServerBookListCVC.h"
 #import "BookPlayerScrollVC.h"
-#import "BRDLocalStore.h"
+#import "BRDBookShuff.h"
 #import "BRDBookLister.h"
 #import "BRDBookSummary.h"
-#import "ServerBook.h"
+#import "BRDConstants.h"
+#import "BRDListedBook.h"
 
 @interface BRDServerBookCollectionVC ()
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
 @end
 
 @implementation BRDServerBookCollectionVC
 
 static NSString * const reuseIdentifier = @"Cell";
+
 
 NSArray* _bookList;
 NSDictionary* _bookCoverImages;
@@ -35,6 +38,18 @@ NSTimer* _myTimer;
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:kNSDefaultsFirstLaunch])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNSDefaultsFirstLaunch];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"操作提示", nil)
+                                                        message:@"向下拉屏幕刷新绘本。"
+                                                       delegate:self
+                                              cancelButtonTitle:@"好的，知道了"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
@@ -57,6 +72,16 @@ NSTimer* _myTimer;
              forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:_refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
+    
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    
+    self.lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
+    
+    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
+    [self.navigationItem setRightBarButtonItem:cancelButton];
+    
+
 
     [self tryLoadBookList];
 }
@@ -67,6 +92,30 @@ NSTimer* _myTimer;
     [self tryLoadBookList];
     [self.refreshControl endRefreshing];
 }
+
+- (void)doneApplication:(UIBarButtonItem *)sender
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"感谢您的使用"
+                                                    message:@"确定要离开App么?"
+                                                   delegate:self
+                                          cancelButtonTitle:@"取消"
+                                          otherButtonTitles:@"确定", nil];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch(buttonIndex) {
+        case 0: //"No" pressed
+            //do something?
+            break;
+        case 1: //"Yes" pressed
+            //here you pop the viewController
+            exit(0);
+            break;
+    }
+}
+
 
 - (UIActivityIndicatorView *)showSimpleActivityIndicatorOnView:(UIView*)aView
 {
@@ -118,7 +167,7 @@ NSTimer* _myTimer;
         ServerBookListCVC* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
                                                              forIndexPath:indexPath];
         
-        ServerBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
+        BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
         
         //cell.statusLabel.text = bookInfo.author;
         // cell.topicLabel.text = bookInfo.bookName;
@@ -140,8 +189,8 @@ NSTimer* _myTimer;
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
-    size.height = 100;
-    size.width = 100;
+    size.height = 90;
+    size.width = 90;
     return size;
 }
 
@@ -158,9 +207,9 @@ NSTimer* _myTimer;
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
     if (indexPath.section == 0){
-        ServerBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
+        BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
         
-        if ([[BRDLocalStore sharedObject] isBookDownloaded:[bookInfo bookId]]) {
+        if ([[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
             BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookInfo.bookId];
             [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
             
@@ -179,7 +228,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 - (void) downloadComplete: (NSString*) bookKey {
-    [[BRDLocalStore sharedObject] markBookAsDownloaded:bookKey];
+    [[BRDBookShuff sharedObject] addBook:bookKey];
     BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
     [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 }
@@ -221,7 +270,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         __block NSDictionary* bookSummaryInfo;
         
         NSMutableArray* arrayOfBookId = [[NSMutableArray alloc] init];
-        for (ServerBook* book in _bookList) {
+        for (BRDListedBook* book in _bookList) {
             [arrayOfBookId addObject:book.bookId];
         }
         

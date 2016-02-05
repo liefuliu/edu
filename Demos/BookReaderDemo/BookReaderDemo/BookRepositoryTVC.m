@@ -9,11 +9,11 @@
 #import "BookRepositoryTVC.h"
 #import "BRDBookLister.h"
 #import "BRDBookSummary.h"
-#import "ServerBook.h"
+#import "BRDListedBook.h"
 #import "BookItemCell.h"
 #import "BookDownloadWaitVC.h"
 #import "BookPlayerScrollVC.h"
-#import "BRDLocalStore.h"
+#import "BRDBookShuff.h"
 
 @interface BookRepositoryTVC ()
 @end
@@ -129,7 +129,7 @@ NSDictionary* bookCoverImages;
         BookItemCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BookItemCell"
                                                              forIndexPath:indexPath];
         
-        ServerBook* bookInfo = [bookList objectAtIndex:indexPath.row];
+        BRDListedBook* bookInfo = [bookList objectAtIndex:indexPath.row];
         
         cell.statusLabel.text = bookInfo.author;
         cell.topicLabel.text = bookInfo.bookName;
@@ -152,9 +152,9 @@ NSDictionary* bookCoverImages;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 0){
-        ServerBook* bookInfo = [bookList objectAtIndex:indexPath.row];
+        BRDListedBook* bookInfo = [bookList objectAtIndex:indexPath.row];
         
-        if ([[BRDLocalStore sharedObject] isBookDownloaded:[bookInfo bookId]]) {
+        if ([[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
             BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookInfo.bookId];
             [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 
@@ -168,7 +168,7 @@ NSDictionary* bookCoverImages;
 
 
 - (void) downloadComplete: (NSString*) bookKey {
-   [[BRDLocalStore sharedObject] markBookAsDownloaded:bookKey];
+   [[BRDBookShuff sharedObject] addBook:bookKey];
    BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
    [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 }
@@ -268,7 +268,7 @@ NSDictionary* bookCoverImages;
         __block NSDictionary* bookSummaryInfo;
         
         NSMutableArray* arrayOfBookId = [[NSMutableArray alloc] init];
-        for (ServerBook* book in bookList) {
+        for (BRDListedBook* book in bookList) {
             [arrayOfBookId addObject:book.bookId];
         }
         

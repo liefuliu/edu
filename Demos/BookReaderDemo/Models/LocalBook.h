@@ -22,7 +22,6 @@
      filePrefix:(NSString*) filePrefix
 hasTranslatedText:(BOOL) hasTranslatedText;
 
-
 + (NSArray*) extractTranslatedText: (NSString*) bookKey;
 
 @end

@@ -141,7 +141,9 @@
 }
 
 - (NSArray*) getListOfFilePathsMatched : (NSString*) filePattern {
-    NSURL *url = [NSURL URLWithString:@"file:///Users/liefuliu/src/edu/Demos/BookReaderDemo/Books/"];
+    NSString* userName = NSUserName();
+    NSString* searchPath = [NSString stringWithFormat:@"file:///users/%@/Desktop/PicBooks/", userName];
+    NSURL *url = [NSURL URLWithString:searchPath];
     
     NSError *error = nil;
     NSArray *properties = [NSArray arrayWithObjects: NSURLLocalizedNameKey,
