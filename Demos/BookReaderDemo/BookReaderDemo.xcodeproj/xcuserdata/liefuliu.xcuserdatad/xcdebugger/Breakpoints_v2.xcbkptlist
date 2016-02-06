@@ -468,11 +468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookDownloadWaitVC.m"
-            timestampString = "476251085.242519"
+            timestampString = "476405903.312482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-downloadBooks"
             landmarkType = "5">
          </BreakpointContent>
@@ -484,11 +484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookDownloadWaitVC.m"
-            timestampString = "476251085.242519"
+            timestampString = "476405903.312482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "-updateStatus:"
             landmarkType = "5">
          </BreakpointContent>
@@ -500,11 +500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookDownloadWaitVC.m"
-            timestampString = "476251085.242519"
+            timestampString = "476405903.312482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
             landmarkName = "-downloadBooks"
             landmarkType = "5">
          </BreakpointContent>
@@ -516,11 +516,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookDownloadWaitVC.m"
-            timestampString = "476251085.242519"
+            timestampString = "476405903.312482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-downloadBooks"
             landmarkType = "5">
          </BreakpointContent>
@@ -772,11 +772,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookDownloadWaitVC.m"
-            timestampString = "476251085.242519"
+            timestampString = "476405903.312482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
             landmarkName = "-downloadBooks"
             landmarkType = "5">
          </BreakpointContent>

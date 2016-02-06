@@ -88,11 +88,10 @@ const float progressSubViewRatio = 0.6;
             return;
         }
         
-        NSLog(@"Successfully retrieved %d scores.", objects.count);
+        NSLog(@"Successfully retrieved %lu scores.", objects.count);
      
         if (objects != nil) {
-        NSMutableArray* bookList = [[NSMutableArray alloc] init];
-        int totalBooks = MIN(1000, [objects count]);
+        int totalBooks = MIN(1000, (int)[objects count]);
         int downloaded = 0;
        for (PFObject *object in objects) {
           PFFile* pageContent = (PFFile*) object[@"pageContent"];

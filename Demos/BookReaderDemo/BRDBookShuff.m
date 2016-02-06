@@ -92,7 +92,6 @@
         return 0;
     }
     
-    NSString* searchPath = [BRDPathUtil applicationDocumentsDirectoryPath];
     NSURL* url = [BRDPathUtil applicationDocumentsDirectory];
     
     NSError *error = nil;
@@ -122,7 +121,7 @@
         }
     }
     
-    return [arrayFilePath count];
+    return (int)[arrayFilePath count];
 }
 
 + (BOOL) bookHasTranslation: (NSString*) bookKey {

@@ -20,14 +20,10 @@
 		6DBB16EA1C2E6C3B0095813F /* BookPlayerScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */; };
 		6DF9F1B61C0A390400359200 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B51C0A390400359200 /* main.m */; };
 		6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B81C0A390400359200 /* AppDelegate.m */; };
-		6DF9F1BC1C0A390400359200 /* UnusedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BB1C0A390400359200 /* UnusedViewController.m */; };
 		6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BD1C0A390400359200 /* Main.storyboard */; };
 		6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1C01C0A390400359200 /* Images.xcassets */; };
 		6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1C21C0A390400359200 /* LaunchScreen.xib */; };
 		6DF9F1D01C0A390400359200 /* BookReaderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1CF1C0A390400359200 /* BookReaderDemoTests.m */; };
-		6DF9F1DB1C0AAEF000359200 /* UnusedVoiceRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */; };
-		6DF9F1DD1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */; };
-		6DF9F1E01C0AB3E600359200 /* UnusedRecordPlayVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */; };
 		6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1E21C0B82B200359200 /* RecordVC.m */; };
 		6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */; };
 		6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1FF1C0BE63700359200 /* icon-3-120x120.png */; };
@@ -94,19 +90,12 @@
 		6DF9F1B51C0A390400359200 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DF9F1B71C0A390400359200 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6DF9F1B81C0A390400359200 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6DF9F1BA1C0A390400359200 /* UnusedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = UnusedViewController.h; path = BookReaderDemo/UnusedViewController.h; sourceTree = "<group>"; };
-		6DF9F1BB1C0A390400359200 /* UnusedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = UnusedViewController.m; path = BookReaderDemo/UnusedViewController.m; sourceTree = "<group>"; };
 		6DF9F1BE1C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6DF9F1C01C0A390400359200 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DF9F1C31C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6DF9F1C91C0A390400359200 /* BookReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF9F1CE1C0A390400359200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF9F1CF1C0A390400359200 /* BookReaderDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookReaderDemoTests.m; sourceTree = "<group>"; };
-		6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnusedVoiceRecordViewController.h; path = BookReaderDemo/UnusedVoiceRecordViewController.h; sourceTree = "<group>"; };
-		6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnusedVoiceRecordViewController.m; path = BookReaderDemo/UnusedVoiceRecordViewController.m; sourceTree = "<group>"; };
-		6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = UnusedVoiceRecordViewController.xib; path = BookReaderDemo/UnusedVoiceRecordViewController.xib; sourceTree = "<group>"; };
-		6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnusedRecordPlayVC.h; sourceTree = "<group>"; };
-		6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnusedRecordPlayVC.m; sourceTree = "<group>"; };
 		6DF9F1E11C0B82B200359200 /* RecordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordVC.h; sourceTree = "<group>"; };
 		6DF9F1E21C0B82B200359200 /* RecordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordVC.m; sourceTree = "<group>"; };
 		6DF9F1FE1C0BE63700359200 /* congfucius_study.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = congfucius_study.jpg; sourceTree = "<group>"; };
@@ -197,13 +186,6 @@
 		6DBA955C1C4D779100B7DFB1 /* Unused */ = {
 			isa = PBXGroup;
 			children = (
-				6DF9F1DC1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib */,
-				6DF9F1DE1C0AB3E600359200 /* UnusedRecordPlayVC.h */,
-				6DF9F1DF1C0AB3E600359200 /* UnusedRecordPlayVC.m */,
-				6DF9F1D91C0AAEF000359200 /* UnusedVoiceRecordViewController.h */,
-				6DF9F1DA1C0AAEF000359200 /* UnusedVoiceRecordViewController.m */,
-				6DF9F1BA1C0A390400359200 /* UnusedViewController.h */,
-				6DF9F1BB1C0A390400359200 /* UnusedViewController.m */,
 			);
 			name = Unused;
 			sourceTree = "<group>";
@@ -410,7 +392,7 @@
 		6DF9F1A81C0A390400359200 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = SanRenXing;
 				TargetAttributes = {
 					6DF9F1AF1C0A390400359200 = {
@@ -455,7 +437,6 @@
 				6DF9F2AB1C27821900359200 /* BookTableCell.xib in Resources */,
 				6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */,
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
-				6DF9F1DD1C0AAF0100359200 /* UnusedVoiceRecordViewController.xib in Resources */,
 				6D6A98CC1C5554B2005EB914 /* BookDownloadWaitVC.xib in Resources */,
 				6DFF96DA1C5ED3F100D589E7 /* ServerBookListCVC.xib in Resources */,
 				6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */,
@@ -482,11 +463,8 @@
 				6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */,
 				6DFF96D51C5DE7B800D589E7 /* BRDBookSummary.m in Sources */,
 				6DBA95671C53185400B7DFB1 /* BRDBookLister.m in Sources */,
-				6DF9F1BC1C0A390400359200 /* UnusedViewController.m in Sources */,
 				6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */,
-				6DF9F1E01C0AB3E600359200 /* UnusedRecordPlayVC.m in Sources */,
 				6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */,
-				6DF9F1DB1C0AAEF000359200 /* UnusedVoiceRecordViewController.m in Sources */,
 				6DF9F2B91C28550700359200 /* BRDConfig.m in Sources */,
 				6DF9F3161C2E5C2B00359200 /* BookPlayerScrollVC.m in Sources */,
 				6D6A98C71C55545C005EB914 /* CircularProgressView.m in Sources */,
@@ -564,6 +542,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -635,6 +614,7 @@
 				INFOPLIST_FILE = BookReaderDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.SanRenXing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -651,6 +631,7 @@
 				INFOPLIST_FILE = BookReaderDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.SanRenXing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -669,6 +650,7 @@
 				);
 				INFOPLIST_FILE = BookReaderDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.SanRenXing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookReaderDemo.app/BookReaderDemo";
 			};
@@ -684,6 +666,7 @@
 				);
 				INFOPLIST_FILE = BookReaderDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "app.SanRenXing.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BookReaderDemo.app/BookReaderDemo";
 			};
