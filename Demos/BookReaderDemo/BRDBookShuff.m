@@ -9,9 +9,10 @@
 #import "BRDConstants.h"
 #import "BRDBookShuff.h"
 #import "BRDPathUtil.h"
+#import "BRDBookSummary.h"
 
 @interface BRDBookShuff()
-@property NSMutableDictionary* bookCache;
+//@property NSMutableDictionary* bookCache;
 @end
 
 @implementation BRDBookShuff
@@ -31,14 +32,6 @@
     return object;
 }
 
-- (id)init {
-    if (self = [super init]) {
-        _bookCache = [[NSMutableDictionary alloc] init];
-    }
-    return self;
-}
-
-
 - (BOOL) doesBookExist: (NSString*) bookKey {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary* bookDictionary = [defaults objectForKey:kDownloadedBookKeyString];
@@ -46,36 +39,37 @@
     return ([bookDictionary objectForKey:bookKey] != nil);
 }
 
-- (void) addBook: (NSString*) bookkey {
-    if ([self doesBookExist:bookkey]) {
+- (void) addBook:(LocalBook*) bookInfo
+          forKey:(NSString*) bookKey{
+    if ([self doesBookExist:bookKey]) {
         return;
     }
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary* bookDictionary = (NSDictionary*)[defaults objectForKey:kDownloadedBookKeyString];
-    NSMutableDictionary* newBookDictionary = [[NSMutableDictionary alloc] initWithDictionary:bookDictionary];
-
-    NSString const* dummy_string = @"dummy_string";
-    [newBookDictionary setValue:dummy_string forKey:bookkey];
+    NSMutableDictionary* newBookDictionary = [[NSMutableDictionary alloc] initWithDictionary:[BRDBookShuff getNSUserDefaultBookDictionary]];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:bookInfo];
+    [newBookDictionary setValue:data forKey:bookKey];
     [defaults setObject:newBookDictionary forKey:kDownloadedBookKeyString];
 }
 
 
 - (LocalBook*) getBook: (NSString*) bookKey {
-    if ([_bookCache objectForKey:bookKey] != nil) {
-        return (LocalBook*) [_bookCache objectForKey:bookKey];
-    }
-    int totalPageNum = [self countTotalPagesForBook:bookKey];
-    NSString* filePrefix = [self getBookPrefix:bookKey];
-    
-    LocalBook* newBook = [[LocalBook alloc] initBook:bookKey
-                                              author:nil
-                                          totalPages:totalPageNum
-                                          filePrefix:filePrefix
-                                   hasTranslatedText:YES];
-    [_bookCache setValue:newBook forKey:bookKey];
+    NSData* data = [[BRDBookShuff getNSUserDefaultBookDictionary] objectForKey:bookKey];
+    LocalBook* newBook = [NSKeyedUnarchiver unarchiveObjectWithData:data];
     return newBook;
+}
+
+- (void) deleteBook: (NSString*) bookKey {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary* newBookDictionary = [[NSMutableDictionary alloc] initWithDictionary:[BRDBookShuff getNSUserDefaultBookDictionary]];
     
+    [newBookDictionary removeObjectForKey:bookKey];
+    [defaults setObject:newBookDictionary forKey:kDownloadedBookKeyString];
+}
+
+- (NSArray*) getAllBookKeys {
+    return [BRDBookShuff getNSUserDefaultBookDictionary].allKeys;
 }
 
 
@@ -126,6 +120,12 @@
 
 + (BOOL) bookHasTranslation: (NSString*) bookKey {
     return YES;
+}
+
++ (NSDictionary*) getNSUserDefaultBookDictionary {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary* bookDictionary = (NSDictionary*)[defaults objectForKey:kDownloadedBookKeyString];
+    return bookDictionary;
 }
 
 

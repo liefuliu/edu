@@ -47,6 +47,7 @@
 #import "BRDConstants.h"
 #import "BookPlayerScrollVC.h"
 #import "BookPagePlayerVC.h"
+#import "BRDFileUtil.h"
 #import "BRDPathUtil.h"
 #import "BRDBookShuff.h"
 
@@ -100,19 +101,13 @@ CGFloat lastContentOffset;
 
 static const float kVerticalScale = 1.0;
 
-// 有几个问题待解决
-// - 第0页没有声音，第1也没有动画效果
-// - 已经翻到最后一页的提示。
-// - 动画不要上下浮动
-// - 第一次进入，加操作提示。 (找Default storing)'
-// - 修理内存溢出的bug。
 
 - (id) initWithBookKey:(NSString*) localBookKey {
     if (self = [super init]) {
         self.localBookKey = localBookKey;
         self.localBookInfo = [[BRDBookShuff sharedObject] getBook:self.localBookKey];
         if ([self.localBookInfo hasTranslatedText]) {
-            self.translatedText = [LocalBook extractTranslatedText:self.localBookKey];
+            self.translatedText = [BRDFileUtil extractTranslatedText:self.localBookKey];
         } else {
             self.translatedText = @[];
         }
@@ -217,11 +212,8 @@ static const float kVerticalScale = 1.0;
 
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
-    if (page >= self.localBookInfo.totalPages)
+    if (page >= self.localBookInfo.totalPages) {
         return;
-    
-    if (page == 1) {
-        NSLog(@"page == 1");
     }
     
     // replace the placeholder if necessary
@@ -240,7 +232,7 @@ static const float kVerticalScale = 1.0;
         frame.origin.y = 0;
         controller.view.frame = frame;
         
-        NSLog(@"Page = %d, frame.x = %f", page, frame.origin.x);
+        NSLog(@"Page = %lu, frame.x = %f", page, frame.origin.x);
 
         [self addChildViewController:controller];
         [self.scrollView1 addSubview:controller.view];

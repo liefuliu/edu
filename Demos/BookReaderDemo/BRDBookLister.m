@@ -18,6 +18,7 @@
 
 @end
 
+// TODO(liefuliu): move to BRDConstants.h
 static const int MAX_BOOK_LIST = 1000;
 static const int kTypeImage = 1;
 static const int kTypeAudio = 2;
@@ -110,15 +111,14 @@ static const int kTypeTranslation = 3;
             if (bookId != nil) {
                 NSString* bookName = (NSString*) object[@"bookName"];
                 NSString* author = (NSString*) object[@"author"];
-                int totalPages = -1;
-                NSData* coverImageData;
-            
+                int totalPages = [((NSString*)object[@"totalPages"]) intValue];
+                
                 BRDListedBook* serverBook = [[BRDListedBook alloc]
                                       initBook: bookId
                                           name: bookName
                                       author:author
                                       totalPages:totalPages
-                                      cover:coverImageData];
+                                      cover:nil];
             
                 [bookList addObject:serverBook];
             }

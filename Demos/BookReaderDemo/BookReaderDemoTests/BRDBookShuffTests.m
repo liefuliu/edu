@@ -34,17 +34,24 @@
 
 - (void)testBasic {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:nil forKey:kDownloadedBookKeyString];
+    if ([defaults objectForKey:kDownloadedBookKeyString] != nil) {
+        [defaults setObject:nil forKey:kDownloadedBookKeyString];
+    }
     
     NSString* kBookName1 = @"RandomBookName1";
     NSString* kBookName2 = @"RandomBookName2";
     XCTAssert(![[BRDBookShuff sharedObject] doesBookExist:kBookName1]);
     XCTAssert(![[BRDBookShuff sharedObject] doesBookExist:kBookName2]);
     
-    [[BRDBookShuff sharedObject] addBook:kBookName1];
+    LocalBook* localBook = [[LocalBook alloc]init];
+                            
+    [[BRDBookShuff sharedObject] addBook:localBook forKey:kBookName1];
     
     XCTAssert([[BRDBookShuff sharedObject] doesBookExist:kBookName1]);
     XCTAssert(![[BRDBookShuff sharedObject] doesBookExist:kBookName2]);
+    
+    [[BRDBookShuff sharedObject] deleteBook:kBookName1];
+    XCTAssert(![[BRDBookShuff sharedObject] doesBookExist:kBookName1]);
 }
 
 - (void)testPerformanceExample {

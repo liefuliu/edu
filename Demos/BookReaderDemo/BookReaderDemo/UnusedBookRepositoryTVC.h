@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BookDownloadWaitVC.h"
 
-@interface BookRepositoryTVC : UITableViewController <BookDownloadWaitVCDelegate>
+@interface UnusedBookRepositoryTVC : UITableViewController <BookDownloadWaitVCDelegate>
 @property (weak, nonatomic) IBOutlet UIProgressView *progressView;
 
 - (void) downloadComplete: (NSString*) bookKey;

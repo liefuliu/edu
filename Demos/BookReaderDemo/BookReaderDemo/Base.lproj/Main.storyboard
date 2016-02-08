@@ -16,11 +16,58 @@
                     </tabBar>
                     <connections>
                         <segue destination="iNh-QC-R9L" kind="relationship" relationship="viewControllers" id="C8E-8S-Kh4"/>
+                        <segue destination="2qg-gu-9uk" kind="relationship" relationship="viewControllers" id="0Bf-og-27Q"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lIF-V3-hzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-453" y="1716"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="8Zo-St-B28">
+            <objects>
+                <tableViewController id="0Fr-Fy-Mqi" customClass="BookShuffTVC" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Lg-X4-VEG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jXS-Kq-crQ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jXS-Kq-crQ" id="djE-l3-hqG">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0Fr-Fy-Mqi" id="egB-Ot-nTY"/>
+                            <outlet property="delegate" destination="0Fr-Fy-Mqi" id="sJ5-ha-Ny3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="zB1-ko-pH7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NKq-Mz-vOn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="2121"/>
+        </scene>
+        <!--书架-->
+        <scene sceneID="h6h-Sg-Dcp">
+            <objects>
+                <navigationController id="2qg-gu-9uk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="书架" id="dHd-5z-yfa"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vit-Co-Jbg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0Fr-Fy-Mqi" kind="relationship" relationship="rootViewController" id="pDg-Hr-gPH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MRT-px-S4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-462" y="2360"/>
         </scene>
         <!--Server Book CollectionVC-->
         <scene sceneID="QLH-vi-p05">

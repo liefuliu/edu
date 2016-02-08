@@ -11,7 +11,9 @@
 // Represent a look listed in store.
 // A listed book contains all available information about this book before this book
 // gets downloaded.
-// 
+
+// TODO(liefuliu):
+// Consolidate this class with LocalBook class, which are doing the same things.
 @interface BRDListedBook : NSObject
 
 @property NSString* bookId;

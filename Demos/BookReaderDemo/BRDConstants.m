@@ -10,4 +10,4 @@
 
 NSString* const kNSDefaultsFirstLaunch = @"first_launch";
 NSString* const kNSDefaultsFirstPageLoad = @"first_page_load";
-NSString* const kDownloadedBookKeyString = @"downloaded_book_key";
+NSString* const kDownloadedBookKeyString = @"downloaded_book_key_v2";

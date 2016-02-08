@@ -61,7 +61,6 @@ NSTimer* _myTimer;
     // Do any additional setup after loading the view.
     
     // bar.topItem.title = @"title text";
-    self.title = @"绘本集";
     
     /*_myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];*/
     _indicatorView = [self showSimpleActivityIndicatorOnView:self.view];
@@ -76,12 +75,9 @@ NSTimer* _myTimer;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    self.lpgr = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(handleLongPressGestures:)];
-    
+    self.title = @"绘本集";
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
     [self.navigationItem setRightBarButtonItem:cancelButton];
-    
-
 
     [self tryLoadBookList];
 }
@@ -169,6 +165,7 @@ NSTimer* _myTimer;
         
         BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
         
+        // TODO(liefuliu): add the bookInfo.
         //cell.statusLabel.text = bookInfo.author;
         // cell.topicLabel.text = bookInfo.bookName;
         BRDBookSummary* bookSummary = (BRDBookSummary*)[_bookCoverImages objectForKey:bookInfo.bookId];
@@ -225,15 +222,23 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 
-
-
-- (void) downloadComplete: (NSString*) bookKey {
-    [[BRDBookShuff sharedObject] addBook:bookKey];
+- (void) downloadComplete: (NSString*) bookKeyUnused {
+    // We should keep more info about the book.
+    //[[BRDBookShuff sharedObject] addBook:bookKey];
+    NSArray *arrayOfIndexPaths = [self.collectionView indexPathsForSelectedItems];
+    NSIndexPath *indexPathImInterestedIn = [arrayOfIndexPaths firstObject];
+    BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPathImInterestedIn.row];
+    
+    NSString* bookKey = [bookInfo bookId];
+    LocalBook* localBook = [[LocalBook alloc]initBook:bookInfo.bookName author:bookInfo.author totalPages:bookInfo.totalPages filePrefix:bookInfo.bookId hasTranslatedText:YES];
+    [[BRDBookShuff sharedObject] addBook:localBook forKey:bookKey];
+    
     BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
     [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 }
 
-
+// TODO(liefuliu): Set time out for tryLoadBoookList, and throw an alert when time out.
+// TODO(liefuliu): use NSLocalizedString and default to English.
 -(void) tryLoadBookList {
     NSLog(@"tryLoadBookList");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {

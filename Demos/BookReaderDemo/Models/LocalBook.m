@@ -27,24 +27,29 @@ hasTranslatedText:(BOOL) hasTranslatedText {
     return self;
 }
 
-+ (NSArray*) extractTranslatedText: (NSString*) bookKey {
-    NSString* filePath = [NSString stringWithFormat:@"%@/%@-trans.txt",
-                          [BRDPathUtil applicationDocumentsDirectoryPath],
-                          bookKey];
-    NSString* fileContents = [NSString stringWithContentsOfFile:filePath
-                                                       encoding:NSUTF8StringEncoding error:nil];
-    
-    
-    NSArray* allLinedStrings =
-    [fileContents componentsSeparatedByCharactersInSet:
-     [NSCharacterSet newlineCharacterSet]];
-    
-    NSMutableArray* translatedText = [[NSMutableArray alloc] init];
-    for (NSString* encodedLine in allLinedStrings) {
-        [translatedText addObject:[encodedLine stringByReplacingOccurrencesOfString:@"\\n" withString:@"\n"]];
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if( self )
+    {
+        self.bookName = [aDecoder decodeObjectForKey:@"bookName"];
+        self.author = [aDecoder decodeObjectForKey:@"author"];
+        self.totalPages = [[aDecoder decodeObjectForKey:@"totalPages"] intValue];
+        self.filePrefix = [aDecoder decodeObjectForKey:@"filePrefix"];
+        self.hasTranslatedText = [[aDecoder decodeObjectForKey:@"hasTranslatedText"]boolValue];
     }
-
-    return translatedText;
+    return self;
 }
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.bookName forKey:@"bookName"];
+    [encoder encodeObject:self.author forKey:@"author"];
+    [encoder encodeObject:[NSNumber numberWithInt:self.totalPages] forKey:@"totalPages"];
+    [encoder encodeObject:self.filePrefix forKey:@"filePrefix"];
+    [encoder encodeObject:[NSNumber numberWithBool:self.hasTranslatedText] forKey:@"hasTranslatedText"];
+    
+}
+
 
 @end

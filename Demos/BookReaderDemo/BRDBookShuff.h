@@ -9,14 +9,20 @@
 #import <Foundation/Foundation.h>
 
 #import "LocalBook.h"
+#import "BRDBookSummary.h"
 
 @interface BRDBookShuff : NSObject
 
 - (BOOL) doesBookExist: (NSString*) booKey;
 
-- (void) addBook: (NSString*) bookkey;
+- (void) addBook:(LocalBook*) bookInfo
+          forKey:(NSString*) bookKey;
+
+- (void) deleteBook: (NSString*) bookKey;
 
 - (LocalBook*) getBook: (NSString*) bookKey;
+
+- (NSArray*) getAllBookKeys;
 
 + (id) sharedObject;
 

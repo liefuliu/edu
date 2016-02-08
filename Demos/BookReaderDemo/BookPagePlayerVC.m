@@ -13,6 +13,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "BRDBookShuff.h"
+#import "BRDFileUtil.h"
 
 @interface BookPagePlayerVC ()
 
@@ -39,27 +40,8 @@
     return self;
 }
 
-- (NSString*) intToString:(int) integer {
-    if (integer < 10) {
-        return [NSString stringWithFormat:@"000%d", integer];
-    } else if (integer < 100) {
-        return [NSString stringWithFormat:@"00%d", integer];
-    } else if (integer < 1000) {
-        return [NSString stringWithFormat:@"0%d", integer];
-    } else {
-        return [NSString stringWithFormat:@"%d", integer];
-    }
-}
-
 - (void) showPageAtIndex:(int) pageIndex {
-    NSString* documentsDirectory = [BRDPathUtil applicationDocumentsDirectoryPath];
-    NSString* fileName = [NSString stringWithFormat:@"%@-picture-%@.jpg",
-                          self.localBookInfo.filePrefix,
-                          [self intToString:pageIndex+1]]; // 绘本页从1开始计数。
-    
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:fileName];
-    NSData *imgData = [NSData dataWithContentsOfFile:filePath];
-    self.pageImageView.image = [UIImage imageWithData:imgData];
+    self.pageImageView.image = [UIImage imageWithData:[BRDFileUtil getBookImage:self.localBookKey onPage:pageIndex]];
     
     if (pageIndex < self.translatedText.count &&
         ((NSString*) self.translatedText[pageIndex]).length > 0) {

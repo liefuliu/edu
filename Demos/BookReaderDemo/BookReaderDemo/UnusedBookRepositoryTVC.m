@@ -6,7 +6,7 @@
 //  Copyright © 2016 SanRenXing. All rights reserved.
 //
 
-#import "BookRepositoryTVC.h"
+#import "UnusedBookRepositoryTVC.h"
 #import "BRDBookLister.h"
 #import "BRDBookSummary.h"
 #import "BRDListedBook.h"
@@ -15,10 +15,10 @@
 #import "BookPlayerScrollVC.h"
 #import "BRDBookShuff.h"
 
-@interface BookRepositoryTVC ()
+@interface UnusedBookRepositoryTVC ()
 @end
 
-@implementation BookRepositoryTVC
+@implementation UnusedBookRepositoryTVC
 
 NSTimer* myTimer;
 UIProgressView* myProgressView;
@@ -54,7 +54,7 @@ NSDictionary* bookCoverImages;
          forCellReuseIdentifier:@"BookItemCell"];
     
     // bar.topItem.title = @"title text";
-    self.title = @"绘本馆";
+    self.title = @"书架";
     
     myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];
     indicatorView = [self showSimpleActivityIndicatorOnView:self.view];
@@ -168,7 +168,7 @@ NSDictionary* bookCoverImages;
 
 
 - (void) downloadComplete: (NSString*) bookKey {
-   [[BRDBookShuff sharedObject] addBook:bookKey];
+    [[BRDBookShuff sharedObject] addBook:nil forKey:bookKey];
    BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
    [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 }

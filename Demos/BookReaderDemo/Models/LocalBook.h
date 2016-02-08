@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LocalBook : NSObject
+@interface LocalBook : NSObject <NSCoding>
 
 @property NSString* bookName;
 @property NSString* author;
@@ -22,6 +22,9 @@
      filePrefix:(NSString*) filePrefix
 hasTranslatedText:(BOOL) hasTranslatedText;
 
-+ (NSArray*) extractTranslatedText: (NSString*) bookKey;
+- (id)initWithCoder:(NSCoder *)aDecoder;
+- (void)encodeWithCoder:(NSCoder *)encoder;
+
+
 
 @end
