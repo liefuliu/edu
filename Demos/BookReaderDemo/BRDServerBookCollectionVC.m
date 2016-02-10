@@ -43,11 +43,19 @@ NSTimer* _myTimer;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNSDefaultsFirstLaunch];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"操作提示", nil)
-                                                        message:@"向下拉屏幕刷新绘本。"
+        /*
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"operation_tips", nil)
+                                                        message:NSLocalizedString(@"do_drag_down_instruction", nil)
                                                        delegate:self
-                                              cancelButtonTitle:@"好的，知道了"
+                                              cancelButtonTitle:NSLocalizedString(@"button_ok_title", nil)
                                               otherButtonTitles:nil];
+         */
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作提示"
+                                                        message:@"向下滑动刷新绘本"
+                                                       delegate:self
+                                              cancelButtonTitle:@"好的，知道了"                                              otherButtonTitles:nil];
+        
         [alert show];
     }
     
@@ -59,7 +67,6 @@ NSTimer* _myTimer;
     self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
     
     // Do any additional setup after loading the view.
-    
     // bar.topItem.title = @"title text";
     
     /*_myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];*/
@@ -238,7 +245,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 // TODO(liefuliu): Set time out for tryLoadBoookList, and throw an alert when time out.
-// TODO(liefuliu): use NSLocalizedString and default to English.
 -(void) tryLoadBookList {
     NSLog(@"tryLoadBookList");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {

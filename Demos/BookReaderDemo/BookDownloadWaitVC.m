@@ -97,7 +97,7 @@ const float progressSubViewRatio = 0.6;
           PFFile* pageContent = (PFFile*) object[@"pageContent"];
           NSLog(@"bookName: %@", [pageContent name]);
            
-          // TODO: 校验文件名是否符合格式。
+          // TODO(liefuliu): check if the file name is valid.
           NSString* documentPath = [BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
            
           [BookDownloadWaitVC downloadParseFile:pageContent to:documentPath];
