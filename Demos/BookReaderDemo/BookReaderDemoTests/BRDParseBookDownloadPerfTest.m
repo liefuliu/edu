@@ -30,24 +30,53 @@
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 
+// Please remove the app before running the test.
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     CFTimeInterval startTime = CACurrentMediaTime();
+    NSString *UUID = [[NSUUID UUID] UUIDString];
     
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
+    [BRDParseBookDownloadPerfTest cleanUpPFFileCacheDirectory];
     [self measureBlock:^{
         
         // Put the code you want to measure the time of here.
         NSURL* pathUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory
                                                        inDomains:NSUserDomainMask] lastObject];
-        NSString* path = [[pathUrl path]stringByAppendingPathComponent:@"temp3/"];
+        NSString* path = [[pathUrl path]stringByAppendingPathComponent:UUID];
         [[BRDBookDownloader sharedObject] downloadBook:@"captaincat"
                 toDirectory:path
-                                          withMaxLimit: 10];
+                                          withMaxLimit: 100];
     }];
 
     CFTimeInterval endTime = CACurrentMediaTime();
     NSLog(@"Total Runtime: %g s", endTime - startTime);
     
+}
+
+
++ (void)cleanUpPFFileCacheDirectory
+{
+    NSError *error = nil;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSURL *cacheDirectoryURL = [[fileManager URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
+    NSURL *PFFileCacheDirectoryURL = [cacheDirectoryURL URLByAppendingPathComponent:@"Parse/PFFileCache" isDirectory:YES];
+    NSArray *PFFileCacheDirectory = [fileManager contentsOfDirectoryAtURL:PFFileCacheDirectoryURL includingPropertiesForKeys:nil options:0 error:&error];
+    
+    if (!PFFileCacheDirectory || error) {
+        if (error && error.code != NSFileReadNoSuchFileError) {
+            NSLog(@"Error : Retrieving content of directory at URL %@ failed with error : %@", PFFileCacheDirectoryURL, error);
+        }
+        return;
+    }
+    
+    for (NSURL *fileURL in PFFileCacheDirectory) {
+        BOOL success = [fileManager removeItemAtURL:fileURL error:&error];
+        if (!success || error) {
+            NSLog(@"Error : Removing item at URL %@ failed with error : %@", fileURL, error);
+            error = nil;
+        }
+    }
 }
 
 @end
