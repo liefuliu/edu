@@ -1,7 +1,7 @@
 /*
-     File: RootViewController.m
+ File: RootViewController.m
  Abstract: The primary root view controller for the iPhone.
-  Version: 1.6
+ Version: 1.6
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -50,13 +50,14 @@
 #import "BRDFileUtil.h"
 #import "BRDPathUtil.h"
 #import "BRDBookShuff.h"
+#import "BRDBookDownloader.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 /*
-static NSString *kNameKey = @"nameKey";
-static NSString *kImageKey = @"imageKey";
-*/
+ static NSString *kNameKey = @"nameKey";
+ static NSString *kImageKey = @"imageKey";
+ */
 
 typedef enum ScrollDirection {
     ScrollDirectionNone,
@@ -89,6 +90,8 @@ CGFloat lastContentOffset;
 
 // 最近一次滑动是否向左。
 @property BOOL scrollToLeft;
+
+@property BOOL viewIsDismissed;
 
 
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
@@ -137,6 +140,7 @@ static const float kVerticalScale = 1.0;
     self.lpgr.minimumPressDuration = 1.0f;
     self.lpgr.allowableMovement = 50.0f;
     
+    self.viewIsDismissed = NO;
     [self.view addGestureRecognizer:self.lpgr];
     
     // 如果App是首次运行，则在初始化页面之前，显示操作提示。否则，直接显示初始化页面。
@@ -154,6 +158,11 @@ static const float kVerticalScale = 1.0;
     } else {
         [self InitializeFromCurrentPage:YES];
     }
+    
+    if (self.localBookInfo.downloadedPages < self.localBookInfo.totalPages ) {
+        [self downloadBookTillTopNPages];
+    }
+    
 }
 
 
@@ -165,21 +174,56 @@ static const float kVerticalScale = 1.0;
 - (void)handleLongPressGestures:(UILongPressGestureRecognizer *)sender
 {
     if ([sender isEqual:self.lpgr]) {
-        if (sender.state == UIGestureRecognizerStateBegan)
-        {
+        if (sender.state == UIGestureRecognizerStateBegan) {
             [self dismissViewControllerAnimated:YES completion:nil];
+            self.viewIsDismissed = YES;
             return;
         }
     }
 }
 
+- (void) downloadBookTillTopNPages {
+    NSLog(@"downloadBookTillTopNPages began. self.viewIsDismissed = %d", self.viewIsDismissed);
+    if (self.viewIsDismissed) {
+        return;
+    }
+    
+    if (self.localBookInfo.downloadedPages >= self.localBookInfo.totalPages) {
+        return;
+    }
+    
+    int lastPageToDownload = MIN(self.localBookInfo.downloadedPages  + kNumPagesNonFirstDownload, self.localBookInfo.totalPages);
+    
+    [[BRDBookDownloader sharedObject] downloadBook:self.localBookKey
+                                         startPage:self.localBookInfo.downloadedPages
+                                           endPage:lastPageToDownload
+                                 withProgressBlock:^(BOOL finished, NSError *error, float percent) {
+        if (finished) {
+            if (error != nil) {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"错误", nil)
+                                                                message:@"无法下载更多的绘本页面，请检查网络。"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"好的，知道了"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            } else {
+                NSLog(@"Download till page %d", lastPageToDownload);
+                self.localBookInfo.downloadedPages = lastPageToDownload;
+                
+                [[BRDBookShuff sharedObject] updateBook:self.localBookInfo forKey:self.localBookKey];
+                [self downloadBookTillTopNPages];
+            }
+        }
+    }];
+    
+}
+
 - (void) InitializeFromCurrentPage:(BOOL) pageHasChanged {
-    for (UIView *view in self.scrollView1.subviews)
-    {
+    for (UIView *view in self.scrollView1.subviews) {
         [view removeFromSuperview];
     }
     
-    NSUInteger numPages = self.localBookInfo.totalPages;
+    NSUInteger numPages = self.localBookInfo.downloadedPages;
     
     // 将ScrollView的高宽设置为与屏幕一致。
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -195,8 +239,7 @@ static const float kVerticalScale = 1.0;
     // clear out and reload our pages
     self.viewControllers = nil;
     NSMutableArray *controllers = [[NSMutableArray alloc] init];
-    for (NSUInteger i = 0; i < numPages; i++)
-    {
+    for (NSUInteger i = 0; i < numPages; i++) {
         [controllers addObject:[NSNull null]];
     }
     self.viewControllers = controllers;
@@ -212,7 +255,7 @@ static const float kVerticalScale = 1.0;
 
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
-    if (page >= self.localBookInfo.totalPages) {
+    if (page >= [self.viewControllers count]) {
         return;
     }
     
@@ -233,7 +276,7 @@ static const float kVerticalScale = 1.0;
         controller.view.frame = frame;
         
         NSLog(@"Page = %lu, frame.x = %f", page, frame.origin.x);
-
+        
         [self addChildViewController:controller];
         [self.scrollView1 addSubview:controller.view];
         [controller didMoveToParentViewController:self];
@@ -264,6 +307,19 @@ static const float kVerticalScale = 1.0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
+    NSLog(@"scrollViewDidScroll begin");
+    int totalPages = self.localBookInfo.totalPages;
+    int downloadedPages = self.localBookInfo.downloadedPages;
+    
+    if (self.currentPage < self.viewControllers.count - 1) {
+        // DO nothing
+    } else if (self.currentPage < downloadedPages - 1) {
+        [self InitializeFromCurrentPage:NO];
+    } else if (self.currentPage < totalPages - 1) {
+        // Waiting for more pages to download
+    }
+    
+    
     ScrollDirection scrollDirection;
     if (self.lastContentOffset > scrollView.contentOffset.x) {
         self.scrollToLeft = true;
@@ -294,16 +350,16 @@ static const float kVerticalScale = 1.0;
         }
         
         // 如果在末页向左滑动，则显示末页提示。
-        if (page == self.localBookInfo.totalPages -1 && self.scrollToLeft) {
+        if (page == self.localBookInfo.downloadedPages -1 && self.scrollToLeft) {
             [self alertForLastPage];
             return;
         }
         
         /* 向上滑动的操作已经失效。
-        if (scrollView.contentOffset.y > 0) {
-            [self dismissViewControllerAnimated:YES completion:nil];
-            return;
-          }*/
+         if (scrollView.contentOffset.y > 0) {
+         [self dismissViewControllerAnimated:YES completion:nil];
+         return;
+         }*/
     } else {
         self.currentPage = page;
         NSLog(@"current page: %d", page);
@@ -315,15 +371,15 @@ static const float kVerticalScale = 1.0;
 - (void)gotoPage:(BOOL) pageHasChanged
 {
     NSInteger page = self.currentPage;
-
+    
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 0) {
         [self loadScrollViewWithPage:page - 1];
     }
     
     [self loadScrollViewWithPage:page];
-
-    if (page + 1 < self.localBookInfo.totalPages) {
+    
+    if (page + 1 < self.localBookInfo.downloadedPages) {
         [self loadScrollViewWithPage:page + 1];
     }
     
@@ -381,7 +437,7 @@ static const float kVerticalScale = 1.0;
 }
 
 - (void) alertForLastPage {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"友情提示", nil)
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"友情提示"
                                                     message:@"已经翻到最后一页。向左滑动往后翻页, 向右滑动往前翻页, 长按屏幕返回。"
                                                    delegate:nil
                                           cancelButtonTitle:@"好的，知道了"
@@ -390,14 +446,14 @@ static const float kVerticalScale = 1.0;
 }
 
 - (void) alertForFirstPage {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"友情提示", nil)
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"友情提示"
                                                     message:@"已经翻到第一页。 向左滑动往后翻页, 向右滑动往前翻页, 长按屏幕返回。"
                                                    delegate:nil
                                           cancelButtonTitle:@"好的，知道了"
                                           otherButtonTitles:nil];
     
     [alert show];
-
+    
 }
 
 - (IBAction)changePage:(id)sender

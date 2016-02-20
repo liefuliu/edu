@@ -10,7 +10,7 @@
 
 @protocol BookDownloadWaitVCDelegate <NSObject>
 
-- (void) downloadComplete:(NSString*) bookKey;
+- (void) downloadComplete:(NSString*) bookKeyUnused forTopNPages:(int)pagesDownloaded;
 
 @end
 

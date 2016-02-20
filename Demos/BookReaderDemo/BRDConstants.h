@@ -11,3 +11,16 @@
 extern NSString* const kNSDefaultsFirstLaunch;
 extern NSString* const kNSDefaultsFirstPageLoad;
 extern NSString* const kDownloadedBookKeyString;
+
+extern int const kFileTypeImage;
+extern int const kFileTypeAudio;
+extern int const kFileTypeTrans;
+
+
+extern NSString* const kBookImageTableTypeColumn;
+extern NSString* const kBookImageTablePageNumberColumn;
+extern NSString* const kBookImageTableContentColumn;
+extern NSString* const kBookImageTableBookIdColumn;
+
+extern int const kNumPagesFirstDownload;
+extern int const kNumPagesNonFirstDownload;

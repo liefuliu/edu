@@ -24,6 +24,7 @@
 		6DE230AC1C6865DC00C5C42D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DE230AE1C6865DC00C5C42D /* Localizable.strings */; };
 		6DE230B11C69745800C5C42D /* BRDParseBookDownloadPerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B01C69745800C5C42D /* BRDParseBookDownloadPerfTest.m */; };
 		6DE230B41C69773500C5C42D /* BRDBookDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B31C69773500C5C42D /* BRDBookDownloader.m */; };
+		6DE230B71C6F107300C5C42D /* BRDPageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B61C6F107300C5C42D /* BRDPageDownloadOperation.m */; };
 		6DF9F1B61C0A390400359200 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B51C0A390400359200 /* main.m */; };
 		6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B81C0A390400359200 /* AppDelegate.m */; };
 		6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BD1C0A390400359200 /* Main.storyboard */; };
@@ -101,6 +102,8 @@
 		6DE230B01C69745800C5C42D /* BRDParseBookDownloadPerfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDParseBookDownloadPerfTest.m; sourceTree = "<group>"; };
 		6DE230B21C69773500C5C42D /* BRDBookDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDBookDownloader.h; sourceTree = "<group>"; };
 		6DE230B31C69773500C5C42D /* BRDBookDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookDownloader.m; sourceTree = "<group>"; };
+		6DE230B51C6F107300C5C42D /* BRDPageDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDPageDownloadOperation.h; sourceTree = "<group>"; };
+		6DE230B61C6F107300C5C42D /* BRDPageDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDPageDownloadOperation.m; sourceTree = "<group>"; };
 		6DF9F1B01C0A390400359200 /* BookReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF9F1B41C0A390400359200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF9F1B51C0A390400359200 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				6DBA95661C53185400B7DFB1 /* BRDBookLister.m */,
 				6DE230B21C69773500C5C42D /* BRDBookDownloader.h */,
 				6DE230B31C69773500C5C42D /* BRDBookDownloader.m */,
+				6DE230B51C6F107300C5C42D /* BRDPageDownloadOperation.h */,
+				6DE230B61C6F107300C5C42D /* BRDPageDownloadOperation.m */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
@@ -488,6 +493,7 @@
 				6DFF96D01C5D363B00D589E7 /* BRDBookShuff.m in Sources */,
 				6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */,
 				6DFF96D51C5DE7B800D589E7 /* BRDBookSummary.m in Sources */,
+				6DE230B71C6F107300C5C42D /* BRDPageDownloadOperation.m in Sources */,
 				6DBA95671C53185400B7DFB1 /* BRDBookLister.m in Sources */,
 				6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */,
 				6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */,

@@ -11,6 +11,7 @@
 
 @interface BRDServerBookCollectionVC : UICollectionViewController <BookDownloadWaitVCDelegate>
 
-- (void) downloadComplete: (NSString*) bookKey;
+- (void) downloadComplete: (NSString*) bookKeyUnused
+             forTopNPages:(int)pagesDownloaded;
 
 @end

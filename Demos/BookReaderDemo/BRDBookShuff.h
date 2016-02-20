@@ -18,6 +18,9 @@
 - (void) addBook:(LocalBook*) bookInfo
           forKey:(NSString*) bookKey;
 
+- (void) updateBook:(LocalBook*) bookInfo
+             forKey:(NSString*) bookKey;
+
 - (void) deleteBook: (NSString*) bookKey;
 
 - (LocalBook*) getBook: (NSString*) bookKey;

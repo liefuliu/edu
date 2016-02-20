@@ -44,9 +44,19 @@
         NSURL* pathUrl = [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory
                                                        inDomains:NSUserDomainMask] lastObject];
         NSString* path = [[pathUrl path]stringByAppendingPathComponent:UUID];
+        
+         dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
         [[BRDBookDownloader sharedObject] downloadBook:@"captaincat"
-                toDirectory:path
-                                          withMaxLimit: 100];
+                toDirectory: path
+                forTopNPages: 100
+         withProgressBlock:^(BOOL finished, NSError *error, float percent) {
+             if (finished) {
+                 dispatch_semaphore_signal(semaphore);
+             }
+             
+         }];
+        
+        dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
     }];
 
     CFTimeInterval endTime = CACurrentMediaTime();

@@ -44,11 +44,11 @@ NSTimer* _myTimer;
         [[NSUserDefaults standardUserDefaults] synchronize];
         
         /*
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"operation_tips", nil)
-                                                        message:NSLocalizedString(@"do_drag_down_instruction", nil)
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"button_ok_title", nil)
-                                              otherButtonTitles:nil];
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"operation_tips", nil)
+         message:NSLocalizedString(@"do_drag_down_instruction", nil)
+         delegate:self
+         cancelButtonTitle:NSLocalizedString(@"button_ok_title", nil)
+         otherButtonTitles:nil];
          */
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作提示"
@@ -75,7 +75,7 @@ NSTimer* _myTimer;
     
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(startRefresh)
-             forControlEvents:UIControlEventValueChanged];
+              forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:_refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
     
@@ -85,7 +85,7 @@ NSTimer* _myTimer;
     self.title = @"绘本集";
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
     [self.navigationItem setRightBarButtonItem:cancelButton];
-
+    
     [self tryLoadBookList];
 }
 
@@ -143,14 +143,14 @@ NSTimer* _myTimer;
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark <UICollectionViewDataSource>
 
@@ -168,7 +168,7 @@ NSTimer* _myTimer;
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section== 0 ) {
         ServerBookListCVC* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
-                                                             forIndexPath:indexPath];
+                                                                            forIndexPath:indexPath];
         
         BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
         
@@ -229,7 +229,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 
-- (void) downloadComplete: (NSString*) bookKeyUnused {
+- (void) downloadComplete: (NSString*) bookKeyUnused
+             forTopNPages:(int)pagesDownloaded {
     // We should keep more info about the book.
     //[[BRDBookShuff sharedObject] addBook:bookKey];
     NSArray *arrayOfIndexPaths = [self.collectionView indexPathsForSelectedItems];
@@ -237,7 +238,12 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPathImInterestedIn.row];
     
     NSString* bookKey = [bookInfo bookId];
-    LocalBook* localBook = [[LocalBook alloc]initBook:bookInfo.bookName author:bookInfo.author totalPages:bookInfo.totalPages filePrefix:bookInfo.bookId hasTranslatedText:YES];
+    LocalBook* localBook = [[LocalBook alloc]
+                            initBook:bookInfo.bookName
+                            author:bookInfo.author
+                            totalPages:bookInfo.totalPages
+                            downloadedPages:pagesDownloaded
+                            filePrefix:bookInfo.bookId hasTranslatedText:YES];
     [[BRDBookShuff sharedObject] addBook:localBook forKey:bookKey];
     
     BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
@@ -304,32 +310,32 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 
 /*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
+ // Uncomment this method to specify if the specified item should be highlighted during tracking
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
 	return YES;
-}
-*/
+ }
+ */
 
 /*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
+ // Uncomment this method to specify if the specified item should be selected
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+ return YES;
+ }
+ */
 
 /*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
+ // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+ - (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
 	return NO;
-}
-
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ }
+ 
+ - (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
 	return NO;
-}
-
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
+ }
+ 
+ - (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
 	
-}
-*/
+ }
+ */
 
 @end

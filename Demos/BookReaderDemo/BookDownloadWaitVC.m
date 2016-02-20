@@ -10,6 +10,7 @@
 #import "CircularProgressView.h"
 #import "BRDPathUtil.h"
 #import "BookPlayerScrollVC.h"
+#import "BRDBookDownloader.h"
 #import <Parse/Parse.h>
 
 @interface BookDownloadWaitVC ()
@@ -71,56 +72,18 @@ const float progressSubViewRatio = 0.6;
 
 
 - (void) downloadBooks {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
-        PFQuery *query = [PFQuery queryWithClassName:@"BookImage"];
-        query.limit = 500;
-        
-        // 可以考虑在此查看该书是否已经下载，根据_boo
-        [query whereKey:@"bookName" equalTo:_bookKey];
-     
-        NSArray* objects = [query findObjects];
-        if (objects.count == 0) {
-            dispatch_async(dispatch_get_main_queue(),^ {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
-                [alert show];
-                [self dismissViewControllerAnimated:YES completion:nil];
-            });
-            return;
+    [[BRDBookDownloader sharedObject] downloadBook:_bookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
+        if (error != nil) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
+            [alert show];
+            [self dismissViewControllerAnimated:YES completion:nil];
+        } else if (finished) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.delegate downloadComplete:_bookKey forTopNPages:kNumPagesFirstDownload];
+        } else {
+            [self updateStatus:percent];
         }
-        
-        NSLog(@"Successfully retrieved %lu scores.", objects.count);
-     
-        if (objects != nil) {
-        int totalBooks = MIN(1000, (int)[objects count]);
-        int downloaded = 0;
-       for (PFObject *object in objects) {
-          PFFile* pageContent = (PFFile*) object[@"pageContent"];
-          NSLog(@"bookName: %@", [pageContent name]);
-           
-          // TODO(liefuliu): check if the file name is valid.
-          NSString* documentPath = [BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
-           
-          [BookDownloadWaitVC downloadParseFile:pageContent to:documentPath];
-          NSLog(@"local document path: %@", documentPath);
-          
-          ++downloaded;
-          __block int percent = downloaded * 100 / totalBooks;
-          
-          //we get the main thread because drawing must be done in the main thread always
-          dispatch_async(dispatch_get_main_queue(),^ {
-             [self updateStatus:percent];
-          });
-           
-          if (downloaded == totalBooks) {
-              dispatch_async(dispatch_get_main_queue(),^ {
-                  [self dismissViewControllerAnimated:YES completion:nil];
-                  [self.delegate downloadComplete:_bookKey];
-              });
-              break;
-          }
-        }
-       }
-     });
+    }];
 }
 
 - (void) updateStatus:(int) percent {

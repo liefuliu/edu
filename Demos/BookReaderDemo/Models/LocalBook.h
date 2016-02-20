@@ -13,12 +13,14 @@
 @property NSString* bookName;
 @property NSString* author;
 @property int totalPages;
+@property int downloadedPages;
 @property NSString* filePrefix;
 @property BOOL hasTranslatedText;
 
 - (id) initBook:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
+downloadedPages:(int) downloadedPages
      filePrefix:(NSString*) filePrefix
 hasTranslatedText:(BOOL) hasTranslatedText;
 

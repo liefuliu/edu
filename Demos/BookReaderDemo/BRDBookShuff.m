@@ -60,6 +60,21 @@
     return newBook;
 }
 
+- (void) updateBook:(LocalBook*) bookInfo
+             forKey:(NSString*) bookKey {
+    if (![self doesBookExist:bookKey]) {
+        return;
+    }
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSMutableDictionary* newBookDictionary = [[NSMutableDictionary alloc] initWithDictionary:[BRDBookShuff getNSUserDefaultBookDictionary]];
+    
+    NSData *data = [NSKeyedArchiver archivedDataWithRootObject:bookInfo];
+    [newBookDictionary setValue:data forKey:bookKey];
+    [defaults setObject:newBookDictionary forKey:kDownloadedBookKeyString];
+
+}
+
 - (void) deleteBook: (NSString*) bookKey {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSMutableDictionary* newBookDictionary = [[NSMutableDictionary alloc] initWithDictionary:[BRDBookShuff getNSUserDefaultBookDictionary]];
