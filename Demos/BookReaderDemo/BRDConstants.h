@@ -24,3 +24,5 @@ extern NSString* const kBookImageTableBookIdColumn;
 
 extern int const kNumPagesFirstDownload;
 extern int const kNumPagesNonFirstDownload;
+
+extern BOOL const kDelayDownloadTillEndofPreview;

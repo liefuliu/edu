@@ -93,6 +93,7 @@ CGFloat lastContentOffset;
 
 @property BOOL viewIsDismissed;
 
+@property UIActivityIndicatorView *spinner;
 
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
@@ -143,6 +144,11 @@ static const float kVerticalScale = 1.0;
     self.viewIsDismissed = NO;
     [self.view addGestureRecognizer:self.lpgr];
     
+    _spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    _spinner.center = CGPointMake(160, 240);
+    _spinner.tag = 12;
+    [self.view addSubview:_spinner];
+    
     // 如果App是首次运行，则在初始化页面之前，显示操作提示。否则，直接显示初始化页面。
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kNSDefaultsFirstPageLoad])
     {
@@ -159,7 +165,7 @@ static const float kVerticalScale = 1.0;
         [self InitializeFromCurrentPage:YES];
     }
     
-    if (self.localBookInfo.downloadedPages < self.localBookInfo.totalPages ) {
+    if (self.localBookInfo.downloadedPages < self.localBookInfo.totalPages) {
         [self downloadBookTillTopNPages];
     }
     
@@ -195,8 +201,8 @@ static const float kVerticalScale = 1.0;
     int lastPageToDownload = MIN(self.localBookInfo.downloadedPages  + kNumPagesNonFirstDownload, self.localBookInfo.totalPages);
     
     [[BRDBookDownloader sharedObject] downloadBook:self.localBookKey
-                                         startPage:self.localBookInfo.downloadedPages
-                                           endPage:lastPageToDownload
+                                         startPage:self.localBookInfo.downloadedPages + 1
+                                           endPage:lastPageToDownload + 1
                                  withProgressBlock:^(BOOL finished, NSError *error, float percent) {
         if (finished) {
             if (error != nil) {
@@ -211,6 +217,12 @@ static const float kVerticalScale = 1.0;
                 self.localBookInfo.downloadedPages = lastPageToDownload;
                 
                 [[BRDBookShuff sharedObject] updateBook:self.localBookInfo forKey:self.localBookKey];
+                
+                if ([_spinner isAnimating]) {
+                    [_spinner stopAnimating];
+                    [self InitializeFromCurrentPage:YES];
+                }
+                
                 [self downloadBookTillTopNPages];
             }
         }
@@ -223,7 +235,7 @@ static const float kVerticalScale = 1.0;
         [view removeFromSuperview];
     }
     
-    NSUInteger numPages = self.localBookInfo.downloadedPages;
+    NSUInteger numPages = MIN(self.localBookInfo.downloadedPages + 1, self.localBookInfo.totalPages);
     
     // 将ScrollView的高宽设置为与屏幕一致。
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -307,19 +319,6 @@ static const float kVerticalScale = 1.0;
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"scrollViewDidScroll begin");
-    int totalPages = self.localBookInfo.totalPages;
-    int downloadedPages = self.localBookInfo.downloadedPages;
-    
-    if (self.currentPage < self.viewControllers.count - 1) {
-        // DO nothing
-    } else if (self.currentPage < downloadedPages - 1) {
-        [self InitializeFromCurrentPage:NO];
-    } else if (self.currentPage < totalPages - 1) {
-        // Waiting for more pages to download
-    }
-    
-    
     ScrollDirection scrollDirection;
     if (self.lastContentOffset > scrollView.contentOffset.x) {
         self.scrollToLeft = true;
@@ -361,8 +360,27 @@ static const float kVerticalScale = 1.0;
          return;
          }*/
     } else {
+        int totalPages = self.localBookInfo.totalPages;
+        int downloadedPages = self.localBookInfo.downloadedPages;
+        
         self.currentPage = page;
         NSLog(@"current page: %d", page);
+
+        if (self.viewControllers.count == totalPages) {
+            // DO nothing
+        } else if (self.currentPage + 1 == self.viewControllers.count ) {
+            if (self.viewControllers.count <= downloadedPages) {
+                [self InitializeFromCurrentPage:NO];
+            } else {
+                // Waiting for more pages to download
+                [_spinner startAnimating];
+                if (kDelayDownloadTillEndofPreview) {
+                    [self downloadBookTillTopNPages];
+                }
+                return;
+            }
+        }
+
         [self gotoPage:YES];
     }
     // a possible optimization would be to unload the views+controllers which are no longer visible
@@ -371,6 +389,10 @@ static const float kVerticalScale = 1.0;
 - (void)gotoPage:(BOOL) pageHasChanged
 {
     NSInteger page = self.currentPage;
+    
+    if (pageHasChanged) {
+        [_spinner stopAnimating];
+    }
     
     // load the visible page and the page on either side of it (to avoid flashes when the user starts scrolling)
     if (page > 0) {

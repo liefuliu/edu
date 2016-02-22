@@ -120,15 +120,8 @@
           toDirectory:(NSString*) directoryPath
          forTopNPages:(int) topNPages
     withProgressBlock:(void (^)(BOOL finished, NSError* error, float percent)) block {
-    [self downloadBook:bookId toDirectory:directoryPath startPage:0 endPage:topNPages
+    [self downloadBook:bookId toDirectory:directoryPath startPage:1 endPage:topNPages+1
      withProgressBlock:block];
-}
-
-+ (BOOL) isPage: (PFObject*) object
-         inTopN: (int) topN {
-    NSString* typeString = (NSString*)object[kBookImageTableTypeColumn];
-    NSString* pageNumberString = (NSString*)object[kBookImageTablePageNumberColumn];
-    return [BRDBookDownloader isPage:object inRangeStartWith:0 endBy:topN];
 }
 
 + (BOOL) isPage: (PFObject*) object

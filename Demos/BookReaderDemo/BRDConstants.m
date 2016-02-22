@@ -21,5 +21,7 @@ NSString* const kBookImageTablePageNumberColumn = @"pageNumber";
 NSString* const kBookImageTableContentColumn = @"pageContent";
 NSString* const kBookImageTableBookIdColumn = @"bookName";
 
-int const kNumPagesFirstDownload = 2;
-int const kNumPagesNonFirstDownload = 2;
+int const kNumPagesFirstDownload = 4;
+int const kNumPagesNonFirstDownload = 4;
+
+BOOL const kDelayDownloadTillEndofPreview = NO;
