@@ -8,7 +8,7 @@
 
 #import "BRDBookLister.h"
 #import "BRDBookSummary.h"
-
+#import "BRDConstants.h"
 #import "BRDListedBook.h"
 #import <Parse/Parse.h>
 
@@ -20,9 +20,6 @@
 
 // TODO(liefuliu): move to BRDConstants.h
 static const int MAX_BOOK_LIST = 1000;
-static const int kTypeImage = 1;
-static const int kTypeAudio = 2;
-static const int kTypeTranslation = 3;
 
 @implementation BRDBookLister
 
@@ -57,11 +54,10 @@ static const int kTypeTranslation = 3;
                              to: (NSDictionary**) summaryInfo {
         PFQuery *query = [PFQuery queryWithClassName:@"BookImage"];
         
-    [[[query whereKey:@"bookName" containedIn:arrayOfBooks]
-         whereKey:@"pageNumber" equalTo:@"1"]
-     whereKey:@"type" equalTo:@(kTypeImage).stringValue];
+    [[query whereKey:@"bookName" containedIn:arrayOfBooks]
+     whereKey:@"type" equalTo:@(kFileTypeCover).stringValue];
     
-        NSArray* objects = [query findObjects];
+    NSArray* objects = [query findObjects];
     
     *summaryInfo = [[NSMutableDictionary alloc] init];
     

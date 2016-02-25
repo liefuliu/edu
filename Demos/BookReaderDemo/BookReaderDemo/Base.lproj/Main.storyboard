@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jXS-Kq-crQ" id="djE-l3-hqG">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -104,11 +104,11 @@
             </objects>
             <point key="canvasLocation" x="-379" y="3261"/>
         </scene>
-        <!--绘本集-->
+        <!--绘本馆-->
         <scene sceneID="bYe-Nb-Bnd">
             <objects>
                 <navigationController id="iNh-QC-R9L" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="绘本集" id="YUB-IM-sY8"/>
+                    <tabBarItem key="tabBarItem" title="绘本馆" id="YUB-IM-sY8"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bDM-TB-vZj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

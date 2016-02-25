@@ -82,7 +82,7 @@ NSTimer* _myTimer;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    self.title = @"绘本集";
+    self.title = @"绘本馆";
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
     [self.navigationItem setRightBarButtonItem:cancelButton];
     

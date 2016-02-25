@@ -14,6 +14,8 @@ enum FileType {
     kAudio = 2,
     
     kTranslation = 3,
+    
+    kCover = 4,
 };
 
 @interface FilePathUtil : NSObject

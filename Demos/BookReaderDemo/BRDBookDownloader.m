@@ -130,7 +130,8 @@
     NSString* typeString = (NSString*)object[kBookImageTableTypeColumn];
     NSString* pageNumberString = (NSString*)object[kBookImageTablePageNumberColumn];
     
-    if ([typeString intValue] == kFileTypeTrans) {
+    if ([typeString intValue] == kFileTypeTrans ||
+        [typeString intValue] == kFileTypeCover) {
         return YES;
     }
     

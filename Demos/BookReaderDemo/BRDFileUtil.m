@@ -35,8 +35,12 @@
 
 
 + (NSData*) getBookCoverImage: (NSString*) bookKey {
-    return [BRDFileUtil getBookImage:bookKey
-                             onPage:0];
+    NSString* documentsDirectory = [BRDPathUtil applicationDocumentsDirectoryPath];
+    NSString* fileName = [NSString stringWithFormat:@"%@-cover.jpg",
+                          bookKey]; // 绘本页从1开始计数。
+    
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:fileName];
+    return [NSData dataWithContentsOfFile:filePath];
 }
 
 + (NSData*) getBookImage: (NSString*) bookKey

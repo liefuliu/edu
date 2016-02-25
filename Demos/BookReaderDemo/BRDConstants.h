@@ -15,6 +15,7 @@ extern NSString* const kDownloadedBookKeyString;
 extern int const kFileTypeImage;
 extern int const kFileTypeAudio;
 extern int const kFileTypeTrans;
+extern int const kFileTypeCover;
 
 
 extern NSString* const kBookImageTableTypeColumn;

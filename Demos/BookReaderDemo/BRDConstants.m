@@ -15,6 +15,7 @@ NSString* const kDownloadedBookKeyString = @"downloaded_book_key_v2";
 int const kFileTypeImage = 1;
 int const kFileTypeAudio = 2;
 int const kFileTypeTrans = 3;
+int const kFileTypeCover = 4;
 
 NSString* const kBookImageTableTypeColumn = @"type";
 NSString* const kBookImageTablePageNumberColumn = @"pageNumber";

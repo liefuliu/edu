@@ -25,10 +25,13 @@
     NSArray *bits = [fileName componentsSeparatedByString: @"."];
     NSString* fileExt = bits[[bits count] - 1];
     
+    
     if ([fileExt isEqualToString:@"mp3"]) {
         return kAudio;
     } else if ([fileExt isEqualToString:@"txt"]){
         return kTranslation;
+    } else if ([fileName containsString:@"-cover."]){
+        return kCover;
     } else {
         return kImage;
     }
