@@ -88,8 +88,13 @@ const float progressSubViewRatio = 0.6;
 
 - (void) updateStatus:(int) percent {
     if (percent < 100) {
-        m_testView.percent = percent;
-        [m_testView setNeedsDisplay];
+        while (m_testView.percent < percent) {
+            m_testView.percent++;
+            // m_testView.percent = percent;
+            if (m_testView.percent % 5 == 0) {
+                [m_testView setNeedsDisplay];
+            }
+        }
     } else {
         [m_testView setHidden:YES];
     }

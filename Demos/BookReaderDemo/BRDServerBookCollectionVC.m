@@ -273,7 +273,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         dispatch_async(dispatch_get_main_queue(),^ {
             // [cell.imageView setImage:cellImage];
             _bookList = arrayOfBooks;
-            [_indicatorView stopAnimating];
             
             [self tryLoadBookImages];
         } );
@@ -282,6 +281,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 - (void) tryLoadBookImages {
+    NSLog(@"tryLoadBookImages");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         BRDBookLister* bookLister = [[BRDBookLister alloc] init];
         __block NSDictionary* bookSummaryInfo;
@@ -302,7 +302,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             // [cell.imageView setImage:cellImage];
             _bookCoverImages = bookSummaryInfo;
             
+            [_indicatorView stopAnimating];
             [self.collectionView reloadData];
+             NSLog(@"finished tryLoadBookImages");
         } );
         
     });
