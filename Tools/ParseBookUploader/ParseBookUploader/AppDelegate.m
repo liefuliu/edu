@@ -9,6 +9,9 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 
+
+#import <AVOSCloud/AVOSCloud.h>
+
 @interface AppDelegate ()
 
 @end
@@ -28,6 +31,19 @@
     PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
     testObject[@"foo10"] = @"bar10";
     [testObject saveInBackground];
+    
+    
+    [AVOSCloud setApplicationId:@"tBAtpm2DzImtaakvzHVxEWvX-gzGzoHsz"
+                      clientKey:@"GAPD7s4yhbODKljGsRNpKf7M"];
+    
+    
+    AVObject *post = [AVObject objectWithClassName:@"TestObject"];
+    [post setObject:@"Hi World!" forKey:@"words"];
+    [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            // 保存成功了！
+        }
+    }];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)aNotification {
