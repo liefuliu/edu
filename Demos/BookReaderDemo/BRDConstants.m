@@ -11,6 +11,8 @@
 NSString* const kNSDefaultsFirstLaunch = @"first_launch";
 NSString* const kNSDefaultsFirstPageLoad = @"first_page_load";
 NSString* const kDownloadedBookKeyString = @"downloaded_book_key_v2";
+NSString* const kBookStatusKeyString = @"book_status_key";
+NSString* const kCachedBooksKey = @"book_cache_key";
 
 int const kFileTypeImage = 1;
 int const kFileTypeAudio = 2;
@@ -26,3 +28,5 @@ int const kNumPagesFirstDownload = 4;
 int const kNumPagesNonFirstDownload = 4;
 
 BOOL const kDelayDownloadTillEndofPreview = NO;
+
+float const kTimeoutBookFirstLoad = 5.0;

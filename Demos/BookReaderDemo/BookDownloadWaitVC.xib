@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookDownloadWaitVC">
             <connections>
+                <outlet property="buttonCancel" destination="DhI-1E-LB8" id="4go-O7-jgq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,10 +22,22 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DhI-1E-LB8">
+                    <rect key="frame" x="277" y="524" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1iL-Ur-IXF"/>
+                        <constraint firstAttribute="width" constant="80" id="rcI-6J-AAJ"/>
+                    </constraints>
+                    <state key="normal" title="返回">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="eZ7-4u-Dwc" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Aqn-gF-zYy"/>
+                <constraint firstAttribute="bottom" secondItem="DhI-1E-LB8" secondAttribute="bottom" constant="150" id="IVo-b8-RNO"/>
+                <constraint firstItem="DhI-1E-LB8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="kIB-Gs-v9d"/>
                 <constraint firstItem="eZ7-4u-Dwc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="52" id="uEd-ye-lEm"/>
             </constraints>
             <point key="canvasLocation" x="479" y="439"/>

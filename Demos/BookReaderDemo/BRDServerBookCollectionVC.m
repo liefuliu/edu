@@ -14,6 +14,7 @@
 #import "BRDBookSummary.h"
 #import "BRDConstants.h"
 #import "BRDListedBook.h"
+#import "BRDCachedBooks.h"
 
 @interface BRDServerBookCollectionVC ()
 
@@ -28,6 +29,8 @@ static NSString * const reuseIdentifier = @"Cell";
 
 
 NSArray* _bookList;
+
+NSTimer* _firstLoadingTimer;
 NSDictionary* _bookCoverImages;
 
 UIActivityIndicatorView *_indicatorView;
@@ -86,6 +89,7 @@ NSTimer* _myTimer;
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
     [self.navigationItem setRightBarButtonItem:cancelButton];
     
+    [self loadBookListInLastVisit];
     [self tryLoadBookList];
 }
 
@@ -93,7 +97,7 @@ NSTimer* _myTimer;
 - (void) startRefresh  {
     NSLog(@"north star");
     [self tryLoadBookList];
-    [self.refreshControl endRefreshing];
+    
 }
 
 - (void)doneApplication:(UIBarButtonItem *)sender
@@ -221,6 +225,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookId]];
             waitingVC.delegate = self;
             [self.navigationController presentViewController:waitingVC animated:nil completion:nil];
+            //[self.navigationController pushViewController:waitingVC animated:nil];
         }
     }
 }
@@ -250,8 +255,28 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
 }
 
+#pragma mark initialize the view
+- (void) loadBookListInLastVisit {
+    BRDCachedBooks* cachedBooks;
+    if ([[BRDBookShuff sharedObject] getCachedBooks:&cachedBooks]) {
+        _bookList = cachedBooks.bookList;
+        _bookCoverImages = cachedBooks.bookCoverImages;
+    }
+}
+
+- (void) cancelLoading {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"下载超时，请检查网络后向下滑动刷新。" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
+    [alert show];
+    [_indicatorView stopAnimating];
+    [self.refreshControl endRefreshing];
+    return;
+
+}
+
 // TODO(liefuliu): Set time out for tryLoadBoookList, and throw an alert when time out.
 -(void) tryLoadBookList {
+    _firstLoadingTimer = [NSTimer scheduledTimerWithTimeInterval:kTimeoutBookFirstLoad target:self selector:@selector(cancelLoading) userInfo:nil repeats:NO];
+    
     NSLog(@"tryLoadBookList");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         
@@ -292,18 +317,20 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         }
         
         [bookLister getSummaryInfoForBooks:arrayOfBookId to:&bookSummaryInfo];
-        /*
-         for (NSString* bookName in arrayOfBooks) {
-         NSLog(@"book name:%@", bookName);
-         }*/
         
         //we get the main thread because drawing must be done in the main thread always
         dispatch_async(dispatch_get_main_queue(),^ {
             // [cell.imageView setImage:cellImage];
             _bookCoverImages = bookSummaryInfo;
             
+            BRDCachedBooks* cachedBooks = [[BRDCachedBooks alloc] initWithBookList:_bookList withCovers:_bookCoverImages];
+            [[BRDBookShuff sharedObject] setCachedBooks:cachedBooks];
+            
             [_indicatorView stopAnimating];
+            [self.refreshControl endRefreshing];
+
             [self.collectionView reloadData];
+            [_firstLoadingTimer invalidate];
              NSLog(@"finished tryLoadBookImages");
         } );
         

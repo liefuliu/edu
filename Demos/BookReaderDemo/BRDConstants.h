@@ -11,6 +11,8 @@
 extern NSString* const kNSDefaultsFirstLaunch;
 extern NSString* const kNSDefaultsFirstPageLoad;
 extern NSString* const kDownloadedBookKeyString;
+extern NSString* const kBookStatusKeyString;
+extern NSString* const kCachedBooksKey;
 
 extern int const kFileTypeImage;
 extern int const kFileTypeAudio;
@@ -27,3 +29,5 @@ extern int const kNumPagesFirstDownload;
 extern int const kNumPagesNonFirstDownload;
 
 extern BOOL const kDelayDownloadTillEndofPreview;
+
+extern float const kTimeoutBookFirstLoad;

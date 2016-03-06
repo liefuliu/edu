@@ -14,7 +14,7 @@
 
 // TODO(liefuliu):
 // Consolidate this class with LocalBook class, which are doing the same things.
-@interface BRDListedBook : NSObject
+@interface BRDListedBook : NSObject<NSCoding>
 
 @property NSString* bookId;
 @property NSString* bookName;

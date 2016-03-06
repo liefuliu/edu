@@ -181,6 +181,12 @@ static const float kVerticalScale = 1.0;
 {
     if ([sender isEqual:self.lpgr]) {
         if (sender.state == UIGestureRecognizerStateBegan) {
+            LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
+            
+            // When pagination goes too fast, the current page can be more than the total downloaded pages.
+            localBookStatus.pageLastRead = MIN(self.currentPage, self.localBookInfo.downloadedPages - 1);
+            
+            [[BRDBookShuff sharedObject] updateBookStatus:localBookStatus forKey:self.localBookKey];
             [self dismissViewControllerAnimated:YES completion:nil];
             self.viewIsDismissed = YES;
             return;

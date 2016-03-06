@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BRDBookSummary : NSObject
+@interface BRDBookSummary : NSObject <NSCoding>
 
 @property NSData* imageData;
 

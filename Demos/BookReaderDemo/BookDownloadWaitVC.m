@@ -37,6 +37,11 @@ const float progressSubViewRatio = 0.6;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _buttonCancel.layer.borderColor = [UIColor grayColor].CGColor;
+    _buttonCancel.layer.borderWidth = 1.0;
+    _buttonCancel.layer.cornerRadius = 5;
+    _buttonCancel.hidden = YES;
+    
     CGRect subViewFrame;
     subViewFrame.size.height = [[UIScreen mainScreen] bounds].size.height * progressSubViewRatio;
     subViewFrame.size.width = [[UIScreen mainScreen] bounds].size.width * progressSubViewRatio;

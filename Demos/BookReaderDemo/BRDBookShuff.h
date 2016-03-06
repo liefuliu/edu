@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 #import "LocalBook.h"
+#import "LocalBookStatus.h"
 #import "BRDBookSummary.h"
+#import "BRDCachedBooks.h"
 
 @interface BRDBookShuff : NSObject
 
@@ -26,6 +28,17 @@
 - (LocalBook*) getBook: (NSString*) bookKey;
 
 - (NSArray*) getAllBookKeys;
+
+// TODO: consider to move this function to another class
+- (void) updateBookStatus: (LocalBookStatus*) localBookStatus
+                   forKey: (NSString*) bookKey;
+
+- (LocalBookStatus*) getBookStatus: (NSString*) bookKey;
+
+// Returns false if no books are cached.
+- (BOOL) getCachedBooks:(BRDCachedBooks**) cachedBooks;
+
+- (void) setCachedBooks:(BRDCachedBooks*) cachedBooks;
 
 + (id) sharedObject;
 

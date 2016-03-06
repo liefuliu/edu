@@ -11,4 +11,21 @@
 @implementation BRDBookSummary
 
 
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super init];
+    if( self )
+    {
+        self.imageData = (NSData*)[aDecoder decodeObjectForKey:@"imageData"];
+        
+    }
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.imageData forKey:@"imageData"];}
+
+
 @end

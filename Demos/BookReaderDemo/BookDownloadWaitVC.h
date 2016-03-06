@@ -20,4 +20,6 @@
 
 - (id) initWithBookKey: (NSString*) bookKey;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonCancel;
+
 @end
