@@ -31,6 +31,8 @@
 		6D3AB09D1C4CA6F100FE1B5C /* FilePathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */; };
 		6DB499B21C8CD6DE001F048B /* AVOSCloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DB499B11C8CD6DE001F048B /* AVOSCloud.framework */; };
 		6DB499B31C8CD6DE001F048B /* AVOSCloud.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6DB499B11C8CD6DE001F048B /* AVOSCloud.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		6DB499B61C8CD7EB001F048B /* BUConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499B51C8CD7EB001F048B /* BUConstants.m */; };
+		6DB499B91C8CD82D001F048B /* BUConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499B81C8CD82D001F048B /* BUConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,10 @@
 		6D3AB09B1C4CA6F100FE1B5C /* FilePathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePathUtil.h; sourceTree = "<group>"; };
 		6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePathUtil.m; sourceTree = "<group>"; };
 		6DB499B11C8CD6DE001F048B /* AVOSCloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AVOSCloud.framework; sourceTree = "<group>"; };
+		6DB499B41C8CD7EB001F048B /* BUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUConstants.h; sourceTree = "<group>"; };
+		6DB499B51C8CD7EB001F048B /* BUConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUConstants.m; sourceTree = "<group>"; };
+		6DB499B71C8CD82D001F048B /* BUConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BUConfig.h; sourceTree = "<group>"; };
+		6DB499B81C8CD82D001F048B /* BUConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BUConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +177,10 @@
 				6D3AB0521C4C0E4000FE1B5C /* Supporting Files */,
 				6D3AB09B1C4CA6F100FE1B5C /* FilePathUtil.h */,
 				6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */,
+				6DB499B41C8CD7EB001F048B /* BUConstants.h */,
+				6DB499B51C8CD7EB001F048B /* BUConstants.m */,
+				6DB499B71C8CD82D001F048B /* BUConfig.h */,
+				6DB499B81C8CD82D001F048B /* BUConfig.m */,
 			);
 			path = ParseBookUploader;
 			sourceTree = "<group>";
@@ -352,6 +362,8 @@
 			files = (
 				6D3AB09D1C4CA6F100FE1B5C /* FilePathUtil.m in Sources */,
 				6D3AB0571C4C0E4000FE1B5C /* ViewController.m in Sources */,
+				6DB499B91C8CD82D001F048B /* BUConfig.m in Sources */,
+				6DB499B61C8CD7EB001F048B /* BUConstants.m in Sources */,
 				6D3AB0541C4C0E4000FE1B5C /* main.m in Sources */,
 				6D3AB0511C4C0E4000FE1B5C /* AppDelegate.m in Sources */,
 			);

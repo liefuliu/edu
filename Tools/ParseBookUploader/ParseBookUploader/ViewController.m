@@ -10,6 +10,10 @@
 #import "FilePathUtil.h"
 #import <Parse/Parse.h>
 
+#import <AVOSCloud/AVOSCloud.h>
+#import "BUConfig.h"
+#import "BUConstants.h"
+
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -109,27 +113,60 @@
 
 - (BOOL) uploadFileToParse: (NSString*) filePath
              withSessionId: (NSString*) sessionId {
+    
+    
     NSString* theFileName = [filePath lastPathComponent];
-
     NSData* data = [NSData dataWithContentsOfFile:filePath];
+    NSString* serverFileName = [NSString stringWithFormat:@"%@%@", sessionId, theFileName];
     
-    NSString* parseFileName = [NSString stringWithFormat:@"%@%@", sessionId, theFileName];
-    PFFile* file = [PFFile fileWithName:parseFileName data:data];
-    if (![file save]) {
-        return NO;
+    BOOL completionStatus = NO;
+    if ([BUConfig getBackendToUse] == kBackendParse) {
+        PFFile* file = [PFFile fileWithName:serverFileName data:data];
+        if (![file save]) {
+            return NO;
+        }
+        
+        PFObject *bookPageObject = [PFObject objectWithClassName:@"BookImage"];
+        bookPageObject[@"bookName"] = [FilePathUtil getBookName:theFileName];
+        int fileType = [FilePathUtil getFileType:theFileName];
+        bookPageObject[@"type"] = [NSString stringWithFormat:@"%d",fileType];
+        if (fileType == (int)kImage || fileType == (int) kAudio) {
+            int pageNumber = [FilePathUtil getPageNumber:theFileName];
+            bookPageObject[@"pageNumber"] = [NSString stringWithFormat:@"%d", pageNumber];
+        }
+        
+        bookPageObject[@"pageContent"] = file;
+        completionStatus = [bookPageObject save];
+    } else if ([BUConfig getBackendToUse] == kBackendLeanCloud) {
+        /*
+                  */
+        AVFile* file = [AVFile fileWithName:serverFileName data:data];
+        if (![file save]) {
+            return NO;
+        }
+        
+        AVObject *bookPageObject = [AVObject objectWithClassName:@"BookImage"];
+        bookPageObject[@"bookId"] = [FilePathUtil getBookName:theFileName];
+        int fileType = [FilePathUtil getFileType:theFileName];
+        bookPageObject[@"type"] = [NSString stringWithFormat:@"%d",fileType];
+        if (fileType == (int)kImage || fileType == (int) kAudio) {
+            int pageNumber = [FilePathUtil getPageNumber:theFileName];
+            bookPageObject[@"pageNumber"] = [NSString stringWithFormat:@"%d", pageNumber];
+        }
+        
+        bookPageObject[@"pageContent"] = file;
+        completionStatus = [bookPageObject save];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
+                                         defaultButton:@"OK" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          @"meiyou shixian"];
+        
+        [alert runModal];
+        completionStatus = NO;
     }
     
-    PFObject *bookPageObject = [PFObject objectWithClassName:@"BookImage"];
-    bookPageObject[@"bookName"] = [FilePathUtil getBookName:theFileName];
-    int fileType = [FilePathUtil getFileType:theFileName];
-    bookPageObject[@"type"] = [NSString stringWithFormat:@"%d",fileType];
-    if (fileType == (int)kImage || fileType == (int) kAudio) {
-        int pageNumber = [FilePathUtil getPageNumber:theFileName];
-        bookPageObject[@"pageNumber"] = [NSString stringWithFormat:@"%d", pageNumber];
-    }
-    
-    bookPageObject[@"pageContent"] = file;
-    return [bookPageObject save];
+    return completionStatus;
 }
 
 - (NSString*) getSessionId {

@@ -7,26 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D369F0F1C7F6676001E317A /* LocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D369F0E1C7F6676001E317A /* LocalBookStatus.m */; };
-		6D369F121C7FEE1D001E317A /* BRDCachedBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D369F111C7FEE1D001E317A /* BRDCachedBooks.m */; };
-		6D66FDFC1C63113B004816C6 /* BRDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FDFB1C63113B004816C6 /* BRDConstants.m */; };
-		6D66FDFF1C659572004816C6 /* BookShuffTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FDFE1C659572004816C6 /* BookShuffTVC.m */; };
-		6D66FE021C65A79C004816C6 /* BRDFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE011C65A79C004816C6 /* BRDFileUtil.m */; };
 		6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */; };
 		6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A987E1C5536B5005EB914 /* BRDListedBook.m */; };
-		6D6A98C71C55545C005EB914 /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A98C61C55545C005EB914 /* CircularProgressView.m */; };
-		6D6A98CB1C5554B2005EB914 /* BookDownloadWaitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A98C91C5554B2005EB914 /* BookDownloadWaitVC.m */; };
-		6D6A98CC1C5554B2005EB914 /* BookDownloadWaitVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A98CA1C5554B2005EB914 /* BookDownloadWaitVC.xib */; };
-		6D6A98D01C574CAE005EB914 /* BRDPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A98CF1C574CAE005EB914 /* BRDPathUtil.m */; };
+		6DB499C21C8CE79B001F048B /* LocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* LocalBookStatus.m */; };
+		6DB499C71C8CE7D5001F048B /* BRDBookDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C41C8CE7D5001F048B /* BRDBookDownloader.m */; };
+		6DB499C81C8CE7D5001F048B /* BRDBookLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C61C8CE7D5001F048B /* BRDBookLister.m */; };
+		6DB499E01C8CE8C0001F048B /* BookDownloadWaitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499CB1C8CE8C0001F048B /* BookDownloadWaitVC.m */; };
+		6DB499E11C8CE8C0001F048B /* BookDownloadWaitVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB499CC1C8CE8C0001F048B /* BookDownloadWaitVC.xib */; };
+		6DB499E21C8CE8C0001F048B /* BookItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499CE1C8CE8C0001F048B /* BookItemCell.m */; };
+		6DB499E31C8CE8C0001F048B /* BookItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB499CF1C8CE8C0001F048B /* BookItemCell.xib */; };
+		6DB499E41C8CE8C0001F048B /* BookPagePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499D11C8CE8C0001F048B /* BookPagePlayerVC.m */; };
+		6DB499E51C8CE8C0001F048B /* BookPagePlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB499D21C8CE8C0001F048B /* BookPagePlayerVC.xib */; };
+		6DB499E61C8CE8C0001F048B /* BookPlayerScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB499D31C8CE8C0001F048B /* BookPlayerScrollVC.xib */; };
+		6DB499E71C8CE8C0001F048B /* BookShuffTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499D51C8CE8C0001F048B /* BookShuffTVC.m */; };
+		6DB499E81C8CE8C0001F048B /* BookTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499D71C8CE8C0001F048B /* BookTableCell.m */; };
+		6DB499E91C8CE8C0001F048B /* BookTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB499D81C8CE8C0001F048B /* BookTableCell.xib */; };
+		6DB499EA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499DA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m */; };
+		6DB499EB1C8CE8C0001F048B /* CircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499DC1C8CE8C0001F048B /* CircularProgressView.m */; };
+		6DB499EC1C8CE8C0001F048B /* ServerBookListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499DE1C8CE8C0001F048B /* ServerBookListCVC.m */; };
+		6DB499ED1C8CE8C0001F048B /* ServerBookListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DB499DF1C8CE8C0001F048B /* ServerBookListCVC.xib */; };
+		6DB499F31C8CE937001F048B /* BookPlayerScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499F21C8CE937001F048B /* BookPlayerScrollVC.m */; };
+		6DB499F91C8CEAD4001F048B /* BRDFileUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499F61C8CEAD4001F048B /* BRDFileUtil.m */; };
+		6DB499FA1C8CEAD4001F048B /* BRDPathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499F81C8CEAD4001F048B /* BRDPathUtil.m */; };
+		6DB499FF1C8CEB17001F048B /* BRDBookSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499FC1C8CEB17001F048B /* BRDBookSummary.m */; };
+		6DB49A001C8CEB17001F048B /* BRDCachedBooks.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499FE1C8CEB17001F048B /* BRDCachedBooks.m */; };
+		6DB49A051C8CEB31001F048B /* BRDConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB49A021C8CEB31001F048B /* BRDConfig.m */; };
+		6DB49A061C8CEB31001F048B /* BRDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB49A041C8CEB31001F048B /* BRDConstants.m */; };
+		6DB49A091C8CEB4B001F048B /* BRDBookShuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB49A081C8CEB4B001F048B /* BRDBookShuff.m */; };
 		6DBA955F1C4DBC0C00B7DFB1 /* stanley-trans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DBA955E1C4DBC0C00B7DFB1 /* stanley-trans.txt */; };
 		6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6DBA95601C4DBEE600B7DFB1 /* oliver-trans.txt */; };
-		6DBA95641C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA95631C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.m */; };
-		6DBA95671C53185400B7DFB1 /* BRDBookLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DBA95661C53185400B7DFB1 /* BRDBookLister.m */; };
-		6DBB16EA1C2E6C3B0095813F /* BookPlayerScrollVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */; };
 		6DE230AC1C6865DC00C5C42D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6DE230AE1C6865DC00C5C42D /* Localizable.strings */; };
 		6DE230B11C69745800C5C42D /* BRDParseBookDownloadPerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B01C69745800C5C42D /* BRDParseBookDownloadPerfTest.m */; };
-		6DE230B41C69773500C5C42D /* BRDBookDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B31C69773500C5C42D /* BRDBookDownloader.m */; };
-		6DE230B71C6F107300C5C42D /* BRDPageDownloadOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B61C6F107300C5C42D /* BRDPageDownloadOperation.m */; };
 		6DF9F1B61C0A390400359200 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B51C0A390400359200 /* main.m */; };
 		6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B81C0A390400359200 /* AppDelegate.m */; };
 		6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BD1C0A390400359200 /* Main.storyboard */; };
@@ -48,21 +59,9 @@
 		6DF9F2151C0CACD300359200 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9F2141C0CACD300359200 /* libz.1.1.3.dylib */; };
 		6DF9F2171C0CACE700359200 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9F2161C0CACE700359200 /* libsqlite3.dylib */; };
 		6DF9F2191C0CAF5A00359200 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DF9F2181C0CAF5A00359200 /* Bolts.framework */; };
-		6DF9F2A41C27443D00359200 /* BookPagePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A21C27443D00359200 /* BookPagePlayerVC.m */; };
-		6DF9F2A51C27443D00359200 /* BookPagePlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A31C27443D00359200 /* BookPagePlayerVC.xib */; };
-		6DF9F2AA1C27821900359200 /* BookTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A81C27821900359200 /* BookTableCell.m */; };
-		6DF9F2AB1C27821900359200 /* BookTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2A91C27821900359200 /* BookTableCell.xib */; };
-		6DF9F2B51C27998000359200 /* BookItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B31C27998000359200 /* BookItemCell.m */; };
-		6DF9F2B61C27998000359200 /* BookItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B41C27998000359200 /* BookItemCell.xib */; };
-		6DF9F2B91C28550700359200 /* BRDConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2B81C28550700359200 /* BRDConfig.m */; };
 		6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F2BF1C2E238100359200 /* LocalBook.m */; };
-		6DF9F3161C2E5C2B00359200 /* BookPlayerScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F3151C2E5C2B00359200 /* BookPlayerScrollVC.m */; };
-		6DFF96D01C5D363B00D589E7 /* BRDBookShuff.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96CF1C5D363A00D589E7 /* BRDBookShuff.m */; };
 		6DFF96D21C5DC3E600D589E7 /* BRDBookShuffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96D11C5DC3E600D589E7 /* BRDBookShuffTests.m */; };
-		6DFF96D51C5DE7B800D589E7 /* BRDBookSummary.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96D41C5DE7B800D589E7 /* BRDBookSummary.m */; };
-		6DFF96D91C5ED3F100D589E7 /* ServerBookListCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF96D71C5ED3F100D589E7 /* ServerBookListCVC.m */; };
-		6DFF96DA1C5ED3F100D589E7 /* ServerBookListCVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DFF96D81C5ED3F100D589E7 /* ServerBookListCVC.xib */; };
-		6DFF972E1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFF972D1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m */; };
+		B20946293B8A6C8672AAE90D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B743D78A687104E9C3E04CAC /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,40 +75,59 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D369F0D1C7F6676001E317A /* LocalBookStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalBookStatus.h; sourceTree = "<group>"; };
-		6D369F0E1C7F6676001E317A /* LocalBookStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalBookStatus.m; sourceTree = "<group>"; };
-		6D369F101C7FEE1D001E317A /* BRDCachedBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDCachedBooks.h; sourceTree = "<group>"; };
-		6D369F111C7FEE1D001E317A /* BRDCachedBooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDCachedBooks.m; sourceTree = "<group>"; };
-		6D66FDFA1C63113B004816C6 /* BRDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDConstants.h; sourceTree = "<group>"; };
-		6D66FDFB1C63113B004816C6 /* BRDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDConstants.m; sourceTree = "<group>"; };
-		6D66FDFD1C659572004816C6 /* BookShuffTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShuffTVC.h; sourceTree = "<group>"; };
-		6D66FDFE1C659572004816C6 /* BookShuffTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShuffTVC.m; sourceTree = "<group>"; };
-		6D66FE001C65A79C004816C6 /* BRDFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDFileUtil.h; sourceTree = "<group>"; };
-		6D66FE011C65A79C004816C6 /* BRDFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtil.m; sourceTree = "<group>"; };
+		636F61C91A75E34B7C07F26F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtilTests.m; sourceTree = "<group>"; };
 		6D6A987D1C5536B5005EB914 /* BRDListedBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDListedBook.h; path = Models/BRDListedBook.h; sourceTree = "<group>"; };
 		6D6A987E1C5536B5005EB914 /* BRDListedBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDListedBook.m; path = Models/BRDListedBook.m; sourceTree = "<group>"; };
-		6D6A98C51C55545C005EB914 /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircularProgressView.h; sourceTree = "<group>"; };
-		6D6A98C61C55545C005EB914 /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircularProgressView.m; sourceTree = "<group>"; };
-		6D6A98C81C5554B2005EB914 /* BookDownloadWaitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDownloadWaitVC.h; sourceTree = "<group>"; };
-		6D6A98C91C5554B2005EB914 /* BookDownloadWaitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDownloadWaitVC.m; sourceTree = "<group>"; };
-		6D6A98CA1C5554B2005EB914 /* BookDownloadWaitVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookDownloadWaitVC.xib; sourceTree = "<group>"; };
-		6D6A98CE1C574CAE005EB914 /* BRDPathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDPathUtil.h; sourceTree = "<group>"; };
-		6D6A98CF1C574CAE005EB914 /* BRDPathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDPathUtil.m; sourceTree = "<group>"; };
+		6DB499C01C8CE79B001F048B /* LocalBookStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalBookStatus.h; path = Models/LocalBookStatus.h; sourceTree = "<group>"; };
+		6DB499C11C8CE79B001F048B /* LocalBookStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalBookStatus.m; path = Models/LocalBookStatus.m; sourceTree = "<group>"; };
+		6DB499C31C8CE7D5001F048B /* BRDBookDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDBookDownloader.h; path = Backend/Parse/BRDBookDownloader.h; sourceTree = "<group>"; };
+		6DB499C41C8CE7D5001F048B /* BRDBookDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDBookDownloader.m; path = Backend/Parse/BRDBookDownloader.m; sourceTree = "<group>"; };
+		6DB499C51C8CE7D5001F048B /* BRDBookLister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDBookLister.h; path = Backend/Parse/BRDBookLister.h; sourceTree = "<group>"; };
+		6DB499C61C8CE7D5001F048B /* BRDBookLister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDBookLister.m; path = Backend/Parse/BRDBookLister.m; sourceTree = "<group>"; };
+		6DB499CA1C8CE8C0001F048B /* BookDownloadWaitVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookDownloadWaitVC.h; path = UI/BookDownloadWaitVC.h; sourceTree = "<group>"; };
+		6DB499CB1C8CE8C0001F048B /* BookDownloadWaitVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookDownloadWaitVC.m; path = UI/BookDownloadWaitVC.m; sourceTree = "<group>"; };
+		6DB499CC1C8CE8C0001F048B /* BookDownloadWaitVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookDownloadWaitVC.xib; path = UI/BookDownloadWaitVC.xib; sourceTree = "<group>"; };
+		6DB499CD1C8CE8C0001F048B /* BookItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookItemCell.h; path = UI/BookItemCell.h; sourceTree = "<group>"; };
+		6DB499CE1C8CE8C0001F048B /* BookItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookItemCell.m; path = UI/BookItemCell.m; sourceTree = "<group>"; };
+		6DB499CF1C8CE8C0001F048B /* BookItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookItemCell.xib; path = UI/BookItemCell.xib; sourceTree = "<group>"; };
+		6DB499D01C8CE8C0001F048B /* BookPagePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPagePlayerVC.h; path = UI/BookPagePlayerVC.h; sourceTree = "<group>"; };
+		6DB499D11C8CE8C0001F048B /* BookPagePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPagePlayerVC.m; path = UI/BookPagePlayerVC.m; sourceTree = "<group>"; };
+		6DB499D21C8CE8C0001F048B /* BookPagePlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookPagePlayerVC.xib; path = UI/BookPagePlayerVC.xib; sourceTree = "<group>"; };
+		6DB499D31C8CE8C0001F048B /* BookPlayerScrollVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookPlayerScrollVC.xib; path = UI/BookPlayerScrollVC.xib; sourceTree = "<group>"; };
+		6DB499D41C8CE8C0001F048B /* BookShuffTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookShuffTVC.h; path = UI/BookShuffTVC.h; sourceTree = "<group>"; };
+		6DB499D51C8CE8C0001F048B /* BookShuffTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookShuffTVC.m; path = UI/BookShuffTVC.m; sourceTree = "<group>"; };
+		6DB499D61C8CE8C0001F048B /* BookTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookTableCell.h; path = UI/BookTableCell.h; sourceTree = "<group>"; };
+		6DB499D71C8CE8C0001F048B /* BookTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookTableCell.m; path = UI/BookTableCell.m; sourceTree = "<group>"; };
+		6DB499D81C8CE8C0001F048B /* BookTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookTableCell.xib; path = UI/BookTableCell.xib; sourceTree = "<group>"; };
+		6DB499D91C8CE8C0001F048B /* BRDServerBookCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDServerBookCollectionVC.h; path = UI/BRDServerBookCollectionVC.h; sourceTree = "<group>"; };
+		6DB499DA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDServerBookCollectionVC.m; path = UI/BRDServerBookCollectionVC.m; sourceTree = "<group>"; };
+		6DB499DB1C8CE8C0001F048B /* CircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CircularProgressView.h; path = UI/CircularProgressView.h; sourceTree = "<group>"; };
+		6DB499DC1C8CE8C0001F048B /* CircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CircularProgressView.m; path = UI/CircularProgressView.m; sourceTree = "<group>"; };
+		6DB499DD1C8CE8C0001F048B /* ServerBookListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerBookListCVC.h; path = UI/ServerBookListCVC.h; sourceTree = "<group>"; };
+		6DB499DE1C8CE8C0001F048B /* ServerBookListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerBookListCVC.m; path = UI/ServerBookListCVC.m; sourceTree = "<group>"; };
+		6DB499DF1C8CE8C0001F048B /* ServerBookListCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ServerBookListCVC.xib; path = UI/ServerBookListCVC.xib; sourceTree = "<group>"; };
+		6DB499F11C8CE937001F048B /* BookPlayerScrollVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPlayerScrollVC.h; path = UI/BookPlayerScrollVC.h; sourceTree = "<group>"; };
+		6DB499F21C8CE937001F048B /* BookPlayerScrollVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPlayerScrollVC.m; path = UI/BookPlayerScrollVC.m; sourceTree = "<group>"; };
+		6DB499F51C8CEAD4001F048B /* BRDFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDFileUtil.h; path = Utils/BRDFileUtil.h; sourceTree = "<group>"; };
+		6DB499F61C8CEAD4001F048B /* BRDFileUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDFileUtil.m; path = Utils/BRDFileUtil.m; sourceTree = "<group>"; };
+		6DB499F71C8CEAD4001F048B /* BRDPathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDPathUtil.h; path = Utils/BRDPathUtil.h; sourceTree = "<group>"; };
+		6DB499F81C8CEAD4001F048B /* BRDPathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDPathUtil.m; path = Utils/BRDPathUtil.m; sourceTree = "<group>"; };
+		6DB499FB1C8CEB17001F048B /* BRDBookSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDBookSummary.h; path = Models/BRDBookSummary.h; sourceTree = "<group>"; };
+		6DB499FC1C8CEB17001F048B /* BRDBookSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDBookSummary.m; path = Models/BRDBookSummary.m; sourceTree = "<group>"; };
+		6DB499FD1C8CEB17001F048B /* BRDCachedBooks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDCachedBooks.h; path = Models/BRDCachedBooks.h; sourceTree = "<group>"; };
+		6DB499FE1C8CEB17001F048B /* BRDCachedBooks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDCachedBooks.m; path = Models/BRDCachedBooks.m; sourceTree = "<group>"; };
+		6DB49A011C8CEB31001F048B /* BRDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDConfig.h; path = Common/BRDConfig.h; sourceTree = "<group>"; };
+		6DB49A021C8CEB31001F048B /* BRDConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDConfig.m; path = Common/BRDConfig.m; sourceTree = "<group>"; };
+		6DB49A031C8CEB31001F048B /* BRDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDConstants.h; path = Common/BRDConstants.h; sourceTree = "<group>"; };
+		6DB49A041C8CEB31001F048B /* BRDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDConstants.m; path = Common/BRDConstants.m; sourceTree = "<group>"; };
+		6DB49A071C8CEB4B001F048B /* BRDBookShuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDBookShuff.h; path = Models/BRDBookShuff.h; sourceTree = "<group>"; };
+		6DB49A081C8CEB4B001F048B /* BRDBookShuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDBookShuff.m; path = Models/BRDBookShuff.m; sourceTree = "<group>"; };
 		6DBA955E1C4DBC0C00B7DFB1 /* stanley-trans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "stanley-trans.txt"; path = "Translations/stanley-trans.txt"; sourceTree = "<group>"; };
 		6DBA95601C4DBEE600B7DFB1 /* oliver-trans.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = "oliver-trans.txt"; path = "Translations/oliver-trans.txt"; sourceTree = "<group>"; };
-		6DBA95621C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnusedBookRepositoryTVC.h; sourceTree = "<group>"; };
-		6DBA95631C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UnusedBookRepositoryTVC.m; sourceTree = "<group>"; };
-		6DBA95651C53185400B7DFB1 /* BRDBookLister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDBookLister.h; sourceTree = "<group>"; };
-		6DBA95661C53185400B7DFB1 /* BRDBookLister.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookLister.m; sourceTree = "<group>"; };
-		6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookPlayerScrollVC.xib; sourceTree = "<group>"; };
 		6DE230AD1C6865DC00C5C42D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DE230AF1C6865E800C5C42D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		6DE230B01C69745800C5C42D /* BRDParseBookDownloadPerfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDParseBookDownloadPerfTest.m; sourceTree = "<group>"; };
-		6DE230B21C69773500C5C42D /* BRDBookDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDBookDownloader.h; sourceTree = "<group>"; };
-		6DE230B31C69773500C5C42D /* BRDBookDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookDownloader.m; sourceTree = "<group>"; };
-		6DE230B51C6F107300C5C42D /* BRDPageDownloadOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDPageDownloadOperation.h; sourceTree = "<group>"; };
-		6DE230B61C6F107300C5C42D /* BRDPageDownloadOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDPageDownloadOperation.m; sourceTree = "<group>"; };
 		6DF9F1B01C0A390400359200 /* BookReaderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookReaderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DF9F1B41C0A390400359200 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6DF9F1B51C0A390400359200 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -137,31 +155,11 @@
 		6DF9F2141C0CACD300359200 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
 		6DF9F2161C0CACE700359200 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6DF9F2181C0CAF5A00359200 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		6DF9F2A11C27443D00359200 /* BookPagePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookPagePlayerVC.h; sourceTree = "<group>"; };
-		6DF9F2A21C27443D00359200 /* BookPagePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookPagePlayerVC.m; sourceTree = "<group>"; };
-		6DF9F2A31C27443D00359200 /* BookPagePlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookPagePlayerVC.xib; sourceTree = "<group>"; };
-		6DF9F2A71C27821900359200 /* BookTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookTableCell.h; sourceTree = "<group>"; };
-		6DF9F2A81C27821900359200 /* BookTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookTableCell.m; sourceTree = "<group>"; };
-		6DF9F2A91C27821900359200 /* BookTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookTableCell.xib; sourceTree = "<group>"; };
-		6DF9F2B21C27998000359200 /* BookItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookItemCell.h; sourceTree = "<group>"; };
-		6DF9F2B31C27998000359200 /* BookItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookItemCell.m; sourceTree = "<group>"; };
-		6DF9F2B41C27998000359200 /* BookItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BookItemCell.xib; sourceTree = "<group>"; };
-		6DF9F2B71C28550700359200 /* BRDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDConfig.h; sourceTree = "<group>"; };
-		6DF9F2B81C28550700359200 /* BRDConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDConfig.m; sourceTree = "<group>"; };
 		6DF9F2BE1C2E238100359200 /* LocalBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalBook.h; path = Models/LocalBook.h; sourceTree = "<group>"; };
 		6DF9F2BF1C2E238100359200 /* LocalBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalBook.m; path = Models/LocalBook.m; sourceTree = "<group>"; };
-		6DF9F3141C2E5C2B00359200 /* BookPlayerScrollVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookPlayerScrollVC.h; path = BookReaderDemo/BookPlayerScrollVC.h; sourceTree = "<group>"; };
-		6DF9F3151C2E5C2B00359200 /* BookPlayerScrollVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookPlayerScrollVC.m; path = BookReaderDemo/BookPlayerScrollVC.m; sourceTree = "<group>"; };
-		6DFF96CE1C5D363A00D589E7 /* BRDBookShuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDBookShuff.h; sourceTree = "<group>"; };
-		6DFF96CF1C5D363A00D589E7 /* BRDBookShuff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookShuff.m; sourceTree = "<group>"; };
 		6DFF96D11C5DC3E600D589E7 /* BRDBookShuffTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookShuffTests.m; sourceTree = "<group>"; };
-		6DFF96D31C5DE7B800D589E7 /* BRDBookSummary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDBookSummary.h; sourceTree = "<group>"; };
-		6DFF96D41C5DE7B800D589E7 /* BRDBookSummary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDBookSummary.m; sourceTree = "<group>"; };
-		6DFF96D61C5ED3F100D589E7 /* ServerBookListCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerBookListCVC.h; sourceTree = "<group>"; };
-		6DFF96D71C5ED3F100D589E7 /* ServerBookListCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerBookListCVC.m; sourceTree = "<group>"; };
-		6DFF96D81C5ED3F100D589E7 /* ServerBookListCVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ServerBookListCVC.xib; sourceTree = "<group>"; };
-		6DFF972C1C5EF70C00D589E7 /* BRDServerBookCollectionVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRDServerBookCollectionVC.h; sourceTree = "<group>"; };
-		6DFF972D1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDServerBookCollectionVC.m; sourceTree = "<group>"; };
+		9A489EEB63A562DEE3619842 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		B743D78A687104E9C3E04CAC /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +178,7 @@
 				6DF9F2191C0CAF5A00359200 /* Bolts.framework in Frameworks */,
 				6DF9F2131C0CACAD00359200 /* SystemConfiguration.framework in Frameworks */,
 				6DF9F2051C0CABD700359200 /* Parse.framework in Frameworks */,
+				B20946293B8A6C8672AAE90D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,28 +192,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3553DEE38D73109A1FDF1C61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				636F61C91A75E34B7C07F26F /* Pods.debug.xcconfig */,
+				9A489EEB63A562DEE3619842 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		376EFED3861F590ADFD0D7B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B743D78A687104E9C3E04CAC /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		6D6A98CD1C574C5E005EB914 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				6D6A98CE1C574CAE005EB914 /* BRDPathUtil.h */,
-				6D6A98CF1C574CAE005EB914 /* BRDPathUtil.m */,
-				6DFF96CE1C5D363A00D589E7 /* BRDBookShuff.h */,
-				6DFF96CF1C5D363A00D589E7 /* BRDBookShuff.m */,
-				6DF9F2B71C28550700359200 /* BRDConfig.h */,
-				6DF9F2B81C28550700359200 /* BRDConfig.m */,
-				6D66FDFA1C63113B004816C6 /* BRDConstants.h */,
-				6D66FDFB1C63113B004816C6 /* BRDConstants.m */,
-				6D66FE001C65A79C004816C6 /* BRDFileUtil.h */,
-				6D66FE011C65A79C004816C6 /* BRDFileUtil.m */,
+				6DB49A011C8CEB31001F048B /* BRDConfig.h */,
+				6DB49A021C8CEB31001F048B /* BRDConfig.m */,
+				6DB49A031C8CEB31001F048B /* BRDConstants.h */,
+				6DB49A041C8CEB31001F048B /* BRDConstants.m */,
 			);
 			name = Common;
 			sourceTree = "<group>";
 		};
-		6DBA955C1C4D779100B7DFB1 /* Unused */ = {
+		6DB499C91C8CE7E6001F048B /* Backend */ = {
 			isa = PBXGroup;
 			children = (
+				6DBA95681C53641C00B7DFB1 /* Parse */,
 			);
-			name = Unused;
+			name = Backend;
+			sourceTree = "<group>";
+		};
+		6DB499F41C8CEAC3001F048B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6DB499F51C8CEAD4001F048B /* BRDFileUtil.h */,
+				6DB499F61C8CEAD4001F048B /* BRDFileUtil.m */,
+				6DB499F71C8CEAD4001F048B /* BRDPathUtil.h */,
+				6DB499F81C8CEAD4001F048B /* BRDPathUtil.m */,
+			);
+			name = Utils;
 			sourceTree = "<group>";
 		};
 		6DBA955D1C4DBBF000B7DFB1 /* Translation */ = {
@@ -229,12 +251,10 @@
 		6DBA95681C53641C00B7DFB1 /* Parse */ = {
 			isa = PBXGroup;
 			children = (
-				6DBA95651C53185400B7DFB1 /* BRDBookLister.h */,
-				6DBA95661C53185400B7DFB1 /* BRDBookLister.m */,
-				6DE230B21C69773500C5C42D /* BRDBookDownloader.h */,
-				6DE230B31C69773500C5C42D /* BRDBookDownloader.m */,
-				6DE230B51C6F107300C5C42D /* BRDPageDownloadOperation.h */,
-				6DE230B61C6F107300C5C42D /* BRDPageDownloadOperation.m */,
+				6DB499C31C8CE7D5001F048B /* BRDBookDownloader.h */,
+				6DB499C41C8CE7D5001F048B /* BRDBookDownloader.m */,
+				6DB499C51C8CE7D5001F048B /* BRDBookLister.h */,
+				6DB499C61C8CE7D5001F048B /* BRDBookLister.m */,
 			);
 			name = Parse;
 			sourceTree = "<group>";
@@ -242,20 +262,12 @@
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
+				6DB499F41C8CEAC3001F048B /* Utils */,
+				6DB499C91C8CE7E6001F048B /* Backend */,
 				6D6A98CD1C574C5E005EB914 /* Common */,
-				6DBA95681C53641C00B7DFB1 /* Parse */,
-				6DBA955C1C4D779100B7DFB1 /* Unused */,
 				6DF9F2BA1C2E22F500359200 /* Models */,
-				6DF9F2A61C27820C00359200 /* Controls */,
-				6DF9F2A11C27443D00359200 /* BookPagePlayerVC.h */,
-				6DF9F2A21C27443D00359200 /* BookPagePlayerVC.m */,
-				6DF9F2A31C27443D00359200 /* BookPagePlayerVC.xib */,
-				6DF9F3141C2E5C2B00359200 /* BookPlayerScrollVC.h */,
-				6DF9F3151C2E5C2B00359200 /* BookPlayerScrollVC.m */,
-				6DBB16E91C2E6C3B0095813F /* BookPlayerScrollVC.xib */,
+				6DF9F2A61C27820C00359200 /* UI */,
 				6DBA955D1C4DBBF000B7DFB1 /* Translation */,
-				6DF9F2281C27385000359200 /* Image */,
-				6DF9F2271C27383C00359200 /* Audio */,
 				6DF9F1B21C0A390400359200 /* BookReaderDemo */,
 				6DF9F2181C0CAF5A00359200 /* Bolts.framework */,
 				6DF9F2161C0CACE700359200 /* libsqlite3.dylib */,
@@ -273,6 +285,8 @@
 				6DF9F1FF1C0BE63700359200 /* icon-3-120x120.png */,
 				6DF9F1CC1C0A390400359200 /* BookReaderDemoTests */,
 				6DF9F1B11C0A390400359200 /* Products */,
+				3553DEE38D73109A1FDF1C61 /* Pods */,
+				376EFED3861F590ADFD0D7B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,8 +310,6 @@
 				6DF9F1E21C0B82B200359200 /* RecordVC.m */,
 				6DF9F1C21C0A390400359200 /* LaunchScreen.xib */,
 				6DF9F1B31C0A390400359200 /* Supporting Files */,
-				6DBA95621C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.h */,
-				6DBA95631C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.m */,
 			);
 			path = BookReaderDemo;
 			sourceTree = "<group>";
@@ -332,58 +344,52 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6DF9F2271C27383C00359200 /* Audio */ = {
+		6DF9F2A61C27820C00359200 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6DB499F11C8CE937001F048B /* BookPlayerScrollVC.h */,
+				6DB499F21C8CE937001F048B /* BookPlayerScrollVC.m */,
+				6DB499D31C8CE8C0001F048B /* BookPlayerScrollVC.xib */,
+				6DB499CA1C8CE8C0001F048B /* BookDownloadWaitVC.h */,
+				6DB499CB1C8CE8C0001F048B /* BookDownloadWaitVC.m */,
+				6DB499CC1C8CE8C0001F048B /* BookDownloadWaitVC.xib */,
+				6DB499CD1C8CE8C0001F048B /* BookItemCell.h */,
+				6DB499CE1C8CE8C0001F048B /* BookItemCell.m */,
+				6DB499CF1C8CE8C0001F048B /* BookItemCell.xib */,
+				6DB499D01C8CE8C0001F048B /* BookPagePlayerVC.h */,
+				6DB499D11C8CE8C0001F048B /* BookPagePlayerVC.m */,
+				6DB499D21C8CE8C0001F048B /* BookPagePlayerVC.xib */,
+				6DB499D41C8CE8C0001F048B /* BookShuffTVC.h */,
+				6DB499D51C8CE8C0001F048B /* BookShuffTVC.m */,
+				6DB499D61C8CE8C0001F048B /* BookTableCell.h */,
+				6DB499D71C8CE8C0001F048B /* BookTableCell.m */,
+				6DB499D81C8CE8C0001F048B /* BookTableCell.xib */,
+				6DB499D91C8CE8C0001F048B /* BRDServerBookCollectionVC.h */,
+				6DB499DA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m */,
+				6DB499DB1C8CE8C0001F048B /* CircularProgressView.h */,
+				6DB499DC1C8CE8C0001F048B /* CircularProgressView.m */,
+				6DB499DD1C8CE8C0001F048B /* ServerBookListCVC.h */,
+				6DB499DE1C8CE8C0001F048B /* ServerBookListCVC.m */,
+				6DB499DF1C8CE8C0001F048B /* ServerBookListCVC.xib */,
 			);
-			name = Audio;
-			sourceTree = "<group>";
-		};
-		6DF9F2281C27385000359200 /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Image;
-			sourceTree = "<group>";
-		};
-		6DF9F2A61C27820C00359200 /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				6D6A98C51C55545C005EB914 /* CircularProgressView.h */,
-				6D6A98C61C55545C005EB914 /* CircularProgressView.m */,
-				6DF9F2B21C27998000359200 /* BookItemCell.h */,
-				6DF9F2B31C27998000359200 /* BookItemCell.m */,
-				6DF9F2B41C27998000359200 /* BookItemCell.xib */,
-				6DF9F2A71C27821900359200 /* BookTableCell.h */,
-				6DF9F2A81C27821900359200 /* BookTableCell.m */,
-				6DF9F2A91C27821900359200 /* BookTableCell.xib */,
-				6D6A98C81C5554B2005EB914 /* BookDownloadWaitVC.h */,
-				6D6A98C91C5554B2005EB914 /* BookDownloadWaitVC.m */,
-				6D6A98CA1C5554B2005EB914 /* BookDownloadWaitVC.xib */,
-				6DFF96D61C5ED3F100D589E7 /* ServerBookListCVC.h */,
-				6DFF96D71C5ED3F100D589E7 /* ServerBookListCVC.m */,
-				6DFF96D81C5ED3F100D589E7 /* ServerBookListCVC.xib */,
-				6DFF972C1C5EF70C00D589E7 /* BRDServerBookCollectionVC.h */,
-				6DFF972D1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m */,
-				6D66FDFD1C659572004816C6 /* BookShuffTVC.h */,
-				6D66FDFE1C659572004816C6 /* BookShuffTVC.m */,
-			);
-			name = Controls;
+			name = UI;
 			sourceTree = "<group>";
 		};
 		6DF9F2BA1C2E22F500359200 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6DB49A071C8CEB4B001F048B /* BRDBookShuff.h */,
+				6DB49A081C8CEB4B001F048B /* BRDBookShuff.m */,
+				6DB499FB1C8CEB17001F048B /* BRDBookSummary.h */,
+				6DB499FC1C8CEB17001F048B /* BRDBookSummary.m */,
+				6DB499FD1C8CEB17001F048B /* BRDCachedBooks.h */,
+				6DB499FE1C8CEB17001F048B /* BRDCachedBooks.m */,
 				6DF9F2BE1C2E238100359200 /* LocalBook.h */,
 				6DF9F2BF1C2E238100359200 /* LocalBook.m */,
 				6D6A987D1C5536B5005EB914 /* BRDListedBook.h */,
 				6D6A987E1C5536B5005EB914 /* BRDListedBook.m */,
-				6DFF96D31C5DE7B800D589E7 /* BRDBookSummary.h */,
-				6DFF96D41C5DE7B800D589E7 /* BRDBookSummary.m */,
-				6D369F0D1C7F6676001E317A /* LocalBookStatus.h */,
-				6D369F0E1C7F6676001E317A /* LocalBookStatus.m */,
-				6D369F101C7FEE1D001E317A /* BRDCachedBooks.h */,
-				6D369F111C7FEE1D001E317A /* BRDCachedBooks.m */,
+				6DB499C01C8CE79B001F048B /* LocalBookStatus.h */,
+				6DB499C11C8CE79B001F048B /* LocalBookStatus.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -395,9 +401,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6DF9F1D31C0A390400359200 /* Build configuration list for PBXNativeTarget "BookReaderDemo" */;
 			buildPhases = (
+				D2EE58AC88DF2816A94B4BE0 /* Check Pods Manifest.lock */,
 				6DF9F1AC1C0A390400359200 /* Sources */,
 				6DF9F1AD1C0A390400359200 /* Frameworks */,
 				6DF9F1AE1C0A390400359200 /* Resources */,
+				C08C3BA49A8A16067F025B28 /* Embed Pods Frameworks */,
+				A9F6579EBADB9C398099E1D8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -469,18 +478,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DF9F2A51C27443D00359200 /* BookPagePlayerVC.xib in Resources */,
+				6DB499E31C8CE8C0001F048B /* BookItemCell.xib in Resources */,
 				6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */,
-				6DBB16EA1C2E6C3B0095813F /* BookPlayerScrollVC.xib in Resources */,
-				6DF9F2B61C27998000359200 /* BookItemCell.xib in Resources */,
 				6DF9F2031C0BE7AD00359200 /* hqdqz.jpeg in Resources */,
 				6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */,
-				6DF9F2AB1C27821900359200 /* BookTableCell.xib in Resources */,
 				6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */,
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
-				6D6A98CC1C5554B2005EB914 /* BookDownloadWaitVC.xib in Resources */,
+				6DB499E61C8CE8C0001F048B /* BookPlayerScrollVC.xib in Resources */,
+				6DB499E91C8CE8C0001F048B /* BookTableCell.xib in Resources */,
 				6DE230AC1C6865DC00C5C42D /* Localizable.strings in Resources */,
-				6DFF96DA1C5ED3F100D589E7 /* ServerBookListCVC.xib in Resources */,
+				6DB499E51C8CE8C0001F048B /* BookPagePlayerVC.xib in Resources */,
+				6DB499E11C8CE8C0001F048B /* BookDownloadWaitVC.xib in Resources */,
+				6DB499ED1C8CE8C0001F048B /* ServerBookListCVC.xib in Resources */,
 				6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */,
 				6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */,
 				6DBA955F1C4DBC0C00B7DFB1 /* stanley-trans.txt in Resources */,
@@ -496,37 +505,83 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A9F6579EBADB9C398099E1D8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C08C3BA49A8A16067F025B28 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2EE58AC88DF2816A94B4BE0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6DF9F1AC1C0A390400359200 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6DFF96D01C5D363B00D589E7 /* BRDBookShuff.m in Sources */,
+				6DB49A091C8CEB4B001F048B /* BRDBookShuff.m in Sources */,
+				6DB499E01C8CE8C0001F048B /* BookDownloadWaitVC.m in Sources */,
+				6DB499F91C8CEAD4001F048B /* BRDFileUtil.m in Sources */,
+				6DB499FF1C8CEB17001F048B /* BRDBookSummary.m in Sources */,
 				6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */,
-				6DFF96D51C5DE7B800D589E7 /* BRDBookSummary.m in Sources */,
-				6DE230B71C6F107300C5C42D /* BRDPageDownloadOperation.m in Sources */,
-				6DBA95671C53185400B7DFB1 /* BRDBookLister.m in Sources */,
+				6DB499E41C8CE8C0001F048B /* BookPagePlayerVC.m in Sources */,
+				6DB49A061C8CEB31001F048B /* BRDConstants.m in Sources */,
+				6DB49A001C8CEB17001F048B /* BRDCachedBooks.m in Sources */,
+				6DB49A051C8CEB31001F048B /* BRDConfig.m in Sources */,
+				6DB499F31C8CE937001F048B /* BookPlayerScrollVC.m in Sources */,
 				6DF9F1E31C0B82B200359200 /* RecordVC.m in Sources */,
 				6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */,
-				6DF9F2B91C28550700359200 /* BRDConfig.m in Sources */,
-				6DF9F3161C2E5C2B00359200 /* BookPlayerScrollVC.m in Sources */,
-				6D6A98C71C55545C005EB914 /* CircularProgressView.m in Sources */,
-				6DFF972E1C5EF70C00D589E7 /* BRDServerBookCollectionVC.m in Sources */,
-				6D369F0F1C7F6676001E317A /* LocalBookStatus.m in Sources */,
-				6DBA95641C530BBD00B7DFB1 /* UnusedBookRepositoryTVC.m in Sources */,
-				6D66FDFF1C659572004816C6 /* BookShuffTVC.m in Sources */,
+				6DB499C81C8CE7D5001F048B /* BRDBookLister.m in Sources */,
+				6DB499E81C8CE8C0001F048B /* BookTableCell.m in Sources */,
+				6DB499C21C8CE79B001F048B /* LocalBookStatus.m in Sources */,
 				6DF9F1B61C0A390400359200 /* main.m in Sources */,
-				6D6A98CB1C5554B2005EB914 /* BookDownloadWaitVC.m in Sources */,
-				6D66FE021C65A79C004816C6 /* BRDFileUtil.m in Sources */,
-				6DFF96D91C5ED3F100D589E7 /* ServerBookListCVC.m in Sources */,
-				6DF9F2B51C27998000359200 /* BookItemCell.m in Sources */,
-				6DF9F2A41C27443D00359200 /* BookPagePlayerVC.m in Sources */,
+				6DB499EA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m in Sources */,
+				6DB499E71C8CE8C0001F048B /* BookShuffTVC.m in Sources */,
 				6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */,
-				6D369F121C7FEE1D001E317A /* BRDCachedBooks.m in Sources */,
-				6D66FDFC1C63113B004816C6 /* BRDConstants.m in Sources */,
-				6DF9F2AA1C27821900359200 /* BookTableCell.m in Sources */,
-				6DE230B41C69773500C5C42D /* BRDBookDownloader.m in Sources */,
-				6D6A98D01C574CAE005EB914 /* BRDPathUtil.m in Sources */,
+				6DB499EC1C8CE8C0001F048B /* ServerBookListCVC.m in Sources */,
+				6DB499FA1C8CEAD4001F048B /* BRDPathUtil.m in Sources */,
+				6DB499EB1C8CE8C0001F048B /* CircularProgressView.m in Sources */,
+				6DB499C71C8CE7D5001F048B /* BRDBookDownloader.m in Sources */,
+				6DB499E21C8CE8C0001F048B /* BookItemCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -663,6 +718,7 @@
 		};
 		6DF9F1D41C0A390400359200 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 636F61C91A75E34B7C07F26F /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -681,6 +737,7 @@
 		};
 		6DF9F1D51C0A390400359200 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A489EEB63A562DEE3619842 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
