@@ -10,11 +10,12 @@
 #import "ServerBookListCVC.h"
 #import "BookPlayerScrollVC.h"
 #import "BRDBookShuff.h"
-#import "BRDBookLister.h"
 #import "BRDBookSummary.h"
 #import "BRDConstants.h"
 #import "BRDListedBook.h"
 #import "BRDCachedBooks.h"
+
+#import "BRDBackendFactory.h"
 
 @interface BRDServerBookCollectionVC ()
 
@@ -75,9 +76,8 @@ NSTimer* _myTimer;
     /*_myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];*/
     _indicatorView = [self showSimpleActivityIndicatorOnView:self.view];
     
-    
     _refreshControl = [[UIRefreshControl alloc] init];
-    [_refreshControl addTarget:self action:@selector(startRefresh)
+    [_refreshControl addTarget:self action:@selector(dragDownAndRefresh)
               forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:_refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
@@ -86,19 +86,29 @@ NSTimer* _myTimer;
     self.collectionView.dataSource = self;
     
     self.title = @"绘本馆";
-    UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
-    [self.navigationItem setRightBarButtonItem:cancelButton];
+    UIBarButtonItem *exitButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
+    [self.navigationItem setLeftBarButtonItem:exitButton];
+    
+    UIBarButtonItem* refreshButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(startRefresh:)];
+    [self.navigationItem setRightBarButtonItem:refreshButton];
     
     [self loadBookListInLastVisit];
     [self tryLoadBookList];
 }
 
 
-- (void) startRefresh  {
+- (void) startRefresh :(UIBarButtonItem *)sender {
     NSLog(@"north star");
+    [_indicatorView startAnimating];
     [self tryLoadBookList];
     
 }
+
+- (void) dragDownAndRefresh {
+    [self tryLoadBookList];
+}
+
+
 
 - (void)doneApplication:(UIBarButtonItem *)sender
 {
@@ -280,7 +290,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"tryLoadBookList");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         
-        BRDBookLister* bookLister = [[BRDBookLister alloc] init];
+        id<BRDBookLister> bookLister = [BRDBackendFactory getBookLister];
         if (![bookLister connectToServer]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"无法连接到服务器" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
             [alert show];
@@ -308,7 +318,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void) tryLoadBookImages {
     NSLog(@"tryLoadBookImages");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
-        BRDBookLister* bookLister = [[BRDBookLister alloc] init];
+        id<BRDBookLister> bookLister = [BRDBackendFactory getBookLister];
         __block NSDictionary* bookSummaryInfo;
         
         NSMutableArray* arrayOfBookId = [[NSMutableArray alloc] init];

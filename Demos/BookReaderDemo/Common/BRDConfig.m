@@ -23,7 +23,7 @@
 - (id)init {
     if (self = [super init]) {
         _useScrollViewInPagination = true;
-        _backendToUse = kBackendLeanCloud;
+        _backendToUse = kBackendLeanCloud; //kBackendParse;
     }
     return self;
 }

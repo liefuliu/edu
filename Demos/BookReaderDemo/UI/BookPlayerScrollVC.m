@@ -50,7 +50,7 @@
 #import "BRDFileUtil.h"
 #import "BRDPathUtil.h"
 #import "BRDBookShuff.h"
-#import "BRDBookDownloader.h"
+#import "BRDBackendFactory.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
@@ -206,7 +206,7 @@ static const float kVerticalScale = 1.0;
     
     int lastPageToDownload = MIN(self.localBookInfo.downloadedPages  + kNumPagesNonFirstDownload, self.localBookInfo.totalPages);
     
-    [[BRDBookDownloader sharedObject] downloadBook:self.localBookKey
+    [[BRDBackendFactory getBookDownloader] downloadBook:self.localBookKey
                                          startPage:self.localBookInfo.downloadedPages + 1
                                            endPage:lastPageToDownload + 1
                                  withProgressBlock:^(BOOL finished, NSError *error, float percent) {

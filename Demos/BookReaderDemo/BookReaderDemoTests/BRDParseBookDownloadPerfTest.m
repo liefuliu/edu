@@ -8,6 +8,7 @@
 
 #import <XCTest/XCTest.h>
 #import "BRDBookDownloader.h"
+#import "BRDBackendFactory.h"
 
 @interface BRDParseBookDownloadPerfTest : XCTestCase
 
@@ -46,7 +47,7 @@
         NSString* path = [[pathUrl path]stringByAppendingPathComponent:UUID];
         
          dispatch_semaphore_t semaphore = dispatch_semaphore_create(0);
-        [[BRDBookDownloader sharedObject] downloadBook:@"captaincat"
+        [[BRDBackendFactory getBookDownloader] downloadBook:@"captaincat"
                 toDirectory: path
                 forTopNPages: 100
          withProgressBlock:^(BOOL finished, NSError *error, float percent) {

@@ -10,7 +10,7 @@
 #import "CircularProgressView.h"
 #import "BRDPathUtil.h"
 #import "BookPlayerScrollVC.h"
-#import "BRDBookDownloader.h"
+#import "BRDBackendFactory.h"
 #import <Parse/Parse.h>
 
 @interface BookDownloadWaitVC ()
@@ -77,7 +77,7 @@ const float progressSubViewRatio = 0.6;
 
 
 - (void) downloadBooks {
-    [[BRDBookDownloader sharedObject] downloadBook:_bookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
+    [[BRDBackendFactory getBookDownloader] downloadBook:_bookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
             [alert show];

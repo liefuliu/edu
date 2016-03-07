@@ -1,14 +1,15 @@
 
 #import <Foundation/Foundation.h>
-
+#import "BRDBookDownloader.h"
+/*
 @protocol BRDBookDownloaderDelegate
 
 - (void) pageDownloaded: (NSString*) downloadedFile;
 
 @end
+*/
 
-
-@interface BRDBookDownloader : NSObject<BRDBookDownloaderDelegate>
+@interface BRDParseBookDownloader : NSObject<BRDBookDownloader>
 
 
 + (id) sharedObject;

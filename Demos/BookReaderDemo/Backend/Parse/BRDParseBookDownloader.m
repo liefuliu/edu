@@ -1,20 +1,20 @@
 
 
-#import "BRDBookDownloader.h"
+#import "BRDParseBookDownloader.h"
 
 #import "BRDPathUtil.h"
 #import "BRDConstants.h"
 
 #import <Parse/Parse.h>
 
-@interface BRDBookDownloader ()
+@interface BRDParseBookDownloader ()
 @property NSOperationQueue *queue;
 @end
 
-@implementation BRDBookDownloader
+@implementation BRDParseBookDownloader
 
 + (id)sharedObject {
-    static BRDBookDownloader *object = nil;
+    static BRDParseBookDownloader *object = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         object = [[self alloc] init];
@@ -55,7 +55,7 @@
         if (objectsInQuery != nil) {
             NSMutableArray* objectsToDownload = [[NSMutableArray alloc] init];
             for (PFObject *object in objectsInQuery) {
-                if (![BRDBookDownloader isPage:object inRangeStartWith: startPage
+                if (![BRDParseBookDownloader isPage:object inRangeStartWith: startPage
                                endBy: endPage]) {
                     continue;
                 }
@@ -73,7 +73,7 @@
                 NSString* documentPath = [BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
                 
                 // TODO(liefuliu): Check file downloading is succeeded or not.
-                [BRDBookDownloader downloadParseFile:pageContent to:documentPath];
+                [BRDParseBookDownloader downloadParseFile:pageContent to:documentPath];
                 
                 ++downloaded;
                 __block int percent = downloaded * 100 / totalBooks;

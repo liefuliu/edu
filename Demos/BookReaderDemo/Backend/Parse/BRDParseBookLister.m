@@ -6,13 +6,13 @@
 //  Copyright © 2016 SanRenXing. All rights reserved.
 //
 
-#import "BRDBookLister.h"
+#import "BRDParseBookLister.h"
 #import "BRDBookSummary.h"
 #import "BRDConstants.h"
 #import "BRDListedBook.h"
 #import <Parse/Parse.h>
 
-@interface BRDBookLister()
+@interface BRDParseBookLister()
 
 @property NSArray* currentBookList;
 
@@ -21,10 +21,10 @@
 // TODO(liefuliu): move to BRDConstants.h
 static const int MAX_BOOK_LIST = 1000;
 
-@implementation BRDBookLister
+@implementation BRDParseBookLister
 
 + (id)sharedObject {
-    static BRDBookLister *object = nil;
+    static BRDParseBookLister *object = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         object = [[self alloc] init];

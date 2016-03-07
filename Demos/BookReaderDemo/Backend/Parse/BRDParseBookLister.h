@@ -18,7 +18,7 @@
 //     NSArray* secondBatchOfBooks = [bookLister getListOfBooks:100 startFrom:100];
 //     ...
 // }
-@interface BRDBookLister : NSObject
+@interface BRDParseBookLister : NSObject
 
 + (id) sharedObject;
 

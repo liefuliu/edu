@@ -644,13 +644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "-getSummaryInfoForBooks:to:"
-            landmarkType = "5">
+            startingLineNumber = "61"
+            endingLineNumber = "61">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -788,13 +786,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-fetchBookList:"
-            landmarkType = "5">
+            startingLineNumber = "100"
+            endingLineNumber = "100">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -804,13 +800,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-fetchBookList:"
-            landmarkType = "5">
+            startingLineNumber = "103"
+            endingLineNumber = "103">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -820,13 +814,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "-fetchBookList:"
-            landmarkType = "5">
+            startingLineNumber = "119"
+            endingLineNumber = "119">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -836,13 +828,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-fetchBookList:"
-            landmarkType = "5">
+            startingLineNumber = "104"
+            endingLineNumber = "104">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1236,13 +1226,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-fetchBookList:"
-            landmarkType = "5">
+            startingLineNumber = "110"
+            endingLineNumber = "110">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1252,13 +1240,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BRDBookLister.m"
-            timestampString = "478074080.454368"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "-fetchBookList:"
-            landmarkType = "5">
+            startingLineNumber = "109"
+            endingLineNumber = "109">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1268,11 +1254,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "477250587.82033"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "68"
-            endingLineNumber = "68"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1284,11 +1270,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "477250587.82033"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1300,11 +1286,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "476897249.333323"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1316,11 +1302,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "476897249.333323"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1380,11 +1366,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "477251875.796025"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1396,11 +1382,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "477251877.75573"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1412,11 +1398,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDParseBookDownloadPerfTest.m"
-            timestampString = "477254149.527676"
+            timestampString = "479001460.855906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>

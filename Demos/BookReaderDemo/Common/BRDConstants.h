@@ -32,4 +32,6 @@ extern BOOL const kDelayDownloadTillEndofPreview;
 
 extern float const kTimeoutBookFirstLoad;
 
+
+extern int const kBackendParse;
 extern int const kBackendLeanCloud;
