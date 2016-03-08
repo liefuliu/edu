@@ -17,6 +17,9 @@
 
 + (int) getPageNumber:(NSString*) fileName {
     NSArray *bits = [fileName componentsSeparatedByString: @"-"];
+    if ([bits count] < 3) {
+        NSLog(@"fileName is not valie: %@", fileName);
+    }
     NSString* pageString = [(NSString*)bits[2] stringByDeletingPathExtension];
     return [pageString intValue];
 }
@@ -32,8 +35,10 @@
         return kTranslation;
     } else if ([fileName containsString:@"-cover."]){
         return kCover;
-    } else {
+    } else if ([fileExt isEqualToString:@"jpg"]){
         return kImage;
+    } else {
+        return kFileTypeUnknown;
     }
         
 }

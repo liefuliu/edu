@@ -71,7 +71,7 @@
                     NSLog(@"Successfully save the file: %@. Finished %d of %d", file, i+1, [array count]);
                 } else {
                     bool retrySuccess = false;
-                    for (int retry = 0; retry < 2; retry++) {
+                    for (int retry = 0; retry < 10; retry++) {
                         if ([self uploadFileToParse:file withSessionId: sessionId]) {
                             retrySuccess = true;
                             break;
@@ -90,6 +90,13 @@
             
             ++i;
         }
+        
+        NSAlert *alertFinished = [NSAlert alertWithMessageText:@"上传成功"
+                                         defaultButton:@"OK" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          [NSString stringWithFormat:@"总共上传%d个文件。", i]];
+        
+        [alertFinished runModal];
     } else {
         NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
                                          defaultButton:@"OK" alternateButton:nil
@@ -99,6 +106,9 @@
         [alert runModal];
         return;
     }
+    
+    return;
+
 }
 
 - (void)controlTextDidChange:(NSNotification *)notification {

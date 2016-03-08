@@ -40,11 +40,11 @@ static const int MAX_BOOK_LIST = 1000;
              startFrom:(int) pageOffset
                     to:(NSArray**) arrayOfBooks {
     
-    if (self.currentBookList == nil) {
+    //if (self.currentBookList == nil) {
         if (![self fetchBookList:MAX_BOOK_LIST]) {
             return NO;
         }
-    }
+    //}
     
     *arrayOfBooks = [[NSMutableArray alloc] init];
     for (int i = pageOffset; i < MIN(numOfBooks + pageOffset, [self.currentBookList count]); i++) {

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 enum FileType {
+    kFileTypeUnknown = 0,
+    
     kImage = 1,
     
     kAudio = 2,

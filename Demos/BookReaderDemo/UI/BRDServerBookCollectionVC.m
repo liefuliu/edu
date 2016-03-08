@@ -86,8 +86,20 @@ NSTimer* _myTimer;
     self.collectionView.dataSource = self;
     
     self.title = @"绘本馆";
+    /*
     UIBarButtonItem *exitButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
+    // [exitButton setTitle:@"退出"];
     [self.navigationItem setLeftBarButtonItem:exitButton];
+    */
+    
+    UIBarButtonItem *newBackButton =
+    [[UIBarButtonItem alloc] initWithTitle:@"退出"
+                                     style:UIBarButtonItemStyleBordered
+                                    target:self
+                                    action:@selector(doneApplication:)];
+    [[self navigationItem] setLeftBarButtonItem:newBackButton];
+
+    
     
     UIBarButtonItem* refreshButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(startRefresh:)];
     [self.navigationItem setRightBarButtonItem:refreshButton];
@@ -101,7 +113,6 @@ NSTimer* _myTimer;
     NSLog(@"north star");
     [_indicatorView startAnimating];
     [self tryLoadBookList];
-    
 }
 
 - (void) dragDownAndRefresh {
