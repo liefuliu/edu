@@ -51,9 +51,12 @@
 #import "BRDPathUtil.h"
 #import "BRDBookShuff.h"
 #import "BRDBackendFactory.h"
+#import "BookPlayerPopupSubVC.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+
+#import <QuartzCore/QuartzCore.h>
 /*
  static NSString *kNameKey = @"nameKey";
  static NSString *kImageKey = @"imageKey";
@@ -126,6 +129,22 @@ static const float kVerticalScale = 1.0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //DO NOT SUBMIT: remove below.
+    //self.view.autoresizesSubviews = YES;
+    //self.popupSubView.autoresizesSubviews = YES;
+    [self setRoundAngle:self.exitButton];
+    [self setRoundAngle:self.replayButton];
+    [self setRoundAngle:self.resumeButton];
+    [self hidePopupButton:YES];
+    
+    self.popupSubView.hidden = YES;
+    self.buttonMenu.layer.cornerRadius = self.buttonMenu.bounds.size.height/ 15;
+    
+    [self.view bringSubviewToFront:self.buttonMenu];
+    
+    self.buttonMenu.contentVerticalAlignment =UIControlContentVerticalAlignmentCenter;
+    self.buttonMenu.contentHorizontalAlignment =
+    UIControlContentHorizontalAlignmentCenter;
     
     // a page is the width of the scroll view
     self.scrollView1.pagingEnabled = YES;
@@ -172,6 +191,15 @@ static const float kVerticalScale = 1.0;
 }
 
 
+- (void) setRoundAngle:(UIButton*) button {
+    button.layer.cornerRadius = 4;
+    
+    [button.layer setBorderWidth:1.0];
+    [button.layer setBorderColor:[[UIColor whiteColor] CGColor]];
+}
+
+
+
 // 在点击"好的，知道了“以后，初始化页面。
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     [self InitializeFromCurrentPage:YES];
@@ -181,17 +209,22 @@ static const float kVerticalScale = 1.0;
 {
     if ([sender isEqual:self.lpgr]) {
         if (sender.state == UIGestureRecognizerStateBegan) {
-            LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
-            
-            // When pagination goes too fast, the current page can be more than the total downloaded pages.
-            localBookStatus.pageLastRead = MIN(self.currentPage, self.localBookInfo.downloadedPages - 1);
-            
-            [[BRDBookShuff sharedObject] updateBookStatus:localBookStatus forKey:self.localBookKey];
-            [self dismissViewControllerAnimated:YES completion:nil];
-            self.viewIsDismissed = YES;
-            return;
+            [self exitFromCurrentBook];
         }
     }
+}
+
+- (void) exitFromCurrentBook {
+    
+    LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
+    
+    // When pagination goes too fast, the current page can be more than the total downloaded pages.
+    localBookStatus.pageLastRead = MIN(self.currentPage, self.localBookInfo.downloadedPages - 1);
+    
+    [[BRDBookShuff sharedObject] updateBookStatus:localBookStatus forKey:self.localBookKey];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    self.viewIsDismissed = YES;
+    return;
 }
 
 - (void) downloadBookTillTopNPages {
@@ -484,9 +517,83 @@ static const float kVerticalScale = 1.0;
     
 }
 
+
+
 - (IBAction)changePage:(id)sender
 {
     // [self gotoPage:YES];    // YES = animate
 }
+
+
+#pragma popup sub view related
+
+- (IBAction)buttonMenuClicked:(id)sender {
+    [self.player stop];
+    [self hidePopupButton:NO];
+}
+
+- (CGRect) rectInCenter: (CGSize) superViewSize
+               withSize: (CGSize) rectSize {
+    CGRect newRect;
+    newRect.size = rectSize;
+    newRect.origin.x = superViewSize.width / 2 - rectSize.width / 2;
+    
+    newRect.origin.y = superViewSize.height / 2 -
+    rectSize.height / 2;
+    
+    return newRect;
+}
+
+
+- (void) hidePopupButton:(BOOL) hide {
+    if (hide) {
+        [self.popupView removeFromSuperview];
+        self.popupView = nil;
+    } else {
+        [self.view bringSubviewToFront:self.exitButton];
+        
+        [self.view bringSubviewToFront:self.replayButton];
+        
+        [self.view bringSubviewToFront:self.resumeButton];
+        
+        if (self.popupView == nil) {
+            BookPlayerPopupSubVC* location = [[BookPlayerPopupSubVC alloc] initWithNibName:@"BookPlayerPopupSubVC" bundle:[NSBundle mainBundle]];
+            
+            self.popupView.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5f];
+            
+            self.popupView = location.view;
+            //self.popupView.frame = [self rectInCenter:self.view.frame.size withSize:CGSizeMake(300, 100)];
+            self.popupView.frame = self.view.frame;
+            [self.view addSubview:self.popupView];
+            [self hidePopupButton:NO];
+        }
+        
+    }
+    
+    
+    [self.exitButton setHidden:hide];
+    [self.replayButton setHidden:hide];
+    [self.resumeButton setHidden:hide];
+}
+
+- (IBAction)exitButtonClicked:(id)sender {
+    [self exitFromCurrentBook];
+}
+
+- (IBAction)replayButtonClicked:(id)sender {
+    [self hidePopupButton:YES];
+    
+    self.player.currentTime = 0;
+    [self.player play];
+    // Do something here.
+}
+
+- (IBAction)resumeButtonClicked:(id)sender {
+    [self hidePopupButton:YES];
+    [self.player play];
+    // Do something here.
+
+}
+
 
 @end

@@ -7,6 +7,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookPlayerScrollVC">
             <connections>
+                <outlet property="buttonMenu" destination="Z7d-pq-mgy" id="ijc-UU-ean"/>
+                <outlet property="exitButton" destination="4mS-be-cnd" id="tSL-Hx-2T1"/>
+                <outlet property="popupSubView" destination="MBF-0h-YeC" id="Wzr-U4-zWp"/>
+                <outlet property="replayButton" destination="OrH-FD-1wM" id="sBS-pb-s9N"/>
+                <outlet property="resumeButton" destination="1xS-Hm-Bfz" id="unw-jx-WP6"/>
                 <outlet property="scrollView1" destination="Wjy-Yw-ck1" id="deB-by-6cA"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ojr-8O-aPW"/>
             </connections>
@@ -16,18 +21,119 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Yw-ck1">
-                    <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7d-pq-mgy">
+                    <rect key="frame" x="-41" y="-25" width="132" height="120"/>
+                    <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="QDa-kV-SJq"/>
+                        <constraint firstAttribute="width" constant="30" id="W0b-Fe-dDr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonMenuClicked:" destination="-1" eventType="touchUpInside" id="Ckj-g6-ypS"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Yw-ck1">
+                    <rect key="frame" x="172" y="386" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                 </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mS-be-cnd">
+                    <rect key="frame" x="142" y="284" width="50" height="32"/>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="TFM-Hf-lT5"/>
+                        <constraint firstAttribute="height" constant="32" id="eQY-LU-WS3"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="换书">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="exitButtonClicked:" destination="-1" eventType="touchUpInside" id="GNK-OY-qpC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OrH-FD-1wM">
+                    <rect key="frame" x="283" y="285" width="48" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="oAe-Ra-E1c"/>
+                        <constraint firstAttribute="height" constant="30" id="viL-CO-SVH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="重读">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="replayButtonClicked:" destination="-1" eventType="touchUpInside" id="Ovi-OT-RbL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xS-Hm-Bfz">
+                    <rect key="frame" x="409" y="285" width="50" height="30"/>
+                    <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="aW8-LB-O4p"/>
+                        <constraint firstAttribute="width" constant="50" id="cAk-hc-X4x"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="继续">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="resumeButtonClicked:" destination="-1" eventType="touchUpInside" id="oRl-Tv-dQC"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Wjy-Yw-ck1" secondAttribute="bottom" id="4uk-bJ-i25"/>
-                <constraint firstItem="Wjy-Yw-ck1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Kpi-Y7-2JA"/>
-                <constraint firstItem="Wjy-Yw-ck1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="bUf-8p-fke"/>
-                <constraint firstAttribute="trailing" secondItem="Wjy-Yw-ck1" secondAttribute="trailing" id="sZc-bq-hyY"/>
+                <constraint firstAttribute="bottom" secondItem="Wjy-Yw-ck1" secondAttribute="bottom" id="1Q5-TF-xkP"/>
+                <constraint firstItem="Z7d-pq-mgy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Jap-LB-TSc"/>
+                <constraint firstItem="Wjy-Yw-ck1" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Jrw-ES-lHj"/>
+                <constraint firstItem="OrH-FD-1wM" firstAttribute="leading" secondItem="4mS-be-cnd" secondAttribute="trailing" constant="50" id="VsJ-qc-dxJ"/>
+                <constraint firstItem="OrH-FD-1wM" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="YSr-dP-d3A"/>
+                <constraint firstItem="1xS-Hm-Bfz" firstAttribute="top" secondItem="4mS-be-cnd" secondAttribute="top" id="gHE-1l-4my"/>
+                <constraint firstItem="Wjy-Yw-ck1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="mEG-Hd-Tdd"/>
+                <constraint firstAttribute="trailing" secondItem="Wjy-Yw-ck1" secondAttribute="trailing" id="nyW-XS-q7A"/>
+                <constraint firstItem="Z7d-pq-mgy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="to4-M5-K5n"/>
+                <constraint firstItem="OrH-FD-1wM" firstAttribute="top" secondItem="4mS-be-cnd" secondAttribute="top" id="wEL-Hh-6Xf"/>
+                <constraint firstItem="OrH-FD-1wM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="wXz-WA-DnW"/>
+                <constraint firstItem="1xS-Hm-Bfz" firstAttribute="leading" secondItem="OrH-FD-1wM" secondAttribute="trailing" constant="50" id="wvo-cQ-Y1O"/>
             </constraints>
             <point key="canvasLocation" x="411" y="226"/>
+        </view>
+        <view contentMode="scaleToFill" id="MBF-0h-YeC">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xSv-Cb-7KE">
+                    <rect key="frame" x="285" y="285" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="重读"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ysp-gX-tqs">
+                    <rect key="frame" x="205" y="285" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="换书"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jj6-LC-8CU">
+                    <rect key="frame" x="365" y="285" width="30" height="30"/>
+                    <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="继续"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="xSv-Cb-7KE" firstAttribute="leading" secondItem="ysp-gX-tqs" secondAttribute="trailing" constant="50" id="9L1-u5-uXj"/>
+                <constraint firstItem="xSv-Cb-7KE" firstAttribute="centerX" secondItem="MBF-0h-YeC" secondAttribute="centerX" id="Cjf-A9-1dQ"/>
+                <constraint firstItem="xSv-Cb-7KE" firstAttribute="top" secondItem="jj6-LC-8CU" secondAttribute="top" id="IxX-q7-P09"/>
+                <constraint firstItem="xSv-Cb-7KE" firstAttribute="centerY" secondItem="MBF-0h-YeC" secondAttribute="centerY" id="ODM-Kd-ZDz"/>
+                <constraint firstItem="jj6-LC-8CU" firstAttribute="top" secondItem="ysp-gX-tqs" secondAttribute="top" id="QDO-cW-P5Z"/>
+                <constraint firstItem="xSv-Cb-7KE" firstAttribute="top" secondItem="ysp-gX-tqs" secondAttribute="top" id="cAd-cJ-2VS"/>
+                <constraint firstItem="jj6-LC-8CU" firstAttribute="leading" secondItem="xSv-Cb-7KE" secondAttribute="trailing" constant="50" id="nsW-wJ-OQs"/>
+            </constraints>
+            <point key="canvasLocation" x="411" y="881"/>
         </view>
     </objects>
 </document>
