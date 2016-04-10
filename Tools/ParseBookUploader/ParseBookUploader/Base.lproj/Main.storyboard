@@ -757,6 +757,7 @@
                     </view>
                     <connections>
                         <outlet property="fileNameRegex" destination="gnY-jH-pnf" id="sIL-cr-C0c"/>
+                        <outlet property="labelForTextView" destination="feO-DU-UG2" id="gFo-Ru-tx2"/>
                         <outlet property="linkToDataBase" destination="PgM-Jf-Brw" id="YFJ-jT-Zym"/>
                         <outlet property="textFieldDbLink" destination="PgM-Jf-Brw" id="HgU-6F-CB5"/>
                         <outlet property="textFieldFileName" destination="gnY-jH-pnf" id="pg8-EA-4s5"/>

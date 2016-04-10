@@ -13,6 +13,7 @@
 
 @property (unsafe_unretained) IBOutlet NSTextView *textViewFileToUpload;
 @property (weak) IBOutlet NSTextField *textFieldDbLink;
+@property (weak) IBOutlet NSTextField *labelForTextView;
 
 @end
 

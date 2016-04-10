@@ -103,10 +103,20 @@
         
         int i = 0;
         int start = 0;
+        self.textViewFileToUpload.string = @"";
+        [self.labelForTextView setStringValue:@"正在上传文件，请耐心等待..."];
+        
         for (NSString* file in array) {
             if ( i >= start) {
                 if ([self uploadFileToParse:file withSessionId: sessionId]) {
                     NSLog(@"Successfully save the file: %@. Finished %d of %d", file, i+1, [array count]);
+                    
+                    NSMutableString* theString = [[NSMutableString alloc] init];
+                    
+                    [theString setString: self.textViewFileToUpload.string];
+                    [theString appendString:[NSString stringWithFormat:@"Successfully save the file: %@. Finished %d of %d\n",  file, i+1, [array count]]];
+                    [self.textViewFileToUpload setString:theString];
+                    [self.view setNeedsDisplay:YES];
                 } else {
                     bool retrySuccess = false;
                     for (int retry = 0; retry < 10; retry++) {
@@ -133,6 +143,7 @@
                                          defaultButton:@"OK" alternateButton:nil
                                            otherButton:nil informativeTextWithFormat:
                           [NSString stringWithFormat:@"总共上传%d个文件。", i]];
+        [self.labelForTextView setStringValue:@"已上传文件"];
         
         [alertFinished runModal];
     } else {
@@ -157,6 +168,7 @@
     NSString* displayingFileNames = [filePaths componentsJoinedByString:@"\n"];
     
     [self.textViewFileToUpload setString:displayingFileNames];
+    [self.labelForTextView setStringValue:@"待上传文件"];
 }
 
 - (BOOL) uploadFileToParse: (NSString*) filePath
