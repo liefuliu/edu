@@ -12,6 +12,7 @@
 @property (weak) IBOutlet NSTextField *textFieldFileName;
 
 @property (unsafe_unretained) IBOutlet NSTextView *textViewFileToUpload;
+@property (weak) IBOutlet NSTextField *textFieldDbLink;
 
 @end
 

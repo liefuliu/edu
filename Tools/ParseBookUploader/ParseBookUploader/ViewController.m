@@ -14,12 +14,50 @@
 #import "BUConfig.h"
 #import "BUConstants.h"
 
+@interface NSAttributedString (Hyperlink)
++(id)hyperlinkFromString:(NSString*)inString withURL:(NSURL*)aURL;
+@end
+
+@implementation NSAttributedString (Hyperlink)
++(id)hyperlinkFromString:(NSString*)inString withURL:(NSURL*)aURL
+{
+    NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString: inString];
+    NSRange range = NSMakeRange(0, [attrString length]);
+    
+    [attrString beginEditing];
+    [attrString addAttribute:NSLinkAttributeName value:[aURL absoluteString] range:range];
+    
+    // make the text appear in blue
+    [attrString addAttribute:NSForegroundColorAttributeName value:[NSColor blueColor] range:range];
+    
+    // next make the text appear with an underline
+    [attrString addAttribute:
+     NSUnderlineStyleAttributeName value:[NSNumber numberWithInt:NSSingleUnderlineStyle] range:range];
+    
+    [attrString endEditing];
+    
+    return attrString;
+}
+@end
+
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
+    
+    [self.textFieldDbLink setAllowsEditingTextAttributes:YES];
+    [self.textFieldDbLink setSelectable:YES];
+    
+    NSURL* url = [NSURL URLWithString:@"https://leancloud.cn/data.html?appid=tBAtpm2DzImtaakvzHVxEWvX-gzGzoHsz#/Book"];
+    
+    NSMutableAttributedString* string = [[NSMutableAttributedString alloc] init];
+    [string appendAttributedString: [NSAttributedString hyperlinkFromString:@"查看数据库Book表" withURL:url]];
+    
+    // set the attributed string to the NSTextField
+    [self.textFieldDbLink setAttributedStringValue: string];
+    [self.textFieldDbLink setSelectable:YES];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
