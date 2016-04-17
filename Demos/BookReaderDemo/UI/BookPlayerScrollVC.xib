@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="buttonMenu" destination="Z7d-pq-mgy" id="ijc-UU-ean"/>
                 <outlet property="exitButton" destination="4mS-be-cnd" id="tSL-Hx-2T1"/>
-                <outlet property="popupSubView" destination="MBF-0h-YeC" id="Wzr-U4-zWp"/>
                 <outlet property="replayButton" destination="OrH-FD-1wM" id="sBS-pb-s9N"/>
                 <outlet property="resumeButton" destination="1xS-Hm-Bfz" id="unw-jx-WP6"/>
                 <outlet property="scrollView1" destination="Wjy-Yw-ck1" id="deB-by-6cA"/>
@@ -21,25 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7d-pq-mgy">
-                    <rect key="frame" x="-41" y="-25" width="132" height="120"/>
-                    <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="QDa-kV-SJq"/>
-                        <constraint firstAttribute="width" constant="30" id="W0b-Fe-dDr"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                    <state key="normal" title="+">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="buttonMenuClicked:" destination="-1" eventType="touchUpInside" id="Ckj-g6-ypS"/>
-                    </connections>
-                </button>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Yw-ck1">
-                    <rect key="frame" x="172" y="386" width="600" height="600"/>
-                    <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
-                </scrollView>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4mS-be-cnd">
                     <rect key="frame" x="142" y="284" width="50" height="32"/>
                     <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -85,6 +65,25 @@
                         <action selector="resumeButtonClicked:" destination="-1" eventType="touchUpInside" id="oRl-Tv-dQC"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7d-pq-mgy">
+                    <rect key="frame" x="-41" y="-25" width="132" height="120"/>
+                    <color key="backgroundColor" red="1" green="0.50196081399917603" blue="0.0" alpha="0.83000000000000007" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="QDa-kV-SJq"/>
+                        <constraint firstAttribute="width" constant="30" id="W0b-Fe-dDr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonMenuClicked:" destination="-1" eventType="touchUpInside" id="Ckj-g6-ypS"/>
+                    </connections>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wjy-Yw-ck1">
+                    <rect key="frame" x="172" y="386" width="600" height="600"/>
+                    <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -133,7 +132,7 @@
                 <constraint firstItem="xSv-Cb-7KE" firstAttribute="top" secondItem="ysp-gX-tqs" secondAttribute="top" id="cAd-cJ-2VS"/>
                 <constraint firstItem="jj6-LC-8CU" firstAttribute="leading" secondItem="xSv-Cb-7KE" secondAttribute="trailing" constant="50" id="nsW-wJ-OQs"/>
             </constraints>
-            <point key="canvasLocation" x="411" y="881"/>
+            <point key="canvasLocation" x="401" y="887"/>
         </view>
     </objects>
 </document>

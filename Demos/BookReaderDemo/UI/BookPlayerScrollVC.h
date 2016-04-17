@@ -58,10 +58,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView1;
 
-@property (weak, nonatomic) IBOutlet UIView *popupSubView;
-
 @property (weak, nonatomic) UIView* popupView;
-
 
 @property (weak, nonatomic) IBOutlet UIButton *exitButton;
 @property (weak, nonatomic) IBOutlet UIButton *replayButton;
