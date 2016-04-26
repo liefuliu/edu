@@ -171,6 +171,10 @@
     [self.labelForTextView setStringValue:@"待上传文件"];
 }
 
+- (BOOL) fileTypeHasPageInfo : (int) fileType {
+    return fileType == (int)kImage || fileType == (int) kPdfFile || fileType == (int) kAudio;
+}
+
 - (BOOL) uploadFileToParse: (NSString*) filePath
              withSessionId: (NSString*) sessionId {
     
@@ -190,7 +194,7 @@
         bookPageObject[@"bookName"] = [FilePathUtil getBookName:theFileName];
         int fileType = [FilePathUtil getFileType:theFileName];
         bookPageObject[@"type"] = [NSString stringWithFormat:@"%d",fileType];
-        if (fileType == (int)kImage || fileType == (int) kAudio) {
+        if ([self fileTypeHasPageInfo:fileType]){
             int pageNumber = [FilePathUtil getPageNumber:theFileName];
             bookPageObject[@"pageNumber"] = [NSString stringWithFormat:@"%d", pageNumber];
         }
@@ -209,7 +213,7 @@
         bookPageObject[@"bookId"] = [FilePathUtil getBookName:theFileName];
         int fileType = [FilePathUtil getFileType:theFileName];
         bookPageObject[@"type"] = [NSString stringWithFormat:@"%d",fileType];
-        if (fileType == (int)kImage || fileType == (int) kAudio) {
+        if ([self fileTypeHasPageInfo:fileType]) {
             int pageNumber = [FilePathUtil getPageNumber:theFileName];
             bookPageObject[@"pageNumber"] = [NSString stringWithFormat:@"%d", pageNumber];
         }

@@ -52,7 +52,6 @@ hasTranslatedText:(BOOL) hasTranslatedText {
     [encoder encodeObject:[NSNumber numberWithInt:self.downloadedPages] forKey:@"downloadedPages"];
     [encoder encodeObject:self.filePrefix forKey:@"filePrefix"];
     [encoder encodeObject:[NSNumber numberWithBool:self.hasTranslatedText] forKey:@"hasTranslatedText"];
-    
 }
 
 

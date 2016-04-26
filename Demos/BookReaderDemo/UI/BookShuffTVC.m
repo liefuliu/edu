@@ -55,15 +55,33 @@
 // For example, Section 0 contains most recently viewed books, and Section 1 contains
 // less recently reviewed ones.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 3;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0){
+        return @"今天读过的书";
+    } else if (section == 1) {
+        return @"本周读过的书";
+    } else if (section == 2) {
+        return @"上周以前读过的书";
+    }
+    return nil;
+}
+
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.allBookKeys count];
+    if (section == 0) {
+        return [self.allBookKeys count];
+    } else if (section == 1) {
+        return [self.allBookKeys count];
+    }
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section== 0 ) {
+    if (indexPath.section== 0 || indexPath.section == 1) {
         BookItemCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BookItemCell"
                                                              forIndexPath:indexPath];
         

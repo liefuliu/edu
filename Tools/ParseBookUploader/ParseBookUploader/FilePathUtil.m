@@ -37,6 +37,8 @@
         return kCover;
     } else if ([fileExt isEqualToString:@"jpg"]){
         return kImage;
+    } else if ([fileExt isEqualToString:@"pdf"]) {
+        return kPdfFile;
     } else {
         return kFileTypeUnknown;
     }

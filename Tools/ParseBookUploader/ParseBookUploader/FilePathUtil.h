@@ -18,6 +18,8 @@ enum FileType {
     kTranslation = 3,
     
     kCover = 4,
+    
+    kPdfFile = 5,
 };
 
 @interface FilePathUtil : NSObject

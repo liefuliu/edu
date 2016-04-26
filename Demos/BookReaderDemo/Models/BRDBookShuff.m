@@ -55,9 +55,11 @@
 
 - (LocalBookStatus*) getBookStatus: (NSString*) bookKey {
     NSData* data = [[BRDBookShuff getNSUserDefaultBookStatusDictionary] objectForKey:bookKey];
-    LocalBookStatus* newBookStatus = [NSKeyedUnarchiver unarchiveObjectWithData:data];
-    return newBookStatus;
-
+        LocalBookStatus* newBookStatus = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        if (newBookStatus == nil) {
+            newBookStatus = [[LocalBookStatus alloc] init];
+        }
+        return newBookStatus;
 }
 
 

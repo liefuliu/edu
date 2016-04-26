@@ -1,49 +1,3 @@
-/*
- File: RootViewController.m
- Abstract: The primary root view controller for the iPhone.
- Version: 1.6
- 
- Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
- Inc. ("Apple") in consideration of your agreement to the following
- terms, and your use, installation, modification or redistribution of
- this Apple software constitutes acceptance of these terms.  If you do
- not agree with these terms, please do not use, install, modify or
- redistribute this Apple software.
- 
- In consideration of your agreement to abide by the following terms, and
- subject to these terms, Apple grants you a personal, non-exclusive
- license, under Apple's copyrights in this original Apple software (the
- "Apple Software"), to use, reproduce, modify and redistribute the Apple
- Software, with or without modifications, in source and/or binary forms;
- provided that if you redistribute the Apple Software in its entirety and
- without modifications, you must retain this notice and the following
- text and disclaimers in all such redistributions of the Apple Software.
- Neither the name, trademarks, service marks or logos of Apple Inc. may
- be used to endorse or promote products derived from the Apple Software
- without specific prior written permission from Apple.  Except as
- expressly stated in this notice, no other rights or licenses, express or
- implied, are granted by Apple herein, including but not limited to any
- patent rights that may be infringed by your derivative works or by other
- works in which the Apple Software may be incorporated.
- 
- The Apple Software is provided by Apple on an "AS IS" basis.  APPLE
- MAKES NO WARRANTIES, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION
- THE IMPLIED WARRANTIES OF NON-INFRINGEMENT, MERCHANTABILITY AND FITNESS
- FOR A PARTICULAR PURPOSE, REGARDING THE APPLE SOFTWARE OR ITS USE AND
- OPERATION ALONE OR IN COMBINATION WITH YOUR PRODUCTS.
- 
- IN NO EVENT SHALL APPLE BE LIABLE FOR ANY SPECIAL, INDIRECT, INCIDENTAL
- OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
- SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
- INTERRUPTION) ARISING IN ANY WAY OUT OF THE USE, REPRODUCTION,
- MODIFICATION AND/OR DISTRIBUTION OF THE APPLE SOFTWARE, HOWEVER CAUSED
- AND WHETHER UNDER THEORY OF CONTRACT, TORT (INCLUDING NEGLIGENCE),
- STRICT LIABILITY OR OTHERWISE, EVEN IF APPLE HAS BEEN ADVISED OF THE
- POSSIBILITY OF SUCH DAMAGE.
- 
- Copyright (C) 2014 Apple Inc. All Rights Reserved.
- 
- */
 #import "BRDConstants.h"
 #import "BookPlayerScrollVC.h"
 #import "BookPagePlayerVC.h"
@@ -57,10 +11,6 @@
 #import <AudioToolbox/AudioToolbox.h>
 
 #import <QuartzCore/QuartzCore.h>
-/*
- static NSString *kNameKey = @"nameKey";
- static NSString *kImageKey = @"imageKey";
- */
 
 typedef enum ScrollDirection {
     ScrollDirectionNone,
@@ -184,6 +134,7 @@ static const float kVerticalScale = 1.0;
         [self downloadBookTillTopNPages];
     }
     
+    [self updateLastReadDate];
 }
 
 #pragma 视图设置辅助函数
@@ -305,6 +256,13 @@ static const float kVerticalScale = 1.0;
 
 #pragma 操作辅助函数
 
+- (void) updateLastReadDate {
+    LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
+
+    localBookStatus.lastReadDate = [NSDate date];
+    [[BRDBookShuff sharedObject] updateBookStatus:localBookStatus forKey:self.localBookKey];
+}
+
 // 退出绘本。
 - (void) exitFromCurrentBook {
     LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
@@ -313,6 +271,7 @@ static const float kVerticalScale = 1.0;
     // 当翻页过快时，self.currentPage有可能大于等于总下载页数页数 (self.localBookInfo.downloadedPages)，于是我们取
     // 两者的较小值。
     localBookStatus.pageLastRead = MIN(self.currentPage, self.localBookInfo.downloadedPages - 1);
+    localBookStatus.lastReadDate = [NSDate date];
     [[BRDBookShuff sharedObject] updateBookStatus:localBookStatus forKey:self.localBookKey];
 
     // 退出页面。

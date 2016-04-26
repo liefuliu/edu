@@ -10,6 +10,10 @@
 
 @interface LocalBookStatus : NSObject<NSCoding>
 
+// 上一次读到第几页
 @property int pageLastRead;
+
+// 最近一次阅读的时间
+@property NSDate* lastReadDate;
 
 @end
