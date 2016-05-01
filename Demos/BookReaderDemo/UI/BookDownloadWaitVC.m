@@ -76,6 +76,7 @@ const float progressSubViewRatio = 0.6;
 }
 
 
+
 - (void) downloadBooks {
     [[BRDBackendFactory getBookDownloader] downloadBook:_bookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
         if (error != nil) {

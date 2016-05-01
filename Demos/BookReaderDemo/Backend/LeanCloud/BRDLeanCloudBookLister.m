@@ -113,13 +113,23 @@ static const int MAX_BOOK_LIST = 1000;
                 NSString* bookName = (NSString*) object[@"bookName"];
                 NSString* author = (NSString*) object[@"author"];
                 int totalPages = [((NSString*)object[@"totalPages"]) intValue];
+                int imageFileType;
+                NSString* imageFileTypeString = (NSString*)object[@"imageFileType"];
+                if ([imageFileTypeString isEqualToString:@"pdf"]) {
+                    imageFileType = kImageFileFormatPdf;
+                } else if ([imageFileTypeString isEqualToString:@"jpg"]) {
+                    imageFileType = kImageFileFormatJpg;
+                } else {
+                    imageFileType = kImageFileFormatUnknown;
+                }
                 
                 BRDListedBook* serverBook = [[BRDListedBook alloc]
                                       initBook: bookId
                                           name: bookName
                                       author:author
                                       totalPages:totalPages
-                                      cover:nil];
+                                      cover:nil
+                                      imageFileType:imageFileType];
             
                 [bookList addObject:serverBook];
             }

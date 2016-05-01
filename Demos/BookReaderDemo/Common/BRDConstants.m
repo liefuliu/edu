@@ -19,6 +19,10 @@ int const kFileTypeAudio = 2;
 int const kFileTypeTrans = 3;
 int const kFileTypeCover = 4;
 
+int const kImageFileFormatUnknown = 0;
+int const kImageFileFormatJpg = 1;
+int const kImageFileFormatPdf = 2;
+
 NSString* const kBookImageTableTypeColumn = @"type";
 NSString* const kBookImageTablePageNumberColumn = @"pageNumber";
 NSString* const kBookImageTableContentColumn = @"pageContent";

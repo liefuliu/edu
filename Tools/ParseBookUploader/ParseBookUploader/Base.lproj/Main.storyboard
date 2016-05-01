@@ -738,7 +738,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="feO-DU-UG2">
-                                <rect key="frame" x="226" y="220" width="170" height="32"/>
+                                <rect key="frame" x="226" y="220" width="252" height="32"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="待上传文件" id="QYV-SS-cgR">
                                     <font key="font" size="13" name="STHeitiSC-Light"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>

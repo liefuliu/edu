@@ -269,7 +269,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                             author:bookInfo.author
                             totalPages:bookInfo.totalPages
                             downloadedPages:pagesDownloaded
-                            filePrefix:bookInfo.bookId hasTranslatedText:YES];
+                            filePrefix:bookInfo.bookId hasTranslatedText:YES
+                            imageFileType:bookInfo.imageFileType];
     [[BRDBookShuff sharedObject] addBook:localBook forKey:bookKey];
     
     BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];

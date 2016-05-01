@@ -104,7 +104,7 @@
         int i = 0;
         int start = 0;
         self.textViewFileToUpload.string = @"";
-        [self.labelForTextView setStringValue:@"正在上传文件，请耐心等待..."];
+        [self.labelForTextView setStringValue:[NSString stringWithFormat:@"正在上传文件，请耐心等待 (0 / %d)", array.count]];
         
         for (NSString* file in array) {
             if ( i >= start) {
@@ -116,6 +116,7 @@
                     [theString setString: self.textViewFileToUpload.string];
                     [theString appendString:[NSString stringWithFormat:@"Successfully save the file: %@. Finished %d of %d\n",  file, i+1, [array count]]];
                     [self.textViewFileToUpload setString:theString];
+                    [self.labelForTextView setStringValue:[NSString stringWithFormat:@"正在上传文件，请耐心等待 (%d / %d)", i+1, array.count]];
                     [self.view setNeedsDisplay:YES];
                 } else {
                     bool retrySuccess = false;

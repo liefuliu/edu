@@ -14,6 +14,8 @@
 #import <AudioToolbox/AudioToolbox.h>
 #import "BRDBookShuff.h"
 #import "BRDFileUtil.h"
+#import "BRDConstants.h"
+#import <PDFImage/PDFImage.h>
 
 @interface BookPagePlayerVC ()
 
@@ -41,7 +43,19 @@
 }
 
 - (void) showPageAtIndex:(int) pageIndex {
-    self.pageImageView.image = [UIImage imageWithData:[BRDFileUtil getBookImage:self.localBookKey onPage:pageIndex]];
+    if (self.localBookInfo.imageFileType == kImageFileFormatJpg) {
+     
+    self.pageImageView.image = [UIImage imageWithData:[BRDFileUtil getBookImage:self.localBookKey
+                                                                         onPage:pageIndex
+                                                                  imageFileType:self.localBookInfo.imageFileType]];
+    } else if (self.localBookInfo.imageFileType == kImageFileFormatPdf) {
+        PDFImage* pdfImage = [PDFImage imageWithData:[BRDFileUtil getBookImage:self.localBookKey
+                                                                             onPage:pageIndex
+                                                                      imageFileType:self.localBookInfo.imageFileType]];
+        PDFImageOptions *options = [PDFImageOptions optionsWithSize:self.pageImageView.frame.size];
+        self.pageImageView.image = [pdfImage imageWithOptions:options];
+
+    }
     
     if (pageIndex < self.translatedText.count &&
         ((NSString*) self.translatedText[pageIndex]).length > 0) {

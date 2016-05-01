@@ -15,6 +15,7 @@
 + (NSData*) getBookCoverImage: (NSString*) bookKey;
 
 + (NSData*) getBookImage: (NSString*) bookKey
-                      onPage: (int) pageIndex;
+                      onPage: (int) pageIndex
+           imageFileType:(int) imageFileType;
 
 @end

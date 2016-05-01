@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6D086AEA1CD0735C003F2CEB /* PDFImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D086AE91CD0735C003F2CEB /* PDFImage.framework */; };
 		6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */; };
 		6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A987E1C5536B5005EB914 /* BRDListedBook.m */; };
 		6DB499C21C8CE79B001F048B /* LocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* LocalBookStatus.m */; };
@@ -83,6 +84,7 @@
 
 /* Begin PBXFileReference section */
 		636F61C91A75E34B7C07F26F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		6D086AE91CD0735C003F2CEB /* PDFImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PDFImage.framework; sourceTree = "<group>"; };
 		6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtilTests.m; sourceTree = "<group>"; };
 		6D6A987D1C5536B5005EB914 /* BRDListedBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDListedBook.h; path = Models/BRDListedBook.h; sourceTree = "<group>"; };
 		6D6A987E1C5536B5005EB914 /* BRDListedBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDListedBook.m; path = Models/BRDListedBook.m; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				6DF9F2191C0CAF5A00359200 /* Bolts.framework in Frameworks */,
 				6DF9F2131C0CACAD00359200 /* SystemConfiguration.framework in Frameworks */,
 				6DF9F2051C0CABD700359200 /* Parse.framework in Frameworks */,
+				6D086AEA1CD0735C003F2CEB /* PDFImage.framework in Frameworks */,
 				B20946293B8A6C8672AAE90D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +303,7 @@
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
+				6D086AE91CD0735C003F2CEB /* PDFImage.framework */,
 				6DB499F41C8CEAC3001F048B /* Utils */,
 				6DB499C91C8CE7E6001F048B /* Backend */,
 				6D6A98CD1C574C5E005EB914 /* Common */,

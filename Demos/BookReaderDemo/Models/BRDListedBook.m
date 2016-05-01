@@ -14,7 +14,8 @@
            name:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
-          cover:(NSData*) cover {
+          cover:(NSData*) cover
+  imageFileType:(int) imageFileType {
     self = [super init];
     if (self) {
         _bookId = bookId;
@@ -22,6 +23,7 @@
         _author = author;
         _totalPages = totalPages;
         _cover = cover;
+        _imageFileType = imageFileType;
     }
     return self;
 }
@@ -37,7 +39,7 @@
         self.author = [aDecoder decodeObjectForKey:@"author"];
         self.totalPages = [aDecoder decodeIntForKey:@"totalPages"];
         self.cover = (NSData*)[aDecoder decodeObjectForKey:@"cover"];
-
+        self.imageFileType = [aDecoder decodeIntForKey:@"imageFileType"];
     }
     return self;
 }
@@ -49,6 +51,7 @@
     [encoder encodeObject:self.author forKey:@"author"];
     [encoder encodeInt:self.totalPages forKey:@"totalPages"];
     [encoder encodeObject:self.cover forKey:@"cover"];
+    [encoder encodeInt:self.imageFileType forKey:@"imageFileType"];
 }
 
 

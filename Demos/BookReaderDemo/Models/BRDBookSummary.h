@@ -12,4 +12,7 @@
 
 @property NSData* imageData;
 
+// TODO(liefuliu): Support PDF data
+// @property int imageDataType;
+
 @end

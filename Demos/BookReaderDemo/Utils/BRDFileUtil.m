@@ -7,8 +7,8 @@
 //
 
 #import "BRDFileUtil.h"
-
 #import "BRDPathUtil.h"
+#import "BRDConstants.h"
 
 @implementation BRDFileUtil
 
@@ -44,14 +44,28 @@
 }
 
 + (NSData*) getBookImage: (NSString*) bookKey
-                      onPage: (int) pageIndex {
-    NSString* documentsDirectory = [BRDPathUtil applicationDocumentsDirectoryPath];
-    NSString* fileName = [NSString stringWithFormat:@"%@-picture-%@.jpg",
+                  onPage: (int) pageIndex
+           imageFileType: (int) imageFileType {
+    // 这个函数只负责将文件读入数据，不负责解析。
+    if (imageFileType == kImageFileFormatJpg || imageFileType == kImageFileFormatPdf) {
+        NSString* imageFileName;
+
+        if (imageFileType == kImageFileFormatJpg) {
+            imageFileName = [NSString stringWithFormat:@"%@-picture-%@.jpg",
                           bookKey,
                           [BRDFileUtil intToString:pageIndex+1]]; // 绘本页从1开始计数。
-    
-    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:fileName];
-    return [NSData dataWithContentsOfFile:filePath];
+        } else {
+            imageFileName = [NSString stringWithFormat:@"%@-picture-%@.pdf",
+                             bookKey,
+                             [BRDFileUtil intToString:pageIndex+1]]; // 绘本页从1开始计数。
+        }
+
+        NSString* documentsDirectory = [BRDPathUtil applicationDocumentsDirectoryPath];
+        NSString *filePath = [documentsDirectory stringByAppendingPathComponent:imageFileName];
+        return [NSData dataWithContentsOfFile:filePath];
+    } else {
+        return nil;
+    }
 }
 
 #pragma mark - private functions

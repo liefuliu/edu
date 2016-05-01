@@ -22,10 +22,15 @@
 @property NSData* cover;
 @property int totalPages;
 
+// TODO(liefuliu): Add
+@property int imageFileType;
+
 - (id) initBook:(NSString*) bookId
            name:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
-          cover:(NSData*) cover;
+          cover:(NSData*) cover
+  imageFileType:(int) imageFileType;
+
 
 @end

@@ -28,12 +28,20 @@
 // 是否包含翻译
 @property BOOL hasTranslatedText;
 
+// 书页的文件格式，可以是下面任意值：
+// kImageFileFormatUnknown
+// kImageFileFormatJpg
+// kImageFileFormatPdf
+@property int imageFileType;
+
 - (id) initBook:(NSString*) bookName
          author:(NSString*) author
      totalPages:(int) totalPages
 downloadedPages:(int) downloadedPages
      filePrefix:(NSString*) filePrefix
-hasTranslatedText:(BOOL) hasTranslatedText;
+hasTranslatedText:(BOOL) hasTranslatedText
+  imageFileType:(int) imageFileType;
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder;
 - (void)encodeWithCoder:(NSCoder *)encoder;

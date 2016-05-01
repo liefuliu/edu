@@ -18,7 +18,11 @@ extern int const kFileTypeImage;
 extern int const kFileTypeAudio;
 extern int const kFileTypeTrans;
 extern int const kFileTypeCover;
+extern int const kFileTypePdfFile;
 
+extern int const kImageFileFormatUnknown;
+extern int const kImageFileFormatJpg;
+extern int const kImageFileFormatPdf;
 
 extern NSString* const kBookImageTableTypeColumn;
 extern NSString* const kBookImageTablePageNumberColumn;

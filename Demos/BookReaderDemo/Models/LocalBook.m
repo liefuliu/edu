@@ -16,7 +16,8 @@
      totalPages:(int) totalPages
 downloadedPages:(int) downloadedPages
      filePrefix:(NSString*) filePrefix
-hasTranslatedText:(BOOL) hasTranslatedText {
+hasTranslatedText:(BOOL) hasTranslatedText
+  imageFileType:(int) imageFileType {
     self = [super init];
     if (self) {
         _bookName = bookName;
@@ -25,6 +26,7 @@ hasTranslatedText:(BOOL) hasTranslatedText {
         _downloadedPages = downloadedPages;
         _filePrefix = filePrefix;
         _hasTranslatedText = hasTranslatedText;
+        _imageFileType = imageFileType;
     }
     return self;
 }
@@ -40,6 +42,7 @@ hasTranslatedText:(BOOL) hasTranslatedText {
         self.downloadedPages = [[aDecoder decodeObjectForKey:@"downloadedPages"] intValue];
         self.filePrefix = [aDecoder decodeObjectForKey:@"filePrefix"];
         self.hasTranslatedText = [[aDecoder decodeObjectForKey:@"hasTranslatedText"]boolValue];
+        self.imageFileType = [[aDecoder decodeObjectForKey:@"imageFileType"]intValue];
     }
     return self;
 }
@@ -52,6 +55,7 @@ hasTranslatedText:(BOOL) hasTranslatedText {
     [encoder encodeObject:[NSNumber numberWithInt:self.downloadedPages] forKey:@"downloadedPages"];
     [encoder encodeObject:self.filePrefix forKey:@"filePrefix"];
     [encoder encodeObject:[NSNumber numberWithBool:self.hasTranslatedText] forKey:@"hasTranslatedText"];
+    [encoder encodeObject:[NSNumber numberWithInt:self.imageFileType] forKey:@"imageFileType"];
 }
 
 
