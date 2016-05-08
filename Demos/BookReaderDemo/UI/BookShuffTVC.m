@@ -17,11 +17,25 @@
 @interface BookShuffTVC ()
 
 // An array of NSString* objects.
+
 @property NSArray* allBookKeys;
 
+/*
+@property NSMutableArray* dailyBookKeys;
+@property NSMutableArray* weeklyBookKeys;
+@property NSMutableArray* historicalBookKeys;
+*/
+
+// Element: NSMutableArray
+@property NSMutableArray* bookKeysArray;
 @end
 
 @implementation BookShuffTVC
+
+const int kBookShuffTVCDailySection = 0;
+const int kBookShuffTVCWeekySection = 1;
+const int kBookShuffTVCHistoricalSection = 2;
+const int kBookShuffTVCNumOfSections = 3;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,16 +69,16 @@
 // For example, Section 0 contains most recently viewed books, and Section 1 contains
 // less recently reviewed ones.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 3;
+    return kBookShuffTVCNumOfSections;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
-    if (section == 0){
+    if (section == kBookShuffTVCDailySection){
         return @"今天读过的书";
-    } else if (section == 1) {
+    } else if (section == kBookShuffTVCWeekySection) {
         return @"本周读过的书";
-    } else if (section == 2) {
+    } else if (section == kBookShuffTVCHistoricalSection) {
         return @"上周以前读过的书";
     }
     return nil;
@@ -72,20 +86,18 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (section == 0) {
-        return [self.allBookKeys count];
-    } else if (section == 1) {
-        return [self.allBookKeys count];
+    if (section < kBookShuffTVCNumOfSections) {
+        return [self.bookKeysArray[section] count];
     }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section== 0 || indexPath.section == 1) {
+    if (indexPath.section < kBookShuffTVCNumOfSections) {
         BookItemCell* cell = [tableView dequeueReusableCellWithIdentifier:@"BookItemCell"
                                                              forIndexPath:indexPath];
         
-        NSString* bookKey = self.allBookKeys[indexPath.row];
+        NSString* bookKey = self.bookKeysArray[indexPath.section][indexPath.row];
         LocalBook* bookInfo = [[BRDBookShuff sharedObject] getBook:bookKey];
         
         cell.statusLabel.text = bookInfo.author;
@@ -106,12 +118,10 @@
     return 80;
 }
 
-
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == 0){
-        BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:self.allBookKeys[indexPath.row]];
+    if (indexPath.section < kBookShuffTVCNumOfSections){
+        BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:self.bookKeysArray[indexPath.section][indexPath.row]];
         [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
     }
 }
@@ -165,6 +175,37 @@
 #pragma mark - Data processing
 - (void) loadBooksOnShuff {
     self.allBookKeys = [[BRDBookShuff sharedObject] getAllBookKeys];
+    
+    self.bookKeysArray = [[NSMutableArray alloc] init];
+    
+    NSMutableArray* dailyBookKeys = [[NSMutableArray alloc] init];
+    NSMutableArray* weeklyBookKeys = [[NSMutableArray alloc] init];
+    NSMutableArray* historicalBookKeys =[[NSMutableArray alloc] init];
+    
+    NSDate* current = [NSDate date];
+    for (NSString* bookKey in self.allBookKeys) {
+        // LocalBookStatus* =
+        BRDLocalBookStatus* localBookStatus =
+            [[BRDBookShuff sharedObject] getBookStatus:bookKey];
+        NSDate* lastReadDate = localBookStatus.lastReadDate;
+        NSTimeInterval timeInterval = [current timeIntervalSinceDate:lastReadDate];
+        
+        const double secondsInADay = 60 * 60 * 24;
+        const double secondsInAWeek = secondsInADay * 7;
+        if (timeInterval < secondsInADay) {
+            [dailyBookKeys addObject:bookKey];
+        } else if (timeInterval < secondsInAWeek) {
+            [weeklyBookKeys addObject:bookKey];
+        } else {
+            [historicalBookKeys addObject:bookKey];
+        }
+    }
+    
+    [self.bookKeysArray addObject:dailyBookKeys];
+    [self.bookKeysArray addObject:weeklyBookKeys];
+    [self.bookKeysArray addObject:historicalBookKeys];
+    
+    
     [self.tableView reloadData];
 }
 

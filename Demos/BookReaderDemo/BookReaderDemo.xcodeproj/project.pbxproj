@@ -10,7 +10,7 @@
 		6D086AEA1CD0735C003F2CEB /* PDFImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D086AE91CD0735C003F2CEB /* PDFImage.framework */; };
 		6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */; };
 		6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A987E1C5536B5005EB914 /* BRDListedBook.m */; };
-		6DB499C21C8CE79B001F048B /* LocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* LocalBookStatus.m */; };
+		6DB499C21C8CE79B001F048B /* BRDLocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */; };
 		6DB499C71C8CE7D5001F048B /* BRDParseBookDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C41C8CE7D5001F048B /* BRDParseBookDownloader.m */; };
 		6DB499C81C8CE7D5001F048B /* BRDParseBookLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C61C8CE7D5001F048B /* BRDParseBookLister.m */; };
 		6DB499E01C8CE8C0001F048B /* BookDownloadWaitVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499CB1C8CE8C0001F048B /* BookDownloadWaitVC.m */; };
@@ -88,8 +88,8 @@
 		6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtilTests.m; sourceTree = "<group>"; };
 		6D6A987D1C5536B5005EB914 /* BRDListedBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDListedBook.h; path = Models/BRDListedBook.h; sourceTree = "<group>"; };
 		6D6A987E1C5536B5005EB914 /* BRDListedBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDListedBook.m; path = Models/BRDListedBook.m; sourceTree = "<group>"; };
-		6DB499C01C8CE79B001F048B /* LocalBookStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocalBookStatus.h; path = Models/LocalBookStatus.h; sourceTree = "<group>"; };
-		6DB499C11C8CE79B001F048B /* LocalBookStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocalBookStatus.m; path = Models/LocalBookStatus.m; sourceTree = "<group>"; };
+		6DB499C01C8CE79B001F048B /* BRDLocalBookStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDLocalBookStatus.h; path = Models/BRDLocalBookStatus.h; sourceTree = "<group>"; };
+		6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDLocalBookStatus.m; path = Models/BRDLocalBookStatus.m; sourceTree = "<group>"; };
 		6DB499C31C8CE7D5001F048B /* BRDParseBookDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDParseBookDownloader.h; path = Backend/Parse/BRDParseBookDownloader.h; sourceTree = "<group>"; };
 		6DB499C41C8CE7D5001F048B /* BRDParseBookDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDParseBookDownloader.m; path = Backend/Parse/BRDParseBookDownloader.m; sourceTree = "<group>"; };
 		6DB499C51C8CE7D5001F048B /* BRDParseBookLister.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDParseBookLister.h; path = Backend/Parse/BRDParseBookLister.h; sourceTree = "<group>"; };
@@ -433,8 +433,8 @@
 				6DF9F2BF1C2E238100359200 /* LocalBook.m */,
 				6D6A987D1C5536B5005EB914 /* BRDListedBook.h */,
 				6D6A987E1C5536B5005EB914 /* BRDListedBook.m */,
-				6DB499C01C8CE79B001F048B /* LocalBookStatus.h */,
-				6DB499C11C8CE79B001F048B /* LocalBookStatus.m */,
+				6DB499C01C8CE79B001F048B /* BRDLocalBookStatus.h */,
+				6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -622,7 +622,7 @@
 				6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */,
 				6DB499C81C8CE7D5001F048B /* BRDParseBookLister.m in Sources */,
 				6DB499E81C8CE8C0001F048B /* BookTableCell.m in Sources */,
-				6DB499C21C8CE79B001F048B /* LocalBookStatus.m in Sources */,
+				6DB499C21C8CE79B001F048B /* BRDLocalBookStatus.m in Sources */,
 				6DF9F1B61C0A390400359200 /* main.m in Sources */,
 				6DB499EA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m in Sources */,
 				6DB499E71C8CE8C0001F048B /* BookShuffTVC.m in Sources */,

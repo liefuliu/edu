@@ -257,7 +257,7 @@ static const float kVerticalScale = 1.0;
 #pragma 操作辅助函数
 
 - (void) updateLastReadDate {
-    LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
+    BRDLocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
 
     localBookStatus.lastReadDate = [NSDate date];
     [[BRDBookShuff sharedObject] updateBookStatus:localBookStatus forKey:self.localBookKey];
@@ -265,7 +265,7 @@ static const float kVerticalScale = 1.0;
 
 // 退出绘本。
 - (void) exitFromCurrentBook {
-    LocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
+    BRDLocalBookStatus* localBookStatus = [[BRDBookShuff sharedObject]getBookStatus:self.localBookKey];
     
     // 设置阅读状态。
     // 当翻页过快时，self.currentPage有可能大于等于总下载页数页数 (self.localBookInfo.downloadedPages)，于是我们取

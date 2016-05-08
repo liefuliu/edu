@@ -53,11 +53,11 @@
     [defaults setObject:newBookDictionary forKey:kDownloadedBookKeyString];
 }
 
-- (LocalBookStatus*) getBookStatus: (NSString*) bookKey {
+- (BRDLocalBookStatus*) getBookStatus: (NSString*) bookKey {
     NSData* data = [[BRDBookShuff getNSUserDefaultBookStatusDictionary] objectForKey:bookKey];
-        LocalBookStatus* newBookStatus = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+        BRDLocalBookStatus* newBookStatus = [NSKeyedUnarchiver unarchiveObjectWithData:data];
         if (newBookStatus == nil) {
-            newBookStatus = [[LocalBookStatus alloc] init];
+            newBookStatus = [[BRDLocalBookStatus alloc] init];
         }
         return newBookStatus;
 }
@@ -69,7 +69,7 @@
     return newBook;
 }
 
-- (void) updateBookStatus: (LocalBookStatus*) localBookStatus
+- (void) updateBookStatus: (BRDLocalBookStatus*) localBookStatus
                    forKey: (NSString*) bookKey {
     if (![self doesBookExist:bookKey]) {
         return;

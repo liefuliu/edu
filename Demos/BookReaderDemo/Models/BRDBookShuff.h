@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #import "LocalBook.h"
-#import "LocalBookStatus.h"
+#import "BRDLocalBookStatus.h"
 #import "BRDBookSummary.h"
 #import "BRDCachedBooks.h"
 
@@ -30,10 +30,10 @@
 - (NSArray*) getAllBookKeys;
 
 // TODO: consider to move this function to another class
-- (void) updateBookStatus: (LocalBookStatus*) localBookStatus
+- (void) updateBookStatus: (BRDLocalBookStatus*) localBookStatus
                    forKey: (NSString*) bookKey;
 
-- (LocalBookStatus*) getBookStatus: (NSString*) bookKey;
+- (BRDLocalBookStatus*) getBookStatus: (NSString*) bookKey;
 
 // Returns false if no books are cached.
 - (BOOL) getCachedBooks:(BRDCachedBooks**) cachedBooks;

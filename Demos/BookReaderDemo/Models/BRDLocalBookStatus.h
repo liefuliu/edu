@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface LocalBookStatus : NSObject<NSCoding>
+@interface BRDLocalBookStatus : NSObject<NSCoding>
 
 // 上一次读到第几页
 @property int pageLastRead;

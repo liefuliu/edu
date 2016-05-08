@@ -54,6 +54,25 @@
     XCTAssert(![[BRDBookShuff sharedObject] doesBookExist:kBookName1]);
 }
 
+- (void) testBookStatus {
+    BRDLocalBookStatus* bookStatus = [[BRDLocalBookStatus alloc] init];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    [dateFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]];
+    bookStatus.lastReadDate = [dateFormatter dateFromString: @"2012-09-16 23:59:59 JST"];
+    bookStatus.pageLastRead = 10;
+
+    NSString* kBookName1 = @"BRDBookShuffTests_testBookStatus_book1";
+    [[BRDBookShuff sharedObject] addBook:[[LocalBook alloc]init] forKey:kBookName1];
+    [[BRDBookShuff sharedObject] updateBookStatus:bookStatus forKey:kBookName1];
+    
+    BRDLocalBookStatus* bookStatusDecoded =
+    [[BRDBookShuff sharedObject] getBookStatus:kBookName1];
+    XCTAssert(bookStatusDecoded.lastReadDate == bookStatus.lastReadDate);
+    XCTAssert(bookStatusDecoded.pageLastRead == bookStatus.pageLastRead);
+}
+
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
