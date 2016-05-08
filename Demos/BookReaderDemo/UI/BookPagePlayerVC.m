@@ -64,6 +64,9 @@
     } else {
         self.translatedTextView.hidden = YES;
     }
+    
+    [self.translatedTextView setFont:[UIFont systemFontOfSize:16]];
+
 }
 
 
