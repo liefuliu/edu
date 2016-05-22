@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6D086AEA1CD0735C003F2CEB /* PDFImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D086AE91CD0735C003F2CEB /* PDFImage.framework */; };
+		6D086AF41CE01301003F2CEB /* BRDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D086AF31CE01301003F2CEB /* BRDColor.m */; };
+		6D086AF81CF20AC1003F2CEB /* BRDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D086AF31CE01301003F2CEB /* BRDColor.m */; };
 		6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */; };
 		6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A987E1C5536B5005EB914 /* BRDListedBook.m */; };
 		6DB499C21C8CE79B001F048B /* BRDLocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */; };
@@ -85,6 +87,8 @@
 /* Begin PBXFileReference section */
 		636F61C91A75E34B7C07F26F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		6D086AE91CD0735C003F2CEB /* PDFImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PDFImage.framework; sourceTree = "<group>"; };
+		6D086AF21CE01301003F2CEB /* BRDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDColor.h; path = Common/BRDColor.h; sourceTree = "<group>"; };
+		6D086AF31CE01301003F2CEB /* BRDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDColor.m; path = Common/BRDColor.m; sourceTree = "<group>"; };
 		6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtilTests.m; sourceTree = "<group>"; };
 		6D6A987D1C5536B5005EB914 /* BRDListedBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDListedBook.h; path = Models/BRDListedBook.h; sourceTree = "<group>"; };
 		6D6A987E1C5536B5005EB914 /* BRDListedBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDListedBook.m; path = Models/BRDListedBook.m; sourceTree = "<group>"; };
@@ -235,6 +239,8 @@
 		6D6A98CD1C574C5E005EB914 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6D086AF21CE01301003F2CEB /* BRDColor.h */,
+				6D086AF31CE01301003F2CEB /* BRDColor.m */,
 				6DB49A011C8CEB31001F048B /* BRDConfig.h */,
 				6DB49A021C8CEB31001F048B /* BRDConfig.m */,
 				6DB49A031C8CEB31001F048B /* BRDConstants.h */,
@@ -627,6 +633,7 @@
 				6DB499EA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m in Sources */,
 				6DB499E71C8CE8C0001F048B /* BookShuffTVC.m in Sources */,
 				6DB49A121C8CF6F2001F048B /* BRDBookDownloader.m in Sources */,
+				6D086AF81CF20AC1003F2CEB /* BRDColor.m in Sources */,
 				6DB49A0C1C8CF586001F048B /* BRDBackendFactory.m in Sources */,
 				6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */,
 				6DB499EC1C8CE8C0001F048B /* ServerBookListCVC.m in Sources */,
@@ -641,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D086AF41CE01301003F2CEB /* BRDColor.m in Sources */,
 				6DE230B11C69745800C5C42D /* BRDParseBookDownloadPerfTest.m in Sources */,
 				6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */,
 				6DFF96D21C5DC3E600D589E7 /* BRDBookShuffTests.m in Sources */,
@@ -690,7 +698,7 @@
 		6DF9F1D11C0A390400359200 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -734,7 +742,7 @@
 		6DF9F1D21C0A390400359200 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -796,7 +804,7 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/**",
 				);
 				INFOPLIST_FILE = BookReaderDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

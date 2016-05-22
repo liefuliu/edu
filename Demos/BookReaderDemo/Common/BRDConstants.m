@@ -7,7 +7,6 @@
 //
 
 #import "BRDConstants.h"
-
 NSString* const kNSDefaultsFirstLaunch = @"first_launch";
 NSString* const kNSDefaultsFirstPageLoad = @"first_page_load";
 NSString* const kDownloadedBookKeyString = @"downloaded_book_key_v2";
@@ -37,4 +36,5 @@ float const kTimeoutBookFirstLoad = 5.0;
 
 int const kBackendParse = 1;
 int const kBackendLeanCloud = 2;
+
 

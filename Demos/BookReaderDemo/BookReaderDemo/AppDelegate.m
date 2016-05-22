@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import <AVOSCloud/AVOSCloud.h>
 
+#import "BRDColor.h"
 
 @interface AppDelegate ()
 
@@ -31,6 +32,26 @@
     
     [AVOSCloud setApplicationId:@"tBAtpm2DzImtaakvzHVxEWvX-gzGzoHsz"
                       clientKey:@"GAPD7s4yhbODKljGsRNpKf7M"];
+    
+    // 设置颜色
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    [[UINavigationBar appearance] setBarTintColor:[BRDColor backgroundSkyBlue]];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance]
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    [[UITabBar appearance] setBarTintColor:[BRDColor backgroundSkyBlue]];
+    [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
+    // Add this code to change StateNormal text Color,
+    [UITabBarItem.appearance setTitleTextAttributes:
+     @{NSForegroundColorAttributeName : [UIColor whiteColor]}
+                                           forState:UIControlStateSelected];
+    
+    // then if StateSelected should be different, you should add this code
+    [UITabBarItem.appearance setTitleTextAttributes:
+     @{NSForegroundColorAttributeName : [BRDColor lowlightTextGrayColor]}
+                                           forState:UIControlStateNormal];
     
     return YES;
 }

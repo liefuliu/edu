@@ -13,6 +13,7 @@
 #import "BookShuffTVC.h"
 #import "BookPlayerScrollVC.h"
 #import "LocalBook.h"
+#import "BRDColor.h"
 
 @interface BookShuffTVC ()
 
@@ -49,6 +50,8 @@ const int kBookShuffTVCNumOfSections = 3;
     [self.tableView registerNib:nib
          forCellReuseIdentifier:@"BookItemCell"];
     self.title = @"书架";
+    
+    //self.tableView.contentInset = UIEdgeInsetsMake(20, 20, 20, 20);
     
     //[self loadBooksOnShuff];
 }
@@ -115,7 +118,7 @@ const int kBookShuffTVCNumOfSections = 3;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 80;
+    return 160;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

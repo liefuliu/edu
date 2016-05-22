@@ -16,7 +16,7 @@
 #import "BRDCachedBooks.h"
 
 #import "BRDBackendFactory.h"
-
+#import "BRDColor.h"
 @interface BRDServerBookCollectionVC ()
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -39,6 +39,16 @@ NSTimer* _myTimer;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
+    self.navigationController.navigationBar.barTintColor = [BRDColor backgroundSkyBlue];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar
+     setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
+    
+    //self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
+    //self.tabBarController.tabBar.barTintColor = [BRDColor backgroundSkyBlue];
+    
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -68,6 +78,7 @@ NSTimer* _myTimer;
     UINib *cellNib = [UINib nibWithNibName:@"ServerBookListCVC" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:reuseIdentifier];
     
+    //self.navigationController.navigationBar.backgroundColor = [BRDColor backgroundSkyBlue];
     self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
     
     // Do any additional setup after loading the view.
@@ -218,6 +229,8 @@ NSTimer* _myTimer;
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
+    
+    // Used to be 90x90, suggest size: 10
     size.height = 90;
     size.width = 90;
     return size;
