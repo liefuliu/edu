@@ -10,5 +10,6 @@
 
 @interface ServerBookListCVC : UICollectionViewCell
 
+@property (weak, nonatomic) IBOutlet UIButton *downloadButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @end

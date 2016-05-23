@@ -77,7 +77,6 @@ NSTimer* _myTimer;
     self.collectionView.dataSource = self;
     UINib *cellNib = [UINib nibWithNibName:@"ServerBookListCVC" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:reuseIdentifier];
-    
     //self.navigationController.navigationBar.backgroundColor = [BRDColor backgroundSkyBlue];
     self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
     
@@ -229,10 +228,11 @@ NSTimer* _myTimer;
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
     
-    // Used to be 90x90, suggest size: 10
-    size.height = 90;
-    size.width = 90;
+    size.width = screenRect.size.width - 30;
+    size.height = 160;
+    
     return size;
 }
 

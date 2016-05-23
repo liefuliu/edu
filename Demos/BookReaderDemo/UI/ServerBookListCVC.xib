@@ -8,26 +8,70 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ServerBookListCVC">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+            <rect key="frame" x="0.0" y="0.0" width="308" height="134"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="308" height="134"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q0h-E7-KxP">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q0h-E7-KxP">
                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="AGN-wk-dw8"/>
+                        </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="书名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWH-vO-x75">
+                        <rect key="frame" x="91" y="8" width="34" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="作者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTz-Y0-1dD">
+                        <rect key="frame" x="91" y="36" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="简介 (20字以内)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-YJ-XbI">
+                        <rect key="frame" x="17" y="64" width="108" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T0Y-kc-vj9">
+                        <rect key="frame" x="176" y="66" width="30" height="30"/>
+                        <state key="normal" title="下载"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="免费阅读" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uGo-E7-p9m">
+                        <rect key="frame" x="67" y="97" width="68" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="q0h-E7-KxP" secondAttribute="trailing" id="J1Z-Dm-Gtx"/>
+                <constraint firstItem="sWH-vO-x75" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="7ns-U7-YmR"/>
+                <constraint firstItem="nTz-Y0-1dD" firstAttribute="top" secondItem="sWH-vO-x75" secondAttribute="bottom" constant="10" id="9BF-Cg-KON"/>
+                <constraint firstItem="uGo-E7-p9m" firstAttribute="leading" secondItem="nTz-Y0-1dD" secondAttribute="leading" id="G8n-7G-4lo"/>
+                <constraint firstItem="T0Y-kc-vj9" firstAttribute="leading" secondItem="nTz-Y0-1dD" secondAttribute="leading" id="QDB-Mt-tvY"/>
                 <constraint firstAttribute="bottom" secondItem="q0h-E7-KxP" secondAttribute="bottom" id="dtg-b7-RR1"/>
+                <constraint firstAttribute="bottom" secondItem="T0Y-kc-vj9" secondAttribute="bottom" constant="15" id="kbX-Kt-MQA"/>
+                <constraint firstItem="NRn-YJ-XbI" firstAttribute="leading" secondItem="nTz-Y0-1dD" secondAttribute="leading" id="lsB-AV-eRB"/>
                 <constraint firstItem="q0h-E7-KxP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pX5-Um-zJQ"/>
+                <constraint firstItem="nTz-Y0-1dD" firstAttribute="leading" secondItem="sWH-vO-x75" secondAttribute="leading" id="qMF-mB-aTn"/>
                 <constraint firstItem="q0h-E7-KxP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="vMx-Va-oed"/>
+                <constraint firstItem="NRn-YJ-XbI" firstAttribute="top" secondItem="nTz-Y0-1dD" secondAttribute="bottom" constant="10" id="wGV-ta-Irh"/>
+                <constraint firstItem="sWH-vO-x75" firstAttribute="leading" secondItem="q0h-E7-KxP" secondAttribute="trailing" constant="10" id="wlr-eM-9Ul"/>
+                <constraint firstAttribute="bottom" secondItem="uGo-E7-p9m" secondAttribute="bottom" constant="10" id="xSQ-bS-JOz"/>
             </constraints>
+            <size key="customSize" width="308" height="134"/>
             <connections>
+                <outlet property="downloadButton" destination="T0Y-kc-vj9" id="5t4-oI-p76"/>
                 <outlet property="imageView" destination="q0h-E7-KxP" id="jfD-B7-38x"/>
             </connections>
+            <point key="canvasLocation" x="301" y="362"/>
         </collectionViewCell>
     </objects>
 </document>

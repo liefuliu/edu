@@ -10,6 +10,9 @@
 		6D086AEA1CD0735C003F2CEB /* PDFImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D086AE91CD0735C003F2CEB /* PDFImage.framework */; };
 		6D086AF41CE01301003F2CEB /* BRDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D086AF31CE01301003F2CEB /* BRDColor.m */; };
 		6D086AF81CF20AC1003F2CEB /* BRDColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D086AF31CE01301003F2CEB /* BRDColor.m */; };
+		6D086AFC1CF26941003F2CEB /* BookShuffCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D086AFA1CF26941003F2CEB /* BookShuffCollectionViewCell.m */; };
+		6D086AFD1CF26941003F2CEB /* BookShuffCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D086AFB1CF26941003F2CEB /* BookShuffCollectionViewCell.xib */; };
+		6D086B001CF26EF5003F2CEB /* BookShuffCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D086AFF1CF26EF5003F2CEB /* BookShuffCollectionViewController.m */; };
 		6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */; };
 		6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A987E1C5536B5005EB914 /* BRDListedBook.m */; };
 		6DB499C21C8CE79B001F048B /* BRDLocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */; };
@@ -89,6 +92,11 @@
 		6D086AE91CD0735C003F2CEB /* PDFImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PDFImage.framework; sourceTree = "<group>"; };
 		6D086AF21CE01301003F2CEB /* BRDColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDColor.h; path = Common/BRDColor.h; sourceTree = "<group>"; };
 		6D086AF31CE01301003F2CEB /* BRDColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDColor.m; path = Common/BRDColor.m; sourceTree = "<group>"; };
+		6D086AF91CF26941003F2CEB /* BookShuffCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookShuffCollectionViewCell.h; path = UI/BookShuffCollectionViewCell.h; sourceTree = "<group>"; };
+		6D086AFA1CF26941003F2CEB /* BookShuffCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookShuffCollectionViewCell.m; path = UI/BookShuffCollectionViewCell.m; sourceTree = "<group>"; };
+		6D086AFB1CF26941003F2CEB /* BookShuffCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = BookShuffCollectionViewCell.xib; path = UI/BookShuffCollectionViewCell.xib; sourceTree = "<group>"; };
+		6D086AFE1CF26EF5003F2CEB /* BookShuffCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookShuffCollectionViewController.h; path = UI/BookShuffCollectionViewController.h; sourceTree = "<group>"; };
+		6D086AFF1CF26EF5003F2CEB /* BookShuffCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookShuffCollectionViewController.m; path = UI/BookShuffCollectionViewController.m; sourceTree = "<group>"; };
 		6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtilTests.m; sourceTree = "<group>"; };
 		6D6A987D1C5536B5005EB914 /* BRDListedBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDListedBook.h; path = Models/BRDListedBook.h; sourceTree = "<group>"; };
 		6D6A987E1C5536B5005EB914 /* BRDListedBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDListedBook.m; path = Models/BRDListedBook.m; sourceTree = "<group>"; };
@@ -309,6 +317,9 @@
 		6DF9F1A71C0A390400359200 = {
 			isa = PBXGroup;
 			children = (
+				6D086AF91CF26941003F2CEB /* BookShuffCollectionViewCell.h */,
+				6D086AFA1CF26941003F2CEB /* BookShuffCollectionViewCell.m */,
+				6D086AFB1CF26941003F2CEB /* BookShuffCollectionViewCell.xib */,
 				6D086AE91CD0735C003F2CEB /* PDFImage.framework */,
 				6DB499F41C8CEAC3001F048B /* Utils */,
 				6DB499C91C8CE7E6001F048B /* Backend */,
@@ -422,6 +433,8 @@
 				6DB499DD1C8CE8C0001F048B /* ServerBookListCVC.h */,
 				6DB499DE1C8CE8C0001F048B /* ServerBookListCVC.m */,
 				6DB499DF1C8CE8C0001F048B /* ServerBookListCVC.xib */,
+				6D086AFE1CF26EF5003F2CEB /* BookShuffCollectionViewController.h */,
+				6D086AFF1CF26EF5003F2CEB /* BookShuffCollectionViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -537,6 +550,7 @@
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
 				6DB499E61C8CE8C0001F048B /* BookPlayerScrollVC.xib in Resources */,
 				6DB499E91C8CE8C0001F048B /* BookTableCell.xib in Resources */,
+				6D086AFD1CF26941003F2CEB /* BookShuffCollectionViewCell.xib in Resources */,
 				6DDB6F161CB19D4B0086AA17 /* BookPlayerPopupSubVC.xib in Resources */,
 				6DE230AC1C6865DC00C5C42D /* Localizable.strings in Resources */,
 				6DB499E51C8CE8C0001F048B /* BookPagePlayerVC.xib in Resources */,
@@ -616,6 +630,7 @@
 				6DB49A0F1C8CF5A7001F048B /* BRDBookLister.m in Sources */,
 				6DDB6F151CB19D4B0086AA17 /* BookPlayerPopupSubVC.m in Sources */,
 				6DB499F91C8CEAD4001F048B /* BRDFileUtil.m in Sources */,
+				6D086AFC1CF26941003F2CEB /* BookShuffCollectionViewCell.m in Sources */,
 				6DB499FF1C8CEB17001F048B /* BRDBookSummary.m in Sources */,
 				6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */,
 				6DB499E41C8CE8C0001F048B /* BookPagePlayerVC.m in Sources */,
@@ -632,6 +647,7 @@
 				6DF9F1B61C0A390400359200 /* main.m in Sources */,
 				6DB499EA1C8CE8C0001F048B /* BRDServerBookCollectionVC.m in Sources */,
 				6DB499E71C8CE8C0001F048B /* BookShuffTVC.m in Sources */,
+				6D086B001CF26EF5003F2CEB /* BookShuffCollectionViewController.m in Sources */,
 				6DB49A121C8CF6F2001F048B /* BRDBookDownloader.m in Sources */,
 				6D086AF81CF20AC1003F2CEB /* BRDColor.m in Sources */,
 				6DB49A0C1C8CF586001F048B /* BRDBackendFactory.m in Sources */,

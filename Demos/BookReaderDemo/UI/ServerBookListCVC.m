@@ -7,11 +7,15 @@
 //
 
 #import "ServerBookListCVC.h"
+#import "BRDColor.h"
 
 @implementation ServerBookListCVC
 
 - (void)awakeFromNib {
     // Initialization code
+    [self.imageView.layer setBorderColor:[BRDColor lowlightTextGrayColor].CGColor];
+    [self.imageView.layer setBorderWidth:1.0];
+    [self.downloadButton setHidden:YES];
 }
 
 @end
