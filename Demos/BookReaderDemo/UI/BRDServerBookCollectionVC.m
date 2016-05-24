@@ -214,6 +214,9 @@ NSTimer* _myTimer;
         
         if (bookSummary) {
             cell.imageView.image = [[UIImage alloc] initWithData: bookSummary.imageData];
+            cell.bookNameLabel.text = bookInfo.bookName;
+            cell.authorLabel.text = bookInfo.author;
+            // TODO(liefuliu): Add summary.
         }
         
         

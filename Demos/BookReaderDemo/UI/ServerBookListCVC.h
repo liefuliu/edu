@@ -12,4 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *downloadButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @end

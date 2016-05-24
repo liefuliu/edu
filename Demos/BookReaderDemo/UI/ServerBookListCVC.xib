@@ -19,12 +19,6 @@
                             <constraint firstAttribute="width" constant="120" id="AGN-wk-dw8"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="书名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWH-vO-x75">
-                        <rect key="frame" x="91" y="8" width="34" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="作者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTz-Y0-1dD">
                         <rect key="frame" x="91" y="36" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -47,6 +41,12 @@
                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="书名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWH-vO-x75">
+                        <rect key="frame" x="91" y="8" width="34" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -57,6 +57,7 @@
                 <constraint firstItem="uGo-E7-p9m" firstAttribute="leading" secondItem="nTz-Y0-1dD" secondAttribute="leading" id="G8n-7G-4lo"/>
                 <constraint firstItem="T0Y-kc-vj9" firstAttribute="leading" secondItem="nTz-Y0-1dD" secondAttribute="leading" id="QDB-Mt-tvY"/>
                 <constraint firstAttribute="bottom" secondItem="q0h-E7-KxP" secondAttribute="bottom" id="dtg-b7-RR1"/>
+                <constraint firstAttribute="trailing" secondItem="sWH-vO-x75" secondAttribute="trailing" constant="10" id="hka-1T-dgX"/>
                 <constraint firstAttribute="bottom" secondItem="T0Y-kc-vj9" secondAttribute="bottom" constant="15" id="kbX-Kt-MQA"/>
                 <constraint firstItem="NRn-YJ-XbI" firstAttribute="leading" secondItem="nTz-Y0-1dD" secondAttribute="leading" id="lsB-AV-eRB"/>
                 <constraint firstItem="q0h-E7-KxP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="pX5-Um-zJQ"/>
@@ -68,6 +69,9 @@
             </constraints>
             <size key="customSize" width="308" height="134"/>
             <connections>
+                <outlet property="authorLabel" destination="nTz-Y0-1dD" id="JQK-Mt-wDR"/>
+                <outlet property="bookNameLabel" destination="sWH-vO-x75" id="Yys-GO-RW1"/>
+                <outlet property="descriptionLabel" destination="NRn-YJ-XbI" id="45m-Mq-E0v"/>
                 <outlet property="downloadButton" destination="T0Y-kc-vj9" id="5t4-oI-p76"/>
                 <outlet property="imageView" destination="q0h-E7-KxP" id="jfD-B7-38x"/>
             </connections>

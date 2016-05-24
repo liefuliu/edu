@@ -16,6 +16,7 @@
     [self.imageView.layer setBorderColor:[BRDColor lowlightTextGrayColor].CGColor];
     [self.imageView.layer setBorderWidth:1.0];
     [self.downloadButton setHidden:YES];
+    self.bookNameLabel.numberOfLines = 2;
 }
 
 @end
