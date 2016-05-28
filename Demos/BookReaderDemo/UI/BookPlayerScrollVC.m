@@ -78,6 +78,9 @@ static const float kVerticalScale = 1.0;
 {
     [super viewDidLoad];
 
+    // 隐藏状态栏
+    [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
     // 设置按钮的样式。
     [self setRoundAngle:self.exitButton];
     [self setRoundAngle:self.replayButton];
