@@ -19,4 +19,6 @@
 - (BOOL) getSummaryInfoForBooks: (NSArray*) arrayOfBooks
                              to: (NSDictionary**) summaryInfo;
 
+- (BOOL) appendSummaryInfoForBooks: (NSArray*) arrayOfBooks
+                                to: (NSDictionary**) summaryInfo;
 @end

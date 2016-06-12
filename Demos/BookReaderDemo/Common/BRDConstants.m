@@ -32,7 +32,7 @@ int const kNumPagesNonFirstDownload = 4;
 
 BOOL const kDelayDownloadTillEndofPreview = NO;
 
-float const kTimeoutBookFirstLoad = 5.0;
+float const kTimeoutBookFirstLoad = 15.0;
 
 int const kBackendParse = 1;
 int const kBackendLeanCloud = 2;

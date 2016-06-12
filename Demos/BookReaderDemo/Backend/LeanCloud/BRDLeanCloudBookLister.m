@@ -80,6 +80,27 @@ static const int MAX_BOOK_LIST = 1000;
     return YES;
 }
 
+- (BOOL) appendSummaryInfoForBooks: (NSArray*) arrayOfBooks
+                             to: (NSDictionary**) summaryInfo {
+    AVQuery *query = [AVQuery queryWithClassName:@"BookImage"];
+    
+    [query whereKey:@"bookId" containedIn:arrayOfBooks];
+    [query whereKey:@"type" equalTo:@(kFileTypeCover).stringValue];
+    
+    NSArray* objects = [query findObjects];
+    if (objects != nil) {
+        for (AVObject *object in objects) {
+            AVFile* pageContent = (AVFile*) object[@"pageContent"];
+            NSData* imgData = [pageContent getData];
+            
+            BRDBookSummary* summary = [[BRDBookSummary alloc] init];
+            summary.imageData = imgData;
+            [*summaryInfo setValue:summary forKey:(NSString*)object[@"bookId"]];
+        }
+    }
+    
+    return YES;
+}
 
 - (BOOL) fetchBookList:(int) numOfBooks  {
     AVQuery *query = [AVQuery queryWithClassName:@"Book"];

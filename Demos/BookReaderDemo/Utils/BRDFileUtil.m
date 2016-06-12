@@ -24,6 +24,7 @@
     NSArray* allLinedStrings =
     [fileContents componentsSeparatedByCharactersInSet:
      [NSCharacterSet newlineCharacterSet]];
+    allLinedStrings = [allLinedStrings filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"length > 0"]];
     
     NSMutableArray* translatedText = [[NSMutableArray alloc] init];
     for (NSString* encodedLine in allLinedStrings) {

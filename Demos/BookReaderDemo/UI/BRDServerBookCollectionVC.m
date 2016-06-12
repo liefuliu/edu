@@ -1,3 +1,5 @@
+// Display loading & refreshing after lunch!
+
 //
 //  BRDServerBookCollectionVC.m
 //  BookReaderDemo
@@ -13,7 +15,7 @@
 #import "BRDBookSummary.h"
 #import "BRDConstants.h"
 #import "BRDListedBook.h"
-#import "BRDCachedBooks.h"
+#import "BRDListedBookWithImage.h"
 
 #import "BRDBackendFactory.h"
 #import "BRDColor.h"
@@ -29,10 +31,31 @@
 static NSString * const reuseIdentifier = @"Cell";
 
 
+// Element: BRDListedBook
 NSArray* _bookList;
 
+// Represent whether the collection view is loading the data. If Yes, pagination won't be triggered even when
+// we scroll to bottom.
+BOOL _isLoadingData;
+
+// Element: BRDListedBookWithImage
+NSMutableArray* _bookInfoList;
+
 NSTimer* _firstLoadingTimer;
-NSDictionary* _bookCoverImages;
+
+// Represents the current page Number. To save the network traffic, collection view is rendered in pagination mode:
+// Only when user scrolls down to close to the bottom, next pages will be load.
+int _currentPage;
+
+// Represents number of images to load in one page.
+const int kNumberOfImagesToLoad = 5;
+
+// When we scroll down the last but (kPreloadWhenOnlyTheseImagesLeft), pagination will be triggered. The number must
+// be less than kNumberOfImagesToLoad.
+const int kPreloadWhenOnlyTheseImagesLeft = 2;
+
+// Height of collection view cell.
+const int kCollectionViewCellHeight = 160;
 
 UIActivityIndicatorView *_indicatorView;
 NSTimer* _myTimer;
@@ -46,10 +69,6 @@ NSTimer* _myTimer;
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    //self.tabBarController.tabBar.tintColor = [UIColor whiteColor];
-    //self.tabBarController.tabBar.barTintColor = [BRDColor backgroundSkyBlue];
-    
-    
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kNSDefaultsFirstLaunch])
@@ -57,19 +76,11 @@ NSTimer* _myTimer;
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:kNSDefaultsFirstLaunch];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
-        /*
-         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"operation_tips", nil)
-         message:NSLocalizedString(@"do_drag_down_instruction", nil)
-         delegate:self
-         cancelButtonTitle:NSLocalizedString(@"button_ok_title", nil)
-         otherButtonTitles:nil];
-         */
-        
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"操作提示"
                                                         message:@"向下滑动刷新绘本"
                                                        delegate:self
-                                              cancelButtonTitle:@"好的，知道了"                                              otherButtonTitles:nil];
-        
+                                              cancelButtonTitle:@"好的，知道了"
+                                              otherButtonTitles:nil];
         [alert show];
     }
     
@@ -77,11 +88,7 @@ NSTimer* _myTimer;
     self.collectionView.dataSource = self;
     UINib *cellNib = [UINib nibWithNibName:@"ServerBookListCVC" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:reuseIdentifier];
-    //self.navigationController.navigationBar.backgroundColor = [BRDColor backgroundSkyBlue];
     self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
-    
-    // Do any additional setup after loading the view.
-    // bar.topItem.title = @"title text";
     
     /*_myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];*/
     _indicatorView = [self showSimpleActivityIndicatorOnView:self.view];
@@ -96,11 +103,6 @@ NSTimer* _myTimer;
     self.collectionView.dataSource = self;
     
     self.title = @"绘本馆";
-    /*
-    UIBarButtonItem *exitButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneApplication:)];
-    // [exitButton setTitle:@"退出"];
-    [self.navigationItem setLeftBarButtonItem:exitButton];
-    */
     
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@"退出"
@@ -114,19 +116,37 @@ NSTimer* _myTimer;
     UIBarButtonItem* refreshButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(startRefresh:)];
     [self.navigationItem setRightBarButtonItem:refreshButton];
     
-    [self loadBookListInLastVisit];
-    [self tryLoadBookList];
+    _isLoadingData = false;
+    _currentPage = 0;
+    [self tryLoadBookFullList];
 }
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    int contentOffsetY = self.collectionView.contentOffset.y;
+    int contentSizeHeight = self.collectionView.contentSize.height;
+    int boundsSizeHeight = self.collectionView.bounds.size.height;
+    
+    // NSLog(@"scrollViewDidScroll: %d, %d, %d", contentOffsetY, contentSizeHeight, boundsSizeHeight);
+    
+    if (!_isLoadingData) {
+    if(self.collectionView.contentOffset.y >= (self.collectionView.contentSize.height - self.collectionView.bounds.size.height -
+                                               kCollectionViewCellHeight * kPreloadWhenOnlyTheseImagesLeft)) {
+        NSLog(@" scroll to bottom!");
+        [self tryLoadBookImagesForNextPage];
+    }
+    }
+}
+
 
 
 - (void) startRefresh :(UIBarButtonItem *)sender {
     NSLog(@"north star");
     [_indicatorView startAnimating];
-    [self tryLoadBookList];
+    [self tryLoadBookFullList];
 }
 
 - (void) dragDownAndRefresh {
-    [self tryLoadBookList];
+    NSLog(@"Warning: dragDownAndRefresh is disabled.");
 }
 
 
@@ -197,20 +217,17 @@ NSTimer* _myTimer;
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of items
-    return _bookList.count;
+    return _bookInfoList.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section== 0 ) {
         ServerBookListCVC* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
                                                                             forIndexPath:indexPath];
+        BRDListedBookWithImage* bookWithImage = [_bookInfoList objectAtIndex:indexPath.row];
+        BRDListedBook* bookInfo = bookWithImage.bookInfo;
         
-        BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
-        
-        // TODO(liefuliu): add the bookInfo.
-        //cell.statusLabel.text = bookInfo.author;
-        // cell.topicLabel.text = bookInfo.bookName;
-        BRDBookSummary* bookSummary = (BRDBookSummary*)[_bookCoverImages objectForKey:bookInfo.bookId];
+        BRDBookSummary* bookSummary = bookWithImage.bookSummaryWithImage;
         
         if (bookSummary) {
             cell.imageView.image = [[UIImage alloc] initWithData: bookSummary.imageData];
@@ -223,7 +240,7 @@ NSTimer* _myTimer;
         return cell;
     } else {
         return nil;
-    }    // Configure the cell
+    }
 }
 
 
@@ -234,7 +251,7 @@ NSTimer* _myTimer;
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     
     size.width = screenRect.size.width - 30;
-    size.height = 160;
+    size.height = kCollectionViewCellHeight;
     
     return size;
 }
@@ -250,9 +267,11 @@ NSTimer* _myTimer;
 
 - (void) collectionView:(UICollectionView *)collectionView
 didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (indexPath.section == 0){
-        BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPath.row];
+        [_indicatorView stopAnimating];
+        [_firstLoadingTimer invalidate];
+        
+        BRDListedBook* bookInfo = ((BRDListedBookWithImage*)[_bookInfoList objectAtIndex:indexPath.row]).bookInfo;
         
         if ([[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
             BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookInfo.bookId];
@@ -262,7 +281,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookId]];
             waitingVC.delegate = self;
             [self.navigationController presentViewController:waitingVC animated:nil completion:nil];
-            //[self.navigationController pushViewController:waitingVC animated:nil];
         }
     }
 }
@@ -274,10 +292,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void) downloadComplete: (NSString*) bookKeyUnused
              forTopNPages:(int)pagesDownloaded {
     // We should keep more info about the book.
-    //[[BRDBookShuff sharedObject] addBook:bookKey];
     NSArray *arrayOfIndexPaths = [self.collectionView indexPathsForSelectedItems];
     NSIndexPath *indexPathImInterestedIn = [arrayOfIndexPaths firstObject];
-    BRDListedBook* bookInfo = [_bookList objectAtIndex:indexPathImInterestedIn.row];
+    BRDListedBook* bookInfo = ((BRDListedBookWithImage*)[_bookInfoList objectAtIndex:indexPathImInterestedIn.row]).bookInfo;
     
     NSString* bookKey = [bookInfo bookId];
     LocalBook* localBook = [[LocalBook alloc]
@@ -294,13 +311,6 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 #pragma mark initialize the view
-- (void) loadBookListInLastVisit {
-    BRDCachedBooks* cachedBooks;
-    if ([[BRDBookShuff sharedObject] getCachedBooks:&cachedBooks]) {
-        _bookList = cachedBooks.bookList;
-        _bookCoverImages = cachedBooks.bookCoverImages;
-    }
-}
 
 - (void) cancelLoading {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"下载超时，请检查网络后向下滑动刷新。" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
@@ -312,12 +322,12 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 // TODO(liefuliu): Set time out for tryLoadBoookList, and throw an alert when time out.
--(void) tryLoadBookList {
+-(void) tryLoadBookFullList {
+    [self startLoadData];
     _firstLoadingTimer = [NSTimer scheduledTimerWithTimeInterval:kTimeoutBookFirstLoad target:self selector:@selector(cancelLoading) userInfo:nil repeats:NO];
     
     NSLog(@"tryLoadBookList");
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
-        
         id<BRDBookLister> bookLister = [BRDBackendFactory getBookLister];
         if (![bookLister connectToServer]) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"无法连接到服务器" delegate:self cancelButtonTitle:nil otherButtonTitles:nil];
@@ -326,52 +336,72 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         }
         
         __block NSArray* arrayOfBooks;
-        
         [bookLister getListOfBooks:100 startFrom:0 to:&arrayOfBooks];
-        for (NSString* bookName in arrayOfBooks) {
-            NSLog(@"book name:%@", bookName);
-        }
         
-        //we get the main thread because drawing must be done in the main thread always
+        // We get the main thread because drawing must be done in the main thread always
         dispatch_async(dispatch_get_main_queue(),^ {
-            // [cell.imageView setImage:cellImage];
             _bookList = arrayOfBooks;
-            
-            [self tryLoadBookImages];
+            [self tryLoadBookImagesForNextPage];
         } );
         
     });
 }
 
-- (void) tryLoadBookImages {
-    NSLog(@"tryLoadBookImages");
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
-        id<BRDBookLister> bookLister = [BRDBackendFactory getBookLister];
-        __block NSDictionary* bookSummaryInfo;
-        
-        NSMutableArray* arrayOfBookId = [[NSMutableArray alloc] init];
-        for (BRDListedBook* book in _bookList) {
-            [arrayOfBookId addObject:book.bookId];
-        }
-        
-        [bookLister getSummaryInfoForBooks:arrayOfBookId to:&bookSummaryInfo];
-        
-        //we get the main thread because drawing must be done in the main thread always
-        dispatch_async(dispatch_get_main_queue(),^ {
-            // [cell.imageView setImage:cellImage];
-            _bookCoverImages = bookSummaryInfo;
-            
-            BRDCachedBooks* cachedBooks = [[BRDCachedBooks alloc] initWithBookList:_bookList withCovers:_bookCoverImages];
-            [[BRDBookShuff sharedObject] setCachedBooks:cachedBooks];
-            
-            [_indicatorView stopAnimating];
-            [self.refreshControl endRefreshing];
+- (void) startLoadData {
+    [_indicatorView startAnimating];
+    _isLoadingData = true;
+}
 
-            [self.collectionView reloadData];
-            [_firstLoadingTimer invalidate];
-             NSLog(@"finished tryLoadBookImages");
-        } );
+- (void) endLoadData {
+    [_indicatorView stopAnimating];
+    _isLoadingData = false;
+}
+
+- (void) tryLoadBookImagesForNextPage {
+    [self startLoadData];
+    if (_bookInfoList == nil) {
+        _bookInfoList = [[NSMutableArray alloc] init];
+    }
+    
+    __block NSMutableArray* arrayOfBookToFetch = [[NSMutableArray alloc] init];
+    for (int i = _currentPage * kNumberOfImagesToLoad;
+         i < MIN((_currentPage + 1) * kNumberOfImagesToLoad, [_bookList count]);
+         i++) {
+        [arrayOfBookToFetch addObject:((BRDListedBook*)_bookList[i]).bookId];
+    }
+    
+    NSLog(@"tryLoadBookImagesForNextPage");
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
+        NSLog(@"enter dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0),");
         
+        id<BRDBookLister> bookLister = [BRDBackendFactory getBookLister];
+        
+        __block NSMutableDictionary* bookSummaryInfo = [[NSMutableDictionary alloc] init];
+        [bookLister appendSummaryInfoForBooks:arrayOfBookToFetch to:&bookSummaryInfo];
+        
+        dispatch_async(dispatch_get_main_queue(),^ {
+            for (int i = _currentPage * kNumberOfImagesToLoad;
+                 i < MIN((_currentPage + 1)* kNumberOfImagesToLoad, [_bookList count]);
+                 i++) {
+                BRDListedBook* listedBook = (BRDListedBook*)_bookList[i];
+                BRDBookSummary* bookSummary = (BRDBookSummary*)[bookSummaryInfo objectForKey:listedBook.bookId];
+                if (bookSummary != nil) {
+                    BRDListedBookWithImage* bookWithImage = [[BRDListedBookWithImage alloc]
+                                                         initBook:listedBook
+                                                         withSummaryImage:bookSummary];
+                    [_bookInfoList addObject:bookWithImage];
+                }
+            }
+            
+            if (_currentPage == 0) {
+                [_firstLoadingTimer invalidate];
+                [_indicatorView stopAnimating];
+                [self.refreshControl endRefreshing];
+            }
+            ++_currentPage;
+            [self.collectionView reloadData];
+            [self endLoadData];
+        } );
     });
 }
 

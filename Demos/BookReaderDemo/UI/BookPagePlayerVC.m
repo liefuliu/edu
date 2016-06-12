@@ -42,6 +42,11 @@
     return self;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return NO;
+}
+
 - (void) showPageAtIndex:(int) pageIndex {
     if (self.localBookInfo.imageFileType == kImageFileFormatJpg) {
      
