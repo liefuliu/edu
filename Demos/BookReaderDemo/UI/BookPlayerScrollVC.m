@@ -1,6 +1,7 @@
 #import "BRDConstants.h"
 #import "BookPlayerScrollVC.h"
-#import "BookPagePlayerVC.h"
+#import "LandscapeBookPagePlayerVC.h"
+#import "PortraitBookPagePlayerVC.h"
 #import "BRDFileUtil.h"
 #import "BRDPathUtil.h"
 #import "BRDBookShuff.h"
@@ -74,6 +75,8 @@ static const float kVerticalScale = 1.0;
     return self;
 }
 
+/* To disable the rotation, we should enable the following code:
+ 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -81,12 +84,14 @@ static const float kVerticalScale = 1.0;
     return NO;
 }
 
-- (NSUInteger) supportedInterfaceOrientations {
-    return UIInterfaceOrientationMaskPortrait;
+ - (NSUInteger) supportedInterfaceOrientations {
+    //return UIInterfaceOrientationMaskPortrait;
+    return UIInterfaceOrientationMaskLandscape;
 }
+*/
 
 - (BOOL)shouldAutorotate {
-    return NO;
+    return YES;
 }
 
 - (void)viewDidLoad
@@ -350,18 +355,29 @@ static const float kVerticalScale = 1.0;
         [view removeFromSuperview];
     }
     
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        NSLog(@"Portrait mode");
+        
+    } else {
+        NSLog(@"Landscape mode");
+    }
+    
+    
     NSUInteger numPages = MIN(self.localBookInfo.downloadedPages + 1, self.localBookInfo.totalPages);
     
     // 将ScrollView的高宽设置为与屏幕一致。
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGRect scrollFrame;
     scrollFrame.origin = self.scrollView1.frame.origin;
-    scrollFrame.size = screenRect.size;
+    CGSize adjustedScreenRect = [self adjustedScreenSize];
+    scrollFrame.size = adjustedScreenRect;
+    NSLog(@"Adjusted screen rect: width: %f, height: %f", adjustedScreenRect.width, adjustedScreenRect.height);
+    
     self.scrollView1.frame = scrollFrame;
     
     // ScrollView的总宽为（宽度x页数）。
     self.scrollView1.contentSize =
-    CGSizeMake(CGRectGetWidth(self.scrollView1.frame) * numPages, CGRectGetHeight(self.scrollView1.frame));
+    CGSizeMake(CGRectGetWidth(scrollFrame) * numPages, CGRectGetHeight(scrollFrame));
     
     // 初始化所有页面视图。
     self.viewControllers = nil;
@@ -375,6 +391,17 @@ static const float kVerticalScale = 1.0;
     [self gotoPage:pageHasChanged];
 }
 
+- (CGSize)adjustedScreenSize {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    /*if (!UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+        return CGSizeMake(screenSize.height, screenSize.width);
+    }*/
+    //if ([[UIDevice currentDevice] orientation] != UIDeviceOrientationPortrait) {
+    //    return CGSizeMake(screenSize.height, screenSize.width);
+    //}
+    return screenSize;
+}
+
 // 载入第(page)页
 - (void)loadScrollViewWithPage:(NSUInteger)page
 {
@@ -383,12 +410,19 @@ static const float kVerticalScale = 1.0;
     }
     
     // 新建一个页面（BookPagePlayerVC），并插入到所有会本页的容器中 (self.viewControllers）。
-    BookPagePlayerVC *controller = [self.viewControllers objectAtIndex:page];
+    BookPagePlayerBaseVC *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        controller = [[BookPagePlayerVC alloc] initWithBookKey:self.localBookKey
-                                                      withPage:(int)page
-                                            withTranslatedText:self.translatedText];
+        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+            controller = [[PortraitBookPagePlayerVC alloc] initWithBookKey:self.localBookKey
+                                                                   withPage:(int)page
+                                                         withTranslatedText:self.translatedText];
+        } else {
+            controller = [[LandscapeBookPagePlayerVC alloc] initWithBookKey:self.localBookKey
+                                                                   withPage:(int)page
+                                                         withTranslatedText:self.translatedText];
+        }
+        
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
     }
     
@@ -444,7 +478,7 @@ static const float kVerticalScale = 1.0;
     for (int p = MAX(0, page - 2);
          p <= MIN(page + 2, self.viewControllers.count - 1); ++p)
     {
-        BookPagePlayerVC *controller = [self.viewControllers objectAtIndex:p];
+        BookPagePlayerBaseVC *controller = [self.viewControllers objectAtIndex:p];
         if ((NSNull *)controller != [NSNull null]) {
             if (controller.page < (page - 1) ||
                 controller.page > (page + 1))

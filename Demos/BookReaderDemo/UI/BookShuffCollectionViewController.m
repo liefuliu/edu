@@ -106,10 +106,15 @@ static NSString * const reuseIdentifier = @"Cell";
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGRect screenRect;
+    screenRect.origin= [[UIScreen mainScreen] bounds].origin;
+    screenRect.size = [self adjustedScreenSize];
     
-    
-    size.width = (screenRect.size.width - 30) / 2;
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        size.width = (screenRect.size.width - 30) / 2;
+    } else {
+        size.width = (screenRect.size.height - 30) / 2;
+    }
     
     // There are 2 labels: book name and author, therefore set 70 to be the height.
     const int heightReservedForLabels = 70;
@@ -137,6 +142,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 }
 
 
+
+- (CGSize)adjustedScreenSize {
+    CGSize screenSize = [UIScreen mainScreen].bounds.size;
+    //if (!UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation)) {
+    //    return CGSizeMake(screenSize.height, screenSize.width);
+    // }
+    return screenSize;
+}
 
 #pragma mark <UICollectionViewDelegate>
 
@@ -168,6 +181,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 	
 }
 */
+
 
 #pragma mark - Data processing
 - (void) loadBooksOnShuff {

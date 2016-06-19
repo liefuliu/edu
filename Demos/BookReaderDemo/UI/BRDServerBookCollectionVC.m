@@ -60,6 +60,11 @@ const int kCollectionViewCellHeight = 160;
 UIActivityIndicatorView *_indicatorView;
 NSTimer* _myTimer;
 
+
+- (void) viewWillAppear:(BOOL)animated {
+    [self.collectionView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -98,7 +103,6 @@ NSTimer* _myTimer;
               forControlEvents:UIControlEventValueChanged];
     [self.collectionView addSubview:_refreshControl];
     self.collectionView.alwaysBounceVertical = YES;
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -275,7 +279,10 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         
         if ([[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
             BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookInfo.bookId];
-            [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
+            [self.navigationController presentViewController:detailViewController animated:YES completion:^{
+                NSLog(@"presentViewController complete");
+                // [self.collectionView reloadData];
+            }];
             
         } else {
             BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookId]];
@@ -283,6 +290,14 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             [self.navigationController presentViewController:waitingVC animated:nil completion:nil];
         }
     }
+}
+
+
+
+// 响应屏幕90度旋转的操作。
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self.collectionView reloadData];
 }
 
 #pragma mark <UICollectionViewDelegate>

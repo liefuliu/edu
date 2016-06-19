@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 SanRenXing. All rights reserved.
 //
 
-#import "BookPagePlayerVC.h"
+#import "PortraitBookPagePlayerVC.h"
 #import "LocalBook.h"
 #import "BRDPathUtil.h"
 
@@ -17,18 +17,14 @@
 #import "BRDConstants.h"
 #import <PDFImage/PDFImage.h>
 
-@interface BookPagePlayerVC ()
+@interface PortraitBookPagePlayerVC ()
 
-@property int currentPage;
-@property LocalBook* localBookInfo;
-@property NSString* localBookKey;
-@property NSArray* translatedText;
 
 @property (nonatomic, retain) AVAudioPlayer *player;
 
 @end
 
-@implementation BookPagePlayerVC
+@implementation PortraitBookPagePlayerVC
 
 - (id) initWithBookKey:(NSString*) localBookKey
               withPage:(int) pageIndex
@@ -71,7 +67,7 @@
     }
     
     [self.translatedTextView setFont:[UIFont systemFontOfSize:16]];
-
+    [self.translatedTextView setTextColor:[UIColor whiteColor]];
 }
 
 
