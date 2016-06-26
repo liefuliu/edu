@@ -19,6 +19,8 @@
 
 #import "BRDBackendFactory.h"
 #import "BRDColor.h"
+#import "BRDConfig.h"
+
 @interface BRDServerBookCollectionVC ()
 
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -277,13 +279,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         
         BRDListedBook* bookInfo = ((BRDListedBookWithImage*)[_bookInfoList objectAtIndex:indexPath.row]).bookInfo;
         
-        if ([[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
-            BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookInfo.bookId];
-            [self.navigationController presentViewController:detailViewController animated:YES completion:^{
-                NSLog(@"presentViewController complete");
-                // [self.collectionView reloadData];
-            }];
-            
+        if ([[BRDConfig sharedObject] directlyOpenBookPages] || [[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
+            [self downloadComplete: @"bookKeyUnused"
+                      forTopNPages:0];
         } else {
             BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookId]];
             waitingVC.delegate = self;
@@ -303,7 +301,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 #pragma mark <UICollectionViewDelegate>
 
 
-
+// TODO: 删除在主页中处理downlaodComplete的事件。
 - (void) downloadComplete: (NSString*) bookKeyUnused
              forTopNPages:(int)pagesDownloaded {
     // We should keep more info about the book.
@@ -312,6 +310,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     BRDListedBook* bookInfo = ((BRDListedBookWithImage*)[_bookInfoList objectAtIndex:indexPathImInterestedIn.row]).bookInfo;
     
     NSString* bookKey = [bookInfo bookId];
+    if (![[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
     LocalBook* localBook = [[LocalBook alloc]
                             initBook:bookInfo.bookName
                             author:bookInfo.author
@@ -320,6 +319,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                             filePrefix:bookInfo.bookId hasTranslatedText:YES
                             imageFileType:bookInfo.imageFileType];
     [[BRDBookShuff sharedObject] addBook:localBook forKey:bookKey];
+    }
     
     BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
     [self.navigationController presentViewController:detailViewController animated:YES completion:nil];

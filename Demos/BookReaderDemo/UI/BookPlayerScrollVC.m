@@ -7,11 +7,13 @@
 #import "BRDBookShuff.h"
 #import "BRDBackendFactory.h"
 #import "BookPlayerPopupSubVC.h"
+#import "BRDConfig.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
 #import <QuartzCore/QuartzCore.h>
+#import "BRDBackendFactory.h"
 
 typedef enum ScrollDirection {
     ScrollDirectionNone,
@@ -136,6 +138,9 @@ static const float kVerticalScale = 1.0;
     _spinner.tag = 12;
     [self.view addSubview:_spinner];
     
+    _currentPage = 0;
+    [self updateLastReadDate];
+    
     // 如果App是首次运行，则在初始化页面之前，显示操作提示。否则，直接显示初始化页面。
     if (![[NSUserDefaults standardUserDefaults] boolForKey:kNSDefaultsFirstPageLoad])
     {
@@ -149,16 +154,43 @@ static const float kVerticalScale = 1.0;
                                               otherButtonTitles:nil];
         [alert show];
     } else {
-        [self initializeFromCurrentPage:YES];
+        if ([[BRDConfig sharedObject] directlyOpenBookPages]) {
+        if (self.localBookInfo.downloadedPages > 0) {
+            [self initializeFromCurrentPage:YES];
+        } else {
+            [_spinner startAnimating];
+            //if (kDelayDownloadTillEndofPreview) {
+            [[BRDBackendFactory getBookDownloader] downloadBook:self.localBookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
+                if (error != nil) {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
+                    [alert show];
+                    [self dismissViewControllerAnimated:YES completion:nil];
+                } else if (finished) {
+                    [_spinner stopAnimating];
+                    self.localBookInfo = [[BRDBookShuff sharedObject] getBook:self.localBookKey];
+                    
+                    self.localBookInfo.downloadedPages = kNumPagesFirstDownload;
+                    if ([self.localBookInfo hasTranslatedText]) {
+                        self.translatedText = [BRDFileUtil extractTranslatedText:self.localBookKey];
+                    } else {
+                        self.translatedText = @[];
+                    }
+                    [self initializeFromCurrentPage:YES];
+                    [self downloadBookTillTopNPages];
+                } else {
+                    // [self updateStatus:percent];
+                }
+            }];
+
+        }
+        } else {
+            [self initializeFromCurrentPage:YES];
+        }
     }
     
-    _currentPage = 0;
-    if (self.localBookInfo.downloadedPages < self.localBookInfo.totalPages) {
-        [self downloadBookTillTopNPages];
-    }
     
-    [self updateLastReadDate];
-}
+ }
+
 
 #pragma 视图设置辅助函数
 

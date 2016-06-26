@@ -24,6 +24,7 @@
     if (self = [super init]) {
         _useScrollViewInPagination = true;
         _backendToUse = kBackendLeanCloud; //kBackendParse;
+        _directlyOpenBookPages = true;
     }
     return self;
 }
