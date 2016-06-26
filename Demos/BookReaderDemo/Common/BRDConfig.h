@@ -15,6 +15,9 @@
 @property (readonly) bool useScrollViewInPagination;
 @property (readonly) int backendToUse;
 
+// 在绘本馆点击书本后，直接进入绘本页，不显示下载进度。
+@property (readonly) bool directlyOpenBookPages;
+
 + (id) sharedObject;
 
 

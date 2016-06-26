@@ -26,6 +26,50 @@
 
 @implementation LandscapeBookPagePlayerVC
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.view removeConstraints:self.view.constraints];
+    
+    // Set constraits for
+    // @property (weak, nonatomic) IBOutlet UIImageView *pageImageView;
+    // @property (weak, nonatomic) IBOutlet UITextView *translatedTextView;
+    NSDictionary *nameMap = @{@"pageImageView": self.pageImageView,
+                            @"translatedTextView": self.translatedTextView};
+    
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    int screenWidth = screenRect.size.width;
+    NSString* horizontalConstraintsImageFormat = [NSString stringWithFormat:@"H:|-%d-[pageImageView]-%d-|",
+                                                  screenWidth / 5, screenWidth * 3 / 10];
+    
+    
+    NSArray* horizontalConstraintsImage =
+    [NSLayoutConstraint constraintsWithVisualFormat:horizontalConstraintsImageFormat options:0 metrics:nil views:nameMap];
+    
+    NSString* horizontalConstraintsTextFormat = [NSString stringWithFormat:@"H:[pageImageView]-%d-[translatedTextView]-%d-|", screenWidth/50, screenWidth/20];
+    
+    
+    NSArray* horizontalConstraintsText =
+    [NSLayoutConstraint constraintsWithVisualFormat:horizontalConstraintsTextFormat options:0 metrics:nil views:nameMap];
+    
+    
+    NSArray* verticalConstraintsImage =
+    [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[pageImageView]-0-|" options:0 metrics:nil views:nameMap];
+    
+    int screenHeight= screenRect.size.height;
+    NSString* verticalConstraintsTextFormat = [NSString stringWithFormat:@"V:|-%d-[translatedTextView]-0-|",
+                                                  screenHeight / 3];
+
+    NSArray* verticalConstraintsText =
+    [NSLayoutConstraint constraintsWithVisualFormat:verticalConstraintsTextFormat options:0 metrics:nil views:nameMap];
+    
+    [self.view addConstraints:horizontalConstraintsImage];
+    [self.view addConstraints:horizontalConstraintsText];
+    [self.view addConstraints:verticalConstraintsImage];
+    [self.view addConstraints:verticalConstraintsText];
+    
+}
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

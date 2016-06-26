@@ -26,8 +26,15 @@
     return color;
 }
 
+
++ (UIColor*)backgroundSRXBlue {
+    UIColor* color = [UIColor colorWithRed:(0.0/255.0f) green:(153/255.0f) blue:(225.0f/255.0f) alpha:1.0f];
+    return color;
+}
+
+
 + (UIColor*) backgroundSkyBlue {
-    return [BRDColor backgroundSteelBlue];
+    return [BRDColor backgroundSRXBlue];
 }
 
 + (UIColor*) lowlightTextGrayColor {
