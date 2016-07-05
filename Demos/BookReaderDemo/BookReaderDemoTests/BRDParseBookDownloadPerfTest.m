@@ -32,6 +32,7 @@
 }
 
 // Please remove the app before running the test.
+/* 
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     CFTimeInterval startTime = CACurrentMediaTime();
@@ -89,5 +90,6 @@
         }
     }
 }
+*/
 
 @end

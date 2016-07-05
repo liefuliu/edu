@@ -34,7 +34,7 @@
 - (void)downloadBook: (NSString*) bookId
          toDirectory:(NSString*) directoryPath
            startPage: (int) startPage
-        endPage:(int) endPage
+             endPage:(int) endPage
    withProgressBlock:(void (^)(BOOL finished, NSError* error, float percent)) block {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         AVQuery *query = [AVQuery queryWithClassName:@"BookImage"];
@@ -51,13 +51,11 @@
             return;
         }
         
-        NSLog(@"Successfully retrieved %lu scores.", objectsInQuery.count);
-        
         if (objectsInQuery != nil) {
             NSMutableArray* objectsToDownload = [[NSMutableArray alloc] init];
             for (AVObject *object in objectsInQuery) {
                 if (![BRDLeanCloudBookDownloader isPage:object inRangeStartWith: startPage
-                               endBy: endPage]) {
+                                                  endBy: endPage]) {
                     continue;
                 }
                 [objectsToDownload addObject:object];
@@ -65,16 +63,36 @@
             
             int totalBooks = MIN(1000, (int)[objectsToDownload count]);
             int downloaded = 0;
+            
             for (AVObject *object in objectsToDownload) {
                 
                 AVFile* pageContent = (AVFile*) object[@"pageContent"];
-                NSLog(@"Start downloading page page: %@", [pageContent name]);
+                // NSLog(@"Start downloading page page: %@", [pageContent name]);
                 
                 // TODO(liefuliu): check if the file name is valid.
-                NSString* documentPath = [BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
+                const int MAX_DOWNLOAD_ATTEMPT = 5;
+                int attempt_times = 0;
+                bool downloadPageSucceeded = false;
                 
-                // TODO(liefuliu): Check file downloading is succeeded or not.
-                [BRDLeanCloudBookDownloader downloadParseFile:pageContent to:documentPath];
+                while (!downloadPageSucceeded) {
+                    NSString* documentPath =
+                    [directoryPath stringByAppendingPathComponent:[BRDPathUtil extractParseFileName:[pageContent name]]];
+                    //[BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
+                    
+                    [BRDLeanCloudBookDownloader downloadParseFile:pageContent to:documentPath];
+                    if ([[NSFileManager defaultManager] fileExistsAtPath:documentPath]) {
+                        NSLog(@"Download %@ succeeded", documentPath);
+                        break;
+                    }
+                    
+                    ++attempt_times;
+                    NSLog(@"Download %@ failed. Attempt %d of %d", documentPath, attempt_times, MAX_DOWNLOAD_ATTEMPT);
+                    if (attempt_times >= MAX_DOWNLOAD_ATTEMPT) {
+                        // Ignore the error for now.
+                        // TODO(liefuliu): handle the error.
+                        break;
+                    }
+                }
                 
                 ++downloaded;
                 __block int percent = downloaded * 100 / totalBooks;
@@ -84,6 +102,7 @@
                     block(NO, nil, percent);
                 });
                 
+                // Investigate why totalBooks is 13... TODO
                 if (downloaded == totalBooks) {
                     dispatch_async(dispatch_get_main_queue(),^ {
                         block(YES, nil, percent);
@@ -92,9 +111,9 @@
                 }
             }
         }
-      });
-         
-        
+    });
+    
+    
 }
 
 - (void)downloadBook: (NSString*) bookId
@@ -125,13 +144,15 @@
 }
 
 + (BOOL) isPage: (AVObject*) object
-         inRangeStartWith: (int) startPage
+inRangeStartWith: (int) startPage
           endBy: (int) endPage {
     NSString* typeString = (NSString*)object[kBookImageTableTypeColumn];
     NSString* pageNumberString = (NSString*)object[kBookImageTablePageNumberColumn];
+    if ([typeString intValue] == kFileTypeCover) {
+        return NO;
+    }
     
-    if ([typeString intValue] == kFileTypeTrans ||
-        [typeString intValue] == kFileTypeCover) {
+    if ([typeString intValue] == kFileTypeTrans && startPage <= 1) {
         return YES;
     }
     

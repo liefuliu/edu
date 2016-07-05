@@ -157,6 +157,7 @@ static const float kVerticalScale = 1.0;
         if ([[BRDConfig sharedObject] directlyOpenBookPages]) {
         if (self.localBookInfo.downloadedPages > 0) {
             [self initializeFromCurrentPage:YES];
+            [self downloadBookTillTopNPages];
         } else {
             [_spinner startAnimating];
             //if (kDelayDownloadTillEndofPreview) {
