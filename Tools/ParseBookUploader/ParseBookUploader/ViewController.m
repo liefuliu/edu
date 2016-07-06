@@ -10,6 +10,7 @@
 #import "FilePathUtil.h"
 #import <Parse/Parse.h>
 
+#import "FileValidator.h"
 #import <AVOSCloud/AVOSCloud.h>
 #import "BUConfig.h"
 #import "BUConstants.h"
@@ -87,6 +88,27 @@
     NSLog(@"session id = %@", sessionId);
     
     NSArray* array = [self getListOfFilePathsMatched:[self.textFieldFileName stringValue]];
+    NSArray* allErrors;
+    NSArray* allWarnings;
+    BOOL areFilesValid = [FileValidator validateFiles:array errorsTo:&allErrors warningsTo:&allWarnings];
+    
+    if (!areFilesValid) {
+        // Display errors
+        NSString* errorsFriendlyString = @"";
+        for (NSString* error in allErrors) {
+            errorsFriendlyString = [NSString stringWithFormat:@"%@%@; ", errorsFriendlyString, error];
+        }
+        
+        NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
+                                         defaultButton:@"OK" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          errorsFriendlyString];
+        
+        [alert runModal];
+        return;
+    } else {
+        
+    }
     
     if ([array count] > 0) {
         NSAlert *alert = [[NSAlert alloc] init];
