@@ -10,3 +10,5 @@
 
 extern int const kBackendParse;
 extern int const kBackendLeanCloud;
+
+extern NSString* const kBookDirectory;

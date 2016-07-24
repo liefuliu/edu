@@ -14,6 +14,7 @@
 #import <AVOSCloud/AVOSCloud.h>
 #import "BUConfig.h"
 #import "BUConstants.h"
+#import "BookPreviewViewController.h"
 
 @interface NSAttributedString (Hyperlink)
 +(id)hyperlinkFromString:(NSString*)inString withURL:(NSURL*)aURL;
@@ -79,14 +80,10 @@
     }
     
     NSLog(@"button clicked");
-    [self EnumerateDir];
+    [self requestToUpload];
 }
 
-- (void) EnumerateDir {
-    //NSString* sessionId = [self getSessionId];
-    NSString* sessionId = @"20160117_211559_";
-    NSLog(@"session id = %@", sessionId);
-    
+- (NSArray*) validateFilesInDir {
     NSArray* array = [self getListOfFilePathsMatched:[self.textFieldFileName stringValue]];
     NSArray* allErrors;
     NSArray* allWarnings;
@@ -105,9 +102,20 @@
                           errorsFriendlyString];
         
         [alert runModal];
-        return;
+        return nil;
     } else {
-        
+        return array;
+    }
+}
+
+- (void) requestToUpload {
+    //NSString* sessionId = [self getSessionId];
+    NSString* sessionId = @"20160117_211559_";
+    NSLog(@"session id = %@", sessionId);
+    
+    NSArray* array = [self validateFilesInDir];
+    if (array == nil) {
+        return;
     }
     
     if ([array count] > 0) {
@@ -266,7 +274,7 @@
 
 - (NSArray*) getListOfFilePathsMatched : (NSString*) filePattern {
     NSString* userName = NSUserName();
-    NSString* searchPath = [NSString stringWithFormat:@"file:///users/%@/Desktop/PicBooks/", userName];
+    NSString* searchPath = [NSString stringWithFormat:kBookDirectory, userName];
     NSURL *url = [NSURL URLWithString:searchPath];
     
     NSError *error = nil;
@@ -299,6 +307,62 @@
     return arrayFilePath;
 }
 
+- (IBAction)onPreviewClicked:(id)sender {
+    NSArray* filePaths = [self validateFilesInDir];
+    //BookPreviewViewController* previewVC = [[BookPreviewViewController alloc] initWithBookFileNames:fileNames];
+    //BookPreviewViewController* previewVC = [[BookPreviewViewController alloc] initWithNibName:nil bundle:nil];
+    //[self presentViewControllerAsModalWindow:previewVC];
+    if (filePaths == nil || [filePaths count] == 0) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
+                                         defaultButton:@"确定" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          @"没有找到绘本文件"];
+        [alert runModal];
+        return;
+    }
+    
+    NSMutableSet *bookNames = [[NSMutableSet alloc]init];
+    //NSString* bookName = nil;
+    //BOOL uniqueBookName = YES;
+    for (NSString* filePath in filePaths) {
+        NSString* fileName = [filePath lastPathComponent];
+        
+        if ([FilePathUtil getFileType:fileName] == kUnknownType) {
+            continue;
+        }
+        
+        NSString* currentBookName = [FilePathUtil getBookName:fileName];
+        /*
+        if (bookName != nil && @![bookName isEqualToString:currentBookName]) {
+            uniqueBookName = NO;
+            break;
+        }*/
+        
+        [bookNames addObject:currentBookName];
+    }
+    
+    if ([bookNames count] > 1) {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"无法预览"
+                                         defaultButton:@"确定" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          @"选中的文件书名不完全一致。"];
+        [alert runModal];
+        return;
+    }
+    
+    NSStoryboard *storyboard = [NSStoryboard storyboardWithName:@"Main" bundle:nil];
+    BookPreviewViewController *myViewController = (BookPreviewViewController*)[storyboard instantiateControllerWithIdentifier:@"BookPreviewViewController"];
+    if ([myViewController loadBookFiles:filePaths]) {
+        [self presentViewControllerAsModalWindow:myViewController];
+    } else {
+        NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
+                                         defaultButton:@"确定" alternateButton:nil
+                                           otherButton:nil informativeTextWithFormat:
+                          @"预览绘本失败"];
+        [alert runModal];
+
+    }
+}
 
 
 @end

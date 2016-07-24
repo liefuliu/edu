@@ -29,7 +29,7 @@
 - (void)testCoverFileValidatorSuccess {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
-    const NSString* smallFilePath = @"./Apps/Tests/FileValidatorTests/mybook-cover.jpg";
+    const NSString* smallFilePath = @"./mybook-cover.jpg";
     [[NSFileManager defaultManager] createFileAtPath:smallFilePath contents:nil attributes:nil];
     //This creates an empty file, which you can write to or read from. To write text (or XML), just use NSString's writeToFile:atomically:encoding:error: method like this
     
@@ -47,7 +47,7 @@
 
 - (void)testCoverFileValidatorFailure {
     // Create a small cover file.
-    const NSString* smallFilePath = @"./Apps/Tests/FileValidatorTests/mybook-cover.jpg";
+    const NSString* smallFilePath = @"./mybook-cover.jpg";
     [[NSFileManager defaultManager] createFileAtPath:smallFilePath contents:nil attributes:nil];
     //This creates an empty file, which you can write to or read from. To write text (or XML), just use NSString's writeToFile:atomically:encoding:error: method like this
     

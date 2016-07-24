@@ -11,6 +11,5 @@
 int const kBackendParse = 1;
 int const kBackendLeanCloud = 2;
 
-
-
+NSString* const kBookDirectory = @"file:///users/%@/Desktop/PicBooks/";
 

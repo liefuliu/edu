@@ -23,7 +23,7 @@ const NSString* kErrorCoverFileTooBig = @"Cover文件大小不能超过 100 KB";
     
     BOOL result = true;
     
-    result &= [FileValidator validateTranslatorFiles:filesToUpload
+    result &= [FileValidator validateCoverFiles:filesToUpload
                     errorsTo:newErrors
                     warningsTo:newWarnings];
     
@@ -32,7 +32,7 @@ const NSString* kErrorCoverFileTooBig = @"Cover文件大小不能超过 100 KB";
     return result;
 }
 
-+ (BOOL) validateTranslatorFiles:(NSArray*) filesToUpload
++ (BOOL) validateCoverFiles:(NSArray*) filesToUpload
               errorsTo:(NSMutableArray*) errors
             warningsTo:(NSMutableArray*) warnings {
     for (NSString* file in filesToUpload) {
