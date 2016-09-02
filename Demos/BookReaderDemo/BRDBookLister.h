@@ -14,7 +14,11 @@
 
 - (BOOL) getListOfBooks:(int) numOfBooks
               startFrom:(int) pageOffset
-                     to:(NSArray**) arrayOfBooks;  // NSArray of ServerBook.
+                     to:(NSArray**) arrayOfBooks;  // NSArray of server book.
+
+- (BOOL) getListOfBookSets:(int) numOfBooks
+              startFrom:(int) pageOffset
+                     to:(NSArray**) arrayOfBookSets;  // NSArray of server book set.
 
 - (BOOL) getSummaryInfoForBooks: (NSArray*) arrayOfBooks
                              to: (NSDictionary**) summaryInfo;

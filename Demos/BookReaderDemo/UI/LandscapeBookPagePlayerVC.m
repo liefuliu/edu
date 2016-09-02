@@ -101,6 +101,7 @@
     
     [self.translatedTextView setFont:[UIFont systemFontOfSize:16]];
     [self.translatedTextView setTextColor:[UIColor whiteColor]];
+    [self.translatedTextView setBackgroundColor:[self defaultBackgroundColor]];
     
 
 }

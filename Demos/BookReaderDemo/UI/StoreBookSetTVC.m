@@ -1,37 +1,30 @@
-// Display loading & refreshing after lunch!
-
 //
-//  BRDServerBookCollectionVC.m
+//  StoreBookSetTVC.m
 //  BookReaderDemo
 //
-//  Created by Liefu Liu on 1/31/16.
+//  Created by Liefu Liu on 8/30/16.
 //  Copyright © 2016 SanRenXing. All rights reserved.
 //
 
-#import "BRDServerBookCollectionVC.h"
-#import "ServerBookListCVC.h"
-#import "BookPlayerScrollVC.h"
-#import "BRDBookShuff.h"
-#import "BRDBookSummary.h"
-#import "BRDConstants.h"
-#import "BRDListedBook.h"
-#import "BRDListedBookWithImage.h"
+#import "StoreBookSetTVC.h"
 
 #import "BRDBackendFactory.h"
 #import "BRDColor.h"
 #import "BRDConfig.h"
+#import "BRDConstants.h"
+#import "BRDOneBookSetCVC.h"
 
-@interface BRDServerBookCollectionVC ()
+@interface StoreBookSetTVC ()
 
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-@property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
 @end
 
-@implementation BRDServerBookCollectionVC
+@implementation StoreBookSetTVC
 
-static NSString * const reuseIdentifier = @"Cell";
 
+static NSString * const StoreBookSetTVC_ReuseIdentifier = @"Cell";
+
+UIRefreshControl *_refreshControl;
 
 // Element: BRDListedBook
 NSArray* _bookList;
@@ -41,7 +34,7 @@ NSArray* _bookList;
 BOOL _isLoadingData;
 
 // Element: BRDListedBookWithImage
-NSMutableArray* _bookInfoList;
+NSMutableArray* _bookSetList;
 
 NSTimer* _firstLoadingTimer;
 
@@ -64,12 +57,13 @@ NSTimer* _myTimer;
 
 
 - (void) viewWillAppear:(BOOL)animated {
-    [self.collectionView reloadData];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.title = @"绘本馆";
     
     self.navigationController.navigationBar.barTintColor = [BRDColor backgroundSkyBlue];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -91,11 +85,11 @@ NSTimer* _myTimer;
         [alert show];
     }
     
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    UINib *cellNib = [UINib nibWithNibName:@"ServerBookListCVC" bundle:nil];
-    [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:reuseIdentifier];
-    self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    UINib *cellNib = [UINib nibWithNibName:@"StoreBookSetTableViewCell" bundle:nil];
+    [self.tableView registerNib:cellNib forCellReuseIdentifier:StoreBookSetTVC_ReuseIdentifier];
+    self.tableView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
     
     /*_myTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(updateUI:) userInfo:nil repeats:YES];*/
     _indicatorView = [self showSimpleActivityIndicatorOnView:self.view];
@@ -103,10 +97,10 @@ NSTimer* _myTimer;
     _refreshControl = [[UIRefreshControl alloc] init];
     [_refreshControl addTarget:self action:@selector(dragDownAndRefresh)
               forControlEvents:UIControlEventValueChanged];
-    [self.collectionView addSubview:_refreshControl];
-    self.collectionView.alwaysBounceVertical = YES;
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
+    [self.tableView addSubview:_refreshControl];
+    self.tableView.alwaysBounceVertical = YES;
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     self.title = @"老绘本馆";
     
@@ -116,7 +110,7 @@ NSTimer* _myTimer;
                                     target:self
                                     action:@selector(doneApplication:)];
     [[self navigationItem] setLeftBarButtonItem:newBackButton];
-
+    
     
     
     UIBarButtonItem* refreshButton =[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(startRefresh:)];
@@ -124,22 +118,39 @@ NSTimer* _myTimer;
     
     _isLoadingData = false;
     _currentPage = 0;
-    [self tryLoadBookFullList];
+    [self tryLoadBookSetFullList];
 }
 
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _bookSetList.count;
+}
+
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    int contentOffsetY = self.collectionView.contentOffset.y;
-    int contentSizeHeight = self.collectionView.contentSize.height;
-    int boundsSizeHeight = self.collectionView.bounds.size.height;
+    int contentOffsetY = self.tableView.contentOffset.y;
+    int contentSizeHeight = self.tableView.contentSize.height;
+    int boundsSizeHeight = self.tableView.bounds.size.height;
     
     // NSLog(@"scrollViewDidScroll: %d, %d, %d", contentOffsetY, contentSizeHeight, boundsSizeHeight);
     
     if (!_isLoadingData) {
-    if(self.collectionView.contentOffset.y >= (self.collectionView.contentSize.height - self.collectionView.bounds.size.height -
-                                               kCollectionViewCellHeight * kPreloadWhenOnlyTheseImagesLeft)) {
-        NSLog(@" scroll to bottom!");
-        [self tryLoadBookImagesForNextPage];
-    }
+        if(self.tableView.contentOffset.y >= (self.tableView.contentSize.height - self.tableView.bounds.size.height -
+                                                   kCollectionViewCellHeight * kPreloadWhenOnlyTheseImagesLeft)) {
+            NSLog(@" scroll to bottom!");
+            [self tryLoadBookImagesForNextPage];
+        }
     }
 }
 
@@ -148,7 +159,7 @@ NSTimer* _myTimer;
 - (void) startRefresh :(UIBarButtonItem *)sender {
     NSLog(@"north star");
     [_indicatorView startAnimating];
-    [self tryLoadBookFullList];
+    [self tryLoadBookSetFullList];
 }
 
 - (void) dragDownAndRefresh {
@@ -197,105 +208,22 @@ NSTimer* _myTimer;
     return activityIndicatorView;
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-
-#pragma mark <UICollectionViewDataSource>
-
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-#warning Incomplete implementation, return the number of sections
-    return 1;
-}
-
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of items
-    return _bookInfoList.count;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section== 0 ) {
-        ServerBookListCVC* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
-                                                                            forIndexPath:indexPath];
-        BRDListedBookWithImage* bookWithImage = [_bookInfoList objectAtIndex:indexPath.row];
-        BRDListedBook* bookInfo = bookWithImage.bookInfo;
-        
-        BRDBookSummary* bookSummary = bookWithImage.bookSummaryWithImage;
-        
-        if (bookSummary) {
-            cell.imageView.image = [[UIImage alloc] initWithData: bookSummary.imageData];
-            cell.bookNameLabel.text = bookInfo.bookName;
-            cell.authorLabel.text = bookInfo.author;
-            // TODO(liefuliu): Add summary.
-        }
-        
-        
-        return cell;
-    } else {
-        return nil;
-    }
-}
-
-
-- (CGSize)collectionView:(UICollectionView *)collectionView
-                  layout:(UICollectionViewLayout *)collectionViewLayout
-  sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    CGSize size;
-    CGRect screenRect = [[UIScreen mainScreen] bounds];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        NSString* bookSetId = (NSString*) _bookSetList[indexPath.row];
     
-    size.width = screenRect.size.width - 30;
-    size.height = kCollectionViewCellHeight;
-    
-    return size;
-}
-
-
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
-                        layout:(UICollectionViewLayout *)collectionViewLayout
-        insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(2, 2, 2, 2);
-}
-
-
-- (void) collectionView:(UICollectionView *)collectionView
-didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0){
-        [_indicatorView stopAnimating];
-        [_firstLoadingTimer invalidate];
-        
-        BRDListedBook* bookInfo = ((BRDListedBookWithImage*)[_bookInfoList objectAtIndex:indexPath.row]).bookInfo;
-        
-        if ([[BRDConfig sharedObject] directlyOpenBookPages] || [[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
-            [self downloadComplete: @"bookKeyUnused"
-                      forTopNPages:0];
-        } else {
-            BookDownloadWaitVC* waitingVC = [[BookDownloadWaitVC alloc] initWithBookKey:[bookInfo bookId]];
-            waitingVC.delegate = self;
-            [self.navigationController presentViewController:waitingVC animated:nil completion:nil];
-        }
+        BRDOneBookSetCVC* oneBookSetVC = [[BRDOneBookSetCVC alloc] initWithBookSetId:bookSetId];
+        [self.navigationController presentViewController:oneBookSetVC animated:YES completion:nil];
     }
-}
 
+}
 
 
 // 响应屏幕90度旋转的操作。
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
-    [self.collectionView reloadData];
+    [self.tableView reloadData];
 }
 
 #pragma mark <UICollectionViewDelegate>
@@ -305,24 +233,28 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void) downloadComplete: (NSString*) bookKeyUnused
              forTopNPages:(int)pagesDownloaded {
     // We should keep more info about the book.
-    NSArray *arrayOfIndexPaths = [self.collectionView indexPathsForSelectedItems];
+    /*
+    NSArray *arrayOfIndexPaths = [self.tableView indexPathForSelectedRow];
     NSIndexPath *indexPathImInterestedIn = [arrayOfIndexPaths firstObject];
-    BRDListedBook* bookInfo = ((BRDListedBookWithImage*)[_bookInfoList objectAtIndex:indexPathImInterestedIn.row]).bookInfo;
+    BRDListedBookSet* bookSetInfo = ((BRDListedBookSet*)[_bookSetList objectAtIndex:indexPathImInterestedIn.row]).bookInfo;
     
     NSString* bookKey = [bookInfo bookId];
     if (![[BRDBookShuff sharedObject] doesBookExist:[bookInfo bookId]]) {
-    LocalBook* localBook = [[LocalBook alloc]
-                            initBook:bookInfo.bookName
-                            author:bookInfo.author
-                            totalPages:bookInfo.totalPages
-                            downloadedPages:pagesDownloaded
-                            filePrefix:bookInfo.bookId hasTranslatedText:YES
-                            imageFileType:bookInfo.imageFileType];
-    [[BRDBookShuff sharedObject] addBook:localBook forKey:bookKey];
+        LocalBook* localBook = [[LocalBook alloc]
+                                initBook:bookInfo.bookName
+                                author:bookInfo.author
+                                totalPages:bookInfo.totalPages
+                                downloadedPages:pagesDownloaded
+                                filePrefix:bookInfo.bookId hasTranslatedText:YES
+                                imageFileType:bookInfo.imageFileType];
+        [[BRDBookShuff sharedObject] addBook:localBook forKey:bookKey];
     }
     
     BookPlayerScrollVC *detailViewController = [[BookPlayerScrollVC alloc] initWithBookKey:bookKey];
     [self.navigationController presentViewController:detailViewController animated:YES completion:nil];
+     */
+    
+    
 }
 
 #pragma mark initialize the view
@@ -333,11 +265,11 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     [_indicatorView stopAnimating];
     [self.refreshControl endRefreshing];
     return;
-
+    
 }
 
 // TODO(liefuliu): Set time out for tryLoadBoookList, and throw an alert when time out.
--(void) tryLoadBookFullList {
+-(void) tryLoadBookSetFullList {
     [self startLoadData];
     _firstLoadingTimer = [NSTimer scheduledTimerWithTimeInterval:kTimeoutBookFirstLoad target:self selector:@selector(cancelLoading) userInfo:nil repeats:NO];
     
@@ -350,12 +282,12 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             return;
         }
         
-        __block NSArray* arrayOfBooks;
-        [bookLister getListOfBooks:100 startFrom:0 to:&arrayOfBooks];
+        __block NSArray* arrayOfBookSets;
+        [bookLister getListOfBookSets:100 startFrom:0 to:&arrayOfBookSets];
         
         // We get the main thread because drawing must be done in the main thread always
         dispatch_async(dispatch_get_main_queue(),^ {
-            _bookList = arrayOfBooks;
+            _bookSetList = arrayOfBookSets;
             [self tryLoadBookImagesForNextPage];
         } );
         
@@ -374,8 +306,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (void) tryLoadBookImagesForNextPage {
     [self startLoadData];
-    if (_bookInfoList == nil) {
-        _bookInfoList = [[NSMutableArray alloc] init];
+    if (_bookSetList == nil) {
+        _bookSetList = [[NSMutableArray alloc] init];
     }
     
     __block NSMutableArray* arrayOfBookToFetch = [[NSMutableArray alloc] init];
@@ -402,9 +334,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
                 BRDBookSummary* bookSummary = (BRDBookSummary*)[bookSummaryInfo objectForKey:listedBook.bookId];
                 if (bookSummary != nil) {
                     BRDListedBookWithImage* bookWithImage = [[BRDListedBookWithImage alloc]
-                                                         initBook:listedBook
-                                                         withSummaryImage:bookSummary];
-                    [_bookInfoList addObject:bookWithImage];
+                                                             initBook:listedBook
+                                                             withSummaryImage:bookSummary];
+                    [_bookSetList addObject:bookWithImage];
                 }
             }
             
@@ -419,6 +351,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         } );
     });
 }
+
 
 
 @end

@@ -15,11 +15,13 @@
 @interface BRDLeanCloudBookLister()
 
 @property NSArray* currentBookList;
+@property NSArray* currentBookSetList;
 
 @end
 
 // TODO(liefuliu): move to BRDConstants.h
 static const int MAX_BOOK_LIST = 1000;
+static const int MAX_BOOK_SET_LIST = 100;
 
 @implementation BRDLeanCloudBookLister
 
@@ -53,6 +55,22 @@ static const int MAX_BOOK_LIST = 1000;
     
     return YES;
     
+}
+
+
+- (BOOL) getListOfBookSets:(int) numOfBooks
+                 startFrom:(int) pageOffset
+                        to:(NSArray**) arrayOfBookSets;  // NSArray of server book set. {
+    if ([self fetchBookSetList:MAX_BOOK_SET_LIST]) {
+        return NO;
+    }
+
+    *arrayOfBookSets = [[NSMutableArray alloc] init];
+    for (int i = pageOffset; i < MIN(numOfBooks + pageOffset, [self.currentBookList count]); i++) {
+        [(NSMutableArray*)*arrayOfBookSets addObject:self.currentBookSetList[i]];
+    }
+
+
 }
 
 - (BOOL) getSummaryInfoForBooks: (NSArray*) arrayOfBooks
@@ -100,6 +118,25 @@ static const int MAX_BOOK_LIST = 1000;
     }
     
     return YES;
+}
+
+- (BOOL) fetchBookSetList: (int) numOfBookSets {
+    AVQuery* query = [AVQuery queryWithClassName:@"BookSet"];
+    NSArray* objects = [query findObjects];
+    if (objects != nil) {
+        NSMutableArray* bookSetArray = [[NSMutableArray alloc] init];
+        for (AVObject* object in objects) {
+            NSString* bookSetId = (NSString*) object[@"bookSetId"];
+            NSString* bookSetName = (NSString*) object[@"bookSetName"];
+            NSString* bookSetNotes = (NSString*) object[@"bookSetNotes"];
+            
+            BRDListedBookSet* bookSet = [[BRDListedBookSet alloc] initBookSet:bookSetId
+                                                                         name:bookSetName
+                                                                        notes:bookSetNotes];
+            
+            [bookSetArray addObject:bookSet];
+        }
+    }
 }
 
 - (BOOL) fetchBookList:(int) numOfBooks  {

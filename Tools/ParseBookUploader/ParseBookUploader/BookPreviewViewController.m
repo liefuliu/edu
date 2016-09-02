@@ -44,9 +44,11 @@ id _keyMonitor;
         switch (character) {
             case NSLeftArrowFunctionKey:
                 [self tryPreviousPage];
+                //[self reloadCurrentPage];
                 break;
             case NSRightArrowFunctionKey:
                 [self tryNextPage];
+                //[self reloadCurrentPage];
                 break;
             default:
                 break;

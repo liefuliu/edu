@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="76" id="Ryk-S6-Fgo" customClass="StoreBookSetTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="369" height="116"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ryk-S6-Fgo" id="ldJ-ZI-ESd">
+                <rect key="frame" x="0.0" y="0.0" width="369" height="115"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLp-Qh-hxx">
+                        <rect key="frame" x="88" y="64" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lQa-qQ-Hpa">
+                        <rect key="frame" x="8" y="20" width="40" height="38"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="40" id="AoY-E0-Zne"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zp7-61-kyH">
+                        <rect key="frame" x="88" y="20" width="173" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Zp7-61-kyH" firstAttribute="top" secondItem="lQa-qQ-Hpa" secondAttribute="top" id="7ft-32-Ziu"/>
+                    <constraint firstItem="lQa-qQ-Hpa" firstAttribute="top" secondItem="ldJ-ZI-ESd" secondAttribute="topMargin" constant="12" id="Fp4-ht-7MD"/>
+                    <constraint firstItem="GLp-Qh-hxx" firstAttribute="leading" secondItem="Zp7-61-kyH" secondAttribute="leading" id="Llg-ta-QIb"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="lQa-qQ-Hpa" secondAttribute="leading" id="RYs-pu-WIT"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Zp7-61-kyH" secondAttribute="trailing" constant="100" id="Zvi-Yo-AZa"/>
+                    <constraint firstItem="GLp-Qh-hxx" firstAttribute="bottom" secondItem="lQa-qQ-Hpa" secondAttribute="bottom" id="apj-yr-1xf"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="lQa-qQ-Hpa" secondAttribute="bottom" constant="50" id="gPW-1W-yZm"/>
+                    <constraint firstItem="Zp7-61-kyH" firstAttribute="leading" secondItem="ldJ-ZI-ESd" secondAttribute="leadingMargin" constant="80" id="ntv-Tr-TVe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bookImage" destination="lQa-qQ-Hpa" id="UL6-xe-iXp"/>
+                <outlet property="bookSetImage" destination="lQa-qQ-Hpa" id="233-5G-smb"/>
+                <outlet property="statusLabel" destination="GLp-Qh-hxx" id="rMn-SE-bBP"/>
+                <outlet property="topicLabel" destination="Zp7-61-kyH" id="IST-ZD-vhD"/>
+            </connections>
+            <point key="canvasLocation" x="382.5" y="515"/>
+        </tableViewCell>
+    </objects>
+</document>

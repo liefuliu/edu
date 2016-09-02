@@ -148,8 +148,8 @@ inRangeStartWith: (int) startPage
           endBy: (int) endPage {
     NSString* typeString = (NSString*)object[kBookImageTableTypeColumn];
     NSString* pageNumberString = (NSString*)object[kBookImageTablePageNumberColumn];
-    if ([typeString intValue] == kFileTypeCover) {
-        return NO;
+    if ([typeString intValue] == kFileTypeCover && startPage <= 1) {
+        return YES;
     }
     
     if ([typeString intValue] == kFileTypeTrans && startPage <= 1) {

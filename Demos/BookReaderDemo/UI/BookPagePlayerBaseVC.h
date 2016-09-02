@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LocalBook.h"
+#import "BRDColor.h"
 
 @interface BookPagePlayerBaseVC : UIViewController
 
@@ -23,5 +24,7 @@
     withTranslatedText:(NSArray*) translatedText;
 
 - (void) showPageAtIndex:(int) pageIndex;
+
+- (UIColor*) defaultBackgroundColor;
 
 @end

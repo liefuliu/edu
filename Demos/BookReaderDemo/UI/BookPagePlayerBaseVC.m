@@ -8,6 +8,7 @@
 
 #import "BookPagePlayerBaseVC.h"
 #import "BRDBookShuff.h"
+#import "BRDColor.h"
 @interface BookPagePlayerBaseVC ()
 
 @end
@@ -33,6 +34,8 @@
     
     // 隐藏状态栏
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
+    
+    self.view.backgroundColor = [self defaultBackgroundColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -49,5 +52,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+
+- (UIColor*) defaultBackgroundColor {
+    return [BRDColor backgroundSkyBlue];
+}
 
 @end
