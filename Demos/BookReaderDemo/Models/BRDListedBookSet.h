@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BRDListedBookSet : NSObject<NSCoding>
+@interface BRDListedBookSet : NSObject /*: NSObject<NSCoding> */
 
 @property NSString* bookSetId;
 @property NSString* bookSetName;

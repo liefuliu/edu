@@ -29,6 +29,7 @@
 		6D3AB0971C4C0F9100FE1B5C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0961C4C0F9100FE1B5C /* SystemConfiguration.framework */; };
 		6D3AB0991C4C0F9800FE1B5C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */; };
 		6D3AB09D1C4CA6F100FE1B5C /* FilePathUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */; };
+		6D7693551DC5A9D10024EE9F /* FilePathUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7693541DC5A9D10024EE9F /* FilePathUtilTests.m */; };
 		6D92F6BA1D2C853B00BFACB8 /* FileValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92F6B91D2C853B00BFACB8 /* FileValidator.m */; };
 		6D92F6BC1D2C8B3500BFACB8 /* FileValidatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92F6BB1D2C8B3500BFACB8 /* FileValidatorTests.m */; };
 		6D92F6BF1D32BEBF00BFACB8 /* BookPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D92F6BE1D32BEBF00BFACB8 /* BookPreviewViewController.m */; };
@@ -100,6 +101,7 @@
 		6D3AB0981C4C0F9800FE1B5C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		6D3AB09B1C4CA6F100FE1B5C /* FilePathUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilePathUtil.h; sourceTree = "<group>"; };
 		6D3AB09C1C4CA6F100FE1B5C /* FilePathUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePathUtil.m; sourceTree = "<group>"; };
+		6D7693541DC5A9D10024EE9F /* FilePathUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilePathUtilTests.m; sourceTree = "<group>"; };
 		6D92F6B81D2C853B00BFACB8 /* FileValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileValidator.h; sourceTree = "<group>"; };
 		6D92F6B91D2C853B00BFACB8 /* FileValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileValidator.m; sourceTree = "<group>"; };
 		6D92F6BB1D2C8B3500BFACB8 /* FileValidatorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FileValidatorTests.m; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				6D3AB0661C4C0E4000FE1B5C /* ParseBookUploaderTests.m */,
 				6D3AB0681C4C0E4000FE1B5C /* Info.plist */,
 				6D92F6BB1D2C8B3500BFACB8 /* FileValidatorTests.m */,
+				6D7693541DC5A9D10024EE9F /* FilePathUtilTests.m */,
 			);
 			path = ParseBookUploaderTests;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D7693551DC5A9D10024EE9F /* FilePathUtilTests.m in Sources */,
 				6D92F6BC1D2C8B3500BFACB8 /* FileValidatorTests.m in Sources */,
 				6D3AB0671C4C0E4000FE1B5C /* ParseBookUploaderTests.m in Sources */,
 			);

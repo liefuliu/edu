@@ -92,8 +92,8 @@
     if (!areFilesValid) {
         // Display errors
         NSString* errorsFriendlyString = @"";
-        for (NSString* error in allErrors) {
-            errorsFriendlyString = [NSString stringWithFormat:@"%@%@; ", errorsFriendlyString, error];
+        for (BUError* error in allErrors) {
+            errorsFriendlyString = [NSString stringWithFormat:@"%@\n%@", errorsFriendlyString, [error summary]];
         }
         
         NSAlert *alert = [NSAlert alertWithMessageText:@"错误"
@@ -103,7 +103,27 @@
         
         [alert runModal];
         return nil;
+    } else if ([allWarnings count] > 0) {
+        NSString* warningsFriendlyString = @"";
+        for (BUError* warning in allWarnings) {
+            warningsFriendlyString = [NSString stringWithFormat:@"%@\n%@", warningsFriendlyString, [warning summary]];
+        }
+
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"确定"];
+        [alert addButtonWithTitle:@"取消"];
+        [alert setMessageText:[NSString stringWithFormat:@"是否忽略下列 %d 项警告?", [allWarnings count]]];
+        [alert setInformativeText:warningsFriendlyString];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        if ([alert runModal] != NSAlertFirstButtonReturn) {
+            return nil;
+        } else {
+            return array;
+        }
     } else {
+        
+        
         return array;
     }
 }

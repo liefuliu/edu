@@ -10,6 +10,7 @@
 #import "BRDBookSummary.h"
 #import "BRDConstants.h"
 #import "BRDListedBook.h"
+#import "BRDListedBookSet.h"
 #import <AVOSCloud/AVOSCloud.h>
 
 @interface BRDLeanCloudBookLister()
@@ -60,17 +61,16 @@ static const int MAX_BOOK_SET_LIST = 100;
 
 - (BOOL) getListOfBookSets:(int) numOfBooks
                  startFrom:(int) pageOffset
-                        to:(NSArray**) arrayOfBookSets;  // NSArray of server book set. {
-    if ([self fetchBookSetList:MAX_BOOK_SET_LIST]) {
+                        to:(NSArray**) arrayOfBookSets  {
+    if (![self fetchBookSetList:MAX_BOOK_SET_LIST]) {
         return NO;
     }
 
     *arrayOfBookSets = [[NSMutableArray alloc] init];
-    for (int i = pageOffset; i < MIN(numOfBooks + pageOffset, [self.currentBookList count]); i++) {
+    for (int i = pageOffset; i < MIN(numOfBooks + pageOffset, [self.currentBookSetList count]); i++) {
         [(NSMutableArray*)*arrayOfBookSets addObject:self.currentBookSetList[i]];
     }
-
-
+    return YES;
 }
 
 - (BOOL) getSummaryInfoForBooks: (NSArray*) arrayOfBooks
@@ -136,6 +136,11 @@ static const int MAX_BOOK_SET_LIST = 100;
             
             [bookSetArray addObject:bookSet];
         }
+        self.currentBookSetList = bookSetArray;
+        
+        return YES;
+    } else {
+        return NO;
     }
 }
 

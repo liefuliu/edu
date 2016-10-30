@@ -108,7 +108,7 @@ NSTimer* _myTimer;
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    self.title = @"老绘本馆";
+    self.title = @"绘本馆";
     
     UIBarButtonItem *newBackButton =
     [[UIBarButtonItem alloc] initWithTitle:@"退出"

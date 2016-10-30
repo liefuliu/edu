@@ -69,7 +69,6 @@
     [self deleteFile:smallFilePath];
     [self deleteFile:largeFilePath];
 }
-
 - (void)testPerformanceExample {
     // This is an example of a performance test case.
     [self measureBlock:^{
@@ -77,7 +76,7 @@
     }];
 }
 
-- (void) createLargeFile:(NSString*) filePath {
+- (void) createLargeFile:(const NSString*) filePath {
     [[NSFileManager defaultManager] createFileAtPath:filePath contents:nil attributes:nil];
     //This creates an empty file, which you can write to or read from. To write text (or XML), just use NSString's writeToFile:atomically:encoding:error: method like this
     
@@ -110,7 +109,7 @@
     XCTAssertTrue(fileSize > 100 * 1024);
 }
 
-- (void) deleteFile:(NSString*) filePath {
+- (void) deleteFile:(const NSString*) filePath {
     NSError* error;
     [[NSFileManager defaultManager] removeItemAtPath:filePath error:&error];
 }

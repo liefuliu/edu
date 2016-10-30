@@ -28,6 +28,9 @@
 
 @end
 
+
+
+
 @implementation BookPreviewViewController
 
 id _keyMonitor;
@@ -177,8 +180,9 @@ id _keyMonitor;
 }
 
 - (void) displayTranslationText {
-    [self.displayTextView setString: self.translatedText[self.currentPage]];
-
+    if (self.translatedText != nil && self.currentPage < [self.translatedText count]) {
+        [self.displayTextView setString: self.translatedText[self.currentPage]];
+    }
 }
 
 - (void) playSound {

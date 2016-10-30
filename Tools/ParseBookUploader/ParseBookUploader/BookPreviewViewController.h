@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
+
+
 @interface BookPreviewViewController : NSViewController
 @property (weak) IBOutlet NSImageCell *pageImageView;
 
