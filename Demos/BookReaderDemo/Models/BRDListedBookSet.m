@@ -12,19 +12,24 @@
 
 - (id) initBookSet:(NSString*) bookSetId
               name:(NSString*) bookSetName
-             notes:(NSString*) bookSetNotes {
+             notes:(NSString*) bookSetNotes
+WithSampleBookId:(NSString*)sampleBookId {
     self = [super init];
     if (self) {
         _bookSetId = bookSetId;
         _bookSetName = bookSetName;
         _bookSetNotes = bookSetNotes;
+        _sampleBookId = sampleBookId;
+        _sampleBookCoverImage = nil;
     }
     return self;
 }
 
+- (void) setSampleBookcoverImage:(NSData*) sampleBookCoverImage {
+    self.sampleBookCoverImage = sampleBookCoverImage;
+}
 
-
-
+/*
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     self = [super init];
@@ -43,6 +48,6 @@
     [encoder encodeObject:self.bookSetName forKey:@"bookSetName"];
     [encoder encodeObject:self.bookSetNotes forKey:@"bookSetNotes"];
 }
-
+*/
 
 @end

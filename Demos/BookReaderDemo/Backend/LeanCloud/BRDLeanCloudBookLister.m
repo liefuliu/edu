@@ -23,6 +23,7 @@
 // TODO(liefuliu): move to BRDConstants.h
 static const int MAX_BOOK_LIST = 1000;
 static const int MAX_BOOK_SET_LIST = 100;
+static const int MAX_BOOK_SET_TO_DISPLAY = 20;
 
 @implementation BRDLeanCloudBookLister
 
@@ -60,15 +61,28 @@ static const int MAX_BOOK_SET_LIST = 100;
 
 
 - (BOOL) getListOfBookSets:(int) numOfBooks
-                 startFrom:(int) pageOffset
                         to:(NSArray**) arrayOfBookSets  {
     if (![self fetchBookSetList:MAX_BOOK_SET_LIST]) {
         return NO;
     }
+    NSMutableArray* sampleBookIdList = [[NSMutableArray alloc] init];
+    for (BRDListedBookSet* bookSet in self.currentBookSetList) {
+        [sampleBookIdList addObject: bookSet.sampleBookId];
+    }
+    
+    NSDictionary* summaryInfo;
+    if (![self getSummaryInfoForBooks:sampleBookIdList to:&summaryInfo]) {
+        return NO;
+    }
 
+    // Fetches the first MAX_BOOK_SET_TO_DISPLAY (20) book sets and return.
     *arrayOfBookSets = [[NSMutableArray alloc] init];
-    for (int i = pageOffset; i < MIN(numOfBooks + pageOffset, [self.currentBookSetList count]); i++) {
+    for (int i = 0; i < MIN(numOfBooks, [self.currentBookSetList count]); i++) {
+        BRDListedBookSet* bookSet = self.currentBookSetList[i];
+        NSData* sampleBookCoverImageData = [((BRDBookSummary*)[summaryInfo objectForKey:bookSet.sampleBookId]) imageData];
+        [bookSet setSampleBookCoverImage:sampleBookCoverImageData];
         [(NSMutableArray*)*arrayOfBookSets addObject:self.currentBookSetList[i]];
+        
     }
     return YES;
 }
@@ -129,10 +143,12 @@ static const int MAX_BOOK_SET_LIST = 100;
             NSString* bookSetId = (NSString*) object[@"bookSetId"];
             NSString* bookSetName = (NSString*) object[@"bookSetName"];
             NSString* bookSetNotes = (NSString*) object[@"bookSetNotes"];
+            NSString* sampleBookId = (NSString*) object[@"sampleBookId"];
             
             BRDListedBookSet* bookSet = [[BRDListedBookSet alloc] initBookSet:bookSetId
                                                                          name:bookSetName
-                                                                        notes:bookSetNotes];
+                                                                        notes:bookSetNotes
+                                                                 WithSampleBookId:sampleBookId];
             
             [bookSetArray addObject:bookSet];
         }

@@ -68,7 +68,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRT-px-S4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-560" y="2454"/>
+            <point key="canvasLocation" x="47" y="2511"/>
         </scene>
         <!--Book Shuff Collection View Controller-->
         <scene sceneID="nq6-PB-Erv">
@@ -201,7 +201,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qQ-Im-qvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-437" y="2625"/>
+            <point key="canvasLocation" x="-608" y="2511"/>
         </scene>
     </scenes>
 </document>

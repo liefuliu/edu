@@ -232,7 +232,7 @@ static NSString * const StoreBookSetTVC_ReuseIdentifier = @"StoreBookSetTableVie
         }
         
         __block NSArray* arrayOfBookSets;
-        [bookLister getListOfBookSets:100 startFrom:0 to:&arrayOfBookSets];
+        [bookLister getListOfBookSets:100 to:&arrayOfBookSets];
         _bookSetList = arrayOfBookSets;
         [self.refreshControl endRefreshing];
         [_firstLoadingTimer invalidate];

@@ -13,9 +13,14 @@
 @property NSString* bookSetId;
 @property NSString* bookSetName;
 @property NSString* bookSetNotes;
+@property NSString* sampleBookId;
+@property NSData* sampleBookCoverImage;
 
 - (id) initBookSet:(NSString*) bookSetId
            name:(NSString*) bookSetName
-             notes:(NSString*) bookSetNotes;
+             notes:(NSString*) bookSetNotes
+  WithSampleBookId:(NSString*)sampleBookId;
+
+- (void) setSampleBookcoverImage:(NSData*) sampleBookCoverImage;
 
 @end

@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "486347896.276406"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-appendSummaryInfoForBooks:to:"
             landmarkType = "5">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "486347896.276406"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-appendSummaryInfoForBooks:to:"
             landmarkType = "5">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "494526164.350077"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "-fetchBookList:"
             landmarkType = "5">
          </BreakpointContent>
@@ -808,11 +808,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "486801980.2182"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-getSummaryInfoForBooks:to:"
             landmarkType = "5">
          </BreakpointContent>
@@ -824,11 +824,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "486802105.262986"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "-appendSummaryInfoForBooks:to:"
             landmarkType = "5">
          </BreakpointContent>
@@ -840,11 +840,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "486802197.877855"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-appendSummaryInfoForBooks:to:"
             landmarkType = "5">
          </BreakpointContent>
@@ -856,11 +856,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "486802199.474301"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "-appendSummaryInfoForBooks:to:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2046,22 +2046,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "494554121.988758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
-            landmarkName = "-fetchBookSetList:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "UI/StoreBookSetTVC.m"
             timestampString = "494554199.990971"
             startingColumnNumber = "9223372036854775807"
@@ -2127,12 +2111,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookLister.m"
-            timestampString = "499446840.860408"
+            timestampString = "501399586.706193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "-appendSummaryInfoForBooks:to:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "UI/TST/TSTPictureBookStoreVC.m"
+            timestampString = "501400612.618307"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
+            landmarkName = "-tryLoadBookFullList"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

@@ -20,6 +20,10 @@
 		6D3935E41D29EC8C004C3C90 /* BRDLeanCloudBookDownloaderTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D3935E31D29EC8C004C3C90 /* BRDLeanCloudBookDownloaderTest.m */; };
 		6D66FE041C65C5BE004816C6 /* BRDFileUtilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */; };
 		6D6A987F1C5536B5005EB914 /* BRDListedBook.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D6A987E1C5536B5005EB914 /* BRDListedBook.m */; };
+		6D7693571DE244040024EE9F /* Main.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D7693561DE244040024EE9F /* Main.Storyboard */; };
+		6D76935B1DE27C0A0024EE9F /* TSTPictureBookStoreVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D76935A1DE27C0A0024EE9F /* TSTPictureBookStoreVC.m */; };
+		6D7693641DE2A4EA0024EE9F /* TSTPictureBookStoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D7693621DE2A4EA0024EE9F /* TSTPictureBookStoreCell.m */; };
+		6D7693651DE2A4EA0024EE9F /* TSTPictureBookStoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D7693631DE2A4EA0024EE9F /* TSTPictureBookStoreCell.xib */; };
 		6D934CDA1D76A34600559C68 /* StoreBookSetTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D934CD91D76A34600559C68 /* StoreBookSetTVC.m */; };
 		6D934CDE1D775CBA00559C68 /* StoreBookSetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D934CDC1D775CBA00559C68 /* StoreBookSetTableViewCell.m */; };
 		6D934CDF1D775CBA00559C68 /* StoreBookSetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D934CDD1D775CBA00559C68 /* StoreBookSetTableViewCell.xib */; };
@@ -64,7 +68,7 @@
 		6DE230B11C69745800C5C42D /* BRDParseBookDownloadPerfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DE230B01C69745800C5C42D /* BRDParseBookDownloadPerfTest.m */; };
 		6DF9F1B61C0A390400359200 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B51C0A390400359200 /* main.m */; };
 		6DF9F1B91C0A390400359200 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1B81C0A390400359200 /* AppDelegate.m */; };
-		6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BD1C0A390400359200 /* Main.storyboard */; };
+		6DF9F1BF1C0A390400359200 /* PlainListUi.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1BD1C0A390400359200 /* PlainListUi.storyboard */; };
 		6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1C01C0A390400359200 /* Images.xcassets */; };
 		6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DF9F1C21C0A390400359200 /* LaunchScreen.xib */; };
 		6DF9F1D01C0A390400359200 /* BookReaderDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DF9F1CF1C0A390400359200 /* BookReaderDemoTests.m */; };
@@ -119,6 +123,12 @@
 		6D66FE031C65C5BE004816C6 /* BRDFileUtilTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRDFileUtilTests.m; sourceTree = "<group>"; };
 		6D6A987D1C5536B5005EB914 /* BRDListedBook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDListedBook.h; path = Models/BRDListedBook.h; sourceTree = "<group>"; };
 		6D6A987E1C5536B5005EB914 /* BRDListedBook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDListedBook.m; path = Models/BRDListedBook.m; sourceTree = "<group>"; };
+		6D7693561DE244040024EE9F /* Main.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.Storyboard; sourceTree = "<group>"; };
+		6D7693591DE27C0A0024EE9F /* TSTPictureBookStoreVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSTPictureBookStoreVC.h; path = UI/TST/TSTPictureBookStoreVC.h; sourceTree = "<group>"; };
+		6D76935A1DE27C0A0024EE9F /* TSTPictureBookStoreVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSTPictureBookStoreVC.m; path = UI/TST/TSTPictureBookStoreVC.m; sourceTree = "<group>"; };
+		6D7693611DE2A4EA0024EE9F /* TSTPictureBookStoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TSTPictureBookStoreCell.h; path = UI/TST/TSTPictureBookStoreCell.h; sourceTree = "<group>"; };
+		6D7693621DE2A4EA0024EE9F /* TSTPictureBookStoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSTPictureBookStoreCell.m; path = UI/TST/TSTPictureBookStoreCell.m; sourceTree = "<group>"; };
+		6D7693631DE2A4EA0024EE9F /* TSTPictureBookStoreCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TSTPictureBookStoreCell.xib; path = UI/TST/TSTPictureBookStoreCell.xib; sourceTree = "<group>"; };
 		6D934CD81D76A34600559C68 /* StoreBookSetTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreBookSetTVC.h; path = UI/StoreBookSetTVC.h; sourceTree = "<group>"; };
 		6D934CD91D76A34600559C68 /* StoreBookSetTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreBookSetTVC.m; path = UI/StoreBookSetTVC.m; sourceTree = "<group>"; };
 		6D934CDB1D775CBA00559C68 /* StoreBookSetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreBookSetTableViewCell.h; path = UI/StoreBookSetTableViewCell.h; sourceTree = "<group>"; };
@@ -196,7 +206,7 @@
 		6DF9F1B51C0A390400359200 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6DF9F1B71C0A390400359200 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6DF9F1B81C0A390400359200 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6DF9F1BE1C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6DF9F1BE1C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/PlainListUi.storyboard; sourceTree = "<group>"; };
 		6DF9F1C01C0A390400359200 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6DF9F1C31C0A390400359200 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6DF9F1C91C0A390400359200 /* BookReaderDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookReaderDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -284,6 +294,18 @@
 				6DB49A041C8CEB31001F048B /* BRDConstants.m */,
 			);
 			name = Common;
+			sourceTree = "<group>";
+		};
+		6D7693581DE27B4A0024EE9F /* TST */ = {
+			isa = PBXGroup;
+			children = (
+				6D7693591DE27C0A0024EE9F /* TSTPictureBookStoreVC.h */,
+				6D76935A1DE27C0A0024EE9F /* TSTPictureBookStoreVC.m */,
+				6D7693611DE2A4EA0024EE9F /* TSTPictureBookStoreCell.h */,
+				6D7693621DE2A4EA0024EE9F /* TSTPictureBookStoreCell.m */,
+				6D7693631DE2A4EA0024EE9F /* TSTPictureBookStoreCell.xib */,
+			);
+			name = TST;
 			sourceTree = "<group>";
 		};
 		6D934CD71D76A27A00559C68 /* BookSetUIs */ = {
@@ -407,12 +429,13 @@
 			children = (
 				6DF9F1B71C0A390400359200 /* AppDelegate.h */,
 				6DF9F1B81C0A390400359200 /* AppDelegate.m */,
-				6DF9F1BD1C0A390400359200 /* Main.storyboard */,
+				6DF9F1BD1C0A390400359200 /* PlainListUi.storyboard */,
 				6DF9F1C01C0A390400359200 /* Images.xcassets */,
 				6DF9F1E11C0B82B200359200 /* RecordVC.h */,
 				6DF9F1E21C0B82B200359200 /* RecordVC.m */,
 				6DF9F1C21C0A390400359200 /* LaunchScreen.xib */,
 				6DF9F1B31C0A390400359200 /* Supporting Files */,
+				6D7693561DE244040024EE9F /* Main.Storyboard */,
 			);
 			path = BookReaderDemo;
 			sourceTree = "<group>";
@@ -451,6 +474,7 @@
 		6DF9F2A61C27820C00359200 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				6D7693581DE27B4A0024EE9F /* TST */,
 				6D934CD71D76A27A00559C68 /* BookSetUIs */,
 				6D3935DB1D0E38D7004C3C90 /* LandscapeBookPagePlayerVC.h */,
 				6D3935DC1D0E38D7004C3C90 /* LandscapeBookPagePlayerVC.m */,
@@ -598,17 +622,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DB499E31C8CE8C0001F048B /* BookItemCell.xib in Resources */,
-				6DF9F1BF1C0A390400359200 /* Main.storyboard in Resources */,
+				6DF9F1BF1C0A390400359200 /* PlainListUi.storyboard in Resources */,
 				6D934CE41D790ACD00559C68 /* BRDOneBookSetCVC.xib in Resources */,
 				6DF9F2031C0BE7AD00359200 /* hqdqz.jpeg in Resources */,
 				6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */,
 				6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */,
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
+				6D7693651DE2A4EA0024EE9F /* TSTPictureBookStoreCell.xib in Resources */,
 				6DB499E61C8CE8C0001F048B /* BookPlayerScrollVC.xib in Resources */,
 				6D934CDF1D775CBA00559C68 /* StoreBookSetTableViewCell.xib in Resources */,
 				6DB499E91C8CE8C0001F048B /* BookTableCell.xib in Resources */,
 				6D086AFD1CF26941003F2CEB /* BookShuffCollectionViewCell.xib in Resources */,
 				6DDB6F161CB19D4B0086AA17 /* BookPlayerPopupSubVC.xib in Resources */,
+				6D7693571DE244040024EE9F /* Main.Storyboard in Resources */,
 				6DE230AC1C6865DC00C5C42D /* Localizable.strings in Resources */,
 				6DB499E51C8CE8C0001F048B /* PortraitBookPagePlayerVC.xib in Resources */,
 				6DB499E11C8CE8C0001F048B /* BookDownloadWaitVC.xib in Resources */,
@@ -691,7 +717,9 @@
 				6DDB6F151CB19D4B0086AA17 /* BookPlayerPopupSubVC.m in Sources */,
 				6DB499F91C8CEAD4001F048B /* BRDFileUtil.m in Sources */,
 				6D086AFC1CF26941003F2CEB /* BookShuffCollectionViewCell.m in Sources */,
+				6D76935B1DE27C0A0024EE9F /* TSTPictureBookStoreVC.m in Sources */,
 				6DB499FF1C8CEB17001F048B /* BRDBookSummary.m in Sources */,
+				6D7693641DE2A4EA0024EE9F /* TSTPictureBookStoreCell.m in Sources */,
 				6DF9F2C01C2E238100359200 /* LocalBook.m in Sources */,
 				6D934CE31D790ACD00559C68 /* BRDOneBookSetCVC.m in Sources */,
 				6DB499E41C8CE8C0001F048B /* PortraitBookPagePlayerVC.m in Sources */,
@@ -758,12 +786,12 @@
 			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
-		6DF9F1BD1C0A390400359200 /* Main.storyboard */ = {
+		6DF9F1BD1C0A390400359200 /* PlainListUi.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6DF9F1BE1C0A390400359200 /* Base */,
 			);
-			name = Main.storyboard;
+			name = PlainListUi.storyboard;
 			sourceTree = "<group>";
 		};
 		6DF9F1C21C0A390400359200 /* LaunchScreen.xib */ = {
