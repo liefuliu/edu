@@ -12,6 +12,7 @@
 #import "BRDListedBookSet.h"
 #import "BRDBookLister.h"
 #import "BRDBackendFactory.h"
+#import "TSTBookSetVC.h"
 
 @interface TSTPictureBookStoreVC ()
 
@@ -98,6 +99,22 @@ static NSMutableArray* _bookSetInfoList;
     return size;
 }
 
+- (void) collectionView:(UICollectionView *)collectionView
+didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0){
+        TSTPictureBookStoreCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier
+                                                                                  forIndexPath:indexPath];
+        BRDListedBookSet* bookSetWithImage = [_bookSetInfoList objectAtIndex:indexPath.row];
+        NSLog(@"Book set %@ selected. ", bookSetWithImage.bookSetId);
+        
+        TSTBookSetVC* bookSetVC = [[TSTBookSetVC alloc] initWithBookSetId: bookSetWithImage.bookSetId
+             bookSetName: bookSetWithImage.bookSetName bookSetSummary:bookSetWithImage.bookSetNotes
+                 bookSetCoverImage:bookSetWithImage.sampleBookCoverImage];
+        [self.navigationController pushViewController:bookSetVC
+                                             animated:YES];
+    }
+}
+
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section== 0 ) {
@@ -123,6 +140,11 @@ static NSMutableArray* _bookSetInfoList;
     }
     
     return [NSString stringWithFormat:@"%@...", [originalString substringToIndex:20]];
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(5, 5, 5,5);
 }
 
 #pragma mark <UICollectionViewDelegate>

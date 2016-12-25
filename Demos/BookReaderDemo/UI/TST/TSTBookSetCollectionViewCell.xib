@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TSTBookSetCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="218"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="164" height="218"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJC-us-vQN">
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="158"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ckk-sz-n4o">
+                        <rect key="frame" x="30" y="178" width="104" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <constraints>
+                <constraint firstItem="ckk-sz-n4o" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="0ov-KP-uS5"/>
+                <constraint firstAttribute="trailing" secondItem="GJC-us-vQN" secondAttribute="trailing" id="3Mn-Oj-hy3"/>
+                <constraint firstItem="ckk-sz-n4o" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="MYB-sZ-POF"/>
+                <constraint firstItem="ckk-sz-n4o" firstAttribute="top" secondItem="GJC-us-vQN" secondAttribute="bottom" constant="10" id="fow-QP-maz"/>
+                <constraint firstItem="GJC-us-vQN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jb6-gl-l0d"/>
+                <constraint firstAttribute="bottom" secondItem="ckk-sz-n4o" secondAttribute="bottom" constant="10" id="lxc-Ml-sgR"/>
+                <constraint firstItem="GJC-us-vQN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yHO-ig-QKb"/>
+                <constraint firstAttribute="trailing" secondItem="ckk-sz-n4o" secondAttribute="trailing" id="z9O-fB-sUA"/>
+            </constraints>
+            <size key="customSize" width="164" height="218"/>
+            <connections>
+                <outlet property="bookImageView" destination="GJC-us-vQN" id="fR0-bc-HfW"/>
+                <outlet property="bookNameLabel" destination="ckk-sz-n4o" id="Fc5-zD-vVU"/>
+            </connections>
+            <point key="canvasLocation" x="330" y="510"/>
+        </collectionViewCell>
+    </objects>
+</document>
