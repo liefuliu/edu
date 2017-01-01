@@ -69,9 +69,11 @@
             }
         }
     
+        __block BOOL isCancelled = false;
         [[BRDLeanCloudBookDownloader sharedObject] downloadBook:@"Stanley"
                                                 toDirectory: path
                                                forTopNPages: topNPagesToDownload
+                                                cancelToken:&isCancelled
                                           withProgressBlock:^(BOOL finished, NSError *error, float percent) {
                                               NSLog(@"percent = %f%%", percent);
                                               if (finished) {

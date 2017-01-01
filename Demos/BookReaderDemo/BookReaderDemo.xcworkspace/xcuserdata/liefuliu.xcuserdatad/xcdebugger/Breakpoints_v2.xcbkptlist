@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "479005786.428081"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "479005786.428081"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/BookPlayerScrollVC.m"
-            timestampString = "504900907.539986"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "592"
-            endingLineNumber = "592"
+            startingLineNumber = "593"
+            endingLineNumber = "593"
             landmarkName = "-buttonMenuClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -904,11 +904,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/BookPlayerScrollVC.m"
-            timestampString = "504900907.539986"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "434"
-            endingLineNumber = "434"
+            startingLineNumber = "435"
+            endingLineNumber = "435"
             landmarkName = "-adjustedScreenSize"
             landmarkType = "5">
          </BreakpointContent>
@@ -920,11 +920,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/BookPlayerScrollVC.m"
-            timestampString = "504900907.539986"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "437"
+            endingLineNumber = "437"
             landmarkName = "-adjustedScreenSize"
             landmarkType = "5">
          </BreakpointContent>
@@ -1224,23 +1224,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "+cleanUpPFFileCacheDirectory"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "110"
@@ -1256,11 +1240,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
             endingLineNumber = "112"
+            landmarkName = "+cleanUpPFFileCacheDirectory"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
+            timestampString = "504944825.720271"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1304,11 +1304,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1320,11 +1320,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1336,11 +1336,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
             <Locations>
@@ -1384,11 +1384,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1400,12 +1400,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "504906245.985122"
+            timestampString = "504947424.766798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1416,12 +1416,60 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489355209.315103"
+            timestampString = "504943993.555216"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
+            timestampString = "504947424.766798"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
+            timestampString = "504947424.766798"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
             endingLineNumber = "70"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1432,60 +1480,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489365018.938516"
+            timestampString = "504943993.555216"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "504906245.985122"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489355209.315103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489355209.315103"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1496,11 +1496,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1512,12 +1512,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "504906245.985122"
+            timestampString = "504947424.766798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
             <Locations>
                <Location
@@ -1560,11 +1560,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1576,23 +1576,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-testPerformanceExample"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -1608,11 +1592,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "-testPerformanceExample"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
+            timestampString = "504944825.720271"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
             <Locations>
@@ -1656,11 +1656,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1672,11 +1672,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1704,11 +1704,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
             landmarkName = "-testPerformanceExample"
             landmarkType = "5">
          </BreakpointContent>
@@ -1720,11 +1720,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1736,11 +1736,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BookReaderDemoTests/BRDLeanCloudBookDownloaderTest.m"
-            timestampString = "489367023.24012"
+            timestampString = "504944825.720271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "+cleanUpPFFileCacheDirectory"
             landmarkType = "5">
          </BreakpointContent>
@@ -1752,28 +1752,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489365009.151035"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489365012.276426"
+            timestampString = "504947424.766798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "89"
             endingLineNumber = "89"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1784,12 +1768,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
-            timestampString = "489367479.010627"
+            timestampString = "504947424.766798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
-            landmarkName = "-downloadBook:toDirectory:startPage:endPage:withProgressBlock:"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
+            timestampString = "504944409.805008"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "-downloadBook:toDirectory:startPage:endPage:cancelToken:withProgressBlock:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2351,11 +2351,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/TST/TSTBookVC.m"
-            timestampString = "504930103.639007"
+            timestampString = "504944209.798721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "-openButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2367,11 +2367,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/TST/TSTBookVC.m"
-            timestampString = "504930103.639007"
+            timestampString = "504944209.798721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "-openButtonClicked:"
             landmarkType = "5">
          </BreakpointContent>
@@ -2383,11 +2383,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "UI/TST/TSTBookVC.m"
-            timestampString = "504930371.498894"
+            timestampString = "504944209.798721"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
+            startingLineNumber = "354"
+            endingLineNumber = "354"
             landmarkName = "-downloadBooks"
             landmarkType = "5">
             <Locations>
@@ -2486,6 +2486,22 @@
                   offsetFromSymbolStart = "20">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Backend/LeanCloud/BRDLeanCloudBookDownloader.m"
+            timestampString = "504947424.766798"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "139"
+            endingLineNumber = "139"
+            landmarkName = "-downloadBook:forTopNPages:cancelToken:withProgressBlock:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

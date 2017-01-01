@@ -161,7 +161,7 @@ static const float kVerticalScale = 1.0;
         } else {
             [_spinner startAnimating];
             //if (kDelayDownloadTillEndofPreview) {
-            [[BRDBackendFactory getBookDownloader] downloadBook:self.localBookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
+            [[BRDBackendFactory getBookDownloader] downloadBook:self.localBookKey forTopNPages:kNumPagesFirstDownload cancelToken:false withProgressBlock:^(BOOL finished, NSError* error, float percent) {
                 if (error != nil) {
                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
                     [alert show];
@@ -352,6 +352,7 @@ static const float kVerticalScale = 1.0;
     [[BRDBackendFactory getBookDownloader] downloadBook:self.localBookKey
                                               startPage:self.localBookInfo.downloadedPages + 1
                                                 endPage:lastPageToDownload + 1
+                                            cancelToken:false
                                       withProgressBlock:^(BOOL finished, NSError *error, float percent) {
                                           if (finished) {
                                               if (error != nil) {
@@ -447,15 +448,15 @@ static const float kVerticalScale = 1.0;
     BookPagePlayerBaseVC *controller = [self.viewControllers objectAtIndex:page];
     if ((NSNull *)controller == [NSNull null])
     {
-        if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        //if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
             controller = [[PortraitBookPagePlayerVC alloc] initWithBookKey:self.localBookKey
                                                                    withPage:(int)page
                                                          withTranslatedText:self.translatedText];
-        } else {
-            controller = [[LandscapeBookPagePlayerVC alloc] initWithBookKey:self.localBookKey
-                                                                   withPage:(int)page
-                                                         withTranslatedText:self.translatedText];
-        }
+        //} else {
+        //    controller = [[LandscapeBookPagePlayerVC alloc] initWithBookKey:self.localBookKey
+        //                                                           withPage:(int)page
+        //                                                 withTranslatedText:self.translatedText];
+        //}
         
         [self.viewControllers replaceObjectAtIndex:page withObject:controller];
     }

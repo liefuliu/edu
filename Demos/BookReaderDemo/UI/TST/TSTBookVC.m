@@ -14,15 +14,19 @@
 #import "BRDBookShuff.h"
 #import "BookPlayerScrollVC.h"
 
-@interface TSTBookVC ()
+@interface TSTBookVC () {
+    __block BOOL _isCancelled;
+}
 
 @property BRDListedBook* bookInfo;
 @property NSData* bookImageData;
 @property int downloadStatus;
+//@property bool _isCancelled;
 
 @end
 
 @implementation TSTBookVC
+
 
 -(id) initWithBookInfo: (BRDListedBook*) bookInfo
            bookImage: (NSData*) bookImageData {
@@ -30,6 +34,7 @@
     if (self) {
         self.bookInfo = bookInfo;
         self.bookImageData = bookImageData;
+        _isCancelled = false;
     }
     return self;
     
@@ -277,7 +282,8 @@
     [self changeDownloadStatus:3];
 }
 - (IBAction)cancelButtonClicked:(id)sender {
-    [self changeDownloadStatus:2];
+    _isCancelled = YES;
+    [self changeDownloadStatus:0];
 }
 
 - (IBAction)openButtonClicked:(id)sender {
@@ -345,7 +351,7 @@
 
 
 - (void) downloadBooks {
-    [[BRDBackendFactory getBookDownloader] downloadBook:self.bookInfo.bookId forTopNPages:(INT_MAX / 2) withProgressBlock:^(BOOL finished, NSError* error, float percent) {
+    [[BRDBackendFactory getBookDownloader] downloadBook:self.bookInfo.bookId forTopNPages:(INT_MAX / 2) cancelToken:&_isCancelled withProgressBlock:^(BOOL finished, NSError* error, float percent) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
             [alert show];

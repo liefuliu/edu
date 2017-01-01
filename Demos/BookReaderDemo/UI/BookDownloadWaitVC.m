@@ -78,7 +78,7 @@ const float progressSubViewRatio = 0.6;
 
 
 - (void) downloadBooks {
-    [[BRDBackendFactory getBookDownloader] downloadBook:_bookKey forTopNPages:kNumPagesFirstDownload withProgressBlock:^(BOOL finished, NSError* error, float percent) {
+    [[BRDBackendFactory getBookDownloader] downloadBook:_bookKey forTopNPages:kNumPagesFirstDownload cancelToken:false withProgressBlock:^(BOOL finished, NSError* error, float percent) {
         if (error != nil) {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"错误" message:@"该书本不存在" delegate:self cancelButtonTitle:@"好的，知道了" otherButtonTitles:nil];
             [alert show];

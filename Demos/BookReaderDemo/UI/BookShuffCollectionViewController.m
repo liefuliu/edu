@@ -110,11 +110,11 @@ static NSString * const reuseIdentifier = @"Cell";
     screenRect.origin= [[UIScreen mainScreen] bounds].origin;
     screenRect.size = [self adjustedScreenSize];
     
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+    //if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
         size.width = (screenRect.size.width - 30) / 2;
-    } else {
-        size.width = (screenRect.size.height - 30) / 2;
-    }
+    //} else {
+    //    size.width = (screenRect.size.height - 30) / 2;
+    //}
     
     // There are 2 labels: book name and author, therefore set 70 to be the height.
     const int heightReservedForLabels = 70;

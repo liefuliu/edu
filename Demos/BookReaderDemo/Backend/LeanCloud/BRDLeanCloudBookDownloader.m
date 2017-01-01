@@ -35,6 +35,7 @@
          toDirectory:(NSString*) directoryPath
            startPage: (int) startPage
              endPage:(int) endPage
+         cancelToken:(BOOL*) isCancelled
    withProgressBlock:(void (^)(BOOL finished, NSError* error, float percent)) block {
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT,0), ^(void) {
         AVQuery *query = [AVQuery queryWithClassName:@"BookImage"];
@@ -75,6 +76,11 @@
                 bool downloadPageSucceeded = false;
                 
                 while (!downloadPageSucceeded) {
+                    if (*isCancelled) {
+                        *isCancelled = NO;
+                        return;
+                    }
+                    
                     NSString* documentPath =
                     [directoryPath stringByAppendingPathComponent:[BRDPathUtil extractParseFileName:[pageContent name]]];
                     //[BRDPathUtil convertToDocumentPath:(NSString*)[pageContent name]];
@@ -118,28 +124,34 @@
 - (void)downloadBook: (NSString*) bookId
            startPage: (int) startPage
              endPage:(int) endPage
+         cancelToken:(BOOL*) isCancelled
    withProgressBlock:(void (^)(BOOL finished, NSError* error, float percent)) block{
     [self downloadBook:bookId
            toDirectory:[BRDPathUtil applicationDocumentsDirectoryPath]
              startPage:startPage
-               endPage:endPage withProgressBlock:block];
+               endPage:endPage
+           cancelToken:isCancelled
+    withProgressBlock:block];
 }
 
-- (void) downloadBook: (NSString*) bookId
+- (void) downloadBook:(NSString*) bookId
          forTopNPages:(int) topNPages
+          cancelToken:(BOOL*) isCancelled
     withProgressBlock:(void (^)(BOOL finished, NSError* error, float percent)) block {
     [self downloadBook:bookId
            toDirectory:[BRDPathUtil applicationDocumentsDirectoryPath]
           forTopNPages:topNPages
+     cancelToken:isCancelled
      withProgressBlock:block];
 }
 
 - (void) downloadBook:(NSString*) bookId
           toDirectory:(NSString*) directoryPath
          forTopNPages:(int) topNPages
+        cancelToken:(BOOL*) isCancelled
     withProgressBlock:(void (^)(BOOL finished, NSError* error, float percent)) block {
     [self downloadBook:bookId toDirectory:directoryPath startPage:1 endPage:topNPages+1
-     withProgressBlock:block];
+           cancelToken:isCancelled withProgressBlock:block];
 }
 
 + (BOOL) isPage: (AVObject*) object
