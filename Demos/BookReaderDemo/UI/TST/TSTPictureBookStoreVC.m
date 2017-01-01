@@ -127,7 +127,8 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             cell.bookSetTitleTextField.text = bookSetWithImage.bookSetName;
             cell.bookSetNotesTextView.text = [self getTruncatedString:bookSetWithImage.bookSetNotes];
         }
-        
+        cell.layer.masksToBounds = YES;
+        cell.layer.cornerRadius = 6;
         return cell;
     } else {
         return nil;

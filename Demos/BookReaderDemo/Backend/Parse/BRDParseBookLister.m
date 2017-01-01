@@ -112,6 +112,7 @@ static const int MAX_BOOK_LIST = 1000;
             if (bookId != nil) {
                 NSString* bookName = (NSString*) object[@"bookName"];
                 NSString* author = (NSString*) object[@"author"];
+                NSString* bookNotes = (NSString*) object[@"bookNotes"];
                 int totalPages = [((NSString*)object[@"totalPages"]) intValue];
                 int imageFileType = [((NSString*)object[@"imageFileType"]) intValue];
                 
@@ -119,6 +120,7 @@ static const int MAX_BOOK_LIST = 1000;
                                       initBook: bookId
                                           name: bookName
                                       author:author
+                                      bookNotes:bookNotes
                                       totalPages:totalPages
                                       cover:nil
                                       imageFileType:imageFileType];

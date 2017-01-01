@@ -332,6 +332,7 @@ static const float kVerticalScale = 1.0;
 
     // 退出页面。
     [self dismissViewControllerAnimated:YES completion:nil];
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
     self.viewIsDismissed = YES;
     return;
 }

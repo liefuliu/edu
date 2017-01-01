@@ -18,6 +18,7 @@
 
 @property NSString* bookId;
 @property NSString* bookName;
+@property NSString* bookNotes;
 @property NSString* author;
 @property NSData* cover;
 @property int totalPages;
@@ -28,6 +29,7 @@
 - (id) initBook:(NSString*) bookId
            name:(NSString*) bookName
          author:(NSString*) author
+      bookNotes:(NSString*) bookNotes
      totalPages:(int) totalPages
           cover:(NSData*) cover
   imageFileType:(int) imageFileType;

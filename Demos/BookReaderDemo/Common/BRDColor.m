@@ -50,4 +50,9 @@
 }
 
 
++ (UIColor*) greenColor {
+    return [UIColor colorWithRed:0 green:0.8 blue:0.3 alpha:1.0];
+}
+
+
 @end

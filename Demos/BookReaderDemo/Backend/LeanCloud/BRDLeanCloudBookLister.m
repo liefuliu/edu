@@ -60,6 +60,14 @@ static const int MAX_BOOK_SET_TO_DISPLAY = 20;
 }
 
 
+- (BOOL) getListOfBooks:(int) numOfBooks
+              inBookSet:(NSString*) bookSetId
+                     to:(NSArray**) arrayOfBooks {
+    // Directly fetch the book list from the server using blocking call.
+    return [BRDLeanCloudBookLister fetchBookList:MAX_BOOK_LIST withBookSetId:bookSetId to:arrayOfBooks];
+}
+
+
 - (BOOL) getListOfBookSets:(int) numOfBooks
                         to:(NSArray**) arrayOfBookSets  {
     if (![self fetchBookSetList:MAX_BOOK_SET_LIST]) {
@@ -160,26 +168,14 @@ static const int MAX_BOOK_SET_TO_DISPLAY = 20;
     }
 }
 
-- (BOOL) fetchBookList:(int) numOfBooks  {
++ (BOOL) fetchBookList: (int) numOfBooks
+         withBookSetId: (NSString*) bookSetId
+                    to:(NSArray**) arrayOfBooks {
     AVQuery *query = [AVQuery queryWithClassName:@"Book"];
     [query whereKey:@"isActive" equalTo:[NSNumber numberWithBool:YES]];
-    
-    /*
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (!error) {
-            // The find succeeded.
-            NSMutableArray* bookList = [[NSMutableArray alloc] init];
-            NSLog(@"Successfully retrieved %d scores.", objects.count);
-            // Do something with the found objects
-            for (PFObject *object in objects) {
-                [bookList addObject:(NSString*)object[@"bookName"]];
-            }
-            self.currentBookList = bookList;
-        } else {
-            // Log details of the failure
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];*/
+    if (bookSetId != nil) {
+        [query whereKey:@"bookSetId" equalTo:bookSetId];
+    }
     
     NSArray* objects = [query findObjects];
     NSLog(@"Successfully retrieved %d scores.", objects.count);
@@ -191,6 +187,7 @@ static const int MAX_BOOK_SET_TO_DISPLAY = 20;
             if (bookId != nil) {
                 NSString* bookName = (NSString*) object[@"bookName"];
                 NSString* author = (NSString*) object[@"author"];
+                NSString* bookNotes = (NSString*) object[@"bookNotes"];
                 int totalPages = [((NSString*)object[@"totalPages"]) intValue];
                 int imageFileType;
                 NSString* imageFileTypeString = (NSString*)object[@"imageFileType"];
@@ -203,17 +200,34 @@ static const int MAX_BOOK_SET_TO_DISPLAY = 20;
                 }
                 
                 BRDListedBook* serverBook = [[BRDListedBook alloc]
-                                      initBook: bookId
-                                          name: bookName
-                                      author:author
-                                      totalPages:totalPages
-                                      cover:nil
-                                      imageFileType:imageFileType];
-            
+                                             initBook: bookId
+                                             name: bookName
+                                             author:author
+                                             bookNotes:bookNotes
+                                             totalPages:totalPages
+                                             cover:nil
+                                             imageFileType:imageFileType];
+                
                 [bookList addObject:serverBook];
             }
         }
-        self.currentBookList = bookList;
+        *arrayOfBooks = bookList;
+        return YES;
+    } else {
+        return NO;
+    }
+
+    
+}
+
++ (BOOL) fetchBookList:(int) numOfBooks
+                    to:(NSMutableArray**) arrayOfBooks {
+    return [BRDLeanCloudBookLister fetchBookList:numOfBooks withBookSetId:nil to:arrayOfBooks];
+ }
+
+- (BOOL) fetchBookList:(int) numOfBooks  {
+    NSMutableArray* arrayOfBooks;
+    if( [BRDLeanCloudBookLister fetchBookList:numOfBooks to:&arrayOfBooks]) {
         return YES;
     } else {
         return NO;

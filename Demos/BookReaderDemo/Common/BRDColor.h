@@ -14,4 +14,6 @@
 + (UIColor*) backgroundSkyBlue;
 
 + (UIColor*) lowlightTextGrayColor;
+
++ (UIColor*) greenColor;
 @end

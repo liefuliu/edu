@@ -13,6 +13,7 @@
 - (id) initBook:(NSString*) bookId
            name:(NSString*) bookName
          author:(NSString*) author
+      bookNotes:(NSString*) bookNotes
      totalPages:(int) totalPages
           cover:(NSData*) cover
   imageFileType:(int) imageFileType {
@@ -20,6 +21,7 @@
     if (self) {
         _bookId = bookId;
         _bookName = bookName;
+        _bookNotes = bookNotes;
         _author = author;
         _totalPages = totalPages;
         _cover = cover;
@@ -37,6 +39,7 @@
         self.bookId = [aDecoder decodeObjectForKey:@"bookId"];
         self.bookName = [aDecoder decodeObjectForKey:@"bookName"];
         self.author = [aDecoder decodeObjectForKey:@"author"];
+        self.bookNotes = [aDecoder decodeObjectForKey:@"bookNotes"];
         self.totalPages = [aDecoder decodeIntForKey:@"totalPages"];
         self.cover = (NSData*)[aDecoder decodeObjectForKey:@"cover"];
         self.imageFileType = [aDecoder decodeIntForKey:@"imageFileType"];
@@ -49,6 +52,7 @@
     [encoder encodeObject:self.bookId forKey:@"bookId"];
     [encoder encodeObject:self.bookName forKey:@"bookName"];
     [encoder encodeObject:self.author forKey:@"author"];
+    [encoder encodeObject:self.bookNotes forKey:@"bookNotes"];
     [encoder encodeInt:self.totalPages forKey:@"totalPages"];
     [encoder encodeObject:self.cover forKey:@"cover"];
     [encoder encodeInt:self.imageFileType forKey:@"imageFileType"];

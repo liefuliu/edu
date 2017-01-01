@@ -102,7 +102,6 @@
                     block(NO, nil, percent);
                 });
                 
-                // Investigate why totalBooks is 13... TODO
                 if (downloaded == totalBooks) {
                     dispatch_async(dispatch_get_main_queue(),^ {
                         block(YES, nil, percent);

@@ -10,6 +10,6 @@
 
 @interface TSTBookSetCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
-@property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
+@property (weak, nonatomic) IBOutlet UITextView *bookTitleTextView;
 
 @end

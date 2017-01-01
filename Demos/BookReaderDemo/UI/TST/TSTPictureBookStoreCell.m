@@ -16,6 +16,13 @@
     self.bookSetNotesTextView.inputAssistantItem.leadingBarButtonGroups = @[];
     self.bookSetNotesTextView.inputAssistantItem.trailingBarButtonGroups = @[];
     
+    
+    [self.sampleBookImageView.layer setShadowColor:[UIColor blackColor].CGColor];
+    [self.sampleBookImageView.layer setShadowOpacity:0.8];
+    [self.sampleBookImageView.layer setShadowRadius:3.0];
+    [self.sampleBookImageView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [self setNeedsDisplay];
+    
 }
 
 @end

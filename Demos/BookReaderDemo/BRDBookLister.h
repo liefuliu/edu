@@ -19,6 +19,10 @@
 - (BOOL) getListOfBookSets:(int) numOfBooks
                      to:(NSArray**) arrayOfBookSets;  // NSArray of server book set.
 
+- (BOOL) getListOfBooks:(int) numOfBooks
+              inBookSet:(NSString*) bookSetId
+                     to:(NSArray**) arrayOfBooks;
+
 - (BOOL) getSummaryInfoForBooks: (NSArray*) arrayOfBooks
                              to: (NSDictionary**) summaryInfo;
 

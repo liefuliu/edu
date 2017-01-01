@@ -33,4 +33,12 @@
 - (BOOL) appendSummaryInfoForBooks: (NSArray*) arrayOfBooks
                                 to: (NSDictionary**) summaryInfo;
 
+
+- (BOOL) getListOfBookSets:(int) numOfBooks
+                        to:(NSArray**) arrayOfBookSets;
+
+- (BOOL) getListOfBooks:(int) numOfBooks
+              inBookSet:(NSString*) bookSetId
+                     to:(NSArray**) arrayOfBooks;
+
 @end
