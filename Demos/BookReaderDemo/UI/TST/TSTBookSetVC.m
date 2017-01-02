@@ -59,7 +59,6 @@ static UIActivityIndicatorView *_indicatorView;
     [self.bookSetImageView.layer setShadowOpacity:0.8];
     [self.bookSetImageView.layer setShadowRadius:3.0];
     [self.bookSetImageView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
-
     
     // TODO: add constraints
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -74,6 +73,7 @@ static UIActivityIndicatorView *_indicatorView;
     
     self.bookCollectionView.delegate = self;
     self.bookCollectionView.dataSource = self;
+    
     
     // Register cell classes
     UINib *cellNib = [UINib nibWithNibName:@"TSTBookSetCollectionViewCell" bundle:nil];
@@ -101,14 +101,14 @@ static UIActivityIndicatorView *_indicatorView;
     
     NSArray *horizontalConstraints3 =
     [NSLayoutConstraint constraintsWithVisualFormat:
-     @"H:|-[collectionView]-|"
+     @"H:|-(5)-[collectionView]-(5)-|"
                                             options:0
                                             metrics:nil
                                               views:nameMap];
     
     NSArray *verticalConstraints1 =
     [NSLayoutConstraint constraintsWithVisualFormat:
-     [NSString stringWithFormat:@"V:|-%d-[imageView(%d)]-20-[bookDetailLabel]-20-[collectionView]-50-|", topOffset, imageViewHeight]
+     [NSString stringWithFormat:@"V:|-%d-[imageView(%d)]-20-[bookDetailLabel]-20-[collectionView]-|", topOffset, imageViewHeight]
                                             options:0
                                             metrics:nil
                                               views:nameMap];
@@ -160,19 +160,21 @@ static UIActivityIndicatorView *_indicatorView;
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [_bookInfoListInSet count];
+    return [_bookInfoListInSet count] * 8;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section== 0 ) {
         TSTBookSetCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier                      forIndexPath:indexPath];
-        BRDListedBookWithImage* bookWithImage = [self.bookInfoListInSet objectAtIndex:indexPath.row];
+        BRDListedBookWithImage* bookWithImage = [self.bookInfoListInSet objectAtIndex:indexPath.row / 8];
         //cell.bookNameLabel.text = @"new book";
         cell.bookTitleTextView.text =bookWithImage.bookInfo.bookName;
+        [cell.bookTitleTextView setFont:[UIFont systemFontOfSize:10]];
+
         cell.bookImageView.image = [UIImage imageWithData:bookWithImage.bookSummaryWithImage.imageData];
         
         cell.layer.masksToBounds = YES;
-        cell.layer.cornerRadius = 6;
+        cell.layer.cornerRadius = 5;
         return cell;
     } else {
         return nil;
@@ -203,9 +205,9 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     CGSize size;
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     
-    size.width = screenRect.size.width / 4 - 15;
+    size.width = screenRect.size.width / 3 - 10;
     
-    size.height = 150;
+    size.height = size.width * 5 / 4 + 30;
     
     NSLog(@"scrren width = %f, height = %f", screenRect.size.width, screenRect.size.height);
     NSLog(@"size.width = %f, size.height = %f", size.width, size.height);

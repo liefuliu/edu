@@ -14,29 +14,23 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="271" height="462"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Akf-gF-hbA">
-                        <rect key="frame" x="0.0" y="0.0" width="271" height="361"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Akf-gF-hbA">
+                        <rect key="frame" x="10" y="10" width="261" height="348"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Akf-gF-hbA" secondAttribute="height" multiplier="3:4" id="7JG-Bi-boh"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="书名" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-wP-sbR">
-                        <rect key="frame" x="20" y="371" width="34" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="书名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-wP-sbR">
+                        <rect key="frame" x="10" y="358" width="261" height="14"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="作者" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVC-ts-jna">
-                        <rect key="frame" x="20" y="402" width="26" height="16"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-jW-vrF">
-                        <rect key="frame" x="0.0" y="326" width="271" height="35"/>
+                    <view hidden="YES" alpha="0.69999999999999996" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-jW-vrF">
+                        <rect key="frame" x="0.0" y="333" width="261" height="25"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59S-1n-4Tg">
-                                <rect key="frame" x="121" y="3" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="59S-1n-4Tg">
+                                <rect key="frame" x="126" y="0.0" width="30" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="阅读">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -45,8 +39,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="59S-1n-4Tg" firstAttribute="top" secondItem="ubl-jW-vrF" secondAttribute="top" constant="3" id="8fM-LU-ZcN"/>
-                            <constraint firstAttribute="height" constant="35" id="mSU-rV-O8Z"/>
+                            <constraint firstItem="59S-1n-4Tg" firstAttribute="top" secondItem="ubl-jW-vrF" secondAttribute="top" id="8fM-LU-ZcN"/>
+                            <constraint firstAttribute="height" constant="25" id="mSU-rV-O8Z"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -54,23 +48,18 @@
             </view>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Sde-wP-sbR" secondAttribute="trailing" constant="10" id="2TB-83-TQg"/>
-                <constraint firstItem="Sde-wP-sbR" firstAttribute="top" secondItem="Akf-gF-hbA" secondAttribute="bottom" constant="10" id="Bdg-9x-y42"/>
-                <constraint firstAttribute="trailing" secondItem="Akf-gF-hbA" secondAttribute="trailing" id="DPP-xS-xmh"/>
-                <constraint firstItem="Akf-gF-hbA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Gqt-mQ-i9S"/>
-                <constraint firstItem="tVC-ts-jna" firstAttribute="top" secondItem="Sde-wP-sbR" secondAttribute="bottom" constant="10" id="J1O-g9-oSk"/>
-                <constraint firstAttribute="trailing" secondItem="tVC-ts-jna" secondAttribute="trailing" constant="10" id="KyT-9O-694"/>
-                <constraint firstAttribute="trailing" secondItem="ubl-jW-vrF" secondAttribute="trailing" id="OU8-dg-jOq"/>
+                <constraint firstItem="Sde-wP-sbR" firstAttribute="top" secondItem="Akf-gF-hbA" secondAttribute="bottom" constant="5" id="Bdg-9x-y42"/>
+                <constraint firstItem="Sde-wP-sbR" firstAttribute="leading" secondItem="Akf-gF-hbA" secondAttribute="leading" id="C4y-9k-KGb"/>
+                <constraint firstItem="Akf-gF-hbA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Gqt-mQ-i9S"/>
+                <constraint firstAttribute="trailing" secondItem="Akf-gF-hbA" secondAttribute="trailing" constant="5" id="MGo-Bt-Dx7"/>
                 <constraint firstItem="ubl-jW-vrF" firstAttribute="bottom" secondItem="Akf-gF-hbA" secondAttribute="bottom" id="QNj-bg-uFt"/>
                 <constraint firstItem="ubl-jW-vrF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="UBp-n6-VMG"/>
-                <constraint firstItem="Akf-gF-hbA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Zpu-kZ-65E"/>
+                <constraint firstItem="Akf-gF-hbA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="Zpu-kZ-65E"/>
                 <constraint firstItem="59S-1n-4Tg" firstAttribute="centerX" secondItem="Akf-gF-hbA" secondAttribute="centerX" id="iu7-pl-5WK"/>
-                <constraint firstItem="Sde-wP-sbR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="k7e-61-Wlj"/>
-                <constraint firstItem="tVC-ts-jna" firstAttribute="leading" secondItem="Sde-wP-sbR" secondAttribute="leading" id="rrq-qQ-7P1"/>
+                <constraint firstItem="Sde-wP-sbR" firstAttribute="trailing" secondItem="Akf-gF-hbA" secondAttribute="trailing" id="pnp-et-7jL"/>
             </constraints>
             <size key="customSize" width="271" height="462"/>
             <connections>
-                <outlet property="authorLabel" destination="tVC-ts-jna" id="kBv-Hq-6dc"/>
                 <outlet property="bookImageView" destination="Akf-gF-hbA" id="tpX-aT-mky"/>
                 <outlet property="bookNameLabel" destination="Sde-wP-sbR" id="pPU-OG-d35"/>
             </connections>

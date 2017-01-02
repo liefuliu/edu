@@ -28,7 +28,7 @@
         <scene sceneID="fZe-6P-qpP">
             <objects>
                 <navigationController id="Az8-JV-zVC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="绘本馆" id="RcD-1I-esy"/>
+                    <tabBarItem key="tabBarItem" title="绘本馆" image="Home-30.png" selectedImage="Home Filled-30.png" id="RcD-1I-esy"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jmT-bC-mdv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
         <scene sceneID="SOF-h4-Bzt">
             <objects>
                 <navigationController id="NeC-ga-RW1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="书架" id="XoV-IE-ECw"/>
+                    <tabBarItem key="tabBarItem" title="书架" image="Download-30.png" selectedImage="Download Filled-30.png" id="XoV-IE-ECw"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ut7-gh-Jzm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -65,6 +65,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="su1-Br-07I">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="mZL-do-Ey2">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -91,7 +92,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsi-j7-bwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-402" y="3099"/>
+            <point key="canvasLocation" x="-463" y="3049"/>
         </scene>
         <!--Book Shuff Collection View Controller-->
         <scene sceneID="ZQa-Tq-goP">
@@ -100,6 +101,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="qZm-Kh-6ys">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="81C-f1-tig">
                             <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -129,4 +131,10 @@
             <point key="canvasLocation" x="240" y="3099"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Download Filled-30.png" width="30" height="30"/>
+        <image name="Download-30.png" width="30" height="30"/>
+        <image name="Home Filled-30.png" width="30" height="30"/>
+        <image name="Home-30.png" width="30" height="30"/>
+    </resources>
 </document>

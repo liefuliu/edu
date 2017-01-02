@@ -283,6 +283,7 @@
 }
 - (IBAction)cancelButtonClicked:(id)sender {
     _isCancelled = YES;
+    [self.downloadProgressView setProgress:0.0];
     [self changeDownloadStatus:0];
 }
 

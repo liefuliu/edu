@@ -11,6 +11,4 @@
 @interface BookShuffCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bookImageView;
 @property (weak, nonatomic) IBOutlet UILabel *bookNameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
-
 @end

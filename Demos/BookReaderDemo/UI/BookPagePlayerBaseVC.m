@@ -55,7 +55,7 @@
 
 
 - (UIColor*) defaultBackgroundColor {
-    return [BRDColor backgroundSkyBlue];
+    return [BRDColor translationBarBackground];
 }
 
 @end

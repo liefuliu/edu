@@ -41,8 +41,8 @@ static NSMutableArray* _bookSetInfoList;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
-    self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
     
+    //self.collectionView.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1.0];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -93,7 +93,8 @@ static NSMutableArray* _bookSetInfoList;
     CGSize size;
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     
-    size.width = screenRect.size.width / 2 - 10;
+    // Make sure the width is aligning with the edge size.
+    size.width = screenRect.size.width / 2 - 15;
     size.height = kCollectionViewCellHeight;
     
     return size;
@@ -110,6 +111,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
         TSTBookSetVC* bookSetVC = [[TSTBookSetVC alloc] initWithBookSetId: bookSetWithImage.bookSetId
              bookSetName: bookSetWithImage.bookSetName bookSetSummary:bookSetWithImage.bookSetNotes
                  bookSetCoverImage:bookSetWithImage.sampleBookCoverImage];
+        bookSetVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:bookSetVC
                                              animated:YES];
     }
@@ -126,9 +128,16 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
             cell.sampleBookImageView.image = [[UIImage alloc] initWithData: bookSetWithImage.sampleBookCoverImage];
             cell.bookSetTitleTextField.text = bookSetWithImage.bookSetName;
             cell.bookSetNotesTextView.text = [self getTruncatedString:bookSetWithImage.bookSetNotes];
+            
+            [cell.bookSetNotesTextView setTextColor:[UIColor darkGrayColor]];
+            [cell.bookSetNotesTextView  setFont:[UIFont systemFontOfSize:10]];
         }
         cell.layer.masksToBounds = YES;
         cell.layer.cornerRadius = 6;
+        [cell.layer setShadowColor:[UIColor blackColor].CGColor];
+        [cell.layer setShadowOpacity:0.8];
+        [cell.layer setShadowRadius:3.0];
+        [cell.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
         return cell;
     } else {
         return nil;
@@ -145,7 +154,7 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
-    return UIEdgeInsetsMake(5, 5, 5,5);
+    return UIEdgeInsetsMake(10, 10, 10, 10);
 }
 
 #pragma mark <UICollectionViewDelegate>

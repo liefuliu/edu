@@ -14,13 +14,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="164" height="218"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJC-us-vQN">
-                        <rect key="frame" x="0.0" y="0.0" width="164" height="173"/>
+                        <rect key="frame" x="5" y="0.0" width="154" height="183"/>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lM2-Wu-3eu">
-                        <rect key="frame" x="0.0" y="173" width="164" height="40"/>
+                        <rect key="frame" x="5" y="183" width="154" height="35"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="Fci-kc-bS0"/>
+                            <constraint firstAttribute="height" constant="35" id="Fci-kc-bS0"/>
                         </constraints>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -29,16 +29,15 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="GJC-us-vQN" secondAttribute="trailing" id="3Mn-Oj-hy3"/>
+                <constraint firstAttribute="trailing" secondItem="GJC-us-vQN" secondAttribute="trailing" constant="5" id="3Mn-Oj-hy3"/>
                 <constraint firstItem="lM2-Wu-3eu" firstAttribute="leading" secondItem="GJC-us-vQN" secondAttribute="leading" id="8HI-h3-HB6"/>
-                <constraint firstAttribute="trailing" secondItem="lM2-Wu-3eu" secondAttribute="trailing" id="FSV-fA-79G"/>
-                <constraint firstAttribute="bottom" secondItem="lM2-Wu-3eu" secondAttribute="bottom" constant="5" id="PWY-6I-og6"/>
+                <constraint firstAttribute="bottom" secondItem="lM2-Wu-3eu" secondAttribute="bottom" id="PWY-6I-og6"/>
                 <constraint firstItem="lM2-Wu-3eu" firstAttribute="trailing" secondItem="GJC-us-vQN" secondAttribute="trailing" id="ZSD-sC-L2Q"/>
-                <constraint firstItem="lM2-Wu-3eu" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iE8-jO-DMG"/>
                 <constraint firstItem="GJC-us-vQN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jb6-gl-l0d"/>
                 <constraint firstItem="lM2-Wu-3eu" firstAttribute="top" secondItem="GJC-us-vQN" secondAttribute="bottom" id="mhm-kv-XXC"/>
-                <constraint firstItem="GJC-us-vQN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yHO-ig-QKb"/>
+                <constraint firstItem="GJC-us-vQN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="yHO-ig-QKb"/>
             </constraints>
             <size key="customSize" width="164" height="218"/>
             <connections>

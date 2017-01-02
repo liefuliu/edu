@@ -41,7 +41,7 @@
     [[UINavigationBar appearance]
      setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]}];
     
-    [[UITabBar appearance] setBarTintColor:[BRDColor backgroundSkyBlue]];
+    [[UITabBar appearance] setBarTintColor:[BRDColor tabBarBackground]];
     [[UITabBar appearance] setTintColor:[UIColor whiteColor]];
     // Add this code to change StateNormal text Color,
     [UITabBarItem.appearance setTitleTextAttributes:

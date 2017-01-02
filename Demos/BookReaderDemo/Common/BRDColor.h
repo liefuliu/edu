@@ -13,7 +13,11 @@
 
 + (UIColor*) backgroundSkyBlue;
 
++ (UIColor*) tabBarBackground;
+
 + (UIColor*) lowlightTextGrayColor;
+
++ (UIColor*) translationBarBackground;
 
 + (UIColor*) greenColor;
 @end

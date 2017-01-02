@@ -37,7 +37,7 @@ static NSString * const reuseIdentifier = @"Cell";
     self.collectionView.dataSource = self;
     UINib *cellNib = [UINib nibWithNibName:@"BookShuffCollectionViewCell" bundle:nil];
     [self.collectionView registerNib:cellNib forCellWithReuseIdentifier:reuseIdentifier];
-    self.collectionView.backgroundColor = [UIColor grayColor];
+    //self.collectionView.backgroundColor = [UIColor grayColor];
     
     self.title = @"书架";
     //[self loadBooksOnShuff];
@@ -88,17 +88,27 @@ static NSString * const reuseIdentifier = @"Cell";
         
         NSString* bookKey = self.allBookKeys[indexPath.row];
         LocalBook* bookInfo = [[BRDBookShuff sharedObject] getBook:bookKey];
-        
-        cell.authorLabel.text = bookInfo.author;
         cell.bookNameLabel.text = [NSString stringWithFormat:@"%@", bookInfo.bookName];
         
         NSData* imageData = [BRDFileUtil getBookCoverImage:bookKey];
         cell.bookImageView.image = [[UIImage alloc] initWithData:imageData];
+        [self setShadowToLayer:cell.bookImageView.layer];
         
+        cell.layer.masksToBounds = YES;
+        cell.layer.cornerRadius = 6;
+        
+        [self setShadowToLayer:cell.layer];
         return cell;
     } else {
         return nil;
     }
+}
+
+- (void) setShadowToLayer: (CALayer*) layer {
+    [layer setShadowColor:[UIColor blackColor].CGColor];
+    [layer setShadowOpacity:0.8];
+    [layer setShadowRadius:3.0];
+    [layer setShadowOffset:CGSizeMake(2.0, 2.0)];
 }
 
 
@@ -111,14 +121,14 @@ static NSString * const reuseIdentifier = @"Cell";
     screenRect.size = [self adjustedScreenSize];
     
     //if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        size.width = (screenRect.size.width - 30) / 2;
+    size.width = screenRect.size.width / 3 - 10;
     //} else {
     //    size.width = (screenRect.size.height - 30) / 2;
     //}
     
     // There are 2 labels: book name and author, therefore set 70 to be the height.
-    const int heightReservedForLabels = 70;
-    size.height = size.width * 4.0 / 3.0 + heightReservedForLabels;
+    const int heightReservedForLabels = 30;
+    size.height = (size.width - 10) * 4.0 / 3.0 + 10 + heightReservedForLabels;
     
     return size;
 }
