@@ -13,8 +13,9 @@
 #import "BRDBackendFactory.h"
 #import "BRDListedBook.h"
 #import "BRDBookSummary.h"
+#import "BRDColor.h"
 #import "BRDListedBookWithImage.h"
-
+#import "ShadowUtil.h"
 
 @interface TSTBookSetVC ()
 @property NSString* bookSetId;
@@ -54,11 +55,22 @@ static UIActivityIndicatorView *_indicatorView;
     self.title = @"绘本系列";
     self.bookSetNameLabel.text = self.bookSetName;
     self.bookSetSummaryTextView.text = self.bookSetSummary;
+    [self.bookSetSummaryTextView setTextColor:[UIColor darkGrayColor]];
+    
     self.bookSetImageView.image = [UIImage imageWithData:self.bookSetCoverImage];
      [self.bookSetImageView.layer setShadowColor:[UIColor blackColor].CGColor];
     [self.bookSetImageView.layer setShadowOpacity:0.8];
     [self.bookSetImageView.layer setShadowRadius:3.0];
     [self.bookSetImageView.layer setShadowOffset:CGSizeMake(2.0, 2.0)];
+    [ShadowUtil setShadowToLayer:self.bookSetImageView.layer];
+    
+    self.bookDetailLabel.textColor = [BRDColor backgroundSkyBlue];
+    
+    //self.bookDetailLabel.layer.masksToBounds = YES;
+    //self.bookDetailLabel.layer.cornerRadius = 5;
+    //[ShadowUtil setShadowToLayer:self.bookDetailLabel.layer];
+    
+    //[self.bookDetailLabel setBackgroundColor:[BRDColor backgroundSkyBlue]];
     
     // TODO: add constraints
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -108,7 +120,7 @@ static UIActivityIndicatorView *_indicatorView;
     
     NSArray *verticalConstraints1 =
     [NSLayoutConstraint constraintsWithVisualFormat:
-     [NSString stringWithFormat:@"V:|-%d-[imageView(%d)]-20-[bookDetailLabel]-20-[collectionView]-|", topOffset, imageViewHeight]
+     [NSString stringWithFormat:@"V:|-%d-[imageView(%d)]-20-[bookDetailLabel]-10-[collectionView]-|", topOffset, imageViewHeight]
                                             options:0
                                             metrics:nil
                                               views:nameMap];
@@ -160,17 +172,17 @@ static UIActivityIndicatorView *_indicatorView;
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [_bookInfoListInSet count] * 8;
+    return [_bookInfoListInSet count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section== 0 ) {
         TSTBookSetCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier                      forIndexPath:indexPath];
-        BRDListedBookWithImage* bookWithImage = [self.bookInfoListInSet objectAtIndex:indexPath.row / 8];
+        BRDListedBookWithImage* bookWithImage = [self.bookInfoListInSet objectAtIndex:indexPath.row];
         //cell.bookNameLabel.text = @"new book";
-        cell.bookTitleTextView.text =bookWithImage.bookInfo.bookName;
-        [cell.bookTitleTextView setFont:[UIFont systemFontOfSize:10]];
-
+        cell.bookTitleTextView.text = bookWithImage.bookInfo.bookName;
+        cell.bookTitleTextView.font = [UIFont boldSystemFontOfSize:10];
+        cell.bookTitleTextView.textAlignment = NSTextAlignmentCenter;
         cell.bookImageView.image = [UIImage imageWithData:bookWithImage.bookSummaryWithImage.imageData];
         
         cell.layer.masksToBounds = YES;
@@ -294,13 +306,11 @@ didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 - (void) startLoadData {
 NSLog(@"activityIndicator: %@", _indicatorView);
     [_indicatorView startAnimating];
-    self.bookDetailLabel.text = @"书籍列表 (加载中...)";
 }
 
 - (void) endLoadData {
     NSLog(@"activityIndicator: %@", _indicatorView);
     [_indicatorView stopAnimating];
-    self.bookDetailLabel.text = @"书籍列表";
 }
 
 

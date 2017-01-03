@@ -49,6 +49,7 @@
     self.bookNotesTextView.text = self.bookInfo.bookNotes;
     self.bookImageView.image = [UIImage imageWithData:self.bookImageData];
     
+    self.bookSampleLabel.textColor = [BRDColor backgroundSkyBlue];
     
     [self.bookImageView.layer setShadowOpacity:0.8];
     [self.bookImageView.layer setShadowRadius:3.0];

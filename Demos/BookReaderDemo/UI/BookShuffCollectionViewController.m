@@ -17,6 +17,7 @@
 #import "BookItemCell.h"
 #import "LocalBook.h"
 #import "BookPlayerScrollVC.h"
+#import "ShadowUtil.h"
 
 @interface BookShuffCollectionViewController ()
 
@@ -92,23 +93,16 @@ static NSString * const reuseIdentifier = @"Cell";
         
         NSData* imageData = [BRDFileUtil getBookCoverImage:bookKey];
         cell.bookImageView.image = [[UIImage alloc] initWithData:imageData];
-        [self setShadowToLayer:cell.bookImageView.layer];
+        [ShadowUtil setShadowToLayer:cell.bookImageView.layer];
         
         cell.layer.masksToBounds = YES;
         cell.layer.cornerRadius = 6;
         
-        [self setShadowToLayer:cell.layer];
+        [ShadowUtil setShadowToLayer:cell.layer];
         return cell;
     } else {
         return nil;
     }
-}
-
-- (void) setShadowToLayer: (CALayer*) layer {
-    [layer setShadowColor:[UIColor blackColor].CGColor];
-    [layer setShadowOpacity:0.8];
-    [layer setShadowRadius:3.0];
-    [layer setShadowOffset:CGSizeMake(2.0, 2.0)];
 }
 
 

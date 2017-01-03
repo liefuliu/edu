@@ -33,13 +33,11 @@
 		6D9924971E147BF500ACF27B /* TSTBookVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9924951E147BF500ACF27B /* TSTBookVC.m */; };
 		6D9924981E147BF500ACF27B /* TSTBookVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924961E147BF500ACF27B /* TSTBookVC.xib */; };
 		6D9924DF1E1735AC00ACF27B /* cross-icon-015.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924DE1E1735AC00ACF27B /* cross-icon-015.png */; };
-		6D9924E31E1A19FE00ACF27B /* Home-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924E11E1A19FE00ACF27B /* Home-50.png */; };
-		6D9924E41E1A19FE00ACF27B /* Home-blue-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924E21E1A19FE00ACF27B /* Home-blue-50.png */; };
-		6D9924E61E1A1B3900ACF27B /* Home-25.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924E51E1A1B3900ACF27B /* Home-25.png */; };
 		6D9924E91E1A1DD400ACF27B /* Home-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924E71E1A1DD400ACF27B /* Home-30.png */; };
 		6D9924EA1E1A1DD400ACF27B /* Home Filled-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924E81E1A1DD400ACF27B /* Home Filled-30.png */; };
 		6D9924ED1E1A1E8200ACF27B /* Download Filled-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924EB1E1A1E8200ACF27B /* Download Filled-30.png */; };
 		6D9924EE1E1A1E8200ACF27B /* Download-30.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D9924EC1E1A1E8200ACF27B /* Download-30.png */; };
+		6D9924F11E1ACFA200ACF27B /* ShadowUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D9924F01E1ACFA200ACF27B /* ShadowUtil.m */; };
 		6DB499C21C8CE79B001F048B /* BRDLocalBookStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */; };
 		6DB499C71C8CE7D5001F048B /* BRDParseBookDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C41C8CE7D5001F048B /* BRDParseBookDownloader.m */; };
 		6DB499C81C8CE7D5001F048B /* BRDParseBookLister.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DB499C61C8CE7D5001F048B /* BRDParseBookLister.m */; };
@@ -157,13 +155,12 @@
 		6D9924951E147BF500ACF27B /* TSTBookVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TSTBookVC.m; path = UI/TST/TSTBookVC.m; sourceTree = "<group>"; };
 		6D9924961E147BF500ACF27B /* TSTBookVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TSTBookVC.xib; path = UI/TST/TSTBookVC.xib; sourceTree = "<group>"; };
 		6D9924DE1E1735AC00ACF27B /* cross-icon-015.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross-icon-015.png"; sourceTree = "<group>"; };
-		6D9924E11E1A19FE00ACF27B /* Home-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-50.png"; sourceTree = "<group>"; };
-		6D9924E21E1A19FE00ACF27B /* Home-blue-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-blue-50.png"; sourceTree = "<group>"; };
-		6D9924E51E1A1B3900ACF27B /* Home-25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-25.png"; sourceTree = "<group>"; };
 		6D9924E71E1A1DD400ACF27B /* Home-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home-30.png"; sourceTree = "<group>"; };
 		6D9924E81E1A1DD400ACF27B /* Home Filled-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Home Filled-30.png"; sourceTree = "<group>"; };
 		6D9924EB1E1A1E8200ACF27B /* Download Filled-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Download Filled-30.png"; sourceTree = "<group>"; };
 		6D9924EC1E1A1E8200ACF27B /* Download-30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Download-30.png"; sourceTree = "<group>"; };
+		6D9924EF1E1ACFA200ACF27B /* ShadowUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ShadowUtil.h; path = UI/TST/ShadowUtil.h; sourceTree = "<group>"; };
+		6D9924F01E1ACFA200ACF27B /* ShadowUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ShadowUtil.m; path = UI/TST/ShadowUtil.m; sourceTree = "<group>"; };
 		6DB499C01C8CE79B001F048B /* BRDLocalBookStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDLocalBookStatus.h; path = Models/BRDLocalBookStatus.h; sourceTree = "<group>"; };
 		6DB499C11C8CE79B001F048B /* BRDLocalBookStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BRDLocalBookStatus.m; path = Models/BRDLocalBookStatus.m; sourceTree = "<group>"; };
 		6DB499C31C8CE7D5001F048B /* BRDParseBookDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BRDParseBookDownloader.h; path = Backend/Parse/BRDParseBookDownloader.h; sourceTree = "<group>"; };
@@ -349,6 +346,8 @@
 				6D9924941E147BF500ACF27B /* TSTBookVC.h */,
 				6D9924951E147BF500ACF27B /* TSTBookVC.m */,
 				6D9924961E147BF500ACF27B /* TSTBookVC.xib */,
+				6D9924EF1E1ACFA200ACF27B /* ShadowUtil.h */,
+				6D9924F01E1ACFA200ACF27B /* ShadowUtil.m */,
 			);
 			name = TST;
 			sourceTree = "<group>";
@@ -378,11 +377,8 @@
 			children = (
 				6D9924EB1E1A1E8200ACF27B /* Download Filled-30.png */,
 				6D9924EC1E1A1E8200ACF27B /* Download-30.png */,
-				6D9924E51E1A1B3900ACF27B /* Home-25.png */,
 				6D9924E71E1A1DD400ACF27B /* Home-30.png */,
 				6D9924E81E1A1DD400ACF27B /* Home Filled-30.png */,
-				6D9924E11E1A19FE00ACF27B /* Home-50.png */,
-				6D9924E21E1A19FE00ACF27B /* Home-blue-50.png */,
 			);
 			name = Icons;
 			sourceTree = "<group>";
@@ -686,7 +682,6 @@
 				6DF9F2031C0BE7AD00359200 /* hqdqz.jpeg in Resources */,
 				6DF9F1C41C0A390400359200 /* LaunchScreen.xib in Resources */,
 				6DBA95611C4DBEE600B7DFB1 /* oliver-trans.txt in Resources */,
-				6D9924E61E1A1B3900ACF27B /* Home-25.png in Resources */,
 				6DF9F2001C0BE63700359200 /* congfucius_study.jpg in Resources */,
 				6D7693651DE2A4EA0024EE9F /* TSTPictureBookStoreCell.xib in Resources */,
 				6DB499E61C8CE8C0001F048B /* BookPlayerScrollVC.xib in Resources */,
@@ -700,12 +695,10 @@
 				6DE7AE381E07789E004F1D5D /* TSTBookSetVC.xib in Resources */,
 				6DE230AC1C6865DC00C5C42D /* Localizable.strings in Resources */,
 				6DB499E51C8CE8C0001F048B /* PortraitBookPagePlayerVC.xib in Resources */,
-				6D9924E31E1A19FE00ACF27B /* Home-50.png in Resources */,
 				6DB499E11C8CE8C0001F048B /* BookDownloadWaitVC.xib in Resources */,
 				6D3935DF1D0E38D7004C3C90 /* LandscapeBookPagePlayerVC.xib in Resources */,
 				6DB499ED1C8CE8C0001F048B /* ServerBookListCVC.xib in Resources */,
 				6DE7AE3D1E0901C0004F1D5D /* TSTBookSetCollectionViewCell.xib in Resources */,
-				6D9924E41E1A19FE00ACF27B /* Home-blue-50.png in Resources */,
 				6D9924DF1E1735AC00ACF27B /* cross-icon-015.png in Resources */,
 				6DF9F2011C0BE63700359200 /* icon-3-120x120.png in Resources */,
 				6DF9F1C11C0A390400359200 /* Images.xcassets in Resources */,
@@ -820,6 +813,7 @@
 				6DB499EB1C8CE8C0001F048B /* CircularProgressView.m in Sources */,
 				6DB499C71C8CE7D5001F048B /* BRDParseBookDownloader.m in Sources */,
 				6DB499E21C8CE8C0001F048B /* BookItemCell.m in Sources */,
+				6D9924F11E1ACFA200ACF27B /* ShadowUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

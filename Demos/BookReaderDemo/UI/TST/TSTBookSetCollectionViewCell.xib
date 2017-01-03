@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="164" height="218"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GJC-us-vQN">
-                        <rect key="frame" x="5" y="0.0" width="154" height="183"/>
+                        <rect key="frame" x="5" y="5" width="154" height="178"/>
                     </imageView>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lM2-Wu-3eu">
                         <rect key="frame" x="5" y="183" width="154" height="35"/>
@@ -23,7 +23,7 @@
                             <constraint firstAttribute="height" constant="35" id="Fci-kc-bS0"/>
                         </constraints>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                 </subviews>
@@ -35,7 +35,7 @@
                 <constraint firstItem="lM2-Wu-3eu" firstAttribute="leading" secondItem="GJC-us-vQN" secondAttribute="leading" id="8HI-h3-HB6"/>
                 <constraint firstAttribute="bottom" secondItem="lM2-Wu-3eu" secondAttribute="bottom" id="PWY-6I-og6"/>
                 <constraint firstItem="lM2-Wu-3eu" firstAttribute="trailing" secondItem="GJC-us-vQN" secondAttribute="trailing" id="ZSD-sC-L2Q"/>
-                <constraint firstItem="GJC-us-vQN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jb6-gl-l0d"/>
+                <constraint firstItem="GJC-us-vQN" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="jb6-gl-l0d"/>
                 <constraint firstItem="lM2-Wu-3eu" firstAttribute="top" secondItem="GJC-us-vQN" secondAttribute="bottom" id="mhm-kv-XXC"/>
                 <constraint firstItem="GJC-us-vQN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="yHO-ig-QKb"/>
             </constraints>
